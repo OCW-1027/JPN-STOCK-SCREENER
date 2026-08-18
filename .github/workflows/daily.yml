@@ -1,0 +1,40 @@
+name: Daily Screener
+
+on:
+  schedule:
+    - cron: '30 7 * * 1-5'   # 평일 16:30 JST (UTC 07:30)
+  workflow_dispatch:          # Actions 탭에서 수동 실행 버튼
+
+permissions:
+  contents: write
+
+concurrency:
+  group: screener
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Run screener
+        run: python screener.py
+        env:
+          OUTPUT_HTML: index.html   # GitHub Pages 첫 페이지로 출력
+
+      - name: Commit & push
+        run: |
+          git config user.name "screener-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html history/
+          git commit -m "update $(TZ=Asia/Tokyo date +'%Y-%m-%d %H:%M JST')" || echo "no changes"
+          git push
