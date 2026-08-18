@@ -292,6 +292,9 @@ def build_market(mkey, template, out_dir, generated):
 
         if lang == "ja":
             d["segment_final"] = d["segment_final"].map(lambda v: i18n.SEG_JA.get(v, v))
+            # 한국 종목명은 한글이라 일본어 독자가 읽을 수 없음 → 영문명으로 대체
+            if mkey == "kr":
+                d["disp_name"] = d["description"].fillna(d["disp_name"])
 
         kps = d["krx_products"] if lang == "ko" else [None] * len(d)
         d["biz"] = [biz_text(sec, ind, kp, lang) for sec, ind, kp
