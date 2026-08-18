@@ -2,9 +2,10 @@ name: Daily Screener
 
 on:
   schedule:
-    # 장중: 평일 09:00~15:45 JST, 15분 간격 (UTC 00:00~06:45)
-    - cron: '*/15 0-6 * * 1-5'
-    - cron: '30 7 * * 1-5'
+    - cron: '*/15 0-6 * * 1-5'    # 일본·한국 장중 (09:00~15:45 JST/KST, 15분 간격)
+    - cron: '30 7 * * 1-5'        # 일본·한국 종가판 (16:30) → jp,kr history 저장
+    - cron: '*/15 13-20 * * 1-5'  # 미국 장중 (한국시간 밤 22:00~다음날 05:45)
+    - cron: '30 21 * * 1-5'       # 미국 종가판 (한국시간 아침 06:30) → us history 저장
   workflow_dispatch:
 
 permissions:
@@ -33,10 +34,19 @@ jobs:
       - name: Install deps
         run: pip install -r requirements.txt
 
-      - name: Run screener
-        run: mkdir -p site && python screener.py
+      - name: History target 결정 (종가판 실행만 저장)
+        run: |
+          case "${{ github.event.schedule }}" in
+            "30 7 * * 1-5")  echo "HM=jp,kr" >> $GITHUB_ENV ;;
+            "30 21 * * 1-5") echo "HM=us"    >> $GITHUB_ENV ;;
+            *)               echo "HM="      >> $GITHUB_ENV ;;
+          esac
+
+      - name: Run screener (JP + KR + US)
+        run: python screener.py
         env:
-          OUTPUT_HTML: site/index.html
+          OUTPUT_DIR: site
+          HISTORY_MARKETS: ${{ env.HM }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -50,15 +60,11 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: Commit history (16시 이후 실행만)
+      - name: Commit history (종가판만)
+        if: env.HM != ''
         run: |
-          H=$(TZ=Asia/Tokyo date +%H)
-          if [ "$H" -ge 16 ]; then
-            git config user.name "screener-bot"
-            git config user.email "actions@users.noreply.github.com"
-            git add history/
-            git commit -m "history $(TZ=Asia/Tokyo date +'%Y-%m-%d')" || echo "no changes"
-            git push
-          else
-            echo "장중 실행 - history 커밋 생략"
-          fi
+          git config user.name "screener-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add history/
+          git commit -m "history $(TZ=Asia/Tokyo date +'%Y-%m-%d') ($HM)" || echo "no changes"
+          git push
