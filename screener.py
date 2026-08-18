@@ -152,6 +152,77 @@ def master_kr():
         return None
 
 
+
+# ─────────────────── 한국 실시간 시세 (네이버) ───────────────────
+NAVER_HEADERS = {
+    "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                   "(KHTML, like Gecko) Chrome/126.0 Safari/537.36"),
+    "Referer": "https://m.stock.naver.com/",
+    "Accept": "application/json",
+}
+
+
+def fetch_naver_kr(timeout=12):
+    """네이버 금융에서 코스피·코스닥 전 종목 실시간 시세 취득.
+    실패하면 None을 돌려주고 호출측이 TradingView 값을 그대로 쓴다."""
+    rows, page_size = [], 100
+    try:
+        for market in ("KOSPI", "KOSDAQ"):
+            for page in range(1, 40):  # 최대 4,000종목
+                url = (f"https://m.stock.naver.com/api/stocks/exchange/{market}"
+                       f"/marketValue?page={page}&pageSize={page_size}")
+                r = requests.get(url, headers=NAVER_HEADERS, timeout=timeout)
+                r.raise_for_status()
+                items = (r.json() or {}).get("stocks", [])
+                if not items:
+                    break
+                for it in items:
+                    try:
+                        rows.append({
+                            "code": str(it["itemCode"]),
+                            "nv_close": float(str(it["closePrice"]).replace(",", "")),
+                            "nv_change": float(str(it.get("fluctuationsRatio", 0)).replace(",", "")),
+                            "nv_volume": float(str(it.get("accumulatedTradingVolume", 0)).replace(",", "")),
+                        })
+                    except (KeyError, TypeError, ValueError):
+                        continue
+                if len(items) < page_size:
+                    break
+        if len(rows) < 1000:
+            print(f"  [kr] 네이버 응답 부족({len(rows)}건) → TradingView 값 사용")
+            return None
+        df = pd.DataFrame(rows).drop_duplicates(subset="code")
+        print(f"  [kr] 네이버 실시간 {len(df)}종목 취득")
+        return df
+    except Exception as e:  # noqa: BLE001
+        print(f"  [kr] 네이버 취득 실패 → TradingView 값 사용 ({type(e).__name__}: {str(e)[:80]})")
+        return None
+
+
+def apply_realtime_kr(df):
+    """네이버 실시간 시세를 TradingView 데이터프레임에 덮어쓴다.
+    이동평균·재무지표는 TradingView 값을 유지(하루 단위라 지연 영향 없음)."""
+    nv = fetch_naver_kr()
+    if nv is None:
+        return df, "TradingView"
+    d = df.merge(nv, on="code", how="left")
+    hit = d["nv_close"].notna()
+    if hit.sum() < len(d) * 0.5:
+        print(f"  [kr] 매칭률 낮음({hit.sum()}/{len(d)}) → TradingView 값 사용")
+        return df, "TradingView"
+    prev = d["close"] / (1 + d["change"] / 100)          # 전일 종가 역산
+    d.loc[hit, "close"] = d.loc[hit, "nv_close"]
+    d.loc[hit, "change"] = d.loc[hit, "nv_change"]
+    d.loc[hit, "volume"] = d.loc[hit, "nv_volume"]
+    d.loc[hit, "Value.Traded"] = d.loc[hit, "nv_close"] * d.loc[hit, "nv_volume"]
+    # 갱신된 가격 기준으로 당일 고저 근사치 보정 (돌파 판정용)
+    d.loc[hit, "high"] = d.loc[hit, ["high", "close"]].max(axis=1)
+    d.loc[hit, "low"] = d.loc[hit, ["low", "close"]].min(axis=1)
+    d = d.drop(columns=["nv_close", "nv_change", "nv_volume"])
+    print(f"  [kr] 실시간 반영 {int(hit.sum())}종목")
+    return d, "Naver"
+
+
 SIG_KEYS = ["sig_spike", "sig_x5", "sig_x20", "sig_high", "sig_gap", "sig_oversold",
             "sig_gc", "sig_reclaim", "sig_trend", "sig_macd",
             "sig_value", "sig_div", "sig_qual"]
@@ -267,6 +338,10 @@ def build_market(mkey, template, out_dir, generated):
     if mkey == "us":
         df["segment_final"] = df["exchange"]
 
+    src = "TradingView"
+    if mkey == "kr":
+        df, src = apply_realtime_kr(df)
+
     df = compute_signals(df)
 
     if mkey in CONFIG["HISTORY_MARKETS"]:
@@ -320,7 +395,9 @@ def build_market(mkey, template, out_dir, generated):
             "__PRESET_TECH__": L["preset_tech"], "__PRESET_FIN__": L["preset_fin"],
             "__PRESET_ALL__": L["preset_all"], "__HINT__": L["hint"],
             "__PREV__": L["prev"], "__NEXT__": L["next"],
-            "__FOOTER__": L["foot"].format(credit=mc["data_credit"]),
+            "__WL_ALL__": L["wl_all"], "__WL_CLEAR__": L["wl_clear"],
+            "__WL_DL__": L["wl_dl"], "__WL_HINT__": L["wl_hint"],
+            "__FOOTER__": L["foot"].format(credit=(" / Naver(실시간)" if src == "Naver" else "") + mc["data_credit"]),
         }.items():
             html = html.replace(k, v)
         html = html.replace("__CFG__", json.dumps(cfg, ensure_ascii=False))

@@ -9,7 +9,7 @@
     --bg:#0f141c; --surface:#171e29; --surface2:#1d2634; --line:#26303f;
     --text:#e9eef6; --muted:#8a94a6; --faint:#5b6572;
     --up:#ff4f5e; --down:#3f8cff; --amber:#ffb224; --teal:#2dd4bf; --violet:#c084fc;
-    --c1:64px; --c2:150px;
+    --ck:34px; --c1:64px; --c2:150px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scrollbar-color:#33404f var(--bg);-webkit-text-size-adjust:100%}
@@ -70,6 +70,20 @@
   .hint{color:var(--faint);font-size:11.5px;margin-left:auto}
 
   /* mirrored top scrollbar */
+  .wlbar{display:flex;gap:7px;align-items:center;margin-bottom:9px;flex-wrap:wrap}
+  .wlbtn{background:var(--surface);border:1px solid var(--line);color:var(--muted);border-radius:8px;
+    padding:6px 12px;font-size:12.5px;cursor:pointer;font-weight:600}
+  .wlbtn:hover{color:var(--text)}
+  .wlbtn.primary{border-color:var(--amber);color:var(--amber)}
+  .wlbtn.primary:enabled:hover{background:var(--amber);color:#111}
+  .wlbtn:disabled{opacity:.35;cursor:default}
+  .wlcnt{color:var(--amber);font-size:12px;font-weight:700}
+  .wlhint{color:var(--faint);font-size:11.5px}
+  th.ck,td.ck{position:sticky;left:0;width:34px;min-width:34px;padding:0 4px;
+    background:var(--surface);text-align:center;cursor:default}
+  th.ck{background:var(--surface2);z-index:4} td.ck{z-index:1}
+  td.ck input{width:15px;height:15px;accent-color:var(--amber);cursor:pointer;vertical-align:middle}
+  tr.picked td{background:#20293a}
   .xscroll{overflow-x:auto;overflow-y:hidden;height:14px;margin-bottom:2px;
     border:1px solid var(--line);border-bottom:0;border-radius:8px 8px 0 0;background:var(--surface2)}
   .xscroll div{height:1px}
@@ -88,8 +102,8 @@
   tbody td{padding:6px 9px;border-bottom:1px solid #1c2431;text-align:right;white-space:nowrap}
   tbody td.l{text-align:left}
   tbody tr{cursor:pointer}
-  th.f1,td.f1{position:sticky;left:0;width:var(--c1);min-width:var(--c1);background:var(--surface)}
-  th.f2,td.f2{position:sticky;left:var(--c1);min-width:var(--c2);background:var(--surface);
+  th.f1,td.f1{position:sticky;left:var(--ck);width:var(--c1);min-width:var(--c1);background:var(--surface)}
+  th.f2,td.f2{position:sticky;left:calc(var(--ck) + var(--c1));min-width:var(--c2);background:var(--surface);
     border-right:1px solid var(--line)}
   td.f1,td.f2{z-index:1}
   th.f1,th.f2{background:var(--surface2);z-index:4}
@@ -120,7 +134,7 @@
     .hint{display:none}
     input[type=search]{width:100%}
     .controls select,.presets{flex:1 1 auto}
-    :root{--c1:52px; --c2:112px}
+    :root{--ck:30px; --c1:52px; --c2:112px}
     .nm{max-width:112px}
     .tblwrap{max-height:calc(100vh - 210px)}
     thead th,tbody td{padding:6px 7px}
@@ -172,6 +186,14 @@
   <div class="hint">__HINT__</div>
 </div>
 
+<div class="wlbar">
+  <button id="wlAll" class="wlbtn">__WL_ALL__</button>
+  <button id="wlClear" class="wlbtn">__WL_CLEAR__</button>
+  <button id="wlDl" class="wlbtn primary" disabled>__WL_DL__</button>
+  <span id="wlCount" class="wlcnt"></span>
+  <span class="wlhint">__WL_HINT__</span>
+</div>
+
 <div class="xscroll" id="xscroll"><div id="xspacer"></div></div>
 <div class="tblwrap" id="tblwrap"><table>
   <thead><tr id="hdr"></tr></thead>
@@ -217,6 +239,7 @@ const COLS = [
 ];
 const PAGE=100;
 const isNarrow = window.matchMedia('(max-width:760px)').matches;
+const picked=new Set();
 let state={tab:'short',sector:'',seg:'',min:CFG.defaultMin,q:'',sigOn:new Set(),
            sortI:12,sortD:-1,page:0,preset:isNarrow?'tech':'tech'};
 
@@ -321,7 +344,7 @@ function cell(r,c){
 }
 function tvUrl(t){return 'https://www.tradingview.com/chart/?symbol='+encodeURIComponent(t)}
 function buildHeader(cols){
-  $('#hdr').innerHTML=cols.map(c=>{
+  $('#hdr').innerHTML='<th class="ck"></th>'+cols.map(c=>{
     if(c.i<0)return '<th></th>';
     const on=c.i===state.sortI;
     return `<th class="${c.l?'l ':''}${c.fx||''} ${on?'sorted':''}" data-i="${c.i}">${c.t}${on?(state.sortD<0?' ▼':' ▲'):''}</th>`;
@@ -344,7 +367,13 @@ function render(){
   const pages=Math.max(1,Math.ceil(rows.length/PAGE));
   state.page=Math.min(state.page,pages-1);
   const pg=rows.slice(state.page*PAGE,(state.page+1)*PAGE);
-  $('#body').innerHTML=pg.map(r=>`<tr data-t="${esc(r[19])}">${cols.map(c=>cell(r,c)).join('')}</tr>`).join('');
+  $('#body').innerHTML=pg.map(r=>{
+    const on=picked.has(r[19]);
+    return `<tr data-t="${esc(r[19])}" class="${on?'picked':''}">`+
+      `<td class="ck"><input type="checkbox" ${on?'checked':''} data-t="${esc(r[19])}"></td>`+
+      cols.map(c=>cell(r,c)).join('')+`</tr>`;
+  }).join('');
+  updateWl();
   $('#pageinfo').textContent=`${state.page+1} / ${pages}`;
   $('#prev').disabled=state.page===0; $('#next').disabled=state.page>=pages-1;
   $('#stat').textContent=T.stat.replace('{n}',rows.length.toLocaleString(NUMLOC));
@@ -352,8 +381,39 @@ function render(){
 }
 $('#body').addEventListener('click',e=>{
   if(e.target.closest('a'))return;
+  if(e.target.closest('td.ck')){
+    const cb=e.target.closest('td.ck').querySelector('input');
+    if(e.target!==cb){cb.checked=!cb.checked;}
+    const t=cb.dataset.t;
+    cb.checked?picked.add(t):picked.delete(t);
+    cb.closest('tr').classList.toggle('picked',cb.checked);
+    updateWl(); return;
+  }
   const tr=e.target.closest('tr'); if(!tr)return;
   window.open(tvUrl(tr.dataset.t),'_blank');
+});
+
+/* ── 관심종목 내보내기 ── */
+function updateWl(){
+  const n=picked.size;
+  $('#wlCount').textContent = n ? T.wl_sel.replace('{n}',n) : '';
+  $('#wlDl').disabled = n===0;
+}
+$('#wlAll').addEventListener('click',()=>{
+  sortRows(filtered()).forEach(r=>picked.add(r[19]));
+  render();
+});
+$('#wlClear').addEventListener('click',()=>{picked.clear();render();});
+$('#wlDl').addEventListener('click',()=>{
+  const syms=[...picked];
+  if(!syms.length)return;
+  const blob=new Blob([syms.join(',')],{type:'text/plain;charset=utf-8'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  const d=new Date().toISOString().slice(0,10);
+  a.download=`watchlist_${CFG.market}_${d}.txt`;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(()=>URL.revokeObjectURL(a.href),2000);
 });
 
 /* sync top & bottom scrollbars */
