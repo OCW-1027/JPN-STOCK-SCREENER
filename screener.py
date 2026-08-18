@@ -161,48 +161,111 @@ NAVER_HEADERS = {
     "Accept": "application/json",
 }
 
+# 네이버는 엔드포인트 경로를 종종 바꾸므로 후보를 순서대로 시도한다.
+NAVER_LIST_ENDPOINTS = [
+    "https://m.stock.naver.com/api/stocks/marketValue/{market}?page={page}&pageSize={size}",
+    "https://api.stock.naver.com/stock/exchange/{market}/marketValue?page={page}&pageSize={size}",
+    "https://m.stock.naver.com/api/stocks/exchange/{market}/marketValue?page={page}&pageSize={size}",
+]
+NAVER_POLLING = "https://polling.finance.naver.com/api/realtime/domestic/stock/{codes}"
 
-def fetch_naver_kr(timeout=12):
-    """네이버 금융에서 코스피·코스닥 전 종목 실시간 시세 취득.
-    실패하면 None을 돌려주고 호출측이 TradingView 값을 그대로 쓴다."""
-    rows, page_size = [], 100
+
+def _num(v):
     try:
-        for market in ("KOSPI", "KOSDAQ"):
-            for page in range(1, 40):  # 최대 4,000종목
-                url = (f"https://m.stock.naver.com/api/stocks/exchange/{market}"
-                       f"/marketValue?page={page}&pageSize={page_size}")
-                r = requests.get(url, headers=NAVER_HEADERS, timeout=timeout)
-                r.raise_for_status()
-                items = (r.json() or {}).get("stocks", [])
-                if not items:
-                    break
-                for it in items:
-                    try:
-                        rows.append({
-                            "code": str(it["itemCode"]),
-                            "nv_close": float(str(it["closePrice"]).replace(",", "")),
-                            "nv_change": float(str(it.get("fluctuationsRatio", 0)).replace(",", "")),
-                            "nv_volume": float(str(it.get("accumulatedTradingVolume", 0)).replace(",", "")),
-                        })
-                    except (KeyError, TypeError, ValueError):
-                        continue
-                if len(items) < page_size:
-                    break
-        if len(rows) < 1000:
-            print(f"  [kr] 네이버 응답 부족({len(rows)}건) → TradingView 값 사용")
-            return None
-        df = pd.DataFrame(rows).drop_duplicates(subset="code")
-        print(f"  [kr] 네이버 실시간 {len(df)}종목 취득")
-        return df
-    except Exception as e:  # noqa: BLE001
-        print(f"  [kr] 네이버 취득 실패 → TradingView 값 사용 ({type(e).__name__}: {str(e)[:80]})")
+        return float(str(v).replace(",", "").replace("%", "").strip())
+    except (TypeError, ValueError):
         return None
+
+
+def _parse_items(payload):
+    """응답 구조가 달라도 종목 리스트를 찾아 표준화."""
+    if isinstance(payload, dict):
+        for key in ("stocks", "datas", "result", "items", "list"):
+            v = payload.get(key)
+            if isinstance(v, list):
+                payload = v
+                break
+            if isinstance(v, dict):
+                for k2 in ("stocks", "datas", "areas", "list"):
+                    if isinstance(v.get(k2), list):
+                        payload = v[k2]
+                        break
+    if not isinstance(payload, list):
+        return []
+    out = []
+    for it in payload:
+        if not isinstance(it, dict):
+            continue
+        code = it.get("itemCode") or it.get("cd") or it.get("code")
+        close = _num(it.get("closePrice") or it.get("nv") or it.get("now"))
+        if not code or close is None:
+            continue
+        out.append({
+            "code": str(code).zfill(6),
+            "nv_close": close,
+            "nv_change": _num(it.get("fluctuationsRatio") or it.get("cr")) or 0.0,
+            "nv_volume": _num(it.get("accumulatedTradingVolume") or it.get("aq") or it.get("volume")) or 0.0,
+        })
+    return out
+
+
+def _try_list_endpoint(tpl, timeout):
+    rows, size = [], 100
+    for market in ("KOSPI", "KOSDAQ"):
+        for page in range(1, 40):
+            r = requests.get(tpl.format(market=market, page=page, size=size),
+                             headers=NAVER_HEADERS, timeout=timeout)
+            if r.status_code != 200:
+                raise RuntimeError(f"HTTP {r.status_code}")
+            items = _parse_items(r.json())
+            if not items:
+                break
+            rows += items
+            if len(items) < size:
+                break
+    return rows
+
+
+def _try_polling(codes, timeout, batch=80):
+    rows = []
+    for i in range(0, len(codes), batch):
+        chunk = ",".join(codes[i:i + batch])
+        r = requests.get(NAVER_POLLING.format(codes=chunk), headers=NAVER_HEADERS, timeout=timeout)
+        if r.status_code != 200:
+            raise RuntimeError(f"HTTP {r.status_code}")
+        rows += _parse_items(r.json())
+        time.sleep(0.05)
+    return rows
+
+
+def fetch_naver_kr(codes=None, timeout=12):
+    """여러 엔드포인트를 순차 시도. 전부 실패하면 None(→ TradingView 값 사용)."""
+    for tpl in NAVER_LIST_ENDPOINTS:
+        try:
+            rows = _try_list_endpoint(tpl, timeout)
+            if len(rows) >= 1000:
+                print(f"  [kr] 네이버 실시간 {len(rows)}종목 취득 (list: {tpl.split('?')[0][-40:]})")
+                return pd.DataFrame(rows).drop_duplicates(subset="code")
+            print(f"  [kr] 후보 응답 부족({len(rows)}건) — 다음 엔드포인트 시도")
+        except Exception as e:  # noqa: BLE001
+            print(f"  [kr] 후보 실패({type(e).__name__}: {str(e)[:50]}) — 다음 엔드포인트 시도")
+    if codes:
+        try:
+            rows = _try_polling(list(codes), timeout)
+            if len(rows) >= 1000:
+                print(f"  [kr] 네이버 실시간 {len(rows)}종목 취득 (polling)")
+                return pd.DataFrame(rows).drop_duplicates(subset="code")
+            print(f"  [kr] polling 응답 부족({len(rows)}건)")
+        except Exception as e:  # noqa: BLE001
+            print(f"  [kr] polling 실패({type(e).__name__}: {str(e)[:60]})")
+    print("  [kr] 네이버 취득 실패 → TradingView 값 사용")
+    return None
 
 
 def apply_realtime_kr(df):
     """네이버 실시간 시세를 TradingView 데이터프레임에 덮어쓴다.
     이동평균·재무지표는 TradingView 값을 유지(하루 단위라 지연 영향 없음)."""
-    nv = fetch_naver_kr()
+    nv = fetch_naver_kr(codes=df['code'].astype(str).tolist())
     if nv is None:
         return df, "TradingView"
     d = df.merge(nv, on="code", how="left")
