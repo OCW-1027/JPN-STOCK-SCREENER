@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JP Screener — __GENERATED__</title>
+<style>
+  :root{
+    --bg:#0f141c; --surface:#171e29; --surface2:#1d2634; --line:#26303f;
+    --text:#e9eef6; --muted:#8a94a6; --faint:#5b6572;
+    --up:#ff4f5e; --down:#3f8cff; --amber:#ffb224; --teal:#2dd4bf;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scrollbar-color:#33404f var(--bg)}
+  body{background:var(--bg);color:var(--text);
+    font-family:'Pretendard','Malgun Gothic','Yu Gothic UI','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;
+    font-size:13px;line-height:1.45;padding:14px 16px 60px}
+  .num{font-family:ui-monospace,'Cascadia Mono',Consolas,monospace;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+
+  /* ── 헤더 ── */
+  header{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 16px;margin-bottom:12px}
+  h1{font-size:19px;font-weight:800;letter-spacing:-.03em}
+  h1 span{color:var(--amber)}
+  .meta{color:var(--muted);font-size:12px}
+  .meta b{color:var(--text)}
+
+  /* ── 탭 ── */
+  .tabs{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
+  .tab{padding:7px 14px;border:1px solid var(--line);border-radius:8px;background:var(--surface);
+    cursor:pointer;font-weight:600;color:var(--muted);user-select:none}
+  .tab .cnt{margin-left:6px;font-size:11px;color:var(--faint)}
+  .tab.on{color:var(--text);border-color:var(--amber);background:var(--surface2)}
+  .tab.on .cnt{color:var(--amber)}
+  .tab.on.lng{border-color:var(--teal)} .tab.on.lng .cnt{color:var(--teal)}
+
+  /* ── 업종 히트스트립 (시그니처) ── */
+  .strip-wrap{margin-bottom:10px}
+  .strip-label{font-size:11px;color:var(--faint);margin-bottom:4px;letter-spacing:.04em}
+  .strip{display:flex;gap:4px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+  .chip{flex:0 0 auto;padding:5px 9px;border-radius:6px;border:1px solid var(--line);
+    cursor:pointer;text-align:center;min-width:74px;user-select:none}
+  .chip small{display:block;font-size:10px;color:var(--muted);white-space:nowrap}
+  .chip b{font-size:12px;font-weight:700}
+  .chip.on{outline:2px solid var(--amber);outline-offset:-1px}
+
+  /* ── 컨트롤 ── */
+  .controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+  input[type=search],select{background:var(--surface);border:1px solid var(--line);color:var(--text);
+    border-radius:8px;padding:7px 10px;font-size:13px;outline:none}
+  input[type=search]{width:210px}
+  input[type=search]:focus,select:focus{border-color:var(--amber)}
+  .sigchips{display:flex;gap:5px;flex-wrap:wrap}
+  .sig{padding:5px 9px;border-radius:999px;border:1px solid var(--line);background:var(--surface);
+    font-size:11.5px;color:var(--muted);cursor:pointer;user-select:none}
+  .sig.shrt.on{color:#111;background:var(--amber);border-color:var(--amber);font-weight:700}
+  .sig.lng.on{color:#062a26;background:var(--teal);border-color:var(--teal);font-weight:700}
+  .hint{color:var(--faint);font-size:11.5px;margin-left:auto}
+
+  /* ── 테이블 ── */
+  .tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+  table{border-collapse:collapse;width:100%;min-width:1240px}
+  thead th{position:sticky;top:0;background:var(--surface2);color:var(--muted);font-size:11.5px;
+    font-weight:600;text-align:right;padding:8px 9px;border-bottom:1px solid var(--line);
+    cursor:pointer;white-space:nowrap;user-select:none;z-index:2}
+  thead th.l{text-align:left}
+  thead th.sorted{color:var(--amber)}
+  tbody td{padding:6px 9px;border-bottom:1px solid #1c2431;text-align:right;white-space:nowrap}
+  tbody td.l{text-align:left}
+  tbody tr{cursor:pointer}
+  tbody tr:hover{background:#1b2433}
+  .nm{max-width:200px;overflow:hidden;text-overflow:ellipsis;font-weight:600}
+  .sec{color:var(--muted);font-size:11.5px;max-width:110px;overflow:hidden;text-overflow:ellipsis}
+  .seg{font-size:10.5px;color:var(--faint)}
+  .up{color:var(--up)} .dn{color:var(--down)} .fl{color:var(--muted)}
+  .b{display:inline-block;font-size:10px;font-weight:700;border-radius:4px;padding:1.5px 5px;margin-right:3px}
+  .b.s{background:rgba(255,178,36,.16);color:var(--amber);border:1px solid rgba(255,178,36,.35)}
+  .b.g{background:rgba(45,212,191,.13);color:var(--teal);border:1px solid rgba(45,212,191,.35)}
+  .tv{color:var(--faint);text-decoration:none;font-size:14px}
+  .tv:hover{color:var(--amber)}
+
+  /* ── 페이저 ── */
+  .pager{display:flex;align-items:center;gap:10px;margin-top:10px;color:var(--muted);flex-wrap:wrap}
+  .pager button{background:var(--surface);border:1px solid var(--line);color:var(--text);
+    border-radius:8px;padding:6px 13px;cursor:pointer;font-size:13px}
+  .pager button:disabled{opacity:.35;cursor:default}
+  .stat{margin-left:auto;font-size:12px}
+  footer{margin-top:14px;color:var(--faint);font-size:11px;line-height:1.7}
+  @media(max-width:640px){ body{padding:10px 8px 50px} input[type=search]{width:100%} .hint{display:none} }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>JP<span>スクリーナー</span></h1>
+  <div class="meta">데이터 기준 <b>__GENERATED__</b> · 도쿄증권거래소 <b>__COUNT__</b>종목 · <span style="color:var(--up)">▲빨강=상승</span> <span style="color:var(--down)">▼파랑=하락</span></div>
+</header>
+
+<div class="tabs">
+  <div class="tab on" data-tab="short">단기 시그널<span class="cnt" id="cntShort"></span></div>
+  <div class="tab lng" data-tab="long">중장기 시그널<span class="cnt" id="cntLong"></span></div>
+  <div class="tab" data-tab="all">전 종목<span class="cnt" id="cntAll"></span></div>
+</div>
+
+<div class="strip-wrap">
+  <div class="strip-label">33업종 · 당일 등락 중앙값 (클릭 = 업종 필터)</div>
+  <div class="strip" id="strip"></div>
+</div>
+
+<div class="controls">
+  <input type="search" id="q" placeholder="코드 · 종목명 검색">
+  <select id="seg">
+    <option value="">시장구분: 전체</option>
+    <option>프라임</option><option>스탠다드</option><option>그로스</option>
+  </select>
+  <select id="minVal">
+    <option value="0">거래대금: 전체</option>
+    <option value="0.1">≥ 0.1억엔</option>
+    <option value="0.5">≥ 0.5억엔</option>
+    <option value="1" selected>≥ 1억엔</option>
+    <option value="5">≥ 5억엔</option>
+    <option value="10">≥ 10억엔</option>
+    <option value="50">≥ 50억엔</option>
+  </select>
+  <div class="sigchips" id="sigchips"></div>
+  <div class="hint">행 클릭 → 트레이딩뷰 차트</div>
+</div>
+
+<div class="tblwrap"><table>
+  <thead><tr id="hdr"></tr></thead>
+  <tbody id="body"></tbody>
+</table></div>
+
+<div class="pager">
+  <button id="prev">◀ 이전</button>
+  <span class="num" id="pageinfo"></span>
+  <button id="next">다음 ▶</button>
+  <span class="stat" id="stat"></span>
+</div>
+
+<footer>
+  단기: <b>급증</b> 거래량이 10일 평균 대비 급증 · <b>5MA/20MA</b> 당일 이동평균선 상향 통과 · <b>신고가권</b> 52주 고가의 98% 이상 · <b>갭업</b> 시가 갭 발생<br>
+  중장기: <b>GC직후</b> 20일선이 200일선을 갓 상향 · <b>200탈환</b> 200일선 회복 직후 · <b>정배열</b> 주가&gt;5&gt;20&gt;200 &amp; 과열 아님 ·
+  지표는 스냅샷 기반 근사치이며 매매 판단의 보조 자료입니다. 데이터: TradingView / JPX
+</footer>
+
+<script>
+const DATA = __DATA__;
+/* row: 0코드 1종목명 2업종 3구분 4주가 5등락% 6SMA5 7SMA20 8SMA200 9이격200%
+        10거래량 11RVOL 12거래대금(억) 13RSI 14 1W% 15 1M% 16 3M% 17갭% 18시그널bit */
+const SIGS = [
+  {bit:0,label:'급증',k:'s'},{bit:1,label:'5MA돌파',k:'s'},{bit:2,label:'20MA돌파',k:'s'},
+  {bit:3,label:'신고가권',k:'s'},{bit:4,label:'갭업',k:'s'},
+  {bit:5,label:'GC직후',k:'g'},{bit:6,label:'200탈환',k:'g'},{bit:7,label:'정배열',k:'g'},
+];
+const SHORT_MASK=0b00011111, LONG_MASK=0b11100000;
+const COLS = [
+  {t:'코드',i:0,l:1},{t:'종목명',i:1,l:1},{t:'업종',i:2,l:1},{t:'구분',i:3,l:1},{t:'시그널',i:18,l:1},
+  {t:'주가',i:4},{t:'등락%',i:5},{t:'갭%',i:17},{t:'5MA',i:6},{t:'20MA',i:7},{t:'200MA',i:8},
+  {t:'이격200%',i:9},{t:'거래량',i:10},{t:'RVOL',i:11},{t:'대금(억)',i:12},{t:'RSI',i:13},
+  {t:'1W%',i:14},{t:'1M%',i:15},{t:'3M%',i:16},{t:'',i:-1}
+];
+const PAGE=100;
+let state={tab:'short',sector:'',seg:'',min:1,q:'',sigOn:new Set(),sortI:12,sortD:-1,page:0};
+
+const $=s=>document.querySelector(s);
+const fmt=(v,d=1)=>v==null?'—':v.toLocaleString('ja-JP',{minimumFractionDigits:d,maximumFractionDigits:d});
+const fint=v=>v==null?'—':v.toLocaleString('ja-JP');
+const pc=v=>v==null?'<span class="fl">—</span>':`<span class="${v>0?'up':v<0?'dn':'fl'}">${v>0?'+':''}${fmt(v,v>=100||v<=-100?0:1)}</span>`;
+
+/* ── 업종 히트스트립 ── */
+function buildStrip(){
+  const m=new Map();
+  for(const r of DATA){ if(!m.has(r[2])) m.set(r[2],[]); m.get(r[2]).push(r[5]??0); }
+  const arr=[...m.entries()].map(([s,v])=>{v.sort((a,b)=>a-b);return{s,med:v[v.length>>1],n:v.length}})
+    .sort((a,b)=>b.med-a.med);
+  $('#strip').innerHTML=arr.map(o=>{
+    const a=Math.min(Math.abs(o.med)/2.5,1)*0.5+0.06;
+    const bg=o.med>0?`rgba(255,79,94,${a})`:o.med<0?`rgba(63,140,255,${a})`:'var(--surface)';
+    return `<div class="chip" data-s="${o.s}" style="background:${bg}"><small>${o.s} (${o.n})</small><b class="num">${o.med>0?'+':''}${o.med.toFixed(1)}%</b></div>`;
+  }).join('');
+  $('#strip').addEventListener('click',e=>{
+    const c=e.target.closest('.chip'); if(!c)return;
+    state.sector=state.sector===c.dataset.s?'':c.dataset.s;
+    document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x.dataset.s===state.sector));
+    state.page=0; render();
+  });
+}
+
+/* ── 시그널 필터 칩 ── */
+function buildSigChips(){
+  const vis = state.tab==='short'?SIGS.filter(s=>s.k==='s'):state.tab==='long'?SIGS.filter(s=>s.k==='g'):SIGS;
+  $('#sigchips').innerHTML=vis.map(s=>
+    `<div class="sig ${s.k==='s'?'shrt':'lng'} ${state.sigOn.has(s.bit)?'on':''}" data-b="${s.bit}">${s.label}</div>`).join('');
+}
+$('#sigchips').addEventListener('click',e=>{
+  const c=e.target.closest('.sig'); if(!c)return;
+  const b=+c.dataset.b;
+  state.sigOn.has(b)?state.sigOn.delete(b):state.sigOn.add(b);
+  state.page=0; buildSigChips(); render();
+});
+
+/* ── 필터/정렬 ── */
+function filtered(){
+  const tabMask = state.tab==='short'?SHORT_MASK:state.tab==='long'?LONG_MASK:0;
+  let sigMask=0; state.sigOn.forEach(b=>sigMask|=1<<b);
+  const q=state.q.toLowerCase();
+  return DATA.filter(r=>{
+    if(tabMask && !(r[18]&tabMask)) return false;
+    if(sigMask && !(r[18]&sigMask)) return false;
+    if(state.sector && r[2]!==state.sector) return false;
+    if(state.seg && r[3]!==state.seg) return false;
+    if(state.min && (r[12]==null || r[12]<state.min)) return false;
+    if(q && !(String(r[0]).includes(q) || String(r[1]).toLowerCase().includes(q))) return false;
+    return true;
+  });
+}
+function sortRows(rows){
+  const i=state.sortI,d=state.sortD;
+  return rows.sort((a,b)=>{
+    let x=a[i],y=b[i];
+    if(x==null)return 1; if(y==null)return -1;
+    if(typeof x==='string')return d*x.localeCompare(y,'ja');
+    return d*(x-y);
+  });
+}
+
+/* ── 렌더 ── */
+function badges(bits){
+  let h='';
+  for(const s of SIGS) if(bits&(1<<s.bit)) h+=`<span class="b ${s.k}">${s.label}</span>`;
+  return h||'<span class="fl">—</span>';
+}
+function buildHeader(){
+  $('#hdr').innerHTML=COLS.map((c,idx)=>{
+    if(c.i<0)return '<th></th>';
+    const on=c.i===state.sortI;
+    return `<th class="${c.l?'l ':''}${on?'sorted':''}" data-i="${c.i}">${c.t}${on?(state.sortD<0?' ▼':' ▲'):''}</th>`;
+  }).join('');
+}
+$('#hdr').addEventListener('click',e=>{
+  const th=e.target.closest('th'); if(!th||th.dataset.i===undefined)return;
+  const i=+th.dataset.i;
+  if(state.sortI===i) state.sortD*=-1; else {state.sortI=i; state.sortD=-1;}
+  state.page=0; render();
+});
+function render(){
+  buildHeader();
+  const rows=sortRows(filtered());
+  const pages=Math.max(1,Math.ceil(rows.length/PAGE));
+  state.page=Math.min(state.page,pages-1);
+  const pg=rows.slice(state.page*PAGE,(state.page+1)*PAGE);
+  $('#body').innerHTML=pg.map(r=>`<tr data-c="${r[0]}">
+    <td class="l num">${r[0]}</td>
+    <td class="l nm" title="${r[1]}">${r[1]}</td>
+    <td class="l sec">${r[2]}</td>
+    <td class="l seg">${r[3]}</td>
+    <td class="l">${badges(r[18])}</td>
+    <td class="num">${fmt(r[4],r[4]>=1000?0:1)}</td>
+    <td class="num">${pc(r[5])}</td>
+    <td class="num">${pc(r[17])}</td>
+    <td class="num">${fmt(r[6],0)}</td>
+    <td class="num">${fmt(r[7],0)}</td>
+    <td class="num">${fmt(r[8],0)}</td>
+    <td class="num">${pc(r[9])}</td>
+    <td class="num">${fint(r[10])}</td>
+    <td class="num">${r[11]==null?'—':fmt(r[11],2)}</td>
+    <td class="num">${fmt(r[12],2)}</td>
+    <td class="num">${fmt(r[13],0)}</td>
+    <td class="num">${pc(r[14])}</td>
+    <td class="num">${pc(r[15])}</td>
+    <td class="num">${pc(r[16])}</td>
+    <td><a class="tv" href="https://www.tradingview.com/chart/?symbol=TSE%3A${r[0]}" target="_blank" rel="noopener">↗</a></td>
+  </tr>`).join('');
+  $('#pageinfo').textContent=`${state.page+1} / ${pages}`;
+  $('#prev').disabled=state.page===0; $('#next').disabled=state.page>=pages-1;
+  $('#stat').textContent=`필터 결과 ${rows.length.toLocaleString()}종목`;
+}
+$('#body').addEventListener('click',e=>{
+  if(e.target.closest('a'))return;
+  const tr=e.target.closest('tr'); if(!tr)return;
+  window.open(`https://www.tradingview.com/chart/?symbol=TSE%3A${tr.dataset.c}`,'_blank');
+});
+
+/* ── 컨트롤 바인딩 ── */
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  state.tab=t.dataset.tab; state.sigOn.clear(); state.page=0;
+  state.min = state.tab==='all'?0:1;
+  $('#minVal').value=String(state.min);
+  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===t));
+  buildSigChips(); render();
+}));
+$('#q').addEventListener('input',e=>{state.q=e.target.value.trim();state.page=0;render();});
+$('#seg').addEventListener('change',e=>{state.seg=e.target.value;state.page=0;render();});
+$('#minVal').addEventListener('change',e=>{state.min=+e.target.value;state.page=0;render();});
+$('#prev').addEventListener('click',()=>{state.page--;render();});
+$('#next').addEventListener('click',()=>{state.page++;render();});
+
+/* ── 탭 카운트 ── */
+$('#cntShort').textContent=DATA.filter(r=>r[18]&SHORT_MASK && r[12]>=1).length;
+$('#cntLong').textContent=DATA.filter(r=>r[18]&LONG_MASK && r[12]>=1).length;
+$('#cntAll').textContent=DATA.length.toLocaleString();
+
+buildStrip(); buildSigChips(); render();
+</script>
+</body>
+</html>
