@@ -293,14 +293,15 @@ def build_market(mkey, template, out_dir, generated):
         if lang == "ja":
             d["segment_final"] = d["segment_final"].map(lambda v: i18n.SEG_JA.get(v, v))
 
+        kps = d["krx_products"] if lang == "ko" else [None] * len(d)
         d["biz"] = [biz_text(sec, ind, kp, lang) for sec, ind, kp
-                    in zip(d["sector"], d["industry"], d["krx_products"])]
+                    in zip(d["sector"], d["industry"], kps)]
 
         rows = build_rows(d, mc)
         cfg = dict(market=mkey, lang=lang, t=L,
                    turnLabel=ML["turn"], mcapLabel=ML["mcap"], ebitdaLabel=ML["ebitda"],
-                   minOptions=mc["min_options"], defaultMin=mc["default_min"],
-                   segments=ML["segs"], allLabel="전체" if lang == "ko" else "すべて",
+                   minOptions=i18n.min_options(mkey, lang), defaultMin=mc["default_min"],
+                   segments=ML["segs"], allLabel=i18n.ALL_LABEL[lang],
                    usPrice=mc["us_price"])
         html = template
         for k, v in {

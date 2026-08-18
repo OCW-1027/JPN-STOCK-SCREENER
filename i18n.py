@@ -65,6 +65,27 @@ MARKET_I18N = {
                        segs=["NYSE", "NASDAQ", "AMEX"], turn="売買代金($M)", mcap="時価総額($B)", ebitda="EBITDA($M)")),
 }
 
+# 거래대금 필터: 시장별 임계값 + 언어별 단위
+MIN_FILTER = {
+    "jp": dict(values=[0, 0.1, 0.5, 1, 5, 10, 50], unit=dict(ko="억엔", ja="億円")),
+    "kr": dict(values=[0, 0.5, 1, 5, 10, 50, 100], unit=dict(ko="억원", ja="億W")),
+    "us": dict(values=[0, 0.1, 0.5, 1, 5, 10, 50], unit=dict(ko="$M", ja="$M")),
+}
+TURNOVER_LABEL = dict(ko="거래대금", ja="売買代金")
+ALL_LABEL = dict(ko="전체", ja="すべて")
+
+
+def min_options(mkey, lang):
+    """[[값, 표시라벨], ...] — 0은 '전체'."""
+    m = MIN_FILTER[mkey]
+    unit = m["unit"][lang]
+    out = [[0, f'{TURNOVER_LABEL[lang]}: {ALL_LABEL[lang]}']]
+    for v in m["values"][1:]:
+        n = f"{v:g}"
+        out.append([v, f"≥ {n}{unit}" if unit != "$M" else f"≥ ${n}M"])
+    return out
+
+
 SEG_JA = {"프라임": "プライム", "스탠다드": "スタンダード", "그로스": "グロース",
           "코스피": "KOSPI", "코스닥": "KOSDAQ", "코넥스": "KONEX", "기타": "その他"}
 

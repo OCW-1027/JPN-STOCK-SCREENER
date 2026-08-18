@@ -69,7 +69,7 @@
   .sig.fnd.on{color:#2a1245;background:var(--violet);border-color:var(--violet);font-weight:700}
   .hint{color:var(--faint);font-size:11.5px;margin-left:auto}
 
-  /* 상단 미러 스크롤바 */
+  /* mirrored top scrollbar */
   .xscroll{overflow-x:auto;overflow-y:hidden;height:14px;margin-bottom:2px;
     border:1px solid var(--line);border-bottom:0;border-radius:8px 8px 0 0;background:var(--surface2)}
   .xscroll div{height:1px}
@@ -113,7 +113,7 @@
   .stat{margin-left:auto;font-size:12px}
   footer{margin-top:12px;color:var(--faint);font-size:11px;line-height:1.7}
 
-  /* 모바일 (세로) */
+  /* mobile portrait */
   @media(max-width:760px){
     body{padding:10px 8px 30px;font-size:12.5px}
     h1{font-size:16px}
@@ -126,7 +126,7 @@
     thead th,tbody td{padding:6px 7px}
     .biz{max-width:170px}
   }
-  /* 모바일 (가로) — 화면이 낮을 때 위쪽 요소를 접어 표를 최대화 */
+  /* mobile landscape: collapse header to maximize table */
   @media(max-height:520px) and (orientation:landscape){
     body{padding:6px 8px 20px}
     header,.strip-wrap,footer{display:none}
@@ -191,9 +191,9 @@
 const CFG = __CFG__;
 const T = CFG.t;
 const DATA = __DATA__;
-/* 0코드 1종목명 2업종 3구분 4주가 5등락 6SMA5 7SMA20 8SMA200 9이격 10거래량 11RVOL 12대금
-   13RSI 14 1W 15 1M 16 3M 17갭 18시그널bit 19TV티커 20시총 21PER 22PBR 23EPS 24ROE 25배당
-   26자기자본 27EBITDA 28MACD-H 29사업내용 */
+/* 0 code 1 name 2 sector 3 segment 4 close 5 chg 6 SMA5 7 SMA20 8 SMA200 9 ext 10 vol 11 rvol 12 turnover
+   13 RSI 14 1W 15 1M 16 3M 17 gap 18 signal-bits 19 tv-ticker 20 mcap 21 PER 22 PBR 23 EPS 24 ROE 25 div
+   26 equity-ratio 27 EBITDA 28 MACD-H 29 business */
 const SIGS = [
   {bit:0,label:T.s_spike,k:'s'},{bit:1,label:T.s_x5,k:'s'},{bit:2,label:T.s_x20,k:'s'},
   {bit:3,label:T.s_high,k:'s'},{bit:4,label:T.s_gap,k:'s'},{bit:5,label:T.s_over,k:'s'},
@@ -202,7 +202,7 @@ const SIGS = [
 ];
 const SHORT_MASK=0b0000000111111, LONG_MASK=0b0001111000000, FUND_MASK=0b1110000000000;
 
-/* g: 'b'=항상 · 't'=테크니컬 · 'f'=재무 */
+/* g: b=always, t=technical, f=financial */
 const COLS = [
   {t:T.c_code,i:0,l:1,g:'b',fx:'f1'},{t:T.c_name,i:1,l:1,g:'b',fx:'f2'},
   {t:T.c_sector,i:2,l:1,g:'b'},{t:T.c_seg,i:3,l:1,g:'t'},{t:T.c_sig,i:18,l:1,g:'b'},
@@ -356,7 +356,7 @@ $('#body').addEventListener('click',e=>{
   window.open(tvUrl(tr.dataset.t),'_blank');
 });
 
-/* 상단·하단 스크롤 동기화 */
+/* sync top & bottom scrollbars */
 let lock=false;
 $('#xscroll').addEventListener('scroll',()=>{ if(lock)return; lock=true; $('#tblwrap').scrollLeft=$('#xscroll').scrollLeft; lock=false; });
 $('#tblwrap').addEventListener('scroll',()=>{ if(lock)return; lock=true; $('#xscroll').scrollLeft=$('#tblwrap').scrollLeft; lock=false; });
