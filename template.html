@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JP Screener — __GENERATED__</title>
+<title>__PAGE_TITLE__ — __GENERATED__</title>
 <style>
   :root{
     --bg:#0f141c; --surface:#171e29; --surface2:#1d2634; --line:#26303f;
@@ -17,7 +17,12 @@
     font-size:13px;line-height:1.45;padding:14px 16px 60px}
   .num{font-family:ui-monospace,'Cascadia Mono',Consolas,monospace;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
 
-  /* ── 헤더 ── */
+  /* ── 시장 내비게이션 + 헤더 ── */
+  .mnav{display:flex;gap:6px;margin-bottom:12px}
+  .mnav a{padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:var(--surface);
+    color:var(--muted);text-decoration:none;font-weight:700;font-size:12.5px}
+  .mnav a.on{color:var(--amber);border-color:var(--amber);background:var(--surface2)}
+  .mnav a:hover{color:var(--text)}
   header{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 16px;margin-bottom:12px}
   h1{font-size:19px;font-weight:800;letter-spacing:-.03em}
   h1 span{color:var(--amber)}
@@ -33,7 +38,7 @@
   .tab.on .cnt{color:var(--amber)}
   .tab.on.lng{border-color:var(--teal)} .tab.on.lng .cnt{color:var(--teal)}
 
-  /* ── 업종 히트스트립 (시그니처) ── */
+  /* ── 업종 히트스트립 ── */
   .strip-wrap{margin-bottom:10px}
   .strip-label{font-size:11px;color:var(--faint);margin-bottom:4px;letter-spacing:.04em}
   .strip{display:flex;gap:4px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
@@ -90,9 +95,11 @@
 </head>
 <body>
 
+<nav class="mnav">__NAV__</nav>
+
 <header>
-  <h1>JP<span>スクリーナー</span></h1>
-  <div class="meta">데이터 기준 <b>__GENERATED__</b> · 도쿄증권거래소 <b>__COUNT__</b>종목 · <span style="color:var(--up)">▲빨강=상승</span> <span style="color:var(--down)">▼파랑=하락</span></div>
+  <h1>__TITLE_HTML__</h1>
+  <div class="meta">데이터 기준 <b>__GENERATED__</b> · __MARKET_LABEL__ <b>__COUNT__</b>종목 · <span style="color:var(--up)">▲빨강=상승</span> <span style="color:var(--down)">▼파랑=하락</span></div>
 </header>
 
 <div class="tabs">
@@ -102,25 +109,14 @@
 </div>
 
 <div class="strip-wrap">
-  <div class="strip-label">33업종 · 당일 등락 중앙값 (클릭 = 업종 필터)</div>
+  <div class="strip-label">업종별 당일 등락 중앙값 (클릭 = 업종 필터)</div>
   <div class="strip" id="strip"></div>
 </div>
 
 <div class="controls">
   <input type="search" id="q" placeholder="코드 · 종목명 검색">
-  <select id="seg">
-    <option value="">시장구분: 전체</option>
-    <option>프라임</option><option>스탠다드</option><option>그로스</option>
-  </select>
-  <select id="minVal">
-    <option value="0">거래대금: 전체</option>
-    <option value="0.1">≥ 0.1억엔</option>
-    <option value="0.5">≥ 0.5억엔</option>
-    <option value="1" selected>≥ 1억엔</option>
-    <option value="5">≥ 5억엔</option>
-    <option value="10">≥ 10억엔</option>
-    <option value="50">≥ 50억엔</option>
-  </select>
+  <select id="seg"></select>
+  <select id="minVal"></select>
   <div class="sigchips" id="sigchips"></div>
   <div class="hint">행 클릭 → 트레이딩뷰 차트</div>
 </div>
@@ -140,13 +136,14 @@
 <footer>
   단기: <b>급증</b> 거래량이 10일 평균 대비 급증 · <b>5MA/20MA</b> 당일 이동평균선 상향 통과 · <b>신고가권</b> 52주 고가의 98% 이상 · <b>갭업</b> 시가 갭 발생<br>
   중장기: <b>GC직후</b> 20일선이 200일선을 갓 상향 · <b>200탈환</b> 200일선 회복 직후 · <b>정배열</b> 주가&gt;5&gt;20&gt;200 &amp; 과열 아님 ·
-  지표는 스냅샷 기반 근사치이며 매매 판단의 보조 자료입니다. 데이터: TradingView / JPX
+  지표는 스냅샷 기반 근사치이며 매매 판단의 보조 자료입니다. 데이터: TradingView__DATA_CREDIT__
 </footer>
 
 <script>
+const CFG = __CFG__;
 const DATA = __DATA__;
 /* row: 0코드 1종목명 2업종 3구분 4주가 5등락% 6SMA5 7SMA20 8SMA200 9이격200%
-        10거래량 11RVOL 12거래대금(억) 13RSI 14 1W% 15 1M% 16 3M% 17갭% 18시그널bit */
+        10거래량 11RVOL 12거래대금(환산단위) 13RSI 14 1W% 15 1M% 16 3M% 17갭% 18시그널bit 19TV티커 */
 const SIGS = [
   {bit:0,label:'급증',k:'s'},{bit:1,label:'5MA돌파',k:'s'},{bit:2,label:'20MA돌파',k:'s'},
   {bit:3,label:'신고가권',k:'s'},{bit:4,label:'갭업',k:'s'},
@@ -156,16 +153,21 @@ const SHORT_MASK=0b00011111, LONG_MASK=0b11100000;
 const COLS = [
   {t:'코드',i:0,l:1},{t:'종목명',i:1,l:1},{t:'업종',i:2,l:1},{t:'구분',i:3,l:1},{t:'시그널',i:18,l:1},
   {t:'주가',i:4},{t:'등락%',i:5},{t:'갭%',i:17},{t:'5MA',i:6},{t:'20MA',i:7},{t:'200MA',i:8},
-  {t:'이격200%',i:9},{t:'거래량',i:10},{t:'RVOL',i:11},{t:'대금(억)',i:12},{t:'RSI',i:13},
+  {t:'이격200%',i:9},{t:'거래량',i:10},{t:'RVOL',i:11},{t:CFG.turnLabel,i:12},{t:'RSI',i:13},
   {t:'1W%',i:14},{t:'1M%',i:15},{t:'3M%',i:16},{t:'',i:-1}
 ];
 const PAGE=100;
-let state={tab:'short',sector:'',seg:'',min:1,q:'',sigOn:new Set(),sortI:12,sortD:-1,page:0};
+let state={tab:'short',sector:'',seg:'',min:CFG.defaultMin,q:'',sigOn:new Set(),sortI:12,sortD:-1,page:0};
 
 const $=s=>document.querySelector(s);
 const fmt=(v,d=1)=>v==null?'—':v.toLocaleString('ja-JP',{minimumFractionDigits:d,maximumFractionDigits:d});
 const fint=v=>v==null?'—':v.toLocaleString('ja-JP');
+const priceFmt=v=>{if(v==null)return '—';const d=CFG.usPrice?(v>=100?1:2):(v>=1000?0:1);return fmt(v,d)};
 const pc=v=>v==null?'<span class="fl">—</span>':`<span class="${v>0?'up':v<0?'dn':'fl'}">${v>0?'+':''}${fmt(v,v>=100||v<=-100?0:1)}</span>`;
+
+/* ── 컨트롤 옵션 (시장별 CFG) ── */
+$('#seg').innerHTML = `<option value="">${CFG.segLabel}: 전체</option>` + CFG.segments.map(s=>`<option>${s}</option>`).join('');
+$('#minVal').innerHTML = CFG.minOptions.map(o=>`<option value="${o[0]}" ${o[0]===CFG.defaultMin?'selected':''}>${o[1]}</option>`).join('');
 
 /* ── 업종 히트스트립 ── */
 function buildStrip(){
@@ -210,7 +212,7 @@ function filtered(){
     if(state.sector && r[2]!==state.sector) return false;
     if(state.seg && r[3]!==state.seg) return false;
     if(state.min && (r[12]==null || r[12]<state.min)) return false;
-    if(q && !(String(r[0]).includes(q) || String(r[1]).toLowerCase().includes(q))) return false;
+    if(q && !(String(r[0]).toLowerCase().includes(q) || String(r[1]).toLowerCase().includes(q))) return false;
     return true;
   });
 }
@@ -231,7 +233,7 @@ function badges(bits){
   return h||'<span class="fl">—</span>';
 }
 function buildHeader(){
-  $('#hdr').innerHTML=COLS.map((c,idx)=>{
+  $('#hdr').innerHTML=COLS.map(c=>{
     if(c.i<0)return '<th></th>';
     const on=c.i===state.sortI;
     return `<th class="${c.l?'l ':''}${on?'sorted':''}" data-i="${c.i}">${c.t}${on?(state.sortD<0?' ▼':' ▲'):''}</th>`;
@@ -243,19 +245,20 @@ $('#hdr').addEventListener('click',e=>{
   if(state.sortI===i) state.sortD*=-1; else {state.sortI=i; state.sortD=-1;}
   state.page=0; render();
 });
+function tvUrl(t){return 'https://www.tradingview.com/chart/?symbol='+encodeURIComponent(t)}
 function render(){
   buildHeader();
   const rows=sortRows(filtered());
   const pages=Math.max(1,Math.ceil(rows.length/PAGE));
   state.page=Math.min(state.page,pages-1);
   const pg=rows.slice(state.page*PAGE,(state.page+1)*PAGE);
-  $('#body').innerHTML=pg.map(r=>`<tr data-c="${r[0]}">
+  $('#body').innerHTML=pg.map(r=>`<tr data-t="${r[19]}">
     <td class="l num">${r[0]}</td>
     <td class="l nm" title="${r[1]}">${r[1]}</td>
     <td class="l sec">${r[2]}</td>
     <td class="l seg">${r[3]}</td>
     <td class="l">${badges(r[18])}</td>
-    <td class="num">${fmt(r[4],r[4]>=1000?0:1)}</td>
+    <td class="num">${priceFmt(r[4])}</td>
     <td class="num">${pc(r[5])}</td>
     <td class="num">${pc(r[17])}</td>
     <td class="num">${fmt(r[6],0)}</td>
@@ -269,7 +272,7 @@ function render(){
     <td class="num">${pc(r[14])}</td>
     <td class="num">${pc(r[15])}</td>
     <td class="num">${pc(r[16])}</td>
-    <td><a class="tv" href="https://www.tradingview.com/chart/?symbol=TSE%3A${r[0]}" target="_blank" rel="noopener">↗</a></td>
+    <td><a class="tv" href="${tvUrl(r[19])}" target="_blank" rel="noopener">↗</a></td>
   </tr>`).join('');
   $('#pageinfo').textContent=`${state.page+1} / ${pages}`;
   $('#prev').disabled=state.page===0; $('#next').disabled=state.page>=pages-1;
@@ -278,13 +281,13 @@ function render(){
 $('#body').addEventListener('click',e=>{
   if(e.target.closest('a'))return;
   const tr=e.target.closest('tr'); if(!tr)return;
-  window.open(`https://www.tradingview.com/chart/?symbol=TSE%3A${tr.dataset.c}`,'_blank');
+  window.open(tvUrl(tr.dataset.t),'_blank');
 });
 
 /* ── 컨트롤 바인딩 ── */
 document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
   state.tab=t.dataset.tab; state.sigOn.clear(); state.page=0;
-  state.min = state.tab==='all'?0:1;
+  state.min = state.tab==='all'?0:CFG.defaultMin;
   $('#minVal').value=String(state.min);
   document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===t));
   buildSigChips(); render();
@@ -296,8 +299,8 @@ $('#prev').addEventListener('click',()=>{state.page--;render();});
 $('#next').addEventListener('click',()=>{state.page++;render();});
 
 /* ── 탭 카운트 ── */
-$('#cntShort').textContent=DATA.filter(r=>r[18]&SHORT_MASK && r[12]>=1).length;
-$('#cntLong').textContent=DATA.filter(r=>r[18]&LONG_MASK && r[12]>=1).length;
+$('#cntShort').textContent=DATA.filter(r=>r[18]&SHORT_MASK && r[12]>=CFG.defaultMin).length;
+$('#cntLong').textContent=DATA.filter(r=>r[18]&LONG_MASK && r[12]>=CFG.defaultMin).length;
 $('#cntAll').textContent=DATA.length.toLocaleString();
 
 buildStrip(); buildSigChips(); render();
