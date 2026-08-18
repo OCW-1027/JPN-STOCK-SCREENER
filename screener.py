@@ -243,19 +243,22 @@ def fetch_naver_kr(codes=None, timeout=12):
     for tpl in NAVER_LIST_ENDPOINTS:
         try:
             rows = _try_list_endpoint(tpl, timeout)
-            if len(rows) >= 1000:
-                print(f"  [kr] 네이버 실시간 {len(rows)}종목 취득 (list: {tpl.split('?')[0][-40:]})")
-                return pd.DataFrame(rows).drop_duplicates(subset="code")
-            print(f"  [kr] 후보 응답 부족({len(rows)}건) — 다음 엔드포인트 시도")
+            df = pd.DataFrame(rows).drop_duplicates(subset="code") if rows else pd.DataFrame()
+            if len(df) >= 1000:
+                print(f"  [kr] 네이버 취득: 고유 {len(df)}종목 "
+                      f"(원본 {len(rows)}행 — 중복·ETF 포함)")
+                return df
+            print(f"  [kr] 후보 응답 부족(고유 {len(df)}종목) — 다음 엔드포인트 시도")
         except Exception as e:  # noqa: BLE001
             print(f"  [kr] 후보 실패({type(e).__name__}: {str(e)[:50]}) — 다음 엔드포인트 시도")
     if codes:
         try:
             rows = _try_polling(list(codes), timeout)
-            if len(rows) >= 1000:
-                print(f"  [kr] 네이버 실시간 {len(rows)}종목 취득 (polling)")
-                return pd.DataFrame(rows).drop_duplicates(subset="code")
-            print(f"  [kr] polling 응답 부족({len(rows)}건)")
+            df = pd.DataFrame(rows).drop_duplicates(subset="code") if rows else pd.DataFrame()
+            if len(df) >= 1000:
+                print(f"  [kr] 네이버 취득: 고유 {len(df)}종목 (polling)")
+                return df
+            print(f"  [kr] polling 응답 부족(고유 {len(df)}종목)")
         except Exception as e:  # noqa: BLE001
             print(f"  [kr] polling 실패({type(e).__name__}: {str(e)[:60]})")
     print("  [kr] 네이버 취득 실패 → TradingView 값 사용")
@@ -282,7 +285,8 @@ def apply_realtime_kr(df):
     d.loc[hit, "high"] = d.loc[hit, ["high", "close"]].max(axis=1)
     d.loc[hit, "low"] = d.loc[hit, ["low", "close"]].min(axis=1)
     d = d.drop(columns=["nv_close", "nv_change", "nv_volume"])
-    print(f"  [kr] 실시간 반영 {int(hit.sum())}종목")
+    print(f"  [kr] 실시간 반영 {int(hit.sum())}/{len(d)}종목 "
+          f"({hit.sum() / len(d) * 100:.1f}%) — 미매칭은 TradingView 값 유지")
     return d, "Naver"
 
 
