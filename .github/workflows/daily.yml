@@ -2,19 +2,27 @@ name: Daily Screener
 
 on:
   schedule:
-    - cron: '30 7 * * 1-5'   # 평일 16:30 JST (UTC 07:30)
-  workflow_dispatch:          # Actions 탭에서 수동 실행 버튼
+    # 장중: 평일 09:00~15:30 JST, 30분 간격 (UTC 00:00~06:30)
+    - cron: '0,15 0-6 * * 1-5'
+    # 종가 확정판: 평일 16:30 JST — 이때만 history 저장
+    - cron: '30 7 * * 1-5'
+  workflow_dispatch:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: screener
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   run:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -27,14 +35,31 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run screener
-        run: python screener.py
+        run: mkdir -p site && python screener.py
         env:
-          OUTPUT_HTML: index.html   # GitHub Pages 첫 페이지로 출력
+          OUTPUT_HTML: site/index.html
 
-      - name: Commit & push
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Commit history (16시 이후 실행만)
         run: |
-          git config user.name "screener-bot"
-          git config user.email "actions@users.noreply.github.com"
-          git add index.html history/
-          git commit -m "update $(TZ=Asia/Tokyo date +'%Y-%m-%d %H:%M JST')" || echo "no changes"
-          git push
+          H=$(TZ=Asia/Tokyo date +%H)
+          if [ "$H" -ge 16 ]; then
+            git config user.name "screener-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add history/
+            git commit -m "history $(TZ=Asia/Tokyo date +'%Y-%m-%d')" || echo "no changes"
+            git push
+          else
+            echo "장중 실행 - history 커밋 생략"
+          fi
