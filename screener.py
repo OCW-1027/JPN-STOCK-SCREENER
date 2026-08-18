@@ -14,6 +14,8 @@ import pandas as pd
 import requests
 from tradingview_screener import Query, col
 
+import i18n
+
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 except Exception:
@@ -217,12 +219,37 @@ def build_rows(df, mc):
     return rows
 
 
-def nav_html(active):
-    return "".join(f'<a href="../{k}/index.html" class="{"on" if k == active else ""}">{m["nav_label"]}</a>'
-                   for k, m in MARKETS.items())
+def nav_html(active, lang):
+    """언어 유지한 채 시장 이동."""
+    return "".join(
+        f'<a href="../{k}/index.html" class="{"on" if k == active else ""}">'
+        f'{i18n.MARKET_I18N[k][lang]["nav"]}</a>' for k in MARKETS)
+
+
+def lang_nav(mkey, lang):
+    other = "ja" if lang == "ko" else "ko"
+    # ko는 /<mkey>/, ja는 /ja/<mkey>/
+    href = f"../../{mkey}/index.html" if lang == "ja" else f"../ja/{mkey}/index.html"
+    return f'<a href="{href}">{i18n.UI[other]["lang_name"]}</a>'
+
+
+def biz_text(row_sector, row_industry, krx_products, lang):
+    """사업내용: 섹터 · 세부업종 (+ 한국은 KRX 주요제품)."""
+    idx = 0 if lang == "ko" else 1
+    parts = []
+    for raw, table in ((row_sector, i18n.SECTOR), (row_industry, i18n.INDUSTRY)):
+        if isinstance(raw, str) and raw.strip():
+            parts.append(table.get(raw, (raw, raw))[idx])
+    base = " · ".join(parts)
+    if isinstance(krx_products, str) and krx_products.strip():
+        kp = krx_products.strip()
+        kp = kp[:120] + "…" if len(kp) > 120 else kp
+        return f"{base} — {kp}" if base else kp
+    return base
 
 
 def build_market(mkey, template, out_dir, generated):
+    """시장 데이터를 1회 수집해 ko/ja 두 페이지를 생성."""
     mc = MARKETS[mkey]
     df = fetch_tv(mkey)
     master = master_jp() if mkey == "jp" else master_kr() if mkey == "kr" else None
@@ -231,17 +258,12 @@ def build_market(mkey, template, out_dir, generated):
     if master is not None:
         df = df.merge(master, on="code", how="left")
         df["disp_name"] = df["m_name"].fillna(df["description"])
-        if mkey == "jp":
-            df["sector_final"] = df["m_sector"].fillna("その他")
-        else:
-            df["sector_final"] = df["sector"].map(SECTOR_KO).fillna(df["sector"]).fillna("기타")
         df["segment_final"] = df["m_segment"].fillna("기타")
-        df["biz"] = df["m_biz"].fillna(df["industry"])
+        df["krx_products"] = df["m_biz"]
     else:
         df["disp_name"] = df["description"]
-        df["sector_final"] = df["sector"].map(SECTOR_KO).fillna(df["sector"]).fillna("기타")
         df["segment_final"] = "—"
-        df["biz"] = df["industry"]
+        df["krx_products"] = None
     if mkey == "us":
         df["segment_final"] = df["exchange"]
 
@@ -254,42 +276,79 @@ def build_market(mkey, template, out_dir, generated):
         df.to_csv(hist / f"{stamp}.csv.gz", index=False, encoding="utf-8")
         print(f"  [{mkey}] 스냅샷 저장: history/{mkey}/{stamp}.csv.gz")
 
-    rows = build_rows(df, mc)
-    cfg = dict(market=mkey, turnLabel=mc["turn_label"], mcapLabel=mc["mcap_label"],
-               ebitdaLabel=mc["ebitda_label"], minOptions=mc["min_options"],
-               defaultMin=mc["default_min"], segLabel=mc["seg_label"],
-               segments=mc["segments"], usPrice=mc["us_price"])
-    html = (template
-            .replace("__PAGE_TITLE__", mc["page_title"])
-            .replace("__TITLE_HTML__", mc["title_html"])
-            .replace("__MARKET_LABEL__", mc["market_label"])
-            .replace("__GENERATED__", generated)
-            .replace("__COUNT__", f"{len(rows):,}")
-            .replace("__NAV__", nav_html(mkey))
-            .replace("__DATA_CREDIT__", mc["data_credit"])
-            .replace("__CFG__", json.dumps(cfg, ensure_ascii=False))
-            .replace("__DATA__", json.dumps(rows, ensure_ascii=False, separators=(",", ":"))))
-    (out_dir / mkey).mkdir(parents=True, exist_ok=True)
-    (out_dir / mkey / "index.html").write_text(html, encoding="utf-8")
+    for lang in ("ko", "ja"):
+        d = df.copy()
+        L = i18n.UI[lang]
+        ML = i18n.MARKET_I18N[mkey][lang]
+        idx = 0 if lang == "ko" else 1
+
+        # 업종 컬럼: 일본은 JPX 33업종(일본어) 유지, 한국어판은 그대로 두되 그 외는 번역
+        if mkey == "jp" and "m_sector" in d:
+            d["sector_final"] = d["m_sector"].fillna(
+                d["sector"].map(lambda v: i18n.SECTOR.get(v, (v, v))[idx]))
+        else:
+            d["sector_final"] = d["sector"].map(lambda v: i18n.SECTOR.get(v, (v, v))[idx] if pd.notna(v) else None)
+            d["sector_final"] = d["sector_final"].fillna("기타" if lang == "ko" else "その他")
+
+        if lang == "ja":
+            d["segment_final"] = d["segment_final"].map(lambda v: i18n.SEG_JA.get(v, v))
+
+        d["biz"] = [biz_text(sec, ind, kp, lang) for sec, ind, kp
+                    in zip(d["sector"], d["industry"], d["krx_products"])]
+
+        rows = build_rows(d, mc)
+        cfg = dict(market=mkey, lang=lang, t=L,
+                   turnLabel=ML["turn"], mcapLabel=ML["mcap"], ebitdaLabel=ML["ebitda"],
+                   minOptions=mc["min_options"], defaultMin=mc["default_min"],
+                   segments=ML["segs"], allLabel="전체" if lang == "ko" else "すべて",
+                   usPrice=mc["us_price"])
+        html = template
+        for k, v in {
+            "__HTML_LANG__": lang, "__PAGE_TITLE__": mc["page_title"],
+            "__TITLE_HTML__": ML["title"], "__MARKET_LABEL__": ML["label"],
+            "__GENERATED__": generated, "__COUNT__": f"{len(rows):,}",
+            "__NAV__": nav_html(mkey, lang), "__LANGNAV__": lang_nav(mkey, lang),
+            "__META_PRE__": L["meta_pre"], "__META_STOCKS__": L["meta_stocks"],
+            "__META_UP__": L["meta_up"], "__META_DN__": L["meta_dn"],
+            "__TAB_SHORT__": L["tab_short"], "__TAB_LONG__": L["tab_long"],
+            "__TAB_FUND__": L["tab_fund"], "__TAB_ALL__": L["tab_all"],
+            "__STRIP_LABEL__": L["strip_label"], "__SEARCH_PH__": L["search_ph"],
+            "__PRESET_TECH__": L["preset_tech"], "__PRESET_FIN__": L["preset_fin"],
+            "__PRESET_ALL__": L["preset_all"], "__HINT__": L["hint"],
+            "__PREV__": L["prev"], "__NEXT__": L["next"],
+            "__FOOTER__": L["foot"].format(credit=mc["data_credit"]),
+        }.items():
+            html = html.replace(k, v)
+        html = html.replace("__CFG__", json.dumps(cfg, ensure_ascii=False))
+        html = html.replace("__DATA__", json.dumps(rows, ensure_ascii=False, separators=(",", ":")))
+
+        page = (out_dir / mkey) if lang == "ko" else (out_dir / "ja" / mkey)
+        page.mkdir(parents=True, exist_ok=True)
+        (page / "index.html").write_text(html, encoding="utf-8")
+
     dm = mc["default_min"]
+    rows = build_rows(df.assign(sector_final=df["sector"], biz=""), mc)
     n_s = sum(1 for r in rows if r[18] & 0b0000000111111 and (r[12] or 0) >= dm)
     n_l = sum(1 for r in rows if r[18] & 0b0001111000000 and (r[12] or 0) >= dm)
     n_f = sum(1 for r in rows if r[18] & 0b1110000000000 and (r[12] or 0) >= dm)
-    print(f"  [{mkey}] 완료 — {len(rows)}종목 / 단기 {n_s} / 중장기 {n_l} / 펀더 {n_f}")
+    print(f"  [{mkey}] 완료 — {len(rows)}종목 / 단기 {n_s} / 중장기 {n_l} / 펀더 {n_f} (ko+ja)")
 
 
 HUB = """<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">
 <meta http-equiv="refresh" content="0; url=jp/index.html"><title>Stock Screener</title></head>
 <body style="background:#0f141c;color:#e9eef6;font-family:sans-serif;padding:40px">
-<p>이동 중... 자동으로 넘어가지 않으면 선택하세요:</p>
-<p><a href="jp/index.html" style="color:#ffb224">🇯🇵 일본</a> ·
-<a href="kr/index.html" style="color:#ffb224">🇰🇷 한국</a> ·
-<a href="us/index.html" style="color:#ffb224">🇺🇸 미국</a></p></body></html>"""
+<p>이동 중... / 移動中...</p>
+<p>한국어: <a href="jp/index.html" style="color:#ffb224">일본</a> ·
+<a href="kr/index.html" style="color:#ffb224">한국</a> ·
+<a href="us/index.html" style="color:#ffb224">미국</a></p>
+<p>日本語: <a href="ja/jp/index.html" style="color:#ffb224">日本</a> ·
+<a href="ja/kr/index.html" style="color:#ffb224">韓国</a> ·
+<a href="ja/us/index.html" style="color:#ffb224">米国</a></p></body></html>"""
 
 
 def main():
     print("=" * 60)
-    print("Multi-Market Screener v2 실행", datetime.now(JST).strftime("%Y-%m-%d %H:%M JST"))
+    print("Multi-Market Screener v3 실행 (ko/ja)", datetime.now(JST).strftime("%Y-%m-%d %H:%M JST"))
     print("=" * 60)
     template = (BASE / "template.html").read_text(encoding="utf-8")
     out_dir = Path(CONFIG["OUTPUT_DIR"])

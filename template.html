@@ -1,190 +1,236 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="__HTML_LANG__">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>__PAGE_TITLE__ — __GENERATED__</title>
 <style>
   :root{
     --bg:#0f141c; --surface:#171e29; --surface2:#1d2634; --line:#26303f;
     --text:#e9eef6; --muted:#8a94a6; --faint:#5b6572;
-    --up:#ff4f5e; --down:#3f8cff; --amber:#ffb224; --teal:#2dd4bf;
+    --up:#ff4f5e; --down:#3f8cff; --amber:#ffb224; --teal:#2dd4bf; --violet:#c084fc;
+    --c1:64px; --c2:150px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scrollbar-color:#33404f var(--bg)}
+  html{scrollbar-color:#33404f var(--bg);-webkit-text-size-adjust:100%}
   body{background:var(--bg);color:var(--text);
     font-family:'Pretendard','Malgun Gothic','Yu Gothic UI','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;
-    font-size:13px;line-height:1.45;padding:14px 16px 60px}
+    font-size:13px;line-height:1.45;padding:12px 14px 40px}
   .num{font-family:ui-monospace,'Cascadia Mono',Consolas,monospace;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
 
-  /* ── 시장 내비게이션 + 헤더 ── */
-  .mnav{display:flex;gap:6px;margin-bottom:12px}
-  .mnav a{padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:var(--surface);
-    color:var(--muted);text-decoration:none;font-weight:700;font-size:12.5px}
+  .topbar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:10px}
+  .mnav{display:flex;gap:5px}
+  .mnav a,.lang a{padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);
+    color:var(--muted);text-decoration:none;font-weight:700;font-size:12.5px;white-space:nowrap}
   .mnav a.on{color:var(--amber);border-color:var(--amber);background:var(--surface2)}
-  .mnav a:hover{color:var(--text)}
-  header{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 16px;margin-bottom:12px}
-  h1{font-size:19px;font-weight:800;letter-spacing:-.03em}
+  .lang{margin-left:auto}
+  .lang a{color:var(--faint);font-weight:600}
+  .lang a:hover,.mnav a:hover{color:var(--text)}
+
+  header{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:10px}
+  h1{font-size:18px;font-weight:800;letter-spacing:-.03em}
   h1 span{color:var(--amber)}
-  .meta{color:var(--muted);font-size:12px}
+  .meta{color:var(--muted);font-size:11.5px}
   .meta b{color:var(--text)}
 
-  /* ── 탭 ── */
-  .tabs{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
-  .tab{padding:7px 14px;border:1px solid var(--line);border-radius:8px;background:var(--surface);
-    cursor:pointer;font-weight:600;color:var(--muted);user-select:none}
-  .tab .cnt{margin-left:6px;font-size:11px;color:var(--faint)}
+  .tabs{display:flex;gap:5px;margin-bottom:9px;overflow-x:auto;padding-bottom:2px}
+  .tab{padding:7px 13px;border:1px solid var(--line);border-radius:8px;background:var(--surface);
+    cursor:pointer;font-weight:600;color:var(--muted);user-select:none;white-space:nowrap}
+  .tab .cnt{margin-left:5px;font-size:11px;color:var(--faint)}
   .tab.on{color:var(--text);border-color:var(--amber);background:var(--surface2)}
   .tab.on .cnt{color:var(--amber)}
   .tab.on.lng{border-color:var(--teal)} .tab.on.lng .cnt{color:var(--teal)}
-  .tab.on.fnd{border-color:#c084fc} .tab.on.fnd .cnt{color:#c084fc}
+  .tab.on.fnd{border-color:var(--violet)} .tab.on.fnd .cnt{color:var(--violet)}
 
-  /* ── 업종 히트스트립 ── */
-  .strip-wrap{margin-bottom:10px}
-  .strip-label{font-size:11px;color:var(--faint);margin-bottom:4px;letter-spacing:.04em}
-  .strip{display:flex;gap:4px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+  .strip-wrap{margin-bottom:9px}
+  .strip-label{font-size:11px;color:var(--faint);margin-bottom:4px}
+  .strip{display:flex;gap:4px;overflow-x:auto;padding-bottom:5px;scrollbar-width:thin}
   .chip{flex:0 0 auto;padding:5px 9px;border-radius:6px;border:1px solid var(--line);
     cursor:pointer;text-align:center;min-width:74px;user-select:none}
   .chip small{display:block;font-size:10px;color:var(--muted);white-space:nowrap}
   .chip b{font-size:12px;font-weight:700}
   .chip.on{outline:2px solid var(--amber);outline-offset:-1px}
 
-  /* ── 컨트롤 ── */
-  .controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+  .controls{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:9px}
   input[type=search],select{background:var(--surface);border:1px solid var(--line);color:var(--text);
-    border-radius:8px;padding:7px 10px;font-size:13px;outline:none}
-  input[type=search]{width:210px}
+    border-radius:8px;padding:7px 10px;font-size:13px;outline:none;max-width:100%}
+  input[type=search]{width:200px}
   input[type=search]:focus,select:focus{border-color:var(--amber)}
+  .presets{display:flex;gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .pz{padding:7px 12px;background:var(--surface);color:var(--muted);cursor:pointer;font-size:12.5px;
+    font-weight:600;user-select:none;border-right:1px solid var(--line);white-space:nowrap}
+  .pz:last-child{border-right:0}
+  .pz.on{background:var(--surface2);color:var(--amber)}
   .sigchips{display:flex;gap:5px;flex-wrap:wrap}
   .sig{padding:5px 9px;border-radius:999px;border:1px solid var(--line);background:var(--surface);
     font-size:11.5px;color:var(--muted);cursor:pointer;user-select:none}
   .sig.shrt.on{color:#111;background:var(--amber);border-color:var(--amber);font-weight:700}
   .sig.lng.on{color:#062a26;background:var(--teal);border-color:var(--teal);font-weight:700}
-  .sig.fnd.on{color:#2a1245;background:#c084fc;border-color:#c084fc;font-weight:700}
+  .sig.fnd.on{color:#2a1245;background:var(--violet);border-color:var(--violet);font-weight:700}
   .hint{color:var(--faint);font-size:11.5px;margin-left:auto}
 
-  /* ── 테이블 ── */
-  .tblwrap{overflow:auto;max-height:calc(100vh - 150px);min-height:420px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
-  table{border-collapse:collapse;width:100%;min-width:2100px}
-  th:nth-child(1),td:nth-child(1){position:sticky;left:0;width:64px;min-width:64px;max-width:64px;background:var(--surface);z-index:1}
-  th:nth-child(2),td:nth-child(2){position:sticky;left:64px;min-width:150px;background:var(--surface);z-index:1;border-right:1px solid var(--line)}
-  thead th{z-index:3}
-  thead th:nth-child(1),thead th:nth-child(2){background:var(--surface2);z-index:4}
-  tbody tr:hover td:nth-child(1),tbody tr:hover td:nth-child(2){background:#1b2433}
+  /* 상단 미러 스크롤바 */
+  .xscroll{overflow-x:auto;overflow-y:hidden;height:14px;margin-bottom:2px;
+    border:1px solid var(--line);border-bottom:0;border-radius:8px 8px 0 0;background:var(--surface2)}
+  .xscroll div{height:1px}
+  .xscroll::-webkit-scrollbar{height:12px}
+  .xscroll::-webkit-scrollbar-thumb{background:#3d4a5c;border-radius:6px}
+  .xscroll::-webkit-scrollbar-thumb:hover{background:#4d5c72}
+
+  .tblwrap{overflow:auto;max-height:calc(100vh - 170px);min-height:300px;
+    border:1px solid var(--line);border-radius:0 0 10px 10px;background:var(--surface);overscroll-behavior-x:contain}
+  table{border-collapse:separate;border-spacing:0;width:100%}
   thead th{position:sticky;top:0;background:var(--surface2);color:var(--muted);font-size:11.5px;
     font-weight:600;text-align:right;padding:8px 9px;border-bottom:1px solid var(--line);
-    cursor:pointer;white-space:nowrap;user-select:none;z-index:2}
+    cursor:pointer;white-space:nowrap;user-select:none;z-index:3}
   thead th.l{text-align:left}
   thead th.sorted{color:var(--amber)}
   tbody td{padding:6px 9px;border-bottom:1px solid #1c2431;text-align:right;white-space:nowrap}
   tbody td.l{text-align:left}
   tbody tr{cursor:pointer}
-  tbody tr:hover{background:#1b2433}
-  .nm{max-width:200px;overflow:hidden;text-overflow:ellipsis;font-weight:600}
-  .sec{color:var(--muted);font-size:11.5px;max-width:110px;overflow:hidden;text-overflow:ellipsis}
+  th.f1,td.f1{position:sticky;left:0;width:var(--c1);min-width:var(--c1);background:var(--surface)}
+  th.f2,td.f2{position:sticky;left:var(--c1);min-width:var(--c2);background:var(--surface);
+    border-right:1px solid var(--line)}
+  td.f1,td.f2{z-index:1}
+  th.f1,th.f2{background:var(--surface2);z-index:4}
+  tbody tr:hover td{background:#1b2433}
+  .nm{max-width:190px;overflow:hidden;text-overflow:ellipsis;font-weight:600}
+  .sec{color:var(--muted);font-size:11.5px;max-width:120px;overflow:hidden;text-overflow:ellipsis}
+  .biz{color:var(--muted);font-size:11.5px;max-width:230px;overflow:hidden;text-overflow:ellipsis}
   .seg{font-size:10.5px;color:var(--faint)}
   .up{color:var(--up)} .dn{color:var(--down)} .fl{color:var(--muted)}
   .b{display:inline-block;font-size:10px;font-weight:700;border-radius:4px;padding:1.5px 5px;margin-right:3px}
   .b.s{background:rgba(255,178,36,.16);color:var(--amber);border:1px solid rgba(255,178,36,.35)}
   .b.g{background:rgba(45,212,191,.13);color:var(--teal);border:1px solid rgba(45,212,191,.35)}
-  .b.f{background:rgba(192,132,252,.14);color:#c084fc;border:1px solid rgba(192,132,252,.35)}
-  .biz{max-width:190px;overflow:hidden;text-overflow:ellipsis}
+  .b.f{background:rgba(192,132,252,.14);color:var(--violet);border:1px solid rgba(192,132,252,.35)}
   .tv{color:var(--faint);text-decoration:none;font-size:14px}
   .tv:hover{color:var(--amber)}
 
-  /* ── 페이저 ── */
-  .pager{display:flex;align-items:center;gap:10px;margin-top:10px;color:var(--muted);flex-wrap:wrap}
+  .pager{display:flex;align-items:center;gap:9px;margin-top:9px;color:var(--muted);flex-wrap:wrap}
   .pager button{background:var(--surface);border:1px solid var(--line);color:var(--text);
     border-radius:8px;padding:6px 13px;cursor:pointer;font-size:13px}
   .pager button:disabled{opacity:.35;cursor:default}
   .stat{margin-left:auto;font-size:12px}
-  footer{margin-top:14px;color:var(--faint);font-size:11px;line-height:1.7}
-  @media(max-width:640px){ body{padding:10px 8px 50px} input[type=search]{width:100%} .hint{display:none} }
+  footer{margin-top:12px;color:var(--faint);font-size:11px;line-height:1.7}
+
+  /* 모바일 (세로) */
+  @media(max-width:760px){
+    body{padding:10px 8px 30px;font-size:12.5px}
+    h1{font-size:16px}
+    .hint{display:none}
+    input[type=search]{width:100%}
+    .controls select,.presets{flex:1 1 auto}
+    :root{--c1:52px; --c2:112px}
+    .nm{max-width:112px}
+    .tblwrap{max-height:calc(100vh - 210px)}
+    thead th,tbody td{padding:6px 7px}
+    .biz{max-width:170px}
+  }
+  /* 모바일 (가로) — 화면이 낮을 때 위쪽 요소를 접어 표를 최대화 */
+  @media(max-height:520px) and (orientation:landscape){
+    body{padding:6px 8px 20px}
+    header,.strip-wrap,footer{display:none}
+    .tblwrap{max-height:calc(100vh - 108px)}
+  }
 </style>
 </head>
 <body>
 
-<nav class="mnav">__NAV__</nav>
+<div class="topbar">
+  <nav class="mnav">__NAV__</nav>
+  <nav class="lang">__LANGNAV__</nav>
+</div>
 
 <header>
   <h1>__TITLE_HTML__</h1>
-  <div class="meta">데이터 기준 <b>__GENERATED__</b> · __MARKET_LABEL__ <b>__COUNT__</b>종목 · <span style="color:var(--up)">▲빨강=상승</span> <span style="color:var(--down)">▼파랑=하락</span></div>
+  <div class="meta">__META_PRE__ <b>__GENERATED__</b> · __MARKET_LABEL__ <b>__COUNT__</b>__META_STOCKS__ ·
+    <span style="color:var(--up)">__META_UP__</span> <span style="color:var(--down)">__META_DN__</span></div>
 </header>
 
 <div class="tabs">
-  <div class="tab on" data-tab="short">단기 시그널<span class="cnt" id="cntShort"></span></div>
-  <div class="tab lng" data-tab="long">중장기 시그널<span class="cnt" id="cntLong"></span></div>
-  <div class="tab fnd" data-tab="fund">가치·펀더<span class="cnt" id="cntFund"></span></div>
-  <div class="tab" data-tab="all">전 종목<span class="cnt" id="cntAll"></span></div>
+  <div class="tab on" data-tab="short">__TAB_SHORT__<span class="cnt" id="cntShort"></span></div>
+  <div class="tab lng" data-tab="long">__TAB_LONG__<span class="cnt" id="cntLong"></span></div>
+  <div class="tab fnd" data-tab="fund">__TAB_FUND__<span class="cnt" id="cntFund"></span></div>
+  <div class="tab" data-tab="all">__TAB_ALL__<span class="cnt" id="cntAll"></span></div>
 </div>
 
 <div class="strip-wrap">
-  <div class="strip-label">업종별 당일 등락 중앙값 (클릭 = 업종 필터)</div>
+  <div class="strip-label">__STRIP_LABEL__</div>
   <div class="strip" id="strip"></div>
 </div>
 
 <div class="controls">
-  <input type="search" id="q" placeholder="코드 · 종목명 검색">
+  <input type="search" id="q" placeholder="__SEARCH_PH__">
   <select id="seg"></select>
   <select id="minVal"></select>
+  <div class="presets" id="presets">
+    <div class="pz on" data-p="tech">__PRESET_TECH__</div>
+    <div class="pz" data-p="fin">__PRESET_FIN__</div>
+    <div class="pz" data-p="all">__PRESET_ALL__</div>
+  </div>
   <div class="sigchips" id="sigchips"></div>
-  <div class="hint">행 클릭 → 트레이딩뷰 차트</div>
+  <div class="hint">__HINT__</div>
 </div>
 
-<div class="tblwrap"><table>
+<div class="xscroll" id="xscroll"><div id="xspacer"></div></div>
+<div class="tblwrap" id="tblwrap"><table>
   <thead><tr id="hdr"></tr></thead>
   <tbody id="body"></tbody>
 </table></div>
 
 <div class="pager">
-  <button id="prev">◀ 이전</button>
+  <button id="prev">__PREV__</button>
   <span class="num" id="pageinfo"></span>
-  <button id="next">다음 ▶</button>
+  <button id="next">__NEXT__</button>
   <span class="stat" id="stat"></span>
 </div>
 
-<footer>
-  단기: <b>급증</b> RVOL≥2.5 · <b>5MA/20MA</b> 당일 상향 통과 · <b>신고가권</b> 52주 고가 98%↑ · <b>갭업</b> +3%↑ · <b>과매도반등</b> RSI≤32에서 반등<br>
-  중장기: <b>GC직후</b> 20일선이 200일선을 갓 상향 · <b>200탈환</b> 200일선 회복 직후 · <b>정배열</b> 주가&gt;5&gt;20&gt;200 · <b>MACD골든</b> 시그널선 상향 직후<br>
-  가치·펀더: <b>저평가</b> PER≤10 &amp; PBR≤1 · <b>고배당</b> 배당수익률 4%↑ · <b>우량</b> ROE≥15% &amp; 자기자본비율≥50% · 자기자본비율=(총자산−총부채)/총자산 근사치 ·
-  지표는 스냅샷 기반 근사치이며 매매 판단의 보조 자료입니다. 데이터: TradingView__DATA_CREDIT__
-</footer>
+<footer>__FOOTER__</footer>
 
 <script>
 const CFG = __CFG__;
+const T = CFG.t;
 const DATA = __DATA__;
-/* row: 0코드 1종목명 2업종 3구분 4주가 5등락% 6SMA5 7SMA20 8SMA200 9이격200%
-        10거래량 11RVOL 12거래대금(환산단위) 13RSI 14 1W% 15 1M% 16 3M% 17갭% 18시그널bit 19TV티커 */
+/* 0코드 1종목명 2업종 3구분 4주가 5등락 6SMA5 7SMA20 8SMA200 9이격 10거래량 11RVOL 12대금
+   13RSI 14 1W 15 1M 16 3M 17갭 18시그널bit 19TV티커 20시총 21PER 22PBR 23EPS 24ROE 25배당
+   26자기자본 27EBITDA 28MACD-H 29사업내용 */
 const SIGS = [
-  {bit:0,label:'급증',k:'s'},{bit:1,label:'5MA돌파',k:'s'},{bit:2,label:'20MA돌파',k:'s'},
-  {bit:3,label:'신고가권',k:'s'},{bit:4,label:'갭업',k:'s'},{bit:5,label:'과매도반등',k:'s'},
-  {bit:6,label:'GC직후',k:'g'},{bit:7,label:'200탈환',k:'g'},{bit:8,label:'정배열',k:'g'},{bit:9,label:'MACD골든',k:'g'},
-  {bit:10,label:'저평가',k:'f'},{bit:11,label:'고배당',k:'f'},{bit:12,label:'우량',k:'f'},
+  {bit:0,label:T.s_spike,k:'s'},{bit:1,label:T.s_x5,k:'s'},{bit:2,label:T.s_x20,k:'s'},
+  {bit:3,label:T.s_high,k:'s'},{bit:4,label:T.s_gap,k:'s'},{bit:5,label:T.s_over,k:'s'},
+  {bit:6,label:T.s_gc,k:'g'},{bit:7,label:T.s_rec,k:'g'},{bit:8,label:T.s_trend,k:'g'},{bit:9,label:T.s_macd,k:'g'},
+  {bit:10,label:T.s_value,k:'f'},{bit:11,label:T.s_dividend,k:'f'},{bit:12,label:T.s_qual,k:'f'},
 ];
 const SHORT_MASK=0b0000000111111, LONG_MASK=0b0001111000000, FUND_MASK=0b1110000000000;
+
+/* g: 'b'=항상 · 't'=테크니컬 · 'f'=재무 */
 const COLS = [
-  {t:'코드',i:0,l:1},{t:'종목명',i:1,l:1},{t:'업종',i:2,l:1},{t:'구분',i:3,l:1},{t:'시그널',i:18,l:1},
-  {t:'주가',i:4},{t:'등락%',i:5},{t:'갭%',i:17},{t:'5MA',i:6},{t:'20MA',i:7},{t:'200MA',i:8},
-  {t:'이격200%',i:9},{t:'거래량',i:10},{t:'RVOL',i:11},{t:CFG.turnLabel,i:12},{t:'RSI',i:13},
-  {t:'1W%',i:14},{t:'1M%',i:15},{t:'3M%',i:16},
-  {t:CFG.mcapLabel,i:20},{t:'PER',i:21},{t:'PBR',i:22},{t:'EPS',i:23},{t:'ROE%',i:24},{t:'배당%',i:25},
-  {t:'자기자본%',i:26},{t:CFG.ebitdaLabel,i:27},{t:'MACD-H',i:28},{t:'사업내용',i:29,l:1},{t:'',i:-1}
+  {t:T.c_code,i:0,l:1,g:'b',fx:'f1'},{t:T.c_name,i:1,l:1,g:'b',fx:'f2'},
+  {t:T.c_sector,i:2,l:1,g:'b'},{t:T.c_seg,i:3,l:1,g:'t'},{t:T.c_sig,i:18,l:1,g:'b'},
+  {t:T.c_price,i:4,g:'b'},{t:T.c_chg,i:5,g:'b'},{t:T.c_gap,i:17,g:'t'},
+  {t:'5MA',i:6,g:'t'},{t:'20MA',i:7,g:'t'},{t:'200MA',i:8,g:'t'},{t:T.c_ext,i:9,g:'t'},
+  {t:T.c_vol,i:10,g:'t'},{t:'RVOL',i:11,g:'t'},{t:CFG.turnLabel,i:12,g:'b'},
+  {t:T.c_rsi,i:13,g:'t'},{t:T.c_macd,i:28,g:'t'},
+  {t:T.c_w,i:14,g:'t'},{t:T.c_m,i:15,g:'t'},{t:T.c_3m,i:16,g:'t'},
+  {t:CFG.mcapLabel,i:20,g:'f'},{t:T.c_per,i:21,g:'f'},{t:T.c_pbr,i:22,g:'f'},{t:T.c_eps,i:23,g:'f'},
+  {t:T.c_roe,i:24,g:'f'},{t:T.c_div,i:25,g:'f'},{t:T.c_eq,i:26,g:'f'},{t:CFG.ebitdaLabel,i:27,g:'f'},
+  {t:T.c_biz,i:29,l:1,g:'b'},{t:'',i:-1,g:'b'}
 ];
 const PAGE=100;
-let state={tab:'short',sector:'',seg:'',min:CFG.defaultMin,q:'',sigOn:new Set(),sortI:12,sortD:-1,page:0};
+const isNarrow = window.matchMedia('(max-width:760px)').matches;
+let state={tab:'short',sector:'',seg:'',min:CFG.defaultMin,q:'',sigOn:new Set(),
+           sortI:12,sortD:-1,page:0,preset:isNarrow?'tech':'tech'};
 
 const $=s=>document.querySelector(s);
-const fmt=(v,d=1)=>v==null?'—':v.toLocaleString('ja-JP',{minimumFractionDigits:d,maximumFractionDigits:d});
-const fint=v=>v==null?'—':v.toLocaleString('ja-JP');
-const priceFmt=v=>{if(v==null)return '—';const d=CFG.usPrice?(v>=100?1:2):(v>=1000?0:1);return fmt(v,d)};
+const NUMLOC = CFG.lang==='ja'?'ja-JP':'ko-KR';
+const fmt=(v,d=1)=>v==null?'—':v.toLocaleString(NUMLOC,{minimumFractionDigits:d,maximumFractionDigits:d});
+const fint=v=>v==null?'—':v.toLocaleString(NUMLOC);
 const esc=v=>v==null?'':String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
-const pc=v=>v==null?'<span class="fl">—</span>':`<span class="${v>0?'up':v<0?'dn':'fl'}">${v>0?'+':''}${fmt(v,v>=100||v<=-100?0:1)}</span>`;
+const priceFmt=v=>{if(v==null)return '—';const d=CFG.usPrice?(v>=100?1:2):(v>=1000?0:1);return fmt(v,d)};
+const pc=v=>v==null?'<span class="fl">—</span>':`<span class="${v>0?'up':v<0?'dn':'fl'}">${v>0?'+':''}${fmt(v,Math.abs(v)>=100?0:1)}</span>`;
 
-/* ── 컨트롤 옵션 (시장별 CFG) ── */
-$('#seg').innerHTML = `<option value="">${CFG.segLabel}: 전체</option>` + CFG.segments.map(s=>`<option>${s}</option>`).join('');
+$('#seg').innerHTML = `<option value="">${T.c_seg}: ${CFG.allLabel}</option>` + CFG.segments.map(s=>`<option>${s}</option>`).join('');
 $('#minVal').innerHTML = CFG.minOptions.map(o=>`<option value="${o[0]}" ${o[0]===CFG.defaultMin?'selected':''}>${o[1]}</option>`).join('');
 
-/* ── 업종 히트스트립 ── */
 function buildStrip(){
   const m=new Map();
   for(const r of DATA){ if(!m.has(r[2])) m.set(r[2],[]); m.get(r[2]).push(r[5]??0); }
@@ -193,19 +239,20 @@ function buildStrip(){
   $('#strip').innerHTML=arr.map(o=>{
     const a=Math.min(Math.abs(o.med)/2.5,1)*0.5+0.06;
     const bg=o.med>0?`rgba(255,79,94,${a})`:o.med<0?`rgba(63,140,255,${a})`:'var(--surface)';
-    return `<div class="chip" data-s="${o.s}" style="background:${bg}"><small>${o.s} (${o.n})</small><b class="num">${o.med>0?'+':''}${o.med.toFixed(1)}%</b></div>`;
+    return `<div class="chip" data-s="${esc(o.s)}" style="background:${bg}"><small>${esc(o.s)} (${o.n})</small><b class="num">${o.med>0?'+':''}${o.med.toFixed(1)}%</b></div>`;
   }).join('');
-  $('#strip').addEventListener('click',e=>{
-    const c=e.target.closest('.chip'); if(!c)return;
-    state.sector=state.sector===c.dataset.s?'':c.dataset.s;
-    document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x.dataset.s===state.sector));
-    state.page=0; render();
-  });
 }
+$('#strip').addEventListener('click',e=>{
+  const c=e.target.closest('.chip'); if(!c)return;
+  state.sector=state.sector===c.dataset.s?'':c.dataset.s;
+  document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x.dataset.s===state.sector));
+  state.page=0; render();
+});
 
-/* ── 시그널 필터 칩 ── */
 function buildSigChips(){
-  const vis = state.tab==='short'?SIGS.filter(s=>s.k==='s'):state.tab==='long'?SIGS.filter(s=>s.k==='g'):state.tab==='fund'?SIGS.filter(s=>s.k==='f'):SIGS;
+  const vis = state.tab==='short'?SIGS.filter(s=>s.k==='s')
+            : state.tab==='long' ?SIGS.filter(s=>s.k==='g')
+            : state.tab==='fund' ?SIGS.filter(s=>s.k==='f') : SIGS;
   $('#sigchips').innerHTML=vis.map(s=>
     `<div class="sig ${s.k==='s'?'shrt':s.k==='g'?'lng':'fnd'} ${state.sigOn.has(s.bit)?'on':''}" data-b="${s.bit}">${s.label}</div>`).join('');
 }
@@ -216,7 +263,17 @@ $('#sigchips').addEventListener('click',e=>{
   state.page=0; buildSigChips(); render();
 });
 
-/* ── 필터/정렬 ── */
+$('#presets').addEventListener('click',e=>{
+  const p=e.target.closest('.pz'); if(!p)return;
+  state.preset=p.dataset.p;
+  document.querySelectorAll('.pz').forEach(x=>x.classList.toggle('on',x===p));
+  render();
+});
+
+function visibleCols(){
+  if(state.preset==='all') return COLS;
+  return COLS.filter(c=>c.g==='b'||c.g===state.preset[0]);
+}
 function filtered(){
   const tabMask = state.tab==='short'?SHORT_MASK:state.tab==='long'?LONG_MASK:state.tab==='fund'?FUND_MASK:0;
   let sigMask=0; state.sigOn.forEach(b=>sigMask|=1<<b);
@@ -236,22 +293,38 @@ function sortRows(rows){
   return rows.sort((a,b)=>{
     let x=a[i],y=b[i];
     if(x==null)return 1; if(y==null)return -1;
-    if(typeof x==='string')return d*x.localeCompare(y,'ja');
+    if(typeof x==='string')return d*x.localeCompare(y,NUMLOC);
     return d*(x-y);
   });
 }
-
-/* ── 렌더 ── */
 function badges(bits){
   let h='';
-  for(const s of SIGS) if(bits&(1<<s.bit)) h+=`<span class="b ${s.k==='s'?'s':s.k==='g'?'g':'f'}">${s.label}</span>`;
+  for(const s of SIGS) if(bits&(1<<s.bit)) h+=`<span class="b ${s.k}">${s.label}</span>`;
   return h||'<span class="fl">—</span>';
 }
-function buildHeader(){
-  $('#hdr').innerHTML=COLS.map(c=>{
+function cell(r,c){
+  const i=c.i, cls=(c.l?'l ':'')+(c.fx||'');
+  if(i<0) return `<td><a class="tv" href="${tvUrl(r[19])}" target="_blank" rel="noopener">↗</a></td>`;
+  if(i===18) return `<td class="l">${badges(r[18])}</td>`;
+  if(i===0)  return `<td class="l f1 num">${esc(r[0])}</td>`;
+  if(i===1)  return `<td class="l f2 nm" title="${esc(r[1])}">${esc(r[1])}</td>`;
+  if(i===2)  return `<td class="l sec" title="${esc(r[2])}">${esc(r[2])}</td>`;
+  if(i===3)  return `<td class="l seg">${esc(r[3])}</td>`;
+  if(i===29) return `<td class="l biz" title="${esc(r[29])}">${esc(r[29])}</td>`;
+  if(i===4)  return `<td class="num">${priceFmt(r[4])}</td>`;
+  if([5,17,9,14,15,16,28].includes(i)) return `<td class="num">${pc(r[i])}</td>`;
+  if(i===10) return `<td class="num">${fint(r[10])}</td>`;
+  if([6,7,8].includes(i)) return `<td class="num">${fmt(r[i],0)}</td>`;
+  if([11,22,23,25].includes(i)) return `<td class="num">${fmt(r[i],2)}</td>`;
+  if(i===20||i===27) return `<td class="num">${fmt(r[i],r[i]!=null&&Math.abs(r[i])>=1000?0:1)}</td>`;
+  return `<td class="num">${fmt(r[i],1)}</td>`;
+}
+function tvUrl(t){return 'https://www.tradingview.com/chart/?symbol='+encodeURIComponent(t)}
+function buildHeader(cols){
+  $('#hdr').innerHTML=cols.map(c=>{
     if(c.i<0)return '<th></th>';
     const on=c.i===state.sortI;
-    return `<th class="${c.l?'l ':''}${on?'sorted':''}" data-i="${c.i}">${c.t}${on?(state.sortD<0?' ▼':' ▲'):''}</th>`;
+    return `<th class="${c.l?'l ':''}${c.fx||''} ${on?'sorted':''}" data-i="${c.i}">${c.t}${on?(state.sortD<0?' ▼':' ▲'):''}</th>`;
   }).join('');
 }
 $('#hdr').addEventListener('click',e=>{
@@ -260,48 +333,22 @@ $('#hdr').addEventListener('click',e=>{
   if(state.sortI===i) state.sortD*=-1; else {state.sortI=i; state.sortD=-1;}
   state.page=0; render();
 });
-function tvUrl(t){return 'https://www.tradingview.com/chart/?symbol='+encodeURIComponent(t)}
+function syncScrollWidth(){
+  const w=$('#tblwrap').querySelector('table').scrollWidth;
+  $('#xspacer').style.width=w+'px';
+}
 function render(){
-  buildHeader();
+  const cols=visibleCols();
+  buildHeader(cols);
   const rows=sortRows(filtered());
   const pages=Math.max(1,Math.ceil(rows.length/PAGE));
   state.page=Math.min(state.page,pages-1);
   const pg=rows.slice(state.page*PAGE,(state.page+1)*PAGE);
-  $('#body').innerHTML=pg.map(r=>`<tr data-t="${r[19]}">
-    <td class="l num">${r[0]}</td>
-    <td class="l nm" title="${esc(r[1])}">${esc(r[1])}</td>
-    <td class="l sec">${r[2]}</td>
-    <td class="l seg">${r[3]}</td>
-    <td class="l">${badges(r[18])}</td>
-    <td class="num">${priceFmt(r[4])}</td>
-    <td class="num">${pc(r[5])}</td>
-    <td class="num">${pc(r[17])}</td>
-    <td class="num">${fmt(r[6],0)}</td>
-    <td class="num">${fmt(r[7],0)}</td>
-    <td class="num">${fmt(r[8],0)}</td>
-    <td class="num">${pc(r[9])}</td>
-    <td class="num">${fint(r[10])}</td>
-    <td class="num">${r[11]==null?'—':fmt(r[11],2)}</td>
-    <td class="num">${fmt(r[12],2)}</td>
-    <td class="num">${fmt(r[13],0)}</td>
-    <td class="num">${pc(r[14])}</td>
-    <td class="num">${pc(r[15])}</td>
-    <td class="num">${pc(r[16])}</td>
-    <td class="num">${fmt(r[20],r[20]!=null&&r[20]>=1000?0:1)}</td>
-    <td class="num">${fmt(r[21],1)}</td>
-    <td class="num">${fmt(r[22],2)}</td>
-    <td class="num">${fmt(r[23],2)}</td>
-    <td class="num">${fmt(r[24],1)}</td>
-    <td class="num">${fmt(r[25],2)}</td>
-    <td class="num">${fmt(r[26],1)}</td>
-    <td class="num">${fmt(r[27],r[27]!=null&&Math.abs(r[27])>=1000?0:1)}</td>
-    <td class="num">${pc(r[28])}</td>
-    <td class="l sec biz" title="${esc(r[29])}">${esc(r[29])}</td>
-    <td><a class="tv" href="${tvUrl(r[19])}" target="_blank" rel="noopener">↗</a></td>
-  </tr>`).join('');
+  $('#body').innerHTML=pg.map(r=>`<tr data-t="${esc(r[19])}">${cols.map(c=>cell(r,c)).join('')}</tr>`).join('');
   $('#pageinfo').textContent=`${state.page+1} / ${pages}`;
   $('#prev').disabled=state.page===0; $('#next').disabled=state.page>=pages-1;
-  $('#stat').textContent=`필터 결과 ${rows.length.toLocaleString()}종목`;
+  $('#stat').textContent=T.stat.replace('{n}',rows.length.toLocaleString(NUMLOC));
+  syncScrollWidth();
 }
 $('#body').addEventListener('click',e=>{
   if(e.target.closest('a'))return;
@@ -309,25 +356,31 @@ $('#body').addEventListener('click',e=>{
   window.open(tvUrl(tr.dataset.t),'_blank');
 });
 
-/* ── 컨트롤 바인딩 ── */
+/* 상단·하단 스크롤 동기화 */
+let lock=false;
+$('#xscroll').addEventListener('scroll',()=>{ if(lock)return; lock=true; $('#tblwrap').scrollLeft=$('#xscroll').scrollLeft; lock=false; });
+$('#tblwrap').addEventListener('scroll',()=>{ if(lock)return; lock=true; $('#xscroll').scrollLeft=$('#tblwrap').scrollLeft; lock=false; });
+window.addEventListener('resize',syncScrollWidth);
+
 document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
   state.tab=t.dataset.tab; state.sigOn.clear(); state.page=0;
   state.min = state.tab==='all'?0:CFG.defaultMin;
   $('#minVal').value=String(state.min);
+  if(state.tab==='fund'&&state.preset==='tech'){state.preset='fin';
+    document.querySelectorAll('.pz').forEach(x=>x.classList.toggle('on',x.dataset.p==='fin'));}
   document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===t));
   buildSigChips(); render();
 }));
 $('#q').addEventListener('input',e=>{state.q=e.target.value.trim();state.page=0;render();});
 $('#seg').addEventListener('change',e=>{state.seg=e.target.value;state.page=0;render();});
 $('#minVal').addEventListener('change',e=>{state.min=+e.target.value;state.page=0;render();});
-$('#prev').addEventListener('click',()=>{state.page--;render();});
-$('#next').addEventListener('click',()=>{state.page++;render();});
+$('#prev').addEventListener('click',()=>{state.page--;render();window.scrollTo({top:0})});
+$('#next').addEventListener('click',()=>{state.page++;render();window.scrollTo({top:0})});
 
-/* ── 탭 카운트 ── */
 $('#cntShort').textContent=DATA.filter(r=>r[18]&SHORT_MASK && r[12]>=CFG.defaultMin).length;
 $('#cntLong').textContent=DATA.filter(r=>r[18]&LONG_MASK && r[12]>=CFG.defaultMin).length;
 $('#cntFund').textContent=DATA.filter(r=>r[18]&FUND_MASK && r[12]>=CFG.defaultMin).length;
-$('#cntAll').textContent=DATA.length.toLocaleString();
+$('#cntAll').textContent=DATA.length.toLocaleString(NUMLOC);
 
 buildStrip(); buildSigChips(); render();
 </script>
