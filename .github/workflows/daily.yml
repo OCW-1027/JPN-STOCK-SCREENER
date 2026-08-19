@@ -2,10 +2,10 @@ name: Daily Screener
 
 on:
   schedule:
-        - cron: '3,18,33,48 0-6 * * 1-5'    # 일본·한국 장중 (09:00~15:45 JST/KST, 15분 간격)
-        - cron: '33 7 * * 1-5'    # 일본·한국 종가판 (16:30) → history·프로필 저장
-        - cron: '3,18,33,48 13-20 * * 1-5'  # 미국 장중 (한국시간 밤 22:00~다음날 05:45)
-        - cron: '33 21 * * 1-5'   # 미국 종가판 (한국시간 아침 06:30) → history·프로필 저장
+    - cron: '3,18,33,48 0-6 * * 1-5'    # 일본·한국 장중 (09:03~15:48 JST/KST)
+    - cron: '33 7 * * 1-5'              # 일본·한국 종가판 (16:33) → history·프로필 저장
+    - cron: '3,18,33,48 13-20 * * 1-5'  # 미국 장중 (한국시간 밤 22:03~다음날 05:48)
+    - cron: '33 21 * * 1-5'             # 미국 종가판 (한국시간 아침 06:33) → history·프로필 저장
   workflow_dispatch:
 
 permissions:
@@ -37,8 +37,9 @@ jobs:
       - name: History target 결정 (종가판 실행만 저장)
         run: |
           case "${{ github.event.schedule }}" in
-            "30 7 * * 1-5")  echo "HM=jp,kr" >> $GITHUB_ENV ;;
-            "30 21 * * 1-5") echo "HM=us"    >> $GITHUB_ENV ;;
+            "33 7 * * 1-5")  echo "HM=jp,kr" >> $GITHUB_ENV ;;
+            "33 21 * * 1-5") echo "HM=us"    >> $GITHUB_ENV ;;
+            "")              echo "HM=jp,kr,us" >> $GITHUB_ENV ;;
             *)               echo "HM="      >> $GITHUB_ENV ;;
           esac
 
