@@ -291,6 +291,53 @@ def apply_realtime_kr(df):
 
 
 
+
+# ─────────────────── 대표지수 시세 ───────────────────
+# (심볼, 한국어, 일본어, TradingView 링크 심볼, 그룹)
+INDEX_LIST = [
+    ("^N225",    "닛케이225",  "日経225",      "TVC:NI225",     "jp"),
+    ("1306.T",   "TOPIX*",     "TOPIX*",       "TSE:1306",      "jp"),
+    ("2516.T",   "그로스250*", "グロース250*", "TSE:2516",      "jp"),
+    ("1591.T",   "JPX400*",    "JPX400*",      "TSE:1591",      "jp"),
+    ("^KS11",    "코스피",     "KOSPI",        "KRX:KOSPI",     "kr"),
+    ("^KQ11",    "코스닥",     "KOSDAQ",       "KRX:KOSDAQ",    "kr"),
+    ("^KS200",   "코스피200",  "KOSPI200",     "KRX:KOSPI200",  "kr"),
+    ("^DJI",     "다우",       "NYダウ",       "TVC:DJI",       "us"),
+    ("^IXIC",    "나스닥",     "NASDAQ",       "TVC:IXIC",      "us"),
+    ("^GSPC",    "S&P500",     "S&P500",       "TVC:SPX",       "us"),
+    ("^SOX",     "필라델피아반도체", "SOX半導体", "TVC:SOX",      "us"),
+    ("^RUT",     "러셀2000",   "ラッセル2000", "TVC:RUT",       "us"),
+    ("^VIX",     "VIX",        "VIX",          "TVC:VIX",       "us"),
+    ("DX-Y.NYB", "달러인덱스", "ドル指数",     "TVC:DXY",       "fx"),
+    ("JPY=X",    "USD/JPY",    "ドル円",       "FX:USDJPY",     "fx"),
+    ("KRW=X",    "USD/KRW",    "ドルウォン",   "FX:USDKRW",     "fx"),
+]
+YF_CHART = "https://query1.finance.yahoo.com/v8/finance/chart/{sym}?range=5d&interval=1d"
+
+
+def fetch_indices(timeout=8):
+    """야후 차트 API로 대표지수 시세 취득. 실패한 항목은 조용히 건너뜀."""
+    out = []
+    for sym, ko, ja, tv, grp in INDEX_LIST:
+        try:
+            r = requests.get(YF_CHART.format(sym=sym),
+                             headers={"User-Agent": "Mozilla/5.0"}, timeout=timeout)
+            res = (r.json().get("chart") or {}).get("result")
+            if not res:
+                continue
+            m = res[0]["meta"]
+            price = m.get("regularMarketPrice")
+            prev = m.get("chartPreviousClose") or m.get("previousClose")
+            if price is None or not prev:
+                continue
+            out.append([ko, ja, round(float(price), 2),
+                        round((float(price) / float(prev) - 1) * 100, 2), tv, grp])
+        except Exception:
+            continue
+    print(f"  [지수] {len(out)}/{len(INDEX_LIST)}개 취득")
+    return out
+
+
 # ─────────────────── TDnet 적시공시 (일본) ───────────────────
 KW_PATTERNS = [  # 비트 순서 = i18n.kw_labels 순서
     r"上方修正", r"下方修正", r"増配|復配", r"減配|無配", r"自己株式|自社株",
@@ -456,7 +503,7 @@ def biz_text(row_sector, row_industry, krx_products, lang):
     return base
 
 
-def build_market(mkey, template, out_dir, generated):
+def build_market(mkey, template, out_dir, generated, indices=None):
     """시장 데이터를 1회 수집해 ko/ja 두 페이지를 생성."""
     mc = MARKETS[mkey]
     df = fetch_tv(mkey)
@@ -561,6 +608,10 @@ def build_market(mkey, template, out_dir, generated):
         cfg["profilesUrl"] = prof_url
         cfg["bizLoading"] = L["biz_loading"]
         cfg["bizNone"] = L["biz_none"]
+        idx_payload = json.dumps(
+            [[(x[0] if lang == "ko" else x[1]), x[2], x[3], x[4], x[5]] for x in (indices or [])],
+            ensure_ascii=False)
+        html = html.replace("__INDICES__", idx_payload)
         html = html.replace("__DIS__", dis_payload)
         html = html.replace("__CFG__", json.dumps(cfg, ensure_ascii=False))
         html = html.replace("__DATA__", json.dumps(rows, ensure_ascii=False, separators=(",", ":")))
@@ -600,9 +651,11 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
     generated = datetime.now(JST).strftime("%Y-%m-%d (%a) %H:%M JST")
 
+    indices = fetch_indices()
+
     for mkey in MARKETS:
         try:
-            build_market(mkey, template, out_dir, generated)
+            build_market(mkey, template, out_dir, generated, indices=indices)
         except Exception as e:  # noqa: BLE001
             print(f"  [{mkey}] 페이지 생성 실패: {e}")
             if os.environ.get("GITHUB_ACTIONS") == "true":
