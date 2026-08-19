@@ -3,9 +3,9 @@ name: Daily Screener
 on:
   schedule:
     - cron: '*/15 0-6 * * 1-5'    # 일본·한국 장중 (09:00~15:45 JST/KST, 15분 간격)
-    - cron: '30 7 * * 1-5'        # 일본·한국 종가판 (16:30) → jp,kr history 저장
+    - cron: '30 7 * * 1-5'        # 일본·한국 종가판 (16:30) → history·프로필 저장
     - cron: '*/15 13-20 * * 1-5'  # 미국 장중 (한국시간 밤 22:00~다음날 05:45)
-    - cron: '30 21 * * 1-5'       # 미국 종가판 (한국시간 아침 06:30) → us history 저장
+    - cron: '30 21 * * 1-5'       # 미국 종가판 (한국시간 아침 06:30) → history·프로필 저장
   workflow_dispatch:
 
 permissions:
@@ -42,11 +42,25 @@ jobs:
             *)               echo "HM="      >> $GITHUB_ENV ;;
           esac
 
+      - name: 회사 프로필 수집 (종가판만, 실패해도 계속)
+        if: env.HM != ''
+        continue-on-error: true
+        run: python profiles.py
+        env:
+          HISTORY_MARKETS: ${{ env.HM }}
+          PROFILE_BATCH: '250'
+
       - name: Run screener (JP + KR + US)
         run: python screener.py
         env:
           OUTPUT_DIR: site
           HISTORY_MARKETS: ${{ env.HM }}
+
+      - name: 시그널 성과 백테스트 (실패해도 계속)
+        continue-on-error: true
+        run: python backtest.py
+        env:
+          OUTPUT_DIR: site
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -60,11 +74,12 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: Commit history (종가판만)
+      - name: Commit history & profiles (종가판만)
         if: env.HM != ''
         run: |
           git config user.name "screener-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add history/
-          git commit -m "history $(TZ=Asia/Tokyo date +'%Y-%m-%d') ($HM)" || echo "no changes"
+          git pull --rebase origin main || true
+          git add history/ profiles/
+          git commit -m "data $(TZ=Asia/Tokyo date +'%Y-%m-%d') ($HM)" || echo "no changes"
           git push
