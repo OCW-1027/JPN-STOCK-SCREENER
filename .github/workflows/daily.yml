@@ -6,7 +6,9 @@ on:
     - cron: '33 7 * * 1-5'              # 일본·한국 종가판 (16:33) → history·프로필 저장
     - cron: '3,18,33,48 13-20 * * 1-5'  # 미국 장중 (한국시간 밤 22:03~다음날 05:48)
     - cron: '33 21 * * 1-5'             # 미국 종가판 (한국시간 아침 06:33) → history·프로필 저장
-  workflow_dispatch:
+    repository_dispatch:
+      types: [tick]
+    workflow_dispatch:
 
 permissions:
   contents: write
