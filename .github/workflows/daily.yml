@@ -17,7 +17,7 @@ permissions:
 
 concurrency:
   group: screener
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   run:
