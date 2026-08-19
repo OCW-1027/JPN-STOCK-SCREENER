@@ -5,7 +5,7 @@ Multi-Market Screener v2 — 일본/한국/미국 + 재무지표/MACD/사업내�
 python screener.py  →  site/{jp,kr,us}/index.html + 허브 생성
 환경변수: OUTPUT_DIR(기본 site), HISTORY_MARKETS("jp,kr"/"us"/빈값)
 """
-import io, json, os, sys, time, webbrowser
+import gzip, io, json, os, re, sys, time, webbrowser
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -290,6 +290,76 @@ def apply_realtime_kr(df):
     return d, "Naver"
 
 
+
+# ─────────────────── TDnet 적시공시 (일본) ───────────────────
+KW_PATTERNS = [  # 비트 순서 = i18n.kw_labels 순서
+    r"上方修正", r"下方修正", r"増配|復配", r"減配|無配", r"自己株式|自社株",
+    r"株式分割", r"決算短信|決算説明", r"業績予想", r"配当予想",
+    r"業務提携|資本提携", r"公開買付|TOB", r"月次",
+]
+KW_STRONG = (1 << 0) | (1 << 2) | (1 << 4) | (1 << 5) | (1 << 10)  # 상방·증배·자사주·분할·TOB
+DIS_CAP_PLAIN = 500  # 키워드 미해당 공시 최대 보존 건수
+
+
+def _tdnet_day(yyyymmdd):
+    url = f"https://webapi.yanoshin.jp/webapi/tdnet/list/{yyyymmdd}.json?limit=3000"
+    r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=20)
+    r.raise_for_status()
+    out = []
+    for it in (r.json() or {}).get("items", []):
+        td = it.get("Tdnet", {}) if isinstance(it, dict) else {}
+        code = str(td.get("company_code") or "")[:4]
+        title = str(td.get("title") or "").strip()
+        if not code or not title:
+            continue
+        bits = 0
+        for i, pat in enumerate(KW_PATTERNS):
+            if re.search(pat, title):
+                bits |= 1 << i
+        pub = str(td.get("pubdate") or "")[5:16].replace("-", "/")  # "MM/DD HH:MM"
+        out.append([pub, code, str(td.get("company_name") or ""), bits, title,
+                    str(td.get("document_url") or "")])
+    return out
+
+
+def fetch_tdnet(universe_codes):
+    """오늘 + 직전 영업일 공시. 실패 시 None(탭 숨김이 아닌 빈 목록으로 처리)."""
+    from datetime import timedelta
+    now = datetime.now(JST)
+    days, d = [], now
+    while len(days) < 2:
+        if d.weekday() < 5:
+            days.append(d.strftime("%Y%m%d"))
+        d -= timedelta(days=1)
+    items = []
+    for day in days:
+        try:
+            items += _tdnet_day(day)
+        except Exception as e:  # noqa: BLE001
+            print(f"  [jp] TDnet {day} 실패: {type(e).__name__}: {str(e)[:60]}")
+    uni = set(universe_codes)
+    items = [x for x in items if x[1] in uni]
+    items.sort(key=lambda x: x[0], reverse=True)
+    tagged = [x for x in items if x[3]]
+    plain = [x for x in items if not x[3]][:DIS_CAP_PLAIN]
+    merged = sorted(tagged + plain, key=lambda x: x[0], reverse=True)
+    dmap = {}
+    for x in tagged:
+        dmap[x[1]] = dmap.get(x[1], 0) | x[3]
+    print(f"  [jp] TDnet 공시 {len(merged)}건 (키워드 {len(tagged)} / 일반 {len(plain)})")
+    return {"items": merged, "map": dmap, "strong": KW_STRONG}
+
+
+def load_profiles(mkey):
+    p = BASE / "profiles" / f"{mkey}.json.gz"
+    if not p.exists():
+        return None
+    try:
+        return json.loads(gzip.decompress(p.read_bytes()).decode("utf-8"))
+    except Exception:
+        return None
+
+
 SIG_KEYS = ["sig_spike", "sig_x5", "sig_x20", "sig_high", "sig_gap", "sig_oversold",
             "sig_gc", "sig_reclaim", "sig_trend", "sig_macd",
             "sig_value", "sig_div", "sig_qual"]
@@ -335,16 +405,16 @@ def build_rows(df, mc):
         sig = sig | (d[k].fillna(False).astype(int) * (1 << i))
     out = pd.DataFrame({
         "c0": d["code"], "c1": d["disp_name"], "c2": d["sector_final"], "c3": d["segment_final"],
-        "c4": d["close"].round(2), "c5": d["change"].round(2),
+        "c4": d["close"].round(4), "c5": d["change"].round(2),
         "c6": d["SMA5"].round(2), "c7": d["SMA20"].round(2), "c8": d["SMA200"].round(2),
-        "c9": d["ext200"].round(1), "c10": d["volume"],
+        "c9": d["ext200"].round(2), "c10": d["volume"],
         "c11": d["relative_volume_10d_calc"].round(2), "c12": (d["val"] / mc["turn_div"]).round(2),
-        "c13": d["RSI"].round(1), "c14": d["pw"].round(1), "c15": d["p1"].round(1),
-        "c16": d["p3"].round(1), "c17": d["gap"].round(2), "c18": sig, "c19": d["ticker"],
+        "c13": d["RSI"].round(1), "c14": d["pw"].round(2), "c15": d["p1"].round(2),
+        "c16": d["p3"].round(2), "c17": d["gap"].round(2), "c18": sig, "c19": d["ticker"],
         "c20": (d["market_cap_basic"] / mc["mcap_div"]).round(1),
         "c21": d["price_earnings_ttm"].round(1), "c22": d["price_book_fq"].round(2),
-        "c23": d["earnings_per_share_basic_ttm"].round(2), "c24": d["return_on_equity"].round(1),
-        "c25": d["dividends_yield_current"].round(2), "c26": d["eqr"].round(1),
+        "c23": d["earnings_per_share_basic_ttm"].round(2), "c24": d["return_on_equity"].round(2),
+        "c25": d["dividends_yield_current"].round(2), "c26": d["eqr"].round(2),
         "c27": (d["ebitda"] / mc["ebitda_div"]).round(1), "c28": d["macd_h"].round(2),
         "c29": d["biz"].fillna(""),
     })
@@ -411,6 +481,16 @@ def build_market(mkey, template, out_dir, generated):
 
     df = compute_signals(df)
 
+    dis = fetch_tdnet(df["code"].tolist()) if mkey == "jp" else None
+    profiles = load_profiles(mkey)
+    if profiles is not None:
+        page_dir_common = out_dir / mkey
+        page_dir_common.mkdir(parents=True, exist_ok=True)
+        (page_dir_common / "profiles.json").write_text(
+            json.dumps(profiles, ensure_ascii=False), encoding="utf-8")
+        filled = sum(1 for v in profiles.values() if v.get("d"))
+        print(f"  [{mkey}] 프로필 캐시 배포: {len(profiles)}건 (서술 {filled})")
+
     if mkey in CONFIG["HISTORY_MARKETS"]:
         hist = BASE / "history" / mkey
         hist.mkdir(parents=True, exist_ok=True)
@@ -448,6 +528,15 @@ def build_market(mkey, template, out_dir, generated):
                    minOptions=i18n.min_options(mkey, lang), defaultMin=mc["default_min"],
                    segments=ML["segs"], allLabel=i18n.ALL_LABEL[lang],
                    usPrice=mc["us_price"])
+        dis_payload = "null"
+        if dis is not None:
+            dis_payload = json.dumps({**dis, "kws": L["kw_labels"]},
+                                     ensure_ascii=False).replace("</", "<" + chr(92) + "/")
+        prof_url = ""
+        if profiles is not None:
+            prof_url = "profiles.json" if lang == "ko" else f"../../{mkey}/profiles.json"
+        extra_nav = (f'<a href="../backtest/index.html">{L["nav_bt"]}</a>'
+                     if lang == "ko" else "")
         html = template
         for k, v in {
             "__HTML_LANG__": lang, "__PAGE_TITLE__": mc["page_title"],
@@ -464,9 +553,15 @@ def build_market(mkey, template, out_dir, generated):
             "__PREV__": L["prev"], "__NEXT__": L["next"],
             "__WL_ALL__": L["wl_all"], "__WL_CLEAR__": L["wl_clear"],
             "__WL_DL__": L["wl_dl"], "__WL_HINT__": L["wl_hint"],
+            "__TAB_DIS__": L["tab_dis"], "__DIS_NONE__": L["dis_none"],
+            "__DIS_ALL__": L["dis_all"], "__EXTRA_NAV__": extra_nav,
             "__FOOTER__": L["foot"].format(credit=(" / Naver(실시간)" if src == "Naver" else "") + mc["data_credit"]),
         }.items():
             html = html.replace(k, v)
+        cfg["profilesUrl"] = prof_url
+        cfg["bizLoading"] = L["biz_loading"]
+        cfg["bizNone"] = L["biz_none"]
+        html = html.replace("__DIS__", dis_payload)
         html = html.replace("__CFG__", json.dumps(cfg, ensure_ascii=False))
         html = html.replace("__DATA__", json.dumps(rows, ensure_ascii=False, separators=(",", ":")))
 

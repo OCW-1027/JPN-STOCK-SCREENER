@@ -24,6 +24,7 @@
     color:var(--muted);text-decoration:none;font-weight:700;font-size:12.5px;white-space:nowrap}
   .mnav a.on{color:var(--amber);border-color:var(--amber);background:var(--surface2)}
   .lang{margin-left:auto}
+  .lang{display:flex;gap:5px}
   .lang a{color:var(--faint);font-weight:600}
   .lang a:hover,.mnav a:hover{color:var(--text)}
 
@@ -70,6 +71,17 @@
   .hint{color:var(--faint);font-size:11.5px;margin-left:auto}
 
   /* mirrored top scrollbar */
+  body.dismode .strip-wrap,body.dismode .wlbar,body.dismode #xscroll,body.dismode #tblwrap,
+  body.dismode #seg,body.dismode #minVal,body.dismode .presets,body.dismode #sigchips,
+  body.dismode #mainpager,body.dismode .hint{display:none}
+  body.dismode #diswrap{display:block!important}
+  #disbody td{white-space:normal}
+  #disbody .dtitle{color:var(--text)}
+  #disbody tr:hover td{background:#1b2433}
+  .b.d{background:rgba(122,162,247,.15);color:#7aa2f7;border:1px solid rgba(122,162,247,.35)}
+  td.biz{cursor:pointer;text-decoration:underline dotted var(--faint);text-underline-offset:3px}
+  tr.drow td{background:#141a24;white-space:normal}
+  .dtext{color:var(--muted);font-size:12px;line-height:1.65;padding:9px 12px;max-width:1100px;white-space:normal}
   .wlbar{display:flex;gap:7px;align-items:center;margin-bottom:9px;flex-wrap:wrap}
   .wlbtn{background:var(--surface);border:1px solid var(--line);color:var(--muted);border-radius:8px;
     padding:6px 12px;font-size:12.5px;cursor:pointer;font-weight:600}
@@ -152,7 +164,7 @@
 
 <div class="topbar">
   <nav class="mnav">__NAV__</nav>
-  <nav class="lang">__LANGNAV__</nav>
+  <nav class="lang">__EXTRA_NAV__ __LANGNAV__</nav>
 </div>
 
 <header>
@@ -166,6 +178,7 @@
   <div class="tab lng" data-tab="long">__TAB_LONG__<span class="cnt" id="cntLong"></span></div>
   <div class="tab fnd" data-tab="fund">__TAB_FUND__<span class="cnt" id="cntFund"></span></div>
   <div class="tab" data-tab="all">__TAB_ALL__<span class="cnt" id="cntAll"></span></div>
+  <div class="tab dis" data-tab="dis" id="tabDis" style="display:none">__TAB_DIS__<span class="cnt" id="cntDis"></span></div>
 </div>
 
 <div class="strip-wrap">
@@ -194,13 +207,24 @@
   <span class="wlhint">__WL_HINT__</span>
 </div>
 
+<div id="diswrap" style="display:none">
+  <div class="sigchips" id="diskw" style="margin-bottom:9px"></div>
+  <div class="tblwrap"><table>
+    <thead><tr><th class="l" style="width:86px">⏱</th><th class="l" style="width:56px">CODE</th>
+    <th class="l" style="width:170px">__TAB_ALL__</th><th class="l" style="width:150px"></th>
+    <th class="l">TITLE</th></tr></thead>
+    <tbody id="disbody"></tbody>
+  </table></div>
+  <div class="pager"><span class="stat" id="disstat"></span></div>
+</div>
+
 <div class="xscroll" id="xscroll"><div id="xspacer"></div></div>
 <div class="tblwrap" id="tblwrap"><table>
   <thead><tr id="hdr"></tr></thead>
   <tbody id="body"></tbody>
 </table></div>
 
-<div class="pager">
+<div class="pager" id="mainpager">
   <button id="prev">__PREV__</button>
   <span class="num" id="pageinfo"></span>
   <button id="next">__NEXT__</button>
@@ -213,6 +237,7 @@
 const CFG = __CFG__;
 const T = CFG.t;
 const DATA = __DATA__;
+const DIS = __DIS__;
 /* 0 code 1 name 2 sector 3 segment 4 close 5 chg 6 SMA5 7 SMA20 8 SMA200 9 ext 10 vol 11 rvol 12 turnover
    13 RSI 14 1W 15 1M 16 3M 17 gap 18 signal-bits 19 tv-ticker 20 mcap 21 PER 22 PBR 23 EPS 24 ROE 25 div
    26 equity-ratio 27 EBITDA 28 MACD-H 29 business */
@@ -248,8 +273,13 @@ const NUMLOC = CFG.lang==='ja'?'ja-JP':'ko-KR';
 const fmt=(v,d=1)=>v==null?'—':v.toLocaleString(NUMLOC,{minimumFractionDigits:d,maximumFractionDigits:d});
 const fint=v=>v==null?'—':v.toLocaleString(NUMLOC);
 const esc=v=>v==null?'':String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
-const priceFmt=v=>{if(v==null)return '—';const d=CFG.usPrice?(v>=100?1:2):(v>=1000?0:1);return fmt(v,d)};
-const pc=v=>v==null?'<span class="fl">—</span>':`<span class="${v>0?'up':v<0?'dn':'fl'}">${v>0?'+':''}${fmt(v,Math.abs(v)>=100?0:1)}</span>`;
+/* 주가: 미국은 센트까지 항상 2자리. 엔·원은 자릿수에 따라 조절 */
+const priceFmt=v=>{if(v==null)return '—';
+  const d=CFG.usPrice?2:(v>=1000?0:v>=100?1:2);return fmt(v,d)};
+/* 퍼센트·지표: 작은 값일수록 자세히 (|v|<10 → 2자리, <100 → 1자리, 그 이상 → 0자리) */
+const decOf=v=>{const a=Math.abs(v);return a<10?2:a<100?1:0};
+const pc=v=>v==null?'<span class="fl">—</span>':`<span class="${v>0?'up':v<0?'dn':'fl'}">${v>0?'+':''}${fmt(v,decOf(v))}</span>`;
+const adp=v=>v==null?'—':fmt(v,decOf(v));
 
 $('#seg').innerHTML = `<option value="">${T.c_seg}: ${CFG.allLabel}</option>` + CFG.segments.map(s=>`<option>${s}</option>`).join('');
 $('#minVal').innerHTML = CFG.minOptions.map(o=>`<option value="${o[0]}" ${o[0]===CFG.defaultMin?'selected':''}>${o[1]}</option>`).join('');
@@ -320,25 +350,28 @@ function sortRows(rows){
     return d*(x-y);
   });
 }
-function badges(bits){
+function badges(bits,code){
   let h='';
   for(const s of SIGS) if(bits&(1<<s.bit)) h+=`<span class="b ${s.k}">${s.label}</span>`;
+  if(DIS&&DIS.map&&DIS.map[code]&DIS.strong) h+=`<span class="b d">__TAB_DIS__</span>`;
   return h||'<span class="fl">—</span>';
 }
 function cell(r,c){
   const i=c.i, cls=(c.l?'l ':'')+(c.fx||'');
   if(i<0) return `<td><a class="tv" href="${tvUrl(r[19])}" target="_blank" rel="noopener">↗</a></td>`;
-  if(i===18) return `<td class="l">${badges(r[18])}</td>`;
+  if(i===18) return `<td class="l">${badges(r[18],r[0])}</td>`;
   if(i===0)  return `<td class="l f1 num">${esc(r[0])}</td>`;
   if(i===1)  return `<td class="l f2 nm" title="${esc(r[1])}">${esc(r[1])}</td>`;
   if(i===2)  return `<td class="l sec" title="${esc(r[2])}">${esc(r[2])}</td>`;
   if(i===3)  return `<td class="l seg">${esc(r[3])}</td>`;
-  if(i===29) return `<td class="l biz" title="${esc(r[29])}">${esc(r[29])}</td>`;
+  if(i===29) return `<td class="l biz" title="${esc(r[29])}" data-code="${esc(r[0])}">${esc(r[29])}</td>`;
   if(i===4)  return `<td class="num">${priceFmt(r[4])}</td>`;
   if([5,17,9,14,15,16,28].includes(i)) return `<td class="num">${pc(r[i])}</td>`;
   if(i===10) return `<td class="num">${fint(r[10])}</td>`;
-  if([6,7,8].includes(i)) return `<td class="num">${fmt(r[i],0)}</td>`;
-  if([11,22,23,25].includes(i)) return `<td class="num">${fmt(r[i],2)}</td>`;
+  if([6,7,8].includes(i)) return `<td class="num">${fmt(r[i],CFG.usPrice?2:0)}</td>`;
+  if([11,22,25].includes(i)) return `<td class="num">${fmt(r[i],2)}</td>`;
+  if(i===23) return `<td class="num">${fmt(r[23],2)}</td>`;
+  if([13,24,26].includes(i)) return `<td class="num">${adp(r[i])}</td>`;
   if(i===20||i===27) return `<td class="num">${fmt(r[i],r[i]!=null&&Math.abs(r[i])>=1000?0:1)}</td>`;
   return `<td class="num">${fmt(r[i],1)}</td>`;
 }
@@ -381,6 +414,8 @@ function render(){
 }
 $('#body').addEventListener('click',e=>{
   if(e.target.closest('a'))return;
+  const bz=e.target.closest('td.biz');
+  if(bz){ toggleDetail(bz.closest('tr'), bz.dataset.code); return; }
   if(e.target.closest('td.ck')){
     const cb=e.target.closest('td.ck').querySelector('input');
     if(e.target!==cb){cb.checked=!cb.checked;}
@@ -424,6 +459,9 @@ window.addEventListener('resize',syncScrollWidth);
 
 document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
   state.tab=t.dataset.tab; state.sigOn.clear(); state.page=0;
+  document.body.classList.toggle('dismode', state.tab==='dis');
+  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===t));
+  if(state.tab==='dis'){ renderDis(); return; }
   state.min = state.tab==='all'?0:CFG.defaultMin;
   $('#minVal').value=String(state.min);
   if(state.tab==='fund'&&state.preset==='tech'){state.preset='fin';
@@ -431,7 +469,7 @@ document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
   document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===t));
   buildSigChips(); render();
 }));
-$('#q').addEventListener('input',e=>{state.q=e.target.value.trim();state.page=0;render();});
+$('#q').addEventListener('input',e=>{state.q=e.target.value.trim();state.page=0;document.body.classList.contains('dismode')?renderDis():render();});
 $('#seg').addEventListener('change',e=>{state.seg=e.target.value;state.page=0;render();});
 $('#minVal').addEventListener('change',e=>{state.min=+e.target.value;state.page=0;render();});
 $('#prev').addEventListener('click',()=>{state.page--;render();window.scrollTo({top:0})});
@@ -442,7 +480,71 @@ $('#cntLong').textContent=DATA.filter(r=>r[18]&LONG_MASK && r[12]>=CFG.defaultMi
 $('#cntFund').textContent=DATA.filter(r=>r[18]&FUND_MASK && r[12]>=CFG.defaultMin).length;
 $('#cntAll').textContent=DATA.length.toLocaleString(NUMLOC);
 
-buildStrip(); buildSigChips(); render();
+/* ── 공시(TDnet) 탭 ── */
+let disKw=new Set();
+function initDis(){
+  if(!DIS||!DIS.items||!DIS.items.length){ if(DIS){$('#tabDis').style.display='';$('#cntDis').textContent=0;} return; }
+  $('#tabDis').style.display='';
+  $('#cntDis').textContent=DIS.items.length.toLocaleString(NUMLOC);
+  $('#diskw').innerHTML=`<div class="sig shrt on" data-k="-1">__DIS_ALL__</div>`+
+    DIS.kws.map((k,i)=>`<div class="sig shrt" data-k="${i}">${k}</div>`).join('');
+  $('#diskw').addEventListener('click',e=>{
+    const c=e.target.closest('.sig'); if(!c)return;
+    const k=+c.dataset.k;
+    if(k===-1){disKw.clear();}
+    else{disKw.has(k)?disKw.delete(k):disKw.add(k);}
+    [...$('#diskw').children].forEach(x=>{
+      const kk=+x.dataset.k;
+      x.classList.toggle('on', kk===-1?disKw.size===0:disKw.has(kk));
+    });
+    renderDis();
+  });
+}
+function renderDis(){
+  if(!DIS)return;
+  let mask=0; disKw.forEach(k=>mask|=1<<k);
+  const q=state.q.toLowerCase();
+  const rows=DIS.items.filter(x=>{
+    if(mask && !(x[3]&mask)) return false;
+    if(q && !(x[1].toLowerCase().includes(q)||x[2].toLowerCase().includes(q)||x[4].toLowerCase().includes(q))) return false;
+    return true;
+  });
+  $('#disbody').innerHTML=rows.length?rows.map(x=>{
+    const kb=DIS.kws.map((k,i)=>x[3]&(1<<i)?`<span class="b ${((DIS.strong>>i)&1)?'s':'d'}">${k}</span>`:'').join('');
+    return `<tr data-u="${esc(x[5])}"><td class="l num fl">${x[0]}</td><td class="l num">${x[1]}</td>
+    <td class="l sec">${esc(x[2])}</td><td class="l">${kb||'<span class="fl">—</span>'}</td>
+    <td class="l dtitle">${esc(x[4])}</td></tr>`;
+  }).join(''):`<tr><td colspan="5" class="l fl" style="padding:16px">__DIS_NONE__</td></tr>`;
+  $('#disstat').textContent=rows.length.toLocaleString(NUMLOC);
+}
+$('#disbody').addEventListener('click',e=>{
+  const tr=e.target.closest('tr'); if(tr&&tr.dataset.u) window.open(tr.dataset.u,'_blank');
+});
+
+/* ── 회사 프로필(서술형) 상세 행 ── */
+let PROFILES=null, profLoading=false;
+async function ensureProfiles(){
+  if(PROFILES||!CFG.profilesUrl) return;
+  if(profLoading) return;
+  profLoading=true;
+  try{ PROFILES=await (await fetch(CFG.profilesUrl)).json(); }
+  catch(e){ PROFILES={}; }
+  profLoading=false;
+}
+async function toggleDetail(tr, code){
+  const nx=tr.nextElementSibling;
+  if(nx&&nx.classList.contains('drow')){ nx.remove(); return; }
+  document.querySelectorAll('tr.drow').forEach(x=>x.remove());
+  const d=document.createElement('tr'); d.className='drow';
+  const span=(visibleCols().length+1);
+  d.innerHTML=`<td colspan="${span}"><div class="dtext">${CFG.bizLoading}</div></td>`;
+  tr.after(d);
+  await ensureProfiles();
+  const p=PROFILES&&PROFILES[code];
+  d.querySelector('.dtext').textContent=(p&&p.d)?p.d:CFG.bizNone;
+}
+
+initDis(); buildStrip(); buildSigChips(); render();
 </script>
 </body>
 </html>
