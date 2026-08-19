@@ -293,48 +293,123 @@ def apply_realtime_kr(df):
 
 
 # ─────────────────── 대표지수 시세 ───────────────────
-# (심볼, 한국어, 일본어, TradingView 링크 심볼, 그룹)
-INDEX_LIST = [
-    ("^N225",    "닛케이225",  "日経225",      "TVC:NI225",     "jp"),
-    ("1306.T",   "TOPIX*",     "TOPIX*",       "TSE:1306",      "jp"),
-    ("2516.T",   "그로스250*", "グロース250*", "TSE:2516",      "jp"),
-    ("1591.T",   "JPX400*",    "JPX400*",      "TSE:1591",      "jp"),
-    ("^KS11",    "코스피",     "KOSPI",        "KRX:KOSPI",     "kr"),
-    ("^KQ11",    "코스닥",     "KOSDAQ",       "KRX:KOSDAQ",    "kr"),
-    ("^KS200",   "코스피200",  "KOSPI200",     "KRX:KOSPI200",  "kr"),
-    ("^DJI",     "다우",       "NYダウ",       "TVC:DJI",       "us"),
-    ("^IXIC",    "나스닥",     "NASDAQ",       "TVC:IXIC",      "us"),
-    ("^GSPC",    "S&P500",     "S&P500",       "TVC:SPX",       "us"),
-    ("^SOX",     "필라델피아반도체", "SOX半導体", "TVC:SOX",      "us"),
-    ("^RUT",     "러셀2000",   "ラッセル2000", "TVC:RUT",       "us"),
-    ("^VIX",     "VIX",        "VIX",          "TVC:VIX",       "us"),
-    ("DX-Y.NYB", "달러인덱스", "ドル指数",     "TVC:DXY",       "fx"),
-    ("JPY=X",    "USD/JPY",    "ドル円",       "FX:USDJPY",     "fx"),
-    ("KRW=X",    "USD/KRW",    "ドルウォン",   "FX:USDKRW",     "fx"),
+# 소스: 일본=야후재팬(15분지연/실시간) · 한국=네이버(실시간) · 미국·환율=야후USA(15분지연)
+YJ_URL = "https://finance.yahoo.co.jp/quote/{code}"
+YF_CHART = "https://query1.finance.yahoo.com/v8/finance/chart/{sym}?range=1mo&interval=1d"
+NAVER_IDX = [
+    "https://m.stock.naver.com/api/index/{code}/basic",
+    "https://api.stock.naver.com/index/{code}/basic",
+    "https://polling.finance.naver.com/api/realtime/domestic/index/{code}",
 ]
-YF_CHART = "https://query1.finance.yahoo.com/v8/finance/chart/{sym}?range=5d&interval=1d"
+UA = {"User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                     "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")}
+
+# (그룹, 소스, 코드, 한국어, 일본어, TradingView심볼)
+INDEX_LIST = [
+    ("jp", "yj", "998407.O", "닛케이225",   "日経225",      "TVC:NI225"),
+    ("jp", "yj", "998405.T", "TOPIX",       "TOPIX",        "TVC:TOPIX"),
+    ("jp", "yj", "2516.T",   "그로스250*",  "グロース250*", "TSE:2516"),
+    ("jp", "yj", "1591.T",   "JPX400*",     "JPX400*",      "TSE:1591"),
+    ("kr", "nv", "KOSPI",    "코스피",      "KOSPI",        "KRX:KOSPI"),
+    ("kr", "nv", "KOSDAQ",   "코스닥",      "KOSDAQ",       "KRX:KOSDAQ"),
+    ("kr", "nv", "KPI200",   "코스피200",   "KOSPI200",     "KRX:KOSPI200"),
+    ("us", "yf", "^DJI",     "다우",        "NYダウ",       "TVC:DJI"),
+    ("us", "yf", "^IXIC",    "나스닥",      "NASDAQ",       "TVC:IXIC"),
+    ("us", "yf", "^GSPC",    "S&P500",      "S&P500",       "TVC:SPX"),
+    ("us", "yf", "^SOX",     "SOX반도체",   "SOX半導体",    "TVC:SOX"),
+    ("us", "yf", "^RUT",     "러셀2000",    "ラッセル2000", "TVC:RUT"),
+    ("us", "yf", "^VIX",     "VIX",         "VIX",          "TVC:VIX"),
+    ("fx", "yf", "DX-Y.NYB", "달러인덱스",  "ドル指数",     "TVC:DXY"),
+    ("fx", "yf", "JPY=X",    "USD/JPY",     "ドル円",       "FX:USDJPY"),
+    ("fx", "yf", "KRW=X",    "USD/KRW",     "ドルウォン",   "FX:USDKRW"),
+]
 
 
-def fetch_indices(timeout=8):
-    """야후 차트 API로 대표지수 시세 취득. 실패한 항목은 조용히 건너뜀."""
-    out = []
-    for sym, ko, ja, tv, grp in INDEX_LIST:
+def _f(v):
+    try:
+        return float(str(v).replace(",", "").replace("−", "-").replace("+", "").strip())
+    except (TypeError, ValueError):
+        return None
+
+
+def _idx_yahoo_jp(code, timeout=10):
+    """야후재팬 지수·ETF 페이지에서 현재가와 전일비%를 추출."""
+    r = requests.get(YJ_URL.format(code=code), headers=UA, timeout=timeout)
+    if r.status_code != 200:
+        return None
+    t = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", r.text))
+    m = re.search(r"([\d,]+(?:\.\d+)?) 前日比 ([+\-−][\d,.]+) \( ?([+\-−][\d.]+) ?%", t)
+    if not m:
+        return None
+    price, chg = _f(m.group(1)), _f(m.group(3))
+    if price is None or chg is None:
+        return None
+    return price, chg
+
+
+def _idx_naver(code, timeout=10):
+    """네이버 지수 API (실시간). 후보 엔드포인트 순차 시도."""
+    for tpl in NAVER_IDX:
         try:
-            r = requests.get(YF_CHART.format(sym=sym),
-                             headers={"User-Agent": "Mozilla/5.0"}, timeout=timeout)
-            res = (r.json().get("chart") or {}).get("result")
-            if not res:
+            r = requests.get(tpl.format(code=code),
+                             headers={**UA, "Referer": "https://m.stock.naver.com/",
+                                      "Accept": "application/json"}, timeout=timeout)
+            if r.status_code != 200:
                 continue
-            m = res[0]["meta"]
-            price = m.get("regularMarketPrice")
-            prev = m.get("chartPreviousClose") or m.get("previousClose")
-            if price is None or not prev:
+            j = r.json()
+            if isinstance(j, dict) and "datas" in j and j["datas"]:
+                j = j["datas"][0]
+            if isinstance(j, list) and j:
+                j = j[0]
+            if not isinstance(j, dict):
                 continue
-            out.append([ko, ja, round(float(price), 2),
-                        round((float(price) / float(prev) - 1) * 100, 2), tv, grp])
+            price = _f(j.get("closePrice") or j.get("nv") or j.get("now"))
+            chg = _f(j.get("fluctuationsRatio") or j.get("cr"))
+            if price is not None and chg is not None:
+                return price, chg
         except Exception:
             continue
-    print(f"  [지수] {len(out)}/{len(INDEX_LIST)}개 취득")
+    return None
+
+
+def _idx_yahoo_us(sym, timeout=10):
+    """야후USA 차트 API. 전일종가는 일봉 배열에서 직접 계산(meta 값은 부정확)."""
+    r = requests.get(YF_CHART.format(sym=sym), headers=UA, timeout=timeout)
+    res = (r.json().get("chart") or {}).get("result")
+    if not res:
+        return None
+    m = res[0]["meta"]
+    closes = [c for c in (res[0]["indicators"]["quote"][0].get("close") or []) if c]
+    if len(closes) < 2:
+        return None
+    price = m.get("regularMarketPrice") or closes[-1]
+    prev = closes[-2] if abs(closes[-1] - price) < 1e-9 else closes[-2]
+    if not prev:
+        return None
+    return float(price), round((float(price) / float(prev) - 1) * 100, 2)
+
+
+def fetch_indices():
+    """지수 스트립 데이터. 항목별로 실패해도 나머지는 그대로 표시."""
+    out, fails = [], []
+    for grp, src, code, ko, ja, tv in INDEX_LIST:
+        got = None
+        try:
+            if src == "yj":
+                got = _idx_yahoo_jp(code)
+            elif src == "nv":
+                got = _idx_naver(code) or (_idx_yahoo_us({"KOSPI": "^KS11", "KOSDAQ": "^KQ11",
+                                                          "KPI200": "^KS200"}.get(code, code)))
+            else:
+                got = _idx_yahoo_us(code)
+        except Exception:
+            got = None
+        if not got:
+            fails.append(ko)
+            continue
+        price, chg = got
+        out.append([ko, ja, round(price, 2), round(chg, 2), tv, grp])
+    print(f"  [지수] {len(out)}/{len(INDEX_LIST)}개 취득" + (f" (실패: {', '.join(fails)})" if fails else ""))
     return out
 
 
@@ -348,10 +423,19 @@ KW_STRONG = (1 << 0) | (1 << 2) | (1 << 4) | (1 << 5) | (1 << 10)  # 상방·증
 DIS_CAP_PLAIN = 500  # 키워드 미해당 공시 최대 보존 건수
 
 
-def _tdnet_day(yyyymmdd):
+def _tdnet_day(yyyymmdd, retries=3):
     url = f"https://webapi.yanoshin.jp/webapi/tdnet/list/{yyyymmdd}.json?limit=3000"
-    r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=20)
-    r.raise_for_status()
+    last = None
+    for i in range(retries):
+        try:
+            r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=25)
+            r.raise_for_status()
+            break
+        except Exception as e:  # noqa: BLE001
+            last = e
+            time.sleep(2 * (i + 1))
+    else:
+        raise RuntimeError(f"TDnet {yyyymmdd} 재시도 실패: {last}")
     out = []
     for it in (r.json() or {}).get("items", []):
         td = it.get("Tdnet", {}) if isinstance(it, dict) else {}
@@ -374,7 +458,7 @@ def fetch_tdnet(universe_codes):
     from datetime import timedelta
     now = datetime.now(JST)
     days, d = [], now
-    while len(days) < 2:
+    while len(days) < 3:
         if d.weekday() < 5:
             days.append(d.strftime("%Y%m%d"))
         d -= timedelta(days=1)
@@ -393,7 +477,8 @@ def fetch_tdnet(universe_codes):
     dmap = {}
     for x in tagged:
         dmap[x[1]] = dmap.get(x[1], 0) | x[3]
-    print(f"  [jp] TDnet 공시 {len(merged)}건 (키워드 {len(tagged)} / 일반 {len(plain)})")
+    latest = merged[0][0] if merged else "-"
+    print(f"  [jp] TDnet 공시 {len(merged)}건 (키워드 {len(tagged)} / 일반 {len(plain)}) 최신 {latest}")
     return {"items": merged, "map": dmap, "strong": KW_STRONG}
 
 
@@ -553,11 +638,20 @@ def build_market(mkey, template, out_dir, generated, indices=None):
 
         # 업종 컬럼: 일본은 JPX 33업종(일본어) 유지, 한국어판은 그대로 두되 그 외는 번역
         if mkey == "jp" and "m_sector" in d:
-            d["sector_final"] = d["m_sector"].fillna(
-                d["sector"].map(lambda v: i18n.SECTOR.get(v, (v, v))[idx]))
+            # JPX 33업종이 없는 종목은 TV 섹터의 '일본어' 명칭으로, 그것도 없으면 その他
+            jp_fallback = d["sector"].map(
+                lambda v: i18n.SECTOR.get(v, (None, None))[1] if pd.notna(v) else None)
+            d["sector_final"] = d["m_sector"].fillna(jp_fallback).fillna("その他")
         else:
-            d["sector_final"] = d["sector"].map(lambda v: i18n.SECTOR.get(v, (v, v))[idx] if pd.notna(v) else None)
+            d["sector_final"] = d["sector"].map(
+                lambda v: i18n.SECTOR.get(v, (v, v))[idx] if pd.notna(v) and str(v).strip() else None)
             d["sector_final"] = d["sector_final"].fillna("기타" if lang == "ko" else "その他")
+
+        misc = "その他" if (lang == "ja" or mkey == "jp") else "기타"
+        vc = d["sector_final"].value_counts()
+        rare = set(vc[vc < 3].index)
+        if rare:
+            d["sector_final"] = d["sector_final"].map(lambda v: misc if v in rare else v)
 
         if lang == "ja":
             d["segment_final"] = d["segment_final"].map(lambda v: i18n.SEG_JA.get(v, v))

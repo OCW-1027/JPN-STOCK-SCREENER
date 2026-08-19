@@ -191,10 +191,10 @@
 </header>
 
 <div class="tabs">
-  <div class="tab on" data-tab="short">__TAB_SHORT__<span class="cnt" id="cntShort"></span></div>
+  <div class="tab" data-tab="short">__TAB_SHORT__<span class="cnt" id="cntShort"></span></div>
   <div class="tab lng" data-tab="long">__TAB_LONG__<span class="cnt" id="cntLong"></span></div>
   <div class="tab fnd" data-tab="fund">__TAB_FUND__<span class="cnt" id="cntFund"></span></div>
-  <div class="tab" data-tab="all">__TAB_ALL__<span class="cnt" id="cntAll"></span></div>
+  <div class="tab on" data-tab="all">__TAB_ALL__<span class="cnt" id="cntAll"></span></div>
   <div class="tab dis" data-tab="dis" id="tabDis" style="display:none">__TAB_DIS__<span class="cnt" id="cntDis"></span></div>
 </div>
 
@@ -283,8 +283,8 @@ const COLS = [
 const PAGE=100;
 const isNarrow = window.matchMedia('(max-width:760px)').matches;
 const picked=new Set();
-let state={tab:'short',sector:'',seg:'',min:CFG.defaultMin,q:'',sigOn:new Set(),
-           sortI:12,sortD:-1,page:0,preset:isNarrow?'tech':'tech'};
+let state={tab:'all',sector:'',seg:'',min:0,q:'',sigOn:new Set(),
+           sortI:12,sortD:-1,page:0,preset:'tech'};
 
 const $=s=>document.querySelector(s);
 const NUMLOC = CFG.lang==='ja'?'ja-JP':'ko-KR';
@@ -300,7 +300,7 @@ const pc=v=>v==null?'<span class="fl">—</span>':`<span class="${v>0?'up':v<0?'
 const adp=v=>v==null?'—':fmt(v,decOf(v));
 
 $('#seg').innerHTML = `<option value="">${T.c_seg}: ${CFG.allLabel}</option>` + CFG.segments.map(s=>`<option>${s}</option>`).join('');
-$('#minVal').innerHTML = CFG.minOptions.map(o=>`<option value="${o[0]}" ${o[0]===CFG.defaultMin?'selected':''}>${o[1]}</option>`).join('');
+$('#minVal').innerHTML = CFG.minOptions.map(o=>`<option value="${o[0]}" ${o[0]===state.min?'selected':''}>${o[1]}</option>`).join('');
 
 function buildStrip(){
   const m=new Map();
@@ -310,7 +310,7 @@ function buildStrip(){
   $('#strip').innerHTML=arr.map(o=>{
     const a=Math.min(Math.abs(o.med)/2.5,1)*0.5+0.06;
     const bg=o.med>0?`rgba(255,79,94,${a})`:o.med<0?`rgba(63,140,255,${a})`:'var(--surface)';
-    return `<div class="chip" data-s="${esc(o.s)}" style="background:${bg}"><small>${esc(o.s)} (${o.n})</small><b class="num">${o.med>0?'+':''}${o.med.toFixed(1)}%</b></div>`;
+    return `<div class="chip" data-s="${esc(o.s)}" style="background:${bg}"><small>${esc(o.s)} (${o.n})</small><b class="num">${o.med>0?'+':''}${o.med.toFixed(Math.abs(o.med)<1?2:1)}%</b></div>`;
   }).join('');
 }
 $('#strip').addEventListener('click',e=>{
