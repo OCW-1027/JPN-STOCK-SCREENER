@@ -52,14 +52,22 @@ def _clean(t):
     return re.sub(r"\s+", " ", t).strip()
 
 
-def local_jp(code, timeout=12):
-    """야후재팬 프로필의 【特色】【連結事業】 (출처: 회사사계보)."""
-    import requests
-    r = requests.get(f"https://finance.yahoo.co.jp/quote/{code}.T/profile",
-                     headers=WEB_HEADERS, timeout=timeout)
-    if r.status_code != 200:
+def local_jp(code, timeout=15, retries=3):
+    """야후재팬 프로필의 【特色】【連結事業】 (출처: 회사사계보). 실패 시 재시도."""
+    import requests, time as _t
+    txt = None
+    for i in range(retries):
+        try:
+            r = requests.get(f"https://finance.yahoo.co.jp/quote/{code}.T/profile",
+                             headers=WEB_HEADERS, timeout=timeout)
+            if r.status_code == 200:
+                txt = _clean(r.text)
+                break
+            _t.sleep(1.5 * (i + 1))
+        except Exception:
+            _t.sleep(1.5 * (i + 1))
+    if txt is None:
         return ""
-    txt = _clean(r.text)
     parts = []
     for key in ("特色", "連結事業"):
         m = re.search(r"【" + key + r"】(.{5,400}?)(?=【|企業情報|本社所在地|設立年月日|市場名|"
@@ -119,12 +127,48 @@ def local_kr(code, timeout=12):
     return ""
 
 
+_KRX_DESC = {}
+
+
+def _krx_desc_map():
+    """KRX 상장기업 주요제품·업종 (한글). 1회 로드 후 캐시."""
+    global _KRX_DESC
+    if _KRX_DESC:
+        return _KRX_DESC
+    try:
+        import FinanceDataReader as fdr
+        d = fdr.StockListing("KRX-DESC")
+        cols = {c.lower(): c for c in d.columns}
+        code_c = cols.get("code") or "Code"
+        prod_c = cols.get("products")
+        ind_c = cols.get("industry")
+        for r in d.itertuples(index=False):
+            row = dict(zip(d.columns, r))
+            code = str(row.get(code_c, "")).zfill(6)
+            ind = str(row.get(ind_c) or "").strip() if ind_c else ""
+            prod = str(row.get(prod_c) or "").strip() if prod_c else ""
+            parts = []
+            if ind and ind.lower() != "nan":
+                parts.append(f"[업종] {ind}")
+            if prod and prod.lower() != "nan":
+                parts.append(f"[주요제품] {prod}")
+            if parts:
+                _KRX_DESC[code] = " · ".join(parts)[:600]
+        print(f"  [kr] KRX 기업개요 {len(_KRX_DESC)}건 로드")
+    except Exception as e:  # noqa: BLE001
+        print(f"  [kr] KRX 기업개요 로드 실패: {type(e).__name__}: {str(e)[:60]}")
+    return _KRX_DESC
+
+
 def local_desc(m, code):
     try:
         if m == "jp":
             return local_jp(code)
         if m == "kr":
-            return local_kr(code)
+            got = local_kr(code)
+            if got:
+                return got
+            return _krx_desc_map().get(str(code).zfill(6), "")
     except Exception:
         return ""
     return ""
