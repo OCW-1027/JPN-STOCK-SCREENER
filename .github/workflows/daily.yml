@@ -17,7 +17,7 @@ permissions:
 
 concurrency:
   group: screener
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   run:
@@ -36,14 +36,17 @@ jobs:
       - name: Install deps
         run: pip install -r requirements.txt
 
-      - name: History target 결정 (종가판 실행만 저장)
+      - name: History target 결정 (종가판 시간대만 저장)
         run: |
-          case "${{ github.event.schedule }}" in
-            "33 7 * * 1-5")  echo "HM=jp,kr" >> $GITHUB_ENV ;;
-            "33 21 * * 1-5") echo "HM=us"    >> $GITHUB_ENV ;;
-            "")              echo "HM=jp,kr,us" >> $GITHUB_ENV ;;
-            *)               echo "HM="      >> $GITHUB_ENV ;;
+          # 예약(schedule)·외부호출(repository_dispatch)·수동 실행 모두 '현재 JST 시각'으로 판정.
+          # 16시대 → 일본·한국 종가판 / 6시대 → 미국 종가판 / 그 외 → 저장 안 함(장중 갱신)
+          H=$(TZ=Asia/Tokyo date +%H)
+          case "$H" in
+            16) echo "HM=jp,kr" >> $GITHUB_ENV ;;
+            06) echo "HM=us"    >> $GITHUB_ENV ;;
+            *)  echo "HM="      >> $GITHUB_ENV ;;
           esac
+          echo "현재 JST ${H}시 → HM=$(grep '^HM=' $GITHUB_ENV | tail -1 | cut -d= -f2-)"
 
       - name: 회사 프로필 수집 (종가판만, 실패해도 계속)
         if: env.HM != ''
