@@ -152,6 +152,14 @@
   .pager button{background:var(--surface);border:1px solid var(--line);color:var(--text);
     border-radius:8px;padding:6px 13px;cursor:pointer;font-size:13px}
   .pager button:disabled{opacity:.35;cursor:default}
+  .pnums{display:flex;gap:3px;align-items:center;flex-wrap:wrap}
+  .pnums button{padding:6px 10px;min-width:34px;font-size:12.5px;font-family:ui-monospace,Consolas,monospace}
+  .pnums button.on{border-color:var(--amber);color:var(--amber);background:var(--surface2);font-weight:700}
+  .pnums .jump{color:var(--faint);padding:0 2px;font-size:12px;user-select:none}
+  .pnums input{width:52px;background:var(--surface);border:1px solid var(--line);color:var(--text);
+    border-radius:8px;padding:6px 6px;font-size:12.5px;text-align:center;
+    font-family:ui-monospace,Consolas,monospace}
+  .pnums input:focus{border-color:var(--amber);outline:none}
   .stat{margin-left:auto;font-size:12px}
   footer{margin-top:12px;color:var(--faint);font-size:11px;line-height:1.7}
 
@@ -243,8 +251,9 @@
 
 <div class="pager" id="mainpager">
   <button id="prev">__PREV__</button>
-  <span class="num" id="pageinfo"></span>
+  <div class="pnums" id="pnums"></div>
   <button id="next">__NEXT__</button>
+  <span class="num" id="pageinfo"></span>
   <span class="stat" id="stat"></span>
 </div>
 
@@ -393,6 +402,34 @@ function cell(r,c){
   if(i===20||i===27) return `<td class="num">${fmt(r[i],r[i]!=null&&Math.abs(r[i])>=1000?0:1)}</td>`;
   return `<td class="num">${fmt(r[i],1)}</td>`;
 }
+/* 페이지 번호: 현재 페이지가 속한 10개 블록 + 앞뒤 블록 이동 */
+const PBLOCK=10;
+function renderPnums(pages){
+  const el=$('#pnums');
+  if(pages<=1){ el.innerHTML=''; return; }
+  const blk=Math.floor(state.page/PBLOCK);
+  const start=blk*PBLOCK, end=Math.min(start+PBLOCK, pages);
+  let h='';
+  if(start>0) h+=`<button data-p="${start-1}" title="이전 ${PBLOCK}">«</button>`;
+  for(let i=start;i<end;i++)
+    h+=`<button data-p="${i}" class="${i===state.page?'on':''}">${i+1}</button>`;
+  if(end<pages) h+=`<button data-p="${end}" title="다음 ${PBLOCK}">»</button>`;
+  if(pages>PBLOCK)
+    h+=`<span class="jump">/ ${pages}</span><input id="pjump" type="number" min="1" max="${pages}" placeholder="#">`;
+  el.innerHTML=h;
+}
+$('#pnums').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b)return;
+  state.page=+b.dataset.p; render(); window.scrollTo({top:0});
+});
+$('#pnums').addEventListener('keydown',e=>{
+  if(e.key!=='Enter'||e.target.id!=='pjump')return;
+  const v=parseInt(e.target.value,10);
+  if(!v||v<1)return;
+  const pages=Math.max(1,Math.ceil(sortRows(filtered()).length/PAGE));
+  state.page=Math.min(v,pages)-1; render(); window.scrollTo({top:0});
+});
+
 function tvUrl(t){return 'https://www.tradingview.com/chart/?symbol='+encodeURIComponent(t)}
 function buildHeader(cols){
   $('#hdr').innerHTML='<th class="ck"></th>'+cols.map(c=>{
@@ -427,6 +464,7 @@ function render(){
   updateWl();
   $('#pageinfo').textContent=`${state.page+1} / ${pages}`;
   $('#prev').disabled=state.page===0; $('#next').disabled=state.page>=pages-1;
+  renderPnums(pages);
   $('#stat').textContent=T.stat.replace('{n}',rows.length.toLocaleString(NUMLOC));
   syncScrollWidth();
 }

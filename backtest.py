@@ -20,6 +20,8 @@ from zoneinfo import ZoneInfo
 
 import pandas as pd
 
+import i18n
+
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 except Exception:
@@ -130,16 +132,20 @@ def analyze(m):
     return res
 
 
-HTML = """<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">
+HTML = """<!DOCTYPE html><html lang="__LANG__"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>시그널 성과 분석 — __GEN__</title><style>
+<title>__PAGE_TITLE__ — __GEN__</title><style>
 :root{--bg:#0f141c;--surface:#171e29;--surface2:#1d2634;--line:#26303f;--text:#e9eef6;
 --muted:#8a94a6;--faint:#5b6572;--up:#ff4f5e;--down:#3f8cff;--amber:#ffb224;--teal:#2dd4bf;--violet:#c084fc}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'Pretendard','Malgun Gothic','Yu Gothic UI',sans-serif;
+body{background:var(--bg);color:var(--text);font-family:'Pretendard','Malgun Gothic','Yu Gothic UI','Noto Sans JP',sans-serif;
 font-size:13px;line-height:1.5;padding:14px 16px 50px}
 .num{font-family:ui-monospace,Consolas,monospace;font-variant-numeric:tabular-nums}
 a{color:var(--amber);text-decoration:none}
+.topbar{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.langbtn{margin-left:auto;padding:5px 12px;border:1px solid var(--line);border-radius:999px;
+background:var(--surface);color:var(--faint);font-weight:600;font-size:12.5px}
+.langbtn:hover{color:var(--text)}
 h1{font-size:18px;font-weight:800;margin-bottom:4px}h1 span{color:var(--amber)}
 .meta{color:var(--muted);font-size:12px;margin-bottom:12px}
 .tabs{display:flex;gap:5px;margin:10px 0;flex-wrap:wrap}
@@ -166,46 +172,45 @@ td{padding:7px 10px;border-bottom:1px solid #1c2431;text-align:right;white-space
 footer{margin-top:14px;color:var(--faint);font-size:11px;line-height:1.7}
 @media(max-width:760px){body{padding:10px 8px 30px}.hide-m{display:none}}
 </style></head><body>
-<div style="margin-bottom:8px"><a href="../jp/index.html">← 스크리너로</a></div>
-<h1>시그널 <span>성과 분석</span></h1>
-<div class="meta">생성 __GEN__ · 시그널에 걸린 종목이 이후 실제로 어떻게 움직였는지 (거래대금 하한 적용, 시장평균 대비)</div>
+<div class="topbar">
+  <a href="__BACK_HREF__">__BACK__</a>
+  <a class="langbtn" href="__LANG_HREF__">__OTHER_LANG__</a>
+</div>
+<h1>__TITLE__</h1>
+<div class="meta">__GEN_LABEL__ __GEN__ · __LEAD__</div>
 <div class="tabs" id="mt"></div>
 <div class="tabs htabs" id="ht"></div>
 <div id="body"></div>
-<footer>승률 = 수익률 &gt; 0 비율 · 시장대비 = 같은 기간 유니버스 평균수익 차감(초과수익) ·
-표본 = (시그널 발생 종목 × 관측일) 누적 · 스냅샷은 매 영업일 종가판에서 자동 축적 ·
-과거 성과는 미래 수익을 보장하지 않으며 참고 자료입니다.</footer>
+<footer>__FOOTER__</footer>
 <script>
 const R=__RESULTS__;
-const H=[["1","+1일"],["5","+5일"],["20","+20일"]];
+const T=__T__;
+const H=[["1",T.h1],["5",T.h5],["20",T.h20]];
 let mkt=Object.keys(R)[0], hz="1";
 const $=s=>document.querySelector(s);
 const pc=v=>v==null?'—':`<span class="${v>0?'up':v<0?'dn':'fl'}">${v>0?'+':''}${v.toFixed(2)}%</span>`;
 function tabs(){
-  $('#mt').innerHTML=Object.keys(R).map(m=>`<div class="tab ${m===mkt?'on':''}" data-m="${m}">${R[m].label} <span style="color:var(--faint);font-size:11px">${R[m].n_days}일</span></div>`).join('');
+  $('#mt').innerHTML=Object.keys(R).map(m=>`<div class="tab ${m===mkt?'on':''}" data-m="${m}">${R[m].label} <span style="color:var(--faint);font-size:11px">${R[m].n_days}${T.days}</span></div>`).join('');
   $('#ht').innerHTML=H.map(([k,l])=>{
     const d=R[mkt].horizon_days[k]||0;
-    return `<div class="tab ${k===hz?'on':''}" data-h="${k}">${l} <span style="color:var(--faint);font-size:11px">${d}회 관측</span></div>`}).join('');
+    return `<div class="tab ${k===hz?'on':''}" data-h="${k}">${l} <span style="color:var(--faint);font-size:11px">${d}${T.obs}</span></div>`}).join('');
 }
 function render(){
   tabs();
   const M=R[mkt];
   if(M.n_days<2){
-    $('#body').innerHTML=`<div class="note"><b>데이터 축적 중입니다 (현재 ${M.n_days}일)</b><br>
-    매 영업일 종가판 실행마다 스냅샷이 자동으로 쌓입니다.<br>
-    · 스냅샷 2일차 → <b>+1일 수익률</b> 첫 집계 · 6일차 → +5일 · 21일차 → +20일<br>
-    한두 달 뒤에는 "어떤 시그널이 실제로 먹혔는가"를 표본 수백~수천 건으로 평가할 수 있습니다.</div>`;
+    $('#body').innerHTML=`<div class="note"><b>${T.acc_title.replace('{n}',M.n_days)}</b><br>${T.acc_body}</div>`;
     return;
   }
   const rows=Object.entries(M.signals).map(([k,v])=>({k,name:v.name,grp:v.grp,st:v[hz]}))
     .filter(r=>r.st).sort((a,b)=>b.st.excess-a.st.excess);
   if(!rows.length){
-    $('#body').innerHTML=`<div class="note">이 구간(+${hz}일)은 아직 관측치가 없습니다 — 스냅샷 ${+hz+1}일 이상 필요.</div>`;
+    $('#body').innerHTML=`<div class="note">${T.none.replace('{h}',hz).replace('{need}',(+hz)+1)}</div>`;
     return;
   }
   $('#body').innerHTML=`<table><thead><tr>
-  <th class="l">시그널</th><th>표본</th><th class="l">승률</th><th>평균수익</th>
-  <th class="hide-m">중앙값</th><th>시장대비</th><th class="hide-m">최고/최저</th></tr></thead><tbody>`+
+  <th class="l">${T.col_sig}</th><th>${T.col_n}</th><th class="l">${T.col_win}</th><th>${T.col_avg}</th>
+  <th class="hide-m">${T.col_med}</th><th>${T.col_exc}</th><th class="hide-m">${T.col_minmax}</th></tr></thead><tbody>`+
   rows.map(r=>`<tr><td class="l"><span class="b ${r.grp}">${r.name}</span></td>
   <td class="num">${r.st.n.toLocaleString()}</td>
   <td class="l num"><span class="wb" style="width:${Math.max(4,r.st.win)*0.9}px"></span>${r.st.win.toFixed(1)}%</td>
@@ -213,8 +218,7 @@ function render(){
   <td class="num hide-m">${pc(r.st.med)}</td>
   <td class="num">${pc(r.st.excess)}</td>
   <td class="num hide-m fl">+${r.st.best}% / ${r.st.worst}%</td></tr>`).join('')+`</tbody></table>
-  <div class="note" style="margin-top:10px">읽는 법: <b>시장대비</b>가 +면 그 시그널이 시장평균보다 잘 갔다는 뜻입니다.
-  표본이 적을 때(수십 건 이하)는 우연일 수 있으니 표본 수를 함께 보세요.</div>`;
+  <div class="note" style="margin-top:10px">${T.howto}</div>`;
 }
 $('#mt').addEventListener('click',e=>{const t=e.target.closest('.tab');if(t){mkt=t.dataset.m;render()}});
 $('#ht').addEventListener('click',e=>{const t=e.target.closest('.tab');if(t){hz=t.dataset.h;render()}});
@@ -226,25 +230,49 @@ def main():
     print("=" * 60)
     print("백테스트 실행", datetime.now(JST).strftime("%Y-%m-%d %H:%M JST"))
     print("=" * 60)
-    results = {}
+    base = {}
     grp_of = {c: g for c, _n, g in SIGNALS} | {c: g for c, _n, g in GROUPS}
     for m in ("jp", "kr", "us"):
         r = analyze(m)
         for c, v in r["signals"].items():
             v["grp"] = grp_of.get(c, "m")
-        r["label"] = MKT_LABEL[m]
-        results[m] = r
+        base[m] = r
         print(f"  [{m}] 유효 스냅샷 {r['n_days']}일 / 관측 {r['horizon_days'] or '-'}")
 
-    out = OUT / "backtest"
-    out.mkdir(parents=True, exist_ok=True)
     gen = datetime.now(JST).strftime("%Y-%m-%d %H:%M JST")
-    payload = json.dumps(results, ensure_ascii=False).replace("</", "<\\/")
-    (out / "index.html").write_text(
-        HTML.replace("__GEN__", gen).replace("__RESULTS__", payload), encoding="utf-8")
-    (out / "results.json").write_text(json.dumps(results, ensure_ascii=False, indent=1),
-                                      encoding="utf-8")
-    print(f"  완료 → {out}/index.html")
+
+    for lang in ("ko", "ja"):
+        L = i18n.BT_UI[lang]
+        idx = 0 if lang == "ko" else 1
+        results = {}
+        for m, r in base.items():
+            rr = json.loads(json.dumps(r))          # 깊은 복사
+            rr["label"] = L["markets"][m]
+            for c, v in rr["signals"].items():
+                v["name"] = i18n.SIGNAL_I18N.get(c, (v["name"], v["name"]))[idx]
+            results[m] = rr
+
+        out = (OUT / "backtest") if lang == "ko" else (OUT / "ja" / "backtest")
+        out.mkdir(parents=True, exist_ok=True)
+        payload = json.dumps(results, ensure_ascii=False).replace("</", "<" + chr(92) + "/")
+        tpl = json.dumps(L, ensure_ascii=False).replace("</", "<" + chr(92) + "/")
+        html = HTML
+        for k, v in {
+            "__LANG__": lang, "__PAGE_TITLE__": L["page_title"], "__TITLE__": L["title"],
+            "__BACK__": L["back"], "__BACK_HREF__": ("../jp/index.html" if lang == "ko"
+                                                     else "../jp/index.html"),
+            "__LANG_HREF__": ("../ja/backtest/index.html" if lang == "ko"
+                              else "../../backtest/index.html"),
+            "__OTHER_LANG__": L["other_lang"], "__GEN_LABEL__": L["gen"], "__GEN__": gen,
+            "__LEAD__": L["lead"], "__FOOTER__": L["foot"],
+        }.items():
+            html = html.replace(k, v)
+        html = html.replace("__RESULTS__", payload).replace("__T__", tpl)
+        (out / "index.html").write_text(html, encoding="utf-8")
+        if lang == "ko":
+            (out / "results.json").write_text(
+                json.dumps(base, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"  [{lang}] 완료 → {out}/index.html")
 
 
 if __name__ == "__main__":

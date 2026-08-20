@@ -676,8 +676,8 @@ def build_market(mkey, template, out_dir, generated, indices=None):
         prof_url = ""
         if profiles is not None:
             prof_url = "profiles.json" if lang == "ko" else f"../../{mkey}/profiles.json"
-        extra_nav = (f'<a href="../backtest/index.html">{L["nav_bt"]}</a>'
-                     if lang == "ko" else "")
+        extra_nav = f'<a href="../backtest/index.html">{L["nav_bt"]}</a>'
+        # ko: /jp/ → /backtest/ , ja: /ja/jp/ → /ja/backtest/ (둘 다 상대경로 동일)
         html = template
         for k, v in {
             "__HTML_LANG__": lang, "__PAGE_TITLE__": mc["page_title"],
