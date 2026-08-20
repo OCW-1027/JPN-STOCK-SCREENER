@@ -143,6 +143,9 @@ font-size:13px;line-height:1.5;padding:14px 16px 50px}
 .num{font-family:ui-monospace,Consolas,monospace;font-variant-numeric:tabular-nums}
 a{color:var(--amber);text-decoration:none}
 .topbar{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.dashbtn{padding:5px 12px;border:1px solid rgba(45,212,191,.45);border-radius:999px;
+background:var(--surface2);color:var(--teal);font-weight:600;font-size:12.5px}
+.dashbtn:hover{background:var(--teal);color:#062a26}
 .langbtn{margin-left:auto;padding:5px 12px;border:1px solid var(--line);border-radius:999px;
 background:var(--surface);color:var(--faint);font-weight:600;font-size:12.5px}
 .langbtn:hover{color:var(--text)}
@@ -174,6 +177,7 @@ footer{margin-top:14px;color:var(--faint);font-size:11px;line-height:1.7}
 </style></head><body>
 <div class="topbar">
   <a href="__BACK_HREF__">__BACK__</a>
+  <a class="dashbtn" href="__DASH_HREF__" target="_blank" rel="noopener">__DASH__</a>
   <a class="langbtn" href="__LANG_HREF__">__OTHER_LANG__</a>
 </div>
 <h1>__TITLE__</h1>
@@ -265,6 +269,9 @@ def main():
                               else "../../backtest/index.html"),
             "__OTHER_LANG__": L["other_lang"], "__GEN_LABEL__": L["gen"], "__GEN__": gen,
             "__LEAD__": L["lead"], "__FOOTER__": L["foot"],
+            "__DASH__": i18n.UI[lang]["nav_dash"],
+            "__DASH_HREF__": ("https://ocw-1027.github.io/dashboard/" if lang == "ko"
+                              else "https://ocw-1027.github.io/dashboard/index_ja.html"),
         }.items():
             html = html.replace(k, v)
         html = html.replace("__RESULTS__", payload).replace("__T__", tpl)

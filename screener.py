@@ -676,8 +676,12 @@ def build_market(mkey, template, out_dir, generated, indices=None):
         prof_url = ""
         if profiles is not None:
             prof_url = "profiles.json" if lang == "ko" else f"../../{mkey}/profiles.json"
-        extra_nav = f'<a href="../backtest/index.html">{L["nav_bt"]}</a>'
-        # ko: /jp/ → /backtest/ , ja: /ja/jp/ → /ja/backtest/ (둘 다 상대경로 동일)
+        # 대시보드는 별도 사이트(github.io/dashboard). 일본어판은 index_ja.html로 연결
+        dash_url = ("https://ocw-1027.github.io/dashboard/"
+                    if lang == "ko" else "https://ocw-1027.github.io/dashboard/index_ja.html")
+        extra_nav = (f'<a href="{dash_url}" target="_blank" rel="noopener" '
+                     f'class="dash">{L["nav_dash"]}</a>'
+                     f'<a href="../backtest/index.html">{L["nav_bt"]}</a>')
         html = template
         for k, v in {
             "__HTML_LANG__": lang, "__PAGE_TITLE__": mc["page_title"],
