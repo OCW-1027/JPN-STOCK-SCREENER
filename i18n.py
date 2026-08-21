@@ -8,6 +8,11 @@ UI = {
         strip_label="업종별 당일 등락 중앙값 (탭하면 업종 필터)",
         search_ph="코드 · 종목명 검색", hint="행 클릭 → 트레이딩뷰 차트",
         preset_label="표시 항목", preset_tech="테크니컬", preset_fin="재무", preset_all="전체",
+        preset_growth="성장", tab_growth="성장주",
+        c_revq="매출YoY(분기)", c_revy="매출YoY(연간)", c_revt="매출YoY(TTM)",
+        c_revqq="매출QoQ", c_cagr="매출5년CAGR", c_epsq="EPS YoY(분기)",
+        c_opm="영업이익률%", c_roic="ROIC%", c_psr="PSR", c_de="부채비율",
+        s_growth="고성장", s_accel="이익가속", s_garp="저평가성장",
         wl_sel="선택 {n}종목 담기", wl_dl="관심종목 내보내기", wl_all="필터 전체 담기",
         wl_clear="선택 해제", wl_hint="체크 → 내보내기 → 트레이딩뷰 관심목록에서 가져오기",
         tab_dis="공시", dis_none="표시할 공시가 없습니다 (오늘·전영업일 기준)",
@@ -31,7 +36,13 @@ UI = {
               "중장기: <b>GC직후</b> 20일선이 200일선을 갓 상향 · <b>200탈환</b> 200일선 회복 직후 · "
               "<b>정배열</b> 주가&gt;5&gt;20&gt;200 · <b>MACD골든</b> 시그널선 상향 직후<br>"
               "가치·펀더: <b>저평가</b> PER≤10 &amp; PBR≤1 · <b>고배당</b> 배당수익률 4%↑ · "
-              "<b>우량</b> ROE≥15% &amp; 자기자본비율≥50% · 자기자본비율=(총자산−총부채)/총자산 근사치<br>"
+              "<b>우량</b> ROE≥15% &amp; 자기자본비율≥50%<br>"
+              "성장: <b>고성장</b> 매출 YoY(분기)≥20% &amp; 5년CAGR≥10% · "
+              "<b>이익가속</b> EPS YoY≥10% &amp; 매출 성장의 1.5배↑ · "
+              "<b>저평가성장</b> PSR≤2 &amp; 매출 YoY≥10% &amp; 영업이익률≥5%<br>"
+              "성장: <b>고성장</b> 매출 YoY(분기)≥20% &amp; 5년CAGR≥10% · "
+              "<b>이익가속</b> EPS YoY≥10% &amp; 매출 성장의 1.5배↑ · "
+              "<b>저평가성장</b> PSR≤2 &amp; 매출 YoY≥10% &amp; 영업이익률≥5%<br>"
               "지표는 스냅샷 기반 근사치이며 매매 판단의 보조 자료입니다. 데이터: TradingView{credit}"),
     ),
     "ja": dict(
@@ -40,6 +51,11 @@ UI = {
         strip_label="業種別 当日騰落率の中央値（タップで業種フィルタ）",
         search_ph="コード・銘柄名で検索", hint="行をクリック → TradingViewチャート",
         preset_label="表示項目", preset_tech="テクニカル", preset_fin="財務", preset_all="すべて",
+        preset_growth="成長", tab_growth="成長株",
+        c_revq="売上YoY(四半期)", c_revy="売上YoY(通期)", c_revt="売上YoY(TTM)",
+        c_revqq="売上QoQ", c_cagr="売上5年CAGR", c_epsq="EPS YoY(四半期)",
+        c_opm="営業利益率%", c_roic="ROIC%", c_psr="PSR", c_de="負債比率",
+        s_growth="高成長", s_accel="利益加速", s_garp="割安成長",
         wl_sel="選択 {n}銘柄", wl_dl="ウォッチリスト書き出し", wl_all="絞込み全件を選択",
         wl_clear="選択解除", wl_hint="チェック → 書き出し → TradingViewのウォッチリストへインポート",
         tab_dis="開示", dis_none="表示する開示はありません（当日・前営業日）",
@@ -63,7 +79,13 @@ UI = {
               "中長期: <b>GC直後</b> 20MAが200MAを上抜けた直後 · <b>200MA回復</b> 回復直後 · "
               "<b>パーフェクトオーダー</b> 株価&gt;5&gt;20&gt;200 · <b>MACDゴールデン</b> シグナル線上抜け直後<br>"
               "バリュー・財務: <b>割安</b> PER≤10 かつ PBR≤1 · <b>高配当</b> 配当利回り4%↑ · "
-              "<b>優良</b> ROE≥15% かつ 自己資本比率≥50% · 自己資本比率=(総資産−総負債)/総資産の概算<br>"
+              "<b>優良</b> ROE≥15% かつ 自己資本比率≥50%<br>"
+              "成長: <b>高成長</b> 売上YoY(四半期)≥20% かつ 5年CAGR≥10% · "
+              "<b>利益加速</b> EPS YoY≥10% かつ 売上成長の1.5倍↑ · "
+              "<b>割安成長</b> PSR≤2 かつ 売上YoY≥10% かつ 営業利益率≥5%<br>"
+              "成長: <b>高成長</b> 売上YoY(四半期)≥20% かつ 5年CAGR≥10% · "
+              "<b>利益加速</b> EPS YoY≥10% かつ 売上成長の1.5倍↑ · "
+              "<b>割安成長</b> PSR≤2 かつ 売上YoY≥10% かつ 営業利益率≥5%<br>"
               "指標はスナップショットに基づく概算値であり、投資判断の補助資料です。データ: TradingView{credit}"),
     ),
 }
@@ -307,6 +329,10 @@ SIGNAL_I18N = {
     "sig_gc": ("GC직후", "GC直後"), "sig_reclaim": ("200탈환", "200MA回復"),
     "sig_trend": ("정배열", "パーフェクトオーダー"), "sig_macd": ("MACD골든", "MACDゴールデン"),
     "sig_value": ("저평가", "割安"), "sig_div": ("고배당", "高配当"), "sig_qual": ("우량", "優良"),
+    "sig_growth": ("고성장", "高成長"), "sig_accel": ("이익가속", "利益加速"),
+    "sig_garp": ("저평가성장", "割安成長"), "grp_growth": ("성장(아무거나)", "成長(いずれか)"),
+    "sig_growth": ("고성장", "高成長"), "sig_accel": ("이익가속", "利益加速"),
+    "sig_garp": ("저평가성장", "割安成長"), "grp_growth": ("성장(아무거나)", "成長(いずれか)"),
     "grp_short": ("단기(아무거나)", "短期(いずれか)"), "grp_long": ("중장기(아무거나)", "中長期(いずれか)"),
     "grp_fund": ("펀더(아무거나)", "財務(いずれか)"), "grp_multi": ("시그널 2개 이상", "シグナル2つ以上"),
 }

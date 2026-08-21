@@ -43,9 +43,11 @@ SIGNALS = [  # (컬럼, 표시명, 그룹)
     ("sig_gc", "GC직후", "g"), ("sig_reclaim", "200탈환", "g"),
     ("sig_trend", "정배열", "g"), ("sig_macd", "MACD골든", "g"),
     ("sig_value", "저평가", "f"), ("sig_div", "고배당", "f"), ("sig_qual", "우량", "f"),
+    ("sig_growth", "고성장", "w"), ("sig_accel", "이익가속", "w"), ("sig_garp", "저평가성장", "w"),
 ]
 GROUPS = [("grp_short", "단기(아무거나)", "s"), ("grp_long", "중장기(아무거나)", "g"),
-          ("grp_fund", "펀더(아무거나)", "f"), ("grp_multi", "시그널 2개 이상", "m")]
+          ("grp_fund", "펀더(아무거나)", "f"), ("grp_growth", "성장(아무거나)", "w"),
+          ("grp_multi", "시그널 2개 이상", "m")]
 
 
 def load_snapshots(m):
@@ -74,6 +76,8 @@ def load_snapshots(m):
         df["grp_short"] = df[[c for c in sigcols if dict((a, g) for a, _, g in SIGNALS)[c] == "s"]].any(axis=1) if sigcols else False
         df["grp_long"] = df[[c for c in sigcols if dict((a, g) for a, _, g in SIGNALS)[c] == "g"]].any(axis=1) if sigcols else False
         df["grp_fund"] = df[[c for c in sigcols if dict((a, g) for a, _, g in SIGNALS)[c] == "f"]].any(axis=1) if sigcols else False
+        _w = [c for c in sigcols if dict((a, g) for a, _, g in SIGNALS)[c] == "w"]
+        df["grp_growth"] = df[_w].any(axis=1) if _w else False
         df["grp_multi"] = df[sigcols].sum(axis=1) >= 2 if sigcols else False
         snaps.append((date, df))
     return snaps
@@ -171,6 +175,7 @@ td{padding:7px 10px;border-bottom:1px solid #1c2431;text-align:right;white-space
 .b.g{background:rgba(45,212,191,.13);color:var(--teal)}
 .b.f{background:rgba(192,132,252,.14);color:var(--violet)}
 .b.m{background:rgba(138,148,166,.15);color:var(--muted)}
+.b.w{background:rgba(96,205,255,.14);color:#60cdff}
 .wb{display:inline-block;height:8px;border-radius:4px;background:var(--amber);vertical-align:middle;margin-right:6px}
 footer{margin-top:14px;color:var(--faint);font-size:11px;line-height:1.7}
 @media(max-width:760px){body{padding:10px 8px 30px}.hide-m{display:none}}

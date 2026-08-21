@@ -56,6 +56,7 @@
   .tab.on .cnt{color:var(--amber)}
   .tab.on.lng{border-color:var(--teal)} .tab.on.lng .cnt{color:var(--teal)}
   .tab.on.fnd{border-color:var(--violet)} .tab.on.fnd .cnt{color:var(--violet)}
+  .tab.on.grw{border-color:#60cdff} .tab.on.grw .cnt{color:#60cdff}
 
   .strip-wrap{margin-bottom:9px}
   .strip-label{font-size:11px;color:var(--faint);margin-bottom:4px}
@@ -82,6 +83,7 @@
   .sig.shrt.on{color:#111;background:var(--amber);border-color:var(--amber);font-weight:700}
   .sig.lng.on{color:#062a26;background:var(--teal);border-color:var(--teal);font-weight:700}
   .sig.fnd.on{color:#2a1245;background:var(--violet);border-color:var(--violet);font-weight:700}
+  .sig.grw.on{color:#04283a;background:#60cdff;border-color:#60cdff;font-weight:700}
   .hint{color:var(--faint);font-size:11.5px;margin-left:auto}
 
   /* mirrored top scrollbar */
@@ -147,6 +149,7 @@
   .b.s{background:rgba(255,178,36,.16);color:var(--amber);border:1px solid rgba(255,178,36,.35)}
   .b.g{background:rgba(45,212,191,.13);color:var(--teal);border:1px solid rgba(45,212,191,.35)}
   .b.f{background:rgba(192,132,252,.14);color:var(--violet);border:1px solid rgba(192,132,252,.35)}
+  .b.w{background:rgba(96,205,255,.14);color:#60cdff;border:1px solid rgba(96,205,255,.35)}
   .tv{color:var(--faint);text-decoration:none;font-size:14px}
   .tv:hover{color:var(--amber)}
 
@@ -204,6 +207,7 @@
   <div class="tab" data-tab="short">__TAB_SHORT__<span class="cnt" id="cntShort"></span></div>
   <div class="tab lng" data-tab="long">__TAB_LONG__<span class="cnt" id="cntLong"></span></div>
   <div class="tab fnd" data-tab="fund">__TAB_FUND__<span class="cnt" id="cntFund"></span></div>
+  <div class="tab grw" data-tab="grow">__TAB_GROWTH__<span class="cnt" id="cntGrow"></span></div>
   <div class="tab on" data-tab="all">__TAB_ALL__<span class="cnt" id="cntAll"></span></div>
   <div class="tab dis" data-tab="dis" id="tabDis" style="display:none">__TAB_DIS__<span class="cnt" id="cntDis"></span></div>
 </div>
@@ -220,6 +224,7 @@
   <div class="presets" id="presets">
     <div class="pz on" data-p="tech">__PRESET_TECH__</div>
     <div class="pz" data-p="fin">__PRESET_FIN__</div>
+    <div class="pz" data-p="grw">__PRESET_GROWTH__</div>
     <div class="pz" data-p="all">__PRESET_ALL__</div>
   </div>
   <div class="sigchips" id="sigchips"></div>
@@ -275,8 +280,10 @@ const SIGS = [
   {bit:3,label:T.s_high,k:'s'},{bit:4,label:T.s_gap,k:'s'},{bit:5,label:T.s_over,k:'s'},
   {bit:6,label:T.s_gc,k:'g'},{bit:7,label:T.s_rec,k:'g'},{bit:8,label:T.s_trend,k:'g'},{bit:9,label:T.s_macd,k:'g'},
   {bit:10,label:T.s_value,k:'f'},{bit:11,label:T.s_dividend,k:'f'},{bit:12,label:T.s_qual,k:'f'},
+  {bit:13,label:T.s_growth,k:'w'},{bit:14,label:T.s_accel,k:'w'},{bit:15,label:T.s_garp,k:'w'},
 ];
-const SHORT_MASK=0b0000000111111, LONG_MASK=0b0001111000000, FUND_MASK=0b1110000000000;
+const SHORT_MASK=0b0000000000111111, LONG_MASK=0b0000001111000000,
+      FUND_MASK=0b0001110000000000,  GROW_MASK=0b1110000000000000;
 
 /* g: b=always, t=technical, f=financial */
 const COLS = [
@@ -289,6 +296,9 @@ const COLS = [
   {t:T.c_w,i:14,g:'t'},{t:T.c_m,i:15,g:'t'},{t:T.c_3m,i:16,g:'t'},
   {t:CFG.mcapLabel,i:20,g:'f'},{t:T.c_per,i:21,g:'f'},{t:T.c_pbr,i:22,g:'f'},{t:T.c_eps,i:23,g:'f'},
   {t:T.c_roe,i:24,g:'f'},{t:T.c_div,i:25,g:'f'},{t:T.c_eq,i:26,g:'f'},{t:CFG.ebitdaLabel,i:27,g:'f'},
+  {t:T.c_revq,i:30,g:'w'},{t:T.c_revy,i:31,g:'w'},{t:T.c_revt,i:32,g:'w'},
+  {t:T.c_revqq,i:33,g:'w'},{t:T.c_cagr,i:34,g:'w'},{t:T.c_epsq,i:35,g:'w'},
+  {t:T.c_opm,i:36,g:'w'},{t:T.c_roic,i:37,g:'w'},{t:T.c_psr,i:38,g:'w'},{t:T.c_de,i:39,g:'w'},
   {t:T.c_biz,i:29,l:1,g:'b'},{t:'',i:-1,g:'b'}
 ];
 const PAGE=100;
@@ -334,9 +344,10 @@ $('#strip').addEventListener('click',e=>{
 function buildSigChips(){
   const vis = state.tab==='short'?SIGS.filter(s=>s.k==='s')
             : state.tab==='long' ?SIGS.filter(s=>s.k==='g')
-            : state.tab==='fund' ?SIGS.filter(s=>s.k==='f') : SIGS;
+            : state.tab==='fund' ?SIGS.filter(s=>s.k==='f')
+            : state.tab==='grow' ?SIGS.filter(s=>s.k==='w') : SIGS;
   $('#sigchips').innerHTML=vis.map(s=>
-    `<div class="sig ${s.k==='s'?'shrt':s.k==='g'?'lng':'fnd'} ${state.sigOn.has(s.bit)?'on':''}" data-b="${s.bit}">${s.label}</div>`).join('');
+    `<div class="sig ${s.k==='s'?'shrt':s.k==='g'?'lng':s.k==='f'?'fnd':'grw'} ${state.sigOn.has(s.bit)?'on':''}" data-b="${s.bit}">${s.label}</div>`).join('');
 }
 $('#sigchips').addEventListener('click',e=>{
   const c=e.target.closest('.sig'); if(!c)return;
@@ -354,10 +365,12 @@ $('#presets').addEventListener('click',e=>{
 
 function visibleCols(){
   if(state.preset==='all') return COLS;
-  return COLS.filter(c=>c.g==='b'||c.g===state.preset[0]);
+  const want = state.preset==='tech'?'t':state.preset==='fin'?'f':'w';
+  return COLS.filter(c=>c.g==='b'||c.g===want);
 }
 function filtered(){
-  const tabMask = state.tab==='short'?SHORT_MASK:state.tab==='long'?LONG_MASK:state.tab==='fund'?FUND_MASK:0;
+  const tabMask = state.tab==='short'?SHORT_MASK:state.tab==='long'?LONG_MASK
+                : state.tab==='fund'?FUND_MASK:state.tab==='grow'?GROW_MASK:0;
   let sigMask=0; state.sigOn.forEach(b=>sigMask|=1<<b);
   const q=state.q.toLowerCase();
   return DATA.filter(r=>{
@@ -381,7 +394,7 @@ function sortRows(rows){
 }
 function badges(bits,code){
   let h='';
-  for(const s of SIGS) if(bits&(1<<s.bit)) h+=`<span class="b ${s.k}">${s.label}</span>`;
+  for(const s of SIGS) if(bits&(1<<s.bit)) h+=`<span class="b ${s.k==='w'?'w':s.k}">${s.label}</span>`;
   if(DIS&&DIS.map&&DIS.map[code]&DIS.strong) h+=`<span class="b d">__TAB_DIS__</span>`;
   return h||'<span class="fl">—</span>';
 }
@@ -395,7 +408,9 @@ function cell(r,c){
   if(i===3)  return `<td class="l seg">${esc(r[3])}</td>`;
   if(i===29) return `<td class="l biz" title="${esc(r[29])}" data-code="${esc(r[0])}">${esc(r[29])}</td>`;
   if(i===4)  return `<td class="num">${priceFmt(r[4])}</td>`;
-  if([5,17,9,14,15,16,28].includes(i)) return `<td class="num">${pc(r[i])}</td>`;
+  if([5,17,9,14,15,16,28,30,31,32,33,34,35].includes(i)) return `<td class="num">${pc(r[i])}</td>`;
+  if([36,37].includes(i)) return `<td class="num">${adp(r[i])}</td>`;
+  if([38,39].includes(i)) return `<td class="num">${fmt(r[i],2)}</td>`;
   if(i===10) return `<td class="num">${fint(r[10])}</td>`;
   if([6,7,8].includes(i)) return `<td class="num">${fmt(r[i],CFG.usPrice?2:0)}</td>`;
   if([11,22,25].includes(i)) return `<td class="num">${fmt(r[i],2)}</td>`;
@@ -524,6 +539,8 @@ document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
   $('#minVal').value=String(state.min);
   if(state.tab==='fund'&&state.preset==='tech'){state.preset='fin';
     document.querySelectorAll('.pz').forEach(x=>x.classList.toggle('on',x.dataset.p==='fin'));}
+  if(state.tab==='grow'&&state.preset!=='all'){state.preset='grw';
+    document.querySelectorAll('.pz').forEach(x=>x.classList.toggle('on',x.dataset.p==='grw'));}
   document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===t));
   buildSigChips(); render();
 }));
@@ -536,6 +553,7 @@ $('#next').addEventListener('click',()=>{state.page++;render();window.scrollTo({
 $('#cntShort').textContent=DATA.filter(r=>r[18]&SHORT_MASK && r[12]>=CFG.defaultMin).length;
 $('#cntLong').textContent=DATA.filter(r=>r[18]&LONG_MASK && r[12]>=CFG.defaultMin).length;
 $('#cntFund').textContent=DATA.filter(r=>r[18]&FUND_MASK && r[12]>=CFG.defaultMin).length;
+$('#cntGrow').textContent=DATA.filter(r=>r[18]&GROW_MASK && r[12]>=CFG.defaultMin).length;
 $('#cntAll').textContent=DATA.length.toLocaleString(NUMLOC);
 
 /* ── 공시(TDnet) 탭 ── */

@@ -31,6 +31,14 @@ CONFIG = {
     "GC_MAX_SPREAD": 0.02, "RECLAIM_MAX": 0.03, "TREND_MAX_EXT": 0.20, "MACD_GC_MAX": 0.005,
     # ── 가치·펀더 ──
     "VAL_PER_MAX": 10, "VAL_PBR_MAX": 1.0, "DIV_MIN": 4.0, "QUAL_ROE": 15, "QUAL_EQR": 50,
+    # ── 성장 ──
+    "GROW_YOY": 20.0,      # 고성장: 최근 분기 매출 YoY
+    "GROW_CAGR": 10.0,     # 고성장: 매출 5년 CAGR 동시 충족
+    "ACCEL_YOY": 10.0,     # 이익가속: EPS YoY 하한
+    "ACCEL_GAP": 1.5,      # 이익가속: EPS 성장이 매출 성장의 N배 이상
+    "GARP_PSR": 2.0,       # 저평가성장: PSR 상한
+    "GARP_YOY": 10.0,      # 저평가성장: 매출 YoY 하한
+    "GARP_OPM": 5.0,       # 저평가성장: 영업이익률 하한
 }
 
 JST = ZoneInfo("Asia/Tokyo")
@@ -44,6 +52,13 @@ SCAN_COLUMNS = [
     "market_cap_basic", "price_earnings_ttm", "price_book_fq",
     "earnings_per_share_basic_ttm", "return_on_equity", "dividends_yield_current",
     "total_assets", "total_liabilities_fy", "ebitda", "MACD.macd", "MACD.signal",
+    # 성장 (요청: 분기·연간·TTM·5년)
+    "total_revenue_yoy_growth_fq", "total_revenue_yoy_growth_fy",
+    "total_revenue_yoy_growth_ttm", "total_revenue_qoq_growth_fq",
+    "total_revenue_cagr_5y", "earnings_per_share_diluted_yoy_growth_fq",
+    # 수익성·밸류
+    "operating_margin_ttm", "return_on_invested_capital", "price_sales_ratio",
+    "debt_to_equity",
 ]
 
 SECTOR_KO = {
@@ -494,7 +509,8 @@ def load_profiles(mkey):
 
 SIG_KEYS = ["sig_spike", "sig_x5", "sig_x20", "sig_high", "sig_gap", "sig_oversold",
             "sig_gc", "sig_reclaim", "sig_trend", "sig_macd",
-            "sig_value", "sig_div", "sig_qual"]
+            "sig_value", "sig_div", "sig_qual",
+            "sig_growth", "sig_accel", "sig_garp"]
 
 
 def compute_signals(df):
@@ -526,6 +542,16 @@ def compute_signals(df):
     d["sig_value"] = (per > 0) & (per <= c["VAL_PER_MAX"]) & (pbr > 0) & (pbr <= c["VAL_PBR_MAX"])
     d["sig_div"] = divy >= c["DIV_MIN"]
     d["sig_qual"] = (roe >= c["QUAL_ROE"]) & (d["eqr"] >= c["QUAL_EQR"])
+    # 성장
+    rev_q = d["total_revenue_yoy_growth_fq"]
+    eps_q = d["earnings_per_share_diluted_yoy_growth_fq"]
+    cagr = d["total_revenue_cagr_5y"]
+    opm = d["operating_margin_ttm"]
+    psr = d["price_sales_ratio"]
+    d["sig_growth"] = (rev_q >= c["GROW_YOY"]) & (cagr >= c["GROW_CAGR"])
+    d["sig_accel"] = (eps_q >= c["ACCEL_YOY"]) & (rev_q > 0) & (eps_q >= rev_q * c["ACCEL_GAP"])
+    d["sig_garp"] = ((psr > 0) & (psr <= c["GARP_PSR"]) & (rev_q >= c["GARP_YOY"])
+                     & (opm >= c["GARP_OPM"]))
     d["ext200"] = ((close / s200 - 1) * 100).where(valid)
     return d
 
@@ -549,6 +575,16 @@ def build_rows(df, mc):
         "c25": d["dividends_yield_current"].round(2), "c26": d["eqr"].round(2),
         "c27": (d["ebitda"] / mc["ebitda_div"]).round(1), "c28": d["macd_h"].round(2),
         "c29": d["biz"].fillna(""),
+        "c30": d["total_revenue_yoy_growth_fq"].round(1),
+        "c31": d["total_revenue_yoy_growth_fy"].round(1),
+        "c32": d["total_revenue_yoy_growth_ttm"].round(1),
+        "c33": d["total_revenue_qoq_growth_fq"].round(1),
+        "c34": d["total_revenue_cagr_5y"].round(1),
+        "c35": d["earnings_per_share_diluted_yoy_growth_fq"].round(1),
+        "c36": d["operating_margin_ttm"].round(1),
+        "c37": d["return_on_invested_capital"].round(1),
+        "c38": d["price_sales_ratio"].round(2),
+        "c39": d["debt_to_equity"].round(2),
     })
     out = out.astype(object).where(pd.notna(out), None)
     rows = out.values.tolist()
@@ -695,6 +731,7 @@ def build_market(mkey, template, out_dir, generated, indices=None):
             "__STRIP_LABEL__": L["strip_label"], "__SEARCH_PH__": L["search_ph"],
             "__PRESET_TECH__": L["preset_tech"], "__PRESET_FIN__": L["preset_fin"],
             "__PRESET_ALL__": L["preset_all"], "__HINT__": L["hint"],
+            "__PRESET_GROWTH__": L["preset_growth"], "__TAB_GROWTH__": L["tab_growth"],
             "__PREV__": L["prev"], "__NEXT__": L["next"],
             "__WL_ALL__": L["wl_all"], "__WL_CLEAR__": L["wl_clear"],
             "__WL_DL__": L["wl_dl"], "__WL_HINT__": L["wl_hint"],
@@ -720,10 +757,12 @@ def build_market(mkey, template, out_dir, generated, indices=None):
 
     dm = mc["default_min"]
     rows = build_rows(df.assign(sector_final=df["sector"], biz=""), mc)
-    n_s = sum(1 for r in rows if r[18] & 0b0000000111111 and (r[12] or 0) >= dm)
-    n_l = sum(1 for r in rows if r[18] & 0b0001111000000 and (r[12] or 0) >= dm)
-    n_f = sum(1 for r in rows if r[18] & 0b1110000000000 and (r[12] or 0) >= dm)
-    print(f"  [{mkey}] 완료 — {len(rows)}종목 / 단기 {n_s} / 중장기 {n_l} / 펀더 {n_f} (ko+ja)")
+    n_s = sum(1 for r in rows if r[18] & 0b0000000000111111 and (r[12] or 0) >= dm)
+    n_l = sum(1 for r in rows if r[18] & 0b0000001111000000 and (r[12] or 0) >= dm)
+    n_f = sum(1 for r in rows if r[18] & 0b0001110000000000 and (r[12] or 0) >= dm)
+    n_g = sum(1 for r in rows if r[18] & 0b1110000000000000 and (r[12] or 0) >= dm)
+    print(f"  [{mkey}] 완료 — {len(rows)}종목 / 단기 {n_s} / 중장기 {n_l} / "
+          f"펀더 {n_f} / 성장 {n_g} (ko+ja)")
 
 
 HUB = """<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">
