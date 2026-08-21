@@ -435,7 +435,8 @@ KW_PATTERNS = [  # 비트 순서 = i18n.kw_labels 순서
     r"業務提携|資本提携", r"公開買付|TOB", r"月次",
 ]
 KW_STRONG = (1 << 0) | (1 << 2) | (1 << 4) | (1 << 5) | (1 << 10)  # 상방·증배·자사주·분할·TOB
-DIS_CAP_PLAIN = 500  # 키워드 미해당 공시 최대 보존 건수
+DIS_CAP_PLAIN = 700   # 키워드 미해당 공시 최대 보존 건수
+TDNET_DAYS = 5        # 조회 영업일 수 (오늘 포함)
 
 
 def _tdnet_day(yyyymmdd, retries=3):
@@ -453,7 +454,10 @@ def _tdnet_day(yyyymmdd, retries=3):
         raise RuntimeError(f"TDnet {yyyymmdd} 재시도 실패: {last}")
     out = []
     for it in (r.json() or {}).get("items", []):
-        td = it.get("Tdnet", {}) if isinstance(it, dict) else {}
+        if not isinstance(it, dict):
+            continue
+        # API 응답 구조 변경 대응: {"Tdnet": {...}} 와 {...} 두 형태 모두 처리
+        td = it.get("Tdnet") if isinstance(it.get("Tdnet"), dict) else it
         code = str(td.get("company_code") or "")[:4]
         title = str(td.get("title") or "").strip()
         if not code or not title:
@@ -462,9 +466,10 @@ def _tdnet_day(yyyymmdd, retries=3):
         for i, pat in enumerate(KW_PATTERNS):
             if re.search(pat, title):
                 bits |= 1 << i
-        pub = str(td.get("pubdate") or "")[5:16].replace("-", "/")  # "MM/DD HH:MM"
+        raw_pub = str(td.get("pubdate") or "")            # "YYYY-MM-DD HH:MM:SS"
+        pub = raw_pub[5:16].replace("-", "/")             # 화면 표시용 "MM/DD HH:MM"
         out.append([pub, code, str(td.get("company_name") or ""), bits, title,
-                    str(td.get("document_url") or "")])
+                    str(td.get("document_url") or ""), raw_pub])
     return out
 
 
@@ -473,7 +478,7 @@ def fetch_tdnet(universe_codes):
     from datetime import timedelta
     now = datetime.now(JST)
     days, d = [], now
-    while len(days) < 3:
+    while len(days) < TDNET_DAYS:
         if d.weekday() < 5:
             days.append(d.strftime("%Y%m%d"))
         d -= timedelta(days=1)
@@ -485,10 +490,11 @@ def fetch_tdnet(universe_codes):
             print(f"  [jp] TDnet {day} 실패: {type(e).__name__}: {str(e)[:60]}")
     uni = set(universe_codes)
     items = [x for x in items if x[1] in uni]
-    items.sort(key=lambda x: x[0], reverse=True)
+    items.sort(key=lambda x: x[6], reverse=True)
     tagged = [x for x in items if x[3]]
     plain = [x for x in items if not x[3]][:DIS_CAP_PLAIN]
-    merged = sorted(tagged + plain, key=lambda x: x[0], reverse=True)
+    merged = sorted(tagged + plain, key=lambda x: x[6], reverse=True)
+    merged = [x[:6] for x in merged]          # 화면 전송 시 원본 시각 컬럼 제거
     dmap = {}
     for x in tagged:
         dmap[x[1]] = dmap.get(x[1], 0) | x[3]
