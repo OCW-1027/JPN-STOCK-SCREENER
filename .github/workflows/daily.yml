@@ -1,11 +1,13 @@
 name: Daily Screener
 
 on:
-  repository_dispatch:          # cron-job.org (주 트리거, 15분 간격)
+  schedule:
+    - cron: '3,18,33,48 0-6 * * 1-5'    # 일본·한국 장중 (09:03~15:48 JST/KST)
+    - cron: '33 7 * * 1-5'              # 일본·한국 종가판 (16:33) → history·프로필 저장
+    - cron: '3,18,33,48 13-20 * * 1-5'  # 미국 장중 (한국시간 밤 22:03~다음날 05:48)
+    - cron: '33 21 * * 1-5'             # 미국 종가판 (한국시간 아침 06:33) → history·프로필 저장
+  repository_dispatch:
     types: [tick]
-  schedule:                     # 백업: 종가판 2회만 (외부 크론 장애 대비)
-    - cron: '38 7 * * 1-5'      # 16:38 JST — 일본·한국 종가
-    - cron: '38 21 * * 1-5'     # 06:38 JST — 미국 종가
   workflow_dispatch:
 
 permissions:
@@ -15,12 +17,11 @@ permissions:
 
 concurrency:
   group: screener
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -35,15 +36,17 @@ jobs:
       - name: Install deps
         run: pip install -r requirements.txt
 
-      - name: History target 결정 (JST 시각 기준)
+      - name: History target 결정 (하루 1회, 종가 직후 한 슬롯만)
         run: |
+          # 16:30~16:44 JST → 일본·한국 종가판 / 06:30~06:44 JST → 미국 종가판
+          # 그 외 시간대(장중 15분 실행)는 화면 갱신만 하고 저장 작업은 건너뜀.
           H=$(TZ=Asia/Tokyo date +%H)
-          case "$H" in
-            16) echo "HM=jp,kr" >> $GITHUB_ENV ;;
-            06) echo "HM=us"    >> $GITHUB_ENV ;;
-            *)  echo "HM="      >> $GITHUB_ENV ;;
-          esac
-          echo "JST ${H}시 실행"
+          M=$(TZ=Asia/Tokyo date +%M)
+          HM=""
+          if [ "$H" = "16" ] && [ "$M" -ge 30 ] && [ "$M" -le 44 ]; then HM="jp,kr"; fi
+          if [ "$H" = "06" ] && [ "$M" -ge 30 ] && [ "$M" -le 44 ]; then HM="us"; fi
+          echo "HM=$HM" >> $GITHUB_ENV
+          echo "JST ${H}:${M} → HM='${HM}' (빈 값이면 화면 갱신만)"
 
       - name: 회사 프로필 수집 (종가판만, 실패해도 계속)
         if: env.HM != ''
