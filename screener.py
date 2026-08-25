@@ -721,7 +721,11 @@ def build_market(mkey, template, out_dir, generated, indices=None):
         # 대시보드는 별도 사이트(github.io/dashboard). 일본어판은 index_ja.html로 연결
         dash_url = ("https://ocw-1027.github.io/dashboard/"
                     if lang == "ko" else "https://ocw-1027.github.io/dashboard/index_ja.html")
-        extra_nav = (f'<a href="{dash_url}" target="_blank" rel="noopener" '
+        study_url = ("https://ocw-1027.github.io/investment-study/"
+                     if lang == "ko" else "https://ocw-1027.github.io/investment-study/jp.html")
+        extra_nav = (f'<a href="{study_url}" target="_blank" rel="noopener" '
+                     f'class="study">{L["nav_study"]}</a>'
+                     f'<a href="{dash_url}" target="_blank" rel="noopener" '
                      f'class="dash">{L["nav_dash"]}</a>'
                      f'<a href="../backtest/index.html">{L["nav_bt"]}</a>')
         html = template
