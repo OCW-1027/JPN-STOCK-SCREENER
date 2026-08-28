@@ -36,11 +36,14 @@ if not OUT.is_absolute():
 TOP_N = 100          # 순위 집계 범위
 HILITE = 20          # 색선으로 강조할 상위 종목 수
 KEEP_DAYS = 60       # 그래프에 표시할 최근 영업일 수
-DIV = {"jp": 1e8, "kr": 1e8, "us": 1e6}     # 표시 단위 (억엔/억원/$M)
+DIV = {"jp": 1e8, "kr": 1e8, "us": 1e6}          # 거래대금 표시 단위 (억엔/억원/$M)
+MCAP_DIV = {"jp": 1e8, "kr": 1e8, "us": 1e9}     # 시총 표시 단위 (억엔/억원/$B)
+METRICS = {"value": "Value.Traded", "mcap": "market_cap_basic"}
 
 
-def load_market(m):
-    """날짜별 상위 TOP_N 순위 테이블. 반환: (dates, {code: {name, ranks[], values[]}})"""
+def load_market(m, metric="value"):
+    """날짜별 상위 TOP_N 순위 테이블. metric: value(거래대금) | mcap(시가총액)"""
+    col = METRICS[metric]
     files = sorted(glob.glob(str(BASE / "history" / m / "*.csv.gz")))[-KEEP_DAYS:]
     dates, per_day, names = [], [], {}
     prev_close = None
@@ -50,9 +53,9 @@ def load_market(m):
             df = pd.read_csv(f, compression="gzip", dtype={"code": str})
         except Exception:
             continue
-        if "Value.Traded" not in df.columns or "code" not in df.columns:
+        if col not in df.columns or "code" not in df.columns:
             continue
-        df = df.dropna(subset=["code", "Value.Traded"]).drop_duplicates(subset="code")
+        df = df.dropna(subset=["code", col]).drop_duplicates(subset="code")
         # 휴장일(가격이 전일과 거의 동일) 제거
         if prev_close is not None and "close" in df.columns:
             cur = df.set_index("code")["close"]
@@ -62,19 +65,18 @@ def load_market(m):
         if "close" in df.columns:
             prev_close = df.set_index("code")["close"]
 
-        top = df.nlargest(TOP_N, "Value.Traded").reset_index(drop=True)
+        top = df.nlargest(TOP_N, col).reset_index(drop=True)
         namecol = "disp_name" if "disp_name" in top.columns else (
             "m_name" if "m_name" in top.columns else "description")
         day = {}
         for rank, row in enumerate(top.itertuples(index=False), start=1):
             code = str(getattr(row, "code"))
-            day[code] = (rank, float(getattr(row, "_asdict")().get("Value.Traded", 0))
-                         if hasattr(row, "_asdict") else 0.0)
+            day[code] = (rank, 0.0)
             nm = getattr(row, namecol, None) if namecol in top.columns else None
             if isinstance(nm, str) and nm.strip():
                 names.setdefault(code, nm.strip())
         # Value.Traded 는 컬럼명에 점이 있어 itertuples 접근이 어려움 → 직접 매핑
-        vals = dict(zip(top["code"].astype(str), top["Value.Traded"].astype(float)))
+        vals = dict(zip(top["code"].astype(str), top[col].astype(float)))
         day = {c: (r, vals.get(c, 0.0)) for c, (r, _v) in day.items()}
         dates.append(date)
         per_day.append(day)
@@ -88,8 +90,8 @@ def load_market(m):
     return dates, series
 
 
-def build(m):
-    dates, series = load_market(m)
+def build(m, metric="value"):
+    dates, series = load_market(m, metric)
     if not dates:
         return {"dates": [], "series": {}, "latest": [], "n_days": 0}
     last = len(dates) - 1
@@ -106,7 +108,10 @@ def build(m):
         rows.append({
             "code": c, "name": s["name"], "rank": cur,
             "prev": prev, "delta": (prev - cur) if (prev and cur) else None,
-            "value": round((s["values"][last] or 0) / DIV[m], 1),
+            "value": round((s["values"][last] or 0) /
+                           (DIV[m] if metric == "value" else MCAP_DIV[m]), 1),
+            "chg": (round((s["values"][last] / s["values"][last - 1] - 1) * 100, 1)
+                    if (last > 0 and s["values"][last] and s["values"][last - 1]) else None),
             "best": min([r for r in s["ranks"] if r], default=None),
         })
     return {"dates": dates, "series": series, "rows": rows,
@@ -166,11 +171,12 @@ footer{margin-top:14px;color:var(--faint);font-size:11px;line-height:1.7}
 <h1>__TITLE__</h1>
 <div class="meta">__GEN_LABEL__ __GEN__ · __LEAD__</div>
 <div class="tabs" id="mt"></div>
+<div class="tabs" id="mtx"></div>
 <div id="body"></div>
 <footer>__FOOTER__</footer>
 <script>
 const R=__DATA__, T=__T__;
-let mkt=Object.keys(R)[0], sel=null;
+let mkt=Object.keys(R)[0], metric="value", sel=null;
 const $=s=>document.querySelector(s);
 const COLORS=['#ff4f5e','#ffb224','#2dd4bf','#3f8cff','#c084fc','#60cdff','#f472b6','#a3e635',
 '#fb923c','#38bdf8','#f87171','#34d399','#e879f9','#facc15','#22d3ee','#fca5a5','#86efac',
@@ -178,7 +184,9 @@ const COLORS=['#ff4f5e','#ffb224','#2dd4bf','#3f8cff','#c084fc','#60cdff','#f472
 
 function tabs(){
   $('#mt').innerHTML=Object.keys(R).map(m=>
-    `<div class="tab ${m===mkt?'on':''}" data-m="${m}">${T.markets[m]} <span style="color:var(--faint);font-size:11px">${R[m].n_days}${T.days}</span></div>`).join('');
+    `<div class="tab ${m===mkt?'on':''}" data-m="${m}">${T.markets[m]} <span style="color:var(--faint);font-size:11px">${R[m][metric].n_days}${T.days}</span></div>`).join('');
+  $('#mtx').innerHTML=[['value',T.m_value],['mcap',T.m_mcap]].map(([k,l])=>
+    `<div class="tab ${k===metric?'on':''}" data-x="${k}" style="${k===metric?'border-color:var(--teal)':''}">${l}</div>`).join('');
 }
 function esc(v){return String(v==null?'':v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')}
 
@@ -226,7 +234,7 @@ function chart(M){
 function table(M){
   const rows=(M.rows||[]).slice(0,100);
   return `<table><thead><tr><th class="l">${T.col_rank}</th><th class="l">${T.col_code}</th>
-  <th class="l">${T.col_name}</th><th>${T.col_delta}</th><th>${T.col_value}</th>
+  <th class="l">${T.col_name}</th><th>${T.col_delta}</th><th>${metric==='value'?T.col_value:T.col_mcap}</th><th class="hide-m">${T.col_chg}</th>
   <th class="hide-m">${T.col_best}</th></tr></thead><tbody>`+
   rows.map(r=>{
     const dl=r.delta==null?`<span class="fl">${T.new_in}</span>`
@@ -236,13 +244,15 @@ function table(M){
       <td class="l num">${r.rank}</td><td class="l num">${esc(r.code)}</td>
       <td class="l">${esc(r.name)}</td><td class="num">${dl}</td>
       <td class="num">${r.value.toLocaleString()}</td>
+      <td class="num hide-m">${r.chg==null?'<span class="fl">—</span>':(r.chg>0?`<span class="up">+${r.chg}%</span>`:r.chg<0?`<span class="dn">${r.chg}%</span>`:'<span class="fl">0%</span>')}</td>
+      
       <td class="num hide-m fl">${r.best||'—'}</td></tr>`;
   }).join('')+'</tbody></table>';
 }
 
 function render(){
   tabs();
-  const M=R[mkt];
+  const M=R[mkt][metric];
   if(!M||M.n_days<2){
     $('#body').innerHTML=`<div class="note"><b>${T.acc_title.replace('{n}',M?M.n_days:0)}</b><br>${T.acc_body}</div>`;
     return;
@@ -254,6 +264,7 @@ function render(){
   }));
 }
 $('#mt').addEventListener('click',e=>{const t=e.target.closest('.tab');if(t){mkt=t.dataset.m;sel=null;render()}});
+$('#mtx').addEventListener('click',e=>{const t=e.target.closest('.tab');if(t){metric=t.dataset.x;sel=null;render()}});
 render();
 </script></body></html>"""
 
@@ -264,10 +275,13 @@ def main():
     print("=" * 60)
     base = {}
     for m in ("jp", "kr", "us"):
-        b = build(m)
-        base[m] = b
-        print(f"  [{m}] 스냅샷 {b['n_days']}일" +
-              (f" | 1위 {b['rows'][0]['name'][:14]}" if b.get("rows") else ""))
+        base[m] = {}
+        for metric in ("value", "mcap"):
+            b = build(m, metric)
+            base[m][metric] = b
+            tag = "대금" if metric == "value" else "시총"
+            print(f"  [{m}] {tag}: 스냅샷 {b['n_days']}일" +
+                  (f" | 1위 {b['rows'][0]['name'][:14]}" if b.get("rows") else ""))
 
     gen = datetime.now(JST).strftime("%Y-%m-%d %H:%M JST")
     for lang in ("ko", "ja"):
@@ -291,8 +305,9 @@ def main():
         (out / "index.html").write_text(html, encoding="utf-8")
         if lang == "ko":
             (out / "data.json").write_text(
-                json.dumps({m: {"dates": b["dates"], "rows": b.get("rows", [])}
-                            for m, b in base.items()}, ensure_ascii=False),
+                json.dumps({m: {k: {"dates": v["dates"], "rows": v.get("rows", [])}
+                                for k, v in mv.items()}
+                            for m, mv in base.items()}, ensure_ascii=False),
                 encoding="utf-8")
         print(f"  [{lang}] 완료 → {out}/index.html")
 
