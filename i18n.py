@@ -19,7 +19,7 @@ UI = {
         wl_clear="선택 해제", wl_hint="체크 → 내보내기 → 트레이딩뷰 관심목록에서 가져오기",
         tab_dis="공시", dis_none="표시할 공시가 없습니다 (오늘·전영업일 기준)",
         dis_hint="행 클릭 → 공시 PDF · 사업내용 클릭 → 회사 소개",
-        dis_all="전체", nav_bt="📊 성과분석", nav_rank="💰 거래대금 순위", nav_dash="🌐 글로벌 대시보드", nav_study="🧠 연상 사고",
+        dis_all="전체", nav_bt="📊 성과분석", nav_rank="📈 순위 추이", nav_dash="🌐 글로벌 대시보드", nav_study="🧠 연상 사고",
         biz_loading="회사 프로필 불러오는 중…",
         biz_none="서술형 소개 수집 대기 중 — 시총 상위부터 매일 자동 수집됩니다 (영문)",
         kw_labels=["상방수정","하방수정","증배·복배","감배·무배","자사주","주식분할",
@@ -63,7 +63,7 @@ UI = {
         wl_clear="選択解除", wl_hint="チェック → 書き出し → TradingViewのウォッチリストへインポート",
         tab_dis="開示", dis_none="表示する開示はありません（当日・前営業日）",
         dis_hint="行クリック → 開示PDF · 事業内容クリック → 会社概要",
-        dis_all="すべて", nav_bt="📊 パフォーマンス", nav_rank="💰 売買代金ランキング", nav_dash="🌐 グローバル指標", nav_study="🧠 連想思考",
+        dis_all="すべて", nav_bt="📊 パフォーマンス", nav_rank="📈 ランキング推移", nav_dash="🌐 グローバル指標", nav_study="🧠 連想思考",
         biz_loading="会社プロフィール読み込み中…",
         biz_none="会社概要は時価総額上位から毎日自動収集中です（英文）",
         kw_labels=["上方修正","下方修正","増配・復配","減配・無配","自社株","株式分割",
@@ -343,7 +343,7 @@ SIGNAL_I18N = {
 # ─────────── 거래대금 순위 추이 페이지 ───────────
 RANK_UI = {
     "ko": dict(
-        title='거래대금 <span>순위 추이</span>', page_title="거래대금 순위 추이",
+        title='시장 <span>순위 추이</span>', page_title="시장 순위 추이",
         back="← 스크리너로", gen="생성", other_lang="日本語",
         lead="매 영업일 상위 100위의 순위 변화 (위쪽이 상위) · 거래대금=자금 쏠림 / 시가총액=덩치 판도",
         days="일", rank_unit="위",
@@ -365,7 +365,7 @@ RANK_UI = {
               "휴장일 스냅샷은 자동 제외됩니다."),
     ),
     "ja": dict(
-        title='売買代金 <span>ランキング推移</span>', page_title="売買代金ランキング推移",
+        title='市場 <span>ランキング推移</span>', page_title="市場ランキング推移",
         back="← スクリーナーへ", gen="生成", other_lang="한국어",
         lead="各営業日の上位100位の順位変化（上が上位）・売買代金=資金の集中 / 時価総額=規模の勢力図",
         days="日", rank_unit="位",
