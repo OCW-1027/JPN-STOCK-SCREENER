@@ -147,6 +147,9 @@
   .biz{color:var(--muted);font-size:11.5px;max-width:150px;overflow:hidden;text-overflow:ellipsis}
   .seg{font-size:10.5px;color:var(--faint)}
   .up{color:var(--up)} .dn{color:var(--down)} .fl{color:var(--muted)}
+  .inf1{color:var(--amber);font-weight:700}
+  .inf2{color:var(--up);font-weight:700}
+  .sc{color:var(--teal);font-weight:600}
   .b{display:inline-block;font-size:10px;font-weight:700;border-radius:4px;padding:1.5px 5px;margin-right:3px}
   .b.s{background:rgba(255,178,36,.16);color:var(--amber);border:1px solid rgba(255,178,36,.35)}
   .b.g{background:rgba(45,212,191,.13);color:var(--teal);border:1px solid rgba(45,212,191,.35)}
@@ -283,8 +286,9 @@ const SIGS = [
   {bit:6,label:T.s_gc,k:'g'},{bit:7,label:T.s_rec,k:'g'},{bit:8,label:T.s_trend,k:'g'},{bit:9,label:T.s_macd,k:'g'},
   {bit:10,label:T.s_value,k:'f'},{bit:11,label:T.s_dividend,k:'f'},{bit:12,label:T.s_qual,k:'f'},
   {bit:13,label:T.s_growth,k:'w'},{bit:14,label:T.s_accel,k:'w'},{bit:15,label:T.s_garp,k:'w'},
+  {bit:16,label:T.s_inflow,k:'s'},
 ];
-const SHORT_MASK=0b0000000000111111, LONG_MASK=0b0000001111000000,
+const SHORT_MASK=0b10000000000111111, LONG_MASK=0b0000001111000000,
       FUND_MASK=0b0001110000000000,  GROW_MASK=0b1110000000000000;
 
 /* g: b=always, t=technical, f=financial */
@@ -293,7 +297,7 @@ const COLS = [
   {t:T.c_sector,i:2,l:1,g:'b'},{t:T.c_seg,i:3,l:1,g:'t'},{t:T.c_sig,i:18,l:1,g:'b'},
   {t:T.c_price,i:4,g:'b'},{t:T.c_chg,i:5,g:'b'},{t:T.c_gap,i:17,g:'t'},
   {t:'5MA',i:6,g:'t'},{t:'20MA',i:7,g:'t'},{t:'200MA',i:8,g:'t'},{t:T.c_ext,i:9,g:'t'},
-  {t:T.c_vol,i:10,g:'t'},{t:'RVOL',i:11,g:'t'},{t:CFG.turnLabel,i:12,g:'b'},
+  {t:T.c_vol,i:10,g:'t'},{t:'RVOL',i:11,g:'t'},{t:CFG.turnLabel,i:12,g:'b'},{t:T.c_inflow,i:46,g:'b'},{t:T.c_score,i:47,g:'b'},
   {t:T.c_rsi,i:13,g:'t'},{t:T.c_pos52,i:44,g:'t'},{t:T.c_macd,i:28,g:'t'},
   {t:T.c_w,i:14,g:'t'},{t:T.c_m,i:15,g:'t'},{t:T.c_3m,i:16,g:'t'},
   {t:T.c_ytd,i:41,g:'t'},{t:T.c_perfy,i:45,g:'t'},
@@ -416,6 +420,11 @@ function cell(r,c){
   if(i===40) return `<td class="num">${fmt(r[40],2)}</td>`;
   if([42,43].includes(i)) return `<td class="num">${priceFmt(r[i])}</td>`;
   if(i===44) return `<td class="num">${r[44]==null?'—':fmt(r[44],0)}</td>`;
+  if(i===46){const v=r[46];
+    if(v==null) return '<td class="num fl">—</td>';
+    const cls=v>=2?'inf2':v>=1.3?'inf1':'';
+    return `<td class="num ${cls}">${fmt(v,2)}</td>`;}
+  if(i===47) return `<td class="num sc">${r[47]==null?'—':fmt(r[47],1)}</td>`;
   if([36,37].includes(i)) return `<td class="num">${adp(r[i])}</td>`;
   if([38,39].includes(i)) return `<td class="num">${fmt(r[i],2)}</td>`;
   if(i===10) return `<td class="num">${fint(r[10])}</td>`;

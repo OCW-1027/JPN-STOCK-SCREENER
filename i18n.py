@@ -12,9 +12,9 @@ UI = {
         c_revq="매출YoY(분기)", c_revy="매출YoY(연간)", c_revt="매출YoY(TTM)",
         c_revqq="매출QoQ", c_cagr="매출5년CAGR", c_epsq="EPS YoY(분기)",
         c_opm="영업이익률%", c_roic="ROIC%", c_psr="PSR", c_de="부채비율",
-        c_peg="PEG", c_ytd="연초대비%", c_hi52="52주고가", c_lo52="52주저가",
+        c_inflow="유입배", c_score="점수", c_peg="PEG", c_ytd="연초대비%", c_hi52="52주고가", c_lo52="52주저가",
         c_pos52="52주위치%", c_perfy="1년%",
-        s_growth="고성장", s_accel="이익가속", s_garp="저평가성장",
+        s_growth="고성장", s_accel="이익가속", s_garp="저평가성장", s_inflow="지속유입",
         wl_sel="선택 {n}종목 담기", wl_dl="관심종목 내보내기", wl_all="필터 전체 담기",
         wl_clear="선택 해제", wl_hint="체크 → 내보내기 → 트레이딩뷰 관심목록에서 가져오기",
         tab_dis="공시", dis_none="표시할 공시가 없습니다 (오늘·전영업일 기준)",
@@ -42,6 +42,8 @@ UI = {
               "성장: <b>고성장</b> 매출 YoY(분기)≥20% &amp; 5년CAGR≥10% · "
               "<b>이익가속</b> EPS YoY≥10% &amp; 매출 성장의 1.5배↑ · "
               "<b>저평가성장</b> PSR≤2 &amp; 매출 YoY≥10% &amp; 영업이익률≥5%<br>"
+              "자금: <b>지속유입</b> 5일 매매대금이 60일 평균의 1.3배↑ 3일 연속 · "
+              "<b>유입배</b>=5일/60일 매매대금 비율 · <b>점수</b>=발생 시그널 가중합<br>"
               "지표는 스냅샷 기반 근사치이며 매매 판단의 보조 자료입니다. 데이터: TradingView{credit}"),
     ),
     "ja": dict(
@@ -54,9 +56,9 @@ UI = {
         c_revq="売上YoY(四半期)", c_revy="売上YoY(通期)", c_revt="売上YoY(TTM)",
         c_revqq="売上QoQ", c_cagr="売上5年CAGR", c_epsq="EPS YoY(四半期)",
         c_opm="営業利益率%", c_roic="ROIC%", c_psr="PSR", c_de="負債比率",
-        c_peg="PEG", c_ytd="年初来%", c_hi52="52週高値", c_lo52="52週安値",
+        c_inflow="流入倍", c_score="スコア", c_peg="PEG", c_ytd="年初来%", c_hi52="52週高値", c_lo52="52週安値",
         c_pos52="52週位置%", c_perfy="1年%",
-        s_growth="高成長", s_accel="利益加速", s_garp="割安成長",
+        s_growth="高成長", s_accel="利益加速", s_garp="割安成長", s_inflow="継続流入",
         wl_sel="選択 {n}銘柄", wl_dl="ウォッチリスト書き出し", wl_all="絞込み全件を選択",
         wl_clear="選択解除", wl_hint="チェック → 書き出し → TradingViewのウォッチリストへインポート",
         tab_dis="開示", dis_none="表示する開示はありません（当日・前営業日）",
@@ -84,6 +86,8 @@ UI = {
               "成長: <b>高成長</b> 売上YoY(四半期)≥20% かつ 5年CAGR≥10% · "
               "<b>利益加速</b> EPS YoY≥10% かつ 売上成長の1.5倍↑ · "
               "<b>割安成長</b> PSR≤2 かつ 売上YoY≥10% かつ 営業利益率≥5%<br>"
+              "資金: <b>継続流入</b> 5日売買代金が60日平均の1.3倍↑ 3日連続 · "
+              "<b>流入倍</b>=5日/60日の売買代金比 · <b>スコア</b>=点灯シグナルの加重合計<br>"
               "指標はスナップショットに基づく概算値であり、投資判断の補助資料です。データ: TradingView{credit}"),
     ),
 }
@@ -328,9 +332,9 @@ SIGNAL_I18N = {
     "sig_trend": ("정배열", "パーフェクトオーダー"), "sig_macd": ("MACD골든", "MACDゴールデン"),
     "sig_value": ("저평가", "割安"), "sig_div": ("고배당", "高配当"), "sig_qual": ("우량", "優良"),
     "sig_growth": ("고성장", "高成長"), "sig_accel": ("이익가속", "利益加速"),
-    "sig_garp": ("저평가성장", "割安成長"), "grp_growth": ("성장(아무거나)", "成長(いずれか)"),
+    "sig_garp": ("저평가성장", "割安成長"), "sig_inflow": ("지속유입", "継続流入"), "grp_growth": ("성장(아무거나)", "成長(いずれか)"),
     "sig_growth": ("고성장", "高成長"), "sig_accel": ("이익가속", "利益加速"),
-    "sig_garp": ("저평가성장", "割安成長"), "grp_growth": ("성장(아무거나)", "成長(いずれか)"),
+    "sig_garp": ("저평가성장", "割安成長"), "sig_inflow": ("지속유입", "継続流入"), "grp_growth": ("성장(아무거나)", "成長(いずれか)"),
     "grp_short": ("단기(아무거나)", "短期(いずれか)"), "grp_long": ("중장기(아무거나)", "中長期(いずれか)"),
     "grp_fund": ("펀더(아무거나)", "財務(いずれか)"), "grp_multi": ("시그널 2개 이상", "シグナル2つ以上"),
 }

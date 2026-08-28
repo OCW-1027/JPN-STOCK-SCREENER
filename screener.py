@@ -430,6 +430,67 @@ def fetch_indices():
     return out
 
 
+
+# ─────────────── 유입배: 5일 매매대금 ÷ 60일 매매대금 ───────────────
+INFLOW_SHORT, INFLOW_LONG = 5, 60
+INFLOW_MIN = 20          # 이 일수 이상이면 근사치라도 계산
+INFLOW_TH = 1.3          # '지속유입' 임계
+INFLOW_STREAK = 3        # 연속 충족 일수
+
+
+def compute_inflow(mkey):
+    """(유입배 dict, 지속유입 dict, 사용일수). 데이터 부족 시 빈 dict."""
+    import glob
+    files = sorted(glob.glob(str(BASE / "history" / mkey / "*.csv.gz")))[-(INFLOW_LONG + INFLOW_STREAK):]
+    if len(files) < INFLOW_MIN:
+        print(f"  [{mkey}] 유입배: 스냅샷 {len(files)}일 (최소 {INFLOW_MIN}일 필요) → 축적 대기")
+        return {}, {}, len(files)
+
+    series, kept, prev_close = {}, 0, None
+    for f in files:
+        try:
+            d = pd.read_csv(f, compression="gzip", dtype={"code": str})
+        except Exception:
+            continue
+        if not {"code", "Value.Traded"} <= set(d.columns):
+            continue
+        d = d.dropna(subset=["code"]).drop_duplicates(subset="code")
+        if prev_close is not None and "close" in d.columns:          # 휴장일 제거
+            cur = d.set_index("code")["close"]
+            common = cur.index.intersection(prev_close.index)
+            if len(common) > 100 and (cur.loc[common] == prev_close.loc[common]).mean() > 0.97:
+                continue
+        if "close" in d.columns:
+            prev_close = d.set_index("code")["close"]
+        for c, v in zip(d["code"].astype(str), d["Value.Traded"].fillna(0).astype(float)):
+            series.setdefault(c, {})[kept] = v
+        kept += 1
+
+    if kept < INFLOW_MIN:
+        return {}, {}, kept
+
+    def ratio_at(vals, end):
+        lo = max(0, end - INFLOW_LONG + 1)
+        long_v = [vals[i] for i in range(lo, end + 1) if i in vals]
+        short_v = [vals[i] for i in range(max(0, end - INFLOW_SHORT + 1), end + 1) if i in vals]
+        if len(long_v) < INFLOW_MIN or not short_v:
+            return None
+        la = sum(long_v) / len(long_v)
+        return (sum(short_v) / len(short_v) / la) if la > 0 else None
+
+    inflow, streak = {}, {}
+    for c, vals in series.items():
+        r = ratio_at(vals, kept - 1)
+        if r is None:
+            continue
+        inflow[c] = round(r, 2)
+        streak[c] = all((lambda x: x is not None and x >= INFLOW_TH)(ratio_at(vals, kept - 1 - b))
+                        for b in range(INFLOW_STREAK))
+    print(f"  [{mkey}] 유입배: {len(inflow)}종목 ({kept}일 기준"
+          f"{'·근사치' if kept < INFLOW_LONG else ''}) / 지속유입 {sum(streak.values())}종목")
+    return inflow, streak, kept
+
+
 # ─────────────────── TDnet 적시공시 (일본) ───────────────────
 KW_PATTERNS = [  # 비트 순서 = i18n.kw_labels 순서
     r"上方修正", r"下方修正", r"増配|復配", r"減配|無配", r"自己株式|自社株",
@@ -515,15 +576,28 @@ def load_profiles(mkey):
         return None
 
 
+# 시그널 가중치 — 성과분석 데이터가 쌓이면 실제 초과수익 기준으로 재조정할 것.
+# 지금은 근거 없는 차등을 두지 않고 균등(1.0)에서 출발한다.
+SIG_WEIGHT = {
+    "sig_spike": 1.0, "sig_x5": 1.0, "sig_x20": 1.0, "sig_high": 1.0,
+    "sig_gap": 1.0, "sig_oversold": 1.0,
+    "sig_gc": 1.0, "sig_reclaim": 1.0, "sig_trend": 1.0, "sig_macd": 1.0,
+    "sig_value": 1.0, "sig_div": 1.0, "sig_qual": 1.0,
+    "sig_growth": 1.0, "sig_accel": 1.0, "sig_garp": 1.0,
+    "sig_inflow": 1.0,
+}
+
 SIG_KEYS = ["sig_spike", "sig_x5", "sig_x20", "sig_high", "sig_gap", "sig_oversold",
             "sig_gc", "sig_reclaim", "sig_trend", "sig_macd",
             "sig_value", "sig_div", "sig_qual",
-            "sig_growth", "sig_accel", "sig_garp"]
+            "sig_growth", "sig_accel", "sig_garp", "sig_inflow"]
 
 
 def compute_signals(df):
     c = CONFIG
     d = df
+    if "sig_inflow" not in d:
+        d["sig_inflow"] = False
     close, low = d["close"], d["low"]
     s5, s20, s200 = d["SMA5"], d["SMA20"], d["SMA200"]
     macd, macds = d["MACD.macd"], d["MACD.signal"]
@@ -569,6 +643,11 @@ def compute_signals(df):
 
 
 def build_rows(df, mc):
+    df = df.copy()
+    df["score"] = 0.0
+    for k, w in SIG_WEIGHT.items():
+        if k in df:
+            df["score"] = df["score"] + df[k].fillna(False).astype(int) * w
     d = df.rename(columns={"Value.Traded": "val", "Perf.W": "pw", "Perf.1M": "p1", "Perf.3M": "p3"})
     sig = pd.Series(0, index=d.index)
     for i, k in enumerate(SIG_KEYS):
@@ -603,6 +682,8 @@ def build_rows(df, mc):
         "c43": d["price_52_week_low"].round(2),
         "c44": d["pos52"].round(0),
         "c45": d["Perf.Y"].round(1),
+        "c46": d["inflow"].round(2) if "inflow" in d else None,
+        "c47": d["score"].round(1),
     })
     out = out.astype(object).where(pd.notna(out), None)
     rows = out.values.tolist()
@@ -664,6 +745,10 @@ def build_market(mkey, template, out_dir, generated, indices=None):
     src = "TradingView"
     if mkey == "kr":
         df, src = apply_realtime_kr(df)
+
+    inflow, in_streak, in_days = compute_inflow(mkey)
+    df["inflow"] = df["code"].map(inflow)
+    df["sig_inflow"] = df["code"].map(in_streak).fillna(False).astype(bool)
 
     df = compute_signals(df)
 
