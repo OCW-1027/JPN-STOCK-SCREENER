@@ -739,6 +739,7 @@ def build_market(mkey, template, out_dir, generated, indices=None):
                      f'class="study">{L["nav_study"]}</a>'
                      f'<a href="{dash_url}" target="_blank" rel="noopener" '
                      f'class="dash">{L["nav_dash"]}</a>'
+                     f'<a href="../ranking/index.html">{L["nav_rank"]}</a>'
                      f'<a href="../backtest/index.html">{L["nav_bt"]}</a>')
         html = template
         for k, v in {

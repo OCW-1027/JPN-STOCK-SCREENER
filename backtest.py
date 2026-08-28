@@ -187,6 +187,7 @@ footer{margin-top:14px;color:var(--faint);font-size:11px;line-height:1.7}
   <a href="__BACK_HREF__">__BACK__</a>
   <a class="studybtn" href="__STUDY_HREF__" target="_blank" rel="noopener">__STUDY__</a>
   <a class="dashbtn" href="__DASH_HREF__" target="_blank" rel="noopener">__DASH__</a>
+  <a class="dashbtn" href="../ranking/index.html">__RANK__</a>
   <a class="langbtn" href="__LANG_HREF__">__OTHER_LANG__</a>
 </div>
 <h1>__TITLE__</h1>
@@ -280,6 +281,7 @@ def main():
             "__LEAD__": L["lead"], "__FOOTER__": L["foot"],
             "__DASH__": i18n.UI[lang]["nav_dash"],
             "__STUDY__": i18n.UI[lang]["nav_study"],
+            "__RANK__": i18n.UI[lang]["nav_rank"],
             "__STUDY_HREF__": ("https://ocw-1027.github.io/investment-study/" if lang == "ko"
                                else "https://ocw-1027.github.io/investment-study/jp.html"),
             "__DASH_HREF__": ("https://ocw-1027.github.io/dashboard/" if lang == "ko"
