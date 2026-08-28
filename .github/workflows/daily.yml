@@ -65,6 +65,10 @@ jobs:
           HISTORY_MARKETS: ${{ env.HM }}
           PROFILE_BATCH: '250'
 
+      - name: 장중 거래량 곡선 기록 (RVOL 보정용, 실패해도 계속)
+        continue-on-error: true
+        run: python volcurve.py
+
       - name: Run screener (JP + KR + US)
         run: python screener.py
         env:
@@ -101,6 +105,6 @@ jobs:
           git config user.name "screener-bot"
           git config user.email "actions@users.noreply.github.com"
           git pull --rebase origin main || true
-          git add history/ profiles/
+          git add history/ profiles/ volcurve/
           git commit -m "data $(TZ=Asia/Tokyo date +'%Y-%m-%d') ($HM)" || echo "no changes"
           git push
