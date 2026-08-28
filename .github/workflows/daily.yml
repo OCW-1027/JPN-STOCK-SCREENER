@@ -57,14 +57,6 @@ jobs:
           echo "HM=$HM" >> $GITHUB_ENV
           echo "JST ${H}:${M} | 대상 '${WANT}' → 저장 '${HM}'"
 
-      - name: 회사 프로필 수집 (종가판만, 실패해도 계속)
-        if: env.HM != ''
-        continue-on-error: true
-        run: python profiles.py
-        env:
-          HISTORY_MARKETS: ${{ env.HM }}
-          PROFILE_BATCH: '250'
-
       - name: 장중 거래량 곡선 기록 (RVOL 보정용, 실패해도 계속)
         continue-on-error: true
         run: python volcurve.py
@@ -99,12 +91,12 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: Commit history & profiles (종가판만)
+      - name: Commit history & volcurve (종가판만)
         if: env.HM != ''
         run: |
           git config user.name "screener-bot"
           git config user.email "actions@users.noreply.github.com"
           git pull --rebase origin main || true
-          git add history/ profiles/ volcurve/
+          git add history/ volcurve/
           git commit -m "data $(TZ=Asia/Tokyo date +'%Y-%m-%d') ($HM)" || echo "no changes"
           git push
