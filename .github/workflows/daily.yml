@@ -91,6 +91,23 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
+      - name: gh-pages 브랜치로 결과물 푸시 (Cloudflare Pages용)
+        continue-on-error: true
+        run: |
+          # site/ 내용을 gh-pages 브랜치에 통째로 덮어쓴다.
+          # 이력을 남기지 않는 단일 커밋(orphan)이라 리포가 무거워지지 않는다.
+          # 실패해도 위의 GitHub Pages 배포는 이미 끝난 상태이므로 서비스에 영향 없음.
+          cd site
+          touch .nojekyll
+          git init -q
+          git config user.name "screener-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -q -b gh-pages
+          git add -A
+          git commit -q -m "site $(TZ=Asia/Tokyo date +'%Y-%m-%d %H:%M JST')"
+          git push -f -q "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" gh-pages
+          echo "gh-pages 푸시 완료 ($(du -sh . | cut -f1))"
+
       - name: Commit history & volcurve (종가판만)
         if: env.HM != ''
         run: |
