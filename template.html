@@ -143,8 +143,8 @@
   th.f1,th.f2{background:var(--surface2);z-index:4}
   tbody tr:hover td{background:#1b2433}
   .nm{max-width:190px;overflow:hidden;text-overflow:ellipsis;font-weight:600}
-  .sec{color:var(--muted);font-size:11.5px;max-width:120px;overflow:hidden;text-overflow:ellipsis}
-  .biz{color:var(--muted);font-size:11.5px;max-width:230px;overflow:hidden;text-overflow:ellipsis}
+  .sec{color:var(--muted);font-size:11.5px;max-width:104px;overflow:hidden;text-overflow:ellipsis}
+  .biz{color:var(--muted);font-size:11.5px;max-width:150px;overflow:hidden;text-overflow:ellipsis}
   .seg{font-size:10.5px;color:var(--faint)}
   .up{color:var(--up)} .dn{color:var(--down)} .fl{color:var(--muted)}
   .b{display:inline-block;font-size:10px;font-weight:700;border-radius:4px;padding:1.5px 5px;margin-right:3px}
@@ -294,14 +294,13 @@ const COLS = [
   {t:T.c_price,i:4,g:'b'},{t:T.c_chg,i:5,g:'b'},{t:T.c_gap,i:17,g:'t'},
   {t:'5MA',i:6,g:'t'},{t:'20MA',i:7,g:'t'},{t:'200MA',i:8,g:'t'},{t:T.c_ext,i:9,g:'t'},
   {t:T.c_vol,i:10,g:'t'},{t:'RVOL',i:11,g:'t'},{t:CFG.turnLabel,i:12,g:'b'},
-  {t:T.c_rsi,i:13,g:'t'},{t:T.c_macd,i:28,g:'t'},
+  {t:T.c_rsi,i:13,g:'t'},{t:T.c_pos52,i:44,g:'t'},{t:T.c_macd,i:28,g:'t'},
   {t:T.c_w,i:14,g:'t'},{t:T.c_m,i:15,g:'t'},{t:T.c_3m,i:16,g:'t'},
   {t:T.c_ytd,i:41,g:'t'},{t:T.c_perfy,i:45,g:'t'},
-  {t:T.c_pos52,i:44,g:'t'},{t:T.c_hi52,i:42,g:'t'},{t:T.c_lo52,i:43,g:'t'},
-  {t:CFG.mcapLabel,i:20,g:'f'},{t:T.c_per,i:21,g:'f'},{t:T.c_pbr,i:22,g:'f'},{t:T.c_eps,i:23,g:'f'},
+  {t:T.c_hi52,i:42,g:'t'},{t:T.c_lo52,i:43,g:'t'},
+  {t:CFG.mcapLabel,i:20,g:'f'},{t:T.c_per,i:21,g:'f'},{t:T.c_peg,i:40,g:'f'},{t:T.c_pbr,i:22,g:'f'},{t:T.c_eps,i:23,g:'f'},
   {t:T.c_roe,i:24,g:'f'},{t:T.c_div,i:25,g:'f'},{t:T.c_eq,i:26,g:'f'},{t:CFG.ebitdaLabel,i:27,g:'f'},
-  {t:T.c_peg,i:40,g:'f'},
-  {t:T.c_revq,i:30,g:'w'},{t:T.c_revy,i:31,g:'w'},{t:T.c_revt,i:32,g:'w'},
+    {t:T.c_revq,i:30,g:'w'},{t:T.c_revy,i:31,g:'w'},{t:T.c_revt,i:32,g:'w'},
   {t:T.c_revqq,i:33,g:'w'},{t:T.c_cagr,i:34,g:'w'},{t:T.c_epsq,i:35,g:'w'},
   {t:T.c_opm,i:36,g:'w'},{t:T.c_roic,i:37,g:'w'},{t:T.c_psr,i:38,g:'w'},{t:T.c_de,i:39,g:'w'},
   {t:T.c_biz,i:29,l:1,g:'b'},{t:'',i:-1,g:'b'}
