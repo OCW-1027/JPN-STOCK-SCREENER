@@ -125,7 +125,7 @@ HTML = """<!DOCTYPE html><html lang="__LANG__"><head><meta charset="utf-8">
 --muted:#8a94a6;--faint:#5b6572;--up:#ff4f5e;--down:#3f8cff;--amber:#ffb224;--teal:#2dd4bf}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:'Pretendard','Malgun Gothic','Yu Gothic UI','Noto Sans JP',sans-serif;
-font-size:13px;line-height:1.5;padding:14px 16px 50px}
+font-size:13px;line-height:1.5;padding:14px 16px 50px;overflow-x:hidden;max-width:100vw}
 .num{font-family:ui-monospace,Consolas,monospace;font-variant-numeric:tabular-nums}
 a{color:var(--amber);text-decoration:none}
 .topbar{display:flex;align-items:center;gap:9px;margin-bottom:8px;flex-wrap:wrap}
@@ -141,7 +141,14 @@ cursor:pointer;font-weight:600;color:var(--muted);user-select:none}
 color:var(--muted);margin:10px 0;line-height:1.8}
 .note b{color:var(--text)}
 .chartbox{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 6px 4px;
-overflow-x:auto}
+overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;
+width:100%;max-width:100%;contain:paint}
+.chartinner{display:inline-block;min-width:min-content}
+.chartbox svg{display:block}
+.scrollhint{color:var(--faint);font-size:11px;margin:4px 2px 0}
+.tablebox{width:100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;
+border-radius:10px;margin-top:12px}
+.tablebox table{margin-top:0}
 svg{display:block}
 .gl{stroke:#232d3c;stroke-width:1}
 .axis{fill:var(--faint);font-size:10px;font-family:ui-monospace,Consolas,monospace}
@@ -160,7 +167,15 @@ tbody tr{cursor:pointer}tbody tr:hover td{background:#1b2433}
 tbody tr.sel td{background:#243149}
 .up{color:var(--up)}.dn{color:var(--down)}.fl{color:var(--muted)}
 footer{margin-top:14px;color:var(--faint);font-size:11px;line-height:1.7}
-@media(max-width:760px){body{padding:10px 8px 30px}.hide-m{display:none}}
+@media(max-width:760px){
+  body{padding:10px 8px 30px;overflow-x:hidden}
+  .hide-m{display:none}
+  table{font-size:12px}
+  td,th{padding:6px 5px}
+  td:nth-child(3){white-space:normal;min-width:90px;max-width:120px}
+  .topbar,.tabs{gap:5px}
+  .tab{padding:6px 10px;font-size:12.5px}
+}
 </style></head><body>
 <div class="topbar">
   <a href="__BACK_HREF__">__BACK__</a>
@@ -193,12 +208,15 @@ function esc(v){return String(v==null?'':v).replace(/&/g,'&amp;').replace(/</g,'
 function chart(M){
   const d=M.dates, n=d.length;
   if(n<2) return '';
-  const W=Math.max(680, n*74+170), H=540, L=44, Rr=132, Tp=16, Bt=34;
+  const narrow = window.innerWidth < 760;
+  const per = narrow ? 46 : 74, RrW = narrow ? 96 : 132;
+  const W=Math.max(narrow?520:680, n*per+RrW+38), H=narrow?430:540,
+        L=narrow?32:44, Rr=RrW, Tp=16, Bt=34;
   const iw=W-L-Rr, ih=H-Tp-Bt;
   const x=i=>L+(n===1?iw/2:iw*i/(n-1));
   // 상위권을 넓게: sqrt 스케일 (1~100위 → 상단이 더 벌어짐)
   const y=r=>Tp+ih*(Math.sqrt(r-1)/Math.sqrt(99));
-  let s=`<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">`;
+  let s=`<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" style="max-width:none">`;
   [1,3,5,10,20,30,50,70,100].forEach(r=>{
     s+=`<line class="gl" x1="${L}" y1="${y(r)}" x2="${L+iw}" y2="${y(r)}"/>`;
     s+=`<text class="axis" x="${L-8}" y="${y(r)+3}" text-anchor="end">${r}</text>`;});
@@ -233,7 +251,7 @@ function chart(M){
 
 function table(M){
   const rows=(M.rows||[]).slice(0,100);
-  return `<table><thead><tr><th class="l">${T.col_rank}</th><th class="l">${T.col_code}</th>
+  return `<div class="tablebox"><table><thead><tr><th class="l">${T.col_rank}</th><th class="l">${T.col_code}</th>
   <th class="l">${T.col_name}</th><th>${T.col_delta}</th><th>${metric==='value'?T.col_value:T.col_mcap}</th><th class="hide-m">${T.col_chg}</th>
   <th class="hide-m">${T.col_best}</th></tr></thead><tbody>`+
   rows.map(r=>{
@@ -247,7 +265,7 @@ function table(M){
       <td class="num hide-m">${r.chg==null?'<span class="fl">—</span>':(r.chg>0?`<span class="up">+${r.chg}%</span>`:r.chg<0?`<span class="dn">${r.chg}%</span>`:'<span class="fl">0%</span>')}</td>
       
       <td class="num hide-m fl">${r.best||'—'}</td></tr>`;
-  }).join('')+'</tbody></table>';
+  }).join('')+'</tbody></table></div>';
 }
 
 function render(){
@@ -257,7 +275,8 @@ function render(){
     $('#body').innerHTML=`<div class="note"><b>${T.acc_title.replace('{n}',M?M.n_days:0)}</b><br>${T.acc_body}</div>`;
     return;
   }
-  $('#body').innerHTML=`<div class="chartbox">${chart(M)}</div>
+  const hint = window.innerWidth<760 ? `<div class="scrollhint">${T.scroll_hint||''}</div>` : '';
+  $('#body').innerHTML=`<div class="chartbox"><div class="chartinner">${chart(M)}</div></div>${hint}
     <div class="note" style="margin-top:10px">${T.howto}</div>${table(M)}`;
   document.querySelectorAll('[data-c]').forEach(el=>el.addEventListener('click',()=>{
     sel = sel===el.dataset.c ? null : el.dataset.c; render();

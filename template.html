@@ -13,18 +13,18 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scrollbar-color:#33404f var(--bg);-webkit-text-size-adjust:100%}
-  body{background:var(--bg);color:var(--text);
+  body{overflow-x:hidden;max-width:100vw;background:var(--bg);color:var(--text);
     font-family:'Pretendard','Malgun Gothic','Yu Gothic UI','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;
     font-size:13px;line-height:1.45;padding:12px 14px 40px}
   .num{font-family:ui-monospace,'Cascadia Mono',Consolas,monospace;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
 
-  .topbar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:10px}
+  .topbar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:10px;max-width:100%}
   .mnav{display:flex;gap:5px}
   .mnav a,.lang a{padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);
     color:var(--muted);text-decoration:none;font-weight:700;font-size:12.5px;white-space:nowrap}
   .mnav a.on{color:var(--amber);border-color:var(--amber);background:var(--surface2)}
   .lang{margin-left:auto}
-  .lang{display:flex;gap:5px}
+  .lang{display:flex;gap:5px;flex-wrap:wrap;min-width:0}
   .lang a{color:var(--faint);font-weight:600}
   .lang a.study{color:var(--violet);border-color:rgba(192,132,252,.45);background:var(--surface2)}
   .lang a.study:hover{background:var(--violet);color:#2a1245}
@@ -119,6 +119,7 @@
   td.ck input{width:15px;height:15px;accent-color:var(--amber);cursor:pointer;vertical-align:middle}
   tr.picked td{background:#20293a}
   .xscroll{overflow-x:auto;overflow-y:hidden;height:14px;margin-bottom:2px;
+    width:100%;max-width:100%;contain:paint;
     border:1px solid var(--line);border-bottom:0;border-radius:8px 8px 0 0;background:var(--surface2)}
   .xscroll div{height:1px}
   .xscroll::-webkit-scrollbar{height:12px}
@@ -126,6 +127,7 @@
   .xscroll::-webkit-scrollbar-thumb:hover{background:#4d5c72}
 
   .tblwrap{overflow:auto;max-height:calc(100vh - 170px);min-height:300px;
+    width:100%;max-width:100%;contain:paint;
     border:1px solid var(--line);border-radius:0 0 10px 10px;background:var(--surface);overscroll-behavior-x:contain}
   table{border-collapse:separate;border-spacing:0;width:100%}
   thead th{position:sticky;top:0;background:var(--surface2);color:var(--muted);font-size:11.5px;
@@ -175,7 +177,13 @@
 
   /* mobile portrait */
   @media(max-width:760px){
-    body{padding:10px 8px 30px;font-size:12.5px}
+    body{padding:10px 8px 30px;font-size:12.5px;overflow-x:hidden}
+    .xscroll,.tblwrap{width:calc(100vw - 16px);max-width:calc(100vw - 16px)}
+    .lang{margin-left:0;width:100%}
+    .lang a,.mnav a{padding:5px 9px;font-size:11.5px}
+    .idxstrip,.tabs,.strip,.sigchips{max-width:calc(100vw - 16px)}
+    .topbar,header,.tabs,.controls,.wlbar,.strip-wrap{max-width:100%}
+    .idxstrip,.tabs,.strip{-webkit-overflow-scrolling:touch}
     h1{font-size:16px}
     .hint{display:none}
     input[type=search]{width:100%}
