@@ -77,6 +77,12 @@ jobs:
         env:
           OUTPUT_DIR: site
 
+      - name: 거래대금 순위 추이 (실패해도 계속)
+        continue-on-error: true
+        run: python ranking.py
+        env:
+          OUTPUT_DIR: site
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
