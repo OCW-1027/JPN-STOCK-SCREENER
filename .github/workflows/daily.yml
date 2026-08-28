@@ -36,17 +36,26 @@ jobs:
       - name: Install deps
         run: pip install -r requirements.txt
 
-      - name: History target 결정 (하루 1회, 종가 직후 한 슬롯만)
+      - name: History target 결정 (종가 후 첫 실행 1회만 저장)
         run: |
-          # 16:30~16:44 JST → 일본·한국 종가판 / 06:30~06:44 JST → 미국 종가판
-          # 그 외 시간대(장중 15분 실행)는 화면 갱신만 하고 저장 작업은 건너뜀.
-          H=$(TZ=Asia/Tokyo date +%H)
-          M=$(TZ=Asia/Tokyo date +%M)
+          # 종가 이후 시간대 전체를 창으로 잡되, 그 날짜 파일이 이미 있으면 건너뛴다.
+          #   일본·한국: 16:30~17:59 JST / 미국: 06:30~07:59 JST
+          # → GitHub 큐 지연으로 실행이 밀려도 그날 안에 반드시 한 번은 저장됨.
+          H=$(TZ=Asia/Tokyo date +%H); M=$(TZ=Asia/Tokyo date +%M)
+          D=$(TZ=Asia/Tokyo date +%Y-%m-%d)
+          WANT=""
+          if { [ "$H" = "16" ] && [ "$M" -ge 30 ]; } || [ "$H" = "17" ]; then WANT="jp,kr"; fi
+          if { [ "$H" = "06" ] && [ "$M" -ge 30 ]; } || [ "$H" = "07" ]; then WANT="us"; fi
           HM=""
-          if [ "$H" = "16" ] && [ "$M" -ge 30 ] && [ "$M" -le 44 ]; then HM="jp,kr"; fi
-          if [ "$H" = "06" ] && [ "$M" -ge 30 ] && [ "$M" -le 44 ]; then HM="us"; fi
+          for m in $(echo "$WANT" | tr ',' ' '); do
+            if [ -f "history/$m/$D.csv.gz" ]; then
+              echo "  [$m] $D 이미 저장됨 → 건너뜀"
+            else
+              HM="${HM:+$HM,}$m"
+            fi
+          done
           echo "HM=$HM" >> $GITHUB_ENV
-          echo "JST ${H}:${M} → HM='${HM}' (빈 값이면 화면 갱신만)"
+          echo "JST ${H}:${M} | 대상 '${WANT}' → 저장 '${HM}'"
 
       - name: 회사 프로필 수집 (종가판만, 실패해도 계속)
         if: env.HM != ''
