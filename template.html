@@ -296,8 +296,11 @@ const COLS = [
   {t:T.c_vol,i:10,g:'t'},{t:'RVOL',i:11,g:'t'},{t:CFG.turnLabel,i:12,g:'b'},
   {t:T.c_rsi,i:13,g:'t'},{t:T.c_macd,i:28,g:'t'},
   {t:T.c_w,i:14,g:'t'},{t:T.c_m,i:15,g:'t'},{t:T.c_3m,i:16,g:'t'},
+  {t:T.c_ytd,i:41,g:'t'},{t:T.c_perfy,i:45,g:'t'},
+  {t:T.c_pos52,i:44,g:'t'},{t:T.c_hi52,i:42,g:'t'},{t:T.c_lo52,i:43,g:'t'},
   {t:CFG.mcapLabel,i:20,g:'f'},{t:T.c_per,i:21,g:'f'},{t:T.c_pbr,i:22,g:'f'},{t:T.c_eps,i:23,g:'f'},
   {t:T.c_roe,i:24,g:'f'},{t:T.c_div,i:25,g:'f'},{t:T.c_eq,i:26,g:'f'},{t:CFG.ebitdaLabel,i:27,g:'f'},
+  {t:T.c_peg,i:40,g:'f'},
   {t:T.c_revq,i:30,g:'w'},{t:T.c_revy,i:31,g:'w'},{t:T.c_revt,i:32,g:'w'},
   {t:T.c_revqq,i:33,g:'w'},{t:T.c_cagr,i:34,g:'w'},{t:T.c_epsq,i:35,g:'w'},
   {t:T.c_opm,i:36,g:'w'},{t:T.c_roic,i:37,g:'w'},{t:T.c_psr,i:38,g:'w'},{t:T.c_de,i:39,g:'w'},
@@ -410,7 +413,10 @@ function cell(r,c){
   if(i===3)  return `<td class="l seg">${esc(r[3])}</td>`;
   if(i===29) return `<td class="l biz" title="${esc(r[29])}" data-code="${esc(r[0])}">${esc(r[29])}</td>`;
   if(i===4)  return `<td class="num">${priceFmt(r[4])}</td>`;
-  if([5,17,9,14,15,16,28,30,31,32,33,34,35].includes(i)) return `<td class="num">${pc(r[i])}</td>`;
+  if([5,17,9,14,15,16,28,30,31,32,33,34,35,41,45].includes(i)) return `<td class="num">${pc(r[i])}</td>`;
+  if(i===40) return `<td class="num">${fmt(r[40],2)}</td>`;
+  if([42,43].includes(i)) return `<td class="num">${priceFmt(r[i])}</td>`;
+  if(i===44) return `<td class="num">${r[44]==null?'—':fmt(r[44],0)}</td>`;
   if([36,37].includes(i)) return `<td class="num">${adp(r[i])}</td>`;
   if([38,39].includes(i)) return `<td class="num">${fmt(r[i],2)}</td>`;
   if(i===10) return `<td class="num">${fint(r[10])}</td>`;

@@ -59,6 +59,8 @@ SCAN_COLUMNS = [
     # 수익성·밸류
     "operating_margin_ttm", "return_on_invested_capital", "price_sales_ratio",
     "debt_to_equity",
+    # 밸류·위치
+    "price_earnings_growth_ttm", "Perf.YTD", "price_52_week_low", "Perf.Y",
 ]
 
 SECTOR_KO = {
@@ -559,6 +561,10 @@ def compute_signals(df):
     d["sig_garp"] = ((psr > 0) & (psr <= c["GARP_PSR"]) & (rev_q >= c["GARP_YOY"])
                      & (opm >= c["GARP_OPM"]))
     d["ext200"] = ((close / s200 - 1) * 100).where(valid)
+    # 52주 밴드 내 위치: 저가=0%, 고가=100%
+    hi, lo = d["price_52_week_high"], d["price_52_week_low"]
+    rng = hi - lo
+    d["pos52"] = ((close - lo) / rng * 100).where(rng > 0)
     return d
 
 
@@ -591,6 +597,12 @@ def build_rows(df, mc):
         "c37": d["return_on_invested_capital"].round(1),
         "c38": d["price_sales_ratio"].round(2),
         "c39": d["debt_to_equity"].round(2),
+        "c40": d["price_earnings_growth_ttm"].round(2),
+        "c41": d["Perf.YTD"].round(1),
+        "c42": d["price_52_week_high"].round(2),
+        "c43": d["price_52_week_low"].round(2),
+        "c44": d["pos52"].round(0),
+        "c45": d["Perf.Y"].round(1),
     })
     out = out.astype(object).where(pd.notna(out), None)
     rows = out.values.tolist()
