@@ -1,0 +1,2174 @@
+{
+ "date": "2026-08-28",
+ "market": "jp",
+ "generated": "2026-08-30 23:36 JST",
+ "llm_mode": "off",
+ "baserate_days": 4,
+ "universe": {
+  "total": 3779,
+  "liquid": 1173,
+  "candidates": 20,
+  "short": 8,
+  "long": 8,
+  "news": 4
+ },
+ "picks": [
+  {
+   "code": "4812",
+   "name": "電通総研",
+   "ticker": "TSE:4812",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_spike",
+    "sig_high",
+    "sig_gap",
+    "sig_macd",
+    "sig_qual",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "1": {
+      "n": 106,
+      "win": 33.0,
+      "avg": -1.16,
+      "med": -1.18,
+      "excess": -0.81,
+      "best": 22.4,
+      "worst": -54.8
+     }
+    },
+    "sig_high": {
+     "1": {
+      "n": 257,
+      "win": 38.1,
+      "avg": -0.61,
+      "med": -0.49,
+      "excess": -0.23,
+      "best": 28.3,
+      "worst": -10.5
+     }
+    },
+    "sig_gap": {
+     "1": {
+      "n": 120,
+      "win": 56.7,
+      "avg": 3.21,
+      "med": 1.0,
+      "excess": 2.07,
+      "best": 45.6,
+      "worst": -15.9
+     }
+    },
+    "sig_macd": {
+     "1": {
+      "n": 849,
+      "win": 72.3,
+      "avg": 1.59,
+      "med": 0.93,
+      "excess": -0.05,
+      "best": 57.8,
+      "worst": -12.3
+     }
+    },
+    "sig_qual": {
+     "1": {
+      "n": 476,
+      "win": 74.2,
+      "avg": 1.63,
+      "med": 1.61,
+      "excess": -0.01,
+      "best": 20.5,
+      "worst": -79.2
+     }
+    },
+    "sig_accel": {}
+   },
+   "sector": "Technology Services",
+   "industry": "Data Processing Services",
+   "segment": "프라임",
+   "close": 2908.0,
+   "chg": 6.17,
+   "gap": 5.88,
+   "sma5": 2762.6,
+   "sma20": 2716.4,
+   "sma200": 2339.02,
+   "ext200": 24.33,
+   "rsi": 74.2,
+   "macd_h": 1.87,
+   "rvol": 18.15,
+   "pw": 6.13,
+   "p1": 6.68,
+   "p3": 40.35,
+   "ytd": 5.8,
+   "pos52": 98.0,
+   "hi52": 2930.0,
+   "lo52": 1728.0,
+   "val": 173.1,
+   "mcap": 5298.0,
+   "per": 32.3,
+   "pbr": 5.39,
+   "eps": 90.02,
+   "roe": 17.5,
+   "eqr": 64.3,
+   "div": 1.59,
+   "rev_q": 12.1,
+   "rev_ttm": 9.2,
+   "cagr5": 8.7,
+   "eps_q": 18.7,
+   "opm": 14.2,
+   "roic": 17.1,
+   "psr": 3.44,
+   "peg": 2.34,
+   "de": 0.02,
+   "inflow": null,
+   "biz": "Dentsu Soken Inc. provides information technology solutions. It operates through four segments: Financial Solutions, Business Solutions, Manufacturing Solutions, and Communication IT. The Financial Solutions segment offe",
+   "tdnet": [
+    {
+     "pub": "2026-08-28 18:00",
+     "title": "（追加）合同会社VICによる当社株式に対する公開買付けの開始予定に関する賛同の意見表明及び応募推奨に関するお知らせ",
+     "url": "https://www.release.tdnet.info/inbs/140120260828528106.pdf",
+     "bits": 1024,
+     "strong": true
+    },
+    {
+     "pub": "2026-08-28 16:00",
+     "title": "2026年12月期の期末配当予想の修正（無配）に関するお知らせ",
+     "url": "https://www.release.tdnet.info/inbs/140120260828527533.pdf",
+     "bits": 264,
+     "strong": false
+    },
+    {
+     "pub": "2026-08-28 16:00",
+     "title": "合同会社VICによる当社株式に対する公開買付けの開始予定に関する賛同の意見表明及び応募推奨に関するお知らせ",
+     "url": "https://www.release.tdnet.info/inbs/140120260828527772.pdf",
+     "bits": 1024,
+     "strong": true
+    },
+    {
+     "pub": "2026-08-28 08:55",
+     "title": "当社に関する一部報道について",
+     "url": "https://www.release.tdnet.info/inbs/140120260828527492.pdf",
+     "bits": 0,
+     "strong": false
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "2590",
+   "name": "ダイドーグループホールディングス",
+   "ticker": "TSE:2590",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_gap",
+    "sig_trend",
+    "sig_macd",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "1": {
+      "n": 106,
+      "win": 33.0,
+      "avg": -1.16,
+      "med": -1.18,
+      "excess": -0.81,
+      "best": 22.4,
+      "worst": -54.8
+     }
+    },
+    "sig_x5": {
+     "1": {
+      "n": 785,
+      "win": 53.6,
+      "avg": 0.54,
+      "med": 0.21,
+      "excess": 0.5,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_gap": {
+     "1": {
+      "n": 120,
+      "win": 56.7,
+      "avg": 3.21,
+      "med": 1.0,
+      "excess": 2.07,
+      "best": 45.6,
+      "worst": -15.9
+     }
+    },
+    "sig_trend": {
+     "1": {
+      "n": 499,
+      "win": 48.1,
+      "avg": -0.0,
+      "med": 0.0,
+      "excess": -0.01,
+      "best": 18.1,
+      "worst": -14.3
+     }
+    },
+    "sig_macd": {
+     "1": {
+      "n": 849,
+      "win": 72.3,
+      "avg": 1.59,
+      "med": 0.93,
+      "excess": -0.05,
+      "best": 57.8,
+      "worst": -12.3
+     }
+    },
+    "sig_accel": {}
+   },
+   "sector": "Consumer Non-Durables",
+   "industry": "Food: Major Diversified",
+   "segment": "프라임",
+   "close": 3090.0,
+   "chg": 2.66,
+   "gap": 13.29,
+   "sma5": 3060.0,
+   "sma20": 2970.5,
+   "sma200": 2640.11,
+   "ext200": 17.04,
+   "rsi": 62.8,
+   "macd_h": 4.02,
+   "rvol": 9.2,
+   "pw": 4.29,
+   "p1": 1.31,
+   "p3": 16.74,
+   "ytd": 21.7,
+   "pos52": 60.0,
+   "hi52": 3550.0,
+   "lo52": 2400.0,
+   "val": 22.6,
+   "mcap": 982.0,
+   "per": null,
+   "pbr": 1.42,
+   "eps": -825.31,
+   "roe": -33.0,
+   "eqr": 41.2,
+   "div": 0.98,
+   "rev_q": 0.1,
+   "rev_ttm": 2.6,
+   "cagr5": 8.8,
+   "eps_q": 80.9,
+   "opm": 3.9,
+   "roic": -24.5,
+   "psr": 0.41,
+   "peg": -0.0,
+   "de": 0.46,
+   "inflow": null,
+   "biz": "【特色】大手飲料メーカー。大半を自販機で販売。海外飲料はトルコが柱。子会社で医薬品関連事業も 連結事業 【連結事業】国内飲料59(-2)、海外飲料27(12)、医薬品関連5(6)、食品8(2)、希少疾病用医薬品0(-53)",
+   "tdnet": [
+    {
+     "pub": "2026-08-27 15:30",
+     "title": "2027年1月期  第2四半期（中間期）決算短信〔日本基準〕（連結）",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260827526924.pdf",
+     "bits": 64,
+     "strong": false
+    },
+    {
+     "pub": "2026-08-27 15:30",
+     "title": "2026年度（2027年1月期）第2四半期決算概要",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260827526940.pdf",
+     "bits": 0,
+     "strong": false
+    },
+    {
+     "pub": "2026-08-27 15:30",
+     "title": "2027年1月期 通期業績予想の修正に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260827526973.pdf",
+     "bits": 128,
+     "strong": false
+    },
+    {
+     "pub": "2026-08-27 15:30",
+     "title": "営業外費用（正味貨幣持高に関する損失）の計上に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260827526985.pdf",
+     "bits": 0,
+     "strong": false
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "9934",
+   "name": "因幡電機産業",
+   "ticker": "TSE:9934",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_high",
+    "sig_trend",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "1": {
+      "n": 106,
+      "win": 33.0,
+      "avg": -1.16,
+      "med": -1.18,
+      "excess": -0.81,
+      "best": 22.4,
+      "worst": -54.8
+     }
+    },
+    "sig_x5": {
+     "1": {
+      "n": 785,
+      "win": 53.6,
+      "avg": 0.54,
+      "med": 0.21,
+      "excess": 0.5,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_high": {
+     "1": {
+      "n": 257,
+      "win": 38.1,
+      "avg": -0.61,
+      "med": -0.49,
+      "excess": -0.23,
+      "best": 28.3,
+      "worst": -10.5
+     }
+    },
+    "sig_trend": {
+     "1": {
+      "n": 499,
+      "win": 48.1,
+      "avg": -0.0,
+      "med": 0.0,
+      "excess": -0.01,
+      "best": 18.1,
+      "worst": -14.3
+     }
+    },
+    "sig_accel": {},
+    "sig_garp": {}
+   },
+   "sector": "Distribution Services",
+   "industry": "Wholesale Distributors",
+   "segment": "프라임",
+   "close": 3062.0,
+   "chg": 1.22,
+   "gap": -0.4,
+   "sma5": 3011.2,
+   "sma20": 2988.1,
+   "sma200": 2677.72,
+   "ext200": 14.35,
+   "rsi": 67.7,
+   "macd_h": -3.86,
+   "rvol": 4.57,
+   "pw": 3.52,
+   "p1": 9.89,
+   "p3": 12.1,
+   "ytd": 19.1,
+   "pos52": 98.0,
+   "hi52": 3088.0,
+   "lo52": 2025.0,
+   "val": 23.3,
+   "mcap": 3392.0,
+   "per": 13.0,
+   "pbr": 1.66,
+   "eps": 238.78,
+   "roe": 14.0,
+   "eqr": 63.7,
+   "div": 2.84,
+   "rev_q": 29.3,
+   "rev_ttm": 13.7,
+   "cagr5": 8.5,
+   "eps_q": 71.9,
+   "opm": 7.9,
+   "roic": 13.4,
+   "psr": 0.83,
+   "peg": 0.32,
+   "de": 0.06,
+   "inflow": null,
+   "biz": "Inaba Denki Sangyo Co.,Ltd., together with its subsidiaries, sells electrical equipment and materials, industrial automation, and proprietary products in Japan and internationally. It supplies a range of products, includ",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "3176",
+   "name": "三洋貿易",
+   "ticker": "TSE:3176",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_high",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "1": {
+      "n": 106,
+      "win": 33.0,
+      "avg": -1.16,
+      "med": -1.18,
+      "excess": -0.81,
+      "best": 22.4,
+      "worst": -54.8
+     }
+    },
+    "sig_x5": {
+     "1": {
+      "n": 785,
+      "win": 53.6,
+      "avg": 0.54,
+      "med": 0.21,
+      "excess": 0.5,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_high": {
+     "1": {
+      "n": 257,
+      "win": 38.1,
+      "avg": -0.61,
+      "med": -0.49,
+      "excess": -0.23,
+      "best": 28.3,
+      "worst": -10.5
+     }
+    },
+    "sig_growth": {},
+    "sig_accel": {},
+    "sig_garp": {}
+   },
+   "sector": "Distribution Services",
+   "industry": "Wholesale Distributors",
+   "segment": "프라임",
+   "close": 1193.0,
+   "chg": 5.48,
+   "gap": -0.62,
+   "sma5": 1133.2,
+   "sma20": 1080.95,
+   "sma200": 828.23,
+   "ext200": 44.04,
+   "rsi": 76.6,
+   "macd_h": -1.82,
+   "rvol": 3.0,
+   "pw": 7.77,
+   "p1": 38.08,
+   "p3": 50.06,
+   "ytd": 58.2,
+   "pos52": 99.0,
+   "hi52": 1200.0,
+   "lo52": 723.0,
+   "val": 12.9,
+   "mcap": 652.0,
+   "per": 12.7,
+   "pbr": 1.23,
+   "eps": 94.6,
+   "roe": 10.3,
+   "eqr": 65.5,
+   "div": 2.61,
+   "rev_q": 21.5,
+   "rev_ttm": 7.0,
+   "cagr5": 11.8,
+   "eps_q": 56.5,
+   "opm": 5.3,
+   "roic": 10.2,
+   "psr": 0.52,
+   "peg": 1.53,
+   "de": 0.03,
+   "inflow": null,
+   "biz": "Sanyo Trading Co., Ltd., through its subsidiaries, engages in the rubber, chemical, green technology, industrial products, and life science businesses in Japan and internationally. The company offers rubbers, including s",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "8918",
+   "name": "ランド",
+   "ticker": "TSE:8918",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_gap",
+    "sig_trend",
+    "sig_macd",
+    "sig_growth"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "1": {
+      "n": 785,
+      "win": 53.6,
+      "avg": 0.54,
+      "med": 0.21,
+      "excess": 0.5,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_x20": {
+     "1": {
+      "n": 265,
+      "win": 60.4,
+      "avg": 1.1,
+      "med": 0.45,
+      "excess": 0.86,
+      "best": 129.6,
+      "worst": -11.7
+     }
+    },
+    "sig_gap": {
+     "1": {
+      "n": 120,
+      "win": 56.7,
+      "avg": 3.21,
+      "med": 1.0,
+      "excess": 2.07,
+      "best": 45.6,
+      "worst": -15.9
+     }
+    },
+    "sig_trend": {
+     "1": {
+      "n": 499,
+      "win": 48.1,
+      "avg": -0.0,
+      "med": 0.0,
+      "excess": -0.01,
+      "best": 18.1,
+      "worst": -14.3
+     }
+    },
+    "sig_macd": {
+     "1": {
+      "n": 849,
+      "win": 72.3,
+      "avg": 1.59,
+      "med": 0.93,
+      "excess": -0.05,
+      "best": 57.8,
+      "worst": -12.3
+     }
+    },
+    "sig_growth": {}
+   },
+   "sector": "Finance",
+   "industry": "Real Estate Development",
+   "segment": "스탠다드",
+   "close": 11.0,
+   "chg": 10.0,
+   "gap": 10.0,
+   "sma5": 10.6,
+   "sma20": 10.35,
+   "sma200": 9.7,
+   "ext200": 13.46,
+   "rsi": 55.4,
+   "macd_h": 0.05,
+   "rvol": 1.0,
+   "pw": 10.0,
+   "p1": 10.0,
+   "p3": 10.0,
+   "ytd": 37.5,
+   "pos52": 75.0,
+   "hi52": 12.0,
+   "lo52": 8.0,
+   "val": 37.9,
+   "mcap": 169.0,
+   "per": 18.3,
+   "pbr": 1.77,
+   "eps": 0.6,
+   "roe": 10.2,
+   "eqr": 89.2,
+   "div": 0.0,
+   "rev_q": 203.9,
+   "rev_ttm": -33.9,
+   "cagr5": 21.4,
+   "eps_q": null,
+   "opm": 26.5,
+   "roic": 10.1,
+   "psr": 5.67,
+   "peg": null,
+   "de": 0.06,
+   "inflow": null,
+   "biz": "",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "4420",
+   "name": "イーソル",
+   "ticker": "TSE:4420",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "1": {
+      "n": 106,
+      "win": 33.0,
+      "avg": -1.16,
+      "med": -1.18,
+      "excess": -0.81,
+      "best": 22.4,
+      "worst": -54.8
+     }
+    },
+    "sig_x5": {
+     "1": {
+      "n": 785,
+      "win": 53.6,
+      "avg": 0.54,
+      "med": 0.21,
+      "excess": 0.5,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_x20": {
+     "1": {
+      "n": 265,
+      "win": 60.4,
+      "avg": 1.1,
+      "med": 0.45,
+      "excess": 0.86,
+      "best": 129.6,
+      "worst": -11.7
+     }
+    },
+    "sig_accel": {},
+    "sig_garp": {}
+   },
+   "sector": "Technology Services",
+   "industry": "Packaged Software",
+   "segment": "스탠다드",
+   "close": 785.0,
+   "chg": 14.6,
+   "gap": 0.88,
+   "sma5": 705.2,
+   "sma20": 715.05,
+   "sma200": 621.79,
+   "ext200": 26.25,
+   "rsi": 60.1,
+   "macd_h": 5.9,
+   "rvol": 7.35,
+   "pw": 11.82,
+   "p1": 6.08,
+   "p3": 9.03,
+   "ytd": 53.9,
+   "pos52": 59.0,
+   "hi52": 1004.0,
+   "lo52": 465.0,
+   "val": 4.4,
+   "mcap": 128.0,
+   "per": 20.6,
+   "pbr": 2.52,
+   "eps": 38.04,
+   "roe": 13.2,
+   "eqr": 72.6,
+   "div": 0.81,
+   "rev_q": 14.3,
+   "rev_ttm": 11.4,
+   "cagr5": 6.1,
+   "eps_q": 52.7,
+   "opm": 6.8,
+   "roic": 13.1,
+   "psr": 1.24,
+   "peg": 0.32,
+   "de": 0.01,
+   "inflow": null,
+   "biz": "",
+   "tdnet": [
+    {
+     "pub": "2026-08-28 16:20",
+     "title": "本日の一部報道について",
+     "url": "https://www.release.tdnet.info/inbs/140120260828528049.pdf",
+     "bits": 0,
+     "strong": false
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "9110",
+   "name": "ＮＳユナイテッド海運",
+   "ticker": "TSE:9110",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_high",
+    "sig_growth",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "1": {
+      "n": 106,
+      "win": 33.0,
+      "avg": -1.16,
+      "med": -1.18,
+      "excess": -0.81,
+      "best": 22.4,
+      "worst": -54.8
+     }
+    },
+    "sig_x5": {
+     "1": {
+      "n": 785,
+      "win": 53.6,
+      "avg": 0.54,
+      "med": 0.21,
+      "excess": 0.5,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_high": {
+     "1": {
+      "n": 257,
+      "win": 38.1,
+      "avg": -0.61,
+      "med": -0.49,
+      "excess": -0.23,
+      "best": 28.3,
+      "worst": -10.5
+     }
+    },
+    "sig_growth": {},
+    "sig_garp": {}
+   },
+   "sector": "Transportation",
+   "industry": "Marine Shipping",
+   "segment": "프라임",
+   "close": 10480.0,
+   "chg": 0.1,
+   "gap": 0.0,
+   "sma5": 10474.0,
+   "sma20": 10281.5,
+   "sma200": 7300.0,
+   "ext200": 43.56,
+   "rsi": 88.4,
+   "macd_h": -99.3,
+   "rvol": 2.55,
+   "pw": 0.29,
+   "p1": 38.81,
+   "p3": 31.82,
+   "ytd": 71.2,
+   "pos52": 99.0,
+   "hi52": 10520.0,
+   "lo52": 4930.0,
+   "val": 29.5,
+   "mcap": 2467.0,
+   "per": 10.2,
+   "pbr": 1.31,
+   "eps": 1029.13,
+   "roe": 13.7,
+   "eqr": 63.3,
+   "div": 2.96,
+   "rev_q": 22.8,
+   "rev_ttm": 1.0,
+   "cagr5": 10.7,
+   "eps_q": 2.6,
+   "opm": 10.0,
+   "roic": 10.3,
+   "psr": 1.07,
+   "peg": 0.36,
+   "de": 0.34,
+   "inflow": null,
+   "biz": "【特色】旧新和海運。ばら積み船が主力。日本郵船系だが日鉄海運と１０年合併、日本製鉄が筆頭株主 連結事業 【連結事業】外航海運86(8)、内航海運14(15)、他‥(-2)(2026.3)",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "4667",
+   "name": "アイサンテクノロジー",
+   "ticker": "TSE:4667",
+   "bucket": "short",
+   "score": 4.0,
+   "signals": [
+    "sig_spike",
+    "sig_high",
+    "sig_gap",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "1": {
+      "n": 106,
+      "win": 33.0,
+      "avg": -1.16,
+      "med": -1.18,
+      "excess": -0.81,
+      "best": 22.4,
+      "worst": -54.8
+     }
+    },
+    "sig_high": {
+     "1": {
+      "n": 257,
+      "win": 38.1,
+      "avg": -0.61,
+      "med": -0.49,
+      "excess": -0.23,
+      "best": 28.3,
+      "worst": -10.5
+     }
+    },
+    "sig_gap": {
+     "1": {
+      "n": 120,
+      "win": 56.7,
+      "avg": 3.21,
+      "med": 1.0,
+      "excess": 2.07,
+      "best": 45.6,
+      "worst": -15.9
+     }
+    },
+    "sig_garp": {}
+   },
+   "sector": "Technology Services",
+   "industry": "Packaged Software",
+   "segment": "스탠다드",
+   "close": 2661.0,
+   "chg": 20.95,
+   "gap": 5.91,
+   "sma5": 2268.4,
+   "sma20": 2015.5,
+   "sma200": 1890.6,
+   "ext200": 40.75,
+   "rsi": 76.8,
+   "macd_h": 59.35,
+   "rvol": 17.72,
+   "pw": 27.02,
+   "p1": 47.67,
+   "p3": 54.62,
+   "ytd": 34.4,
+   "pos52": 97.0,
+   "hi52": 2700.0,
+   "lo52": 1390.0,
+   "val": 21.3,
+   "mcap": 123.0,
+   "per": 29.5,
+   "pbr": 2.24,
+   "eps": 90.13,
+   "roe": 7.7,
+   "eqr": 54.0,
+   "div": 1.63,
+   "rev_q": 11.2,
+   "rev_ttm": 24.5,
+   "cagr5": 16.2,
+   "eps_q": -17275.8,
+   "opm": 10.0,
+   "roic": 7.4,
+   "psr": 1.85,
+   "peg": 0.34,
+   "de": 0.08,
+   "inflow": null,
+   "biz": "",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "3245",
+   "name": "ディア・ライフ",
+   "ticker": "TSE:3245",
+   "bucket": "long",
+   "score": 8.0,
+   "signals": [
+    "sig_x5",
+    "sig_trend",
+    "sig_macd",
+    "sig_div",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "1": {
+      "n": 785,
+      "win": 53.6,
+      "avg": 0.54,
+      "med": 0.21,
+      "excess": 0.5,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_trend": {
+     "1": {
+      "n": 499,
+      "win": 48.1,
+      "avg": -0.0,
+      "med": 0.0,
+      "excess": -0.01,
+      "best": 18.1,
+      "worst": -14.3
+     }
+    },
+    "sig_macd": {
+     "1": {
+      "n": 849,
+      "win": 72.3,
+      "avg": 1.59,
+      "med": 0.93,
+      "excess": -0.05,
+      "best": 57.8,
+      "worst": -12.3
+     }
+    },
+    "sig_div": {
+     "1": {
+      "n": 382,
+      "win": 76.4,
+      "avg": 1.04,
+      "med": 0.75,
+      "excess": -0.51,
+      "best": 12.1,
+      "worst": -5.6
+     }
+    },
+    "sig_qual": {
+     "1": {
+      "n": 476,
+      "win": 74.2,
+      "avg": 1.63,
+      "med": 1.61,
+      "excess": -0.01,
+      "best": 20.5,
+      "worst": -79.2
+     }
+    },
+    "sig_growth": {},
+    "sig_accel": {},
+    "sig_garp": {}
+   },
+   "sector": "Finance",
+   "industry": "Real Estate Development",
+   "segment": "프라임",
+   "close": 1167.0,
+   "chg": 0.52,
+   "gap": 0.0,
+   "sma5": 1160.0,
+   "sma20": 1125.45,
+   "sma200": 1084.45,
+   "ext200": 7.61,
+   "rsi": 70.5,
+   "macd_h": 1.08,
+   "rvol": 0.79,
+   "pw": 0.78,
+   "p1": 6.97,
+   "p3": 17.29,
+   "ytd": 3.3,
+   "pos52": 51.0,
+   "hi52": 1367.0,
+   "lo52": 957.0,
+   "val": 3.2,
+   "mcap": 563.0,
+   "per": 10.5,
+   "pbr": 1.72,
+   "eps": 110.95,
+   "roe": 17.4,
+   "eqr": 73.3,
+   "div": 5.43,
+   "rev_q": 63.4,
+   "rev_ttm": 9.7,
+   "cagr5": 23.2,
+   "eps_q": 108.1,
+   "opm": 10.5,
+   "roic": 8.6,
+   "psr": 0.65,
+   "peg": 1.21,
+   "de": 0.98,
+   "inflow": null,
+   "biz": "【特色】都市型レジデンスや商業用ビルを開発・販売。都内中心。不動産や保険業界向け人材派遣も 連結事業 【連結事業】リアルエステート95(12)、セールスプロモーション5(2)(2025.9)",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "5019",
+   "name": "出光興産",
+   "ticker": "TSE:5019",
+   "bucket": "long",
+   "score": 7.0,
+   "signals": [
+    "sig_x5",
+    "sig_gc",
+    "sig_trend",
+    "sig_macd",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "1": {
+      "n": 785,
+      "win": 53.6,
+      "avg": 0.54,
+      "med": 0.21,
+      "excess": 0.5,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_gc": {
+     "1": {
+      "n": 347,
+      "win": 58.2,
+      "avg": 0.36,
+      "med": 0.29,
+      "excess": 0.14,
+      "best": 19.1,
+      "worst": -14.3
+     }
+    },
+    "sig_trend": {
+     "1": {
+      "n": 499,
+      "win": 48.1,
+      "avg": -0.0,
+      "med": 0.0,
+      "excess": -0.01,
+      "best": 18.1,
+      "worst": -14.3
+     }
+    },
+    "sig_macd": {
+     "1": {
+      "n": 849,
+      "win": 72.3,
+      "avg": 1.59,
+      "med": 0.93,
+      "excess": -0.05,
+      "best": 57.8,
+      "worst": -12.3
+     }
+    },
+    "sig_growth": {},
+    "sig_accel": {},
+    "sig_garp": {}
+   },
+   "sector": "Energy Minerals",
+   "industry": "Oil Refining/Marketing",
+   "segment": "프라임",
+   "close": 1379.5,
+   "chg": 0.69,
+   "gap": -0.29,
+   "sma5": 1372.8,
+   "sma20": 1323.17,
+   "sma200": 1315.67,
+   "ext200": 4.85,
+   "rsi": 61.0,
+   "macd_h": 4.84,
+   "rvol": 0.73,
+   "pw": 2.26,
+   "p1": 5.06,
+   "p3": 6.28,
+   "ytd": 15.9,
+   "pos52": 57.0,
+   "hi52": 1671.0,
+   "lo52": 986.0,
+   "val": 37.6,
+   "mcap": 16598.0,
+   "per": 4.4,
+   "pbr": 1.0,
+   "eps": 315.73,
+   "roe": 23.1,
+   "eqr": 44.2,
+   "div": 2.65,
+   "rev_q": 23.8,
+   "rev_ttm": -2.7,
+   "cagr5": 12.2,
+   "eps_q": 705.1,
+   "opm": 6.3,
+   "roic": 16.5,
+   "psr": 0.21,
+   "peg": 0.0,
+   "de": 1.39,
+   "inflow": null,
+   "biz": "Idemitsu Kosan Co.,Ltd. engages in the fuel oil, basic chemicals, functional materials, power and renewable energy, and resources businesses in Japan, Singapore, Asia, Oceania, North America, and internationally. The Fue",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "1719",
+   "name": "安藤・間",
+   "ticker": "TSE:1719",
+   "bucket": "long",
+   "score": 7.0,
+   "signals": [
+    "sig_x5",
+    "sig_reclaim",
+    "sig_macd",
+    "sig_div",
+    "sig_qual",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "1": {
+      "n": 785,
+      "win": 53.6,
+      "avg": 0.54,
+      "med": 0.21,
+      "excess": 0.5,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_reclaim": {
+     "1": {
+      "n": 427,
+      "win": 57.4,
+      "avg": 0.07,
+      "med": 0.29,
+      "excess": -0.15,
+      "best": 12.1,
+      "worst": -9.0
+     }
+    },
+    "sig_macd": {
+     "1": {
+      "n": 849,
+      "win": 72.3,
+      "avg": 1.59,
+      "med": 0.93,
+      "excess": -0.05,
+      "best": 57.8,
+      "worst": -12.3
+     }
+    },
+    "sig_div": {
+     "1": {
+      "n": 382,
+      "win": 76.4,
+      "avg": 1.04,
+      "med": 0.75,
+      "excess": -0.51,
+      "best": 12.1,
+      "worst": -5.6
+     }
+    },
+    "sig_qual": {
+     "1": {
+      "n": 476,
+      "win": 74.2,
+      "avg": 1.63,
+      "med": 1.61,
+      "excess": -0.01,
+      "best": 20.5,
+      "worst": -79.2
+     }
+    },
+    "sig_accel": {},
+    "sig_garp": {}
+   },
+   "sector": "Distribution Services",
+   "industry": "Wholesale Distributors",
+   "segment": "프라임",
+   "close": 1923.5,
+   "chg": 0.03,
+   "gap": -0.34,
+   "sma5": 1917.8,
+   "sma20": 1873.58,
+   "sma200": 1894.67,
+   "ext200": 1.52,
+   "rsi": 65.3,
+   "macd_h": 3.74,
+   "rvol": 1.06,
+   "pw": 2.34,
+   "p1": 3.44,
+   "p3": 8.86,
+   "ytd": 0.8,
+   "pos52": 48.0,
+   "hi52": 2270.0,
+   "lo52": 1610.0,
+   "val": 13.0,
+   "mcap": 3483.0,
+   "per": 9.8,
+   "pbr": 1.4,
+   "eps": 196.62,
+   "roe": 16.0,
+   "eqr": 50.9,
+   "div": 4.14,
+   "rev_q": 12.4,
+   "rev_ttm": 3.7,
+   "cagr5": 4.5,
+   "eps_q": 34.8,
+   "opm": 7.7,
+   "roic": 15.4,
+   "psr": 0.69,
+   "peg": 0.77,
+   "de": 0.13,
+   "inflow": null,
+   "biz": "Hazama Ando Corporation engages in construction and related business in Japan and internationally. The company offers civil engineering, building, and other construction services. Its projects include offices, production",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "9031",
+   "name": "西日本鉄道",
+   "ticker": "TSE:9031",
+   "bucket": "long",
+   "score": 7.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_trend",
+    "sig_macd",
+    "sig_value",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "1": {
+      "n": 106,
+      "win": 33.0,
+      "avg": -1.16,
+      "med": -1.18,
+      "excess": -0.81,
+      "best": 22.4,
+      "worst": -54.8
+     }
+    },
+    "sig_x5": {
+     "1": {
+      "n": 785,
+      "win": 53.6,
+      "avg": 0.54,
+      "med": 0.21,
+      "excess": 0.5,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_trend": {
+     "1": {
+      "n": 499,
+      "win": 48.1,
+      "avg": -0.0,
+      "med": 0.0,
+      "excess": -0.01,
+      "best": 18.1,
+      "worst": -14.3
+     }
+    },
+    "sig_macd": {
+     "1": {
+      "n": 849,
+      "win": 72.3,
+      "avg": 1.59,
+      "med": 0.93,
+      "excess": -0.05,
+      "best": 57.8,
+      "worst": -12.3
+     }
+    },
+    "sig_value": {
+     "1": {
+      "n": 233,
+      "win": 78.1,
+      "avg": 1.2,
+      "med": 0.99,
+      "excess": -0.34,
+      "best": 14.3,
+      "worst": -12.3
+     }
+    },
+    "sig_accel": {},
+    "sig_garp": {}
+   },
+   "sector": "Transportation",
+   "industry": "Other Transportation",
+   "segment": "프라임",
+   "close": 3120.0,
+   "chg": 0.52,
+   "gap": -0.19,
+   "sma5": 3107.6,
+   "sma20": 3051.4,
+   "sma200": 2910.86,
+   "ext200": 7.18,
+   "rsi": 57.5,
+   "macd_h": 4.31,
+   "rvol": 3.38,
+   "pw": 0.81,
+   "p1": -1.86,
+   "p3": 11.41,
+   "ytd": 11.5,
+   "pos52": 84.0,
+   "hi52": 3299.0,
+   "lo52": 2192.5,
+   "val": 18.2,
+   "mcap": 2444.0,
+   "per": 6.9,
+   "pbr": 0.81,
+   "eps": 451.33,
+   "roe": 12.6,
+   "eqr": 36.1,
+   "div": 2.26,
+   "rev_q": 14.2,
+   "rev_ttm": 10.0,
+   "cagr5": 6.5,
+   "eps_q": 32.7,
+   "opm": 6.6,
+   "roic": 5.9,
+   "psr": 0.5,
+   "peg": 0.14,
+   "de": 1.25,
+   "inflow": null,
+   "biz": "【特色】九州北部地盤の電鉄大手。主力のバスは車両数首位級。国際物流に注力、海外展開を強化 連結事業 【連結事業】運輸業17(5)、不動産業18(12)、流通業16(1)、物流業32(4)、レジャー・サービス業11(11)、他6(7)(2026.3)",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "2782",
+   "name": "セリア",
+   "ticker": "TSE:2782",
+   "bucket": "long",
+   "score": 7.0,
+   "signals": [
+    "sig_x5",
+    "sig_high",
+    "sig_trend",
+    "sig_macd",
+    "sig_qual",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "1": {
+      "n": 785,
+      "win": 53.6,
+      "avg": 0.54,
+      "med": 0.21,
+      "excess": 0.5,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_high": {
+     "1": {
+      "n": 257,
+      "win": 38.1,
+      "avg": -0.61,
+      "med": -0.49,
+      "excess": -0.23,
+      "best": 28.3,
+      "worst": -10.5
+     }
+    },
+    "sig_trend": {
+     "1": {
+      "n": 499,
+      "win": 48.1,
+      "avg": -0.0,
+      "med": 0.0,
+      "excess": -0.01,
+      "best": 18.1,
+      "worst": -14.3
+     }
+    },
+    "sig_macd": {
+     "1": {
+      "n": 849,
+      "win": 72.3,
+      "avg": 1.59,
+      "med": 0.93,
+      "excess": -0.05,
+      "best": 57.8,
+      "worst": -12.3
+     }
+    },
+    "sig_qual": {
+     "1": {
+      "n": 476,
+      "win": 74.2,
+      "avg": 1.63,
+      "med": 1.61,
+      "excess": -0.01,
+      "best": 20.5,
+      "worst": -79.2
+     }
+    },
+    "sig_accel": {},
+    "sig_garp": {}
+   },
+   "sector": "Retail Trade",
+   "industry": "Department Stores",
+   "segment": "스탠다드",
+   "close": 4440.0,
+   "chg": 0.23,
+   "gap": -1.02,
+   "sma5": 4395.0,
+   "sma20": 4179.5,
+   "sma200": 3725.05,
+   "ext200": 19.19,
+   "rsi": 68.5,
+   "macd_h": 20.17,
+   "rvol": 0.88,
+   "pw": 3.26,
+   "p1": 14.29,
+   "p3": 18.56,
+   "ytd": 27.6,
+   "pos52": 97.0,
+   "hi52": 4485.0,
+   "lo52": 2891.0,
+   "val": 11.8,
+   "mcap": 3307.0,
+   "per": 17.3,
+   "pbr": 2.94,
+   "eps": 256.86,
+   "roe": 15.9,
+   "eqr": 70.9,
+   "div": 1.71,
+   "rev_q": 15.0,
+   "rev_ttm": 10.9,
+   "cagr5": 5.0,
+   "eps_q": 80.2,
+   "opm": 8.7,
+   "roic": 15.8,
+   "psr": 1.16,
+   "peg": 0.25,
+   "de": 0.01,
+   "inflow": null,
+   "biz": "【特色】１００円ショップ２位。独自の業務効率化システム駆使し、利益率高い。国内シェア拡大に注力 連結事業",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "4440",
+   "name": "ヴィッツ",
+   "ticker": "TSE:4440",
+   "bucket": "long",
+   "score": 7.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_reclaim",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "1": {
+      "n": 106,
+      "win": 33.0,
+      "avg": -1.16,
+      "med": -1.18,
+      "excess": -0.81,
+      "best": 22.4,
+      "worst": -54.8
+     }
+    },
+    "sig_x5": {
+     "1": {
+      "n": 785,
+      "win": 53.6,
+      "avg": 0.54,
+      "med": 0.21,
+      "excess": 0.5,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_reclaim": {
+     "1": {
+      "n": 427,
+      "win": 57.4,
+      "avg": 0.07,
+      "med": 0.29,
+      "excess": -0.15,
+      "best": 12.1,
+      "worst": -9.0
+     }
+    },
+    "sig_qual": {
+     "1": {
+      "n": 476,
+      "win": 74.2,
+      "avg": 1.63,
+      "med": 1.61,
+      "excess": -0.01,
+      "best": 20.5,
+      "worst": -79.2
+     }
+    },
+    "sig_growth": {},
+    "sig_accel": {},
+    "sig_garp": {}
+   },
+   "sector": "Technology Services",
+   "industry": "Packaged Software",
+   "segment": "스탠다드",
+   "close": 1485.0,
+   "chg": 23.44,
+   "gap": 2.83,
+   "sma5": 1253.4,
+   "sma20": 1185.05,
+   "sma200": 1254.23,
+   "ext200": 18.4,
+   "rsi": 83.6,
+   "macd_h": 20.78,
+   "rvol": 39.04,
+   "pw": 25.74,
+   "p1": 29.24,
+   "p3": 33.78,
+   "ytd": 29.7,
+   "pos52": 67.0,
+   "hi52": 1720.0,
+   "lo52": 999.0,
+   "val": 8.4,
+   "mcap": 50.0,
+   "per": 11.9,
+   "pbr": 1.86,
+   "eps": 125.08,
+   "roe": 16.9,
+   "eqr": 73.8,
+   "div": 1.24,
+   "rev_q": 25.0,
+   "rev_ttm": 15.9,
+   "cagr5": 16.9,
+   "eps_q": 45.1,
+   "opm": 12.5,
+   "roic": 16.9,
+   "psr": 1.22,
+   "peg": 0.8,
+   "de": 0.0,
+   "inflow": null,
+   "biz": "",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "3915",
+   "name": "テラスカイ",
+   "ticker": "TSE:3915",
+   "bucket": "long",
+   "score": 7.0,
+   "signals": [
+    "sig_spike",
+    "sig_gap",
+    "sig_trend",
+    "sig_macd",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "1": {
+      "n": 106,
+      "win": 33.0,
+      "avg": -1.16,
+      "med": -1.18,
+      "excess": -0.81,
+      "best": 22.4,
+      "worst": -54.8
+     }
+    },
+    "sig_gap": {
+     "1": {
+      "n": 120,
+      "win": 56.7,
+      "avg": 3.21,
+      "med": 1.0,
+      "excess": 2.07,
+      "best": 45.6,
+      "worst": -15.9
+     }
+    },
+    "sig_trend": {
+     "1": {
+      "n": 499,
+      "win": 48.1,
+      "avg": -0.0,
+      "med": 0.0,
+      "excess": -0.01,
+      "best": 18.1,
+      "worst": -14.3
+     }
+    },
+    "sig_macd": {
+     "1": {
+      "n": 849,
+      "win": 72.3,
+      "avg": 1.59,
+      "med": 0.93,
+      "excess": -0.05,
+      "best": 57.8,
+      "worst": -12.3
+     }
+    },
+    "sig_growth": {},
+    "sig_accel": {},
+    "sig_garp": {}
+   },
+   "sector": "Technology Services",
+   "industry": "Information Technology Services",
+   "segment": "프라임",
+   "close": 2399.0,
+   "chg": 2.83,
+   "gap": 5.83,
+   "sma5": 2310.4,
+   "sma20": 2292.55,
+   "sma200": 2065.76,
+   "ext200": 16.13,
+   "rsi": 56.6,
+   "macd_h": 6.77,
+   "rvol": 3.08,
+   "pw": 0.84,
+   "p1": 20.19,
+   "p3": 22.09,
+   "ytd": 11.1,
+   "pos52": 41.0,
+   "hi52": 3715.0,
+   "lo52": 1494.0,
+   "val": 6.5,
+   "mcap": 292.0,
+   "per": 18.1,
+   "pbr": 2.47,
+   "eps": 132.45,
+   "roe": 14.2,
+   "eqr": 67.3,
+   "div": 0.71,
+   "rev_q": 20.3,
+   "rev_ttm": 15.3,
+   "cagr5": 20.3,
+   "eps_q": 64.5,
+   "opm": 6.2,
+   "roic": 14.2,
+   "psr": 1.1,
+   "peg": 0.28,
+   "de": 0.02,
+   "inflow": null,
+   "biz": "TerraSky Co.,Ltd. provides cloud products and solutions in Japan and internationally. The company offers cloud integration services comprising Salesforce, AI agent implementation support, MuleSoft Anypoint, Amazon Web se",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "6750",
+   "name": "エレコム",
+   "ticker": "TSE:6750",
+   "bucket": "long",
+   "score": 7.0,
+   "signals": [
+    "sig_x5",
+    "sig_high",
+    "sig_trend",
+    "sig_macd",
+    "sig_qual",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "1": {
+      "n": 785,
+      "win": 53.6,
+      "avg": 0.54,
+      "med": 0.21,
+      "excess": 0.5,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_high": {
+     "1": {
+      "n": 257,
+      "win": 38.1,
+      "avg": -0.61,
+      "med": -0.49,
+      "excess": -0.23,
+      "best": 28.3,
+      "worst": -10.5
+     }
+    },
+    "sig_trend": {
+     "1": {
+      "n": 499,
+      "win": 48.1,
+      "avg": -0.0,
+      "med": 0.0,
+      "excess": -0.01,
+      "best": 18.1,
+      "worst": -14.3
+     }
+    },
+    "sig_macd": {
+     "1": {
+      "n": 849,
+      "win": 72.3,
+      "avg": 1.59,
+      "med": 0.93,
+      "excess": -0.05,
+      "best": 57.8,
+      "worst": -12.3
+     }
+    },
+    "sig_qual": {
+     "1": {
+      "n": 476,
+      "win": 74.2,
+      "avg": 1.63,
+      "med": 1.61,
+      "excess": -0.01,
+      "best": 20.5,
+      "worst": -79.2
+     }
+    },
+    "sig_accel": {},
+    "sig_garp": {}
+   },
+   "sector": "Electronic Technology",
+   "industry": "Computer Peripherals",
+   "segment": "프라임",
+   "close": 2007.0,
+   "chg": 2.24,
+   "gap": 0.46,
+   "sma5": 1973.6,
+   "sma20": 1915.45,
+   "sma200": 1743.52,
+   "ext200": 15.11,
+   "rsi": 63.2,
+   "macd_h": 4.04,
+   "rvol": 0.86,
+   "pw": 3.29,
+   "p1": 4.37,
+   "p3": 19.18,
+   "ytd": 16.6,
+   "pos52": 99.0,
+   "hi52": 2013.0,
+   "lo52": 1548.0,
+   "val": 3.9,
+   "mcap": 1768.0,
+   "per": 7.4,
+   "pbr": 1.47,
+   "eps": 271.19,
+   "roe": 22.3,
+   "eqr": 74.8,
+   "div": 2.94,
+   "rev_q": 18.4,
+   "rev_ttm": 15.4,
+   "cagr5": 4.3,
+   "eps_q": 49.3,
+   "opm": 11.9,
+   "roic": 22.1,
+   "psr": 1.18,
+   "peg": 0.06,
+   "de": 0.01,
+   "inflow": null,
+   "biz": "Elecom Co., Ltd. engages in the development, manufacturing, and sale of personal computers and digital equipment related products in Japan and internationally. The company offers network/Wi-Fi products; custom PCs and Ta",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "8473",
+   "name": "ＳＢＩホールディングス",
+   "ticker": "TSE:8473",
+   "bucket": "news",
+   "score": 3.0,
+   "signals": [
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_growth": {},
+    "sig_accel": {},
+    "sig_garp": {}
+   },
+   "sector": "Finance",
+   "industry": "Financial Conglomerates",
+   "segment": "프라임",
+   "close": 3427.0,
+   "chg": 0.65,
+   "gap": 0.0,
+   "sma5": 3329.8,
+   "sma20": 3124.92,
+   "sma200": 3143.94,
+   "ext200": 9.0,
+   "rsi": 71.9,
+   "macd_h": 32.73,
+   "rvol": 1.19,
+   "pw": 10.16,
+   "p1": 21.61,
+   "p3": 17.36,
+   "ytd": 0.5,
+   "pos52": 64.0,
+   "hi52": 3866.0,
+   "lo52": 2631.0,
+   "val": 156.2,
+   "mcap": 22439.0,
+   "per": 4.8,
+   "pbr": 1.19,
+   "eps": 755.38,
+   "roe": 30.8,
+   "eqr": 8.4,
+   "div": 2.8,
+   "rev_q": 28.8,
+   "rev_ttm": 23.1,
+   "cagr5": 27.8,
+   "eps_q": 64.3,
+   "opm": 46.6,
+   "roic": 5.9,
+   "psr": 1.32,
+   "peg": 0.05,
+   "de": 4.02,
+   "inflow": null,
+   "biz": "SBI Holdings, Inc. engages in investment businesses in Japan and internationally. The company operates through five business segments: Financial Services Business, Asset Management Business, PE Investment Business, Crypt",
+   "tdnet": [
+    {
+     "pub": "2026-08-28 22:30",
+     "title": "BASE株式会社株式（証券コード：4477）に対する公開買付けの開始及び同社との資本業務提携契約の締結に関するお知らせ",
+     "url": "https://www.release.tdnet.info/inbs/140120260828528173.pdf",
+     "bits": 1536,
+     "strong": true
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "2371",
+   "name": "カカクコム",
+   "ticker": "TSE:2371",
+   "bucket": "news",
+   "score": 2.0,
+   "signals": [
+    "sig_high",
+    "sig_qual"
+   ],
+   "baserate": {
+    "sig_high": {
+     "1": {
+      "n": 257,
+      "win": 38.1,
+      "avg": -0.61,
+      "med": -0.49,
+      "excess": -0.23,
+      "best": 28.3,
+      "worst": -10.5
+     }
+    },
+    "sig_qual": {
+     "1": {
+      "n": 476,
+      "win": 74.2,
+      "avg": 1.63,
+      "med": 1.61,
+      "excess": -0.01,
+      "best": 20.5,
+      "worst": -79.2
+     }
+    }
+   },
+   "sector": "Consumer Services",
+   "industry": "Other Consumer Services",
+   "segment": "프라임",
+   "close": 3690.0,
+   "chg": 0.46,
+   "gap": 0.68,
+   "sma5": 3666.6,
+   "sma20": 3696.15,
+   "sma200": 2687.48,
+   "ext200": 37.3,
+   "rsi": 58.5,
+   "macd_h": -12.93,
+   "rvol": 0.98,
+   "pw": -0.51,
+   "p1": 0.14,
+   "p3": 10.15,
+   "ytd": 61.2,
+   "pos52": 98.0,
+   "hi52": 3740.0,
+   "lo52": 1566.0,
+   "val": 9.7,
+   "mcap": 7189.0,
+   "per": 39.5,
+   "pbr": 11.27,
+   "eps": 93.35,
+   "roe": 30.6,
+   "eqr": 72.8,
+   "div": 1.37,
+   "rev_q": 17.0,
+   "rev_ttm": 18.4,
+   "cagr5": 13.0,
+   "eps_q": -6.4,
+   "opm": 27.3,
+   "roic": 29.4,
+   "psr": 7.76,
+   "peg": null,
+   "de": 0.13,
+   "inflow": null,
+   "biz": "【特色】「食べログ」と「価格．ｃｏｍ」が柱。ＥＱＴがＴＯＢ開始も、ＬＩＮＥヤフーが買収案提示 連結事業 【連結事業】価格．ｃｏｍ25(53)、食べログ43(55)、求人ボックス22(-7)、インキュベーション11(27)(2026.3)",
+   "tdnet": [
+    {
+     "pub": "2026-08-28 08:30",
+     "title": "（変更）「Kamgras １株式会社による当社株券等に対する公開買付けに関する賛同の意見表明及び応募推奨のお知らせ」の一部変更に関するお知らせ",
+     "url": "https://www.release.tdnet.info/inbs/140120260828527495.pdf",
+     "bits": 1024,
+     "strong": true
+    },
+    {
+     "pub": "2026-08-27 17:15",
+     "title": "Kamgras １株式会社による株式会社カカクコム（証券コード：2371）の株券等に対する公開買付けの買付条件等の変更に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260827527261.pdf",
+     "bits": 1024,
+     "strong": true
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "3825",
+   "name": "リミックスポイント",
+   "ticker": "TSE:3825",
+   "bucket": "news",
+   "score": 2.0,
+   "signals": [
+    "sig_x5",
+    "sig_reclaim"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "1": {
+      "n": 785,
+      "win": 53.6,
+      "avg": 0.54,
+      "med": 0.21,
+      "excess": 0.5,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_reclaim": {
+     "1": {
+      "n": 427,
+      "win": 57.4,
+      "avg": 0.07,
+      "med": 0.29,
+      "excess": -0.15,
+      "best": 12.1,
+      "worst": -9.0
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Information Technology Services",
+   "segment": "스탠다드",
+   "close": 265.0,
+   "chg": 16.74,
+   "gap": 2.2,
+   "sma5": 237.8,
+   "sma20": 218.6,
+   "sma200": 233.17,
+   "ext200": 13.65,
+   "rsi": 70.3,
+   "macd_h": 3.25,
+   "rvol": 2.42,
+   "pw": 9.05,
+   "p1": 38.02,
+   "p3": 42.47,
+   "ytd": 1.9,
+   "pos52": 47.0,
+   "hi52": 398.0,
+   "lo52": 148.0,
+   "val": 23.0,
+   "mcap": 331.0,
+   "per": null,
+   "pbr": 1.81,
+   "eps": -59.73,
+   "roe": -36.9,
+   "eqr": 88.6,
+   "div": 2.21,
+   "rev_q": -7.1,
+   "rev_ttm": -25.8,
+   "cagr5": 6.1,
+   "eps_q": -167.3,
+   "opm": -51.7,
+   "roic": -36.9,
+   "psr": 2.09,
+   "peg": null,
+   "de": 0.16,
+   "inflow": null,
+   "biz": "Remixpoint, Inc. engages in the development and sale of energy management systems and energy-saving support consulting services in Japan. The company operates through four segments: Energy Business, Resilience Business, ",
+   "tdnet": [
+    {
+     "pub": "2026-08-28 11:00",
+     "title": "（開示事項の経過）子会社の異動（株式譲渡）及び株主間契約締結に関するお知らせ",
+     "url": "https://www.release.tdnet.info/inbs/140120260825526099.pdf",
+     "bits": 0,
+     "strong": false
+    },
+    {
+     "pub": "2026-08-28 11:00",
+     "title": "業績予想の修正に関するお知らせ",
+     "url": "https://www.release.tdnet.info/inbs/140120260827527434.pdf",
+     "bits": 128,
+     "strong": false
+    },
+    {
+     "pub": "2026-08-28 11:00",
+     "title": "（開示事項の変更）株式会社光通信との業務提携に関するお知らせ",
+     "url": "https://www.release.tdnet.info/inbs/140120260825526100.pdf",
+     "bits": 512,
+     "strong": false
+    },
+    {
+     "pub": "2026-08-28 11:00",
+     "title": "中期経営計画の数値目標修正に関するお知らせ",
+     "url": "https://www.release.tdnet.info/inbs/140120260825526102.pdf",
+     "bits": 0,
+     "strong": false
+    },
+    {
+     "pub": "2026-08-28 11:00",
+     "title": "＜補足説明資料＞蓄電ソリューション事業の現状と中期経営計画目標の上方修正について",
+     "url": "https://www.release.tdnet.info/inbs/140120260827527172.pdf",
+     "bits": 1,
+     "strong": true
+    },
+    {
+     "pub": "2026-08-28 11:00",
+     "title": "＜補足説明資料＞蓄電ソリューション事業における今後の保有・販売計画と投資規模について",
+     "url": "https://www.release.tdnet.info/inbs/140120260827527212.pdf",
+     "bits": 0,
+     "strong": false
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "7911",
+   "name": "ＴＯＰＰＡＮホールディングス",
+   "ticker": "TSE:7911",
+   "bucket": "news",
+   "score": 3.0,
+   "signals": [
+    "sig_x5",
+    "sig_trend",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "1": {
+      "n": 785,
+      "win": 53.6,
+      "avg": 0.54,
+      "med": 0.21,
+      "excess": 0.5,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_trend": {
+     "1": {
+      "n": 499,
+      "win": 48.1,
+      "avg": -0.0,
+      "med": 0.0,
+      "excess": -0.01,
+      "best": 18.1,
+      "worst": -14.3
+     }
+    },
+    "sig_accel": {}
+   },
+   "sector": "Commercial Services",
+   "industry": "Commercial Printing/Forms",
+   "segment": "프라임",
+   "close": 5019.0,
+   "chg": 0.36,
+   "gap": 0.98,
+   "sma5": 5002.8,
+   "sma20": 4952.2,
+   "sma200": 4723.03,
+   "ext200": 6.27,
+   "rsi": 52.2,
+   "macd_h": -7.11,
+   "rvol": 0.73,
+   "pw": -0.02,
+   "p1": 14.35,
+   "p3": 8.8,
+   "ytd": 4.9,
+   "pos52": 60.0,
+   "hi52": 5928.0,
+   "lo52": 3666.0,
+   "val": 66.6,
+   "mcap": 13766.0,
+   "per": 18.5,
+   "pbr": 1.02,
+   "eps": 271.95,
+   "roe": 5.8,
+   "eqr": 55.4,
+   "div": 1.15,
+   "rev_q": 15.0,
+   "rev_ttm": 9.0,
+   "cagr5": 4.2,
+   "eps_q": 137.2,
+   "opm": 3.9,
+   "roic": 4.9,
+   "psr": 0.79,
+   "peg": null,
+   "de": 0.39,
+   "inflow": null,
+   "biz": "TOPPAN Holdings Inc. develops solutions based on its printing technologies in Japan, Asia, and internationally. It operates through three segments: Information & Communication, Lifestyle & Industry, and Electronics. The ",
+   "tdnet": [
+    {
+     "pub": "2026-08-27 15:30",
+     "title": "株式分割、株式分割に伴う定款の一部変更、配当予想の修正及び株主優待制度の変更に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260827527179.pdf",
+     "bits": 288,
+     "strong": true
+    },
+    {
+     "pub": "2026-08-27 15:30",
+     "title": "所在不明株主の株式買取りに関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260827527165.pdf",
+     "bits": 0,
+     "strong": false
+    }
+   ],
+   "llm": null
+  }
+ ],
+ "config": {
+  "MIN_VAL": 3.0,
+  "N_SHORT": 8,
+  "N_LONG": 8,
+  "N_NEWS": 4,
+  "MAX_PER_INDUSTRY": 3,
+  "COOLDOWN_DAYS": 3
+ }
+}
