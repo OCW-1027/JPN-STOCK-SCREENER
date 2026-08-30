@@ -562,7 +562,7 @@ def generate():
 # ───────────────────────── 페이지 ─────────────────────────
 PAGE_T = {
     "ko": dict(title="운용 데스크 브리프", sub="종가 스냅샷에서 규칙으로 고른 오늘의 후보와 근거 데이터",
-               gen="생성", base="기저율 축적", days="일", back="← 스크리너", total="스크리닝", liquid="유동성 통과", picks="후보", rank="📈 순위 추이", bt="📊 성과분석",
+               gen="생성", base="기저율 축적", days="일", close="종가 기준", back="← 스크리너", total="스크리닝", liquid="유동성 통과", picks="후보", rank="📈 순위 추이", bt="📊 성과분석",
                other="日本語",
                tabs=[("all", "전체"), ("short", "단기"), ("long", "중장기"), ("news", "공시")],
                col=["코드", "종목", "분류", "등락", "스코어", "시그널", "200MA", "RSI", "RVOL", "거래대금", "PER", "판단"],
@@ -575,7 +575,7 @@ PAGE_T = {
                     "공시: 최근 강한 공시(상방·증배·자사주·분할·TOB) + 시그널 1개 이상 · 같은 업종 최대 {maxind}종목 · 최근 {cool}회 브리프에 나온 종목은 제외(공시 예외) · "
                     "참고 자료이며 투자 판단의 책임은 본인에게 있습니다."),
     "ja": dict(title="運用デスク・ブリーフ", sub="終値スナップショットからルールで選んだ本日の候補と根拠データ",
-               gen="生成", base="基準率蓄積", days="日", back="← スクリーナー", total="スクリーニング", liquid="流動性通過", picks="候補", rank="📈 ランキング推移", bt="📊 パフォーマンス",
+               gen="生成", base="基準率蓄積", days="日", close="終値基準", back="← スクリーナー", total="スクリーニング", liquid="流動性通過", picks="候補", rank="📈 ランキング推移", bt="📊 パフォーマンス",
                other="한국어",
                tabs=[("all", "すべて"), ("short", "短期"), ("long", "中長期"), ("news", "開示")],
                col=["コード", "銘柄", "分類", "騰落", "スコア", "シグナル", "200MA", "RSI", "RVOL", "売買代金", "PER", "判断"],
@@ -604,7 +604,9 @@ a{color:var(--amber);text-decoration:none}
 .dashbtn:hover{background:var(--teal);color:#062a26}
 .langbtn{margin-left:auto;padding:5px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--faint);font-weight:600;font-size:12.5px}
 .langbtn:hover{color:var(--text)}
-h1{font-size:18px;font-weight:800;margin-bottom:2px}h1 span{color:var(--amber)}
+h1{font-size:18px;font-weight:800;margin-bottom:2px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.mk{font-size:13px;font-weight:600;white-space:nowrap}.mk a{color:var(--muted);padding:2px 3px 3px}
+.mk a.on{color:var(--amber);border-bottom:2px solid var(--amber)}.mk a:hover{color:var(--text)}.mk .sep{color:var(--faint);margin:0 4px}
 .meta{color:var(--muted);font-size:12px;margin-bottom:6px}
 .funnel{font-size:12.5px;color:var(--text);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:9px 14px;margin:8px 0;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
 .funnel .k{color:var(--muted)}.funnel b{color:var(--amber);font-size:14px}
@@ -646,14 +648,16 @@ footer{margin-top:14px;color:var(--faint);font-size:11px;line-height:1.7}
   <a class="dashbtn" href="__BT_HREF__">__BT__</a>
   <a class="langbtn" href="__LANG_HREF__">__OTHER__</a>
 </div>
-<h1>__TITLE__ <span id="hd"></span></h1>
-<div class="meta" id="meta">__SUB__</div>
+<h1>__TITLE__ <span class="mk" id="mk"></span></h1>
+<div class="meta" id="meta"></div>
 <div id="app"></div>
 <footer id="foot"></footer>
 <script>
 const BB=__BRIEFS__, T=__T__, PROMPTS=__PROMPTS__, HEADT=__HEAD__, LANG="__LANG__";
 const SIG=__SIG__, KW=__KW__, GRP=__GRP__;
-const MK=Object.keys(BB), LB=LANG==='ko'?'label_ko':'label_ja', UN=LANG==='ko'?'unit_ko':'unit_ja';
+const MK=Object.keys(BB), UN=LANG==='ko'?'unit_ko':'unit_ja';
+const LABEL={jp:{ko:'일본',ja:'日本'},kr:{ko:'한국',ja:'韓国'},us:{ko:'미국',ja:'米国'}};
+const lbl=m=>(LABEL[m]||{})[LANG]||m;
 let mkt=MK.includes(location.hash.slice(1))?location.hash.slice(1):(MK[0]||null), B=mkt?BB[mkt]:null;
 let tab='all', open=new Set();
 const head=()=>HEADT.replace('{date}',B?B.date:'');
@@ -685,16 +689,15 @@ function detail(p){
     <div style="margin-top:10px"><button class="btn small" data-copy="${p.code}">${T.copy}</button></div></div>`;
 }
 function render(){
-  const mtabs=MK.length?`<div class="tabs" id="mt">${MK.map(m=>`<div class="tab ${m===mkt?'on':''}" data-m="${m}">${esc(BB[m][LB])} <span style="color:var(--faint);font-size:11px">${esc(BB[m].date.slice(5))}</span></div>`).join('')}</div>`:'';
-  if(!B||!B.picks||!B.picks.length){$('#app').innerHTML=mtabs+`<div class="note">${T.empty}</div>`;$('#hd').textContent='';$('#foot').textContent='';return}
+  $('#mk').innerHTML=MK.map(m=>`<a href="#${m}" data-m="${m}" class="${m===mkt?'on':''}">${lbl(m)}</a>`).join('<span class="sep">·</span>');
+  if(!B||!B.picks||!B.picks.length){$('#app').innerHTML=`<div class="note">${T.empty}</div>`;$('#meta').textContent='';$('#foot').textContent='';return}
   const u=B.universe, c=B.config||{};
-  $('#hd').textContent=`${B[LB]} ${B.date}`;
-  $('#meta').textContent=`${T.sub} · ${T.gen} ${B.generated} · ${T.base} ${B.baserate_days}${T.days}`;
+  $('#meta').textContent=`${lbl(m=mkt)} ${B.date} ${T.close} · ${T.gen} ${B.generated} · ${T.base} ${B.baserate_days}${T.days}`;
   const extra=c.MIN_PRICE>0?(LANG==='ko'?` · 주가 ≥ $${c.MIN_PRICE}`:` ・ 株価 ≥ $${c.MIN_PRICE}`):'';
   const fu=v=>B.market==='us'?`$${v}M`:`${v}${B[UN]}`;
   $('#foot').textContent=T.foot.replace('{minval}{unit}',fu(c.MIN_VAL)).replace('{mcap}{unit}',fu(c.MIN_MCAP)).replace('{extra}',extra).replace('{maxind}',c.MAX_PER_INDUSTRY).replace('{cool}',c.COOLDOWN_DAYS);
   const ps=B.picks.filter(p=>tab==='all'||p.bucket===tab);
-  $('#app').innerHTML=mtabs+`<div class="funnel"><span><span class="k">${T.total}</span> <b>${u.total.toLocaleString()}</b></span><span class="k">→</span>
+  $('#app').innerHTML=`<div class="funnel"><span><span class="k">${T.total}</span> <b>${u.total.toLocaleString()}</b></span><span class="k">→</span>
     <span><span class="k">${T.liquid}</span> <b>${u.liquid.toLocaleString()}</b></span><span class="k">→</span>
     <span><span class="k">${T.picks}</span> <b>${u.candidates}</b> <span class="k">(${BK.short} ${u.short} · ${BK.long} ${u.long} · ${BK.news} ${u.news})</span></span></div>
   <div class="tabs">${T.tabs.map(([k,l])=>`<div class="tab ${k===tab?'on':''}" data-t="${k}">${l}</div>`).join('')}<button class="btn" id="copyall">${T.copy_all}</button></div>
@@ -705,12 +708,12 @@ function render(){
     <td class="num hide-m">${pc(p.ext200,1)}</td><td class="num">${n(p.rsi,1)}</td><td class="num hide-m">${n(p.rvol)}</td>
     <td class="num hide-m">${n(p.val,0)}</td><td class="num hide-m">${n(p.per,1)}</td><td>${vd(p)}</td></tr>
     ${open.has(p.code)?`<tr class="det"><td colspan="12">${detail(p)}</td></tr>`:''}`).join('')}</tbody></table></div>
-  <div class="note">${T.howto}</div>`;
+  <div class="note">${T.sub}. ${T.howto}</div>`;
 }
 document.addEventListener('click',e=>{
   const c=e.target.closest('[data-copy]');if(c){copy(head()+'\\n'+PROMPTS[mkt][c.dataset.copy],c);return}
   if(e.target.id==='copyall'){const ps=B.picks.filter(p=>tab==='all'||p.bucket===tab);copy(head()+'\\n'+ps.map(p=>PROMPTS[mkt][p.code]).join('\\n\\n'),e.target);return}
-  const mt=e.target.closest('[data-m]');if(mt){mkt=mt.dataset.m;B=BB[mkt];tab='all';open=new Set();history.replaceState(null,'','#'+mkt);render();return}
+  const mt=e.target.closest('[data-m]');if(mt){e.preventDefault();mkt=mt.dataset.m;B=BB[mkt];tab='all';open=new Set();history.replaceState(null,'','#'+mkt);render();return}
   const t=e.target.closest('.tab');if(t){tab=t.dataset.t;render();return}
   const r=e.target.closest('tr.row');if(r){const k=r.dataset.c;open.has(k)?open.delete(k):open.add(k);render()}
 });
@@ -729,6 +732,14 @@ def render_pages():
     if not out.is_absolute():
         out = BASE / out
     briefs = {m: b for m in MARKETS if (b := latest_brief(m))}
+    for m, b in briefs.items():                       # v0 형식(메타 없음) JSON 도 렌더되도록 보정
+        mk = MARKETS[m]
+        for k in ("label_ko", "label_ja", "unit_ko", "unit_ja"):
+            b.setdefault(k, mk[k])
+        cfg = b.setdefault("config", {})
+        for k, v in (("MIN_VAL", MIN_VAL_DEFAULT[m]), ("MIN_MCAP", MIN_MCAP_DEFAULT[m]), ("MIN_PRICE", MIN_PRICE_DEFAULT[m]),
+                     ("MAX_PER_INDUSTRY", CFG["MAX_PER_INDUSTRY"]), ("COOLDOWN_DAYS", CFG["COOLDOWN_DAYS"])):
+            cfg.setdefault(k, v)
     latest = max((b["date"] for b in briefs.values()), default="—")
     grp = {**{k: "s" for k in SIG_SHORT}, **{k: "g" for k in SIG_TREND}, **{k: "f" for k in SIG_FUND},
            **{k: "w" for k in SIG_GROWTH}, "sig_inflow": "i"}
