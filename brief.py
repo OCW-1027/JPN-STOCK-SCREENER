@@ -6,12 +6,12 @@ brief.py — 운용 데스크 브리프
 종목별 근거 데이터(수치·시그널·기저율·TDnet 공시·사업 소개)를 한 묶음으로 만든다.
 
   python brief.py         → briefs/{시장}/날짜.json + briefs/picks.jsonl (+텔레그램)   [brief.yml]
-  python brief.py page    → briefs/ 최신 JSON → site/brief/index.html, site/ja/brief/index.html   [daily.yml]
+  python brief.py page    → briefs/ 의 시장별 최신 JSON → site/brief/index.html, site/ja/brief/index.html (시장 탭)   [daily.yml]
 
 LLM_MODE=off (기본) 는 모델 호출이 없어 비용 0. 페이지의 "분석 요청 복사" 로 필요한 종목만
 Claude 채팅에 붙여 넣어 100점 평가를 받는다. 나중에 자동화하려면 LLM_MODE=api 로 바꾸면 된다.
 
-환경변수: MARKET(jp) · BRIEF_DATE(YYYY-MM-DD, 비우면 최신 스냅샷) · MAX_PICKS(20) · MIN_VAL(3, 억엔/억원/$M)
+환경변수: MARKET(jp|kr|us) · BRIEF_DATE(YYYY-MM-DD, 비우면 최신 스냅샷) · MAX_PICKS(20) · MIN_VAL / MIN_MCAP / MIN_PRICE (억엔·억원·$M 단위, 비우면 시장별 기본값)
           N_SHORT(8) · N_LONG(8) · N_NEWS(4) · MAX_PER_INDUSTRY(3) · COOLDOWN_DAYS(3)
           LLM_MODE(off|api) · ANTHROPIC_API_KEY · LLM_MODEL · LLM_MAX_SEARCH(3)
           TELEGRAM_TOKEN · TELEGRAM_CHAT_ID · BRIEF_URL · OUTPUT_DIR(site)
@@ -44,7 +44,7 @@ CFG = {
     "MARKET": os.environ.get("MARKET", "jp"),
     "BRIEF_DATE": os.environ.get("BRIEF_DATE", "").strip(),
     "MAX_PICKS": int(os.environ.get("MAX_PICKS", "20")),
-    "MIN_VAL": float(os.environ.get("MIN_VAL", "3")),        # 거래대금 하한 (억엔·억원·$M)
+    "MIN_VAL": os.environ.get("MIN_VAL", "").strip(),         # 거래대금 하한 (억엔·억원·$M). 비우면 시장별 기본값
     "N_SHORT": int(os.environ.get("N_SHORT", "8")),
     "N_LONG": int(os.environ.get("N_LONG", "8")),
     "N_NEWS": int(os.environ.get("N_NEWS", "4")),
@@ -62,6 +62,28 @@ MARKETS = {
     "kr": dict(div=1e8, unit_ko="억원", unit_ja="億ウォン", ccy="원", ccy_ja="ウォン", label_ko="🇰🇷 한국", label_ja="🇰🇷 韓国"),
     "us": dict(div=1e6, unit_ko="$M", unit_ja="$M", ccy="$", ccy_ja="$", label_ko="🇺🇸 미국", label_ja="🇺🇸 米国"),
 }
+
+MIN_VAL_DEFAULT = {"jp": 3.0, "kr": 10.0, "us": 10.0}          # 거래대금 하한: 억엔 · 억원 · $M
+MIN_MCAP_DEFAULT = {"jp": 100.0, "kr": 1000.0, "us": 500.0}    # 시총 하한:    억엔 · 억원 · $M
+MIN_PRICE_DEFAULT = {"jp": 0.0, "kr": 0.0, "us": 5.0}          # 주가 하한 (미국 페니주 제외)
+
+
+def _floor(env, table, m):
+    v = os.environ.get(env, "").strip()
+    return float(v) if v else table[m]
+
+
+def min_val(m):
+    return _floor("MIN_VAL", MIN_VAL_DEFAULT, m)
+
+
+def min_mcap(m):
+    return _floor("MIN_MCAP", MIN_MCAP_DEFAULT, m)
+
+
+def min_price(m):
+    return _floor("MIN_PRICE", MIN_PRICE_DEFAULT, m)
+
 
 SIG_SHORT = ["sig_spike", "sig_x5", "sig_x20", "sig_high", "sig_gap", "sig_oversold"]
 SIG_TREND = ["sig_gc", "sig_reclaim", "sig_trend", "sig_macd"]
@@ -217,14 +239,17 @@ def news_priority(x):
     return max((v for b, v in NEWS_PRIORITY.items() if (x["bits"] >> b) & 1), default=0)
 
 
-def select_candidates(df, tdnet, cooldown):
-    c, m = CFG, MARKETS[CFG["MARKET"]]
+def select_candidates(df, tdnet, cooldown, mkey):
+    c, m = CFG, MARKETS[mkey]
     d = df.copy()
     if "type" in d:
         d = d[d["type"].astype(str).str.lower() == "stock"]
     if "subtype" in d:
-        d = d[~d["subtype"].astype(str).str.lower().str.contains("etf|reit|fund|trust", na=False)]
-    liquid = d[d["Value.Traded"].fillna(0) >= c["MIN_VAL"] * m["div"]].copy()
+        d = d[~d["subtype"].astype(str).str.lower().str.contains("etf|reit|fund|trust|preferred", na=False)]
+    ok = (d["Value.Traded"].fillna(0) >= min_val(mkey) * m["div"]) & (d["close"].fillna(0) >= min_price(mkey))
+    if "market_cap_basic" in d:
+        ok &= d["market_cap_basic"].fillna(0) >= min_mcap(mkey) * m["div"]
+    liquid = d[ok].copy()
     liquid["inflow_s"] = liquid["inflow"].fillna(0) if "inflow" in liquid else 0
     liquid["rvol_s"] = liquid["relative_volume_10d_calc"].fillna(0)
     liquid["n_short"] = liquid[SIG_SHORT].sum(axis=1)          # 오늘 켜진 단기 트리거 수
@@ -280,8 +305,8 @@ def _f(v, nd=2):
         return None
 
 
-def pick_record(bucket, r, profiles, baserates, tdnet):
-    m = MARKETS[CFG["MARKET"]]
+def pick_record(bucket, r, profiles, baserates, tdnet, mkey):
+    m = MARKETS[mkey]
     code = r["code"]
     sigs = [k for k in SIG_ALL if bool(r.get(k, False))]
     base = {}
@@ -289,7 +314,8 @@ def pick_record(bucket, r, profiles, baserates, tdnet):
         st = baserates.get(k) or {}
         base[k] = {h: st[h] for h in ("5", "20", "1") if isinstance(st.get(h), dict)}
     prof = profiles.get(code) or {}
-    biz = (prof.get("l") or "").strip() or (prof.get("d") or "").strip()[:220]
+    krx = str(r.get("krx_products") or "").strip() if mkey == "kr" else ""
+    biz = (prof.get("l") or "").strip() or (krx if krx and krx != "nan" else "") or (prof.get("d") or "").strip()[:220]
     s200 = _f(r.get("SMA200"))
     close = _f(r.get("close"), 4)
     return dict(
@@ -330,9 +356,22 @@ def _s(v, suf="%"):
     return "—" if v is None else f"{v:+,.2f}".rstrip("0").rstrip(".") + suf
 
 
-def stock_block(p, date, lang="ko"):
-    m = MARKETS[CFG["MARKET"]]
-    ccy = m["ccy"] if lang == "ko" else m["ccy_ja"]
+def price(v, mkey, lang="ko"):
+    if v is None:
+        return "—"
+    m = MARKETS[mkey]
+    return f"${v:,.2f}" if mkey == "us" else f"{v:,.0f}" + (m["ccy"] if lang == "ko" else m["ccy_ja"])
+
+
+def amt(v, mkey, lang="ko"):
+    if v is None:
+        return "—"
+    m = MARKETS[mkey]
+    return f"${v:,.1f}M" if mkey == "us" else f"{_n(v)}{m['unit_ko'] if lang == 'ko' else m['unit_ja']}"
+
+
+def stock_block(p, date, lang="ko", mkey="jp"):
+    m = MARKETS[mkey]
     unit = m["unit_ko"] if lang == "ko" else m["unit_ja"]
     sigs = ", ".join(sig_label(k, lang) for k in p["signals"]) or "—"
     br = []
@@ -347,10 +386,10 @@ def stock_block(p, date, lang="ko"):
     ind = ind_label(p["industry"], lang)
     if lang == "ko":
         return (f"■ {p['code']} {p['name']} ({p['ticker']}) | 업종 {ind} / {p['segment']} | 분류 {BUCKET_KO[p['bucket']]}\n"
-                f"주가 {_n(p['close'])}{ccy} ({_s(p['chg'])}) | 5MA {_n(p['sma5'])} / 20MA {_n(p['sma20'])} / 200MA {_n(p['sma200'])} "
+                f"주가 {price(p['close'], mkey)} ({_s(p['chg'])}) | 5MA {_n(p['sma5'])} / 20MA {_n(p['sma20'])} / 200MA {_n(p['sma200'])} "
                 f"(200MA 대비 {_s(p['ext200'])}) | RSI {_n(p['rsi'])} | MACD-H {_n(p['macd_h'])} | RVOL {_n(p['rvol'])} | 52주 위치 {_n(p['pos52'], '%')}\n"
                 f"1주 {_s(p['pw'])} / 1개월 {_s(p['p1'])} / 3개월 {_s(p['p3'])} / YTD {_s(p['ytd'])} | 유입배 {_n(p['inflow'])}\n"
-                f"거래대금 {_n(p['val'])}{unit} | 시총 {_n(p['mcap'])}{unit} | PER {_n(p['per'])} | PBR {_n(p['pbr'])} | ROE {_n(p['roe'], '%')} | "
+                f"거래대금 {amt(p['val'], mkey)} | 시총 {amt(p['mcap'], mkey)} | PER {_n(p['per'])} | PBR {_n(p['pbr'])} | ROE {_n(p['roe'], '%')} | "
                 f"자기자본비율 {_n(p['eqr'], '%')} | 배당 {_n(p['div'], '%')} | D/E {_n(p['de'])}\n"
                 f"매출 YoY 분기 {_n(p['rev_q'], '%')} / TTM {_n(p['rev_ttm'], '%')} | EPS YoY 분기 {_n(p['eps_q'], '%')} | 5년 CAGR {_n(p['cagr5'], '%')} | "
                 f"영업이익률 {_n(p['opm'], '%')} | ROIC {_n(p['roic'], '%')} | PSR {_n(p['psr'])} | PEG {_n(p['peg'])}\n"
@@ -359,10 +398,10 @@ def stock_block(p, date, lang="ko"):
                 f"공시(5영업일): {dis}\n"
                 f"사업: {p['biz'] or '—'}")
     return (f"■ {p['code']} {p['name']} ({p['ticker']}) | 業種 {ind} / {p['segment']} | 分類 {BUCKET_JA[p['bucket']]}\n"
-            f"株価 {_n(p['close'])}{ccy} ({_s(p['chg'])}) | 5MA {_n(p['sma5'])} / 20MA {_n(p['sma20'])} / 200MA {_n(p['sma200'])} "
+            f"株価 {price(p['close'], mkey, 'ja')} ({_s(p['chg'])}) | 5MA {_n(p['sma5'])} / 20MA {_n(p['sma20'])} / 200MA {_n(p['sma200'])} "
             f"(200MA乖離 {_s(p['ext200'])}) | RSI {_n(p['rsi'])} | MACD-H {_n(p['macd_h'])} | RVOL {_n(p['rvol'])} | 52週位置 {_n(p['pos52'], '%')}\n"
             f"1週 {_s(p['pw'])} / 1ヶ月 {_s(p['p1'])} / 3ヶ月 {_s(p['p3'])} / YTD {_s(p['ytd'])} | 流入倍率 {_n(p['inflow'])}\n"
-            f"売買代金 {_n(p['val'])}{unit} | 時価総額 {_n(p['mcap'])}{unit} | PER {_n(p['per'])} | PBR {_n(p['pbr'])} | ROE {_n(p['roe'], '%')} | "
+            f"売買代金 {amt(p['val'], mkey, 'ja')} | 時価総額 {amt(p['mcap'], mkey, 'ja')} | PER {_n(p['per'])} | PBR {_n(p['pbr'])} | ROE {_n(p['roe'], '%')} | "
             f"自己資本比率 {_n(p['eqr'], '%')} | 配当 {_n(p['div'], '%')} | D/E {_n(p['de'])}\n"
             f"売上YoY 四半期 {_n(p['rev_q'], '%')} / TTM {_n(p['rev_ttm'], '%')} | EPS YoY 四半期 {_n(p['eps_q'], '%')} | 5年CAGR {_n(p['cagr5'], '%')} | "
             f"営業利益率 {_n(p['opm'], '%')} | ROIC {_n(p['roic'], '%')} | PSR {_n(p['psr'])} | PEG {_n(p['peg'])}\n"
@@ -415,8 +454,8 @@ def call_claude(user_text):
     return json.loads(text[s:e + 1]) if s >= 0 and e > s else None
 
 
-def apply_llm(p, date):
-    out = call_claude(PROMPT_HEAD["ko"].format(date=date) + "\n" + stock_block(p, date, "ko"))
+def apply_llm(p, date, mkey):
+    out = call_claude(PROMPT_HEAD["ko"].format(date=date) + "\n" + stock_block(p, date, "ko", mkey))
     if not out:
         return
     sub = {k: max(0, min(100, float(out.get(k, 0) or 0))) for k in ("fund", "tech", "risk", "cat")}
@@ -466,7 +505,7 @@ def tg_message(brief):
             sigs = "·".join(sig_label(k) for k in p["signals"][:3])
             lines.append(f"• {p['code']} {esc(p['name'][:12])} {chg} | {sigs} | 스코어 {p['score']:.0f}{tag}")
         lines.append("")
-    lines.append(f'🔗 <a href="{CFG["BRIEF_URL"]}">브리프 페이지 (수치·공시·분석 요청 복사)</a>')
+    lines.append(f'🔗 <a href="{CFG["BRIEF_URL"]}#{brief["market"]}">브리프 페이지 (수치·공시·분석 요청 복사)</a>')
     return "\n".join(lines)
 
 
@@ -483,25 +522,27 @@ def generate():
     df = load_snapshot(p)
     tdnet = fetch_tdnet(df["code"].tolist()) if m == "jp" else {}
     cooldown = recent_picks(CFG["COOLDOWN_DAYS"], date)
-    picked, stats = select_candidates(df, tdnet, cooldown)
+    picked, stats = select_candidates(df, tdnet, cooldown, m)
     print(f"  유니버스 {stats['total']:,} → 유동성 {stats['liquid']:,} → 후보 {stats['candidates']} "
           f"(단기 {stats['short']} · 중장기 {stats['long']} · 공시 {stats['news']}) / 쿨다운 제외 {len(cooldown)}")
     profiles = load_profiles(m)
     baserates, n_days = load_baserates(m)
-    picks = [pick_record(b, r, profiles, baserates, tdnet) for b, r in picked]
+    picks = [pick_record(b, r, profiles, baserates, tdnet, m) for b, r in picked]
 
     if CFG["LLM_MODE"] == "api":
         for i, pk in enumerate(picks, 1):
             try:
-                apply_llm(pk, date)
+                apply_llm(pk, date, m)
                 print(f"  LLM {i}/{len(picks)} {pk['code']} → {pk['llm']['total'] if pk['llm'] else '-'}")
             except Exception as e:  # noqa: BLE001
                 print(f"  LLM {pk['code']} 실패: {type(e).__name__}: {str(e)[:80]}")
         picks.sort(key=lambda x: -(x["llm"]["total"] if x["llm"] else -1))
 
+    mk = MARKETS[m]
     brief = dict(date=date, market=m, generated=datetime.now(JST).strftime("%Y-%m-%d %H:%M JST"),
+                 label_ko=mk["label_ko"], label_ja=mk["label_ja"], unit_ko=mk["unit_ko"], unit_ja=mk["unit_ja"],
                  llm_mode=CFG["LLM_MODE"], baserate_days=n_days, universe=stats, picks=picks,
-                 config={k: CFG[k] for k in ("MIN_VAL", "N_SHORT", "N_LONG", "N_NEWS", "MAX_PER_INDUSTRY", "COOLDOWN_DAYS")})
+                 config=dict(MIN_VAL=min_val(m), MIN_MCAP=min_mcap(m), MIN_PRICE=min_price(m), **{k: CFG[k] for k in ("N_SHORT", "N_LONG", "N_NEWS", "MAX_PER_INDUSTRY", "COOLDOWN_DAYS")}))
     out = BRIEFS / m
     out.mkdir(parents=True, exist_ok=True)
     (out / f"{date}.json").write_text(json.dumps(brief, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -530,7 +571,7 @@ PAGE_T = {
                empty="아직 브리프가 없습니다. 첫 실행은 평일 18:03 JST 이후 자동으로 만들어집니다.",
                howto="복사한 텍스트를 Claude 채팅에 붙여 넣으면 100점 체계(펀더·테크·리스크·촉매)로 평가받을 수 있습니다. "
                      "숫자는 스크리너 값이 그대로 들어가 있어 모델이 새로 추정하지 않습니다. 주문 실행 기능은 없습니다.",
-               foot="후보 선정 규칙 — 거래대금 ≥ {minval}{unit}, 단기: 단기 시그널 1개 이상 + 스코어 ≥2, 중장기: 추세·가치·성장 시그널 + 스코어 ≥3, "
+               foot="후보 선정 규칙 — 거래대금 ≥ {minval}{unit} · 시총 ≥ {mcap}{unit}{extra}, 단기: 단기 시그널 1개 이상 + 스코어 ≥2, 중장기: 추세·가치·성장 시그널 + 스코어 ≥3, "
                     "공시: 최근 강한 공시(상방·증배·자사주·분할·TOB) + 시그널 1개 이상 · 같은 업종 최대 {maxind}종목 · 최근 {cool}회 브리프에 나온 종목은 제외(공시 예외) · "
                     "참고 자료이며 투자 판단의 책임은 본인에게 있습니다."),
     "ja": dict(title="運用デスク・ブリーフ", sub="終値スナップショットからルールで選んだ本日の候補と根拠データ",
@@ -543,7 +584,7 @@ PAGE_T = {
                empty="ブリーフはまだありません。平日18:03 JST以降に自動生成されます。",
                howto="コピーしたテキストをClaudeのチャットに貼り付けると、100点方式(ファンダ・テクニカル・リスク・カタリスト)で評価が得られます。"
                      "数値はスクリーナーの値がそのまま入っており、モデルが新たに推定することはありません。発注機能はありません。",
-               foot="候補選定ルール — 売買代金 ≥ {minval}{unit}、短期: 短期シグナル1つ以上 + スコア≥2、中長期: トレンド・バリュー・成長シグナル + スコア≥3、"
+               foot="候補選定ルール — 売買代金 ≥ {minval}{unit} ・ 時価総額 ≥ {mcap}{unit}{extra}、短期: 短期シグナル1つ以上 + スコア≥2、中長期: トレンド・バリュー・成長シグナル + スコア≥3、"
                     "開示: 直近の強い開示(上方・増配・自社株・分割・TOB) + シグナル1つ以上 ・ 同一業種は最大{maxind}銘柄 ・ 直近{cool}回のブリーフに出た銘柄は除外(開示は例外) ・ "
                     "参考情報であり、投資判断は自己責任です。"),
 }
@@ -605,14 +646,17 @@ footer{margin-top:14px;color:var(--faint);font-size:11px;line-height:1.7}
   <a class="dashbtn" href="__BT_HREF__">__BT__</a>
   <a class="langbtn" href="__LANG_HREF__">__OTHER__</a>
 </div>
-<h1>__TITLE__ <span>__MKT__ __DATE__</span></h1>
-<div class="meta">__SUB__ · __GEN_LBL__ __GEN__ · __BASE_LBL__ __BASEDAYS____DAYS__</div>
+<h1>__TITLE__ <span id="hd"></span></h1>
+<div class="meta" id="meta">__SUB__</div>
 <div id="app"></div>
-<footer>__FOOT__</footer>
+<footer id="foot"></footer>
 <script>
-const B=__BRIEF__, T=__T__, PROMPTS=__PROMPTS__, HEAD=__HEAD__;
+const BB=__BRIEFS__, T=__T__, PROMPTS=__PROMPTS__, HEADT=__HEAD__, LANG="__LANG__";
 const SIG=__SIG__, KW=__KW__, GRP=__GRP__;
+const MK=Object.keys(BB), LB=LANG==='ko'?'label_ko':'label_ja', UN=LANG==='ko'?'unit_ko':'unit_ja';
+let mkt=MK.includes(location.hash.slice(1))?location.hash.slice(1):(MK[0]||null), B=mkt?BB[mkt]:null;
 let tab='all', open=new Set();
+const head=()=>HEADT.replace('{date}',B?B.date:'');
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const pc=(v,d=2)=>v==null?'<span class="fl">—</span>':`<span class="${v>0?'up':v<0?'dn':'fl'}">${v>0?'+':''}${v.toFixed(d)}%</span>`;
@@ -641,10 +685,16 @@ function detail(p){
     <div style="margin-top:10px"><button class="btn small" data-copy="${p.code}">${T.copy}</button></div></div>`;
 }
 function render(){
-  if(!B||!B.picks||!B.picks.length){$('#app').innerHTML=`<div class="note">${T.empty}</div>`;return}
-  const u=B.universe;
+  const mtabs=MK.length?`<div class="tabs" id="mt">${MK.map(m=>`<div class="tab ${m===mkt?'on':''}" data-m="${m}">${esc(BB[m][LB])} <span style="color:var(--faint);font-size:11px">${esc(BB[m].date.slice(5))}</span></div>`).join('')}</div>`:'';
+  if(!B||!B.picks||!B.picks.length){$('#app').innerHTML=mtabs+`<div class="note">${T.empty}</div>`;$('#hd').textContent='';$('#foot').textContent='';return}
+  const u=B.universe, c=B.config||{};
+  $('#hd').textContent=`${B[LB]} ${B.date}`;
+  $('#meta').textContent=`${T.sub} · ${T.gen} ${B.generated} · ${T.base} ${B.baserate_days}${T.days}`;
+  const extra=c.MIN_PRICE>0?(LANG==='ko'?` · 주가 ≥ $${c.MIN_PRICE}`:` ・ 株価 ≥ $${c.MIN_PRICE}`):'';
+  const fu=v=>B.market==='us'?`$${v}M`:`${v}${B[UN]}`;
+  $('#foot').textContent=T.foot.replace('{minval}{unit}',fu(c.MIN_VAL)).replace('{mcap}{unit}',fu(c.MIN_MCAP)).replace('{extra}',extra).replace('{maxind}',c.MAX_PER_INDUSTRY).replace('{cool}',c.COOLDOWN_DAYS);
   const ps=B.picks.filter(p=>tab==='all'||p.bucket===tab);
-  $('#app').innerHTML=`<div class="funnel"><span><span class="k">${T.total}</span> <b>${u.total.toLocaleString()}</b></span><span class="k">→</span>
+  $('#app').innerHTML=mtabs+`<div class="funnel"><span><span class="k">${T.total}</span> <b>${u.total.toLocaleString()}</b></span><span class="k">→</span>
     <span><span class="k">${T.liquid}</span> <b>${u.liquid.toLocaleString()}</b></span><span class="k">→</span>
     <span><span class="k">${T.picks}</span> <b>${u.candidates}</b> <span class="k">(${BK.short} ${u.short} · ${BK.long} ${u.long} · ${BK.news} ${u.news})</span></span></div>
   <div class="tabs">${T.tabs.map(([k,l])=>`<div class="tab ${k===tab?'on':''}" data-t="${k}">${l}</div>`).join('')}<button class="btn" id="copyall">${T.copy_all}</button></div>
@@ -658,11 +708,13 @@ function render(){
   <div class="note">${T.howto}</div>`;
 }
 document.addEventListener('click',e=>{
-  const c=e.target.closest('[data-copy]');if(c){copy(HEAD+'\\n'+PROMPTS[c.dataset.copy],c);return}
-  if(e.target.id==='copyall'){const ps=B.picks.filter(p=>tab==='all'||p.bucket===tab);copy(HEAD+'\\n'+ps.map(p=>PROMPTS[p.code]).join('\\n\\n'),e.target);return}
+  const c=e.target.closest('[data-copy]');if(c){copy(head()+'\\n'+PROMPTS[mkt][c.dataset.copy],c);return}
+  if(e.target.id==='copyall'){const ps=B.picks.filter(p=>tab==='all'||p.bucket===tab);copy(head()+'\\n'+ps.map(p=>PROMPTS[mkt][p.code]).join('\\n\\n'),e.target);return}
+  const mt=e.target.closest('[data-m]');if(mt){mkt=mt.dataset.m;B=BB[mkt];tab='all';open=new Set();history.replaceState(null,'','#'+mkt);render();return}
   const t=e.target.closest('.tab');if(t){tab=t.dataset.t;render();return}
   const r=e.target.closest('tr.row');if(r){const k=r.dataset.c;open.has(k)?open.delete(k):open.add(k);render()}
 });
+window.addEventListener('hashchange',()=>{const h=location.hash.slice(1);if(MK.includes(h)&&h!==mkt){mkt=h;B=BB[mkt];tab='all';open=new Set();render()}});
 render();
 </script></body></html>"""
 
@@ -676,32 +728,21 @@ def render_pages():
     out = Path(CFG["OUTPUT_DIR"])
     if not out.is_absolute():
         out = BASE / out
-    m = CFG["MARKET"]
-    brief = latest_brief(m)
-    mk = MARKETS[m]
+    briefs = {m: b for m in MARKETS if (b := latest_brief(m))}
+    latest = max((b["date"] for b in briefs.values()), default="—")
     grp = {**{k: "s" for k in SIG_SHORT}, **{k: "g" for k in SIG_TREND}, **{k: "f" for k in SIG_FUND},
            **{k: "w" for k in SIG_GROWTH}, "sig_inflow": "i"}
     js = lambda o: json.dumps(o, ensure_ascii=False).replace("</", "<\\/")  # noqa: E731
     for lang in ("ko", "ja"):
         T = PAGE_T[lang]
-        date = brief["date"] if brief else "—"
-        prompts = {p["code"]: stock_block(p, date, lang) for p in brief["picks"]} if brief else {}
-        cfg = (brief or {}).get("config", {})
-        foot = T["foot"].format(minval=cfg.get("MIN_VAL", CFG["MIN_VAL"]), unit=mk["unit_ko"] if lang == "ko" else mk["unit_ja"],
-                                maxind=cfg.get("MAX_PER_INDUSTRY", CFG["MAX_PER_INDUSTRY"]), cool=cfg.get("COOLDOWN_DAYS", CFG["COOLDOWN_DAYS"]))
-        pre = "../" if lang == "ko" else "../../"
+        prompts = {m: {p["code"]: stock_block(p, b["date"], lang, m) for p in b["picks"]} for m, b in briefs.items()}
         rep = {
-            "__LANG__": lang, "__TITLE__": T["title"], "__SUB__": T["sub"], "__DATE__": date,
-            "__MKT__": mk["label_ko"] if lang == "ko" else mk["label_ja"],
-            "__GEN_LBL__": T["gen"], "__GEN__": (brief or {}).get("generated", "—"),
-            "__BASE_LBL__": T["base"], "__BASEDAYS__": str((brief or {}).get("baserate_days", 0)), "__DAYS__": T["days"],
-            "__BACK__": T["back"], "__BACK_HREF__": f"{pre}{m}/index.html" if lang == "ko" else f"../{m}/index.html",
+            "__LANG__": lang, "__TITLE__": T["title"], "__SUB__": T["sub"], "__DATE__": latest,
+            "__BACK__": T["back"], "__BACK_HREF__": "../jp/index.html",
             "__RANK__": T["rank"], "__RANK_HREF__": "../ranking/index.html",
             "__BT__": T["bt"], "__BT_HREF__": "../backtest/index.html",
             "__OTHER__": T["other"], "__LANG_HREF__": "../ja/brief/index.html" if lang == "ko" else "../../brief/index.html",
-            "__FOOT__": foot,
-            "__BRIEF__": js(brief), "__T__": js(T), "__PROMPTS__": js(prompts),
-            "__HEAD__": js(PROMPT_HEAD[lang].format(date=date)),
+            "__BRIEFS__": js(briefs), "__T__": js(T), "__PROMPTS__": js(prompts), "__HEAD__": js(PROMPT_HEAD[lang]),
             "__SIG__": js({k: sig_label(k, lang) for k in SIG_ALL}), "__KW__": js(KW_LABELS[lang]), "__GRP__": js(grp),
         }
         page = PAGE_HTML
@@ -710,7 +751,8 @@ def render_pages():
         d = out / ("brief" if lang == "ko" else "ja/brief")
         d.mkdir(parents=True, exist_ok=True)
         (d / "index.html").write_text(page, encoding="utf-8")
-        print(f"  [{lang}] 페이지 → {d}/index.html ({'브리프 ' + date if brief else '브리프 없음'})")
+        done = ", ".join(f"{m} {b['date']}" for m, b in briefs.items()) or "브리프 없음"
+        print(f"  [{lang}] 페이지 → {d}/index.html ({done})")
 
 
 if __name__ == "__main__":
