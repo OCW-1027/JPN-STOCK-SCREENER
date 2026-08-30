@@ -1,0 +1,2858 @@
+{
+ "date": "2026-08-29",
+ "market": "us",
+ "generated": "2026-08-31 00:22 JST",
+ "label_ko": "🇺🇸 미국",
+ "label_ja": "🇺🇸 米国",
+ "unit_ko": "$M",
+ "unit_ja": "$M",
+ "llm_mode": "off",
+ "baserate_days": 9,
+ "universe": {
+  "total": 5186,
+  "liquid": 2165,
+  "candidates": 16,
+  "short": 8,
+  "long": 8,
+  "news": 0
+ },
+ "picks": [
+  {
+   "code": "GFL",
+   "name": "GFL Environmental Inc. Subordinate voting shares, no par value",
+   "ticker": "NYSE:GFL",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_trend"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 588,
+      "win": 48.5,
+      "avg": 27.67,
+      "med": 0.0,
+      "excess": 26.01,
+      "best": 4739.4,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1110,
+      "win": 41.0,
+      "avg": 8.85,
+      "med": 0.0,
+      "excess": 8.57,
+      "best": 4202.4,
+      "worst": -58.5
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 2864,
+      "win": 46.9,
+      "avg": 3.39,
+      "med": -0.18,
+      "excess": 1.94,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 6279,
+      "win": 40.8,
+      "avg": 0.96,
+      "med": -0.35,
+      "excess": 0.87,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 977,
+      "win": 45.0,
+      "avg": 2.81,
+      "med": -0.37,
+      "excess": 1.42,
+      "best": 2307.5,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 1966,
+      "win": 42.6,
+      "avg": 2.0,
+      "med": -0.28,
+      "excess": 1.84,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 563,
+      "win": 46.5,
+      "avg": -0.15,
+      "med": -0.14,
+      "excess": -1.85,
+      "best": 29.7,
+      "worst": -22.0
+     },
+     "1": {
+      "n": 1227,
+      "win": 45.6,
+      "avg": -0.09,
+      "med": -0.05,
+      "excess": -0.35,
+      "best": 13.5,
+      "worst": -24.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 974,
+      "win": 43.2,
+      "avg": 1.59,
+      "med": -0.4,
+      "excess": -0.22,
+      "best": 853.0,
+      "worst": -42.7
+     },
+     "1": {
+      "n": 1960,
+      "win": 46.4,
+      "avg": 0.01,
+      "med": -0.05,
+      "excess": -0.28,
+      "best": 355.6,
+      "worst": -30.3
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1055,
+      "win": 45.5,
+      "avg": -0.13,
+      "med": -0.27,
+      "excess": -1.81,
+      "best": 29.7,
+      "worst": -26.9
+     },
+     "1": {
+      "n": 2174,
+      "win": 44.3,
+      "avg": -0.22,
+      "med": -0.13,
+      "excess": -0.5,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    }
+   },
+   "sector": "Industrial Services",
+   "industry": "Environmental Services",
+   "segment": "NYSE",
+   "close": 42.83,
+   "chg": 4.39,
+   "gap": 0.41,
+   "sma5": 41.48,
+   "sma20": 41.41,
+   "sma200": 41.01,
+   "ext200": 4.43,
+   "rsi": 62.4,
+   "macd_h": -0.04,
+   "rvol": 2.55,
+   "pw": 3.63,
+   "p1": 8.71,
+   "p3": 24.87,
+   "ytd": -0.6,
+   "pos52": 57.0,
+   "hi52": 50.01,
+   "lo52": 33.33,
+   "val": 172.2,
+   "mcap": 15457.0,
+   "per": null,
+   "pbr": 2.98,
+   "eps": -0.39,
+   "roe": -2.4,
+   "eqr": 40.1,
+   "div": 0.16,
+   "rev_q": 11.4,
+   "rev_ttm": -7.6,
+   "cagr5": 7.9,
+   "eps_q": -162.0,
+   "opm": 5.6,
+   "roic": -1.1,
+   "psr": 3.37,
+   "peg": null,
+   "de": 1.38,
+   "inflow": null,
+   "biz": "GFL Environmental Inc. provides non-hazardous solid waste management services in Canada and the United States. It offers solid waste management services, including collection, transportation, transfer, recycling, and dis",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "RJF",
+   "name": "Raymond James Financial, Inc.",
+   "ticker": "NYSE:RJF",
+   "bucket": "short",
+   "score": 4.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_high",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 2864,
+      "win": 46.9,
+      "avg": 3.39,
+      "med": -0.18,
+      "excess": 1.94,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 6279,
+      "win": 40.8,
+      "avg": 0.96,
+      "med": -0.35,
+      "excess": 0.87,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 977,
+      "win": 45.0,
+      "avg": 2.81,
+      "med": -0.37,
+      "excess": 1.42,
+      "best": 2307.5,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 1966,
+      "win": 42.6,
+      "avg": 2.0,
+      "med": -0.28,
+      "excess": 1.84,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 735,
+      "win": 49.5,
+      "avg": 0.03,
+      "med": 0.0,
+      "excess": -1.52,
+      "best": 308.4,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 1490,
+      "win": 40.4,
+      "avg": -0.04,
+      "med": 0.0,
+      "excess": -0.3,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 995,
+      "win": 37.8,
+      "avg": -0.77,
+      "med": -0.72,
+      "excess": -0.52,
+      "best": 227.7,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 4961,
+      "win": 45.0,
+      "avg": -0.13,
+      "med": -0.14,
+      "excess": -0.22,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Investment Managers",
+   "segment": "NYSE",
+   "close": 179.36,
+   "chg": 1.85,
+   "gap": 0.59,
+   "sma5": 176.71,
+   "sma20": 178.13,
+   "sma200": 159.93,
+   "ext200": 12.15,
+   "rsi": 58.6,
+   "macd_h": -0.72,
+   "rvol": 1.72,
+   "pw": 3.29,
+   "p1": 1.78,
+   "p3": 26.51,
+   "ytd": 11.9,
+   "pos52": 92.0,
+   "hi52": 182.73,
+   "lo52": 138.82,
+   "val": 316.0,
+   "mcap": 34502.0,
+   "per": 15.6,
+   "pbr": 2.71,
+   "eps": 11.7,
+   "roe": 18.5,
+   "eqr": 19.6,
+   "div": 1.2,
+   "rev_q": 11.8,
+   "rev_ttm": 7.7,
+   "cagr5": 14.2,
+   "eps_q": 42.3,
+   "opm": 18.6,
+   "roic": 13.8,
+   "psr": 2.33,
+   "peg": 1.22,
+   "de": 0.46,
+   "inflow": null,
+   "biz": "Raymond James Financial, Inc., a diversified financial services company, provides private client group, capital markets, asset management, banking, and other services to individuals, corporations, and municipalities in t",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "WTM",
+   "name": "White Mountains Insurance Group, Ltd.",
+   "ticker": "NYSE:WTM",
+   "bucket": "short",
+   "score": 11.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_trend",
+    "sig_macd",
+    "sig_value",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 2864,
+      "win": 46.9,
+      "avg": 3.39,
+      "med": -0.18,
+      "excess": 1.94,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 6279,
+      "win": 40.8,
+      "avg": 0.96,
+      "med": -0.35,
+      "excess": 0.87,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 977,
+      "win": 45.0,
+      "avg": 2.81,
+      "med": -0.37,
+      "excess": 1.42,
+      "best": 2307.5,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 1966,
+      "win": 42.6,
+      "avg": 2.0,
+      "med": -0.28,
+      "excess": 1.84,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 563,
+      "win": 46.5,
+      "avg": -0.15,
+      "med": -0.14,
+      "excess": -1.85,
+      "best": 29.7,
+      "worst": -22.0
+     },
+     "1": {
+      "n": 1227,
+      "win": 45.6,
+      "avg": -0.09,
+      "med": -0.05,
+      "excess": -0.35,
+      "best": 13.5,
+      "worst": -24.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 974,
+      "win": 43.2,
+      "avg": 1.59,
+      "med": -0.4,
+      "excess": -0.22,
+      "best": 853.0,
+      "worst": -42.7
+     },
+     "1": {
+      "n": 1960,
+      "win": 46.4,
+      "avg": 0.01,
+      "med": -0.05,
+      "excess": -0.28,
+      "best": 355.6,
+      "worst": -30.3
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1055,
+      "win": 45.5,
+      "avg": -0.13,
+      "med": -0.27,
+      "excess": -1.81,
+      "best": 29.7,
+      "worst": -26.9
+     },
+     "1": {
+      "n": 2174,
+      "win": 44.3,
+      "avg": -0.22,
+      "med": -0.13,
+      "excess": -0.5,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3003,
+      "win": 44.6,
+      "avg": 0.25,
+      "med": -0.34,
+      "excess": -1.5,
+      "best": 327.4,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 6004,
+      "win": 45.1,
+      "avg": -0.08,
+      "med": -0.09,
+      "excess": -0.38,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_value": {
+     "5": {
+      "n": 254,
+      "win": 39.8,
+      "avg": -1.0,
+      "med": -0.57,
+      "excess": -2.77,
+      "best": 103.6,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 495,
+      "win": 47.9,
+      "avg": -0.41,
+      "med": 0.0,
+      "excess": -0.73,
+      "best": 32.9,
+      "worst": -47.0
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 1372,
+      "win": 52.0,
+      "avg": 0.44,
+      "med": 0.23,
+      "excess": -1.3,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 2752,
+      "win": 50.6,
+      "avg": 0.09,
+      "med": 0.03,
+      "excess": -0.22,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 517,
+      "win": 35.2,
+      "avg": 0.06,
+      "med": -1.46,
+      "excess": 0.31,
+      "best": 698.9,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 2599,
+      "win": 43.8,
+      "avg": 0.18,
+      "med": -0.29,
+      "excess": 0.09,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 995,
+      "win": 37.8,
+      "avg": -0.77,
+      "med": -0.72,
+      "excess": -0.52,
+      "best": 227.7,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 4961,
+      "win": 45.0,
+      "avg": -0.13,
+      "med": -0.14,
+      "excess": -0.22,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 245,
+      "win": 39.2,
+      "avg": -0.89,
+      "med": -0.76,
+      "excess": -0.64,
+      "best": 16.3,
+      "worst": -26.3
+     },
+     "1": {
+      "n": 1236,
+      "win": 46.3,
+      "avg": -0.22,
+      "med": -0.17,
+      "excess": -0.32,
+      "best": 11.5,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Multi-Line Insurance",
+   "segment": "NYSE",
+   "close": 2135.41,
+   "chg": 0.37,
+   "gap": 0.26,
+   "sma5": 2133.84,
+   "sma20": 2126.37,
+   "sma200": 2120.01,
+   "ext200": 0.73,
+   "rsi": 50.8,
+   "macd_h": 0.74,
+   "rvol": 0.93,
+   "pw": 1.6,
+   "p1": -2.32,
+   "p3": 2.02,
+   "ytd": 2.5,
+   "pos52": 71.0,
+   "hi52": 2333.0,
+   "lo52": 1648.0,
+   "val": 39.3,
+   "mcap": 5097.0,
+   "per": 4.9,
+   "pbr": 0.95,
+   "eps": 439.4,
+   "roe": 21.9,
+   "eqr": 57.8,
+   "div": 0.05,
+   "rev_q": 23.7,
+   "rev_ttm": 21.2,
+   "cagr5": 19.6,
+   "eps_q": 68.8,
+   "opm": 24.2,
+   "roic": 18.8,
+   "psr": 1.88,
+   "peg": 0.01,
+   "de": 0.17,
+   "inflow": null,
+   "biz": "White Mountains Insurance Group, Ltd. provides insurance services in the United States, the United Kingdom, Bermuda, and internationally. It operates through Ark/WM Outrigger, HG Global, Kudu, Distinguished, and Other Op",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "AFRM",
+   "name": "Affirm Holdings, Inc.",
+   "ticker": "NASDAQ:AFRM",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_spike",
+    "sig_gap",
+    "sig_trend",
+    "sig_macd",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 588,
+      "win": 48.5,
+      "avg": 27.67,
+      "med": 0.0,
+      "excess": 26.01,
+      "best": 4739.4,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1110,
+      "win": 41.0,
+      "avg": 8.85,
+      "med": 0.0,
+      "excess": 8.57,
+      "best": 4202.4,
+      "worst": -58.5
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 570,
+      "win": 46.0,
+      "avg": 9.17,
+      "med": -0.39,
+      "excess": 7.69,
+      "best": 3343.9,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1009,
+      "win": 39.1,
+      "avg": 3.69,
+      "med": -1.32,
+      "excess": 3.68,
+      "best": 4202.4,
+      "worst": -50.6
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1055,
+      "win": 45.5,
+      "avg": -0.13,
+      "med": -0.27,
+      "excess": -1.81,
+      "best": 29.7,
+      "worst": -26.9
+     },
+     "1": {
+      "n": 2174,
+      "win": 44.3,
+      "avg": -0.22,
+      "med": -0.13,
+      "excess": -0.5,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3003,
+      "win": 44.6,
+      "avg": 0.25,
+      "med": -0.34,
+      "excess": -1.5,
+      "best": 327.4,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 6004,
+      "win": 45.1,
+      "avg": -0.08,
+      "med": -0.09,
+      "excess": -0.38,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 517,
+      "win": 35.2,
+      "avg": 0.06,
+      "med": -1.46,
+      "excess": 0.31,
+      "best": 698.9,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 2599,
+      "win": 43.8,
+      "avg": 0.18,
+      "med": -0.29,
+      "excess": 0.09,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 995,
+      "win": 37.8,
+      "avg": -0.77,
+      "med": -0.72,
+      "excess": -0.52,
+      "best": 227.7,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 4961,
+      "win": 45.0,
+      "avg": -0.13,
+      "med": -0.14,
+      "excess": -0.22,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Finance/Rental/Leasing",
+   "segment": "NASDAQ",
+   "close": 77.76,
+   "chg": 0.35,
+   "gap": 10.98,
+   "sma5": 77.31,
+   "sma20": 76.52,
+   "sma200": 66.52,
+   "ext200": 16.9,
+   "rsi": 53.4,
+   "macd_h": 0.2,
+   "rvol": 8.67,
+   "pw": 2.57,
+   "p1": 9.52,
+   "p3": 5.17,
+   "ytd": 3.7,
+   "pos52": 70.0,
+   "hi52": 93.2,
+   "lo52": 42.09,
+   "val": 2256.9,
+   "mcap": 26042.0,
+   "per": 14.1,
+   "pbr": 4.78,
+   "eps": 5.71,
+   "roe": 45.1,
+   "eqr": 34.7,
+   "div": 0.0,
+   "rev_q": 33.5,
+   "rev_ttm": 32.4,
+   "cagr5": 44.6,
+   "eps_q": 2187.2,
+   "opm": 22.1,
+   "roic": 15.1,
+   "psr": 6.87,
+   "peg": 0.0,
+   "de": 1.79,
+   "inflow": null,
+   "biz": "Affirm Holdings, Inc. operates payment network in the United States, Canada, and internationally. Its platform includes point-of-sale payment solution for consumers, merchant commerce solutions, and a consumer-focused ap",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "CRAI",
+   "name": "CRA International,Inc.",
+   "ticker": "NASDAQ:CRAI",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_trend",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 2864,
+      "win": 46.9,
+      "avg": 3.39,
+      "med": -0.18,
+      "excess": 1.94,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 6279,
+      "win": 40.8,
+      "avg": 0.96,
+      "med": -0.35,
+      "excess": 0.87,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 977,
+      "win": 45.0,
+      "avg": 2.81,
+      "med": -0.37,
+      "excess": 1.42,
+      "best": 2307.5,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 1966,
+      "win": 42.6,
+      "avg": 2.0,
+      "med": -0.28,
+      "excess": 1.84,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 563,
+      "win": 46.5,
+      "avg": -0.15,
+      "med": -0.14,
+      "excess": -1.85,
+      "best": 29.7,
+      "worst": -22.0
+     },
+     "1": {
+      "n": 1227,
+      "win": 45.6,
+      "avg": -0.09,
+      "med": -0.05,
+      "excess": -0.35,
+      "best": 13.5,
+      "worst": -24.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 974,
+      "win": 43.2,
+      "avg": 1.59,
+      "med": -0.4,
+      "excess": -0.22,
+      "best": 853.0,
+      "worst": -42.7
+     },
+     "1": {
+      "n": 1960,
+      "win": 46.4,
+      "avg": 0.01,
+      "med": -0.05,
+      "excess": -0.28,
+      "best": 355.6,
+      "worst": -30.3
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1055,
+      "win": 45.5,
+      "avg": -0.13,
+      "med": -0.27,
+      "excess": -1.81,
+      "best": 29.7,
+      "worst": -26.9
+     },
+     "1": {
+      "n": 2174,
+      "win": 44.3,
+      "avg": -0.22,
+      "med": -0.13,
+      "excess": -0.5,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 245,
+      "win": 39.2,
+      "avg": -0.89,
+      "med": -0.76,
+      "excess": -0.64,
+      "best": 16.3,
+      "worst": -26.3
+     },
+     "1": {
+      "n": 1236,
+      "win": 46.3,
+      "avg": -0.22,
+      "med": -0.17,
+      "excess": -0.32,
+      "best": 11.5,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Commercial Services",
+   "industry": "Miscellaneous Commercial Services",
+   "segment": "NASDAQ",
+   "close": 174.99,
+   "chg": 1.44,
+   "gap": 0.16,
+   "sma5": 173.13,
+   "sma20": 172.55,
+   "sma200": 170.6,
+   "ext200": 2.58,
+   "rsi": 55.5,
+   "macd_h": -0.35,
+   "rvol": 1.01,
+   "pw": 0.44,
+   "p1": -4.03,
+   "p3": 18.11,
+   "ytd": -12.6,
+   "pos52": 45.0,
+   "hi52": 227.29,
+   "lo52": 132.17,
+   "val": 16.3,
+   "mcap": 1098.0,
+   "per": 23.3,
+   "pbr": 6.02,
+   "eps": 7.6,
+   "roe": 26.0,
+   "eqr": 38.8,
+   "div": 1.28,
+   "rev_q": 12.8,
+   "rev_ttm": 11.5,
+   "cagr5": 8.1,
+   "eps_q": 17.5,
+   "opm": 10.0,
+   "roic": 18.6,
+   "psr": 1.56,
+   "peg": null,
+   "de": 1.67,
+   "inflow": null,
+   "biz": "CRA International, Inc., together with its subsidiaries, provides economic, financial, and management consulting services worldwide. It advises clients on economic and financial matters pertaining to litigation and regul",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "PLMR",
+   "name": "Palomar Holdings, Inc.",
+   "ticker": "NASDAQ:PLMR",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_trend",
+    "sig_macd",
+    "sig_qual",
+    "sig_growth"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 2864,
+      "win": 46.9,
+      "avg": 3.39,
+      "med": -0.18,
+      "excess": 1.94,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 6279,
+      "win": 40.8,
+      "avg": 0.96,
+      "med": -0.35,
+      "excess": 0.87,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 977,
+      "win": 45.0,
+      "avg": 2.81,
+      "med": -0.37,
+      "excess": 1.42,
+      "best": 2307.5,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 1966,
+      "win": 42.6,
+      "avg": 2.0,
+      "med": -0.28,
+      "excess": 1.84,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1055,
+      "win": 45.5,
+      "avg": -0.13,
+      "med": -0.27,
+      "excess": -1.81,
+      "best": 29.7,
+      "worst": -26.9
+     },
+     "1": {
+      "n": 2174,
+      "win": 44.3,
+      "avg": -0.22,
+      "med": -0.13,
+      "excess": -0.5,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3003,
+      "win": 44.6,
+      "avg": 0.25,
+      "med": -0.34,
+      "excess": -1.5,
+      "best": 327.4,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 6004,
+      "win": 45.1,
+      "avg": -0.08,
+      "med": -0.09,
+      "excess": -0.38,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 1372,
+      "win": 52.0,
+      "avg": 0.44,
+      "med": 0.23,
+      "excess": -1.3,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 2752,
+      "win": 50.6,
+      "avg": 0.09,
+      "med": 0.03,
+      "excess": -0.22,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 517,
+      "win": 35.2,
+      "avg": 0.06,
+      "med": -1.46,
+      "excess": 0.31,
+      "best": 698.9,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 2599,
+      "win": 43.8,
+      "avg": 0.18,
+      "med": -0.29,
+      "excess": 0.09,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Property/Casualty Insurance",
+   "segment": "NASDAQ",
+   "close": 131.63,
+   "chg": 1.61,
+   "gap": 0.02,
+   "sma5": 131.56,
+   "sma20": 130.94,
+   "sma200": 125.04,
+   "ext200": 5.27,
+   "rsi": 50.8,
+   "macd_h": 0.09,
+   "rvol": 0.74,
+   "pw": 1.96,
+   "p1": -6.86,
+   "p3": 20.07,
+   "ytd": -2.2,
+   "pos52": 66.0,
+   "hi52": 147.62,
+   "lo52": 100.81,
+   "val": 17.8,
+   "mcap": 3464.0,
+   "per": 17.7,
+   "pbr": 3.51,
+   "eps": 7.66,
+   "roe": 22.2,
+   "eqr": 56.2,
+   "div": 0.0,
+   "rev_q": 54.7,
+   "rev_ttm": 60.3,
+   "cagr5": 39.1,
+   "eps_q": 15.4,
+   "opm": 24.9,
+   "roic": 19.1,
+   "psr": 4.13,
+   "peg": 0.56,
+   "de": 0.3,
+   "inflow": null,
+   "biz": "Palomar Holdings, Inc., a specialty insurance company, provides property and casualty insurance to individuals and businesses in the United States. The company offers personal and commercial specialty insurance products,",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "LYB",
+   "name": "LyondellBasell Industries NV",
+   "ticker": "NYSE:LYB",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_trend",
+    "sig_div",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 2864,
+      "win": 46.9,
+      "avg": 3.39,
+      "med": -0.18,
+      "excess": 1.94,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 6279,
+      "win": 40.8,
+      "avg": 0.96,
+      "med": -0.35,
+      "excess": 0.87,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 977,
+      "win": 45.0,
+      "avg": 2.81,
+      "med": -0.37,
+      "excess": 1.42,
+      "best": 2307.5,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 1966,
+      "win": 42.6,
+      "avg": 2.0,
+      "med": -0.28,
+      "excess": 1.84,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1055,
+      "win": 45.5,
+      "avg": -0.13,
+      "med": -0.27,
+      "excess": -1.81,
+      "best": 29.7,
+      "worst": -26.9
+     },
+     "1": {
+      "n": 2174,
+      "win": 44.3,
+      "avg": -0.22,
+      "med": -0.13,
+      "excess": -0.5,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 1344,
+      "win": 47.1,
+      "avg": 0.11,
+      "med": -0.12,
+      "excess": -1.65,
+      "best": 26.0,
+      "worst": -12.9
+     },
+     "1": {
+      "n": 2680,
+      "win": 48.7,
+      "avg": 0.07,
+      "med": 0.0,
+      "excess": -0.25,
+      "best": 10.8,
+      "worst": -30.3
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 995,
+      "win": 37.8,
+      "avg": -0.77,
+      "med": -0.72,
+      "excess": -0.52,
+      "best": 227.7,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 4961,
+      "win": 45.0,
+      "avg": -0.13,
+      "med": -0.14,
+      "excess": -0.22,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 245,
+      "win": 39.2,
+      "avg": -0.89,
+      "med": -0.76,
+      "excess": -0.64,
+      "best": 16.3,
+      "worst": -26.3
+     },
+     "1": {
+      "n": 1236,
+      "win": 46.3,
+      "avg": -0.22,
+      "med": -0.17,
+      "excess": -0.32,
+      "best": 11.5,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Process Industries",
+   "industry": "Chemicals: Specialty",
+   "segment": "NYSE",
+   "close": 63.67,
+   "chg": 0.97,
+   "gap": 1.49,
+   "sma5": 63.42,
+   "sma20": 63.31,
+   "sma200": 59.97,
+   "ext200": 6.17,
+   "rsi": 52.6,
+   "macd_h": -0.25,
+   "rvol": 0.59,
+   "pw": -6.26,
+   "p1": 6.31,
+   "p3": -6.79,
+   "ytd": 46.1,
+   "pos52": 52.0,
+   "hi52": 83.94,
+   "lo52": 41.58,
+   "val": 138.2,
+   "mcap": 20568.0,
+   "per": null,
+   "pbr": 1.93,
+   "eps": -1.12,
+   "roe": -2.3,
+   "eqr": 31.0,
+   "div": 6.53,
+   "rev_q": 19.8,
+   "rev_ttm": -11.1,
+   "cagr5": 1.7,
+   "eps_q": 397.6,
+   "opm": 7.8,
+   "roic": -1.1,
+   "psr": 0.68,
+   "peg": null,
+   "de": 1.33,
+   "inflow": null,
+   "biz": "LyondellBasell Industries N.V. operates as a chemical company in the United States, Germany, China, Mexico, Italy, Japan, France, Poland, the Netherlands, and internationally. It operates in five segments: Olefins and Po",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "EPAC",
+   "name": "Enerpac Tool Group Corp.",
+   "ticker": "NYSE:EPAC",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_reclaim",
+    "sig_qual",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 2864,
+      "win": 46.9,
+      "avg": 3.39,
+      "med": -0.18,
+      "excess": 1.94,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 6279,
+      "win": 40.8,
+      "avg": 0.96,
+      "med": -0.35,
+      "excess": 0.87,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 977,
+      "win": 45.0,
+      "avg": 2.81,
+      "med": -0.37,
+      "excess": 1.42,
+      "best": 2307.5,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 1966,
+      "win": 42.6,
+      "avg": 2.0,
+      "med": -0.28,
+      "excess": 1.84,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 974,
+      "win": 43.2,
+      "avg": 1.59,
+      "med": -0.4,
+      "excess": -0.22,
+      "best": 853.0,
+      "worst": -42.7
+     },
+     "1": {
+      "n": 1960,
+      "win": 46.4,
+      "avg": 0.01,
+      "med": -0.05,
+      "excess": -0.28,
+      "best": 355.6,
+      "worst": -30.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 1372,
+      "win": 52.0,
+      "avg": 0.44,
+      "med": 0.23,
+      "excess": -1.3,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 2752,
+      "win": 50.6,
+      "avg": 0.09,
+      "med": 0.03,
+      "excess": -0.22,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 995,
+      "win": 37.8,
+      "avg": -0.77,
+      "med": -0.72,
+      "excess": -0.52,
+      "best": 227.7,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 4961,
+      "win": 45.0,
+      "avg": -0.13,
+      "med": -0.14,
+      "excess": -0.22,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Producer Manufacturing",
+   "industry": "Industrial Machinery",
+   "segment": "NYSE",
+   "close": 37.61,
+   "chg": 0.29,
+   "gap": 0.8,
+   "sma5": 37.45,
+   "sma20": 37.13,
+   "sma200": 37.25,
+   "ext200": 0.96,
+   "rsi": 58.8,
+   "macd_h": -0.0,
+   "rvol": 1.39,
+   "pw": 1.05,
+   "p1": 2.51,
+   "p3": 10.72,
+   "ytd": -2.4,
+   "pos52": 42.0,
+   "hi52": 45.0,
+   "lo52": 32.35,
+   "val": 14.4,
+   "mcap": 1923.0,
+   "per": 21.3,
+   "pbr": 4.53,
+   "eps": 1.78,
+   "roe": 21.6,
+   "eqr": 51.4,
+   "div": 0.11,
+   "rev_q": 5.6,
+   "rev_ttm": 4.3,
+   "cagr5": 4.6,
+   "eps_q": 42.6,
+   "opm": 21.8,
+   "roic": 15.3,
+   "psr": 3.32,
+   "peg": 2.43,
+   "de": 0.44,
+   "inflow": null,
+   "biz": "Enerpac Tool Group Corp. manufactures and sells a range of industrial products and solutions in the United States, the United Kingdom, Germany, Australia, Canada, China, Saudi Arabia, Brazil, France, the Netherlands, and",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "HAFN",
+   "name": "Hafnia Limited",
+   "ticker": "NYSE:HAFN",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_trend",
+    "sig_div",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_trend": {
+     "5": {
+      "n": 1055,
+      "win": 45.5,
+      "avg": -0.13,
+      "med": -0.27,
+      "excess": -1.81,
+      "best": 29.7,
+      "worst": -26.9
+     },
+     "1": {
+      "n": 2174,
+      "win": 44.3,
+      "avg": -0.22,
+      "med": -0.13,
+      "excess": -0.5,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 1344,
+      "win": 47.1,
+      "avg": 0.11,
+      "med": -0.12,
+      "excess": -1.65,
+      "best": 26.0,
+      "worst": -12.9
+     },
+     "1": {
+      "n": 2680,
+      "win": 48.7,
+      "avg": 0.07,
+      "med": 0.0,
+      "excess": -0.25,
+      "best": 10.8,
+      "worst": -30.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 1372,
+      "win": 52.0,
+      "avg": 0.44,
+      "med": 0.23,
+      "excess": -1.3,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 2752,
+      "win": 50.6,
+      "avg": 0.09,
+      "med": 0.03,
+      "excess": -0.22,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 517,
+      "win": 35.2,
+      "avg": 0.06,
+      "med": -1.46,
+      "excess": 0.31,
+      "best": 698.9,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 2599,
+      "win": 43.8,
+      "avg": 0.18,
+      "med": -0.29,
+      "excess": 0.09,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 995,
+      "win": 37.8,
+      "avg": -0.77,
+      "med": -0.72,
+      "excess": -0.52,
+      "best": 227.7,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 4961,
+      "win": 45.0,
+      "avg": -0.13,
+      "med": -0.14,
+      "excess": -0.22,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 245,
+      "win": 39.2,
+      "avg": -0.89,
+      "med": -0.76,
+      "excess": -0.64,
+      "best": 16.3,
+      "worst": -26.3
+     },
+     "1": {
+      "n": 1236,
+      "win": 46.3,
+      "avg": -0.22,
+      "med": -0.17,
+      "excess": -0.32,
+      "best": 11.5,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Transportation",
+   "industry": "Marine Shipping",
+   "segment": "NYSE",
+   "close": 8.47,
+   "chg": 2.17,
+   "gap": 0.72,
+   "sma5": 8.17,
+   "sma20": 7.77,
+   "sma200": 7.15,
+   "ext200": 18.54,
+   "rsi": 65.6,
+   "macd_h": 0.06,
+   "rvol": 1.46,
+   "pw": 4.96,
+   "p1": 11.15,
+   "p3": 10.57,
+   "ytd": 59.8,
+   "pos52": 76.0,
+   "hi52": 9.54,
+   "lo52": 5.17,
+   "val": 15.7,
+   "mcap": 4174.0,
+   "per": 6.6,
+   "pbr": 1.6,
+   "eps": 1.29,
+   "roe": 25.9,
+   "eqr": 62.5,
+   "div": 9.25,
+   "rev_q": 37.4,
+   "rev_ttm": 5.1,
+   "cagr5": 19.6,
+   "eps_q": 242.9,
+   "opm": 20.1,
+   "roic": 20.5,
+   "psr": 1.82,
+   "peg": 0.16,
+   "de": 0.33,
+   "inflow": null,
+   "biz": "Hafnia Limited., an investment holding company, owns and operates oil product tankers in Bermuda. It operates through Long Range II, Long Range I, Medium Range (MR), and Handy Size segments. The company transports clean ",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "DINO",
+   "name": "HF Sinclair Corporation",
+   "ticker": "NYSE:DINO",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_high",
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_high": {
+     "5": {
+      "n": 735,
+      "win": 49.5,
+      "avg": 0.03,
+      "med": 0.0,
+      "excess": -1.52,
+      "best": 308.4,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 1490,
+      "win": 40.4,
+      "avg": -0.04,
+      "med": 0.0,
+      "excess": -0.3,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3003,
+      "win": 44.6,
+      "avg": 0.25,
+      "med": -0.34,
+      "excess": -1.5,
+      "best": 327.4,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 6004,
+      "win": 45.1,
+      "avg": -0.08,
+      "med": -0.09,
+      "excess": -0.38,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 1372,
+      "win": 52.0,
+      "avg": 0.44,
+      "med": 0.23,
+      "excess": -1.3,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 2752,
+      "win": 50.6,
+      "avg": 0.09,
+      "med": 0.03,
+      "excess": -0.22,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 517,
+      "win": 35.2,
+      "avg": 0.06,
+      "med": -1.46,
+      "excess": 0.31,
+      "best": 698.9,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 2599,
+      "win": 43.8,
+      "avg": 0.18,
+      "med": -0.29,
+      "excess": 0.09,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 995,
+      "win": 37.8,
+      "avg": -0.77,
+      "med": -0.72,
+      "excess": -0.52,
+      "best": 227.7,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 4961,
+      "win": 45.0,
+      "avg": -0.13,
+      "med": -0.14,
+      "excess": -0.22,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 245,
+      "win": 39.2,
+      "avg": -0.89,
+      "med": -0.76,
+      "excess": -0.64,
+      "best": 16.3,
+      "worst": -26.3
+     },
+     "1": {
+      "n": 1236,
+      "win": 46.3,
+      "avg": -0.22,
+      "med": -0.17,
+      "excess": -0.32,
+      "best": 11.5,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Energy Minerals",
+   "industry": "Oil Refining/Marketing",
+   "segment": "NYSE",
+   "close": 99.71,
+   "chg": 2.79,
+   "gap": 0.0,
+   "sma5": 96.33,
+   "sma20": 91.27,
+   "sma200": 64.39,
+   "ext200": 54.85,
+   "rsi": 66.9,
+   "macd_h": 0.29,
+   "rvol": 0.82,
+   "pw": 6.07,
+   "p1": 9.82,
+   "p3": 46.1,
+   "ytd": 116.8,
+   "pos52": 99.0,
+   "hi52": 100.13,
+   "lo52": 45.71,
+   "val": 180.0,
+   "mcap": 17727.0,
+   "per": 9.5,
+   "pbr": 1.72,
+   "eps": 10.48,
+   "roe": 19.4,
+   "eqr": 60.6,
+   "div": 2.06,
+   "rev_q": 53.2,
+   "rev_ttm": 16.3,
+   "cagr5": 19.1,
+   "eps_q": 350.4,
+   "opm": 8.6,
+   "roic": 14.7,
+   "psr": 0.69,
+   "peg": null,
+   "de": 0.32,
+   "inflow": null,
+   "biz": "HF Sinclair Corporation operates as an independent energy company in the United States. It operates through five segments: Refining, Renewables, Marketing, Lubricants & Specialties, and Midstream. The company produces an",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "ET",
+   "name": "Energy Transfer LP",
+   "ticker": "NYSE:ET",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_high",
+    "sig_trend",
+    "sig_macd",
+    "sig_div",
+    "sig_growth",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_high": {
+     "5": {
+      "n": 735,
+      "win": 49.5,
+      "avg": 0.03,
+      "med": 0.0,
+      "excess": -1.52,
+      "best": 308.4,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 1490,
+      "win": 40.4,
+      "avg": -0.04,
+      "med": 0.0,
+      "excess": -0.3,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1055,
+      "win": 45.5,
+      "avg": -0.13,
+      "med": -0.27,
+      "excess": -1.81,
+      "best": 29.7,
+      "worst": -26.9
+     },
+     "1": {
+      "n": 2174,
+      "win": 44.3,
+      "avg": -0.22,
+      "med": -0.13,
+      "excess": -0.5,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3003,
+      "win": 44.6,
+      "avg": 0.25,
+      "med": -0.34,
+      "excess": -1.5,
+      "best": 327.4,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 6004,
+      "win": 45.1,
+      "avg": -0.08,
+      "med": -0.09,
+      "excess": -0.38,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 1344,
+      "win": 47.1,
+      "avg": 0.11,
+      "med": -0.12,
+      "excess": -1.65,
+      "best": 26.0,
+      "worst": -12.9
+     },
+     "1": {
+      "n": 2680,
+      "win": 48.7,
+      "avg": 0.07,
+      "med": 0.0,
+      "excess": -0.25,
+      "best": 10.8,
+      "worst": -30.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 517,
+      "win": 35.2,
+      "avg": 0.06,
+      "med": -1.46,
+      "excess": 0.31,
+      "best": 698.9,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 2599,
+      "win": 43.8,
+      "avg": 0.18,
+      "med": -0.29,
+      "excess": 0.09,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 245,
+      "win": 39.2,
+      "avg": -0.89,
+      "med": -0.76,
+      "excess": -0.64,
+      "best": 16.3,
+      "worst": -26.3
+     },
+     "1": {
+      "n": 1236,
+      "win": 46.3,
+      "avg": -0.22,
+      "med": -0.17,
+      "excess": -0.32,
+      "best": 11.5,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Industrial Services",
+   "industry": "Oil & Gas Pipelines",
+   "segment": "NYSE",
+   "close": 21.31,
+   "chg": -0.33,
+   "gap": 0.0,
+   "sma5": 21.24,
+   "sma20": 20.9,
+   "sma200": 18.78,
+   "ext200": 13.49,
+   "rsi": 61.5,
+   "macd_h": 0.0,
+   "rvol": 0.61,
+   "pw": 0.28,
+   "p1": 4.36,
+   "p3": 10.07,
+   "ytd": 29.5,
+   "pos52": 94.0,
+   "hi52": 21.64,
+   "lo52": 16.18,
+   "val": 107.3,
+   "mcap": 73377.0,
+   "per": 14.6,
+   "pbr": 2.29,
+   "eps": 1.47,
+   "roe": 15.1,
+   "eqr": 37.6,
+   "div": 6.24,
+   "rev_q": 78.4,
+   "rev_ttm": 33.3,
+   "cagr5": 17.0,
+   "eps_q": 85.3,
+   "opm": 9.6,
+   "roic": 5.2,
+   "psr": 0.86,
+   "peg": 1.16,
+   "de": 1.99,
+   "inflow": null,
+   "biz": "Energy Transfer LP, together with its subsidiaries, provides energy-related services in the United States. It operates through Intrastate Transportation and Storage; Interstate Transportation and Storage; Midstream; Natu",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "FLNG",
+   "name": "FLEX LNG Ltd.",
+   "ticker": "NYSE:FLNG",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_trend",
+    "sig_macd",
+    "sig_div",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 2864,
+      "win": 46.9,
+      "avg": 3.39,
+      "med": -0.18,
+      "excess": 1.94,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 6279,
+      "win": 40.8,
+      "avg": 0.96,
+      "med": -0.35,
+      "excess": 0.87,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1055,
+      "win": 45.5,
+      "avg": -0.13,
+      "med": -0.27,
+      "excess": -1.81,
+      "best": 29.7,
+      "worst": -26.9
+     },
+     "1": {
+      "n": 2174,
+      "win": 44.3,
+      "avg": -0.22,
+      "med": -0.13,
+      "excess": -0.5,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3003,
+      "win": 44.6,
+      "avg": 0.25,
+      "med": -0.34,
+      "excess": -1.5,
+      "best": 327.4,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 6004,
+      "win": 45.1,
+      "avg": -0.08,
+      "med": -0.09,
+      "excess": -0.38,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 1344,
+      "win": 47.1,
+      "avg": 0.11,
+      "med": -0.12,
+      "excess": -1.65,
+      "best": 26.0,
+      "worst": -12.9
+     },
+     "1": {
+      "n": 2680,
+      "win": 48.7,
+      "avg": 0.07,
+      "med": 0.0,
+      "excess": -0.25,
+      "best": 10.8,
+      "worst": -30.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 517,
+      "win": 35.2,
+      "avg": 0.06,
+      "med": -1.46,
+      "excess": 0.31,
+      "best": 698.9,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 2599,
+      "win": 43.8,
+      "avg": 0.18,
+      "med": -0.29,
+      "excess": 0.09,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 995,
+      "win": 37.8,
+      "avg": -0.77,
+      "med": -0.72,
+      "excess": -0.52,
+      "best": 227.7,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 4961,
+      "win": 45.0,
+      "avg": -0.13,
+      "med": -0.14,
+      "excess": -0.22,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Transportation",
+   "industry": "Marine Shipping",
+   "segment": "NYSE",
+   "close": 31.48,
+   "chg": 0.51,
+   "gap": 0.8,
+   "sma5": 31.4,
+   "sma20": 30.95,
+   "sma200": 28.95,
+   "ext200": 8.75,
+   "rsi": 53.5,
+   "macd_h": 0.02,
+   "rvol": 0.9,
+   "pw": -2.63,
+   "p1": 2.08,
+   "p3": 5.82,
+   "ytd": 26.3,
+   "pos52": 80.0,
+   "hi52": 33.4,
+   "lo52": 24.0,
+   "val": 11.6,
+   "mcap": 1672.0,
+   "per": 16.6,
+   "pbr": 2.42,
+   "eps": 1.9,
+   "roe": 14.0,
+   "eqr": 25.7,
+   "div": 9.58,
+   "rev_q": 24.2,
+   "rev_ttm": 1.3,
+   "cagr5": 16.1,
+   "eps_q": 153.1,
+   "opm": 49.5,
+   "roic": 4.2,
+   "psr": 4.9,
+   "peg": 4.64,
+   "de": 2.55,
+   "inflow": null,
+   "biz": "FLEX LNG Ltd., together with its subsidiaries, engages in the seaborne transportation of liquefied natural gas (LNG) worldwide. As of December 31, 2025, its fleet consists of 13 LNG carriers in operation. The company was",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "EVER",
+   "name": "EverQuote, Inc.",
+   "ticker": "NASDAQ:EVER",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x20",
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x20": {
+     "5": {
+      "n": 977,
+      "win": 45.0,
+      "avg": 2.81,
+      "med": -0.37,
+      "excess": 1.42,
+      "best": 2307.5,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 1966,
+      "win": 42.6,
+      "avg": 2.0,
+      "med": -0.28,
+      "excess": 1.84,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3003,
+      "win": 44.6,
+      "avg": 0.25,
+      "med": -0.34,
+      "excess": -1.5,
+      "best": 327.4,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 6004,
+      "win": 45.1,
+      "avg": -0.08,
+      "med": -0.09,
+      "excess": -0.38,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 1372,
+      "win": 52.0,
+      "avg": 0.44,
+      "med": 0.23,
+      "excess": -1.3,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 2752,
+      "win": 50.6,
+      "avg": 0.09,
+      "med": 0.03,
+      "excess": -0.22,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 517,
+      "win": 35.2,
+      "avg": 0.06,
+      "med": -1.46,
+      "excess": 0.31,
+      "best": 698.9,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 2599,
+      "win": 43.8,
+      "avg": 0.18,
+      "med": -0.29,
+      "excess": 0.09,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 995,
+      "win": 37.8,
+      "avg": -0.77,
+      "med": -0.72,
+      "excess": -0.52,
+      "best": 227.7,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 4961,
+      "win": 45.0,
+      "avg": -0.13,
+      "med": -0.14,
+      "excess": -0.22,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 245,
+      "win": 39.2,
+      "avg": -0.89,
+      "med": -0.76,
+      "excess": -0.64,
+      "best": 16.3,
+      "worst": -26.3
+     },
+     "1": {
+      "n": 1236,
+      "win": 46.3,
+      "avg": -0.22,
+      "med": -0.17,
+      "excess": -0.32,
+      "best": 11.5,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Internet Software/Services",
+   "segment": "NASDAQ",
+   "close": 25.66,
+   "chg": 3.38,
+   "gap": 0.36,
+   "sma5": 26.01,
+   "sma20": 24.93,
+   "sma200": 21.39,
+   "ext200": 19.98,
+   "rsi": 53.5,
+   "macd_h": 0.04,
+   "rvol": 0.73,
+   "pw": 2.27,
+   "p1": -4.36,
+   "p3": 34.7,
+   "ytd": -5.4,
+   "pos52": 79.0,
+   "hi52": 28.73,
+   "lo52": 13.88,
+   "val": 10.4,
+   "mcap": 904.0,
+   "per": 8.4,
+   "pbr": 3.52,
+   "eps": 3.18,
+   "roe": 53.6,
+   "eqr": 73.9,
+   "div": 0.0,
+   "rev_q": 24.6,
+   "rev_ttm": 22.7,
+   "cagr5": 14.8,
+   "eps_q": 37.2,
+   "opm": 11.0,
+   "roic": 53.3,
+   "psr": 1.4,
+   "peg": 0.05,
+   "de": 0.01,
+   "inflow": null,
+   "biz": "EverQuote, Inc. operates an online marketplace for insurance shopping in the United States. The company provides automotive, and home and renters insurance, as well as campaign management tools. The company serves insura",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "CDNS",
+   "name": "Cadence Design Systems, Inc.",
+   "ticker": "NASDAQ:CDNS",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_gc",
+    "sig_trend",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_gc": {
+     "5": {
+      "n": 563,
+      "win": 46.5,
+      "avg": -0.15,
+      "med": -0.14,
+      "excess": -1.85,
+      "best": 29.7,
+      "worst": -22.0
+     },
+     "1": {
+      "n": 1227,
+      "win": 45.6,
+      "avg": -0.09,
+      "med": -0.05,
+      "excess": -0.35,
+      "best": 13.5,
+      "worst": -24.9
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1055,
+      "win": 45.5,
+      "avg": -0.13,
+      "med": -0.27,
+      "excess": -1.81,
+      "best": 29.7,
+      "worst": -26.9
+     },
+     "1": {
+      "n": 2174,
+      "win": 44.3,
+      "avg": -0.22,
+      "med": -0.13,
+      "excess": -0.5,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 1372,
+      "win": 52.0,
+      "avg": 0.44,
+      "med": 0.23,
+      "excess": -1.3,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 2752,
+      "win": 50.6,
+      "avg": 0.09,
+      "med": 0.03,
+      "excess": -0.22,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 517,
+      "win": 35.2,
+      "avg": 0.06,
+      "med": -1.46,
+      "excess": 0.31,
+      "best": 698.9,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 2599,
+      "win": 43.8,
+      "avg": 0.18,
+      "med": -0.29,
+      "excess": 0.09,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 995,
+      "win": 37.8,
+      "avg": -0.77,
+      "med": -0.72,
+      "excess": -0.52,
+      "best": 227.7,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 4961,
+      "win": 45.0,
+      "avg": -0.13,
+      "med": -0.14,
+      "excess": -0.22,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Packaged Software",
+   "segment": "NASDAQ",
+   "close": 340.39,
+   "chg": -2.06,
+   "gap": -0.03,
+   "sma5": 334.09,
+   "sma20": 329.03,
+   "sma200": 327.23,
+   "ext200": 4.02,
+   "rsi": 54.0,
+   "macd_h": 3.76,
+   "rvol": 0.81,
+   "pw": 8.24,
+   "p1": -2.47,
+   "p3": -9.23,
+   "ytd": 7.8,
+   "pos52": 50.0,
+   "hi52": 416.69,
+   "lo52": 262.75,
+   "val": 611.0,
+   "mcap": 93741.0,
+   "per": 67.7,
+   "pbr": 13.67,
+   "eps": 5.07,
+   "roe": 23.2,
+   "eqr": 61.3,
+   "div": 0.0,
+   "rev_q": 24.2,
+   "rev_ttm": 14.7,
+   "cagr5": 14.6,
+   "eps_q": 126.6,
+   "opm": 31.4,
+   "roic": 16.4,
+   "psr": 17.56,
+   "peg": 1.92,
+   "de": 0.36,
+   "inflow": null,
+   "biz": "Cadence Design Systems, Inc. develops computational, AI-driven software, hardware, and silicon intellectual property products and solutions. The company offers functional verification services, such as Jasper, a formal v",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "OKE",
+   "name": "ONEOK, Inc.",
+   "ticker": "NYSE:OKE",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_trend",
+    "sig_macd",
+    "sig_div",
+    "sig_growth",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_trend": {
+     "5": {
+      "n": 1055,
+      "win": 45.5,
+      "avg": -0.13,
+      "med": -0.27,
+      "excess": -1.81,
+      "best": 29.7,
+      "worst": -26.9
+     },
+     "1": {
+      "n": 2174,
+      "win": 44.3,
+      "avg": -0.22,
+      "med": -0.13,
+      "excess": -0.5,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3003,
+      "win": 44.6,
+      "avg": 0.25,
+      "med": -0.34,
+      "excess": -1.5,
+      "best": 327.4,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 6004,
+      "win": 45.1,
+      "avg": -0.08,
+      "med": -0.09,
+      "excess": -0.38,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 1344,
+      "win": 47.1,
+      "avg": 0.11,
+      "med": -0.12,
+      "excess": -1.65,
+      "best": 26.0,
+      "worst": -12.9
+     },
+     "1": {
+      "n": 2680,
+      "win": 48.7,
+      "avg": 0.07,
+      "med": 0.0,
+      "excess": -0.25,
+      "best": 10.8,
+      "worst": -30.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 517,
+      "win": 35.2,
+      "avg": 0.06,
+      "med": -1.46,
+      "excess": 0.31,
+      "best": 698.9,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 2599,
+      "win": 43.8,
+      "avg": 0.18,
+      "med": -0.29,
+      "excess": 0.09,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 245,
+      "win": 39.2,
+      "avg": -0.89,
+      "med": -0.76,
+      "excess": -0.64,
+      "best": 16.3,
+      "worst": -26.3
+     },
+     "1": {
+      "n": 1236,
+      "win": 46.3,
+      "avg": -0.22,
+      "med": -0.17,
+      "excess": -0.32,
+      "best": 11.5,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Industrial Services",
+   "industry": "Oil & Gas Pipelines",
+   "segment": "NYSE",
+   "close": 94.76,
+   "chg": 0.04,
+   "gap": 0.56,
+   "sma5": 93.82,
+   "sma20": 92.24,
+   "sma200": 84.27,
+   "ext200": 12.45,
+   "rsi": 57.2,
+   "macd_h": 0.08,
+   "rvol": 0.8,
+   "pw": -0.31,
+   "p1": 4.99,
+   "p3": 10.19,
+   "ytd": 29.0,
+   "pos52": 91.0,
+   "hi52": 97.9,
+   "lo52": 64.02,
+   "val": 246.9,
+   "mcap": 59734.0,
+   "per": 16.4,
+   "pbr": 2.6,
+   "eps": 5.8,
+   "roe": 16.3,
+   "eqr": 31.0,
+   "div": 4.43,
+   "rev_q": 56.3,
+   "rev_ttm": 41.8,
+   "cagr5": 31.8,
+   "eps_q": 14.2,
+   "opm": 16.1,
+   "roic": 7.0,
+   "psr": 1.77,
+   "peg": 1.27,
+   "de": 1.44,
+   "inflow": null,
+   "biz": "ONEOK, Inc. operates as a midstream service provider of gathering, processing, fractionation, transportation, storage, and marine export services in the United States. It operates in four segments: Natural Gas Gathering ",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "URBN",
+   "name": "Urban Outfitters, Inc.",
+   "ticker": "NASDAQ:URBN",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_trend",
+    "sig_macd",
+    "sig_qual",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_trend": {
+     "5": {
+      "n": 1055,
+      "win": 45.5,
+      "avg": -0.13,
+      "med": -0.27,
+      "excess": -1.81,
+      "best": 29.7,
+      "worst": -26.9
+     },
+     "1": {
+      "n": 2174,
+      "win": 44.3,
+      "avg": -0.22,
+      "med": -0.13,
+      "excess": -0.5,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3003,
+      "win": 44.6,
+      "avg": 0.25,
+      "med": -0.34,
+      "excess": -1.5,
+      "best": 327.4,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 6004,
+      "win": 45.1,
+      "avg": -0.08,
+      "med": -0.09,
+      "excess": -0.38,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 1372,
+      "win": 52.0,
+      "avg": 0.44,
+      "med": 0.23,
+      "excess": -1.3,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 2752,
+      "win": 50.6,
+      "avg": 0.09,
+      "med": 0.03,
+      "excess": -0.22,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 995,
+      "win": 37.8,
+      "avg": -0.77,
+      "med": -0.72,
+      "excess": -0.52,
+      "best": 227.7,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 4961,
+      "win": 45.0,
+      "avg": -0.13,
+      "med": -0.14,
+      "excess": -0.22,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 245,
+      "win": 39.2,
+      "avg": -0.89,
+      "med": -0.76,
+      "excess": -0.64,
+      "best": 16.3,
+      "worst": -26.3
+     },
+     "1": {
+      "n": 1236,
+      "win": 46.3,
+      "avg": -0.22,
+      "med": -0.17,
+      "excess": -0.32,
+      "best": 11.5,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Retail Trade",
+   "industry": "Apparel/Footwear Retail",
+   "segment": "NASDAQ",
+   "close": 81.09,
+   "chg": 2.92,
+   "gap": 0.8,
+   "sma5": 78.93,
+   "sma20": 77.33,
+   "sma200": 71.52,
+   "ext200": 13.39,
+   "rsi": 59.3,
+   "macd_h": 0.35,
+   "rvol": 1.06,
+   "pw": 9.26,
+   "p1": 8.39,
+   "p3": 10.99,
+   "ytd": 7.7,
+   "pos52": 83.0,
+   "hi52": 85.43,
+   "lo52": 59.53,
+   "val": 134.6,
+   "mcap": 6944.0,
+   "per": 12.6,
+   "pbr": 2.43,
+   "eps": 6.5,
+   "roe": 20.9,
+   "eqr": 57.2,
+   "div": 0.0,
+   "rev_q": 10.4,
+   "rev_ttm": 11.0,
+   "cagr5": 12.3,
+   "eps_q": 76.2,
+   "opm": 11.3,
+   "roic": 15.4,
+   "psr": 1.21,
+   "peg": 0.48,
+   "de": 0.43,
+   "inflow": null,
+   "biz": "Urban Outfitters, Inc. offers lifestyle products and services in the United States and internationally. The company operates through three segments: Retail, Wholesale, and Subscription. It operates Urban Outfitters store",
+   "tdnet": [],
+   "llm": null
+  }
+ ],
+ "config": {
+  "MIN_VAL": 10.0,
+  "MIN_MCAP": 500.0,
+  "MIN_PRICE": 5.0,
+  "N_SHORT": 8,
+  "N_LONG": 8,
+  "N_NEWS": 4,
+  "MAX_PER_INDUSTRY": 3,
+  "COOLDOWN_DAYS": 3
+ }
+}
