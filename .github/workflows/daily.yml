@@ -79,6 +79,12 @@ jobs:
         env:
           OUTPUT_DIR: site
 
+      - name: 운용 데스크 브리프 페이지 (실패해도 계속)
+        continue-on-error: true
+        run: python brief.py page
+        env:
+          OUTPUT_DIR: site
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

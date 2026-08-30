@@ -1,0 +1,97 @@
+name: Desk Brief
+
+# 운용 데스크 브리프 — 종가 스냅샷(history/jp/날짜.csv.gz)이 커밋된 뒤 하루 한 번 후보 20종목을 뽑는다.
+# LLM_MODE=off 라 모델 호출·비용 없음. 결과는 briefs/ 에 커밋되고, daily.yml 이 페이지로 렌더한다.
+# 18:03 에 스냅샷이 아직 없으면(큐 지연) 18:33·19:03 에 다시 시도하고, 이미 만든 날은 건너뛴다.
+
+on:
+  schedule:
+    - cron: '3 9 * * 1-5'     # 18:03 JST
+    - cron: '33 9 * * 1-5'    # 18:33 JST (재시도)
+    - cron: '3 10 * * 1-5'    # 19:03 JST (재시도)
+  workflow_dispatch:
+    inputs:
+      market:
+        description: '시장 (jp / kr / us)'
+        required: false
+        default: 'jp'
+      date:
+        description: '스냅샷 날짜 YYYY-MM-DD (비우면 오늘 JST)'
+        required: false
+        default: ''
+      force:
+        description: '이미 있어도 다시 생성 (true/false)'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: write
+  actions: write        # 생성 후 daily.yml 을 workflow_dispatch 로 깨워 페이지를 바로 갱신
+
+concurrency:
+  group: brief
+  cancel-in-progress: false
+
+jobs:
+  brief:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: 가드 (스냅샷 있음 & 브리프 없음일 때만 진행)
+        id: guard
+        run: |
+          M="${{ github.event.inputs.market || 'jp' }}"
+          D="${{ github.event.inputs.date }}"
+          [ -z "$D" ] && D=$(TZ=Asia/Tokyo date +%Y-%m-%d)
+          F="${{ github.event.inputs.force || 'false' }}"
+          echo "M=$M" >> $GITHUB_ENV; echo "D=$D" >> $GITHUB_ENV
+          if [ ! -f "history/$M/$D.csv.gz" ]; then
+            echo "history/$M/$D.csv.gz 없음 → 건너뜀 (다음 재시도 시각에 다시 확인)"
+            echo "go=false" >> $GITHUB_OUTPUT; exit 0
+          fi
+          if [ -f "briefs/$M/$D.json" ] && [ "$F" != "true" ]; then
+            echo "briefs/$M/$D.json 이미 있음 → 건너뜀"
+            echo "go=false" >> $GITHUB_OUTPUT; exit 0
+          fi
+          echo "go=true" >> $GITHUB_OUTPUT
+          echo "$M $D 브리프 생성 진행"
+
+      - name: 브리프 생성 (후보 선정 · 공시 · 기저율 · 텔레그램)
+        if: steps.guard.outputs.go == 'true'
+        run: python brief.py
+        env:
+          MARKET: ${{ env.M }}
+          BRIEF_DATE: ${{ env.D }}
+          LLM_MODE: off                 # 나중에 자동 평가를 켜려면 api 로 바꾸고 ANTHROPIC_API_KEY 시크릿 추가
+          MAX_PICKS: '20'
+          MIN_VAL: '3'                  # 거래대금 하한 (억엔)
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: briefs 커밋
+        if: steps.guard.outputs.go == 'true'
+        run: |
+          git config user.name "screener-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git pull --rebase origin main || true
+          git add briefs/
+          git commit -m "brief $D ($M)" || echo "no changes"
+          git push
+
+      - name: 사이트 재빌드 요청 (daily.yml 을 깨워 brief 페이지 반영)
+        if: steps.guard.outputs.go == 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run daily.yml
