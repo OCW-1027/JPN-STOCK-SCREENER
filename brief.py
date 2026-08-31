@@ -5,7 +5,7 @@ brief.py — 운용 데스크 브리프
 종가 스냅샷(history/{시장}/날짜.csv.gz)에서 오늘 볼 종목을 규칙으로 고르고,
 종목별 근거 데이터(수치·시그널·기저율·TDnet 공시·사업 소개)를 한 묶음으로 만든다.
 
-  python brief.py         → briefs/{시장}/날짜.json + briefs/picks.jsonl (+텔레그램)   [brief.yml]
+  python brief.py         → briefs/{시장}/날짜.json (+텔레그램)   [brief.yml]  ※ 날짜별 새 파일만 추가하므로 git 충돌 없음
   python brief.py page    → briefs/ 의 시장별 최신 JSON → site/brief/index.html, site/ja/brief/index.html (시장 탭)   [daily.yml]
 
 LLM_MODE=off (기본) 는 모델 호출이 없어 비용 0. 페이지의 "분석 요청 복사" 로 필요한 종목만
@@ -159,20 +159,19 @@ def load_baserates(m):
         return {}, 0
 
 
-def read_picks():
-    p = BRIEFS / "picks.jsonl"
-    if not p.exists():
-        return []
-    return [json.loads(x) for x in p.read_text(encoding="utf-8").splitlines() if x.strip()]
-
-
 def recent_picks(days, today):
-    """picks.jsonl 에서 오늘 이전 최근 N 브리프 날짜 안에 이미 뽑힌 코드 (재분석 쿨다운)."""
+    """오늘 이전 최근 N개 브리프(briefs/{시장}/*.json)에 이미 나온 코드 (재분석 쿨다운).
+    공유 로그 파일을 두지 않고 브리프 JSON 자체를 읽으므로, 시장별 실행이 겹쳐도 git 충돌이 없다."""
     if days <= 0:
         return set()
-    rows = [r for r in read_picks() if r.get("market") == CFG["MARKET"] and r["date"] < today]
-    dates = sorted({r["date"] for r in rows})[-days:]
-    return {r["code"] for r in rows if r["date"] in dates}
+    files = sorted(f for f in glob.glob(str(BRIEFS / CFG["MARKET"] / "*.json")) if Path(f).stem < today)[-days:]
+    codes = set()
+    for f in files:
+        try:
+            codes |= {p["code"] for p in json.loads(Path(f).read_text(encoding="utf-8")).get("picks", [])}
+        except Exception:
+            pass
+    return codes
 
 
 # ───────────────────────── TDnet 공시 (일본) ─────────────────────────
@@ -546,15 +545,7 @@ def generate():
     out = BRIEFS / m
     out.mkdir(parents=True, exist_ok=True)
     (out / f"{date}.json").write_text(json.dumps(brief, ensure_ascii=False, indent=1), encoding="utf-8")
-    rows = [r for r in read_picks() if not (r["date"] == date and r.get("market") == m)]  # 재생성 시 같은 날짜 교체
-    for pk in picks:
-        row = dict(date=date, market=m, code=pk["code"], name=pk["name"], bucket=pk["bucket"],
-                   score=pk["score"], close=pk["close"], signals=pk["signals"])
-        if pk["llm"]:
-            row.update(total=pk["llm"]["total"], verdict=pk["llm"]["verdict"])
-        rows.append(row)
-    (BRIEFS / "picks.jsonl").write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows), encoding="utf-8")
-    print(f"  저장: briefs/{m}/{date}.json ({len(picks)}종목) + picks.jsonl")
+    print(f"  저장: briefs/{m}/{date}.json ({len(picks)}종목)")
     telegram(tg_message(brief))
     return brief
 
