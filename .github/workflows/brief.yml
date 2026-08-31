@@ -109,6 +109,7 @@ jobs:
           git add briefs/
           git commit -m "brief $D ($GO)" || { echo "no changes"; exit 0; }
           for i in 1 2 3 4 5; do
+            git rebase --abort 2>/dev/null || true          # 이전 시도가 충돌로 멈춰 있으면 정리
             if git pull --rebase --autostash origin main && git push; then
               echo "push 완료"; exit 0
             fi
