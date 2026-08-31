@@ -1,0 +1,2690 @@
+{
+ "date": "2026-09-01",
+ "market": "us",
+ "generated": "2026-09-01 06:35 JST",
+ "label_ko": "🇺🇸 미국",
+ "label_ja": "🇺🇸 米国",
+ "unit_ko": "$M",
+ "unit_ja": "$M",
+ "llm_mode": "off",
+ "baserate_days": 10,
+ "universe": {
+  "total": 5184,
+  "liquid": 2242,
+  "candidates": 16,
+  "short": 8,
+  "long": 8,
+  "news": 0
+ },
+ "picks": [
+  {
+   "code": "PODD",
+   "name": "Insulet Corporation",
+   "ticker": "NASDAQ:PODD",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_macd",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 722,
+      "win": 46.8,
+      "avg": 27.5,
+      "med": -0.05,
+      "excess": 26.0,
+      "best": 4739.4,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1199,
+      "win": 40.7,
+      "avg": 9.93,
+      "med": 0.0,
+      "excess": 9.57,
+      "best": 4202.4,
+      "worst": -58.5
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 3547,
+      "win": 43.6,
+      "avg": 4.16,
+      "med": -0.43,
+      "excess": 2.84,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 6834,
+      "win": 39.8,
+      "avg": 0.82,
+      "med": -0.39,
+      "excess": 0.64,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1190,
+      "win": 41.3,
+      "avg": 2.72,
+      "med": -0.65,
+      "excess": 1.44,
+      "best": 2307.5,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 2162,
+      "win": 41.5,
+      "avg": 1.75,
+      "med": -0.31,
+      "excess": 1.5,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3714,
+      "win": 42.5,
+      "avg": 0.01,
+      "med": -0.48,
+      "excess": -1.55,
+      "best": 327.4,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 6750,
+      "win": 44.0,
+      "avg": -0.11,
+      "med": -0.14,
+      "excess": -0.5,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1043,
+      "win": 35.3,
+      "avg": 1.35,
+      "med": -1.35,
+      "excess": 1.09,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 3120,
+      "win": 43.0,
+      "avg": 0.1,
+      "med": -0.35,
+      "excess": -0.18,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 1985,
+      "win": 34.7,
+      "avg": -0.82,
+      "med": -0.94,
+      "excess": -1.07,
+      "best": 227.7,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 5952,
+      "win": 42.6,
+      "avg": -0.2,
+      "med": -0.24,
+      "excess": -0.47,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Health Technology",
+   "industry": "Medical Specialties",
+   "segment": "NASDAQ",
+   "close": 148.66,
+   "chg": 2.43,
+   "gap": -1.52,
+   "sma5": 144.73,
+   "sma20": 145.31,
+   "sma200": 213.88,
+   "ext200": -30.49,
+   "rsi": 49.4,
+   "macd_h": 0.48,
+   "rvol": 4.64,
+   "pw": -1.66,
+   "p1": -9.67,
+   "p3": 2.07,
+   "ytd": -47.9,
+   "pos52": 10.0,
+   "hi52": 354.88,
+   "lo52": 126.4,
+   "val": 986.3,
+   "mcap": 10310.0,
+   "per": 29.5,
+   "pbr": 7.25,
+   "eps": 5.36,
+   "roe": 26.0,
+   "eqr": 47.1,
+   "div": 0.0,
+   "rev_q": 23.5,
+   "rev_ttm": 29.4,
+   "cagr5": 24.5,
+   "eps_q": 234.8,
+   "opm": 16.9,
+   "roic": 15.8,
+   "psr": 3.95,
+   "peg": 0.54,
+   "de": 0.67,
+   "inflow": null,
+   "biz": "Insulet Corporation develops, manufactures, and sells insulin delivery systems for people with insulin-dependent diabetes in the United States and internationally. The company offers Omnipod platform products comprising ",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "ASND",
+   "name": "Ascendis Pharma A/S",
+   "ticker": "NASDAQ:ASND",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_trend",
+    "sig_macd",
+    "sig_growth"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 722,
+      "win": 46.8,
+      "avg": 27.5,
+      "med": -0.05,
+      "excess": 26.0,
+      "best": 4739.4,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1199,
+      "win": 40.7,
+      "avg": 9.93,
+      "med": 0.0,
+      "excess": 9.57,
+      "best": 4202.4,
+      "worst": -58.5
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 3547,
+      "win": 43.6,
+      "avg": 4.16,
+      "med": -0.43,
+      "excess": 2.84,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 6834,
+      "win": 39.8,
+      "avg": 0.82,
+      "med": -0.39,
+      "excess": 0.64,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1190,
+      "win": 41.3,
+      "avg": 2.72,
+      "med": -0.65,
+      "excess": 1.44,
+      "best": 2307.5,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 2162,
+      "win": 41.5,
+      "avg": 1.75,
+      "med": -0.31,
+      "excess": 1.5,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1362,
+      "win": 42.0,
+      "avg": -0.38,
+      "med": -0.47,
+      "excess": -1.84,
+      "best": 29.7,
+      "worst": -27.0
+     },
+     "1": {
+      "n": 2382,
+      "win": 44.0,
+      "avg": -0.22,
+      "med": -0.14,
+      "excess": -0.58,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3714,
+      "win": 42.5,
+      "avg": 0.01,
+      "med": -0.48,
+      "excess": -1.55,
+      "best": 327.4,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 6750,
+      "win": 44.0,
+      "avg": -0.11,
+      "med": -0.14,
+      "excess": -0.5,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1043,
+      "win": 35.3,
+      "avg": 1.35,
+      "med": -1.35,
+      "excess": 1.09,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 3120,
+      "win": 43.0,
+      "avg": 0.1,
+      "med": -0.35,
+      "excess": -0.18,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Health Technology",
+   "industry": "Pharmaceuticals: Major",
+   "segment": "NASDAQ",
+   "close": 263.04,
+   "chg": 6.1,
+   "gap": -0.1,
+   "sma5": 252.71,
+   "sma20": 251.69,
+   "sma200": 231.27,
+   "ext200": 13.74,
+   "rsi": 61.0,
+   "macd_h": 0.54,
+   "rvol": 2.63,
+   "pw": 2.61,
+   "p1": 5.34,
+   "p3": 20.14,
+   "ytd": 23.6,
+   "pos52": 80.0,
+   "hi52": 282.15,
+   "lo52": 186.05,
+   "val": 269.9,
+   "mcap": 16408.0,
+   "per": 20.0,
+   "pbr": 10.52,
+   "eps": 13.87,
+   "roe": 121.9,
+   "eqr": 34.2,
+   "div": 0.0,
+   "rev_q": 120.2,
+   "rev_ttm": 128.4,
+   "cagr5": 152.4,
+   "eps_q": null,
+   "opm": 10.3,
+   "roic": 77.0,
+   "psr": 19.62,
+   "peg": null,
+   "de": 0.31,
+   "inflow": null,
+   "biz": "Ascendis Pharma A/S, operates as a biopharmaceutical company that focuses on developing TransCon-based therapies for unmet medical needs in Europe, the United States, and internationally. The company offers SKYTROFA for ",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "SLAB",
+   "name": "Silicon Laboratories, Inc.",
+   "ticker": "NASDAQ:SLAB",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_high",
+    "sig_trend",
+    "sig_macd",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 3547,
+      "win": 43.6,
+      "avg": 4.16,
+      "med": -0.43,
+      "excess": 2.84,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 6834,
+      "win": 39.8,
+      "avg": 0.82,
+      "med": -0.39,
+      "excess": 0.64,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1190,
+      "win": 41.3,
+      "avg": 2.72,
+      "med": -0.65,
+      "excess": 1.44,
+      "best": 2307.5,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 2162,
+      "win": 41.5,
+      "avg": 1.75,
+      "med": -0.31,
+      "excess": 1.5,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 924,
+      "win": 46.0,
+      "avg": -0.25,
+      "med": -0.05,
+      "excess": -1.64,
+      "best": 308.4,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 1600,
+      "win": 40.0,
+      "avg": -0.04,
+      "med": 0.0,
+      "excess": -0.36,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1362,
+      "win": 42.0,
+      "avg": -0.38,
+      "med": -0.47,
+      "excess": -1.84,
+      "best": 29.7,
+      "worst": -27.0
+     },
+     "1": {
+      "n": 2382,
+      "win": 44.0,
+      "avg": -0.22,
+      "med": -0.14,
+      "excess": -0.58,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3714,
+      "win": 42.5,
+      "avg": 0.01,
+      "med": -0.48,
+      "excess": -1.55,
+      "best": 327.4,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 6750,
+      "win": 44.0,
+      "avg": -0.11,
+      "med": -0.14,
+      "excess": -0.5,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 1985,
+      "win": 34.7,
+      "avg": -0.82,
+      "med": -0.94,
+      "excess": -1.07,
+      "best": 227.7,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 5952,
+      "win": 42.6,
+      "avg": -0.2,
+      "med": -0.24,
+      "excess": -0.47,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Electronic Technology",
+   "industry": "Semiconductors",
+   "segment": "NASDAQ",
+   "close": 219.05,
+   "chg": 0.23,
+   "gap": 0.2,
+   "sma5": 218.75,
+   "sma20": 218.62,
+   "sma200": 192.1,
+   "ext200": 14.03,
+   "rsi": 56.5,
+   "macd_h": 0.02,
+   "rvol": 1.49,
+   "pw": 0.48,
+   "p1": 0.85,
+   "p3": 0.5,
+   "ytd": 64.9,
+   "pos52": 98.0,
+   "hi52": 220.9,
+   "lo52": 115.5,
+   "val": 94.1,
+   "mcap": 7309.0,
+   "per": null,
+   "pbr": 6.68,
+   "eps": -1.19,
+   "roe": -3.6,
+   "eqr": 86.0,
+   "div": 0.0,
+   "rev_q": 18.3,
+   "rev_ttm": 21.7,
+   "cagr5": 9.0,
+   "eps_q": 52.2,
+   "opm": -2.6,
+   "roic": -3.6,
+   "psr": 9.13,
+   "peg": null,
+   "de": 0.0,
+   "inflow": null,
+   "biz": "Silicon Laboratories Inc., a fabless semiconductor company, provides mixed-signal analog intensive products in the United States, China, Taiwan, and internationally. Its products are used in various electronic products i",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "PARR",
+   "name": "Par Pacific Holdings, Inc. Common Stock",
+   "ticker": "NYSE:PARR",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_gap",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 3547,
+      "win": 43.6,
+      "avg": 4.16,
+      "med": -0.43,
+      "excess": 2.84,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 6834,
+      "win": 39.8,
+      "avg": 0.82,
+      "med": -0.39,
+      "excess": 0.64,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1190,
+      "win": 41.3,
+      "avg": 2.72,
+      "med": -0.65,
+      "excess": 1.44,
+      "best": 2307.5,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 2162,
+      "win": 41.5,
+      "avg": 1.75,
+      "med": -0.31,
+      "excess": 1.5,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 645,
+      "win": 45.0,
+      "avg": 8.08,
+      "med": -0.68,
+      "excess": 6.68,
+      "best": 3343.9,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1044,
+      "win": 39.2,
+      "avg": 5.56,
+      "med": -1.32,
+      "excess": 5.51,
+      "best": 4202.4,
+      "worst": -50.6
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1043,
+      "win": 35.3,
+      "avg": 1.35,
+      "med": -1.35,
+      "excess": 1.09,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 3120,
+      "win": 43.0,
+      "avg": 0.1,
+      "med": -0.35,
+      "excess": -0.18,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 1985,
+      "win": 34.7,
+      "avg": -0.82,
+      "med": -0.94,
+      "excess": -1.07,
+      "best": 227.7,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 5952,
+      "win": 42.6,
+      "avg": -0.2,
+      "med": -0.24,
+      "excess": -0.47,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 495,
+      "win": 37.8,
+      "avg": -0.83,
+      "med": -0.85,
+      "excess": -1.09,
+      "best": 17.8,
+      "worst": -26.3
+     },
+     "1": {
+      "n": 1487,
+      "win": 44.1,
+      "avg": -0.24,
+      "med": -0.24,
+      "excess": -0.51,
+      "best": 11.9,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Energy Minerals",
+   "industry": "Oil Refining/Marketing",
+   "segment": "NYSE",
+   "close": 79.92,
+   "chg": 1.36,
+   "gap": 3.32,
+   "sma5": 77.08,
+   "sma20": 76.32,
+   "sma200": 55.25,
+   "ext200": 44.65,
+   "rsi": 55.8,
+   "macd_h": -0.23,
+   "rvol": 1.45,
+   "pw": 2.98,
+   "p1": -6.86,
+   "p3": 40.8,
+   "ytd": 126.3,
+   "pos52": 87.0,
+   "hi52": 87.03,
+   "lo52": 32.24,
+   "val": 94.6,
+   "mcap": 4004.0,
+   "per": 4.7,
+   "pbr": 1.99,
+   "eps": 17.52,
+   "roe": 54.7,
+   "eqr": 44.5,
+   "div": 0.0,
+   "rev_q": 56.8,
+   "rev_ttm": 13.2,
+   "cagr5": 19.0,
+   "eps_q": 699.1,
+   "opm": 13.3,
+   "roic": 30.4,
+   "psr": 0.55,
+   "peg": null,
+   "de": 0.66,
+   "inflow": null,
+   "biz": "Par Pacific Holdings, Inc., an energy company, provides renewable and conventional fuels in the United States. The company operates through three segments: Refining, Retail, and Logistics. The Refining segment owns and o",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "RGA",
+   "name": "Reinsurance Group of America, Incorporated",
+   "ticker": "NYSE:RGA",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_high",
+    "sig_trend",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 3547,
+      "win": 43.6,
+      "avg": 4.16,
+      "med": -0.43,
+      "excess": 2.84,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 6834,
+      "win": 39.8,
+      "avg": 0.82,
+      "med": -0.39,
+      "excess": 0.64,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1190,
+      "win": 41.3,
+      "avg": 2.72,
+      "med": -0.65,
+      "excess": 1.44,
+      "best": 2307.5,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 2162,
+      "win": 41.5,
+      "avg": 1.75,
+      "med": -0.31,
+      "excess": 1.5,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 924,
+      "win": 46.0,
+      "avg": -0.25,
+      "med": -0.05,
+      "excess": -1.64,
+      "best": 308.4,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 1600,
+      "win": 40.0,
+      "avg": -0.04,
+      "med": 0.0,
+      "excess": -0.36,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1362,
+      "win": 42.0,
+      "avg": -0.38,
+      "med": -0.47,
+      "excess": -1.84,
+      "best": 29.7,
+      "worst": -27.0
+     },
+     "1": {
+      "n": 2382,
+      "win": 44.0,
+      "avg": -0.22,
+      "med": -0.14,
+      "excess": -0.58,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 1985,
+      "win": 34.7,
+      "avg": -0.82,
+      "med": -0.94,
+      "excess": -1.07,
+      "best": 227.7,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 5952,
+      "win": 42.6,
+      "avg": -0.2,
+      "med": -0.24,
+      "excess": -0.47,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 495,
+      "win": 37.8,
+      "avg": -0.83,
+      "med": -0.85,
+      "excess": -1.09,
+      "best": 17.8,
+      "worst": -26.3
+     },
+     "1": {
+      "n": 1487,
+      "win": 44.1,
+      "avg": -0.24,
+      "med": -0.24,
+      "excess": -0.51,
+      "best": 11.9,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Life/Health Insurance",
+   "segment": "NYSE",
+   "close": 246.04,
+   "chg": 0.2,
+   "gap": -0.32,
+   "sma5": 245.72,
+   "sma20": 243.99,
+   "sma200": 212.39,
+   "ext200": 15.84,
+   "rsi": 58.6,
+   "macd_h": -0.57,
+   "rvol": 1.05,
+   "pw": 1.09,
+   "p1": 3.76,
+   "p3": 23.68,
+   "ytd": 21.0,
+   "pos52": 93.0,
+   "hi52": 251.0,
+   "lo52": 178.21,
+   "val": 78.1,
+   "mcap": 16067.0,
+   "per": 10.8,
+   "pbr": 1.17,
+   "eps": 23.09,
+   "roe": 11.7,
+   "eqr": 15.3,
+   "div": 1.52,
+   "rev_q": 18.7,
+   "rev_ttm": 19.5,
+   "cagr5": 10.2,
+   "eps_q": 160.6,
+   "opm": 8.8,
+   "roic": 8.1,
+   "psr": 0.69,
+   "peg": 0.11,
+   "de": 0.42,
+   "inflow": null,
+   "biz": "Reinsurance Group of America, Incorporated provides life and health, and asset-intensive reinsurance in the United States, Latin America, Canada, Europe, the Middle East, Africa, Asia, and Australia. It offers individual",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "SAIC",
+   "name": "Science Applications International Corporation",
+   "ticker": "NASDAQ:SAIC",
+   "bucket": "short",
+   "score": 4.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_gap",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 722,
+      "win": 46.8,
+      "avg": 27.5,
+      "med": -0.05,
+      "excess": 26.0,
+      "best": 4739.4,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1199,
+      "win": 40.7,
+      "avg": 9.93,
+      "med": 0.0,
+      "excess": 9.57,
+      "best": 4202.4,
+      "worst": -58.5
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 3547,
+      "win": 43.6,
+      "avg": 4.16,
+      "med": -0.43,
+      "excess": 2.84,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 6834,
+      "win": 39.8,
+      "avg": 0.82,
+      "med": -0.39,
+      "excess": 0.64,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 645,
+      "win": 45.0,
+      "avg": 8.08,
+      "med": -0.68,
+      "excess": 6.68,
+      "best": 3343.9,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1044,
+      "win": 39.2,
+      "avg": 5.56,
+      "med": -1.32,
+      "excess": 5.51,
+      "best": 4202.4,
+      "worst": -50.6
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 1985,
+      "win": 34.7,
+      "avg": -0.82,
+      "med": -0.94,
+      "excess": -1.07,
+      "best": 227.7,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 5952,
+      "win": 42.6,
+      "avg": -0.2,
+      "med": -0.24,
+      "excess": -0.47,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Information Technology Services",
+   "segment": "NASDAQ",
+   "close": 128.22,
+   "chg": 1.79,
+   "gap": 11.46,
+   "sma5": 127.6,
+   "sma20": 126.01,
+   "sma200": 103.21,
+   "ext200": 24.24,
+   "rsi": 60.2,
+   "macd_h": -0.35,
+   "rvol": 4.31,
+   "pw": 3.65,
+   "p1": 10.87,
+   "p3": 13.05,
+   "ytd": 27.4,
+   "pos52": 77.0,
+   "hi52": 142.66,
+   "lo52": 81.08,
+   "val": 238.1,
+   "mcap": 5421.0,
+   "per": 14.4,
+   "pbr": 3.87,
+   "eps": 8.94,
+   "roe": 27.7,
+   "eqr": 22.5,
+   "div": 1.17,
+   "rev_q": 1.5,
+   "rev_ttm": -2.9,
+   "cagr5": 0.6,
+   "eps_q": 83.7,
+   "opm": 7.8,
+   "roic": 10.6,
+   "psr": 0.82,
+   "peg": 0.58,
+   "de": 1.88,
+   "inflow": null,
+   "biz": "Science Applications International Corporation provides technical, engineering, and mission and enterprise information technology (IT) services in the United States. It operates through two segments, Defense and Intellig",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "HELE",
+   "name": "Helen of Troy Limited",
+   "ticker": "NASDAQ:HELE",
+   "bucket": "short",
+   "score": 4.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_high",
+    "sig_macd"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 3547,
+      "win": 43.6,
+      "avg": 4.16,
+      "med": -0.43,
+      "excess": 2.84,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 6834,
+      "win": 39.8,
+      "avg": 0.82,
+      "med": -0.39,
+      "excess": 0.64,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1190,
+      "win": 41.3,
+      "avg": 2.72,
+      "med": -0.65,
+      "excess": 1.44,
+      "best": 2307.5,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 2162,
+      "win": 41.5,
+      "avg": 1.75,
+      "med": -0.31,
+      "excess": 1.5,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 924,
+      "win": 46.0,
+      "avg": -0.25,
+      "med": -0.05,
+      "excess": -1.64,
+      "best": 308.4,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 1600,
+      "win": 40.0,
+      "avg": -0.04,
+      "med": 0.0,
+      "excess": -0.36,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3714,
+      "win": 42.5,
+      "avg": 0.01,
+      "med": -0.48,
+      "excess": -1.55,
+      "best": 327.4,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 6750,
+      "win": 44.0,
+      "avg": -0.11,
+      "med": -0.14,
+      "excess": -0.5,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    }
+   },
+   "sector": "Consumer Durables",
+   "industry": "Home Furnishings",
+   "segment": "NASDAQ",
+   "close": 30.1,
+   "chg": 5.17,
+   "gap": -0.1,
+   "sma5": 29.14,
+   "sma20": 29.06,
+   "sma200": 22.15,
+   "ext200": 35.92,
+   "rsi": 57.4,
+   "macd_h": 0.0,
+   "rvol": 2.44,
+   "pw": 3.22,
+   "p1": 7.94,
+   "p3": 13.33,
+   "ytd": 39.4,
+   "pos52": 97.0,
+   "hi52": 30.68,
+   "lo52": 13.85,
+   "val": 24.7,
+   "mcap": 701.0,
+   "per": null,
+   "pbr": 0.83,
+   "eps": -17.96,
+   "roe": -39.8,
+   "eqr": 36.7,
+   "div": 0.0,
+   "rev_q": 8.1,
+   "rev_ttm": -2.1,
+   "cagr5": -3.1,
+   "eps_q": null,
+   "opm": 6.1,
+   "roic": -22.2,
+   "psr": 0.39,
+   "peg": -0.07,
+   "de": 0.91,
+   "inflow": null,
+   "biz": "Helen of Troy Limited operates as a consumer products company in the United States, Canada, Europe, the Middle East, Africa, the Asia Pacific, and Latin America. The Home & Outdoor segment offers food storage containers,",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "CAR",
+   "name": "Avis Budget Group, Inc.",
+   "ticker": "NASDAQ:CAR",
+   "bucket": "short",
+   "score": 3.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 722,
+      "win": 46.8,
+      "avg": 27.5,
+      "med": -0.05,
+      "excess": 26.0,
+      "best": 4739.4,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1199,
+      "win": 40.7,
+      "avg": 9.93,
+      "med": 0.0,
+      "excess": 9.57,
+      "best": 4202.4,
+      "worst": -58.5
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 3547,
+      "win": 43.6,
+      "avg": 4.16,
+      "med": -0.43,
+      "excess": 2.84,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 6834,
+      "win": 39.8,
+      "avg": 0.82,
+      "med": -0.39,
+      "excess": 0.64,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1190,
+      "win": 41.3,
+      "avg": 2.72,
+      "med": -0.65,
+      "excess": 1.44,
+      "best": 2307.5,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 2162,
+      "win": 41.5,
+      "avg": 1.75,
+      "med": -0.31,
+      "excess": 1.5,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Finance/Rental/Leasing",
+   "segment": "NASDAQ",
+   "close": 147.49,
+   "chg": 6.78,
+   "gap": -0.32,
+   "sma5": 142.85,
+   "sma20": 141.3,
+   "sma200": 157.69,
+   "ext200": -6.47,
+   "rsi": 51.7,
+   "macd_h": 1.19,
+   "rvol": 3.08,
+   "pw": 0.75,
+   "p1": -2.49,
+   "p3": -12.63,
+   "ytd": 14.6,
+   "pos52": 8.0,
+   "hi52": 847.7,
+   "lo52": 85.96,
+   "val": 124.6,
+   "mcap": 5210.0,
+   "per": null,
+   "pbr": null,
+   "eps": -18.05,
+   "roe": null,
+   "eqr": -9.0,
+   "div": 0.0,
+   "rev_q": -1.3,
+   "rev_ttm": 0.4,
+   "cagr5": 16.6,
+   "eps_q": 767.6,
+   "opm": 11.2,
+   "roic": -2.5,
+   "psr": 0.45,
+   "peg": null,
+   "de": null,
+   "inflow": null,
+   "biz": "Avis Budget Group, Inc., together with its subsidiaries, provides car and truck rentals, car sharing, and ancillary products and services to businesses and consumers in the Americas, Europe, the Middle East and Africa, A",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "AES",
+   "name": "The AES Corporation",
+   "ticker": "NYSE:AES",
+   "bucket": "long",
+   "score": 7.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_trend",
+    "sig_div",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 3547,
+      "win": 43.6,
+      "avg": 4.16,
+      "med": -0.43,
+      "excess": 2.84,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 6834,
+      "win": 39.8,
+      "avg": 0.82,
+      "med": -0.39,
+      "excess": 0.64,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1190,
+      "win": 41.3,
+      "avg": 2.72,
+      "med": -0.65,
+      "excess": 1.44,
+      "best": 2307.5,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 2162,
+      "win": 41.5,
+      "avg": 1.75,
+      "med": -0.31,
+      "excess": 1.5,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 721,
+      "win": 43.8,
+      "avg": -0.29,
+      "med": -0.28,
+      "excess": -1.79,
+      "best": 29.7,
+      "worst": -22.0
+     },
+     "1": {
+      "n": 1402,
+      "win": 43.7,
+      "avg": -0.12,
+      "med": -0.13,
+      "excess": -0.5,
+      "best": 15.2,
+      "worst": -24.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 1204,
+      "win": 40.1,
+      "avg": 1.0,
+      "med": -0.6,
+      "excess": -0.61,
+      "best": 853.0,
+      "worst": -42.7
+     },
+     "1": {
+      "n": 2206,
+      "win": 44.2,
+      "avg": -0.07,
+      "med": -0.13,
+      "excess": -0.45,
+      "best": 355.6,
+      "worst": -30.3
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1362,
+      "win": 42.0,
+      "avg": -0.38,
+      "med": -0.47,
+      "excess": -1.84,
+      "best": 29.7,
+      "worst": -27.0
+     },
+     "1": {
+      "n": 2382,
+      "win": 44.0,
+      "avg": -0.22,
+      "med": -0.14,
+      "excess": -0.58,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 1683,
+      "win": 44.3,
+      "avg": -0.14,
+      "med": -0.27,
+      "excess": -1.69,
+      "best": 26.0,
+      "worst": -27.0
+     },
+     "1": {
+      "n": 3020,
+      "win": 47.5,
+      "avg": 0.02,
+      "med": -0.04,
+      "excess": -0.39,
+      "best": 10.8,
+      "worst": -30.3
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 495,
+      "win": 37.8,
+      "avg": -0.83,
+      "med": -0.85,
+      "excess": -1.09,
+      "best": 17.8,
+      "worst": -26.3
+     },
+     "1": {
+      "n": 1487,
+      "win": 44.1,
+      "avg": -0.24,
+      "med": -0.24,
+      "excess": -0.51,
+      "best": 11.9,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Utilities",
+   "industry": "Electric Utilities",
+   "segment": "NYSE",
+   "close": 14.74,
+   "chg": 0.07,
+   "gap": -0.07,
+   "sma5": 14.74,
+   "sma20": 14.73,
+   "sma200": 14.57,
+   "ext200": 1.14,
+   "rsi": 50.3,
+   "macd_h": -0.0,
+   "rvol": 1.14,
+   "pw": -0.07,
+   "p1": 0.27,
+   "p3": 0.34,
+   "ytd": 1.6,
+   "pos52": 45.0,
+   "hi52": 17.65,
+   "lo52": 12.33,
+   "val": 134.0,
+   "mcap": 10516.0,
+   "per": 5.5,
+   "pbr": 2.13,
+   "eps": 2.68,
+   "roe": 28.2,
+   "eqr": 26.5,
+   "div": 4.78,
+   "rev_q": 19.9,
+   "rev_ttm": 8.2,
+   "cagr5": 4.8,
+   "eps_q": null,
+   "opm": 18.7,
+   "roic": 5.6,
+   "psr": 0.86,
+   "peg": 0.06,
+   "de": 4.02,
+   "inflow": null,
+   "biz": "The AES Corporation, together with its subsidiaries, operates as a power generation and utility company. It operates through four segments: Renewables, Utilities, Energy Infrastructure, and New Energy Technologies. The c",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "TRP",
+   "name": "TC Energy Corporation",
+   "ticker": "NYSE:TRP",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_macd",
+    "sig_div",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 3547,
+      "win": 43.6,
+      "avg": 4.16,
+      "med": -0.43,
+      "excess": 2.84,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 6834,
+      "win": 39.8,
+      "avg": 0.82,
+      "med": -0.39,
+      "excess": 0.64,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 721,
+      "win": 43.8,
+      "avg": -0.29,
+      "med": -0.28,
+      "excess": -1.79,
+      "best": 29.7,
+      "worst": -22.0
+     },
+     "1": {
+      "n": 1402,
+      "win": 43.7,
+      "avg": -0.12,
+      "med": -0.13,
+      "excess": -0.5,
+      "best": 15.2,
+      "worst": -24.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 1204,
+      "win": 40.1,
+      "avg": 1.0,
+      "med": -0.6,
+      "excess": -0.61,
+      "best": 853.0,
+      "worst": -42.7
+     },
+     "1": {
+      "n": 2206,
+      "win": 44.2,
+      "avg": -0.07,
+      "med": -0.13,
+      "excess": -0.45,
+      "best": 355.6,
+      "worst": -30.3
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3714,
+      "win": 42.5,
+      "avg": 0.01,
+      "med": -0.48,
+      "excess": -1.55,
+      "best": 327.4,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 6750,
+      "win": 44.0,
+      "avg": -0.11,
+      "med": -0.14,
+      "excess": -0.5,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 1683,
+      "win": 44.3,
+      "avg": -0.14,
+      "med": -0.27,
+      "excess": -1.69,
+      "best": 26.0,
+      "worst": -27.0
+     },
+     "1": {
+      "n": 3020,
+      "win": 47.5,
+      "avg": 0.02,
+      "med": -0.04,
+      "excess": -0.39,
+      "best": 10.8,
+      "worst": -30.3
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 1985,
+      "win": 34.7,
+      "avg": -0.82,
+      "med": -0.94,
+      "excess": -1.07,
+      "best": 227.7,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 5952,
+      "win": 42.6,
+      "avg": -0.2,
+      "med": -0.24,
+      "excess": -0.47,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Industrial Services",
+   "industry": "Oil & Gas Pipelines",
+   "segment": "NYSE",
+   "close": 62.53,
+   "chg": 1.08,
+   "gap": 0.5,
+   "sma5": 62.23,
+   "sma20": 63.1,
+   "sma200": 62.33,
+   "ext200": 0.33,
+   "rsi": 41.2,
+   "macd_h": 0.06,
+   "rvol": 0.71,
+   "pw": 1.18,
+   "p1": -9.38,
+   "p3": -5.86,
+   "ytd": 13.7,
+   "pos52": 60.0,
+   "hi52": 71.47,
+   "lo52": 49.27,
+   "val": 73.3,
+   "mcap": 62530.0,
+   "per": 26.6,
+   "pbr": 3.63,
+   "eps": 2.35,
+   "roe": 13.7,
+   "eqr": 31.7,
+   "div": 4.02,
+   "rev_q": 5.1,
+   "rev_ttm": 1.1,
+   "cagr5": 1.9,
+   "eps_q": 13.3,
+   "opm": 46.2,
+   "roic": 4.5,
+   "psr": 5.88,
+   "peg": null,
+   "de": 2.3,
+   "inflow": null,
+   "biz": "TC Energy Corporation operates as an energy infrastructure company in Canada, the United States, and Mexico. It operates through four segments: Canadian Natural Gas Pipelines; U.S. Natural Gas Pipelines; Mexico Natural G",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "KNTK",
+   "name": "Kinetik Holdings Inc.",
+   "ticker": "NYSE:KNTK",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_macd",
+    "sig_div",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 3547,
+      "win": 43.6,
+      "avg": 4.16,
+      "med": -0.43,
+      "excess": 2.84,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 6834,
+      "win": 39.8,
+      "avg": 0.82,
+      "med": -0.39,
+      "excess": 0.64,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3714,
+      "win": 42.5,
+      "avg": 0.01,
+      "med": -0.48,
+      "excess": -1.55,
+      "best": 327.4,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 6750,
+      "win": 44.0,
+      "avg": -0.11,
+      "med": -0.14,
+      "excess": -0.5,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 1683,
+      "win": 44.3,
+      "avg": -0.14,
+      "med": -0.27,
+      "excess": -1.69,
+      "best": 26.0,
+      "worst": -27.0
+     },
+     "1": {
+      "n": 3020,
+      "win": 47.5,
+      "avg": 0.02,
+      "med": -0.04,
+      "excess": -0.39,
+      "best": 10.8,
+      "worst": -30.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1043,
+      "win": 35.3,
+      "avg": 1.35,
+      "med": -1.35,
+      "excess": 1.09,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 3120,
+      "win": 43.0,
+      "avg": 0.1,
+      "med": -0.35,
+      "excess": -0.18,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 1985,
+      "win": 34.7,
+      "avg": -0.82,
+      "med": -0.94,
+      "excess": -1.07,
+      "best": 227.7,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 5952,
+      "win": 42.6,
+      "avg": -0.2,
+      "med": -0.24,
+      "excess": -0.47,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 495,
+      "win": 37.8,
+      "avg": -0.83,
+      "med": -0.85,
+      "excess": -1.09,
+      "best": 17.8,
+      "worst": -26.3
+     },
+     "1": {
+      "n": 1487,
+      "win": 44.1,
+      "avg": -0.24,
+      "med": -0.24,
+      "excess": -0.51,
+      "best": 11.9,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Industrial Services",
+   "industry": "Oil & Gas Pipelines",
+   "segment": "NYSE",
+   "close": 54.83,
+   "chg": 1.9,
+   "gap": 1.75,
+   "sma5": 54.47,
+   "sma20": 52.66,
+   "sma200": 44.7,
+   "ext200": 22.67,
+   "rsi": 62.2,
+   "macd_h": 0.04,
+   "rvol": 0.78,
+   "pw": 0.79,
+   "p1": 9.55,
+   "p3": 20.43,
+   "ytd": 52.1,
+   "pos52": 95.0,
+   "hi52": 56.1,
+   "lo52": 31.33,
+   "val": 46.2,
+   "mcap": 8903.0,
+   "per": 19.9,
+   "pbr": null,
+   "eps": 2.79,
+   "roe": null,
+   "eqr": 39.7,
+   "div": 5.97,
+   "rev_q": 50.1,
+   "rev_ttm": 10.5,
+   "cagr5": 63.6,
+   "eps_q": 97.1,
+   "opm": 9.0,
+   "roic": 8.3,
+   "psr": 1.98,
+   "peg": 0.07,
+   "de": null,
+   "inflow": null,
+   "biz": "Kinetik Holdings Inc., through its subsidiaries, operates as a midstream company in the Texas Delaware Basin. The company operates through two segments, Midstream Logistics and Pipeline Transportation. It offers gatherin",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "VNOM",
+   "name": "Viper Energy, Inc.",
+   "ticker": "NASDAQ:VNOM",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_gc",
+    "sig_trend",
+    "sig_macd",
+    "sig_div",
+    "sig_growth"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 3547,
+      "win": 43.6,
+      "avg": 4.16,
+      "med": -0.43,
+      "excess": 2.84,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 6834,
+      "win": 39.8,
+      "avg": 0.82,
+      "med": -0.39,
+      "excess": 0.64,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 721,
+      "win": 43.8,
+      "avg": -0.29,
+      "med": -0.28,
+      "excess": -1.79,
+      "best": 29.7,
+      "worst": -22.0
+     },
+     "1": {
+      "n": 1402,
+      "win": 43.7,
+      "avg": -0.12,
+      "med": -0.13,
+      "excess": -0.5,
+      "best": 15.2,
+      "worst": -24.9
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1362,
+      "win": 42.0,
+      "avg": -0.38,
+      "med": -0.47,
+      "excess": -1.84,
+      "best": 29.7,
+      "worst": -27.0
+     },
+     "1": {
+      "n": 2382,
+      "win": 44.0,
+      "avg": -0.22,
+      "med": -0.14,
+      "excess": -0.58,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3714,
+      "win": 42.5,
+      "avg": 0.01,
+      "med": -0.48,
+      "excess": -1.55,
+      "best": 327.4,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 6750,
+      "win": 44.0,
+      "avg": -0.11,
+      "med": -0.14,
+      "excess": -0.5,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 1683,
+      "win": 44.3,
+      "avg": -0.14,
+      "med": -0.27,
+      "excess": -1.69,
+      "best": 26.0,
+      "worst": -27.0
+     },
+     "1": {
+      "n": 3020,
+      "win": 47.5,
+      "avg": 0.02,
+      "med": -0.04,
+      "excess": -0.39,
+      "best": 10.8,
+      "worst": -30.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1043,
+      "win": 35.3,
+      "avg": 1.35,
+      "med": -1.35,
+      "excess": 1.09,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 3120,
+      "win": 43.0,
+      "avg": 0.1,
+      "med": -0.35,
+      "excess": -0.18,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Miscellaneous",
+   "industry": "Investment Trusts/Mutual Funds",
+   "segment": "NASDAQ",
+   "close": 44.79,
+   "chg": 1.38,
+   "gap": 1.8,
+   "sma5": 44.39,
+   "sma20": 43.22,
+   "sma200": 43.19,
+   "ext200": 3.71,
+   "rsi": 56.7,
+   "macd_h": 0.18,
+   "rvol": 0.65,
+   "pw": -0.24,
+   "p1": 2.89,
+   "p3": -1.45,
+   "ytd": 15.9,
+   "pos52": 60.0,
+   "hi52": 51.13,
+   "lo52": 35.1,
+   "val": 44.2,
+   "mcap": 16088.0,
+   "per": 350.7,
+   "pbr": 1.7,
+   "eps": 0.13,
+   "roe": 1.3,
+   "eqr": 80.9,
+   "div": 5.23,
+   "rev_q": 129.3,
+   "rev_ttm": 104.0,
+   "cagr5": 40.4,
+   "eps_q": 158.0,
+   "opm": 48.9,
+   "roic": 1.0,
+   "psr": 4.74,
+   "peg": null,
+   "de": 0.33,
+   "inflow": null,
+   "biz": "Viper Energy, Inc. owns, acquires, and exploits oil and natural gas properties in North America. It focuses on owning and acquiring mineral and royalty interests in the Permian Basin. Viper Energy, Inc. was formerly know",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "NMM",
+   "name": "Navios Maritime Partners LP",
+   "ticker": "NYSE:NMM",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_macd",
+    "sig_value",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 3547,
+      "win": 43.6,
+      "avg": 4.16,
+      "med": -0.43,
+      "excess": 2.84,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 6834,
+      "win": 39.8,
+      "avg": 0.82,
+      "med": -0.39,
+      "excess": 0.64,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3714,
+      "win": 42.5,
+      "avg": 0.01,
+      "med": -0.48,
+      "excess": -1.55,
+      "best": 327.4,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 6750,
+      "win": 44.0,
+      "avg": -0.11,
+      "med": -0.14,
+      "excess": -0.5,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_value": {
+     "5": {
+      "n": 314,
+      "win": 39.5,
+      "avg": -1.11,
+      "med": -0.58,
+      "excess": -2.68,
+      "best": 103.6,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 557,
+      "win": 46.5,
+      "avg": -0.41,
+      "med": -0.06,
+      "excess": -0.82,
+      "best": 32.9,
+      "worst": -47.0
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1043,
+      "win": 35.3,
+      "avg": 1.35,
+      "med": -1.35,
+      "excess": 1.09,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 3120,
+      "win": 43.0,
+      "avg": 0.1,
+      "med": -0.35,
+      "excess": -0.18,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 1985,
+      "win": 34.7,
+      "avg": -0.82,
+      "med": -0.94,
+      "excess": -1.07,
+      "best": 227.7,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 5952,
+      "win": 42.6,
+      "avg": -0.2,
+      "med": -0.24,
+      "excess": -0.47,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 495,
+      "win": 37.8,
+      "avg": -0.83,
+      "med": -0.85,
+      "excess": -1.09,
+      "best": 17.8,
+      "worst": -26.3
+     },
+     "1": {
+      "n": 1487,
+      "win": 44.1,
+      "avg": -0.24,
+      "med": -0.24,
+      "excess": -0.51,
+      "best": 11.9,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Transportation",
+   "industry": "Marine Shipping",
+   "segment": "NYSE",
+   "close": 88.33,
+   "chg": 1.34,
+   "gap": -0.7,
+   "sma5": 88.03,
+   "sma20": 83.4,
+   "sma200": 67.15,
+   "ext200": 31.55,
+   "rsi": 63.4,
+   "macd_h": 0.24,
+   "rvol": 1.31,
+   "pw": -0.52,
+   "p1": 10.62,
+   "p3": 22.77,
+   "ytd": 69.1,
+   "pos52": 93.0,
+   "hi52": 91.96,
+   "lo52": 43.02,
+   "val": 20.9,
+   "mcap": 2511.0,
+   "per": 5.8,
+   "pbr": 0.71,
+   "eps": 15.32,
+   "roe": 13.2,
+   "eqr": 58.7,
+   "div": 0.24,
+   "rev_q": 25.2,
+   "rev_ttm": 13.4,
+   "cagr5": 42.7,
+   "eps_q": 146.9,
+   "opm": 34.7,
+   "roic": 7.9,
+   "psr": 1.91,
+   "peg": 0.11,
+   "de": 0.7,
+   "inflow": null,
+   "biz": "Navios Maritime Partners L.P. owns and operates dry cargo and tanker vessels in Asia, Europe, North America, and Australia. The company offers seaborne transportation services for a range of liquid and dry cargo commodit",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "AU",
+   "name": "AngloGold Ashanti PLC",
+   "ticker": "NYSE:AU",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_macd",
+    "sig_div",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_macd": {
+     "5": {
+      "n": 3714,
+      "win": 42.5,
+      "avg": 0.01,
+      "med": -0.48,
+      "excess": -1.55,
+      "best": 327.4,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 6750,
+      "win": 44.0,
+      "avg": -0.11,
+      "med": -0.14,
+      "excess": -0.5,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 1683,
+      "win": 44.3,
+      "avg": -0.14,
+      "med": -0.27,
+      "excess": -1.69,
+      "best": 26.0,
+      "worst": -27.0
+     },
+     "1": {
+      "n": 3020,
+      "win": 47.5,
+      "avg": 0.02,
+      "med": -0.04,
+      "excess": -0.39,
+      "best": 10.8,
+      "worst": -30.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 1717,
+      "win": 48.6,
+      "avg": 0.11,
+      "med": -0.19,
+      "excess": -1.44,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 3095,
+      "win": 48.2,
+      "avg": 0.01,
+      "med": -0.05,
+      "excess": -0.4,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1043,
+      "win": 35.3,
+      "avg": 1.35,
+      "med": -1.35,
+      "excess": 1.09,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 3120,
+      "win": 43.0,
+      "avg": 0.1,
+      "med": -0.35,
+      "excess": -0.18,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 1985,
+      "win": 34.7,
+      "avg": -0.82,
+      "med": -0.94,
+      "excess": -1.07,
+      "best": 227.7,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 5952,
+      "win": 42.6,
+      "avg": -0.2,
+      "med": -0.24,
+      "excess": -0.47,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Non-Energy Minerals",
+   "industry": "Precious Metals",
+   "segment": "NYSE",
+   "close": 112.32,
+   "chg": -0.77,
+   "gap": 0.53,
+   "sma5": 117.08,
+   "sma20": 104.31,
+   "sma200": 94.65,
+   "ext200": 18.67,
+   "rsi": 62.4,
+   "macd_h": 0.54,
+   "rvol": 0.56,
+   "pw": -6.8,
+   "p1": 44.09,
+   "p3": 21.97,
+   "ytd": 28.9,
+   "pos52": 77.0,
+   "hi52": 129.14,
+   "lo52": 56.62,
+   "val": 221.8,
+   "mcap": 56722.0,
+   "per": 15.0,
+   "pbr": 6.33,
+   "eps": 7.54,
+   "roe": 46.5,
+   "eqr": 66.8,
+   "div": 4.06,
+   "rev_q": 27.0,
+   "rev_ttm": 139.0,
+   "cagr5": 17.4,
+   "eps_q": 49.3,
+   "opm": 50.7,
+   "roic": 37.6,
+   "psr": 5.78,
+   "peg": null,
+   "de": 0.2,
+   "inflow": null,
+   "biz": "AngloGold Ashanti plc operates as a gold mining company in Africa, Australia, and the Americas. It explores for gold, as well as by-products, including silver and sulphuric acid. The company's flagship property includes ",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "MTDR",
+   "name": "Matador Resources Company",
+   "ticker": "NYSE:MTDR",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_trend",
+    "sig_macd",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_trend": {
+     "5": {
+      "n": 1362,
+      "win": 42.0,
+      "avg": -0.38,
+      "med": -0.47,
+      "excess": -1.84,
+      "best": 29.7,
+      "worst": -27.0
+     },
+     "1": {
+      "n": 2382,
+      "win": 44.0,
+      "avg": -0.22,
+      "med": -0.14,
+      "excess": -0.58,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3714,
+      "win": 42.5,
+      "avg": 0.01,
+      "med": -0.48,
+      "excess": -1.55,
+      "best": 327.4,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 6750,
+      "win": 44.0,
+      "avg": -0.11,
+      "med": -0.14,
+      "excess": -0.5,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1043,
+      "win": 35.3,
+      "avg": 1.35,
+      "med": -1.35,
+      "excess": 1.09,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 3120,
+      "win": 43.0,
+      "avg": 0.1,
+      "med": -0.35,
+      "excess": -0.18,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 1985,
+      "win": 34.7,
+      "avg": -0.82,
+      "med": -0.94,
+      "excess": -1.07,
+      "best": 227.7,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 5952,
+      "win": 42.6,
+      "avg": -0.2,
+      "med": -0.24,
+      "excess": -0.47,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 495,
+      "win": 37.8,
+      "avg": -0.83,
+      "med": -0.85,
+      "excess": -1.09,
+      "best": 17.8,
+      "worst": -26.3
+     },
+     "1": {
+      "n": 1487,
+      "win": 44.1,
+      "avg": -0.24,
+      "med": -0.24,
+      "excess": -0.51,
+      "best": 11.9,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Energy Minerals",
+   "industry": "Integrated Oil",
+   "segment": "NYSE",
+   "close": 58.01,
+   "chg": 2.87,
+   "gap": 2.38,
+   "sma5": 56.39,
+   "sma20": 54.18,
+   "sma200": 51.4,
+   "ext200": 12.86,
+   "rsi": 62.8,
+   "macd_h": 0.22,
+   "rvol": 0.7,
+   "pw": 0.35,
+   "p1": 19.24,
+   "p3": 3.04,
+   "ytd": 36.9,
+   "pos52": 70.0,
+   "hi52": 66.84,
+   "lo52": 37.14,
+   "val": 81.1,
+   "mcap": 7179.0,
+   "per": 10.0,
+   "pbr": 1.21,
+   "eps": 5.82,
+   "roe": 12.8,
+   "eqr": 56.5,
+   "div": 2.55,
+   "rev_q": 26.8,
+   "rev_ttm": 1.8,
+   "cagr5": 33.7,
+   "eps_q": 160.7,
+   "opm": 35.6,
+   "roic": 7.7,
+   "psr": 1.98,
+   "peg": null,
+   "de": 0.71,
+   "inflow": null,
+   "biz": "Matador Resources Company, an independent energy company, engages in the acquisition, exploration, development, and production of oil and natural gas resources in the United States. It operates through two segments, Expl",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "AVPT",
+   "name": "AvePoint, Inc.",
+   "ticker": "NASDAQ:AVPT",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_trend",
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_trend": {
+     "5": {
+      "n": 1362,
+      "win": 42.0,
+      "avg": -0.38,
+      "med": -0.47,
+      "excess": -1.84,
+      "best": 29.7,
+      "worst": -27.0
+     },
+     "1": {
+      "n": 2382,
+      "win": 44.0,
+      "avg": -0.22,
+      "med": -0.14,
+      "excess": -0.58,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3714,
+      "win": 42.5,
+      "avg": 0.01,
+      "med": -0.48,
+      "excess": -1.55,
+      "best": 327.4,
+      "worst": -73.5
+     },
+     "1": {
+      "n": 6750,
+      "win": 44.0,
+      "avg": -0.11,
+      "med": -0.14,
+      "excess": -0.5,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 1717,
+      "win": 48.6,
+      "avg": 0.11,
+      "med": -0.19,
+      "excess": -1.44,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 3095,
+      "win": 48.2,
+      "avg": 0.01,
+      "med": -0.05,
+      "excess": -0.4,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1043,
+      "win": 35.3,
+      "avg": 1.35,
+      "med": -1.35,
+      "excess": 1.09,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 3120,
+      "win": 43.0,
+      "avg": 0.1,
+      "med": -0.35,
+      "excess": -0.18,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 1985,
+      "win": 34.7,
+      "avg": -0.82,
+      "med": -0.94,
+      "excess": -1.07,
+      "best": 227.7,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 5952,
+      "win": 42.6,
+      "avg": -0.2,
+      "med": -0.24,
+      "excess": -0.47,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Packaged Software",
+   "segment": "NASDAQ",
+   "close": 13.92,
+   "chg": -0.57,
+   "gap": -0.71,
+   "sma5": 13.7,
+   "sma20": 13.35,
+   "sma200": 11.68,
+   "ext200": 19.21,
+   "rsi": 60.6,
+   "macd_h": 0.03,
+   "rvol": 0.87,
+   "pw": 4.35,
+   "p1": 9.95,
+   "p3": 24.29,
+   "ytd": 0.2,
+   "pos52": 64.0,
+   "hi52": 16.77,
+   "lo52": 8.84,
+   "val": 18.5,
+   "mcap": 2945.0,
+   "per": 44.1,
+   "pbr": 6.74,
+   "eps": 0.34,
+   "roe": 16.2,
+   "eqr": 59.0,
+   "div": 0.0,
+   "rev_q": 22.0,
+   "rev_ttm": 25.0,
+   "cagr5": 22.6,
+   "eps_q": 957.6,
+   "opm": 9.8,
+   "roic": 15.7,
+   "psr": 7.61,
+   "peg": null,
+   "de": 0.06,
+   "inflow": null,
+   "biz": "AvePoint, Inc. provides cloud-native data management software platform in North America, Europe, the Middle East, Africa, and the Asia Pacific. It also provides platform-as-a-service architecture to address critical oper",
+   "tdnet": [],
+   "llm": null
+  }
+ ],
+ "config": {
+  "MIN_VAL": 10.0,
+  "MIN_MCAP": 500.0,
+  "MIN_PRICE": 5.0,
+  "N_SHORT": 8,
+  "N_LONG": 8,
+  "N_NEWS": 4,
+  "MAX_PER_INDUSTRY": 3,
+  "COOLDOWN_DAYS": 3
+ }
+}
