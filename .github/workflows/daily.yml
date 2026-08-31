@@ -14,6 +14,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  actions: write        # 종가판 커밋 직후 brief.yml 을 workflow_dispatch 로 실행
 
 concurrency:
   group: screener
@@ -123,3 +124,10 @@ jobs:
           git add history/ volcurve/
           git commit -m "data $(TZ=Asia/Tokyo date +'%Y-%m-%d') ($HM)" || echo "no changes"
           git push
+
+      - name: 운용 데스크 브리프 실행 요청 (종가판 커밋 직후 — GitHub cron 지연과 무관)
+        if: env.HM != ''
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run brief.yml -f market="$HM" -f date="$(TZ=Asia/Tokyo date +%Y-%m-%d)"
