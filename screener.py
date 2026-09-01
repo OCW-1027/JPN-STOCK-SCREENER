@@ -825,8 +825,7 @@ def build_market(mkey, template, out_dir, generated, indices=None):
                      f'<a href="{dash_url}" target="_blank" rel="noopener" '
                      f'class="dash">{L["nav_dash"]}</a>'
                      f'<a href="../ranking/index.html">{L["nav_rank"]}</a>'
-                     f'<a href="../backtest/index.html">{L["nav_bt"]}</a>'
-                     f'<a href="../brief/index.html">{"📋 브리프" if lang == "ko" else "📋 ブリーフ"}</a>')
+                     f'<a href="../backtest/index.html">{L["nav_bt"]}</a>')
         html = template
         for k, v in {
             "__HTML_LANG__": lang, "__PAGE_TITLE__": mc["page_title"],
@@ -846,9 +845,13 @@ def build_market(mkey, template, out_dir, generated, indices=None):
             "__WL_DL__": L["wl_dl"], "__WL_HINT__": L["wl_hint"],
             "__TAB_DIS__": L["tab_dis"], "__DIS_NONE__": L["dis_none"],
             "__DIS_ALL__": L["dis_all"], "__EXTRA_NAV__": extra_nav,
+            "__FOOT_TOGGLE__": L["foot_toggle"],
             "__FOOTER__": L["foot"].format(credit=(" / Naver(실시간)" if src == "Naver" else "") + mc["data_credit"]),
         }.items():
             html = html.replace(k, v)
+        idx_l = 0 if lang == "ko" else 1
+        cfg["help"] = {k: v[idx_l] for k, v in i18n.HELP.items()}
+        cfg["helpSig"] = {k: v[idx_l] for k, v in i18n.HELP_SIG.items()}
         cfg["profilesUrl"] = prof_url
         cfg["bizLoading"] = L["biz_loading"]
         cfg["bizNone"] = L["biz_none"]

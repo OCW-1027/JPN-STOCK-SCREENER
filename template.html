@@ -164,6 +164,13 @@
   .pager button{background:var(--surface);border:1px solid var(--line);color:var(--text);
     border-radius:8px;padding:6px 13px;cursor:pointer;font-size:13px}
   .pager button:disabled{opacity:.35;cursor:default}
+  .q{display:inline-block;width:13px;height:13px;line-height:13px;margin-left:4px;
+    border-radius:50%;background:#2b3546;color:var(--muted);font-size:9.5px;text-align:center;
+    cursor:help;font-weight:700;vertical-align:1px}
+  .q:hover{background:var(--amber);color:#111}
+  #tip{position:fixed;z-index:99;max-width:280px;background:#0b1017;color:var(--text);
+    border:1px solid var(--amber);border-radius:8px;padding:9px 11px;font-size:12px;
+    line-height:1.6;box-shadow:0 6px 20px rgba(0,0,0,.5);display:none}
   .pnums{display:flex;gap:3px;align-items:center;flex-wrap:wrap}
   .pnums button{padding:6px 10px;min-width:34px;font-size:12.5px;font-family:ui-monospace,Consolas,monospace}
   .pnums button.on{border-color:var(--amber);color:var(--amber);background:var(--surface2);font-weight:700}
@@ -174,6 +181,13 @@
   .pnums input:focus{border-color:var(--amber);outline:none}
   .stat{margin-left:auto;font-size:12px}
   footer{margin-top:12px;color:var(--faint);font-size:11px;line-height:1.7}
+  footer summary{cursor:pointer;color:var(--muted);font-size:11.5px;padding:6px 0;
+    list-style:none;user-select:none}
+  footer summary::-webkit-details-marker{display:none}
+  footer summary::before{content:'▸ ';color:var(--faint)}
+  footer details[open] summary::before{content:'▾ '}
+  footer summary:hover{color:var(--amber)}
+  .footin{padding:6px 0 0;border-top:1px solid var(--line);margin-top:4px}
 
   /* mobile portrait */
   @media(max-width:760px){
@@ -269,6 +283,8 @@
   <tbody id="body"></tbody>
 </table></div>
 
+<div id="tip"></div>
+
 <div class="pager" id="mainpager">
   <button id="prev">__PREV__</button>
   <div class="pnums" id="pnums"></div>
@@ -277,7 +293,7 @@
   <span class="stat" id="stat"></span>
 </div>
 
-<footer>__FOOTER__</footer>
+<footer><details><summary>__FOOT_TOGGLE__</summary><div class="footin">__FOOTER__</div></details></footer>
 
 <script>
 const CFG = __CFG__;
@@ -296,10 +312,15 @@ const SIGS = [
   {bit:13,label:T.s_growth,k:'w'},{bit:14,label:T.s_accel,k:'w'},{bit:15,label:T.s_garp,k:'w'},
   {bit:16,label:T.s_inflow,k:'s'},
 ];
+const SIGKEY={s_spike:0,s_x5:1,s_x20:2,s_high:3,s_gap:4,s_oversold:5,s_gc:6,s_reclaim:7,
+  s_trend:8,s_macd:9,s_value:10,s_dividend:11,s_qual:12,s_growth:13,s_accel:14,s_garp:15,s_inflow:16};
 const SHORT_MASK=0b10000000000111111, LONG_MASK=0b0000001111000000,
       FUND_MASK=0b0001110000000000,  GROW_MASK=0b1110000000000000;
 
 /* g: b=always, t=technical, f=financial */
+const HELPMAP = {12:'turn',20:'mcap',29:'biz',5:'c_chg',17:'c_gap',9:'c_ext',11:'rvol',13:'c_rsi',
+  44:'c_pos52',28:'c_macd',21:'c_per',40:'c_peg',22:'c_pbr',24:'c_roe',37:'c_roic',38:'c_psr',
+  26:'c_eq',39:'c_de',34:'c_cagr',30:'c_revq',46:'c_inflow',47:'c_score'};
 const COLS = [
   {t:T.c_code,i:0,l:1,g:'b',fx:'f1'},{t:T.c_name,i:1,l:1,g:'b',fx:'f2'},
   {t:T.c_sector,i:2,l:1,g:'b'},{t:T.c_seg,i:3,l:1,g:'t'},{t:T.c_sig,i:18,l:1,g:'b'},
@@ -363,9 +384,12 @@ function buildSigChips(){
             : state.tab==='fund' ?SIGS.filter(s=>s.k==='f')
             : state.tab==='grow' ?SIGS.filter(s=>s.k==='w') : SIGS;
   $('#sigchips').innerHTML=vis.map(s=>
-    `<div class="sig ${s.k==='s'?'shrt':s.k==='g'?'lng':s.k==='f'?'fnd':'grw'} ${state.sigOn.has(s.bit)?'on':''}" data-b="${s.bit}">${s.label}</div>`).join('');
+    (()=>{const key=Object.keys(SIGKEY).find(k=>SIGKEY[k]===s.bit);
+      const tip=key&&CFG.helpSig?CFG.helpSig[key]:'';
+      return `<div class="sig ${s.k==='s'?'shrt':s.k==='g'?'lng':s.k==='f'?'fnd':'grw'} ${state.sigOn.has(s.bit)?'on':''}" data-b="${s.bit}">${s.label}${tip?`<span class="q" data-tip="${esc(tip)}">?</span>`:''}</div>`;})()).join('');
 }
 $('#sigchips').addEventListener('click',e=>{
+  if(e.target.closest('.q')) return;          // 물음표 클릭은 설명만
   const c=e.target.closest('.sig'); if(!c)return;
   const b=+c.dataset.b;
   state.sigOn.has(b)?state.sigOn.delete(b):state.sigOn.add(b);
@@ -476,7 +500,9 @@ function buildHeader(cols){
   $('#hdr').innerHTML='<th class="ck"></th>'+cols.map(c=>{
     if(c.i<0)return '<th></th>';
     const on=c.i===state.sortI;
-    return `<th class="${c.l?'l ':''}${c.fx||''} ${on?'sorted':''}" data-i="${c.i}">${c.t}${on?(state.sortD<0?' ▼':' ▲'):''}</th>`;
+    const hk=HELPMAP[c.i], tip=hk&&CFG.help&&CFG.help[hk];
+    const q=tip?`<span class="q" data-tip="${esc(tip)}">?</span>`:'';
+    return `<th class="${c.l?'l ':''}${c.fx||''} ${on?'sorted':''}" data-i="${c.i}">${c.t}${q}${on?(state.sortD<0?' ▼':' ▲'):''}</th>`;
   }).join('');
 }
 $('#hdr').addEventListener('click',e=>{
@@ -661,7 +687,36 @@ function renderIdx(){
       <span class="cg ${cls}">${cg>0?'+':''}${cg.toFixed(2)}%</span></a>`;
   }).join('');
 }
-renderIdx(); initDis(); buildStrip(); buildSigChips(); render();
+renderIdx(); /* ── 물음표 도움말 ── */
+(function(){
+  const tip=document.getElementById('tip');
+  let cur=null;
+  function show(el){
+    const t=el.getAttribute('data-tip'); if(!t)return;
+    tip.textContent=t; tip.style.display='block'; cur=t;
+    const r=el.getBoundingClientRect();
+    const x=Math.min(Math.max(8,r.left), window.innerWidth-tip.offsetWidth-10);
+    let y=r.bottom+6;
+    if(y+tip.offsetHeight>window.innerHeight-8) y=Math.max(8, r.top-tip.offsetHeight-6);
+    tip.style.left=x+'px'; tip.style.top=y+'px';
+  }
+  function hide(){ tip.style.display='none'; cur=null; }
+  // 데스크톱: 마우스 올리면 표시
+  document.addEventListener('mouseover',e=>{const el=e.target.closest('.q'); if(el) show(el);});
+  document.addEventListener('mouseout',e=>{if(e.target.closest('.q')) hide();});
+  // 모바일·데스크톱 공통: 물음표를 누르면 표시(다시 누르면 닫힘)
+  document.addEventListener('pointerdown',e=>{
+    const el=e.target.closest('.q');
+    if(el){
+      e.preventDefault(); e.stopPropagation();
+      (cur===el.getAttribute('data-tip')) ? hide() : show(el);
+    } else if(tip.style.display==='block') hide();
+  }, true);
+  window.addEventListener('scroll',hide,true);
+  window.addEventListener('resize',hide);
+})();
+
+initDis(); buildStrip(); buildSigChips(); render();
 </script>
 </body>
 </html>
