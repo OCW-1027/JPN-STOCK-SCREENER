@@ -1,0 +1,2732 @@
+{
+ "date": "2026-09-02",
+ "market": "us",
+ "generated": "2026-09-02 06:35 JST",
+ "label_ko": "🇺🇸 미국",
+ "label_ja": "🇺🇸 米国",
+ "unit_ko": "$M",
+ "unit_ja": "$M",
+ "llm_mode": "off",
+ "baserate_days": 11,
+ "universe": {
+  "total": 5184,
+  "liquid": 2234,
+  "candidates": 16,
+  "short": 8,
+  "long": 8,
+  "news": 0
+ },
+ "picks": [
+  {
+   "code": "MMED",
+   "name": "MiniMed Group, Inc.",
+   "ticker": "NASDAQ:MMED",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_high",
+    "sig_macd"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 858,
+      "win": 45.5,
+      "avg": 22.27,
+      "med": -0.1,
+      "excess": 20.58,
+      "best": 4739.4,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1366,
+      "win": 40.0,
+      "avg": 8.66,
+      "med": 0.0,
+      "excess": 7.71,
+      "best": 4202.4,
+      "worst": -58.5
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 4555,
+      "win": 38.4,
+      "avg": 2.3,
+      "med": -0.9,
+      "excess": 0.67,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 7382,
+      "win": 38.9,
+      "avg": 0.65,
+      "med": -0.43,
+      "excess": 0.09,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1454,
+      "win": 37.6,
+      "avg": 1.47,
+      "med": -1.08,
+      "excess": -0.07,
+      "best": 2307.5,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 2375,
+      "win": 40.3,
+      "avg": 1.48,
+      "med": -0.38,
+      "excess": 0.78,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 1137,
+      "win": 42.3,
+      "avg": -0.61,
+      "med": -0.14,
+      "excess": -2.25,
+      "best": 308.4,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 1724,
+      "win": 39.5,
+      "avg": -0.08,
+      "med": 0.0,
+      "excess": -0.77,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 4417,
+      "win": 40.3,
+      "avg": -0.15,
+      "med": -0.71,
+      "excess": -1.9,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 7494,
+      "win": 42.9,
+      "avg": -0.19,
+      "med": -0.19,
+      "excess": -1.07,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    }
+   },
+   "sector": "Health Technology",
+   "industry": "Medical Specialties",
+   "segment": "NASDAQ",
+   "close": 22.42,
+   "chg": 10.66,
+   "gap": 0.69,
+   "sma5": 20.36,
+   "sma20": 19.86,
+   "sma200": null,
+   "ext200": null,
+   "rsi": 71.8,
+   "macd_h": 0.02,
+   "rvol": 4.33,
+   "pw": 12.38,
+   "p1": 23.53,
+   "p3": 76.26,
+   "ytd": 21.2,
+   "pos52": 97.0,
+   "hi52": 22.74,
+   "lo52": 10.65,
+   "val": 136.2,
+   "mcap": 6308.0,
+   "per": null,
+   "pbr": 1.74,
+   "eps": null,
+   "roe": -9.6,
+   "eqr": 78.0,
+   "div": 0.0,
+   "rev_q": null,
+   "rev_ttm": null,
+   "cagr5": null,
+   "eps_q": null,
+   "opm": null,
+   "roic": -9.5,
+   "psr": 2.03,
+   "peg": null,
+   "de": 0.01,
+   "inflow": null,
+   "biz": "MiniMed Group, Inc. operates as a medical technology company that develops, manufactures, and markets medical equipment for the management of diabetes. The company offers technologies including insulin delivery devices, ",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "MDT",
+   "name": "Medtronic plc.",
+   "ticker": "NYSE:MDT",
+   "bucket": "short",
+   "score": 7.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_gap",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_trend",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 858,
+      "win": 45.5,
+      "avg": 22.27,
+      "med": -0.1,
+      "excess": 20.58,
+      "best": 4739.4,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1366,
+      "win": 40.0,
+      "avg": 8.66,
+      "med": 0.0,
+      "excess": 7.71,
+      "best": 4202.4,
+      "worst": -58.5
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 4555,
+      "win": 38.4,
+      "avg": 2.3,
+      "med": -0.9,
+      "excess": 0.67,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 7382,
+      "win": 38.9,
+      "avg": 0.65,
+      "med": -0.43,
+      "excess": 0.09,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 772,
+      "win": 39.6,
+      "avg": 5.4,
+      "med": -2.04,
+      "excess": 3.79,
+      "best": 3343.9,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1122,
+      "win": 39.1,
+      "avg": 4.99,
+      "med": -1.32,
+      "excess": 4.57,
+      "best": 4202.4,
+      "worst": -50.6
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 887,
+      "win": 40.2,
+      "avg": -0.69,
+      "med": -0.55,
+      "excess": -2.42,
+      "best": 29.7,
+      "worst": -22.0
+     },
+     "1": {
+      "n": 1575,
+      "win": 42.5,
+      "avg": -0.22,
+      "med": -0.19,
+      "excess": -1.13,
+      "best": 15.2,
+      "worst": -24.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 1469,
+      "win": 36.4,
+      "avg": 0.25,
+      "med": -0.85,
+      "excess": -1.56,
+      "best": 853.0,
+      "worst": -42.7
+     },
+     "1": {
+      "n": 2453,
+      "win": 43.0,
+      "avg": -0.13,
+      "med": -0.18,
+      "excess": -1.01,
+      "best": 355.6,
+      "worst": -30.3
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1676,
+      "win": 38.8,
+      "avg": -0.78,
+      "med": -0.74,
+      "excess": -2.49,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 2559,
+      "win": 43.9,
+      "avg": -0.23,
+      "med": -0.15,
+      "excess": -0.93,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 2974,
+      "win": 31.7,
+      "avg": -1.29,
+      "med": -1.3,
+      "excess": -2.37,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 6951,
+      "win": 40.4,
+      "avg": -0.33,
+      "med": -0.33,
+      "excess": -1.32,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Health Technology",
+   "industry": "Medical Specialties",
+   "segment": "NYSE",
+   "close": 92.04,
+   "chg": 1.53,
+   "gap": 3.7,
+   "sma5": 91.18,
+   "sma20": 90.71,
+   "sma200": 89.76,
+   "ext200": 2.53,
+   "rsi": 58.8,
+   "macd_h": -0.35,
+   "rvol": 2.62,
+   "pw": -0.25,
+   "p1": 7.86,
+   "p3": 19.35,
+   "ytd": -4.2,
+   "pos52": 57.0,
+   "hi52": 106.33,
+   "lo52": 73.31,
+   "val": 1733.6,
+   "mcap": 117809.0,
+   "per": 24.7,
+   "pbr": 2.38,
+   "eps": 3.74,
+   "roe": 9.9,
+   "eqr": 53.8,
+   "div": 3.14,
+   "rev_q": 9.9,
+   "rev_ttm": 8.4,
+   "cagr5": 3.8,
+   "eps_q": 17.6,
+   "opm": 19.3,
+   "roic": 6.4,
+   "psr": 3.26,
+   "peg": 8.1,
+   "de": 0.59,
+   "inflow": null,
+   "biz": "Medtronic plc develops, manufactures, and sells device-based medical therapies to healthcare systems, physicians, clinicians, and patients in the United States, Ireland, and internationally. It operates through three seg",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "CBIO",
+   "name": "Crescent Biopharma, Inc.",
+   "ticker": "NASDAQ:CBIO",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_trend",
+    "sig_macd"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 858,
+      "win": 45.5,
+      "avg": 22.27,
+      "med": -0.1,
+      "excess": 20.58,
+      "best": 4739.4,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1366,
+      "win": 40.0,
+      "avg": 8.66,
+      "med": 0.0,
+      "excess": 7.71,
+      "best": 4202.4,
+      "worst": -58.5
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 4555,
+      "win": 38.4,
+      "avg": 2.3,
+      "med": -0.9,
+      "excess": 0.67,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 7382,
+      "win": 38.9,
+      "avg": 0.65,
+      "med": -0.43,
+      "excess": 0.09,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1454,
+      "win": 37.6,
+      "avg": 1.47,
+      "med": -1.08,
+      "excess": -0.07,
+      "best": 2307.5,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 2375,
+      "win": 40.3,
+      "avg": 1.48,
+      "med": -0.38,
+      "excess": 0.78,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1676,
+      "win": 38.8,
+      "avg": -0.78,
+      "med": -0.74,
+      "excess": -2.49,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 2559,
+      "win": 43.9,
+      "avg": -0.23,
+      "med": -0.15,
+      "excess": -0.93,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 4417,
+      "win": 40.3,
+      "avg": -0.15,
+      "med": -0.71,
+      "excess": -1.9,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 7494,
+      "win": 42.9,
+      "avg": -0.19,
+      "med": -0.19,
+      "excess": -1.07,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    }
+   },
+   "sector": "Health Technology",
+   "industry": "Biotechnology",
+   "segment": "NASDAQ",
+   "close": 17.93,
+   "chg": 8.01,
+   "gap": -1.02,
+   "sma5": 17.61,
+   "sma20": 17.01,
+   "sma200": 15.35,
+   "ext200": 16.78,
+   "rsi": 55.9,
+   "macd_h": 0.08,
+   "rvol": 4.77,
+   "pw": 4.73,
+   "p1": 18.43,
+   "p3": 5.78,
+   "ytd": 50.0,
+   "pos52": 49.0,
+   "hi52": 27.41,
+   "lo52": 8.72,
+   "val": 14.1,
+   "mcap": 666.0,
+   "per": null,
+   "pbr": 3.12,
+   "eps": -7.65,
+   "roe": -109.2,
+   "eqr": 79.6,
+   "div": 0.0,
+   "rev_q": null,
+   "rev_ttm": null,
+   "cagr5": 1.3,
+   "eps_q": 85.6,
+   "opm": -1417.7,
+   "roic": -108.3,
+   "psr": 17.22,
+   "peg": null,
+   "de": 0.01,
+   "inflow": null,
+   "biz": "Crescent Biopharma, Inc., a biotechnology company, researches and develops cancer therapy candidates in the United States. Its pipeline includes CR-001, which is in Phase 3 clinical trial, a proprietary anti-PD-1/anti-VE",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "RAMP",
+   "name": "LiveRamp Holdings, Inc.",
+   "ticker": "NYSE:RAMP",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_high",
+    "sig_qual",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 4555,
+      "win": 38.4,
+      "avg": 2.3,
+      "med": -0.9,
+      "excess": 0.67,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 7382,
+      "win": 38.9,
+      "avg": 0.65,
+      "med": -0.43,
+      "excess": 0.09,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1454,
+      "win": 37.6,
+      "avg": 1.47,
+      "med": -1.08,
+      "excess": -0.07,
+      "best": 2307.5,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 2375,
+      "win": 40.3,
+      "avg": 1.48,
+      "med": -0.38,
+      "excess": 0.78,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 1137,
+      "win": 42.3,
+      "avg": -0.61,
+      "med": -0.14,
+      "excess": -2.25,
+      "best": 308.4,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 1724,
+      "win": 39.5,
+      "avg": -0.08,
+      "med": 0.0,
+      "excess": -0.77,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 2061,
+      "win": 45.1,
+      "avg": -0.36,
+      "med": -0.54,
+      "excess": -2.11,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 3440,
+      "win": 46.1,
+      "avg": -0.11,
+      "med": -0.16,
+      "excess": -1.01,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 2974,
+      "win": 31.7,
+      "avg": -1.29,
+      "med": -1.3,
+      "excess": -2.37,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 6951,
+      "win": 40.4,
+      "avg": -0.33,
+      "med": -0.33,
+      "excess": -1.32,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Packaged Software",
+   "segment": "NYSE",
+   "close": 37.82,
+   "chg": 0.27,
+   "gap": 0.0,
+   "sma5": 37.73,
+   "sma20": 37.73,
+   "sma200": 31.35,
+   "ext200": 20.62,
+   "rsi": 55.4,
+   "macd_h": -0.0,
+   "rvol": 1.14,
+   "pw": 0.59,
+   "p1": 0.05,
+   "p3": 0.72,
+   "ytd": 28.7,
+   "pos52": 98.0,
+   "hi52": 38.23,
+   "lo52": 21.71,
+   "val": 43.6,
+   "mcap": 2299.0,
+   "per": 15.6,
+   "pbr": 2.35,
+   "eps": 2.46,
+   "roe": 16.1,
+   "eqr": 74.8,
+   "div": 0.0,
+   "rev_q": 9.8,
+   "rev_ttm": 8.9,
+   "cagr5": 12.9,
+   "eps_q": 143.9,
+   "opm": 12.9,
+   "roic": 15.7,
+   "psr": 3.03,
+   "peg": 0.02,
+   "de": 0.03,
+   "inflow": null,
+   "biz": "LiveRamp Holdings, Inc., a technology company, operates a data collaboration platform in the United States, Europe, the Asia-Pacific, and internationally. The company operates LiveRamp Data Collaboration platform that en",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "FRVO",
+   "name": "Fervo Energy Company",
+   "ticker": "NASDAQ:FRVO",
+   "bucket": "short",
+   "score": 3.0,
+   "signals": [
+    "sig_spike",
+    "sig_x20",
+    "sig_gap"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 858,
+      "win": 45.5,
+      "avg": 22.27,
+      "med": -0.1,
+      "excess": 20.58,
+      "best": 4739.4,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1366,
+      "win": 40.0,
+      "avg": 8.66,
+      "med": 0.0,
+      "excess": 7.71,
+      "best": 4202.4,
+      "worst": -58.5
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1454,
+      "win": 37.6,
+      "avg": 1.47,
+      "med": -1.08,
+      "excess": -0.07,
+      "best": 2307.5,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 2375,
+      "win": 40.3,
+      "avg": 1.48,
+      "med": -0.38,
+      "excess": 0.78,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 772,
+      "win": 39.6,
+      "avg": 5.4,
+      "med": -2.04,
+      "excess": 3.79,
+      "best": 3343.9,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1122,
+      "win": 39.1,
+      "avg": 4.99,
+      "med": -1.32,
+      "excess": 4.57,
+      "best": 4202.4,
+      "worst": -50.6
+     }
+    }
+   },
+   "sector": "Utilities",
+   "industry": "Alternative Power Generation",
+   "segment": "NASDAQ",
+   "close": 19.75,
+   "chg": 28.41,
+   "gap": 7.09,
+   "sma5": 16.26,
+   "sma20": 19.01,
+   "sma200": null,
+   "ext200": null,
+   "rsi": 50.1,
+   "macd_h": 0.24,
+   "rvol": 8.84,
+   "pw": 26.28,
+   "p1": -12.11,
+   "p3": -47.15,
+   "ytd": -45.1,
+   "pos52": 18.0,
+   "hi52": 42.65,
+   "lo52": 14.6,
+   "val": 693.9,
+   "mcap": 5822.0,
+   "per": null,
+   "pbr": 2.08,
+   "eps": null,
+   "roe": null,
+   "eqr": 88.4,
+   "div": 0.0,
+   "rev_q": null,
+   "rev_ttm": null,
+   "cagr5": null,
+   "eps_q": null,
+   "opm": null,
+   "roic": null,
+   "psr": 42168.39,
+   "peg": null,
+   "de": 0.12,
+   "inflow": null,
+   "biz": "Fervo Energy Company builds, owns, and operates geothermal power facilities in the United States. Fervo Energy Company was incorporated in 2017 and is headquartered in Houston, Texas.",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "OHI",
+   "name": "Omega Healthcare Investors, Inc.",
+   "ticker": "NYSE:OHI",
+   "bucket": "short",
+   "score": 8.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_macd",
+    "sig_div",
+    "sig_qual",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 4555,
+      "win": 38.4,
+      "avg": 2.3,
+      "med": -0.9,
+      "excess": 0.67,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 7382,
+      "win": 38.9,
+      "avg": 0.65,
+      "med": -0.43,
+      "excess": 0.09,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1454,
+      "win": 37.6,
+      "avg": 1.47,
+      "med": -1.08,
+      "excess": -0.07,
+      "best": 2307.5,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 2375,
+      "win": 40.3,
+      "avg": 1.48,
+      "med": -0.38,
+      "excess": 0.78,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 887,
+      "win": 40.2,
+      "avg": -0.69,
+      "med": -0.55,
+      "excess": -2.42,
+      "best": 29.7,
+      "worst": -22.0
+     },
+     "1": {
+      "n": 1575,
+      "win": 42.5,
+      "avg": -0.22,
+      "med": -0.19,
+      "excess": -1.13,
+      "best": 15.2,
+      "worst": -24.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 1469,
+      "win": 36.4,
+      "avg": 0.25,
+      "med": -0.85,
+      "excess": -1.56,
+      "best": 853.0,
+      "worst": -42.7
+     },
+     "1": {
+      "n": 2453,
+      "win": 43.0,
+      "avg": -0.13,
+      "med": -0.18,
+      "excess": -1.01,
+      "best": 355.6,
+      "worst": -30.3
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 4417,
+      "win": 40.3,
+      "avg": -0.15,
+      "med": -0.71,
+      "excess": -1.9,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 7494,
+      "win": 42.9,
+      "avg": -0.19,
+      "med": -0.19,
+      "excess": -1.07,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 2015,
+      "win": 41.5,
+      "avg": -0.38,
+      "med": -0.43,
+      "excess": -2.13,
+      "best": 26.0,
+      "worst": -27.0
+     },
+     "1": {
+      "n": 3365,
+      "win": 46.3,
+      "avg": -0.04,
+      "med": -0.1,
+      "excess": -0.95,
+      "best": 10.8,
+      "worst": -30.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 2061,
+      "win": 45.1,
+      "avg": -0.36,
+      "med": -0.54,
+      "excess": -2.11,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 3440,
+      "win": 46.1,
+      "avg": -0.11,
+      "med": -0.16,
+      "excess": -1.01,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 2974,
+      "win": 31.7,
+      "avg": -1.29,
+      "med": -1.3,
+      "excess": -2.37,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 6951,
+      "win": 40.4,
+      "avg": -0.33,
+      "med": -0.33,
+      "excess": -1.32,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Real Estate Investment Trusts",
+   "segment": "NYSE",
+   "close": 46.79,
+   "chg": 2.34,
+   "gap": 0.59,
+   "sma5": 46.35,
+   "sma20": 46.79,
+   "sma200": 46.32,
+   "ext200": 1.01,
+   "rsi": 45.9,
+   "macd_h": 0.0,
+   "rvol": 1.17,
+   "pw": 0.24,
+   "p1": -6.89,
+   "p3": 5.19,
+   "ytd": 5.9,
+   "pos52": 57.0,
+   "hi52": 52.39,
+   "lo52": 39.26,
+   "val": 83.9,
+   "mcap": 14178.0,
+   "per": 16.7,
+   "pbr": 2.6,
+   "eps": 2.83,
+   "roe": 16.2,
+   "eqr": 54.0,
+   "div": 5.88,
+   "rev_q": 16.3,
+   "rev_ttm": 15.2,
+   "cagr5": 6.4,
+   "eps_q": 161.3,
+   "opm": 63.3,
+   "roic": 8.9,
+   "psr": 11.91,
+   "peg": 0.22,
+   "de": 0.75,
+   "inflow": null,
+   "biz": "Omega Healthcare Investors, Inc. is a real estate investment trust that invests in the long-term healthcare industry, primarily in skilled nursing and assisted living facilities. Its portfolio of assets is operated by a ",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "RDVT",
+   "name": "Red Violet, Inc.",
+   "ticker": "NASDAQ:RDVT",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_high",
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 4555,
+      "win": 38.4,
+      "avg": 2.3,
+      "med": -0.9,
+      "excess": 0.67,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 7382,
+      "win": 38.9,
+      "avg": 0.65,
+      "med": -0.43,
+      "excess": 0.09,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 1137,
+      "win": 42.3,
+      "avg": -0.61,
+      "med": -0.14,
+      "excess": -2.25,
+      "best": 308.4,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 1724,
+      "win": 39.5,
+      "avg": -0.08,
+      "med": 0.0,
+      "excess": -0.77,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 4417,
+      "win": 40.3,
+      "avg": -0.15,
+      "med": -0.71,
+      "excess": -1.9,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 7494,
+      "win": 42.9,
+      "avg": -0.19,
+      "med": -0.19,
+      "excess": -1.07,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 2061,
+      "win": 45.1,
+      "avg": -0.36,
+      "med": -0.54,
+      "excess": -2.11,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 3440,
+      "win": 46.1,
+      "avg": -0.11,
+      "med": -0.16,
+      "excess": -1.01,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1564,
+      "win": 33.3,
+      "avg": -0.1,
+      "med": -1.67,
+      "excess": -1.18,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 3636,
+      "win": 41.0,
+      "avg": -0.13,
+      "med": -0.46,
+      "excess": -1.11,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 2974,
+      "win": 31.7,
+      "avg": -1.29,
+      "med": -1.3,
+      "excess": -2.37,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 6951,
+      "win": 40.4,
+      "avg": -0.33,
+      "med": -0.33,
+      "excess": -1.32,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Packaged Software",
+   "segment": "NASDAQ",
+   "close": 75.56,
+   "chg": 3.28,
+   "gap": 0.74,
+   "sma5": 72.7,
+   "sma20": 70.05,
+   "sma200": 52.13,
+   "ext200": 44.95,
+   "rsi": 65.7,
+   "macd_h": 0.29,
+   "rvol": 1.58,
+   "pw": 7.5,
+   "p1": 9.86,
+   "p3": 35.07,
+   "ytd": 32.7,
+   "pos52": 99.0,
+   "hi52": 76.18,
+   "lo52": 33.4,
+   "val": 26.4,
+   "mcap": 1213.0,
+   "per": 66.9,
+   "pbr": 9.56,
+   "eps": 1.16,
+   "roe": 15.8,
+   "eqr": 88.1,
+   "div": 0.0,
+   "rev_q": 22.7,
+   "rev_ttm": 20.2,
+   "cagr5": 21.1,
+   "eps_q": 85.8,
+   "opm": 17.9,
+   "roic": 15.4,
+   "psr": 12.05,
+   "peg": 0.74,
+   "de": 0.02,
+   "inflow": null,
+   "biz": "Red Violet, Inc., an analytics and information solutions company, specializes in proprietary technologies and applying analytical capabilities to deliver identity intelligence in the United States. It offers idiCORE, an ",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "HRMY",
+   "name": "Harmony Biosciences Holdings, Inc.",
+   "ticker": "NASDAQ:HRMY",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_high",
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 4555,
+      "win": 38.4,
+      "avg": 2.3,
+      "med": -0.9,
+      "excess": 0.67,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 7382,
+      "win": 38.9,
+      "avg": 0.65,
+      "med": -0.43,
+      "excess": 0.09,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 1137,
+      "win": 42.3,
+      "avg": -0.61,
+      "med": -0.14,
+      "excess": -2.25,
+      "best": 308.4,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 1724,
+      "win": 39.5,
+      "avg": -0.08,
+      "med": 0.0,
+      "excess": -0.77,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 4417,
+      "win": 40.3,
+      "avg": -0.15,
+      "med": -0.71,
+      "excess": -1.9,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 7494,
+      "win": 42.9,
+      "avg": -0.19,
+      "med": -0.19,
+      "excess": -1.07,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 2061,
+      "win": 45.1,
+      "avg": -0.36,
+      "med": -0.54,
+      "excess": -2.11,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 3440,
+      "win": 46.1,
+      "avg": -0.11,
+      "med": -0.16,
+      "excess": -1.01,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1564,
+      "win": 33.3,
+      "avg": -0.1,
+      "med": -1.67,
+      "excess": -1.18,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 3636,
+      "win": 41.0,
+      "avg": -0.13,
+      "med": -0.46,
+      "excess": -1.11,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 2974,
+      "win": 31.7,
+      "avg": -1.29,
+      "med": -1.3,
+      "excess": -2.37,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 6951,
+      "win": 40.4,
+      "avg": -0.33,
+      "med": -0.33,
+      "excess": -1.32,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Health Technology",
+   "industry": "Pharmaceuticals: Major",
+   "segment": "NASDAQ",
+   "close": 41.25,
+   "chg": 4.75,
+   "gap": 0.0,
+   "sma5": 39.87,
+   "sma20": 39.01,
+   "sma200": 34.11,
+   "ext200": 20.95,
+   "rsi": 65.6,
+   "macd_h": 0.07,
+   "rvol": 1.5,
+   "pw": 6.98,
+   "p1": 15.03,
+   "p3": 33.45,
+   "ytd": 10.8,
+   "pos52": 98.0,
+   "hi52": 41.49,
+   "lo52": 25.52,
+   "val": 34.3,
+   "mcap": 2402.0,
+   "per": 13.4,
+   "pbr": 2.4,
+   "eps": 3.14,
+   "roe": 20.5,
+   "eqr": 70.8,
+   "div": 0.0,
+   "rev_q": 30.3,
+   "rev_ttm": 24.3,
+   "cagr5": 40.3,
+   "eps_q": 88.6,
+   "opm": 24.0,
+   "roic": 17.6,
+   "psr": 2.78,
+   "peg": null,
+   "de": 0.22,
+   "inflow": null,
+   "biz": "Harmony Biosciences Holdings, Inc., a commercial-stage pharmaceutical company, focuses on developing and commercializing therapies for patients with rare neurological diseases in the United States. The company offers WAK",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "MGY",
+   "name": "Magnolia Oil & Gas Corporation",
+   "ticker": "NYSE:MGY",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_gc",
+    "sig_trend",
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_gc": {
+     "5": {
+      "n": 887,
+      "win": 40.2,
+      "avg": -0.69,
+      "med": -0.55,
+      "excess": -2.42,
+      "best": 29.7,
+      "worst": -22.0
+     },
+     "1": {
+      "n": 1575,
+      "win": 42.5,
+      "avg": -0.22,
+      "med": -0.19,
+      "excess": -1.13,
+      "best": 15.2,
+      "worst": -24.9
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1676,
+      "win": 38.8,
+      "avg": -0.78,
+      "med": -0.74,
+      "excess": -2.49,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 2559,
+      "win": 43.9,
+      "avg": -0.23,
+      "med": -0.15,
+      "excess": -0.93,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 4417,
+      "win": 40.3,
+      "avg": -0.15,
+      "med": -0.71,
+      "excess": -1.9,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 7494,
+      "win": 42.9,
+      "avg": -0.19,
+      "med": -0.19,
+      "excess": -1.07,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 2061,
+      "win": 45.1,
+      "avg": -0.36,
+      "med": -0.54,
+      "excess": -2.11,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 3440,
+      "win": 46.1,
+      "avg": -0.11,
+      "med": -0.16,
+      "excess": -1.01,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1564,
+      "win": 33.3,
+      "avg": -0.1,
+      "med": -1.67,
+      "excess": -1.18,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 3636,
+      "win": 41.0,
+      "avg": -0.13,
+      "med": -0.46,
+      "excess": -1.11,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 2974,
+      "win": 31.7,
+      "avg": -1.29,
+      "med": -1.3,
+      "excess": -2.37,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 6951,
+      "win": 40.4,
+      "avg": -0.33,
+      "med": -0.33,
+      "excess": -1.32,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Energy Minerals",
+   "industry": "Oil & Gas Production",
+   "segment": "NYSE",
+   "close": 27.67,
+   "chg": 3.05,
+   "gap": 1.56,
+   "sma5": 26.77,
+   "sma20": 26.45,
+   "sma200": 26.45,
+   "ext200": 4.61,
+   "rsi": 58.9,
+   "macd_h": 0.04,
+   "rvol": 1.1,
+   "pw": 3.32,
+   "p1": 9.85,
+   "p3": -0.72,
+   "ytd": 26.3,
+   "pos52": 56.0,
+   "hi52": 32.76,
+   "lo52": 21.07,
+   "val": 94.2,
+   "mcap": 6557.0,
+   "per": 12.1,
+   "pbr": 2.37,
+   "eps": 2.28,
+   "roe": 20.5,
+   "eqr": 71.2,
+   "div": 2.46,
+   "rev_q": 50.1,
+   "rev_ttm": 11.4,
+   "cagr5": 19.4,
+   "eps_q": 135.0,
+   "opm": 38.2,
+   "roic": 17.2,
+   "psr": 3.91,
+   "peg": 0.62,
+   "de": 0.19,
+   "inflow": null,
+   "biz": "Magnolia Oil & Gas Corporation, an independent oil and natural gas company, engages in the acquisition, development, exploration, and production of oil, natural gas, and natural gas liquids reserves in the United States.",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "BLBD",
+   "name": "Blue Bird Corporation",
+   "ticker": "NASDAQ:BLBD",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 4555,
+      "win": 38.4,
+      "avg": 2.3,
+      "med": -0.9,
+      "excess": 0.67,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 7382,
+      "win": 38.9,
+      "avg": 0.65,
+      "med": -0.43,
+      "excess": 0.09,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 4417,
+      "win": 40.3,
+      "avg": -0.15,
+      "med": -0.71,
+      "excess": -1.9,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 7494,
+      "win": 42.9,
+      "avg": -0.19,
+      "med": -0.19,
+      "excess": -1.07,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 2061,
+      "win": 45.1,
+      "avg": -0.36,
+      "med": -0.54,
+      "excess": -2.11,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 3440,
+      "win": 46.1,
+      "avg": -0.11,
+      "med": -0.16,
+      "excess": -1.01,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1564,
+      "win": 33.3,
+      "avg": -0.1,
+      "med": -1.67,
+      "excess": -1.18,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 3636,
+      "win": 41.0,
+      "avg": -0.13,
+      "med": -0.46,
+      "excess": -1.11,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 2974,
+      "win": 31.7,
+      "avg": -1.29,
+      "med": -1.3,
+      "excess": -2.37,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 6951,
+      "win": 40.4,
+      "avg": -0.33,
+      "med": -0.33,
+      "excess": -1.32,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 743,
+      "win": 37.8,
+      "avg": -0.95,
+      "med": -0.96,
+      "excess": -2.04,
+      "best": 17.8,
+      "worst": -26.3
+     },
+     "1": {
+      "n": 1738,
+      "win": 42.8,
+      "avg": -0.3,
+      "med": -0.31,
+      "excess": -1.3,
+      "best": 11.9,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Consumer Durables",
+   "industry": "Motor Vehicles",
+   "segment": "NASDAQ",
+   "close": 60.55,
+   "chg": 4.13,
+   "gap": -0.93,
+   "sma5": 59.67,
+   "sma20": 63.2,
+   "sma200": 61.51,
+   "ext200": -1.56,
+   "rsi": 38.7,
+   "macd_h": 0.01,
+   "rvol": 1.65,
+   "pw": 1.19,
+   "p1": -20.23,
+   "p3": -16.09,
+   "ytd": 26.9,
+   "pos52": 39.0,
+   "hi52": 83.39,
+   "lo52": 46.14,
+   "val": 52.5,
+   "mcap": 1918.0,
+   "per": 7.4,
+   "pbr": 2.93,
+   "eps": 8.45,
+   "roe": 64.3,
+   "eqr": 66.0,
+   "div": 0.0,
+   "rev_q": 29.9,
+   "rev_ttm": 13.5,
+   "cagr5": 11.0,
+   "eps_q": 371.0,
+   "opm": 11.8,
+   "roic": 52.5,
+   "psr": 1.35,
+   "peg": 0.05,
+   "de": 0.18,
+   "inflow": null,
+   "biz": "Blue Bird Corporation, together with its subsidiaries, designs, engineers, manufactures, and sells school buses in the United States, Canada, and internationally. The company operates through two segments, Bus and Parts.",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "HL",
+   "name": "Hecla Mining Company",
+   "ticker": "NYSE:HL",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_gc",
+    "sig_reclaim",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_gc": {
+     "5": {
+      "n": 887,
+      "win": 40.2,
+      "avg": -0.69,
+      "med": -0.55,
+      "excess": -2.42,
+      "best": 29.7,
+      "worst": -22.0
+     },
+     "1": {
+      "n": 1575,
+      "win": 42.5,
+      "avg": -0.22,
+      "med": -0.19,
+      "excess": -1.13,
+      "best": 15.2,
+      "worst": -24.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 1469,
+      "win": 36.4,
+      "avg": 0.25,
+      "med": -0.85,
+      "excess": -1.56,
+      "best": 853.0,
+      "worst": -42.7
+     },
+     "1": {
+      "n": 2453,
+      "win": 43.0,
+      "avg": -0.13,
+      "med": -0.18,
+      "excess": -1.01,
+      "best": 355.6,
+      "worst": -30.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 2061,
+      "win": 45.1,
+      "avg": -0.36,
+      "med": -0.54,
+      "excess": -2.11,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 3440,
+      "win": 46.1,
+      "avg": -0.11,
+      "med": -0.16,
+      "excess": -1.01,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1564,
+      "win": 33.3,
+      "avg": -0.1,
+      "med": -1.67,
+      "excess": -1.18,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 3636,
+      "win": 41.0,
+      "avg": -0.13,
+      "med": -0.46,
+      "excess": -1.11,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 2974,
+      "win": 31.7,
+      "avg": -1.29,
+      "med": -1.3,
+      "excess": -2.37,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 6951,
+      "win": 40.4,
+      "avg": -0.33,
+      "med": -0.33,
+      "excess": -1.32,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Non-Energy Minerals",
+   "industry": "Precious Metals",
+   "segment": "NYSE",
+   "close": 19.11,
+   "chg": -3.82,
+   "gap": -4.58,
+   "sma5": 20.3,
+   "sma20": 19.02,
+   "sma200": 18.88,
+   "ext200": 1.23,
+   "rsi": 53.5,
+   "macd_h": -0.07,
+   "rvol": 0.85,
+   "pw": -4.21,
+   "p1": 30.44,
+   "p3": 9.64,
+   "ytd": -2.7,
+   "pos52": 41.0,
+   "hi52": 34.17,
+   "lo52": 8.75,
+   "val": 588.5,
+   "mcap": 12837.0,
+   "per": 24.5,
+   "pbr": 4.79,
+   "eps": 0.78,
+   "roe": 20.8,
+   "eqr": 62.7,
+   "div": 0.08,
+   "rev_q": 49.3,
+   "rev_ttm": 51.1,
+   "cagr5": 15.0,
+   "eps_q": 93.6,
+   "opm": 47.2,
+   "roic": 18.7,
+   "psr": 8.81,
+   "peg": 0.06,
+   "de": 0.01,
+   "inflow": null,
+   "biz": "Hecla Mining Company, together with its subsidiaries, provides precious and base metals in the United States, Canada, Japan, Korea, China, and internationally. The company mines for silver, gold, lead, and zinc concentra",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "EPD",
+   "name": "Enterprise Products Partners L.P.",
+   "ticker": "NYSE:EPD",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_trend",
+    "sig_macd",
+    "sig_div",
+    "sig_growth",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_trend": {
+     "5": {
+      "n": 1676,
+      "win": 38.8,
+      "avg": -0.78,
+      "med": -0.74,
+      "excess": -2.49,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 2559,
+      "win": 43.9,
+      "avg": -0.23,
+      "med": -0.15,
+      "excess": -0.93,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 4417,
+      "win": 40.3,
+      "avg": -0.15,
+      "med": -0.71,
+      "excess": -1.9,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 7494,
+      "win": 42.9,
+      "avg": -0.19,
+      "med": -0.19,
+      "excess": -1.07,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 2015,
+      "win": 41.5,
+      "avg": -0.38,
+      "med": -0.43,
+      "excess": -2.13,
+      "best": 26.0,
+      "worst": -27.0
+     },
+     "1": {
+      "n": 3365,
+      "win": 46.3,
+      "avg": -0.04,
+      "med": -0.1,
+      "excess": -0.95,
+      "best": 10.8,
+      "worst": -30.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1564,
+      "win": 33.3,
+      "avg": -0.1,
+      "med": -1.67,
+      "excess": -1.18,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 3636,
+      "win": 41.0,
+      "avg": -0.13,
+      "med": -0.46,
+      "excess": -1.11,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 743,
+      "win": 37.8,
+      "avg": -0.95,
+      "med": -0.96,
+      "excess": -2.04,
+      "best": 17.8,
+      "worst": -26.3
+     },
+     "1": {
+      "n": 1738,
+      "win": 42.8,
+      "avg": -0.3,
+      "med": -0.31,
+      "excess": -1.3,
+      "best": 11.9,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Industrial Services",
+   "industry": "Oil & Gas Pipelines",
+   "segment": "NYSE",
+   "close": 39.28,
+   "chg": 1.18,
+   "gap": 1.0,
+   "sma5": 39.06,
+   "sma20": 38.4,
+   "sma200": 36.19,
+   "ext200": 8.53,
+   "rsi": 60.5,
+   "macd_h": 0.07,
+   "rvol": 0.89,
+   "pw": 2.94,
+   "p1": 4.55,
+   "p3": 4.03,
+   "ytd": 22.4,
+   "pos52": 91.0,
+   "hi52": 40.16,
+   "lo52": 30.01,
+   "val": 90.1,
+   "mcap": 84824.0,
+   "per": 13.7,
+   "pbr": 2.8,
+   "eps": 2.89,
+   "roe": 21.1,
+   "eqr": 42.1,
+   "div": 5.68,
+   "rev_q": 63.7,
+   "rev_ttm": 7.4,
+   "cagr5": 14.3,
+   "eps_q": 28.5,
+   "opm": 12.5,
+   "roic": 10.2,
+   "psr": 1.65,
+   "peg": 1.8,
+   "de": 1.13,
+   "inflow": null,
+   "biz": "Enterprise Products Partners L.P. provides midstream energy services to producers and consumers of natural gas, natural gas liquids (NGLs), crude oil, petrochemicals, and refined products. It operates in four segments: N",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "WLDN",
+   "name": "Willdan Group, Inc.",
+   "ticker": "NASDAQ:WLDN",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_macd": {
+     "5": {
+      "n": 4417,
+      "win": 40.3,
+      "avg": -0.15,
+      "med": -0.71,
+      "excess": -1.9,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 7494,
+      "win": 42.9,
+      "avg": -0.19,
+      "med": -0.19,
+      "excess": -1.07,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 2061,
+      "win": 45.1,
+      "avg": -0.36,
+      "med": -0.54,
+      "excess": -2.11,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 3440,
+      "win": 46.1,
+      "avg": -0.11,
+      "med": -0.16,
+      "excess": -1.01,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1564,
+      "win": 33.3,
+      "avg": -0.1,
+      "med": -1.67,
+      "excess": -1.18,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 3636,
+      "win": 41.0,
+      "avg": -0.13,
+      "med": -0.46,
+      "excess": -1.11,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 2974,
+      "win": 31.7,
+      "avg": -1.29,
+      "med": -1.3,
+      "excess": -2.37,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 6951,
+      "win": 40.4,
+      "avg": -0.33,
+      "med": -0.33,
+      "excess": -1.32,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 743,
+      "win": 37.8,
+      "avg": -0.95,
+      "med": -0.96,
+      "excess": -2.04,
+      "best": 17.8,
+      "worst": -26.3
+     },
+     "1": {
+      "n": 1738,
+      "win": 42.8,
+      "avg": -0.3,
+      "med": -0.31,
+      "excess": -1.3,
+      "best": 11.9,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Commercial Services",
+   "industry": "Miscellaneous Commercial Services",
+   "segment": "NASDAQ",
+   "close": 87.34,
+   "chg": -0.69,
+   "gap": -0.98,
+   "sma5": 87.42,
+   "sma20": 84.32,
+   "sma200": 92.85,
+   "ext200": -5.93,
+   "rsi": 61.1,
+   "macd_h": 0.26,
+   "rvol": 0.79,
+   "pw": 3.03,
+   "p1": 24.72,
+   "p3": -8.22,
+   "ytd": -16.4,
+   "pos52": 31.0,
+   "hi52": 137.0,
+   "lo52": 64.67,
+   "val": 15.5,
+   "mcap": 1330.0,
+   "per": 20.5,
+   "pbr": 3.79,
+   "eps": 4.41,
+   "roe": 21.2,
+   "eqr": 60.0,
+   "div": 0.0,
+   "rev_q": 33.2,
+   "rev_ttm": 18.1,
+   "cagr5": 11.8,
+   "eps_q": 52.5,
+   "opm": 7.1,
+   "roic": 17.1,
+   "psr": 1.93,
+   "peg": 0.27,
+   "de": 0.25,
+   "inflow": null,
+   "biz": "Willdan Group, Inc., a technical services company, focuses on the provision of energy and infrastructure solutions in the United States and Canada. The company operates in two segments: Energy, and Engineering and Consul",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "REPX",
+   "name": "Riley Exploration Permian, Inc.",
+   "ticker": "AMEX:REPX",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_macd",
+    "sig_div",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_macd": {
+     "5": {
+      "n": 4417,
+      "win": 40.3,
+      "avg": -0.15,
+      "med": -0.71,
+      "excess": -1.9,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 7494,
+      "win": 42.9,
+      "avg": -0.19,
+      "med": -0.19,
+      "excess": -1.07,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 2015,
+      "win": 41.5,
+      "avg": -0.38,
+      "med": -0.43,
+      "excess": -2.13,
+      "best": 26.0,
+      "worst": -27.0
+     },
+     "1": {
+      "n": 3365,
+      "win": 46.3,
+      "avg": -0.04,
+      "med": -0.1,
+      "excess": -0.95,
+      "best": 10.8,
+      "worst": -30.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 2061,
+      "win": 45.1,
+      "avg": -0.36,
+      "med": -0.54,
+      "excess": -2.11,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 3440,
+      "win": 46.1,
+      "avg": -0.11,
+      "med": -0.16,
+      "excess": -1.01,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1564,
+      "win": 33.3,
+      "avg": -0.1,
+      "med": -1.67,
+      "excess": -1.18,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 3636,
+      "win": 41.0,
+      "avg": -0.13,
+      "med": -0.46,
+      "excess": -1.11,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 2974,
+      "win": 31.7,
+      "avg": -1.29,
+      "med": -1.3,
+      "excess": -2.37,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 6951,
+      "win": 40.4,
+      "avg": -0.33,
+      "med": -0.33,
+      "excess": -1.32,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Energy Minerals",
+   "industry": "Integrated Oil",
+   "segment": "AMEX",
+   "close": 39.43,
+   "chg": 1.02,
+   "gap": 0.44,
+   "sma5": 38.49,
+   "sma20": 36.87,
+   "sma200": 32.29,
+   "ext200": 22.11,
+   "rsi": 70.0,
+   "macd_h": 0.18,
+   "rvol": 1.66,
+   "pw": 6.57,
+   "p1": 18.02,
+   "p3": 8.56,
+   "ytd": 49.8,
+   "pos52": 88.0,
+   "hi52": 41.53,
+   "lo52": 24.08,
+   "val": 12.4,
+   "mcap": 874.0,
+   "per": 7.3,
+   "pbr": 1.38,
+   "eps": 5.5,
+   "roe": 19.9,
+   "eqr": 57.5,
+   "div": 4.1,
+   "rev_q": 94.2,
+   "rev_ttm": 23.2,
+   "cagr5": 164.3,
+   "eps_q": 185.4,
+   "opm": 39.4,
+   "roic": 14.0,
+   "psr": 2.13,
+   "peg": 0.36,
+   "de": 0.42,
+   "inflow": null,
+   "biz": "Riley Exploration Permian, Inc., an independent oil and natural gas company, engages in the acquisition, exploration, development, and production of oil, natural gas, and natural gas liquids in Texas and New Mexico. Its ",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "AHR",
+   "name": "American Healthcare REIT, Inc.",
+   "ticker": "NYSE:AHR",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_trend",
+    "sig_macd",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 4555,
+      "win": 38.4,
+      "avg": 2.3,
+      "med": -0.9,
+      "excess": 0.67,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 7382,
+      "win": 38.9,
+      "avg": 0.65,
+      "med": -0.43,
+      "excess": 0.09,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1454,
+      "win": 37.6,
+      "avg": 1.47,
+      "med": -1.08,
+      "excess": -0.07,
+      "best": 2307.5,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 2375,
+      "win": 40.3,
+      "avg": 1.48,
+      "med": -0.38,
+      "excess": 0.78,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1676,
+      "win": 38.8,
+      "avg": -0.78,
+      "med": -0.74,
+      "excess": -2.49,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 2559,
+      "win": 43.9,
+      "avg": -0.23,
+      "med": -0.15,
+      "excess": -0.93,
+      "best": 12.8,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 4417,
+      "win": 40.3,
+      "avg": -0.15,
+      "med": -0.71,
+      "excess": -1.9,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 7494,
+      "win": 42.9,
+      "avg": -0.19,
+      "med": -0.19,
+      "excess": -1.07,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1564,
+      "win": 33.3,
+      "avg": -0.1,
+      "med": -1.67,
+      "excess": -1.18,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 3636,
+      "win": 41.0,
+      "avg": -0.13,
+      "med": -0.46,
+      "excess": -1.11,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 2974,
+      "win": 31.7,
+      "avg": -1.29,
+      "med": -1.3,
+      "excess": -2.37,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 6951,
+      "win": 40.4,
+      "avg": -0.33,
+      "med": -0.33,
+      "excess": -1.32,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Real Estate Investment Trusts",
+   "segment": "NYSE",
+   "close": 56.54,
+   "chg": 2.41,
+   "gap": 0.33,
+   "sma5": 56.18,
+   "sma20": 55.29,
+   "sma200": 50.59,
+   "ext200": 11.76,
+   "rsi": 56.1,
+   "macd_h": 0.03,
+   "rvol": 1.31,
+   "pw": 0.8,
+   "p1": 1.87,
+   "p3": 22.46,
+   "ytd": 20.7,
+   "pos52": 88.0,
+   "hi52": 58.7,
+   "lo52": 40.0,
+   "val": 179.0,
+   "mcap": 12413.0,
+   "per": 83.9,
+   "pbr": 2.98,
+   "eps": 0.68,
+   "roe": 4.0,
+   "eqr": 63.8,
+   "div": 1.81,
+   "rev_q": 24.3,
+   "rev_ttm": 16.4,
+   "cagr5": 12.7,
+   "eps_q": 157.4,
+   "opm": 6.8,
+   "roic": 2.7,
+   "psr": 4.17,
+   "peg": null,
+   "de": 0.42,
+   "inflow": null,
+   "biz": "American Healthcare REIT, Inc., a Maryland-based self-managed REIT, owns and operates a diversified portfolio of clinical healthcare real estate across the U.S., U.K., and the Isle of Man. Its focus includes senior housi",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "CTRE",
+   "name": "CareTrust REIT, Inc.",
+   "ticker": "NYSE:CTRE",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_macd",
+    "sig_growth"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 4555,
+      "win": 38.4,
+      "avg": 2.3,
+      "med": -0.9,
+      "excess": 0.67,
+      "best": 3343.9,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 7382,
+      "win": 38.9,
+      "avg": 0.65,
+      "med": -0.43,
+      "excess": 0.09,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1454,
+      "win": 37.6,
+      "avg": 1.47,
+      "med": -1.08,
+      "excess": -0.07,
+      "best": 2307.5,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 2375,
+      "win": 40.3,
+      "avg": 1.48,
+      "med": -0.38,
+      "excess": 0.78,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 887,
+      "win": 40.2,
+      "avg": -0.69,
+      "med": -0.55,
+      "excess": -2.42,
+      "best": 29.7,
+      "worst": -22.0
+     },
+     "1": {
+      "n": 1575,
+      "win": 42.5,
+      "avg": -0.22,
+      "med": -0.19,
+      "excess": -1.13,
+      "best": 15.2,
+      "worst": -24.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 1469,
+      "win": 36.4,
+      "avg": 0.25,
+      "med": -0.85,
+      "excess": -1.56,
+      "best": 853.0,
+      "worst": -42.7
+     },
+     "1": {
+      "n": 2453,
+      "win": 43.0,
+      "avg": -0.13,
+      "med": -0.18,
+      "excess": -1.01,
+      "best": 355.6,
+      "worst": -30.3
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 4417,
+      "win": 40.3,
+      "avg": -0.15,
+      "med": -0.71,
+      "excess": -1.9,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 7494,
+      "win": 42.9,
+      "avg": -0.19,
+      "med": -0.19,
+      "excess": -1.07,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1564,
+      "win": 33.3,
+      "avg": -0.1,
+      "med": -1.67,
+      "excess": -1.18,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 3636,
+      "win": 41.0,
+      "avg": -0.13,
+      "med": -0.46,
+      "excess": -1.11,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Real Estate Investment Trusts",
+   "segment": "NYSE",
+   "close": 39.93,
+   "chg": 2.52,
+   "gap": 0.54,
+   "sma5": 39.44,
+   "sma20": 39.69,
+   "sma200": 38.94,
+   "ext200": 2.55,
+   "rsi": 49.4,
+   "macd_h": 0.02,
+   "rvol": 0.81,
+   "pw": 0.48,
+   "p1": -4.06,
+   "p3": 3.47,
+   "ytd": 10.7,
+   "pos52": 66.0,
+   "hi52": 43.62,
+   "lo52": 32.79,
+   "val": 82.2,
+   "mcap": 9435.0,
+   "per": 25.2,
+   "pbr": 2.1,
+   "eps": 1.59,
+   "roe": 9.1,
+   "eqr": 81.6,
+   "div": 3.72,
+   "rev_q": 43.5,
+   "rev_ttm": 53.1,
+   "cagr5": 21.7,
+   "eps_q": 7.1,
+   "opm": 64.9,
+   "roic": 7.0,
+   "psr": 17.1,
+   "peg": 0.76,
+   "de": 0.27,
+   "inflow": null,
+   "biz": "CareTrust REIT, Inc. is a self-administered, publicly-traded real estate investment trust engaged in the ownership, acquisition, development and leasing of skilled nursing, seniors housing and other healthcare-related pr",
+   "tdnet": [],
+   "llm": null
+  }
+ ],
+ "config": {
+  "MIN_VAL": 10.0,
+  "MIN_MCAP": 500.0,
+  "MIN_PRICE": 5.0,
+  "N_SHORT": 8,
+  "N_LONG": 8,
+  "N_NEWS": 4,
+  "MAX_PER_INDUSTRY": 3,
+  "COOLDOWN_DAYS": 3
+ }
+}
