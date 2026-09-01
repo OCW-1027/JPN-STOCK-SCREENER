@@ -1,0 +1,2303 @@
+{
+ "date": "2026-09-01",
+ "market": "kr",
+ "generated": "2026-09-01 16:35 JST",
+ "label_ko": "🇰🇷 한국",
+ "label_ja": "🇰🇷 韓国",
+ "unit_ko": "억원",
+ "unit_ja": "億ウォン",
+ "llm_mode": "off",
+ "baserate_days": 6,
+ "universe": {
+  "total": 2748,
+  "liquid": 650,
+  "candidates": 16,
+  "short": 8,
+  "long": 8,
+  "news": 0
+ },
+ "picks": [
+  {
+   "code": "403850",
+   "name": "더핑크퐁컴퍼니",
+   "ticker": "KRX:403850",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_gap",
+    "sig_value",
+    "sig_qual"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 263,
+      "win": 41.8,
+      "avg": -0.3,
+      "med": -0.88,
+      "excess": -2.32,
+      "best": 67.4,
+      "worst": -26.9
+     },
+     "1": {
+      "n": 696,
+      "win": 34.6,
+      "avg": -0.8,
+      "med": -0.96,
+      "excess": -0.41,
+      "best": 34.9,
+      "worst": -44.6
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 221,
+      "win": 43.0,
+      "avg": 5.14,
+      "med": -0.75,
+      "excess": 3.12,
+      "best": 410.6,
+      "worst": -30.7
+     },
+     "1": {
+      "n": 1904,
+      "win": 40.5,
+      "avg": 0.06,
+      "med": -0.37,
+      "excess": 0.02,
+      "best": 57.9,
+      "worst": -29.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 52,
+      "win": 44.2,
+      "avg": 7.72,
+      "med": -0.42,
+      "excess": 5.69,
+      "best": 389.8,
+      "worst": -21.0
+     },
+     "1": {
+      "n": 768,
+      "win": 42.2,
+      "avg": 0.23,
+      "med": -0.26,
+      "excess": 0.07,
+      "best": 30.0,
+      "worst": -25.6
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 138,
+      "win": 37.7,
+      "avg": 0.82,
+      "med": -2.43,
+      "excess": -1.21,
+      "best": 111.5,
+      "worst": -43.7
+     },
+     "1": {
+      "n": 528,
+      "win": 36.6,
+      "avg": -0.81,
+      "med": -1.64,
+      "excess": -1.04,
+      "best": 36.2,
+      "worst": -30.0
+     }
+    },
+    "sig_value": {
+     "1": {
+      "n": 1714,
+      "win": 53.3,
+      "avg": 0.77,
+      "med": 0.18,
+      "excess": 0.25,
+      "best": 36.2,
+      "worst": -30.0
+     }
+    },
+    "sig_qual": {
+     "1": {
+      "n": 858,
+      "win": 49.2,
+      "avg": 0.64,
+      "med": 0.0,
+      "excess": 0.12,
+      "best": 38.8,
+      "worst": -23.8
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Packaged Software",
+   "segment": "코스닥",
+   "close": 13670.0,
+   "chg": 16.64,
+   "gap": 9.9,
+   "sma5": 11996.0,
+   "sma20": 11736.0,
+   "sma200": null,
+   "ext200": null,
+   "rsi": 72.4,
+   "macd_h": 123.65,
+   "rvol": 16.19,
+   "pw": 19.49,
+   "p1": 26.81,
+   "p3": 15.36,
+   "ytd": -45.4,
+   "pos52": 8.0,
+   "hi52": 61500.0,
+   "lo52": 9500.0,
+   "val": 100.8,
+   "mcap": 1682.0,
+   "per": 4.7,
+   "pbr": 0.92,
+   "eps": 2927.71,
+   "roe": 27.0,
+   "eqr": 91.7,
+   "div": 0.0,
+   "rev_q": 3.1,
+   "rev_ttm": -3.3,
+   "cagr5": null,
+   "eps_q": null,
+   "opm": 17.6,
+   "roic": 26.7,
+   "psr": 2.09,
+   "peg": null,
+   "de": 0.01,
+   "inflow": null,
+   "biz": "[업종] 영화, 비디오물, 방송프로그램 제작 및 배급업 · [주요제품] 콘텐츠, 라이선스, MD, 기타",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "330350",
+   "name": "위더스제약",
+   "ticker": "KRX:330350",
+   "bucket": "short",
+   "score": 7.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_trend",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 263,
+      "win": 41.8,
+      "avg": -0.3,
+      "med": -0.88,
+      "excess": -2.32,
+      "best": 67.4,
+      "worst": -26.9
+     },
+     "1": {
+      "n": 696,
+      "win": 34.6,
+      "avg": -0.8,
+      "med": -0.96,
+      "excess": -0.41,
+      "best": 34.9,
+      "worst": -44.6
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 221,
+      "win": 43.0,
+      "avg": 5.14,
+      "med": -0.75,
+      "excess": 3.12,
+      "best": 410.6,
+      "worst": -30.7
+     },
+     "1": {
+      "n": 1904,
+      "win": 40.5,
+      "avg": 0.06,
+      "med": -0.37,
+      "excess": 0.02,
+      "best": 57.9,
+      "worst": -29.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 52,
+      "win": 44.2,
+      "avg": 7.72,
+      "med": -0.42,
+      "excess": 5.69,
+      "best": 389.8,
+      "worst": -21.0
+     },
+     "1": {
+      "n": 768,
+      "win": 42.2,
+      "avg": 0.23,
+      "med": -0.26,
+      "excess": 0.07,
+      "best": 30.0,
+      "worst": -25.6
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 49,
+      "win": 49.0,
+      "avg": 3.71,
+      "med": 0.0,
+      "excess": 1.68,
+      "best": 97.6,
+      "worst": -13.6
+     },
+     "1": {
+      "n": 230,
+      "win": 50.0,
+      "avg": 0.23,
+      "med": 0.06,
+      "excess": 0.15,
+      "best": 29.2,
+      "worst": -18.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 90,
+      "win": 50.0,
+      "avg": 0.97,
+      "med": 0.03,
+      "excess": -1.05,
+      "best": 22.0,
+      "worst": -20.4
+     },
+     "1": {
+      "n": 433,
+      "win": 42.7,
+      "avg": -0.21,
+      "med": -0.48,
+      "excess": -0.22,
+      "best": 23.9,
+      "worst": -30.0
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 42,
+      "win": 59.5,
+      "avg": 3.27,
+      "med": 0.89,
+      "excess": 1.25,
+      "best": 97.6,
+      "worst": -14.4
+     },
+     "1": {
+      "n": 270,
+      "win": 43.0,
+      "avg": 0.56,
+      "med": -0.29,
+      "excess": 0.62,
+      "best": 57.3,
+      "worst": -18.9
+     }
+    },
+    "sig_accel": {
+     "1": {
+      "n": 993,
+      "win": 40.6,
+      "avg": -0.1,
+      "med": -0.25,
+      "excess": -0.02,
+      "best": 30.0,
+      "worst": -18.7
+     }
+    }
+   },
+   "sector": "Health Technology",
+   "industry": "Pharmaceuticals: Major",
+   "segment": "코스닥",
+   "close": 8320.0,
+   "chg": 5.85,
+   "gap": 0.0,
+   "sma5": 8250.0,
+   "sma20": 7816.5,
+   "sma200": 7806.25,
+   "ext200": 6.58,
+   "rsi": 56.7,
+   "macd_h": -2.17,
+   "rvol": 18.61,
+   "pw": -5.67,
+   "p1": 37.52,
+   "p3": 23.08,
+   "ytd": -6.8,
+   "pos52": 40.0,
+   "hi52": 11950.0,
+   "lo52": 5910.0,
+   "val": 773.1,
+   "mcap": 1037.0,
+   "per": 13.8,
+   "pbr": 1.06,
+   "eps": 603.38,
+   "roe": 8.0,
+   "eqr": 73.2,
+   "div": 0.0,
+   "rev_q": 10.8,
+   "rev_ttm": 9.0,
+   "cagr5": 15.2,
+   "eps_q": 51.9,
+   "opm": 3.6,
+   "roic": 7.9,
+   "psr": 1.03,
+   "peg": 0.39,
+   "de": 0.18,
+   "inflow": null,
+   "biz": "[업종] 의약품 제조업 · [주요제품] 의약품 제조 및 도소매(순환기용제 등)",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "211050",
+   "name": "인카금융서비스",
+   "ticker": "KRX:211050",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_macd",
+    "sig_growth",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 263,
+      "win": 41.8,
+      "avg": -0.3,
+      "med": -0.88,
+      "excess": -2.32,
+      "best": 67.4,
+      "worst": -26.9
+     },
+     "1": {
+      "n": 696,
+      "win": 34.6,
+      "avg": -0.8,
+      "med": -0.96,
+      "excess": -0.41,
+      "best": 34.9,
+      "worst": -44.6
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 221,
+      "win": 43.0,
+      "avg": 5.14,
+      "med": -0.75,
+      "excess": 3.12,
+      "best": 410.6,
+      "worst": -30.7
+     },
+     "1": {
+      "n": 1904,
+      "win": 40.5,
+      "avg": 0.06,
+      "med": -0.37,
+      "excess": 0.02,
+      "best": 57.9,
+      "worst": -29.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 52,
+      "win": 44.2,
+      "avg": 7.72,
+      "med": -0.42,
+      "excess": 5.69,
+      "best": 389.8,
+      "worst": -21.0
+     },
+     "1": {
+      "n": 768,
+      "win": 42.2,
+      "avg": 0.23,
+      "med": -0.26,
+      "excess": 0.07,
+      "best": 30.0,
+      "worst": -25.6
+     }
+    },
+    "sig_macd": {
+     "1": {
+      "n": 1542,
+      "win": 48.2,
+      "avg": 0.48,
+      "med": 0.0,
+      "excess": 0.07,
+      "best": 92.5,
+      "worst": -27.6
+     }
+    },
+    "sig_growth": {
+     "1": {
+      "n": 565,
+      "win": 36.3,
+      "avg": -0.43,
+      "med": -0.67,
+      "excess": -0.36,
+      "best": 19.4,
+      "worst": -25.6
+     }
+    },
+    "sig_garp": {
+     "1": {
+      "n": 601,
+      "win": 38.6,
+      "avg": -0.05,
+      "med": -0.25,
+      "excess": 0.03,
+      "best": 20.2,
+      "worst": -7.1
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Insurance Brokers/Services",
+   "segment": "코스닥",
+   "close": 11310.0,
+   "chg": 5.21,
+   "gap": -0.84,
+   "sma5": 10850.0,
+   "sma20": 10720.5,
+   "sma200": 11905.75,
+   "ext200": -5.0,
+   "rsi": 62.3,
+   "macd_h": 20.03,
+   "rvol": 2.81,
+   "pw": 8.65,
+   "p1": 17.94,
+   "p3": 21.61,
+   "ytd": -12.8,
+   "pos52": 35.0,
+   "hi52": 17330.0,
+   "lo52": 8100.0,
+   "val": 18.8,
+   "mcap": 5003.0,
+   "per": 6.7,
+   "pbr": 2.3,
+   "eps": 1686.69,
+   "roe": 39.7,
+   "eqr": 32.7,
+   "div": 3.39,
+   "rev_q": 42.2,
+   "rev_ttm": 32.0,
+   "cagr5": 27.7,
+   "eps_q": 21.0,
+   "opm": 10.0,
+   "roic": 35.1,
+   "psr": 0.54,
+   "peg": 0.3,
+   "de": 0.4,
+   "inflow": null,
+   "biz": "[업종] 보험 및 연금관련 서비스업 · [주요제품] 보험 판매",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "051370",
+   "name": "인터플렉스",
+   "ticker": "KRX:051370",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_macd",
+    "sig_value"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 263,
+      "win": 41.8,
+      "avg": -0.3,
+      "med": -0.88,
+      "excess": -2.32,
+      "best": 67.4,
+      "worst": -26.9
+     },
+     "1": {
+      "n": 696,
+      "win": 34.6,
+      "avg": -0.8,
+      "med": -0.96,
+      "excess": -0.41,
+      "best": 34.9,
+      "worst": -44.6
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 221,
+      "win": 43.0,
+      "avg": 5.14,
+      "med": -0.75,
+      "excess": 3.12,
+      "best": 410.6,
+      "worst": -30.7
+     },
+     "1": {
+      "n": 1904,
+      "win": 40.5,
+      "avg": 0.06,
+      "med": -0.37,
+      "excess": 0.02,
+      "best": 57.9,
+      "worst": -29.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 52,
+      "win": 44.2,
+      "avg": 7.72,
+      "med": -0.42,
+      "excess": 5.69,
+      "best": 389.8,
+      "worst": -21.0
+     },
+     "1": {
+      "n": 768,
+      "win": 42.2,
+      "avg": 0.23,
+      "med": -0.26,
+      "excess": 0.07,
+      "best": 30.0,
+      "worst": -25.6
+     }
+    },
+    "sig_macd": {
+     "1": {
+      "n": 1542,
+      "win": 48.2,
+      "avg": 0.48,
+      "med": 0.0,
+      "excess": 0.07,
+      "best": 92.5,
+      "worst": -27.6
+     }
+    },
+    "sig_value": {
+     "1": {
+      "n": 1714,
+      "win": 53.3,
+      "avg": 0.77,
+      "med": 0.18,
+      "excess": 0.25,
+      "best": 36.2,
+      "worst": -30.0
+     }
+    }
+   },
+   "sector": "Electronic Technology",
+   "industry": "Electronic Components",
+   "segment": "코스닥",
+   "close": 6760.0,
+   "chg": 9.74,
+   "gap": 0.32,
+   "sma5": 6280.0,
+   "sma20": 6615.0,
+   "sma200": 10320.2,
+   "ext200": -34.5,
+   "rsi": 52.9,
+   "macd_h": 33.79,
+   "rvol": 3.77,
+   "pw": 15.56,
+   "p1": 11.55,
+   "p3": -33.27,
+   "ytd": -36.2,
+   "pos52": 14.0,
+   "hi52": 14670.0,
+   "lo52": 5500.0,
+   "val": 20.5,
+   "mcap": 1437.0,
+   "per": 5.1,
+   "pbr": 0.49,
+   "eps": 1326.5,
+   "roe": 10.2,
+   "eqr": 78.8,
+   "div": 0.0,
+   "rev_q": 5.9,
+   "rev_ttm": 7.7,
+   "cagr5": 7.7,
+   "eps_q": -1986.2,
+   "opm": 3.7,
+   "roic": 9.7,
+   "psr": 0.34,
+   "peg": null,
+   "de": 0.1,
+   "inflow": null,
+   "biz": "[업종] 전자부품 제조업 · [주요제품] 연성회로기판(Flexible PCB)",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "0007C0",
+   "name": "아크릴",
+   "ticker": "KRX:0007C0",
+   "bucket": "short",
+   "score": 4.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_macd"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 263,
+      "win": 41.8,
+      "avg": -0.3,
+      "med": -0.88,
+      "excess": -2.32,
+      "best": 67.4,
+      "worst": -26.9
+     },
+     "1": {
+      "n": 696,
+      "win": 34.6,
+      "avg": -0.8,
+      "med": -0.96,
+      "excess": -0.41,
+      "best": 34.9,
+      "worst": -44.6
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 221,
+      "win": 43.0,
+      "avg": 5.14,
+      "med": -0.75,
+      "excess": 3.12,
+      "best": 410.6,
+      "worst": -30.7
+     },
+     "1": {
+      "n": 1904,
+      "win": 40.5,
+      "avg": 0.06,
+      "med": -0.37,
+      "excess": 0.02,
+      "best": 57.9,
+      "worst": -29.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 52,
+      "win": 44.2,
+      "avg": 7.72,
+      "med": -0.42,
+      "excess": 5.69,
+      "best": 389.8,
+      "worst": -21.0
+     },
+     "1": {
+      "n": 768,
+      "win": 42.2,
+      "avg": 0.23,
+      "med": -0.26,
+      "excess": 0.07,
+      "best": 30.0,
+      "worst": -25.6
+     }
+    },
+    "sig_macd": {
+     "1": {
+      "n": 1542,
+      "win": 48.2,
+      "avg": 0.48,
+      "med": 0.0,
+      "excess": 0.07,
+      "best": 92.5,
+      "worst": -27.6
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Packaged Software",
+   "segment": "코스닥",
+   "close": 17190.0,
+   "chg": 14.07,
+   "gap": 0.0,
+   "sma5": 15624.0,
+   "sma20": 16393.5,
+   "sma200": null,
+   "ext200": null,
+   "rsi": 55.5,
+   "macd_h": 52.1,
+   "rvol": 22.73,
+   "pw": 14.68,
+   "p1": 22.7,
+   "p3": -43.73,
+   "ytd": -40.7,
+   "pos52": 9.0,
+   "hi52": 77000.0,
+   "lo52": 11500.0,
+   "val": 153.0,
+   "mcap": 1210.0,
+   "per": null,
+   "pbr": 3.29,
+   "eps": null,
+   "roe": null,
+   "eqr": 86.2,
+   "div": 0.0,
+   "rev_q": null,
+   "rev_ttm": null,
+   "cagr5": null,
+   "eps_q": null,
+   "opm": null,
+   "roic": null,
+   "psr": 10.37,
+   "peg": null,
+   "de": 0.14,
+   "inflow": null,
+   "biz": "[업종] 소프트웨어 개발 및 공급업 · [주요제품] 통합 인공지능 플랫폼 조나단, 의료특화 인공지능 플랫폼 나디아",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "003000",
+   "name": "부광약품",
+   "ticker": "KRX:003000",
+   "bucket": "short",
+   "score": 4.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 263,
+      "win": 41.8,
+      "avg": -0.3,
+      "med": -0.88,
+      "excess": -2.32,
+      "best": 67.4,
+      "worst": -26.9
+     },
+     "1": {
+      "n": 696,
+      "win": 34.6,
+      "avg": -0.8,
+      "med": -0.96,
+      "excess": -0.41,
+      "best": 34.9,
+      "worst": -44.6
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 221,
+      "win": 43.0,
+      "avg": 5.14,
+      "med": -0.75,
+      "excess": 3.12,
+      "best": 410.6,
+      "worst": -30.7
+     },
+     "1": {
+      "n": 1904,
+      "win": 40.5,
+      "avg": 0.06,
+      "med": -0.37,
+      "excess": 0.02,
+      "best": 57.9,
+      "worst": -29.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 52,
+      "win": 44.2,
+      "avg": 7.72,
+      "med": -0.42,
+      "excess": 5.69,
+      "best": 389.8,
+      "worst": -21.0
+     },
+     "1": {
+      "n": 768,
+      "win": 42.2,
+      "avg": 0.23,
+      "med": -0.26,
+      "excess": 0.07,
+      "best": 30.0,
+      "worst": -25.6
+     }
+    },
+    "sig_garp": {
+     "1": {
+      "n": 601,
+      "win": 38.6,
+      "avg": -0.05,
+      "med": -0.25,
+      "excess": 0.03,
+      "best": 20.2,
+      "worst": -7.1
+     }
+    }
+   },
+   "sector": "Health Technology",
+   "industry": "Pharmaceuticals: Major",
+   "segment": "코스피",
+   "close": 4380.0,
+   "chg": 4.66,
+   "gap": 0.12,
+   "sma5": 4229.0,
+   "sma20": 4294.5,
+   "sma200": 4873.9,
+   "ext200": -10.13,
+   "rsi": 57.1,
+   "macd_h": -0.46,
+   "rvol": 20.48,
+   "pw": 5.42,
+   "p1": 14.81,
+   "p3": -5.4,
+   "ytd": 15.7,
+   "pos52": 16.0,
+   "hi52": 9890.0,
+   "lo52": 3295.0,
+   "val": 209.8,
+   "mcap": 4129.0,
+   "per": 49.2,
+   "pbr": 1.29,
+   "eps": 88.97,
+   "roe": 3.0,
+   "eqr": 65.5,
+   "div": 2.98,
+   "rev_q": 33.8,
+   "rev_ttm": 20.1,
+   "cagr5": 3.4,
+   "eps_q": -84.9,
+   "opm": 5.4,
+   "roic": 2.6,
+   "psr": 1.8,
+   "peg": null,
+   "de": 0.24,
+   "inflow": null,
+   "biz": "[업종] 의약품 제조업 · [주요제품] 의약품,치약,의약부외품(부광탁스,레가론,부광안티프라그) 제조",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "064550",
+   "name": "바이오니아",
+   "ticker": "KRX:064550",
+   "bucket": "short",
+   "score": 4.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_gap",
+    "sig_reclaim"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 263,
+      "win": 41.8,
+      "avg": -0.3,
+      "med": -0.88,
+      "excess": -2.32,
+      "best": 67.4,
+      "worst": -26.9
+     },
+     "1": {
+      "n": 696,
+      "win": 34.6,
+      "avg": -0.8,
+      "med": -0.96,
+      "excess": -0.41,
+      "best": 34.9,
+      "worst": -44.6
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 221,
+      "win": 43.0,
+      "avg": 5.14,
+      "med": -0.75,
+      "excess": 3.12,
+      "best": 410.6,
+      "worst": -30.7
+     },
+     "1": {
+      "n": 1904,
+      "win": 40.5,
+      "avg": 0.06,
+      "med": -0.37,
+      "excess": 0.02,
+      "best": 57.9,
+      "worst": -29.0
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 138,
+      "win": 37.7,
+      "avg": 0.82,
+      "med": -2.43,
+      "excess": -1.21,
+      "best": 111.5,
+      "worst": -43.7
+     },
+     "1": {
+      "n": 528,
+      "win": 36.6,
+      "avg": -0.81,
+      "med": -1.64,
+      "excess": -1.04,
+      "best": 36.2,
+      "worst": -30.0
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 90,
+      "win": 50.0,
+      "avg": 0.97,
+      "med": 0.03,
+      "excess": -1.05,
+      "best": 22.0,
+      "worst": -20.4
+     },
+     "1": {
+      "n": 433,
+      "win": 42.7,
+      "avg": -0.21,
+      "med": -0.48,
+      "excess": -0.22,
+      "best": 23.9,
+      "worst": -30.0
+     }
+    }
+   },
+   "sector": "Health Technology",
+   "industry": "Biotechnology",
+   "segment": "코스닥",
+   "close": 11000.0,
+   "chg": 25.14,
+   "gap": 3.07,
+   "sma5": 8922.0,
+   "sma20": 8040.5,
+   "sma200": 10569.5,
+   "ext200": 4.07,
+   "rsi": 75.4,
+   "macd_h": 187.83,
+   "rvol": 8.33,
+   "pw": 28.65,
+   "p1": 82.42,
+   "p3": 31.26,
+   "ytd": -14.0,
+   "pos52": 54.0,
+   "hi52": 15640.0,
+   "lo52": 5470.0,
+   "val": 605.3,
+   "mcap": 2269.0,
+   "per": null,
+   "pbr": 1.39,
+   "eps": -258.54,
+   "roe": -3.2,
+   "eqr": 61.3,
+   "div": 0.0,
+   "rev_q": 8.9,
+   "rev_ttm": 15.9,
+   "cagr5": 9.8,
+   "eps_q": -75.7,
+   "opm": -0.1,
+   "roic": -2.5,
+   "psr": 0.86,
+   "peg": null,
+   "de": 0.52,
+   "inflow": null,
+   "biz": "[업종] 의료용품 및 기타 의약 관련제품 제조업 · [주요제품] 합성유전자,시약및유전자분석장비",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "307750",
+   "name": "국전",
+   "ticker": "KRX:307750",
+   "bucket": "short",
+   "score": 4.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_growth"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 263,
+      "win": 41.8,
+      "avg": -0.3,
+      "med": -0.88,
+      "excess": -2.32,
+      "best": 67.4,
+      "worst": -26.9
+     },
+     "1": {
+      "n": 696,
+      "win": 34.6,
+      "avg": -0.8,
+      "med": -0.96,
+      "excess": -0.41,
+      "best": 34.9,
+      "worst": -44.6
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 221,
+      "win": 43.0,
+      "avg": 5.14,
+      "med": -0.75,
+      "excess": 3.12,
+      "best": 410.6,
+      "worst": -30.7
+     },
+     "1": {
+      "n": 1904,
+      "win": 40.5,
+      "avg": 0.06,
+      "med": -0.37,
+      "excess": 0.02,
+      "best": 57.9,
+      "worst": -29.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 52,
+      "win": 44.2,
+      "avg": 7.72,
+      "med": -0.42,
+      "excess": 5.69,
+      "best": 389.8,
+      "worst": -21.0
+     },
+     "1": {
+      "n": 768,
+      "win": 42.2,
+      "avg": 0.23,
+      "med": -0.26,
+      "excess": 0.07,
+      "best": 30.0,
+      "worst": -25.6
+     }
+    },
+    "sig_growth": {
+     "1": {
+      "n": 565,
+      "win": 36.3,
+      "avg": -0.43,
+      "med": -0.67,
+      "excess": -0.36,
+      "best": 19.4,
+      "worst": -25.6
+     }
+    }
+   },
+   "sector": "Process Industries",
+   "industry": "Chemicals: Specialty",
+   "segment": "코스닥",
+   "close": 2380.0,
+   "chg": 5.54,
+   "gap": -0.89,
+   "sma5": 2293.0,
+   "sma20": 2229.75,
+   "sma200": 3187.12,
+   "ext200": -25.32,
+   "rsi": 59.4,
+   "macd_h": 18.47,
+   "rvol": 6.55,
+   "pw": 12.0,
+   "p1": 29.91,
+   "p3": -10.02,
+   "ytd": -29.3,
+   "pos52": 16.0,
+   "hi52": 6000.0,
+   "lo52": 1700.0,
+   "val": 58.7,
+   "mcap": 1217.0,
+   "per": null,
+   "pbr": 1.14,
+   "eps": -44.83,
+   "roe": -1.7,
+   "eqr": 56.0,
+   "div": 0.0,
+   "rev_q": 21.4,
+   "rev_ttm": -0.4,
+   "cagr5": 10.2,
+   "eps_q": null,
+   "opm": 1.7,
+   "roic": -1.5,
+   "psr": 0.91,
+   "peg": -0.03,
+   "de": 0.36,
+   "inflow": null,
+   "biz": "[업종] 의약품 제조업 · [주요제품] 기업 인수 및 합병",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "003160",
+   "name": "디아이",
+   "ticker": "KRX:003160",
+   "bucket": "long",
+   "score": 7.0,
+   "signals": [
+    "sig_spike",
+    "sig_gap",
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 263,
+      "win": 41.8,
+      "avg": -0.3,
+      "med": -0.88,
+      "excess": -2.32,
+      "best": 67.4,
+      "worst": -26.9
+     },
+     "1": {
+      "n": 696,
+      "win": 34.6,
+      "avg": -0.8,
+      "med": -0.96,
+      "excess": -0.41,
+      "best": 34.9,
+      "worst": -44.6
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 138,
+      "win": 37.7,
+      "avg": 0.82,
+      "med": -2.43,
+      "excess": -1.21,
+      "best": 111.5,
+      "worst": -43.7
+     },
+     "1": {
+      "n": 528,
+      "win": 36.6,
+      "avg": -0.81,
+      "med": -1.64,
+      "excess": -1.04,
+      "best": 36.2,
+      "worst": -30.0
+     }
+    },
+    "sig_macd": {
+     "1": {
+      "n": 1542,
+      "win": 48.2,
+      "avg": 0.48,
+      "med": 0.0,
+      "excess": 0.07,
+      "best": 92.5,
+      "worst": -27.6
+     }
+    },
+    "sig_qual": {
+     "1": {
+      "n": 858,
+      "win": 49.2,
+      "avg": 0.64,
+      "med": 0.0,
+      "excess": 0.12,
+      "best": 38.8,
+      "worst": -23.8
+     }
+    },
+    "sig_growth": {
+     "1": {
+      "n": 565,
+      "win": 36.3,
+      "avg": -0.43,
+      "med": -0.67,
+      "excess": -0.36,
+      "best": 19.4,
+      "worst": -25.6
+     }
+    },
+    "sig_accel": {
+     "1": {
+      "n": 993,
+      "win": 40.6,
+      "avg": -0.1,
+      "med": -0.25,
+      "excess": -0.02,
+      "best": 30.0,
+      "worst": -18.7
+     }
+    },
+    "sig_garp": {
+     "1": {
+      "n": 601,
+      "win": 38.6,
+      "avg": -0.05,
+      "med": -0.25,
+      "excess": 0.03,
+      "best": 20.2,
+      "worst": -7.1
+     }
+    }
+   },
+   "sector": "Electronic Technology",
+   "industry": "Electronic Equipment/Instruments",
+   "segment": "코스피",
+   "close": 26650.0,
+   "chg": 10.12,
+   "gap": 7.44,
+   "sma5": 25010.0,
+   "sma20": 24630.0,
+   "sma200": 27752.75,
+   "ext200": -3.97,
+   "rsi": 59.9,
+   "macd_h": 97.75,
+   "rvol": 6.64,
+   "pw": 19.78,
+   "p1": 48.72,
+   "p3": 5.75,
+   "ytd": 24.8,
+   "pos52": 48.0,
+   "hi52": 41700.0,
+   "lo52": 12610.0,
+   "val": 244.8,
+   "mcap": 5493.0,
+   "per": 25.2,
+   "pbr": 3.45,
+   "eps": 1065.52,
+   "roe": 15.6,
+   "eqr": 59.3,
+   "div": 1.03,
+   "rev_q": 41.4,
+   "rev_ttm": 31.7,
+   "cagr5": 21.7,
+   "eps_q": 307.0,
+   "opm": 15.3,
+   "roic": 13.3,
+   "psr": 1.6,
+   "peg": 0.25,
+   "de": 0.46,
+   "inflow": null,
+   "biz": "[업종] 측정, 시험, 항해, 제어 및 기타 정밀기기 제조업; 광학기기 제외 · [주요제품] 반도체검사장비,전자부품,레저용품,석제품 제조,판매,오파,부동산임대업",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "000210",
+   "name": "DL",
+   "ticker": "KRX:000210",
+   "bucket": "long",
+   "score": 7.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_trend",
+    "sig_macd",
+    "sig_value",
+    "sig_growth",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 221,
+      "win": 43.0,
+      "avg": 5.14,
+      "med": -0.75,
+      "excess": 3.12,
+      "best": 410.6,
+      "worst": -30.7
+     },
+     "1": {
+      "n": 1904,
+      "win": 40.5,
+      "avg": 0.06,
+      "med": -0.37,
+      "excess": 0.02,
+      "best": 57.9,
+      "worst": -29.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 52,
+      "win": 44.2,
+      "avg": 7.72,
+      "med": -0.42,
+      "excess": 5.69,
+      "best": 389.8,
+      "worst": -21.0
+     },
+     "1": {
+      "n": 768,
+      "win": 42.2,
+      "avg": 0.23,
+      "med": -0.26,
+      "excess": 0.07,
+      "best": 30.0,
+      "worst": -25.6
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 42,
+      "win": 59.5,
+      "avg": 3.27,
+      "med": 0.89,
+      "excess": 1.25,
+      "best": 97.6,
+      "worst": -14.4
+     },
+     "1": {
+      "n": 270,
+      "win": 43.0,
+      "avg": 0.56,
+      "med": -0.29,
+      "excess": 0.62,
+      "best": 57.3,
+      "worst": -18.9
+     }
+    },
+    "sig_macd": {
+     "1": {
+      "n": 1542,
+      "win": 48.2,
+      "avg": 0.48,
+      "med": 0.0,
+      "excess": 0.07,
+      "best": 92.5,
+      "worst": -27.6
+     }
+    },
+    "sig_value": {
+     "1": {
+      "n": 1714,
+      "win": 53.3,
+      "avg": 0.77,
+      "med": 0.18,
+      "excess": 0.25,
+      "best": 36.2,
+      "worst": -30.0
+     }
+    },
+    "sig_growth": {
+     "1": {
+      "n": 565,
+      "win": 36.3,
+      "avg": -0.43,
+      "med": -0.67,
+      "excess": -0.36,
+      "best": 19.4,
+      "worst": -25.6
+     }
+    },
+    "sig_garp": {
+     "1": {
+      "n": 601,
+      "win": 38.6,
+      "avg": -0.05,
+      "med": -0.25,
+      "excess": 0.03,
+      "best": 20.2,
+      "worst": -7.1
+     }
+    }
+   },
+   "sector": "Process Industries",
+   "industry": "Chemicals: Specialty",
+   "segment": "코스피",
+   "close": 50600.0,
+   "chg": 0.4,
+   "gap": -0.99,
+   "sma5": 50130.0,
+   "sma20": 50052.5,
+   "sma200": 48617.75,
+   "ext200": 4.08,
+   "rsi": 55.3,
+   "macd_h": 53.27,
+   "rvol": 1.7,
+   "pw": 6.86,
+   "p1": 19.06,
+   "p3": -0.78,
+   "ytd": 34.9,
+   "pos52": 38.0,
+   "hi52": 77700.0,
+   "lo52": 33900.0,
+   "val": 38.7,
+   "mcap": 10948.0,
+   "per": 8.1,
+   "pbr": 0.27,
+   "eps": 6236.74,
+   "roe": 3.4,
+   "eqr": 43.5,
+   "div": 0.0,
+   "rev_q": 26.2,
+   "rev_ttm": 2.6,
+   "cagr5": 27.7,
+   "eps_q": null,
+   "opm": 8.8,
+   "roic": 1.7,
+   "psr": 0.21,
+   "peg": null,
+   "de": 1.36,
+   "inflow": null,
+   "biz": "[업종] 기초 화학물질 제조업 · [주요제품] 지주회사",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "011780",
+   "name": "금호석유화학",
+   "ticker": "KRX:011780",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_reclaim",
+    "sig_macd",
+    "sig_value",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 221,
+      "win": 43.0,
+      "avg": 5.14,
+      "med": -0.75,
+      "excess": 3.12,
+      "best": 410.6,
+      "worst": -30.7
+     },
+     "1": {
+      "n": 1904,
+      "win": 40.5,
+      "avg": 0.06,
+      "med": -0.37,
+      "excess": 0.02,
+      "best": 57.9,
+      "worst": -29.0
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 90,
+      "win": 50.0,
+      "avg": 0.97,
+      "med": 0.03,
+      "excess": -1.05,
+      "best": 22.0,
+      "worst": -20.4
+     },
+     "1": {
+      "n": 433,
+      "win": 42.7,
+      "avg": -0.21,
+      "med": -0.48,
+      "excess": -0.22,
+      "best": 23.9,
+      "worst": -30.0
+     }
+    },
+    "sig_macd": {
+     "1": {
+      "n": 1542,
+      "win": 48.2,
+      "avg": 0.48,
+      "med": 0.0,
+      "excess": 0.07,
+      "best": 92.5,
+      "worst": -27.6
+     }
+    },
+    "sig_value": {
+     "1": {
+      "n": 1714,
+      "win": 53.3,
+      "avg": 0.77,
+      "med": 0.18,
+      "excess": 0.25,
+      "best": 36.2,
+      "worst": -30.0
+     }
+    },
+    "sig_accel": {
+     "1": {
+      "n": 993,
+      "win": 40.6,
+      "avg": -0.1,
+      "med": -0.25,
+      "excess": -0.02,
+      "best": 30.0,
+      "worst": -18.7
+     }
+    },
+    "sig_garp": {
+     "1": {
+      "n": 601,
+      "win": 38.6,
+      "avg": -0.05,
+      "med": -0.25,
+      "excess": 0.03,
+      "best": 20.2,
+      "worst": -7.1
+     }
+    }
+   },
+   "sector": "Process Industries",
+   "industry": "Chemicals: Specialty",
+   "segment": "코스피",
+   "close": 130100.0,
+   "chg": 2.04,
+   "gap": -1.25,
+   "sma5": 126220.0,
+   "sma20": 124250.0,
+   "sma200": 127916.0,
+   "ext200": 1.71,
+   "rsi": 59.9,
+   "macd_h": 529.01,
+   "rvol": 1.07,
+   "pw": 9.33,
+   "p1": 12.93,
+   "p3": 0.77,
+   "ytd": 8.8,
+   "pos52": 46.0,
+   "hi52": 162300.0,
+   "lo52": 102800.0,
+   "val": 142.2,
+   "mcap": 29105.0,
+   "per": 6.6,
+   "pbr": 0.49,
+   "eps": 19789.03,
+   "roe": 7.9,
+   "eqr": 75.4,
+   "div": 1.35,
+   "rev_q": 27.9,
+   "rev_ttm": -0.5,
+   "cagr5": 7.5,
+   "eps_q": 427.0,
+   "opm": 6.6,
+   "roic": 7.3,
+   "psr": 0.48,
+   "peg": 0.07,
+   "de": 0.13,
+   "inflow": null,
+   "biz": "합성고무 SBR(스티렌부타디엔러버),BR(폴리부타디엔러버),합성수지,BD,라텍스 제조,도소매",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "031330",
+   "name": "에스에이엠티",
+   "ticker": "KRX:031330",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_macd": {
+     "1": {
+      "n": 1542,
+      "win": 48.2,
+      "avg": 0.48,
+      "med": 0.0,
+      "excess": 0.07,
+      "best": 92.5,
+      "worst": -27.6
+     }
+    },
+    "sig_qual": {
+     "1": {
+      "n": 858,
+      "win": 49.2,
+      "avg": 0.64,
+      "med": 0.0,
+      "excess": 0.12,
+      "best": 38.8,
+      "worst": -23.8
+     }
+    },
+    "sig_growth": {
+     "1": {
+      "n": 565,
+      "win": 36.3,
+      "avg": -0.43,
+      "med": -0.67,
+      "excess": -0.36,
+      "best": 19.4,
+      "worst": -25.6
+     }
+    },
+    "sig_accel": {
+     "1": {
+      "n": 993,
+      "win": 40.6,
+      "avg": -0.1,
+      "med": -0.25,
+      "excess": -0.02,
+      "best": 30.0,
+      "worst": -18.7
+     }
+    },
+    "sig_garp": {
+     "1": {
+      "n": 601,
+      "win": 38.6,
+      "avg": -0.05,
+      "med": -0.25,
+      "excess": 0.03,
+      "best": 20.2,
+      "worst": -7.1
+     }
+    }
+   },
+   "sector": "Electronic Technology",
+   "industry": "Semiconductors",
+   "segment": "코스닥",
+   "close": 8100.0,
+   "chg": 0.0,
+   "gap": 0.0,
+   "sma5": 8110.0,
+   "sma20": 9035.0,
+   "sma200": 7605.82,
+   "ext200": 6.5,
+   "rsi": 40.9,
+   "macd_h": 6.81,
+   "rvol": 0.66,
+   "pw": 5.74,
+   "p1": -4.14,
+   "p3": -44.6,
+   "ytd": 95.2,
+   "pos52": 31.0,
+   "hi52": 19950.0,
+   "lo52": 2880.0,
+   "val": 34.3,
+   "mcap": 7901.0,
+   "per": 2.6,
+   "pbr": 1.09,
+   "eps": 3136.28,
+   "roe": 53.4,
+   "eqr": 60.7,
+   "div": 2.82,
+   "rev_q": 134.9,
+   "rev_ttm": 61.5,
+   "cagr5": 24.8,
+   "eps_q": 1932.1,
+   "opm": 8.8,
+   "roic": 53.4,
+   "psr": 0.21,
+   "peg": 0.01,
+   "de": 1.21,
+   "inflow": null,
+   "biz": "[업종] 기계장비 및 관련 물품 도매업 · [주요제품] 반도체(메모리,비메모리), CPU, TFT-LCD, 네트웍 장비, PC 및 주변기기, 이동통신수탁사업",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "077500",
+   "name": "유니퀘스트",
+   "ticker": "KRX:077500",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_trend",
+    "sig_value",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_trend": {
+     "5": {
+      "n": 42,
+      "win": 59.5,
+      "avg": 3.27,
+      "med": 0.89,
+      "excess": 1.25,
+      "best": 97.6,
+      "worst": -14.4
+     },
+     "1": {
+      "n": 270,
+      "win": 43.0,
+      "avg": 0.56,
+      "med": -0.29,
+      "excess": 0.62,
+      "best": 57.3,
+      "worst": -18.9
+     }
+    },
+    "sig_value": {
+     "1": {
+      "n": 1714,
+      "win": 53.3,
+      "avg": 0.77,
+      "med": 0.18,
+      "excess": 0.25,
+      "best": 36.2,
+      "worst": -30.0
+     }
+    },
+    "sig_growth": {
+     "1": {
+      "n": 565,
+      "win": 36.3,
+      "avg": -0.43,
+      "med": -0.67,
+      "excess": -0.36,
+      "best": 19.4,
+      "worst": -25.6
+     }
+    },
+    "sig_accel": {
+     "1": {
+      "n": 993,
+      "win": 40.6,
+      "avg": -0.1,
+      "med": -0.25,
+      "excess": -0.02,
+      "best": 30.0,
+      "worst": -18.7
+     }
+    },
+    "sig_garp": {
+     "1": {
+      "n": 601,
+      "win": 38.6,
+      "avg": -0.05,
+      "med": -0.25,
+      "excess": 0.03,
+      "best": 20.2,
+      "worst": -7.1
+     }
+    }
+   },
+   "sector": "Distribution Services",
+   "industry": "Electronics Distributors",
+   "segment": "코스피",
+   "close": 7660.0,
+   "chg": -3.65,
+   "gap": -0.38,
+   "sma5": 7398.0,
+   "sma20": 6774.0,
+   "sma200": 6493.2,
+   "ext200": 17.97,
+   "rsi": 60.6,
+   "macd_h": 80.02,
+   "rvol": 0.7,
+   "pw": 11.82,
+   "p1": 69.84,
+   "p3": 4.36,
+   "ytd": 16.1,
+   "pos52": 66.0,
+   "hi52": 9520.0,
+   "lo52": 4075.0,
+   "val": 13.2,
+   "mcap": 1717.0,
+   "per": 5.5,
+   "pbr": 0.6,
+   "eps": 1400.8,
+   "roe": 12.0,
+   "eqr": 64.6,
+   "div": 2.77,
+   "rev_q": 31.2,
+   "rev_ttm": 9.1,
+   "cagr5": 12.6,
+   "eps_q": 123.8,
+   "opm": 5.9,
+   "roic": 11.9,
+   "psr": 0.23,
+   "peg": 0.01,
+   "de": 1.01,
+   "inflow": null,
+   "biz": "[업종] 기계장비 및 관련 물품 도매업 · [주요제품] 반도체직접회로 도매,무역,제조",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "237880",
+   "name": "클리오",
+   "ticker": "KRX:237880",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_gc",
+    "sig_trend",
+    "sig_macd",
+    "sig_value",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_gc": {
+     "5": {
+      "n": 49,
+      "win": 49.0,
+      "avg": 3.71,
+      "med": 0.0,
+      "excess": 1.68,
+      "best": 97.6,
+      "worst": -13.6
+     },
+     "1": {
+      "n": 230,
+      "win": 50.0,
+      "avg": 0.23,
+      "med": 0.06,
+      "excess": 0.15,
+      "best": 29.2,
+      "worst": -18.9
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 42,
+      "win": 59.5,
+      "avg": 3.27,
+      "med": 0.89,
+      "excess": 1.25,
+      "best": 97.6,
+      "worst": -14.4
+     },
+     "1": {
+      "n": 270,
+      "win": 43.0,
+      "avg": 0.56,
+      "med": -0.29,
+      "excess": 0.62,
+      "best": 57.3,
+      "worst": -18.9
+     }
+    },
+    "sig_macd": {
+     "1": {
+      "n": 1542,
+      "win": 48.2,
+      "avg": 0.48,
+      "med": 0.0,
+      "excess": 0.07,
+      "best": 92.5,
+      "worst": -27.6
+     }
+    },
+    "sig_value": {
+     "1": {
+      "n": 1714,
+      "win": 53.3,
+      "avg": 0.77,
+      "med": 0.18,
+      "excess": 0.25,
+      "best": 36.2,
+      "worst": -30.0
+     }
+    },
+    "sig_accel": {
+     "1": {
+      "n": 993,
+      "win": 40.6,
+      "avg": -0.1,
+      "med": -0.25,
+      "excess": -0.02,
+      "best": 30.0,
+      "worst": -18.7
+     }
+    }
+   },
+   "sector": "Consumer Non-Durables",
+   "industry": "Household/Personal Care",
+   "segment": "코스닥",
+   "close": 13240.0,
+   "chg": -1.19,
+   "gap": 0.0,
+   "sma5": 13138.0,
+   "sma20": 12443.0,
+   "sma200": 12227.65,
+   "ext200": 8.28,
+   "rsi": 59.6,
+   "macd_h": 22.62,
+   "rvol": 0.49,
+   "pw": 1.85,
+   "p1": 26.46,
+   "p3": 22.03,
+   "ytd": -0.2,
+   "pos52": 68.0,
+   "hi52": 15330.0,
+   "lo52": 8800.0,
+   "val": 11.2,
+   "mcap": 2348.0,
+   "per": 8.0,
+   "pbr": 0.89,
+   "eps": 1680.58,
+   "roe": 11.9,
+   "eqr": 82.4,
+   "div": 1.86,
+   "rev_q": 5.7,
+   "rev_ttm": -0.2,
+   "cagr5": 8.6,
+   "eps_q": 562.4,
+   "opm": 8.9,
+   "roic": 11.7,
+   "psr": 0.71,
+   "peg": 0.07,
+   "de": 0.03,
+   "inflow": null,
+   "biz": "[업종] 기타 화학제품 제조업 · [주요제품] 색조화장품, 기초화장품",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "175330",
+   "name": "JB금융지주",
+   "ticker": "KRX:175330",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_trend",
+    "sig_macd",
+    "sig_value",
+    "sig_div"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 221,
+      "win": 43.0,
+      "avg": 5.14,
+      "med": -0.75,
+      "excess": 3.12,
+      "best": 410.6,
+      "worst": -30.7
+     },
+     "1": {
+      "n": 1904,
+      "win": 40.5,
+      "avg": 0.06,
+      "med": -0.37,
+      "excess": 0.02,
+      "best": 57.9,
+      "worst": -29.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 52,
+      "win": 44.2,
+      "avg": 7.72,
+      "med": -0.42,
+      "excess": 5.69,
+      "best": 389.8,
+      "worst": -21.0
+     },
+     "1": {
+      "n": 768,
+      "win": 42.2,
+      "avg": 0.23,
+      "med": -0.26,
+      "excess": 0.07,
+      "best": 30.0,
+      "worst": -25.6
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 42,
+      "win": 59.5,
+      "avg": 3.27,
+      "med": 0.89,
+      "excess": 1.25,
+      "best": 97.6,
+      "worst": -14.4
+     },
+     "1": {
+      "n": 270,
+      "win": 43.0,
+      "avg": 0.56,
+      "med": -0.29,
+      "excess": 0.62,
+      "best": 57.3,
+      "worst": -18.9
+     }
+    },
+    "sig_macd": {
+     "1": {
+      "n": 1542,
+      "win": 48.2,
+      "avg": 0.48,
+      "med": 0.0,
+      "excess": 0.07,
+      "best": 92.5,
+      "worst": -27.6
+     }
+    },
+    "sig_value": {
+     "1": {
+      "n": 1714,
+      "win": 53.3,
+      "avg": 0.77,
+      "med": 0.18,
+      "excess": 0.25,
+      "best": 36.2,
+      "worst": -30.0
+     }
+    },
+    "sig_div": {
+     "1": {
+      "n": 1011,
+      "win": 54.0,
+      "avg": 0.72,
+      "med": 0.22,
+      "excess": 0.18,
+      "best": 30.0,
+      "worst": -13.9
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Major Banks",
+   "segment": "코스피",
+   "close": 29250.0,
+   "chg": 3.17,
+   "gap": -1.06,
+   "sma5": 28490.0,
+   "sma20": 27997.5,
+   "sma200": 27028.0,
+   "ext200": 8.22,
+   "rsi": 58.9,
+   "macd_h": 92.69,
+   "rvol": 1.17,
+   "pw": 8.33,
+   "p1": 8.74,
+   "p3": 21.88,
+   "ytd": 14.0,
+   "pos52": 45.0,
+   "hi52": 38500.0,
+   "lo52": 21700.0,
+   "val": 88.7,
+   "mcap": 52172.0,
+   "per": 7.8,
+   "pbr": 0.98,
+   "eps": 3750.84,
+   "roe": 13.1,
+   "eqr": 11.5,
+   "div": 4.44,
+   "rev_q": 6.1,
+   "rev_ttm": 1.6,
+   "cagr5": 12.7,
+   "eps_q": 8.9,
+   "opm": 37.0,
+   "roic": 5.2,
+   "psr": 2.13,
+   "peg": 0.83,
+   "de": 3.41,
+   "inflow": null,
+   "biz": "금융지주 회사",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "009900",
+   "name": "명신산업",
+   "ticker": "KRX:009900",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_spike",
+    "sig_gap",
+    "sig_value",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 263,
+      "win": 41.8,
+      "avg": -0.3,
+      "med": -0.88,
+      "excess": -2.32,
+      "best": 67.4,
+      "worst": -26.9
+     },
+     "1": {
+      "n": 696,
+      "win": 34.6,
+      "avg": -0.8,
+      "med": -0.96,
+      "excess": -0.41,
+      "best": 34.9,
+      "worst": -44.6
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 138,
+      "win": 37.7,
+      "avg": 0.82,
+      "med": -2.43,
+      "excess": -1.21,
+      "best": 111.5,
+      "worst": -43.7
+     },
+     "1": {
+      "n": 528,
+      "win": 36.6,
+      "avg": -0.81,
+      "med": -1.64,
+      "excess": -1.04,
+      "best": 36.2,
+      "worst": -30.0
+     }
+    },
+    "sig_value": {
+     "1": {
+      "n": 1714,
+      "win": 53.3,
+      "avg": 0.77,
+      "med": 0.18,
+      "excess": 0.25,
+      "best": 36.2,
+      "worst": -30.0
+     }
+    },
+    "sig_growth": {
+     "1": {
+      "n": 565,
+      "win": 36.3,
+      "avg": -0.43,
+      "med": -0.67,
+      "excess": -0.36,
+      "best": 19.4,
+      "worst": -25.6
+     }
+    },
+    "sig_accel": {
+     "1": {
+      "n": 993,
+      "win": 40.6,
+      "avg": -0.1,
+      "med": -0.25,
+      "excess": -0.02,
+      "best": 30.0,
+      "worst": -18.7
+     }
+    },
+    "sig_garp": {
+     "1": {
+      "n": 601,
+      "win": 38.6,
+      "avg": -0.05,
+      "med": -0.25,
+      "excess": 0.03,
+      "best": 20.2,
+      "worst": -7.1
+     }
+    }
+   },
+   "sector": "Producer Manufacturing",
+   "industry": "Auto Parts: OEM",
+   "segment": "코스피",
+   "close": 8500.0,
+   "chg": 6.65,
+   "gap": 4.14,
+   "sma5": 8096.0,
+   "sma20": 7686.5,
+   "sma200": 9099.7,
+   "ext200": -6.59,
+   "rsi": 64.5,
+   "macd_h": 68.32,
+   "rvol": 3.32,
+   "pw": 7.59,
+   "p1": 40.03,
+   "p3": -4.92,
+   "ytd": -5.5,
+   "pos52": 33.0,
+   "hi52": 14940.0,
+   "lo52": 5390.0,
+   "val": 48.7,
+   "mcap": 4182.0,
+   "per": 5.0,
+   "pbr": 0.53,
+   "eps": 1696.21,
+   "roe": 11.5,
+   "eqr": 60.5,
+   "div": 1.26,
+   "rev_q": 24.6,
+   "rev_ttm": 15.4,
+   "cagr5": 14.9,
+   "eps_q": 112.5,
+   "opm": 6.2,
+   "roic": 9.0,
+   "psr": 0.28,
+   "peg": 1.62,
+   "de": 0.54,
+   "inflow": null,
+   "biz": "[업종] 자동차 신품 부품 제조업 · [주요제품] 자동차차체부품",
+   "tdnet": [],
+   "llm": null
+  }
+ ],
+ "config": {
+  "MIN_VAL": 10.0,
+  "MIN_MCAP": 1000.0,
+  "MIN_PRICE": 0.0,
+  "N_SHORT": 8,
+  "N_LONG": 8,
+  "N_NEWS": 4,
+  "MAX_PER_INDUSTRY": 3,
+  "COOLDOWN_DAYS": 3
+ }
+}
