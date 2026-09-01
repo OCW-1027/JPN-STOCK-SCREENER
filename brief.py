@@ -558,6 +558,7 @@ PAGE_T = {
                tabs=[("all", "전체"), ("short", "단기"), ("long", "중장기"), ("news", "공시")],
                col=["코드", "종목", "분류", "등락", "스코어", "시그널", "200MA", "RSI", "RVOL", "거래대금", "PER", "판단"],
                copy="분석 요청 복사", copy_all="표시 중인 종목 전체 분석 요청 복사", copied="복사됨 ✓",
+               tv="📈 트레이딩뷰 차트", ext="🔎 종목 정보",
                nollm="미평가", verdict_lbl="판단", base_lbl="시그널 기저율", dis_lbl="TDnet 공시 (5영업일)", biz_lbl="사업",
                empty="아직 브리프가 없습니다. 첫 실행은 평일 18:03 JST 이후 자동으로 만들어집니다.",
                howto="복사한 텍스트를 Claude 채팅에 붙여 넣으면 100점 체계(펀더·테크·리스크·촉매)로 평가받을 수 있습니다. "
@@ -571,6 +572,8 @@ PAGE_T = {
                tabs=[("all", "すべて"), ("short", "短期"), ("long", "中長期"), ("news", "開示")],
                col=["コード", "銘柄", "分類", "騰落", "スコア", "シグナル", "200MA", "RSI", "RVOL", "売買代金", "PER", "判断"],
                copy="分析依頼をコピー", copy_all="表示中の銘柄すべての分析依頼をコピー", copied="コピー済み ✓",
+
+               tv="📈 TradingViewチャート", ext="🔎 銘柄情報",
                nollm="未評価", verdict_lbl="判断", base_lbl="シグナル基準率", dis_lbl="TDnet開示 (5営業日)", biz_lbl="事業",
                empty="ブリーフはまだありません。平日18:03 JST以降に自動生成されます。",
                howto="コピーしたテキストをClaudeのチャットに貼り付けると、100点方式(ファンダ・テクニカル・リスク・カタリスト)で評価が得られます。"
@@ -617,6 +620,10 @@ td.sg{white-space:normal;min-width:200px;line-height:1.9}
 .tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .dw{position:sticky;left:0;max-width:calc(100vw - 34px)}
 .up{color:var(--up)}.dn{color:var(--down)}.fl{color:var(--muted)}
+a.tv{margin-left:5px;color:var(--faint);text-decoration:none;font-size:12px}
+a.tv:hover{color:var(--amber)}
+.acts{display:flex;gap:6px;flex-wrap:wrap}
+a.lnk{text-decoration:none;display:inline-block}
 .b{display:inline-block;font-size:10px;font-weight:700;border-radius:4px;padding:1.5px 6px;margin:1px 5px 1px 0}
 .b.s{background:rgba(255,178,36,.16);color:var(--amber)}.b.g{background:rgba(45,212,191,.13);color:var(--teal)}
 .b.f{background:rgba(192,132,252,.14);color:var(--violet)}.b.w{background:rgba(96,205,255,.14);color:var(--sky)}
@@ -659,6 +666,13 @@ const n=(v,d=2)=>v==null?'—':v.toLocaleString(undefined,{maximumFractionDigits
 const BK={short:T.tabs[1][1],long:T.tabs[2][1],news:T.tabs[3][1]};
 function vd(p){if(!p.llm)return `<span class="fl">${T.nollm}</span>`;const c=p.llm.verdict==='매수검토'?'buy':p.llm.verdict==='보류'?'hold':'pass';return `<span class="vd ${c}">${p.llm.total.toFixed(0)} ${esc(p.llm.verdict)}</span>`}
 function copy(text,btn){navigator.clipboard.writeText(text).then(()=>{const o=btn.textContent;btn.textContent=T.copied;setTimeout(()=>btn.textContent=o,1500)})}
+function tvUrl(p){return 'https://www.tradingview.com/chart/?symbol='+encodeURIComponent(p.ticker||'')}
+function extUrl(p){
+  const m=B.market;
+  if(m==='jp') return 'https://finance.yahoo.co.jp/quote/'+p.code+'.T';
+  if(m==='kr') return 'https://finance.naver.com/item/main.naver?code='+p.code;
+  return 'https://finance.yahoo.com/quote/'+encodeURIComponent(p.code);
+}
 function detail(p){
   const g=[['200MA',n(p.sma200)],['5MA / 20MA',`${n(p.sma5)} / ${n(p.sma20)}`],['52w',`${n(p.lo52)} – ${n(p.hi52)} (${n(p.pos52,0)}%)`],
     ['1W / 1M / 3M',`${pc(p.pw,1)} / ${pc(p.p1,1)} / ${pc(p.p3,1)}`],['YTD',pc(p.ytd,1)],['MACD-H',n(p.macd_h)],
@@ -677,7 +691,9 @@ function detail(p){
     ${base?`<div class="sec">${T.base_lbl}</div><div>${base}</div>`:''}
     ${dis?`<div class="sec">${T.dis_lbl}</div>${dis}`:''}
     ${p.biz?`<div class="sec">${T.biz_lbl}</div><div style="color:var(--muted)">${esc(p.biz)}</div>`:''}
-    <div style="margin-top:10px"><button class="btn small" data-copy="${p.code}">${T.copy}</button></div></div>`;
+    <div style="margin-top:10px" class="acts"><button class="btn small" data-copy="${p.code}">${T.copy}</button>
+      <a class="btn small lnk" href="${tvUrl(p)}" target="_blank" rel="noopener">${T.tv}</a>
+      <a class="btn small lnk" href="${extUrl(p)}" target="_blank" rel="noopener">${T.ext}</a></div></div>`;
 }
 function render(){
   $('#mk').innerHTML=MK.map(m=>`<a href="#${m}" data-m="${m}" class="${m===mkt?'on':''}">${lbl(m)}</a>`).join('<span class="sep">·</span>');
@@ -693,7 +709,7 @@ function render(){
     <span><span class="k">${T.picks}</span> <b>${u.candidates}</b> <span class="k">(${BK.short} ${u.short} · ${BK.long} ${u.long} · ${BK.news} ${u.news})</span></span></div>
   <div class="tabs">${T.tabs.map(([k,l])=>`<div class="tab ${k===tab?'on':''}" data-t="${k}">${l}</div>`).join('')}<button class="btn" id="copyall">${T.copy_all}</button></div>
   <div class="tw"><table><thead><tr>${T.col.map((c,i)=>`<th class="${i<3||i===5?'l':''} ${[6,8,9,10].includes(i)?'hide-m':''}">${c}</th>`).join('')}</tr></thead><tbody>
-  ${ps.map(p=>`<tr class="row" data-c="${p.code}"><td class="l num">${p.code}</td><td class="l">${esc(p.name)}</td><td class="l"><span class="bk ${p.bucket}">${BK[p.bucket]}</span></td>
+  ${ps.map(p=>`<tr class="row" data-c="${p.code}"><td class="l num">${p.code}<a class="tv" href="${tvUrl(p)}" target="_blank" rel="noopener" title="TradingView">↗</a></td><td class="l">${esc(p.name)}</td><td class="l"><span class="bk ${p.bucket}">${BK[p.bucket]}</span></td>
     <td class="num">${pc(p.chg)}</td><td class="num">${n(p.score,0)}</td>
     <td class="l sg">${p.signals.map(k=>`<span class="b ${GRP[k]||'i'}">${esc(SIG[k])}</span>`).join('')}</td>
     <td class="num hide-m">${pc(p.ext200,1)}</td><td class="num">${n(p.rsi,1)}</td><td class="num hide-m">${n(p.rvol)}</td>
@@ -706,6 +722,7 @@ document.addEventListener('click',e=>{
   if(e.target.id==='copyall'){const ps=B.picks.filter(p=>tab==='all'||p.bucket===tab);copy(head()+'\\n'+ps.map(p=>PROMPTS[mkt][p.code]).join('\\n\\n'),e.target);return}
   const mt=e.target.closest('[data-m]');if(mt){e.preventDefault();mkt=mt.dataset.m;B=BB[mkt];tab='all';open=new Set();history.replaceState(null,'','#'+mkt);render();return}
   const t=e.target.closest('.tab');if(t){tab=t.dataset.t;render();return}
+  if(e.target.closest('a.tv, a.lnk'))return;      // 링크 클릭은 그대로 열기
   const r=e.target.closest('tr.row');if(r){const k=r.dataset.c;open.has(k)?open.delete(k):open.add(k);render()}
 });
 window.addEventListener('hashchange',()=>{const h=location.hash.slice(1);if(MK.includes(h)&&h!==mkt){mkt=h;B=BB[mkt];tab='all';open=new Set();render()}});
