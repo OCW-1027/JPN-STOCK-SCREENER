@@ -1,0 +1,2753 @@
+{
+ "date": "2026-09-03",
+ "market": "us",
+ "generated": "2026-09-03 06:35 JST",
+ "label_ko": "🇺🇸 미국",
+ "label_ja": "🇺🇸 米国",
+ "unit_ko": "$M",
+ "unit_ja": "$M",
+ "llm_mode": "off",
+ "baserate_days": 12,
+ "universe": {
+  "total": 5181,
+  "liquid": 2245,
+  "candidates": 16,
+  "short": 8,
+  "long": 8,
+  "news": 0
+ },
+ "picks": [
+  {
+   "code": "GBTG",
+   "name": "Global Business Travel Group, Inc.",
+   "ticker": "NYSE:GBTG",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_high",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 976,
+      "win": 45.5,
+      "avg": 39.46,
+      "med": -0.07,
+      "excess": 37.49,
+      "best": 8276.7,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1499,
+      "win": 40.9,
+      "avg": 7.94,
+      "med": 0.0,
+      "excess": 6.97,
+      "best": 4202.4,
+      "worst": -58.5
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 5377,
+      "win": 37.0,
+      "avg": 1.6,
+      "med": -1.04,
+      "excess": -0.4,
+      "best": 3343.9,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 7800,
+      "win": 40.1,
+      "avg": 0.68,
+      "med": -0.37,
+      "excess": 0.1,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1709,
+      "win": 36.9,
+      "avg": 0.92,
+      "med": -1.13,
+      "excess": -0.99,
+      "best": 2307.5,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 2523,
+      "win": 41.8,
+      "avg": 1.5,
+      "med": -0.31,
+      "excess": 0.78,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 1313,
+      "win": 42.3,
+      "avg": -0.71,
+      "med": -0.1,
+      "excess": -2.67,
+      "best": 308.4,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 1836,
+      "win": 40.5,
+      "avg": -0.05,
+      "med": 0.0,
+      "excess": -0.75,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 988,
+      "win": 39.9,
+      "avg": -0.81,
+      "med": -0.92,
+      "excess": -2.61,
+      "best": 20.4,
+      "worst": -52.2
+     },
+     "1": {
+      "n": 1991,
+      "win": 46.4,
+      "avg": -0.12,
+      "med": -0.15,
+      "excess": -1.13,
+      "best": 11.9,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Consumer Services",
+   "industry": "Other Consumer Services",
+   "segment": "NYSE",
+   "close": 9.48,
+   "chg": 0.21,
+   "gap": 0.0,
+   "sma5": 9.47,
+   "sma20": 9.46,
+   "sma200": 7.75,
+   "ext200": 22.29,
+   "rsi": 62.7,
+   "macd_h": -0.0,
+   "rvol": 12.0,
+   "pw": 0.11,
+   "p1": 0.42,
+   "p3": 1.28,
+   "ytd": 23.9,
+   "pos52": 99.0,
+   "hi52": 9.54,
+   "lo52": 4.96,
+   "val": 128.5,
+   "mcap": 4952.0,
+   "per": 59.0,
+   "pbr": 3.02,
+   "eps": 0.16,
+   "roe": 6.2,
+   "eqr": 15.7,
+   "div": 0.0,
+   "rev_q": 37.9,
+   "rev_ttm": 30.2,
+   "cagr5": null,
+   "eps_q": 5.1,
+   "opm": 8.0,
+   "roic": 3.0,
+   "psr": 1.72,
+   "peg": null,
+   "de": 0.98,
+   "inflow": null,
+   "biz": "Global Business Travel Group, Inc. operates as a technology and services company in the United States, the United Kingdom, and internationally. The company offers the Amex GBT marketplace for fares and rates; travel solu",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "DELL",
+   "name": "Dell Technologies Inc.",
+   "ticker": "NYSE:DELL",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_gap",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 976,
+      "win": 45.5,
+      "avg": 39.46,
+      "med": -0.07,
+      "excess": 37.49,
+      "best": 8276.7,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1499,
+      "win": 40.9,
+      "avg": 7.94,
+      "med": 0.0,
+      "excess": 6.97,
+      "best": 4202.4,
+      "worst": -58.5
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 5377,
+      "win": 37.0,
+      "avg": 1.6,
+      "med": -1.04,
+      "excess": -0.4,
+      "best": 3343.9,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 7800,
+      "win": 40.1,
+      "avg": 0.68,
+      "med": -0.37,
+      "excess": 0.1,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1709,
+      "win": 36.9,
+      "avg": 0.92,
+      "med": -1.13,
+      "excess": -0.99,
+      "best": 2307.5,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 2523,
+      "win": 41.8,
+      "avg": 1.5,
+      "med": -0.31,
+      "excess": 0.78,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 833,
+      "win": 38.5,
+      "avg": 12.97,
+      "med": -2.37,
+      "excess": 11.18,
+      "best": 7352.0,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1159,
+      "win": 39.7,
+      "avg": 4.93,
+      "med": -1.26,
+      "excess": 4.5,
+      "best": 4202.4,
+      "worst": -50.6
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 3964,
+      "win": 32.5,
+      "avg": -1.28,
+      "med": -1.26,
+      "excess": -3.08,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 7945,
+      "win": 44.0,
+      "avg": -0.17,
+      "med": -0.19,
+      "excess": -1.17,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Electronic Technology",
+   "industry": "Computer Processing Hardware",
+   "segment": "NYSE",
+   "close": 492.2,
+   "chg": 15.81,
+   "gap": 8.72,
+   "sma5": 460.34,
+   "sma20": 458.66,
+   "sma200": 249.53,
+   "ext200": 97.25,
+   "rsi": 58.9,
+   "macd_h": -0.82,
+   "rvol": 6.14,
+   "pw": 9.48,
+   "p1": 23.77,
+   "p3": 22.48,
+   "ytd": 283.3,
+   "pos52": 95.0,
+   "hi52": 514.0,
+   "lo52": 110.22,
+   "val": 17939.0,
+   "mcap": 319084.0,
+   "per": 28.6,
+   "pbr": null,
+   "eps": null,
+   "roe": null,
+   "eqr": 18.6,
+   "div": 0.51,
+   "rev_q": 56.9,
+   "rev_ttm": 48.9,
+   "cagr5": 5.6,
+   "eps_q": 273.6,
+   "opm": 9.8,
+   "roic": 51.9,
+   "psr": 2.96,
+   "peg": 0.36,
+   "de": null,
+   "inflow": null,
+   "biz": "Dell Technologies Inc. designs, develops, manufactures, markets, sells, and supports various comprehensive and integrated solutions, products, and services in the Americas, Europe, the Middle East, Asia, and internationa",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "GRNT",
+   "name": "Granite Ridge Resources, Inc.",
+   "ticker": "NYSE:GRNT",
+   "bucket": "short",
+   "score": 7.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_div",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 976,
+      "win": 45.5,
+      "avg": 39.46,
+      "med": -0.07,
+      "excess": 37.49,
+      "best": 8276.7,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1499,
+      "win": 40.9,
+      "avg": 7.94,
+      "med": 0.0,
+      "excess": 6.97,
+      "best": 4202.4,
+      "worst": -58.5
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 5377,
+      "win": 37.0,
+      "avg": 1.6,
+      "med": -1.04,
+      "excess": -0.4,
+      "best": 3343.9,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 7800,
+      "win": 40.1,
+      "avg": 0.68,
+      "med": -0.37,
+      "excess": 0.1,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1709,
+      "win": 36.9,
+      "avg": 0.92,
+      "med": -1.13,
+      "excess": -0.99,
+      "best": 2307.5,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 2523,
+      "win": 41.8,
+      "avg": 1.5,
+      "med": -0.31,
+      "excess": 0.78,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 1052,
+      "win": 38.5,
+      "avg": -0.83,
+      "med": -0.65,
+      "excess": -2.91,
+      "best": 29.7,
+      "worst": -22.0
+     },
+     "1": {
+      "n": 1751,
+      "win": 44.7,
+      "avg": -0.11,
+      "med": -0.1,
+      "excess": -1.04,
+      "best": 15.2,
+      "worst": -24.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 1713,
+      "win": 35.3,
+      "avg": -0.06,
+      "med": -0.94,
+      "excess": -2.18,
+      "best": 853.0,
+      "worst": -42.7
+     },
+     "1": {
+      "n": 2734,
+      "win": 45.5,
+      "avg": -0.01,
+      "med": -0.1,
+      "excess": -0.91,
+      "best": 355.6,
+      "worst": -30.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 2347,
+      "win": 41.1,
+      "avg": -0.36,
+      "med": -0.46,
+      "excess": -2.43,
+      "best": 26.0,
+      "worst": -27.0
+     },
+     "1": {
+      "n": 3713,
+      "win": 48.0,
+      "avg": 0.04,
+      "med": 0.0,
+      "excess": -0.88,
+      "best": 12.2,
+      "worst": -30.3
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 988,
+      "win": 39.9,
+      "avg": -0.81,
+      "med": -0.92,
+      "excess": -2.61,
+      "best": 20.4,
+      "worst": -52.2
+     },
+     "1": {
+      "n": 1991,
+      "win": 46.4,
+      "avg": -0.12,
+      "med": -0.15,
+      "excess": -1.13,
+      "best": 11.9,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Energy Minerals",
+   "industry": "Oil & Gas Production",
+   "segment": "NYSE",
+   "close": 5.16,
+   "chg": 1.98,
+   "gap": -0.99,
+   "sma5": 5.07,
+   "sma20": 5.07,
+   "sma200": 5.05,
+   "ext200": 2.24,
+   "rsi": 59.8,
+   "macd_h": -0.01,
+   "rvol": 2.58,
+   "pw": 3.41,
+   "p1": 11.69,
+   "p3": 5.31,
+   "ytd": 10.3,
+   "pos52": 50.0,
+   "hi52": 6.14,
+   "lo52": 4.18,
+   "val": 16.3,
+   "mcap": 681.0,
+   "per": null,
+   "pbr": 1.21,
+   "eps": -0.22,
+   "roe": -4.7,
+   "eqr": 52.6,
+   "div": 8.75,
+   "rev_q": 36.7,
+   "rev_ttm": 14.6,
+   "cagr5": null,
+   "eps_q": 19.0,
+   "opm": 20.7,
+   "roic": -2.9,
+   "psr": 1.5,
+   "peg": null,
+   "de": 0.82,
+   "inflow": null,
+   "biz": "Granite Ridge Resources, Inc. operates as a non-operated oil and natural gas exploration and production company. It owns a portfolio of wells and acreage across the Permian, Eagle Ford, Bakken, Haynesville, Denver-Julesb",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "RARE",
+   "name": "Ultragenyx Pharmaceutical Inc.",
+   "ticker": "NASDAQ:RARE",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_reclaim",
+    "sig_macd",
+    "sig_growth"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 976,
+      "win": 45.5,
+      "avg": 39.46,
+      "med": -0.07,
+      "excess": 37.49,
+      "best": 8276.7,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1499,
+      "win": 40.9,
+      "avg": 7.94,
+      "med": 0.0,
+      "excess": 6.97,
+      "best": 4202.4,
+      "worst": -58.5
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 5377,
+      "win": 37.0,
+      "avg": 1.6,
+      "med": -1.04,
+      "excess": -0.4,
+      "best": 3343.9,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 7800,
+      "win": 40.1,
+      "avg": 0.68,
+      "med": -0.37,
+      "excess": 0.1,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1709,
+      "win": 36.9,
+      "avg": 0.92,
+      "med": -1.13,
+      "excess": -0.99,
+      "best": 2307.5,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 2523,
+      "win": 41.8,
+      "avg": 1.5,
+      "med": -0.31,
+      "excess": 0.78,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 1713,
+      "win": 35.3,
+      "avg": -0.06,
+      "med": -0.94,
+      "excess": -2.18,
+      "best": 853.0,
+      "worst": -42.7
+     },
+     "1": {
+      "n": 2734,
+      "win": 45.5,
+      "avg": -0.01,
+      "med": -0.1,
+      "excess": -0.91,
+      "best": 355.6,
+      "worst": -30.3
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 5189,
+      "win": 39.9,
+      "avg": -0.27,
+      "med": -0.75,
+      "excess": -2.35,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 8117,
+      "win": 44.7,
+      "avg": -0.1,
+      "med": -0.11,
+      "excess": -0.99,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 2075,
+      "win": 33.7,
+      "avg": -0.52,
+      "med": -1.65,
+      "excess": -2.32,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 4148,
+      "win": 44.4,
+      "avg": 0.02,
+      "med": -0.28,
+      "excess": -0.97,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Health Technology",
+   "industry": "Pharmaceuticals: Major",
+   "segment": "NASDAQ",
+   "close": 26.53,
+   "chg": 2.79,
+   "gap": 0.58,
+   "sma5": 25.88,
+   "sma20": 26.11,
+   "sma200": 26.17,
+   "ext200": 1.36,
+   "rsi": 50.8,
+   "macd_h": 0.12,
+   "rvol": 2.69,
+   "pw": -0.06,
+   "p1": 6.46,
+   "p3": 17.86,
+   "ytd": 16.2,
+   "pos52": 38.0,
+   "hi52": 39.89,
+   "lo52": 18.29,
+   "val": 161.7,
+   "mcap": 2616.0,
+   "per": null,
+   "pbr": null,
+   "eps": -5.84,
+   "roe": null,
+   "eqr": -27.0,
+   "div": 0.0,
+   "rev_q": 28.5,
+   "rev_ttm": 17.5,
+   "cagr5": 19.9,
+   "eps_q": 22.7,
+   "opm": -73.8,
+   "roic": -65.4,
+   "psr": 3.89,
+   "peg": -0.76,
+   "de": null,
+   "inflow": null,
+   "biz": "Ultragenyx Pharmaceutical Inc., a biopharmaceutical company, focuses on the identification, acquisition, development, and commercialization of novel products for the treatment of rare and ultra-rare genetic diseases in N",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "DBRG",
+   "name": "DigitalBridge Group, Inc.",
+   "ticker": "NYSE:DBRG",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_high",
+    "sig_trend",
+    "sig_qual",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 5377,
+      "win": 37.0,
+      "avg": 1.6,
+      "med": -1.04,
+      "excess": -0.4,
+      "best": 3343.9,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 7800,
+      "win": 40.1,
+      "avg": 0.68,
+      "med": -0.37,
+      "excess": 0.1,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1709,
+      "win": 36.9,
+      "avg": 0.92,
+      "med": -1.13,
+      "excess": -0.99,
+      "best": 2307.5,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 2523,
+      "win": 41.8,
+      "avg": 1.5,
+      "med": -0.31,
+      "excess": 0.78,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 1313,
+      "win": 42.3,
+      "avg": -0.71,
+      "med": -0.1,
+      "excess": -2.67,
+      "best": 308.4,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 1836,
+      "win": 40.5,
+      "avg": -0.05,
+      "med": 0.0,
+      "excess": -0.75,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1927,
+      "win": 38.3,
+      "avg": -0.87,
+      "med": -0.8,
+      "excess": -2.88,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 2726,
+      "win": 45.3,
+      "avg": -0.15,
+      "med": -0.1,
+      "excess": -0.87,
+      "best": 13.9,
+      "worst": -24.0
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 2407,
+      "win": 43.5,
+      "avg": -0.52,
+      "med": -0.73,
+      "excess": -2.59,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 3786,
+      "win": 48.1,
+      "avg": -0.02,
+      "med": -0.06,
+      "excess": -0.93,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 3964,
+      "win": 32.5,
+      "avg": -1.28,
+      "med": -1.26,
+      "excess": -3.08,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 7945,
+      "win": 44.0,
+      "avg": -0.17,
+      "med": -0.19,
+      "excess": -1.17,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Investment Managers",
+   "segment": "NYSE",
+   "close": 15.97,
+   "chg": 0.38,
+   "gap": 0.13,
+   "sma5": 15.94,
+   "sma20": 15.93,
+   "sma200": 15.05,
+   "ext200": 6.09,
+   "rsi": 61.3,
+   "macd_h": -0.01,
+   "rvol": 0.67,
+   "pw": 0.0,
+   "p1": 0.82,
+   "p3": 1.98,
+   "ytd": 4.4,
+   "pos52": 100.0,
+   "hi52": 15.98,
+   "lo52": 8.94,
+   "val": 50.6,
+   "mcap": 3039.0,
+   "per": 10.4,
+   "pbr": 1.92,
+   "eps": 1.55,
+   "roe": 15.9,
+   "eqr": 74.3,
+   "div": 0.25,
+   "rev_q": 99.0,
+   "rev_ttm": 99.3,
+   "cagr5": 2.5,
+   "eps_q": 1100.2,
+   "opm": 34.6,
+   "roic": 13.8,
+   "psr": 5.97,
+   "peg": null,
+   "de": 0.14,
+   "inflow": null,
+   "biz": "DigitalBridge Group, Inc. is a leading global alternative asset manager dedicated to investing in digital infrastructure. With a heritage of more than 30 years investing in and operating businesses across the digital eco",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "CWT",
+   "name": "California Water Service Group",
+   "ticker": "NYSE:CWT",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_trend",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 976,
+      "win": 45.5,
+      "avg": 39.46,
+      "med": -0.07,
+      "excess": 37.49,
+      "best": 8276.7,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1499,
+      "win": 40.9,
+      "avg": 7.94,
+      "med": 0.0,
+      "excess": 6.97,
+      "best": 4202.4,
+      "worst": -58.5
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 5377,
+      "win": 37.0,
+      "avg": 1.6,
+      "med": -1.04,
+      "excess": -0.4,
+      "best": 3343.9,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 7800,
+      "win": 40.1,
+      "avg": 0.68,
+      "med": -0.37,
+      "excess": 0.1,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1709,
+      "win": 36.9,
+      "avg": 0.92,
+      "med": -1.13,
+      "excess": -0.99,
+      "best": 2307.5,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 2523,
+      "win": 41.8,
+      "avg": 1.5,
+      "med": -0.31,
+      "excess": 0.78,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1927,
+      "win": 38.3,
+      "avg": -0.87,
+      "med": -0.8,
+      "excess": -2.88,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 2726,
+      "win": 45.3,
+      "avg": -0.15,
+      "med": -0.1,
+      "excess": -0.87,
+      "best": 13.9,
+      "worst": -24.0
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 3964,
+      "win": 32.5,
+      "avg": -1.28,
+      "med": -1.26,
+      "excess": -3.08,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 7945,
+      "win": 44.0,
+      "avg": -0.17,
+      "med": -0.19,
+      "excess": -1.17,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Utilities",
+   "industry": "Water Utilities",
+   "segment": "NYSE",
+   "close": 50.14,
+   "chg": 0.8,
+   "gap": -0.02,
+   "sma5": 50.08,
+   "sma20": 50.06,
+   "sma200": 46.04,
+   "ext200": 8.92,
+   "rsi": 51.0,
+   "macd_h": -0.06,
+   "rvol": 3.41,
+   "pw": -0.85,
+   "p1": -0.63,
+   "p3": 10.25,
+   "ytd": 16.1,
+   "pos52": 71.0,
+   "hi52": 53.82,
+   "lo52": 41.29,
+   "val": 80.5,
+   "mcap": 3101.0,
+   "per": 22.6,
+   "pbr": 1.72,
+   "eps": 2.22,
+   "roe": 7.7,
+   "eqr": 31.7,
+   "div": 2.61,
+   "rev_q": 16.5,
+   "rev_ttm": 6.4,
+   "cagr5": 4.7,
+   "eps_q": 32.1,
+   "opm": 19.2,
+   "roic": 4.4,
+   "psr": 2.99,
+   "peg": null,
+   "de": 0.93,
+   "inflow": null,
+   "biz": "California Water Service Group, through its subsidiaries, provides water utility and other related services in California, Washington, New Mexico, Hawaii, and Texas. It is involved in the production, purchase, storage, t",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "SLDE",
+   "name": "Slide Insurance Holdings, Inc.",
+   "ticker": "NASDAQ:SLDE",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_high",
+    "sig_macd",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 976,
+      "win": 45.5,
+      "avg": 39.46,
+      "med": -0.07,
+      "excess": 37.49,
+      "best": 8276.7,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1499,
+      "win": 40.9,
+      "avg": 7.94,
+      "med": 0.0,
+      "excess": 6.97,
+      "best": 4202.4,
+      "worst": -58.5
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 5377,
+      "win": 37.0,
+      "avg": 1.6,
+      "med": -1.04,
+      "excess": -0.4,
+      "best": 3343.9,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 7800,
+      "win": 40.1,
+      "avg": 0.68,
+      "med": -0.37,
+      "excess": 0.1,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 1313,
+      "win": 42.3,
+      "avg": -0.71,
+      "med": -0.1,
+      "excess": -2.67,
+      "best": 308.4,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 1836,
+      "win": 40.5,
+      "avg": -0.05,
+      "med": 0.0,
+      "excess": -0.75,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 5189,
+      "win": 39.9,
+      "avg": -0.27,
+      "med": -0.75,
+      "excess": -2.35,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 8117,
+      "win": 44.7,
+      "avg": -0.1,
+      "med": -0.11,
+      "excess": -0.99,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 3964,
+      "win": 32.5,
+      "avg": -1.28,
+      "med": -1.26,
+      "excess": -3.08,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 7945,
+      "win": 44.0,
+      "avg": -0.17,
+      "med": -0.19,
+      "excess": -1.17,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Packaged Software",
+   "segment": "NASDAQ",
+   "close": 24.18,
+   "chg": 3.82,
+   "gap": -0.17,
+   "sma5": 23.53,
+   "sma20": 22.38,
+   "sma200": 18.59,
+   "ext200": 30.09,
+   "rsi": 69.6,
+   "macd_h": 0.08,
+   "rvol": 2.7,
+   "pw": 4.86,
+   "p1": 18.82,
+   "p3": 47.08,
+   "ytd": 24.1,
+   "pos52": 100.0,
+   "hi52": 24.22,
+   "lo52": 12.53,
+   "val": 53.8,
+   "mcap": 2825.0,
+   "per": 5.9,
+   "pbr": 2.34,
+   "eps": 4.56,
+   "roe": 53.9,
+   "eqr": 48.0,
+   "div": 0.3,
+   "rev_q": 47.9,
+   "rev_ttm": 41.4,
+   "cagr5": null,
+   "eps_q": 90.4,
+   "opm": 53.0,
+   "roic": 52.0,
+   "psr": 2.76,
+   "peg": null,
+   "de": 0.03,
+   "inflow": null,
+   "biz": "Slide Insurance Holdings, Inc. provides property and casualty insurance services in the United States. The company writes coastal specialty personal lines insurance, including homeowners, condominium unit owners, commerc",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "ROKU",
+   "name": "Roku, Inc.",
+   "ticker": "NASDAQ:ROKU",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_high",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 5377,
+      "win": 37.0,
+      "avg": 1.6,
+      "med": -1.04,
+      "excess": -0.4,
+      "best": 3343.9,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 7800,
+      "win": 40.1,
+      "avg": 0.68,
+      "med": -0.37,
+      "excess": 0.1,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1709,
+      "win": 36.9,
+      "avg": 0.92,
+      "med": -1.13,
+      "excess": -0.99,
+      "best": 2307.5,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 2523,
+      "win": 41.8,
+      "avg": 1.5,
+      "med": -0.31,
+      "excess": 0.78,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 1313,
+      "win": 42.3,
+      "avg": -0.71,
+      "med": -0.1,
+      "excess": -2.67,
+      "best": 308.4,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 1836,
+      "win": 40.5,
+      "avg": -0.05,
+      "med": 0.0,
+      "excess": -0.75,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 2075,
+      "win": 33.7,
+      "avg": -0.52,
+      "med": -1.65,
+      "excess": -2.32,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 4148,
+      "win": 44.4,
+      "avg": 0.02,
+      "med": -0.28,
+      "excess": -0.97,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 3964,
+      "win": 32.5,
+      "avg": -1.28,
+      "med": -1.26,
+      "excess": -3.08,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 7945,
+      "win": 44.0,
+      "avg": -0.17,
+      "med": -0.19,
+      "excess": -1.17,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Packaged Software",
+   "segment": "NASDAQ",
+   "close": 157.7,
+   "chg": 1.4,
+   "gap": -0.49,
+   "sma5": 156.82,
+   "sma20": 155.88,
+   "sma200": 117.41,
+   "ext200": 34.32,
+   "rsi": 62.7,
+   "macd_h": -0.6,
+   "rvol": 1.28,
+   "pw": -1.24,
+   "p1": 8.13,
+   "p3": 26.42,
+   "ytd": 44.5,
+   "pos52": 97.0,
+   "hi52": 159.89,
+   "lo52": 78.53,
+   "val": 392.4,
+   "mcap": 23406.0,
+   "per": 67.4,
+   "pbr": 8.29,
+   "eps": 2.4,
+   "roe": 13.1,
+   "eqr": 61.2,
+   "div": 0.0,
+   "rev_q": 21.9,
+   "rev_ttm": 18.5,
+   "cagr5": 21.6,
+   "eps_q": 1440.0,
+   "opm": 5.2,
+   "roic": 11.3,
+   "psr": 5.02,
+   "peg": null,
+   "de": 0.17,
+   "inflow": null,
+   "biz": "Roku, Inc., together with its subsidiaries, operates a TV streaming platform in the United States and internationally. The company operates in two segments, Platform and Devices. Its streaming platform allows users to fi",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "EE",
+   "name": "Excelerate Energy, Inc.",
+   "ticker": "NYSE:EE",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_trend",
+    "sig_macd",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 5377,
+      "win": 37.0,
+      "avg": 1.6,
+      "med": -1.04,
+      "excess": -0.4,
+      "best": 3343.9,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 7800,
+      "win": 40.1,
+      "avg": 0.68,
+      "med": -0.37,
+      "excess": 0.1,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1927,
+      "win": 38.3,
+      "avg": -0.87,
+      "med": -0.8,
+      "excess": -2.88,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 2726,
+      "win": 45.3,
+      "avg": -0.15,
+      "med": -0.1,
+      "excess": -0.87,
+      "best": 13.9,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 5189,
+      "win": 39.9,
+      "avg": -0.27,
+      "med": -0.75,
+      "excess": -2.35,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 8117,
+      "win": 44.7,
+      "avg": -0.1,
+      "med": -0.11,
+      "excess": -0.99,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 2075,
+      "win": 33.7,
+      "avg": -0.52,
+      "med": -1.65,
+      "excess": -2.32,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 4148,
+      "win": 44.4,
+      "avg": 0.02,
+      "med": -0.28,
+      "excess": -0.97,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 3964,
+      "win": 32.5,
+      "avg": -1.28,
+      "med": -1.26,
+      "excess": -3.08,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 7945,
+      "win": 44.0,
+      "avg": -0.17,
+      "med": -0.19,
+      "excess": -1.17,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 988,
+      "win": 39.9,
+      "avg": -0.81,
+      "med": -0.92,
+      "excess": -2.61,
+      "best": 20.4,
+      "worst": -52.2
+     },
+     "1": {
+      "n": 1991,
+      "win": 46.4,
+      "avg": -0.12,
+      "med": -0.15,
+      "excess": -1.13,
+      "best": 11.9,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Utilities",
+   "industry": "Gas Distributors",
+   "segment": "NYSE",
+   "close": 40.22,
+   "chg": 3.1,
+   "gap": -0.23,
+   "sma5": 39.41,
+   "sma20": 37.85,
+   "sma200": 34.63,
+   "ext200": 16.15,
+   "rsi": 60.4,
+   "macd_h": 0.2,
+   "rvol": 0.8,
+   "pw": 1.85,
+   "p1": 3.13,
+   "p3": 23.64,
+   "ytd": 44.5,
+   "pos52": 85.0,
+   "hi52": 43.17,
+   "lo52": 22.86,
+   "val": 13.2,
+   "mcap": 4561.0,
+   "per": 27.7,
+   "pbr": 1.84,
+   "eps": 1.49,
+   "roe": 7.0,
+   "eqr": 54.3,
+   "div": 0.83,
+   "rev_q": 61.0,
+   "rev_ttm": 49.0,
+   "cagr5": 23.3,
+   "eps_q": 153.9,
+   "opm": 22.0,
+   "roic": 2.3,
+   "psr": 1.0,
+   "peg": 0.74,
+   "de": 2.03,
+   "inflow": null,
+   "biz": "Excelerate Energy, Inc. owns and operates liquefied natural gas (LNG) and natural gas infrastructure assets. The company operates floating regasification terminals. It also offers various terminal services, including pro",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "TEN",
+   "name": "Tsakos Energy Navigation Ltd",
+   "ticker": "NYSE:TEN",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_macd",
+    "sig_value",
+    "sig_div",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 5377,
+      "win": 37.0,
+      "avg": 1.6,
+      "med": -1.04,
+      "excess": -0.4,
+      "best": 3343.9,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 7800,
+      "win": 40.1,
+      "avg": 0.68,
+      "med": -0.37,
+      "excess": 0.1,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 5189,
+      "win": 39.9,
+      "avg": -0.27,
+      "med": -0.75,
+      "excess": -2.35,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 8117,
+      "win": 44.7,
+      "avg": -0.1,
+      "med": -0.11,
+      "excess": -0.99,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_value": {
+     "5": {
+      "n": 434,
+      "win": 41.0,
+      "avg": 38.78,
+      "med": -0.57,
+      "excess": 36.71,
+      "best": 9808.9,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 695,
+      "win": 48.8,
+      "avg": 17.49,
+      "med": 0.0,
+      "excess": 16.54,
+      "best": 12293.2,
+      "worst": -47.0
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 2347,
+      "win": 41.1,
+      "avg": -0.36,
+      "med": -0.46,
+      "excess": -2.43,
+      "best": 26.0,
+      "worst": -27.0
+     },
+     "1": {
+      "n": 3713,
+      "win": 48.0,
+      "avg": 0.04,
+      "med": 0.0,
+      "excess": -0.88,
+      "best": 12.2,
+      "worst": -30.3
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 3964,
+      "win": 32.5,
+      "avg": -1.28,
+      "med": -1.26,
+      "excess": -3.08,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 7945,
+      "win": 44.0,
+      "avg": -0.17,
+      "med": -0.19,
+      "excess": -1.17,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 988,
+      "win": 39.9,
+      "avg": -0.81,
+      "med": -0.92,
+      "excess": -2.61,
+      "best": 20.4,
+      "worst": -52.2
+     },
+     "1": {
+      "n": 1991,
+      "win": 46.4,
+      "avg": -0.12,
+      "med": -0.15,
+      "excess": -1.13,
+      "best": 11.9,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Transportation",
+   "industry": "Marine Shipping",
+   "segment": "NYSE",
+   "close": 43.25,
+   "chg": 1.0,
+   "gap": 0.0,
+   "sma5": 42.62,
+   "sma20": 41.32,
+   "sma200": 34.48,
+   "ext200": 25.44,
+   "rsi": 62.5,
+   "macd_h": 0.08,
+   "rvol": 1.22,
+   "pw": 3.59,
+   "p1": 8.18,
+   "p3": 16.97,
+   "ytd": 95.9,
+   "pos52": 90.0,
+   "hi52": 45.85,
+   "lo52": 20.5,
+   "val": 11.7,
+   "mcap": 1274.0,
+   "per": 7.0,
+   "pbr": 0.68,
+   "eps": 6.14,
+   "roe": 11.3,
+   "eqr": 50.7,
+   "div": 4.72,
+   "rev_q": 28.4,
+   "rev_ttm": 6.9,
+   "cagr5": 4.4,
+   "eps_q": 162.8,
+   "opm": 34.3,
+   "roic": 5.6,
+   "psr": 1.61,
+   "peg": 0.19,
+   "de": 1.1,
+   "inflow": null,
+   "biz": "Tsakos Energy Navigation Limited, together with its subsidiaries, provides seaborne crude oil and petroleum product transportation services in Greece and internationally. The company owns and operates various vessels, in",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "KGC",
+   "name": "Kinross Gold Corporation",
+   "ticker": "NYSE:KGC",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_gc",
+    "sig_reclaim",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_gc": {
+     "5": {
+      "n": 1052,
+      "win": 38.5,
+      "avg": -0.83,
+      "med": -0.65,
+      "excess": -2.91,
+      "best": 29.7,
+      "worst": -22.0
+     },
+     "1": {
+      "n": 1751,
+      "win": 44.7,
+      "avg": -0.11,
+      "med": -0.1,
+      "excess": -1.04,
+      "best": 15.2,
+      "worst": -24.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 1713,
+      "win": 35.3,
+      "avg": -0.06,
+      "med": -0.94,
+      "excess": -2.18,
+      "best": 853.0,
+      "worst": -42.7
+     },
+     "1": {
+      "n": 2734,
+      "win": 45.5,
+      "avg": -0.01,
+      "med": -0.1,
+      "excess": -0.91,
+      "best": 355.6,
+      "worst": -30.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 2407,
+      "win": 43.5,
+      "avg": -0.52,
+      "med": -0.73,
+      "excess": -2.59,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 3786,
+      "win": 48.1,
+      "avg": -0.02,
+      "med": -0.06,
+      "excess": -0.93,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 2075,
+      "win": 33.7,
+      "avg": -0.52,
+      "med": -1.65,
+      "excess": -2.32,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 4148,
+      "win": 44.4,
+      "avg": 0.02,
+      "med": -0.28,
+      "excess": -0.97,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 3964,
+      "win": 32.5,
+      "avg": -1.28,
+      "med": -1.26,
+      "excess": -3.08,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 7945,
+      "win": 44.0,
+      "avg": -0.17,
+      "med": -0.19,
+      "excess": -1.17,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Non-Energy Minerals",
+   "industry": "Precious Metals",
+   "segment": "NYSE",
+   "close": 30.26,
+   "chg": 2.82,
+   "gap": 2.5,
+   "sma5": 30.83,
+   "sma20": 29.57,
+   "sma200": 29.4,
+   "ext200": 2.92,
+   "rsi": 56.8,
+   "macd_h": -0.16,
+   "rvol": 0.73,
+   "pw": -8.02,
+   "p1": 31.79,
+   "p3": 5.95,
+   "ytd": 5.9,
+   "pos52": 50.0,
+   "hi52": 39.11,
+   "lo52": 21.49,
+   "val": 214.6,
+   "mcap": 35896.0,
+   "per": 11.8,
+   "pbr": 3.72,
+   "eps": 2.57,
+   "roe": 36.6,
+   "eqr": 72.7,
+   "div": 0.5,
+   "rev_q": 24.1,
+   "rev_ttm": 32.4,
+   "cagr5": 10.1,
+   "eps_q": 57.0,
+   "opm": 50.1,
+   "roic": 32.9,
+   "psr": 5.17,
+   "peg": 0.11,
+   "de": 0.08,
+   "inflow": null,
+   "biz": "Kinross Gold Corporation, together with its subsidiaries, engages in the acquisition, exploration, and development of gold properties principally in the United States, Brazil, Chile, Canada, and Mauritania. It is also in",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "SU",
+   "name": "Suncor Energy Inc.",
+   "ticker": "NYSE:SU",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_trend",
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_trend": {
+     "5": {
+      "n": 1927,
+      "win": 38.3,
+      "avg": -0.87,
+      "med": -0.8,
+      "excess": -2.88,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 2726,
+      "win": 45.3,
+      "avg": -0.15,
+      "med": -0.1,
+      "excess": -0.87,
+      "best": 13.9,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 5189,
+      "win": 39.9,
+      "avg": -0.27,
+      "med": -0.75,
+      "excess": -2.35,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 8117,
+      "win": 44.7,
+      "avg": -0.1,
+      "med": -0.11,
+      "excess": -0.99,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 2407,
+      "win": 43.5,
+      "avg": -0.52,
+      "med": -0.73,
+      "excess": -2.59,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 3786,
+      "win": 48.1,
+      "avg": -0.02,
+      "med": -0.06,
+      "excess": -0.93,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 2075,
+      "win": 33.7,
+      "avg": -0.52,
+      "med": -1.65,
+      "excess": -2.32,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 4148,
+      "win": 44.4,
+      "avg": 0.02,
+      "med": -0.28,
+      "excess": -0.97,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 3964,
+      "win": 32.5,
+      "avg": -1.28,
+      "med": -1.26,
+      "excess": -3.08,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 7945,
+      "win": 44.0,
+      "avg": -0.17,
+      "med": -0.19,
+      "excess": -1.17,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Energy Minerals",
+   "industry": "Integrated Oil",
+   "segment": "NYSE",
+   "close": 68.39,
+   "chg": -0.87,
+   "gap": -0.64,
+   "sma5": 67.21,
+   "sma20": 65.76,
+   "sma200": 57.84,
+   "ext200": 18.24,
+   "rsi": 60.3,
+   "macd_h": 0.04,
+   "rvol": 0.93,
+   "pw": 5.65,
+   "p1": 3.98,
+   "p3": 6.73,
+   "ytd": 54.6,
+   "pos52": 94.0,
+   "hi52": 70.29,
+   "lo52": 37.77,
+   "val": 204.2,
+   "mcap": 79991.0,
+   "per": 13.0,
+   "pbr": 2.37,
+   "eps": 5.28,
+   "roe": 19.3,
+   "eqr": 51.1,
+   "div": 2.56,
+   "rev_q": 39.9,
+   "rev_ttm": 9.0,
+   "cagr5": 13.0,
+   "eps_q": 228.0,
+   "opm": 21.9,
+   "roic": 15.1,
+   "psr": 2.34,
+   "peg": 0.19,
+   "de": 0.3,
+   "inflow": null,
+   "biz": "Suncor Energy Inc. operates as an integrated energy company in Canada, the United States, and internationally. The company operates through Oil Sands; Exploration and Production; and Refining and Marketing segments. The ",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "MU",
+   "name": "Micron Technology, Inc.",
+   "ticker": "NASDAQ:MU",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 5377,
+      "win": 37.0,
+      "avg": 1.6,
+      "med": -1.04,
+      "excess": -0.4,
+      "best": 3343.9,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 7800,
+      "win": 40.1,
+      "avg": 0.68,
+      "med": -0.37,
+      "excess": 0.1,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1709,
+      "win": 36.9,
+      "avg": 0.92,
+      "med": -1.13,
+      "excess": -0.99,
+      "best": 2307.5,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 2523,
+      "win": 41.8,
+      "avg": 1.5,
+      "med": -0.31,
+      "excess": 0.78,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 5189,
+      "win": 39.9,
+      "avg": -0.27,
+      "med": -0.75,
+      "excess": -2.35,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 8117,
+      "win": 44.7,
+      "avg": -0.1,
+      "med": -0.11,
+      "excess": -0.99,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 2407,
+      "win": 43.5,
+      "avg": -0.52,
+      "med": -0.73,
+      "excess": -2.59,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 3786,
+      "win": 48.1,
+      "avg": -0.02,
+      "med": -0.06,
+      "excess": -0.93,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 2075,
+      "win": 33.7,
+      "avg": -0.52,
+      "med": -1.65,
+      "excess": -2.32,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 4148,
+      "win": 44.4,
+      "avg": 0.02,
+      "med": -0.28,
+      "excess": -0.97,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 3964,
+      "win": 32.5,
+      "avg": -1.28,
+      "med": -1.26,
+      "excess": -3.08,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 7945,
+      "win": 44.0,
+      "avg": -0.17,
+      "med": -0.19,
+      "excess": -1.17,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Electronic Technology",
+   "industry": "Semiconductors",
+   "segment": "NASDAQ",
+   "close": 956.08,
+   "chg": 2.43,
+   "gap": -0.28,
+   "sma5": 943.3,
+   "sma20": 932.52,
+   "sma200": 599.05,
+   "ext200": 59.6,
+   "rsi": 53.2,
+   "macd_h": 1.82,
+   "rvol": 0.87,
+   "pw": 3.28,
+   "p1": 21.58,
+   "p3": -5.07,
+   "ytd": 224.0,
+   "pos52": 74.0,
+   "hi52": 1255.0,
+   "lo52": 118.52,
+   "val": 20345.8,
+   "mcap": 1079790.0,
+   "per": 21.6,
+   "pbr": 10.72,
+   "eps": 44.8,
+   "roe": 66.6,
+   "eqr": 78.6,
+   "div": 0.06,
+   "rev_q": 345.7,
+   "rev_ttm": 167.0,
+   "cagr5": 11.8,
+   "eps_q": 1372.1,
+   "opm": 65.7,
+   "roic": 58.4,
+   "psr": 28.78,
+   "peg": 0.03,
+   "de": 0.06,
+   "inflow": null,
+   "biz": "Micron Technology, Inc. designs, develops, manufactures, and sells memory and storage products in the United States, Taiwan, Japan, Mainland China, Hong Kong, Europe, and internationally. It operates through the Cloud Me",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "RDDT",
+   "name": "Reddit, Inc.",
+   "ticker": "NYSE:RDDT",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 5377,
+      "win": 37.0,
+      "avg": 1.6,
+      "med": -1.04,
+      "excess": -0.4,
+      "best": 3343.9,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 7800,
+      "win": 40.1,
+      "avg": 0.68,
+      "med": -0.37,
+      "excess": 0.1,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1709,
+      "win": 36.9,
+      "avg": 0.92,
+      "med": -1.13,
+      "excess": -0.99,
+      "best": 2307.5,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 2523,
+      "win": 41.8,
+      "avg": 1.5,
+      "med": -0.31,
+      "excess": 0.78,
+      "best": 4118.1,
+      "worst": -47.9
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 5189,
+      "win": 39.9,
+      "avg": -0.27,
+      "med": -0.75,
+      "excess": -2.35,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 8117,
+      "win": 44.7,
+      "avg": -0.1,
+      "med": -0.11,
+      "excess": -0.99,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 2407,
+      "win": 43.5,
+      "avg": -0.52,
+      "med": -0.73,
+      "excess": -2.59,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 3786,
+      "win": 48.1,
+      "avg": -0.02,
+      "med": -0.06,
+      "excess": -0.93,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 2075,
+      "win": 33.7,
+      "avg": -0.52,
+      "med": -1.65,
+      "excess": -2.32,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 4148,
+      "win": 44.4,
+      "avg": 0.02,
+      "med": -0.28,
+      "excess": -0.97,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 3964,
+      "win": 32.5,
+      "avg": -1.28,
+      "med": -1.26,
+      "excess": -3.08,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 7945,
+      "win": 44.0,
+      "avg": -0.17,
+      "med": -0.19,
+      "excess": -1.17,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Internet Software/Services",
+   "segment": "NYSE",
+   "close": 158.1,
+   "chg": 9.31,
+   "gap": -0.43,
+   "sma5": 151.5,
+   "sma20": 156.16,
+   "sma200": 174.9,
+   "ext200": -9.6,
+   "rsi": 49.3,
+   "macd_h": 0.26,
+   "rvol": 1.38,
+   "pw": -1.8,
+   "p1": 11.42,
+   "p3": -7.22,
+   "ytd": -31.9,
+   "pos52": 24.0,
+   "hi52": 282.95,
+   "lo52": 119.27,
+   "val": 984.3,
+   "mcap": 30418.0,
+   "per": 36.8,
+   "pbr": 9.25,
+   "eps": 4.57,
+   "roe": 30.7,
+   "eqr": 91.5,
+   "div": 0.0,
+   "rev_q": 61.1,
+   "rev_ttm": 66.6,
+   "cagr5": 57.3,
+   "eps_q": 162.2,
+   "opm": 28.2,
+   "roic": 30.5,
+   "psr": 14.51,
+   "peg": 0.13,
+   "de": 0.01,
+   "inflow": null,
+   "biz": "Reddit, Inc. operates a digital community in the United States and internationally. The company's platform enables user to engage in conversations, explore passions, research new hobbies, exchange goods and services, cre",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "AG",
+   "name": "First Majestic Silver Corp.",
+   "ticker": "NYSE:AG",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_gap",
+    "sig_gc",
+    "sig_trend",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 5377,
+      "win": 37.0,
+      "avg": 1.6,
+      "med": -1.04,
+      "excess": -0.4,
+      "best": 3343.9,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 7800,
+      "win": 40.1,
+      "avg": 0.68,
+      "med": -0.37,
+      "excess": 0.1,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 833,
+      "win": 38.5,
+      "avg": 12.97,
+      "med": -2.37,
+      "excess": 11.18,
+      "best": 7352.0,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1159,
+      "win": 39.7,
+      "avg": 4.93,
+      "med": -1.26,
+      "excess": 4.5,
+      "best": 4202.4,
+      "worst": -50.6
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 1052,
+      "win": 38.5,
+      "avg": -0.83,
+      "med": -0.65,
+      "excess": -2.91,
+      "best": 29.7,
+      "worst": -22.0
+     },
+     "1": {
+      "n": 1751,
+      "win": 44.7,
+      "avg": -0.11,
+      "med": -0.1,
+      "excess": -1.04,
+      "best": 15.2,
+      "worst": -24.9
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1927,
+      "win": 38.3,
+      "avg": -0.87,
+      "med": -0.8,
+      "excess": -2.88,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 2726,
+      "win": 45.3,
+      "avg": -0.15,
+      "med": -0.1,
+      "excess": -0.87,
+      "best": 13.9,
+      "worst": -24.0
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 2075,
+      "win": 33.7,
+      "avg": -0.52,
+      "med": -1.65,
+      "excess": -2.32,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 4148,
+      "win": 44.4,
+      "avg": 0.02,
+      "med": -0.28,
+      "excess": -0.97,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 3964,
+      "win": 32.5,
+      "avg": -1.28,
+      "med": -1.26,
+      "excess": -3.08,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 7945,
+      "win": 44.0,
+      "avg": -0.17,
+      "med": -0.19,
+      "excess": -1.17,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Non-Energy Minerals",
+   "industry": "Precious Metals",
+   "segment": "NYSE",
+   "close": 21.2,
+   "chg": 6.75,
+   "gap": 3.12,
+   "sma5": 20.83,
+   "sma20": 19.95,
+   "sma200": 19.62,
+   "ext200": 8.07,
+   "rsi": 60.5,
+   "macd_h": -0.03,
+   "rvol": 0.88,
+   "pw": 2.76,
+   "p1": 42.23,
+   "p3": 5.53,
+   "ytd": 24.4,
+   "pos52": 53.0,
+   "hi52": 32.03,
+   "lo52": 9.04,
+   "val": 202.2,
+   "mcap": 10450.0,
+   "per": 31.2,
+   "pbr": 3.53,
+   "eps": 0.69,
+   "roe": 12.6,
+   "eqr": 69.2,
+   "div": 0.22,
+   "rev_q": 50.7,
+   "rev_ttm": 88.1,
+   "cagr5": 27.3,
+   "eps_q": 94.5,
+   "opm": 44.0,
+   "roic": 11.6,
+   "psr": 8.03,
+   "peg": null,
+   "de": 0.11,
+   "inflow": null,
+   "biz": "First Majestic Silver Corp. engages in the acquisition, exploration, development, and production of mineral properties in North America. The company explores for silver and gold deposits. Its projects include the San Dim",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "RELY",
+   "name": "Remitly Global, Inc.",
+   "ticker": "NASDAQ:RELY",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_high",
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 5377,
+      "win": 37.0,
+      "avg": 1.6,
+      "med": -1.04,
+      "excess": -0.4,
+      "best": 3343.9,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 7800,
+      "win": 40.1,
+      "avg": 0.68,
+      "med": -0.37,
+      "excess": 0.1,
+      "best": 4202.4,
+      "worst": -87.0
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 1313,
+      "win": 42.3,
+      "avg": -0.71,
+      "med": -0.1,
+      "excess": -2.67,
+      "best": 308.4,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 1836,
+      "win": 40.5,
+      "avg": -0.05,
+      "med": 0.0,
+      "excess": -0.75,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 5189,
+      "win": 39.9,
+      "avg": -0.27,
+      "med": -0.75,
+      "excess": -2.35,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 8117,
+      "win": 44.7,
+      "avg": -0.1,
+      "med": -0.11,
+      "excess": -0.99,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 2407,
+      "win": 43.5,
+      "avg": -0.52,
+      "med": -0.73,
+      "excess": -2.59,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 3786,
+      "win": 48.1,
+      "avg": -0.02,
+      "med": -0.06,
+      "excess": -0.93,
+      "best": 14.5,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 2075,
+      "win": 33.7,
+      "avg": -0.52,
+      "med": -1.65,
+      "excess": -2.32,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 4148,
+      "win": 44.4,
+      "avg": 0.02,
+      "med": -0.28,
+      "excess": -0.97,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 3964,
+      "win": 32.5,
+      "avg": -1.28,
+      "med": -1.26,
+      "excess": -3.08,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 7945,
+      "win": 44.0,
+      "avg": -0.17,
+      "med": -0.19,
+      "excess": -1.17,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Commercial Services",
+   "industry": "Miscellaneous Commercial Services",
+   "segment": "NASDAQ",
+   "close": 26.82,
+   "chg": 4.32,
+   "gap": -0.1,
+   "sma5": 26.36,
+   "sma20": 25.59,
+   "sma200": 18.57,
+   "ext200": 44.41,
+   "rsi": 59.2,
+   "macd_h": 0.0,
+   "rvol": 1.55,
+   "pw": 2.72,
+   "p1": 17.32,
+   "p3": 35.45,
+   "ytd": 93.6,
+   "pos52": 98.0,
+   "hi52": 27.15,
+   "lo52": 12.08,
+   "val": 138.1,
+   "mcap": 5677.0,
+   "per": 19.3,
+   "pbr": 5.04,
+   "eps": 1.45,
+   "roe": 32.2,
+   "eqr": 62.4,
+   "div": 0.0,
+   "rev_q": 20.2,
+   "rev_ttm": 23.8,
+   "cagr5": 44.8,
+   "eps_q": 3025.8,
+   "opm": 10.4,
+   "roic": 31.4,
+   "psr": 3.57,
+   "peg": 0.01,
+   "de": 0.03,
+   "inflow": null,
+   "biz": "Remitly Global, Inc., a cross-border payment company engages in the provision of digital financial services in the United States, Canada, and internationally. It offers cross-border remittances and complementary financia",
+   "tdnet": [],
+   "llm": null
+  }
+ ],
+ "config": {
+  "MIN_VAL": 10.0,
+  "MIN_MCAP": 500.0,
+  "MIN_PRICE": 5.0,
+  "N_SHORT": 8,
+  "N_LONG": 8,
+  "N_NEWS": 4,
+  "MAX_PER_INDUSTRY": 3,
+  "COOLDOWN_DAYS": 3
+ }
+}
