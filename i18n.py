@@ -477,3 +477,82 @@ HELP_SIG = {
     "s_inflow": ("유입배 1.3 이상이 3일 연속. 하루 반짝이 아니라 자금이 계속 들어오는 중.",
                  "流入倍1.3以上が3日連続。一時的でなく資金が継続流入。"),
 }
+
+
+# ─────────── BTC 실시간 배너 (BTC-DESK 연동) ───────────
+# 같은 오리진(ocw-1027.github.io)이라 CORS 불필요.
+# 초기값은 btc.json, 이후 OKX WebSocket으로 초 단위 갱신.
+BTC_URL = "https://ocw-1027.github.io/BTC-DESK/"
+BTC_LABEL = {"ko": "₿ BTC 데스크", "ja": "₿ BTCデスク"}
+
+
+def btc_link(lang, cls="btc"):
+    """상단바에 넣을 앵커 태그."""
+    return (f'<a href="{BTC_URL}" target="_blank" rel="noopener" class="{cls}">'
+            f'{BTC_LABEL[lang]} <b id="btcNav">—</b></a>')
+
+
+BTC_CSS = """
+a.btc{color:var(--amber);border-color:rgba(255,178,36,.45);background:var(--surface2)}
+a.btc:hover{background:var(--amber);color:#2a1f05}
+a.btc b{font-variant-numeric:tabular-nums;font-weight:800;margin-left:2px}
+a.btc b.up{color:var(--up)} a.btc b.down{color:var(--down)}
+"""
+
+BTC_JS = """
+<script>
+(function () {
+  var el = document.getElementById('btcNav');
+  if (!el) return;
+  var prev = null, ws = null, poll = null, tries = 0;
+
+  function show(px) {
+    if (!isFinite(px) || px <= 0) return;
+    el.textContent = '$' + Math.round(px).toLocaleString('en-US');
+    if (prev != null && px !== prev) el.className = px > prev ? 'up' : 'down';
+    prev = px;
+  }
+  function startPoll() {
+    if (poll) return;
+    poll = setInterval(function () {
+      fetch('https://www.okx.com/api/v5/market/ticker?instId=BTC-USDT-SWAP')
+        .then(function (r) { return r.json(); })
+        .then(function (j) { var d = j.data && j.data[0]; if (d) show(parseFloat(d.last)); })
+        .catch(function () {});
+    }, 10000);
+  }
+  function connect() {
+    try { ws = new WebSocket('wss://ws.okx.com:8443/ws/v5/public'); }
+    catch (e) { startPoll(); return; }
+    ws.onopen = function () {
+      tries = 0;
+      ws.send(JSON.stringify({ op: 'subscribe', args: [{ channel: 'tickers', instId: 'BTC-USDT-SWAP' }] }));
+    };
+    ws.onmessage = function (e) {
+      try {
+        var m = JSON.parse(e.data);
+        if (m.data && m.data[0] && m.data[0].last) show(parseFloat(m.data[0].last));
+      } catch (_) {}
+    };
+    ws.onerror = function () { try { ws.close(); } catch (_) {} };
+    ws.onclose = function () {
+      ws = null;
+      if (poll) return;
+      tries++;
+      if (tries <= 3) setTimeout(connect, 2000 * tries); else startPoll();
+    };
+  }
+  fetch('https://ocw-1027.github.io/BTC-DESK/btc.json', { cache: 'no-store' })
+    .then(function (r) { return r.json(); })
+    .then(function (j) { show(j.price); })
+    .catch(function () {});
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+      if (ws) { try { ws.close(); } catch (_) {} ws = null; }
+      if (poll) { clearInterval(poll); poll = null; }
+    } else if (!ws && !poll) { tries = 0; connect(); }
+  });
+  connect();
+})();
+</script>
+"""

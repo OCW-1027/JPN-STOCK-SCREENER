@@ -824,6 +824,7 @@ def build_market(mkey, template, out_dir, generated, indices=None):
                      f'class="study">{L["nav_study"]}</a>'
                      f'<a href="{dash_url}" target="_blank" rel="noopener" '
                      f'class="dash">{L["nav_dash"]}</a>'
+                     + i18n.btc_link(lang) +
                      f'<a href="../ranking/index.html">{L["nav_rank"]}</a>'
                      f'<a href="../backtest/index.html">{L["nav_bt"]}</a>'
                      f'<a href="../brief/index.html">{"📋 브리프" if lang == "ko" else "📋 ブリーフ"}</a>')
@@ -860,6 +861,7 @@ def build_market(mkey, template, out_dir, generated, indices=None):
             [[(x[0] if lang == "ko" else x[1]), x[2], x[3], x[4], x[5]] for x in (indices or [])],
             ensure_ascii=False)
         html = html.replace("__INDICES__", idx_payload)
+        html = html.replace("__BTC_CSS__", i18n.BTC_CSS).replace("__BTC_JS__", i18n.BTC_JS)
         html = html.replace("__DIS__", dis_payload)
         html = html.replace("__CFG__", json.dumps(cfg, ensure_ascii=False))
         html = html.replace("__DATA__", json.dumps(rows, ensure_ascii=False, separators=(",", ":")))

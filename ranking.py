@@ -176,11 +176,13 @@ footer{margin-top:14px;color:var(--faint);font-size:11px;line-height:1.7}
   .topbar,.tabs{gap:5px}
   .tab{padding:6px 10px;font-size:12.5px}
 }
+__BTC_CSS__
 </style></head><body>
 <div class="topbar">
   <a href="__BACK_HREF__">__BACK__</a>
   <a class="langbtn" style="margin-left:0;color:var(--amber);border-color:rgba(255,178,36,.4)"
      href="../backtest/index.html">__BT__</a>
+  __BTC_LINK__
   <a class="langbtn" href="__LANG_HREF__">__OTHER_LANG__</a>
 </div>
 <h1>__TITLE__</h1>
@@ -285,7 +287,8 @@ function render(){
 $('#mt').addEventListener('click',e=>{const t=e.target.closest('.tab');if(t){mkt=t.dataset.m;sel=null;render()}});
 $('#mtx').addEventListener('click',e=>{const t=e.target.closest('.tab');if(t){metric=t.dataset.x;sel=null;render()}});
 render();
-</script></body></html>"""
+</script>__BTC_JS__
+</body></html>"""
 
 
 def main():
@@ -316,6 +319,8 @@ def main():
             "__OTHER_LANG__": L["other_lang"], "__GEN_LABEL__": L["gen"], "__GEN__": gen,
             "__LEAD__": L["lead"], "__FOOTER__": L["foot"],
             "__BT__": i18n.UI[lang]["nav_bt"],
+            "__BTC_LINK__": i18n.btc_link(lang, "langbtn btc"),
+            "__BTC_CSS__": i18n.BTC_CSS, "__BTC_JS__": i18n.BTC_JS,
         }.items():
             html = html.replace(k, v)
         html = html.replace("__DATA__", payload).replace("__T__", tpl)

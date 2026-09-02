@@ -182,12 +182,14 @@ td{padding:7px 10px;border-bottom:1px solid #1c2431;text-align:right;white-space
 .wb{display:inline-block;height:8px;border-radius:4px;background:var(--amber);vertical-align:middle;margin-right:6px}
 footer{margin-top:14px;color:var(--faint);font-size:11px;line-height:1.7}
 @media(max-width:760px){body{padding:10px 8px 30px}.hide-m{display:none}}
+__BTC_CSS__
 </style></head><body>
 <div class="topbar">
   <a href="__BACK_HREF__">__BACK__</a>
   <a class="studybtn" href="__STUDY_HREF__" target="_blank" rel="noopener">__STUDY__</a>
   <a class="dashbtn" href="__DASH_HREF__" target="_blank" rel="noopener">__DASH__</a>
   <a class="dashbtn" href="../ranking/index.html">__RANK__</a>
+  __BTC_LINK__
   <a class="langbtn" href="__LANG_HREF__">__OTHER_LANG__</a>
 </div>
 <h1>__TITLE__</h1>
@@ -237,7 +239,8 @@ function render(){
 $('#mt').addEventListener('click',e=>{const t=e.target.closest('.tab');if(t){mkt=t.dataset.m;render()}});
 $('#ht').addEventListener('click',e=>{const t=e.target.closest('.tab');if(t){hz=t.dataset.h;render()}});
 render();
-</script></body></html>"""
+</script>__BTC_JS__
+</body></html>"""
 
 
 def main():
@@ -281,6 +284,8 @@ def main():
             "__LEAD__": L["lead"], "__FOOTER__": L["foot"],
             "__DASH__": i18n.UI[lang]["nav_dash"],
             "__STUDY__": i18n.UI[lang]["nav_study"],
+            "__BTC_LINK__": i18n.btc_link(lang, "langbtn btc"),
+            "__BTC_CSS__": i18n.BTC_CSS, "__BTC_JS__": i18n.BTC_JS,
             "__RANK__": i18n.UI[lang]["nav_rank"],
             "__STUDY_HREF__": ("https://ocw-1027.github.io/investment-study/" if lang == "ko"
                                else "https://ocw-1027.github.io/investment-study/jp.html"),

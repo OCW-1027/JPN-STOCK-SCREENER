@@ -31,6 +31,8 @@ from zoneinfo import ZoneInfo
 import pandas as pd
 import requests
 
+import i18n
+
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 except Exception:
@@ -639,11 +641,13 @@ a.lnk{text-decoration:none;display:inline-block}
 .note{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;color:var(--muted);margin:10px 0;line-height:1.8}
 footer{margin-top:14px;color:var(--faint);font-size:11px;line-height:1.7}
 @media(max-width:760px){body{padding:10px 8px 30px}.hide-m{display:none}.tabs .btn{margin-left:0;width:100%}}
+__BTC_CSS__
 </style></head><body>
 <div class="topbar">
   <a href="__BACK_HREF__">__BACK__</a>
   <a class="dashbtn" href="__RANK_HREF__">__RANK__</a>
   <a class="dashbtn" href="__BT_HREF__">__BT__</a>
+  __BTC_LINK__
   <a class="langbtn" href="__LANG_HREF__">__OTHER__</a>
 </div>
 <h1>__TITLE__ <span class="mk" id="mk"></span></h1>
@@ -727,7 +731,8 @@ document.addEventListener('click',e=>{
 });
 window.addEventListener('hashchange',()=>{const h=location.hash.slice(1);if(MK.includes(h)&&h!==mkt){mkt=h;B=BB[mkt];tab='all';open=new Set();render()}});
 render();
-</script></body></html>"""
+</script>__BTC_JS__
+</body></html>"""
 
 
 def latest_brief(m):
@@ -760,6 +765,9 @@ def render_pages():
             "__BACK__": T["back"], "__BACK_HREF__": "../jp/index.html",
             "__RANK__": T["rank"], "__RANK_HREF__": "../ranking/index.html",
             "__BT__": T["bt"], "__BT_HREF__": "../backtest/index.html",
+            
+            "__BTC_LINK__": i18n.btc_link(lang, "langbtn btc"),
+            "__BTC_CSS__": i18n.BTC_CSS, "__BTC_JS__": i18n.BTC_JS,
             "__OTHER__": T["other"], "__LANG_HREF__": "../ja/brief/index.html" if lang == "ko" else "../../brief/index.html",
             "__BRIEFS__": js(briefs), "__T__": js(T), "__PROMPTS__": js(prompts), "__HEAD__": js(PROMPT_HEAD[lang]),
             "__SIG__": js({k: sig_label(k, lang) for k in SIG_ALL}), "__KW__": js(KW_LABELS[lang]), "__GRP__": js(grp),
