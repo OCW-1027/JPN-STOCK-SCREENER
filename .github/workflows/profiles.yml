@@ -48,9 +48,24 @@ jobs:
 
       - name: profiles 커밋
         run: |
+          # 수집에 40분이 걸리는 동안 daily.yml·brief.yml이 여러 번 커밋하므로
+          # push가 밀리는 것이 정상. 최대 5회까지 최신 main 위로 다시 얹어 재시도한다.
           git config user.name "screener-bot"
           git config user.email "actions@users.noreply.github.com"
-          git pull --rebase origin main || true
           git add profiles/
-          git commit -m "profiles $(TZ=Asia/Tokyo date +'%Y-%m-%d')" || echo "no changes"
-          git push
+          git commit -m "profiles $(TZ=Asia/Tokyo date +'%Y-%m-%d')" || { echo "변경 없음"; exit 0; }
+
+          for i in 1 2 3 4 5; do
+            git fetch origin main
+            # profiles/ 는 이 워크플로만 건드리므로 항상 내 것을 채택
+            if git rebase -X ours origin/main; then
+              if git push origin HEAD:main; then
+                echo "push 성공 (시도 $i)"; exit 0
+              fi
+            else
+              git rebase --abort || true
+            fi
+            echo "push 실패 — 재시도 $i"
+            sleep $((i * 10))
+          done
+          echo "5회 시도 후에도 push 실패"; exit 1
