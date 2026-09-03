@@ -91,8 +91,10 @@ def fetch(code, session):
         return out
 
     f, o, i = nums("foreignerPureBuyQuant"), nums("organPureBuyQuant"), nums("individualPureBuyQuant")
+    # 지분율은 "46.70%" 형태로 오므로 % 기호를 떼고 변환한다.
     try:
-        ratio = float(str(rows[0].get("foreignerHoldRatio", "")).replace(",", ""))
+        ratio = float(str(rows[0].get("foreignerHoldRatio", ""))
+                      .replace(",", "").replace("%", "").strip())
     except (TypeError, ValueError):
         ratio = None
     return {
