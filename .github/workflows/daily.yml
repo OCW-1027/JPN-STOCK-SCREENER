@@ -129,15 +129,30 @@ jobs:
           git push -f -q "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" gh-pages
           echo "gh-pages 푸시 완료 ($(du -sh . | cut -f1))"
 
-      - name: Commit history & volcurve (종가판만)
-        if: env.HM != ''
+      - name: 데이터 커밋 (history·volcurve·supply)
+        # 종가판(HM)이 아니어도 supply/ 가 갱신됐으면 커밋해야 한다.
+        # 수급 수집은 HM과 분리했으므로 커밋 조건도 분리한다.
+        # 변경분이 없으면 commit 단계에서 걸러지므로 매번 돌아도 부담이 없다.
         run: |
           git config user.name "screener-bot"
           git config user.email "actions@users.noreply.github.com"
-          git pull --rebase origin main || true
           git add history/ volcurve/ supply/
-          git commit -m "data $(TZ=Asia/Tokyo date +'%Y-%m-%d') ($HM)" || echo "no changes"
-          git push
+          if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
+          git commit -m "data $(TZ=Asia/Tokyo date +'%Y-%m-%d')${HM:+ ($HM)}"
+
+          for i in 1 2 3 4 5; do
+            git fetch origin main
+            if git rebase origin/main; then
+              if git push origin HEAD:main; then
+                echo "push 성공 (시도 $i)"; exit 0
+              fi
+            else
+              git rebase --abort || true
+            fi
+            echo "push 실패 — 재시도 $i"
+            sleep $((i * 8))
+          done
+          echo "5회 시도 후에도 push 실패"; exit 1
 
       - name: 운용 데스크 브리프 실행 요청 (종가판 커밋 직후 — GitHub cron 지연과 무관)
         if: env.HM != ''
