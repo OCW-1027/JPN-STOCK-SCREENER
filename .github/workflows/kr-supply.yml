@@ -1,0 +1,70 @@
+name: KR Supply
+
+# 한국 투자자별 매매동향(외국인·기관·개인) 수집 전용.
+# 종목당 1회 호출이라 2,700종목이면 10분 이상 걸리므로,
+# 15분 주기 daily.yml과 분리해 장 마감 후 하루 한 번만 돈다.
+# (프로필 수집이 daily에 묶여 15분 주기를 망가뜨렸던 전례를 피하기 위함)
+
+on:
+  schedule:
+    - cron: '20 7 * * 1-5'      # 16:20 JST = 한국장 마감(15:30 KST) 후
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: '수집 종목 수 (0=전체, 시총 상위부터)'
+        required: false
+        default: '0'
+      sleep:
+        description: '요청 간격(초)'
+        required: false
+        default: '0.25'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kr-supply
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: 한국 투자자별 매매동향 수집
+        run: python supply_kr.py
+        env:
+          KR_LIMIT: ${{ github.event.inputs.limit || '0' }}
+          KR_SLEEP: ${{ github.event.inputs.sleep || '0.25' }}
+
+      - name: supply 커밋
+        run: |
+          # 수집 중 daily.yml이 여러 번 커밋하므로 최대 5회까지 재시도한다.
+          git config user.name "screener-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add supply/
+          git commit -m "kr supply $(TZ=Asia/Tokyo date +'%Y-%m-%d')" || { echo "변경 없음"; exit 0; }
+
+          for i in 1 2 3 4 5; do
+            git fetch origin main
+            if git rebase -X ours origin/main; then
+              if git push origin HEAD:main; then
+                echo "push 성공 (시도 $i)"; exit 0
+              fi
+            else
+              git rebase --abort || true
+            fi
+            echo "push 실패 — 재시도 $i"
+            sleep $((i * 10))
+          done
+          echo "5회 시도 후에도 push 실패"; exit 1
