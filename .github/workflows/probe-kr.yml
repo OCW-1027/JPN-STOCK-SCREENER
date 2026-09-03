@@ -1,0 +1,31 @@
+name: Probe KR Supply
+
+# 한국 수급 데이터 소스 진단용 — 수동 실행 전용, 아무것도 커밋하지 않는다.
+# 개발 환경에서는 네이버·KRX가 403이지만 GitHub 서버에서는 열리는 경우가 있어,
+# 실제로 어떤 엔드포인트가 응답하는지 확인한 뒤 본체를 만들기 위한 1회성 스크립트.
+#
+# 사용법: Actions > Probe KR Supply > Run workflow > 로그 확인
+# 확인이 끝나면 이 워크플로와 probe_kr.py는 삭제해도 된다.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install requests
+        run: pip install requests
+
+      - name: 한국 수급 소스 탐색
+        run: python probe_kr.py

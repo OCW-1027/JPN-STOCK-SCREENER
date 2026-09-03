@@ -62,6 +62,11 @@ jobs:
         continue-on-error: true
         run: python volcurve.py
 
+      - name: 일본 수급 데이터 (JPX 신용잔고·공매도, 종가판만, 실패해도 계속)
+        if: env.HM != ''
+        continue-on-error: true
+        run: python supply.py
+
       - name: Run screener (JP + KR + US)
         run: python screener.py
         env:
@@ -121,7 +126,7 @@ jobs:
           git config user.name "screener-bot"
           git config user.email "actions@users.noreply.github.com"
           git pull --rebase origin main || true
-          git add history/ volcurve/
+          git add history/ volcurve/ supply/
           git commit -m "data $(TZ=Asia/Tokyo date +'%Y-%m-%d') ($HM)" || echo "no changes"
           git push
 
