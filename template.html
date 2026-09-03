@@ -36,6 +36,9 @@
   h1{font-size:18px;font-weight:800;letter-spacing:-.03em}
   h1 span{color:var(--amber)}
   .meta{color:var(--muted);font-size:11.5px}
+  .dly{display:inline-block;margin-left:6px;padding:1px 8px;border:1px solid var(--line);border-radius:999px;
+    font-size:10.5px;color:var(--faint);vertical-align:1px}
+  .dly .q{margin:0 4px 0 0}
   .idxstrip{display:flex;gap:6px;overflow-x:auto;flex:1 0 100%;min-width:0;
     padding:3px 0 5px;scrollbar-width:thin;order:3}
   .ix{flex:0 0 auto;display:flex;align-items:baseline;gap:5px;text-decoration:none;
@@ -86,6 +89,8 @@
   .sig.lng.on{color:#062a26;background:var(--teal);border-color:var(--teal);font-weight:700}
   .sig.fnd.on{color:#2a1245;background:var(--violet);border-color:var(--violet);font-weight:700}
   .sig.grw.on{color:#04283a;background:#60cdff;border-color:#60cdff;font-weight:700}
+  .sig.andtog{border-style:dashed;color:var(--muted)}
+  .sig.andtog.on{border-style:solid;background:var(--text);color:var(--bg);font-weight:700}
   .hint{color:var(--faint);font-size:11.5px;margin-left:auto}
 
   /* mirrored top scrollbar */
@@ -228,7 +233,8 @@ __BTC_CSS__
   <h1>__TITLE_HTML__</h1>
   <div class="idxstrip" id="idxstrip"></div>
   <div class="meta">__META_PRE__ <b>__GENERATED__</b> · __MARKET_LABEL__ <b>__COUNT__</b>__META_STOCKS__ ·
-    <span style="color:var(--up)">__META_UP__</span> <span style="color:var(--down)">__META_DN__</span></div>
+    <span style="color:var(--up)">__META_UP__</span> <span style="color:var(--down)">__META_DN__</span>
+    <span class="dly"><span class="q" data-tip="__DELAY_TIP__">?</span>__DELAY__</span></div>
 </header>
 
 <div class="tabs">
@@ -253,6 +259,7 @@ __BTC_CSS__
     <div class="pz on" data-p="tech">__PRESET_TECH__</div>
     <div class="pz" data-p="fin">__PRESET_FIN__</div>
     <div class="pz" data-p="grw">__PRESET_GROWTH__</div>
+    <div class="pz" data-p="sup" id="pzSup">__PRESET_SUPPLY__</div>
     <div class="pz" data-p="all">__PRESET_ALL__</div>
   </div>
   <div class="sigchips" id="sigchips"></div>
@@ -320,7 +327,7 @@ const SHORT_MASK=0b10000000000111111, LONG_MASK=0b0000001111000000,
 
 /* g: b=always, t=technical, f=financial */
 const HELPMAP = {12:'turn',20:'mcap',29:'biz',5:'c_chg',17:'c_gap',9:'c_ext',11:'rvol',13:'c_rsi',
-  44:'c_pos52',28:'c_macd',21:'c_per',40:'c_peg',22:'c_pbr',24:'c_roe',37:'c_roic',38:'c_psr',
+  44:'c_pos52',48:'c_vwap',49:'c_fturn',50:'c_fpct',51:'c_mratio',52:'c_mdays',53:'c_mbuychg',54:'c_spct',55:'c_schg',28:'c_macd',21:'c_per',40:'c_peg',22:'c_pbr',24:'c_roe',37:'c_roic',38:'c_psr',
   26:'c_eq',39:'c_de',34:'c_cagr',30:'c_revq',46:'c_inflow',47:'c_score'};
 const COLS = [
   {t:T.c_code,i:0,l:1,g:'b',fx:'f1'},{t:T.c_name,i:1,l:1,g:'b',fx:'f2'},
@@ -328,7 +335,7 @@ const COLS = [
   {t:T.c_price,i:4,g:'b'},{t:T.c_chg,i:5,g:'b'},{t:T.c_gap,i:17,g:'t'},
   {t:'5MA',i:6,g:'t'},{t:'20MA',i:7,g:'t'},{t:'200MA',i:8,g:'t'},{t:T.c_ext,i:9,g:'t'},
   {t:T.c_vol,i:10,g:'t'},{t:'RVOL',i:11,g:'t'},{t:CFG.turnLabel,i:12,g:'b'},{t:T.c_inflow,i:46,g:'b'},{t:T.c_score,i:47,g:'b'},
-  {t:T.c_rsi,i:13,g:'t'},{t:T.c_pos52,i:44,g:'t'},{t:T.c_macd,i:28,g:'t'},
+  {t:T.c_rsi,i:13,g:'t'},{t:T.c_pos52,i:44,g:'t'},{t:T.c_vwap,i:48,g:'t'},{t:T.c_fturn,i:49,g:'t'},{t:T.c_fpct,i:50,g:'t'},{t:T.c_macd,i:28,g:'t'},
   {t:T.c_w,i:14,g:'t'},{t:T.c_m,i:15,g:'t'},{t:T.c_3m,i:16,g:'t'},
   {t:T.c_ytd,i:41,g:'t'},{t:T.c_perfy,i:45,g:'t'},
   {t:T.c_hi52,i:42,g:'t'},{t:T.c_lo52,i:43,g:'t'},
@@ -337,12 +344,14 @@ const COLS = [
     {t:T.c_revq,i:30,g:'w'},{t:T.c_revy,i:31,g:'w'},{t:T.c_revt,i:32,g:'w'},
   {t:T.c_revqq,i:33,g:'w'},{t:T.c_cagr,i:34,g:'w'},{t:T.c_epsq,i:35,g:'w'},
   {t:T.c_opm,i:36,g:'w'},{t:T.c_roic,i:37,g:'w'},{t:T.c_psr,i:38,g:'w'},{t:T.c_de,i:39,g:'w'},
+  {t:T.c_mratio,i:51,g:'x'},{t:T.c_mdays,i:52,g:'x'},{t:T.c_mbuychg,i:53,g:'x'},{t:T.c_spct,i:54,g:'x'},{t:T.c_schg,i:55,g:'x'},
+  {t:T.c_vwap,i:48,g:'x'},{t:T.c_fturn,i:49,g:'x'},{t:T.c_fpct,i:50,g:'x'},
   {t:T.c_biz,i:29,l:1,g:'b'},{t:'',i:-1,g:'b'}
 ];
 const PAGE=100;
 const isNarrow = window.matchMedia('(max-width:760px)').matches;
 const picked=new Set();
-let state={tab:'all',sector:'',seg:'',min:0,q:'',sigOn:new Set(),
+let state={tab:'all',sector:'',seg:'',min:0,q:'',sigOn:new Set(),sigAnd:false,
            sortI:12,sortD:-1,page:0,preset:'tech'};
 
 const $=s=>document.querySelector(s);
@@ -384,13 +393,16 @@ function buildSigChips(){
             : state.tab==='long' ?SIGS.filter(s=>s.k==='g')
             : state.tab==='fund' ?SIGS.filter(s=>s.k==='f')
             : state.tab==='grow' ?SIGS.filter(s=>s.k==='w') : SIGS;
-  $('#sigchips').innerHTML=vis.map(s=>
+  const tog=`<div class="sig andtog ${state.sigAnd?'on':''}" data-tog="1">${state.sigAnd?T.and_on:T.and_off}<span class="q" data-tip="${esc(T.and_tip||'')}">?</span></div>`;
+  $('#sigchips').innerHTML=tog+vis.map(s=>
     (()=>{const key=Object.keys(SIGKEY).find(k=>SIGKEY[k]===s.bit);
       const tip=key&&CFG.helpSig?CFG.helpSig[key]:'';
       return `<div class="sig ${s.k==='s'?'shrt':s.k==='g'?'lng':s.k==='f'?'fnd':'grw'} ${state.sigOn.has(s.bit)?'on':''}" data-b="${s.bit}">${s.label}${tip?`<span class="q" data-tip="${esc(tip)}">?</span>`:''}</div>`;})()).join('');
 }
 $('#sigchips').addEventListener('click',e=>{
   if(e.target.closest('.q')) return;          // 물음표 클릭은 설명만
+  const tg=e.target.closest('.andtog');
+  if(tg){ state.sigAnd=!state.sigAnd; state.page=0; buildSigChips(); render(); return; }
   const c=e.target.closest('.sig'); if(!c)return;
   const b=+c.dataset.b;
   state.sigOn.has(b)?state.sigOn.delete(b):state.sigOn.add(b);
@@ -406,7 +418,7 @@ $('#presets').addEventListener('click',e=>{
 
 function visibleCols(){
   if(state.preset==='all') return COLS;
-  const want = state.preset==='tech'?'t':state.preset==='fin'?'f':'w';
+  const want = state.preset==='tech'?'t':state.preset==='fin'?'f':state.preset==='grw'?'w':'x';
   return COLS.filter(c=>c.g==='b'||c.g===want);
 }
 function filtered(){
@@ -416,7 +428,7 @@ function filtered(){
   const q=state.q.toLowerCase();
   return DATA.filter(r=>{
     if(tabMask && !(r[18]&tabMask)) return false;
-    if(sigMask && !(r[18]&sigMask)) return false;
+    if(sigMask){ if(state.sigAnd ? (r[18]&sigMask)!==sigMask : !(r[18]&sigMask)) return false; }
     if(state.sector && r[2]!==state.sector) return false;
     if(state.seg && r[3]!==state.seg) return false;
     if(state.min && (r[12]==null || r[12]<state.min)) return false;
@@ -449,7 +461,19 @@ function cell(r,c){
   if(i===3)  return `<td class="l seg">${esc(r[3])}</td>`;
   if(i===29) return `<td class="l biz" title="${esc(r[29])}" data-code="${esc(r[0])}">${esc(r[29])}</td>`;
   if(i===4)  return `<td class="num">${priceFmt(r[4])}</td>`;
-  if([5,17,9,14,15,16,28,30,31,32,33,34,35,41,45].includes(i)) return `<td class="num">${pc(r[i])}</td>`;
+  if([5,17,9,14,15,16,28,30,31,32,33,34,35,41,45,48].includes(i)) return `<td class="num">${pc(r[i])}</td>`;
+  if([49,50].includes(i)) return `<td class="num">${r[i]==null?'—':fmt(r[i],i===49?2:0)}</td>`;
+  if(i===51){const v=r[51]; if(v==null) return '<td class="num fl">—</td>';
+    return `<td class="num ${v<1?'inf2':''}">${fmt(v,2)}</td>`;}
+  if(i===52){const v=r[52];
+    if(v==null) return '<td class="num fl">—</td>';
+    const cls = v>=100?'inf2' : v>=10?'inf1' : '';
+    return `<td class="num ${cls}">${v>=100?'100+':fmt(v,1)}</td>`;}
+  if(i===53) return `<td class="num">${r[53]==null?'—':(r[53]>0?'+':'')+Math.round(r[53]/1000).toLocaleString()+'k'}</td>`;
+  if(i===54){const v=r[54];
+    if(v==null) return '<td class="num fl">—</td>';
+    return `<td class="num ${v===0?'fl':''}">${v===0?(T.c_cleared||'0'):fmt(v,2)}</td>`;}
+  if(i===55) return `<td class="num">${r[55]==null?'—':pc(r[55])}</td>`;
   if(i===40) return `<td class="num">${fmt(r[40],2)}</td>`;
   if([42,43].includes(i)) return `<td class="num">${priceFmt(r[i])}</td>`;
   if(i===44) return `<td class="num">${r[44]==null?'—':fmt(r[44],0)}</td>`;
@@ -717,6 +741,7 @@ renderIdx(); /* ── 물음표 도움말 ── */
   window.addEventListener('resize',hide);
 })();
 
+if(CFG.market!=='jp'){const z=document.getElementById('pzSup'); if(z) z.style.display='none';}
 initDis(); buildStrip(); buildSigChips(); render();
 </script>
 __BTC_JS__

@@ -61,6 +61,9 @@ SCAN_COLUMNS = [
     "debt_to_equity",
     # 밸류·위치
     "price_earnings_growth_ttm", "Perf.YTD", "price_52_week_low", "Perf.Y",
+    # 수급
+    "VWAP", "float_shares_outstanding", "float_shares_percent_current",
+    "average_volume_10d_calc",
 ]
 
 SECTOR_KO = {
@@ -566,6 +569,20 @@ def fetch_tdnet(universe_codes):
     return {"items": merged, "map": dmap, "strong": KW_STRONG}
 
 
+def load_supply(mkey):
+    """supply/jp.json → {code: {...}}. 일본 외 시장은 빈 dict."""
+    if mkey != "jp":
+        return {}, {}
+    f = BASE / "supply" / "jp.json"
+    if not f.exists():
+        return {}, {}
+    try:
+        j = json.loads(f.read_text(encoding="utf-8"))
+        return j.get("data", {}), j.get("meta", {})
+    except Exception:
+        return {}, {}
+
+
 def load_profiles(mkey):
     p = BASE / "profiles" / f"{mkey}.json.gz"
     if not p.exists():
@@ -639,6 +656,11 @@ def compute_signals(df):
     hi, lo = d["price_52_week_high"], d["price_52_week_low"]
     rng = hi - lo
     d["pos52"] = ((close - lo) / rng * 100).where(rng > 0)
+    # 수급: VWAP 괴리(종가가 당일 평균 체결가보다 위/아래), 유동주식 회전율(당일 거래량÷유동주식)
+    vw = d["VWAP"]
+    d["vwap_dev"] = ((close / vw - 1) * 100).where(vw > 0)
+    fl = d["float_shares_outstanding"]
+    d["float_turn"] = (d["volume"] / fl * 100).where(fl > 0)
     return d
 
 
@@ -684,6 +706,14 @@ def build_rows(df, mc):
         "c45": d["Perf.Y"].round(1),
         "c46": d["inflow"].round(2) if "inflow" in d else None,
         "c47": d["score"].round(1),
+        "c48": d["vwap_dev"].round(2),
+        "c49": d["float_turn"].round(2),
+        "c50": d["float_shares_percent_current"].round(1),
+        "c51": d["m_ratio"].round(2) if "m_ratio" in d else None,
+        "c52": d["m_days"].round(1) if "m_days" in d else None,
+        "c53": d["m_buy_chg"] if "m_buy_chg" in d else None,
+        "c54": d["s_pct"].round(2) if "s_pct" in d else None,
+        "c55": d["s_chg"].round(2) if "s_chg" in d else None,
     })
     out = out.astype(object).where(pd.notna(out), None)
     rows = out.values.tolist()
@@ -749,6 +779,24 @@ def build_market(mkey, template, out_dir, generated, indices=None):
     inflow, in_streak, in_days = compute_inflow(mkey)
     df["inflow"] = df["code"].map(inflow)
     df["sig_inflow"] = df["code"].map(in_streak).fillna(False).astype(bool)
+
+    sup, sup_meta = load_supply(mkey)
+    df["m_ratio"] = df["code"].map(lambda c: sup.get(c, {}).get("m_ratio"))
+    df["m_buy"] = df["code"].map(lambda c: sup.get(c, {}).get("m_buy"))
+    df["m_buy_chg"] = df["code"].map(lambda c: sup.get(c, {}).get("m_buy_chg"))
+    df["s_pct"] = df["code"].map(lambda c: sup.get(c, {}).get("s_pct"))
+    df["s_chg"] = df["code"].map(lambda c: sup.get(c, {}).get("s_chg"))
+    # 신용매수잔고 부담일수 = 매수잔고 ÷ 10일 평균 거래량 (며칠치 거래량이 물려 있나)
+    if "average_volume_10d_calc" in df:
+        av = pd.to_numeric(df["average_volume_10d_calc"], errors="coerce")
+        df["m_days"] = (pd.to_numeric(df["m_buy"], errors="coerce") / av).where(av > 0)
+    else:
+        df["m_days"] = float("nan")
+    for c in ("m_ratio", "m_buy", "m_buy_chg", "s_pct", "s_chg"):
+        df[c] = pd.to_numeric(df[c], errors="coerce")
+    if sup:
+        print(f"  [{mkey}] 수급: 신용잔고 {df['m_ratio'].notna().sum()}종목 "
+              f"({sup_meta.get('margin_asof')}) / 공매도 {df['s_pct'].notna().sum()}종목 ({sup_meta.get('short_asof')})")
 
     df = compute_signals(df)
 
@@ -842,9 +890,11 @@ def build_market(mkey, template, out_dir, generated, indices=None):
             "__PRESET_TECH__": L["preset_tech"], "__PRESET_FIN__": L["preset_fin"],
             "__PRESET_ALL__": L["preset_all"], "__HINT__": L["hint"],
             "__PRESET_GROWTH__": L["preset_growth"], "__TAB_GROWTH__": L["tab_growth"],
+            "__PRESET_SUPPLY__": L["preset_supply"],
             "__PREV__": L["prev"], "__NEXT__": L["next"],
             "__WL_ALL__": L["wl_all"], "__WL_CLEAR__": L["wl_clear"],
             "__WL_DL__": L["wl_dl"], "__WL_HINT__": L["wl_hint"],
+            "__DELAY__": L["delay"], "__DELAY_TIP__": L["delay_tip"],
             "__TAB_DIS__": L["tab_dis"], "__DIS_NONE__": L["dis_none"],
             "__DIS_ALL__": L["dis_all"], "__EXTRA_NAV__": extra_nav,
             "__FOOT_TOGGLE__": L["foot_toggle"],
@@ -854,6 +904,7 @@ def build_market(mkey, template, out_dir, generated, indices=None):
         idx_l = 0 if lang == "ko" else 1
         cfg["help"] = {k: v[idx_l] for k, v in i18n.HELP.items()}
         cfg["helpSig"] = {k: v[idx_l] for k, v in i18n.HELP_SIG.items()}
+        cfg["market"] = mkey
         cfg["profilesUrl"] = prof_url
         cfg["bizLoading"] = L["biz_loading"]
         cfg["bizNone"] = L["biz_none"]
