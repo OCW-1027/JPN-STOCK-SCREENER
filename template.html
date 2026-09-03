@@ -327,6 +327,7 @@ const SHORT_MASK=0b10000000000111111, LONG_MASK=0b0000001111000000,
 
 /* g: b=always, t=technical, f=financial */
 const HELPMAP = {12:'turn',20:'mcap',29:'biz',5:'c_chg',17:'c_gap',9:'c_ext',11:'rvol',13:'c_rsi',
+  62:'c_svpct',63:'c_svchg',64:'c_si',65:'c_dtc',
   56:'c_frgn_d',57:'c_frgn5',58:'c_frgn_r',59:'c_inst_d',60:'c_inst5',61:'c_indi5',
   44:'c_pos52',48:'c_vwap',49:'c_fturn',50:'c_fpct',51:'c_mratio',52:'c_mdays',53:'c_mbuychg',54:'c_spct',55:'c_schg',28:'c_macd',21:'c_per',40:'c_peg',22:'c_pbr',24:'c_roe',37:'c_roic',38:'c_psr',
   26:'c_eq',39:'c_de',34:'c_cagr',30:'c_revq',46:'c_inflow',47:'c_score'};
@@ -345,6 +346,7 @@ const COLS = [
     {t:T.c_revq,i:30,g:'w'},{t:T.c_revy,i:31,g:'w'},{t:T.c_revt,i:32,g:'w'},
   {t:T.c_revqq,i:33,g:'w'},{t:T.c_cagr,i:34,g:'w'},{t:T.c_epsq,i:35,g:'w'},
   {t:T.c_opm,i:36,g:'w'},{t:T.c_roic,i:37,g:'w'},{t:T.c_psr,i:38,g:'w'},{t:T.c_de,i:39,g:'w'},
+  {t:T.c_svpct,i:62,g:'x'},{t:T.c_svchg,i:63,g:'x'},{t:T.c_si,i:64,g:'x'},{t:T.c_dtc,i:65,g:'x'},
   {t:T.c_frgn_d,i:56,g:'x'},{t:T.c_frgn5,i:57,g:'x'},{t:T.c_frgn_r,i:58,g:'x'},
   {t:T.c_inst_d,i:59,g:'x'},{t:T.c_inst5,i:60,g:'x'},{t:T.c_indi5,i:61,g:'x'},
   {t:T.c_mratio,i:51,g:'x'},{t:T.c_mdays,i:52,g:'x'},{t:T.c_mbuychg,i:53,g:'x'},{t:T.c_spct,i:54,g:'x'},{t:T.c_schg,i:55,g:'x'},
@@ -485,6 +487,14 @@ function cell(r,c){
     if(v==null) return '<td class="num fl">—</td>';
     return `<td class="num ${v>0?'up':v<0?'dn':'fl'}">${v>0?'+':''}${Math.round(v).toLocaleString(NUMLOC)}</td>`;}
   if(i===58) return `<td class="num">${r[58]==null?'—':fmt(r[58],2)}</td>`;
+  if(i===62){const v=r[62];
+    if(v==null) return '<td class="num fl">—</td>';
+    return `<td class="num ${v>=60?'inf2':v>=45?'inf1':''}">${fmt(v,1)}</td>`;}
+  if(i===63) return `<td class="num">${r[63]==null?'—':pc(r[63])}</td>`;
+  if(i===64) return `<td class="num">${r[64]==null?'—':fmt(r[64],1)}</td>`;
+  if(i===65){const v=r[65];
+    if(v==null) return '<td class="num fl">—</td>';
+    return `<td class="num ${v>=5?'inf2':''}">${fmt(v,2)}</td>`;}
   if(i===40) return `<td class="num">${fmt(r[40],2)}</td>`;
   if([42,43].includes(i)) return `<td class="num">${priceFmt(r[i])}</td>`;
   if(i===44) return `<td class="num">${r[44]==null?'—':fmt(r[44],0)}</td>`;
@@ -752,7 +762,7 @@ renderIdx(); /* ── 물음표 도움말 ── */
   window.addEventListener('resize',hide);
 })();
 
-if(CFG.market!=='jp'&&CFG.market!=='kr'){const z=document.getElementById('pzSup'); if(z) z.style.display='none';}
+// 수급 프리셋은 3개 시장 모두 사용 (시장별로 채워지는 컬럼이 다름)
 initDis(); buildStrip(); buildSigChips(); render();
 </script>
 __BTC_JS__

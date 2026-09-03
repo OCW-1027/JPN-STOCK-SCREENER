@@ -571,7 +571,7 @@ def fetch_tdnet(universe_codes):
 
 def load_supply(mkey):
     """supply/{market}.json → {code: {...}}. 파일이 없으면 빈 dict."""
-    if mkey not in ("jp", "kr"):
+    if mkey not in ("jp", "kr", "us"):
         return {}, {}
     f = BASE / "supply" / f"{mkey}.json"
     if not f.exists():
@@ -720,6 +720,10 @@ def build_rows(df, mc):
         "c59": d["kr_od"],
         "c60": (d["kr_o5"] / 1000).round(0),
         "c61": (d["kr_i5"] / 1000).round(0),
+        "c62": d["us_sv"].round(1),
+        "c63": d["us_svc"].round(1),
+        "c64": (d["us_si"] / 1e6).round(1),
+        "c65": d["us_dtc"].round(2),
     })
     out = out.astype(object).where(pd.notna(out), None)
     rows = out.values.tolist()
@@ -796,6 +800,18 @@ def build_market(mkey, template, out_dir, generated, indices=None):
             print(f"  [kr] 수급: 투자자별 {df['kr_fd'].notna().sum()}종목 ({sup_meta.get('asof')})")
     else:
         for dst in ("kr_f5", "kr_fd", "kr_fr", "kr_o5", "kr_od", "kr_i5"):
+            df[dst] = float("nan")
+
+    if mkey == "us":
+        for src, dst in [("sv_pct", "us_sv"), ("sv_chg", "us_svc"),
+                         ("si_shares", "us_si"), ("si_days", "us_dtc")]:
+            df[dst] = pd.to_numeric(df["code"].map(lambda c, s=src: sup.get(c, {}).get(s)),
+                                    errors="coerce")
+        if sup:
+            print(f"  [us] 수급: 공매도비중 {df['us_sv'].notna().sum()}종목 "
+                  f"({sup_meta.get('finra_asof')}) / SI {df['us_si'].notna().sum()}종목")
+    else:
+        for dst in ("us_sv", "us_svc", "us_si", "us_dtc"):
             df[dst] = float("nan")
 
     df["m_ratio"] = df["code"].map(lambda c: sup.get(c, {}).get("m_ratio"))
