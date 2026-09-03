@@ -62,10 +62,19 @@ jobs:
         continue-on-error: true
         run: python volcurve.py
 
-      - name: 일본 수급 데이터 (JPX 신용잔고·공매도, 종가판만, 실패해도 계속)
-        if: env.HM != ''
+      - name: 일본 수급 데이터 (JPX 신용잔고·공매도, 하루 1회, 실패해도 계속)
+        # history 저장(HM)과 분리한다. HM은 하루 한 번만 켜지므로,
+        # 그 시점에 수집이 실패하거나 코드가 없으면 그날은 재시도 기회가 없었다.
+        # 대신 '오늘 날짜로 이미 받았는지'를 파일에서 직접 확인한다.
         continue-on-error: true
-        run: python supply.py
+        run: |
+          H=$(TZ=Asia/Tokyo date +%H)
+          if [ "$H" -lt 16 ]; then echo "종가 전(${H}시) → 건너뜀"; exit 0; fi
+          TODAY=$(TZ=Asia/Tokyo date +%Y-%m-%d)
+          if [ -f supply/jp.json ] && grep -q "\"short_asof\": \"$TODAY\"" supply/jp.json; then
+            echo "$TODAY 수급 이미 수집됨 → 건너뜀"; exit 0
+          fi
+          python supply.py
 
       - name: Run screener (JP + KR + US)
         run: python screener.py
