@@ -570,10 +570,10 @@ def fetch_tdnet(universe_codes):
 
 
 def load_supply(mkey):
-    """supply/jp.json → {code: {...}}. 일본 외 시장은 빈 dict."""
-    if mkey != "jp":
+    """supply/{market}.json → {code: {...}}. 파일이 없으면 빈 dict."""
+    if mkey not in ("jp", "kr"):
         return {}, {}
-    f = BASE / "supply" / "jp.json"
+    f = BASE / "supply" / f"{mkey}.json"
     if not f.exists():
         return {}, {}
     try:
@@ -714,6 +714,12 @@ def build_rows(df, mc):
         "c53": d["m_buy_chg"] if "m_buy_chg" in d else None,
         "c54": d["s_pct"].round(2) if "s_pct" in d else None,
         "c55": d["s_chg"].round(2) if "s_chg" in d else None,
+        "c56": d["kr_fd"],
+        "c57": (d["kr_f5"] / 1000).round(0),
+        "c58": d["kr_fr"].round(2),
+        "c59": d["kr_od"],
+        "c60": (d["kr_o5"] / 1000).round(0),
+        "c61": (d["kr_i5"] / 1000).round(0),
     })
     out = out.astype(object).where(pd.notna(out), None)
     rows = out.values.tolist()
@@ -781,6 +787,17 @@ def build_market(mkey, template, out_dir, generated, indices=None):
     df["sig_inflow"] = df["code"].map(in_streak).fillna(False).astype(bool)
 
     sup, sup_meta = load_supply(mkey)
+    if mkey == "kr":
+        for src, dst in [("f_net5", "kr_f5"), ("f_days", "kr_fd"), ("f_ratio", "kr_fr"),
+                         ("o_net5", "kr_o5"), ("o_days", "kr_od"), ("i_net5", "kr_i5")]:
+            df[dst] = pd.to_numeric(df["code"].map(lambda c, s=src: sup.get(c, {}).get(s)),
+                                    errors="coerce")
+        if sup:
+            print(f"  [kr] 수급: 투자자별 {df['kr_fd'].notna().sum()}종목 ({sup_meta.get('asof')})")
+    else:
+        for dst in ("kr_f5", "kr_fd", "kr_fr", "kr_o5", "kr_od", "kr_i5"):
+            df[dst] = float("nan")
+
     df["m_ratio"] = df["code"].map(lambda c: sup.get(c, {}).get("m_ratio"))
     df["m_buy"] = df["code"].map(lambda c: sup.get(c, {}).get("m_buy"))
     df["m_buy_chg"] = df["code"].map(lambda c: sup.get(c, {}).get("m_buy_chg"))
@@ -794,7 +811,7 @@ def build_market(mkey, template, out_dir, generated, indices=None):
         df["m_days"] = float("nan")
     for c in ("m_ratio", "m_buy", "m_buy_chg", "s_pct", "s_chg"):
         df[c] = pd.to_numeric(df[c], errors="coerce")
-    if sup:
+    if sup and mkey == "jp":
         print(f"  [{mkey}] 수급: 신용잔고 {df['m_ratio'].notna().sum()}종목 "
               f"({sup_meta.get('margin_asof')}) / 공매도 {df['s_pct'].notna().sum()}종목 ({sup_meta.get('short_asof')})")
 
