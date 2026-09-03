@@ -346,11 +346,11 @@ const COLS = [
     {t:T.c_revq,i:30,g:'w'},{t:T.c_revy,i:31,g:'w'},{t:T.c_revt,i:32,g:'w'},
   {t:T.c_revqq,i:33,g:'w'},{t:T.c_cagr,i:34,g:'w'},{t:T.c_epsq,i:35,g:'w'},
   {t:T.c_opm,i:36,g:'w'},{t:T.c_roic,i:37,g:'w'},{t:T.c_psr,i:38,g:'w'},{t:T.c_de,i:39,g:'w'},
-  {t:T.c_svpct,i:62,g:'x'},{t:T.c_svchg,i:63,g:'x'},{t:T.c_si,i:64,g:'x'},{t:T.c_dtc,i:65,g:'x'},
-  {t:T.c_frgn_d,i:56,g:'x'},{t:T.c_frgn5,i:57,g:'x'},{t:T.c_frgn_r,i:58,g:'x'},
-  {t:T.c_inst_d,i:59,g:'x'},{t:T.c_inst5,i:60,g:'x'},{t:T.c_indi5,i:61,g:'x'},
-  {t:T.c_mratio,i:51,g:'x'},{t:T.c_mdays,i:52,g:'x'},{t:T.c_mbuychg,i:53,g:'x'},{t:T.c_spct,i:54,g:'x'},{t:T.c_schg,i:55,g:'x'},
-  {t:T.c_vwap,i:48,g:'x'},{t:T.c_fturn,i:49,g:'x'},{t:T.c_fpct,i:50,g:'x'},
+  {t:T.c_svpct,i:62,g:'x',m:'us'},{t:T.c_svchg,i:63,g:'x',m:'us'},{t:T.c_si,i:64,g:'x',m:'us'},{t:T.c_dtc,i:65,g:'x',m:'us'},
+  {t:T.c_frgn_d,i:56,g:'x',m:'kr'},{t:T.c_frgn5,i:57,g:'x',m:'kr'},{t:T.c_frgn_r,i:58,g:'x',m:'kr'},
+  {t:T.c_inst_d,i:59,g:'x',m:'kr'},{t:T.c_inst5,i:60,g:'x',m:'kr'},{t:T.c_indi5,i:61,g:'x',m:'kr'},
+  {t:T.c_mratio,i:51,g:'x',m:'jp'},{t:T.c_mdays,i:52,g:'x',m:'jp'},{t:T.c_mbuychg,i:53,g:'x',m:'jp'},
+  {t:T.c_spct,i:54,g:'x',m:'jp'},{t:T.c_schg,i:55,g:'x',m:'jp'},
   {t:T.c_biz,i:29,l:1,g:'b'},{t:'',i:-1,g:'b'}
 ];
 const PAGE=100;
@@ -422,9 +422,11 @@ $('#presets').addEventListener('click',e=>{
 });
 
 function visibleCols(){
-  if(state.preset==='all') return COLS;
+  // m 속성이 있으면 그 시장에서만 표시 (수급 지표는 시장별 공개 데이터가 다름)
+  const mine = c => !c.m || c.m === CFG.market;
+  if(state.preset==='all') return COLS.filter(mine);
   const want = state.preset==='tech'?'t':state.preset==='fin'?'f':state.preset==='grw'?'w':'x';
-  return COLS.filter(c=>c.g==='b'||c.g===want);
+  return COLS.filter(c=>(c.g==='b'||c.g===want) && mine(c));
 }
 function filtered(){
   const tabMask = state.tab==='short'?SHORT_MASK:state.tab==='long'?LONG_MASK
