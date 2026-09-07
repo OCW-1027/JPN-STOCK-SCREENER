@@ -1,0 +1,1643 @@
+{
+ "date": "2026-09-08",
+ "market": "us",
+ "generated": "2026-09-08 06:35 JST",
+ "label_ko": "🇺🇸 미국",
+ "label_ja": "🇺🇸 米国",
+ "unit_ko": "$M",
+ "unit_ja": "$M",
+ "llm_mode": "off",
+ "baserate_days": 14,
+ "universe": {
+  "total": 5183,
+  "liquid": 2164,
+  "candidates": 10,
+  "short": 7,
+  "long": 3,
+  "news": 0
+ },
+ "picks": [
+  {
+   "code": "PAA",
+   "name": "Plains All American Pipeline, L.P.",
+   "ticker": "NASDAQ:PAA",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_high",
+    "sig_macd",
+    "sig_div",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 6825,
+      "win": 38.5,
+      "avg": 1.16,
+      "med": -0.92,
+      "excess": -1.22,
+      "best": 3343.9,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 10009,
+      "win": 43.0,
+      "avg": 1.12,
+      "med": -0.23,
+      "excess": 0.43,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 1581,
+      "win": 43.1,
+      "avg": -0.65,
+      "med": -0.1,
+      "excess": -2.94,
+      "best": 308.4,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 2214,
+      "win": 40.2,
+      "avg": -0.06,
+      "med": 0.0,
+      "excess": -0.84,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 6742,
+      "win": 41.2,
+      "avg": -0.26,
+      "med": -0.61,
+      "excess": -2.82,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 9496,
+      "win": 45.2,
+      "avg": -0.08,
+      "med": -0.08,
+      "excess": -1.01,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 3020,
+      "win": 42.5,
+      "avg": -0.3,
+      "med": -0.36,
+      "excess": -2.86,
+      "best": 26.0,
+      "worst": -35.5
+     },
+     "1": {
+      "n": 4410,
+      "win": 48.8,
+      "avg": 0.04,
+      "med": 0.0,
+      "excess": -0.92,
+      "best": 12.2,
+      "worst": -30.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 3117,
+      "win": 38.1,
+      "avg": -0.63,
+      "med": -1.24,
+      "excess": -3.25,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 5178,
+      "win": 46.3,
+      "avg": 0.1,
+      "med": -0.17,
+      "excess": -0.92,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 5952,
+      "win": 37.7,
+      "avg": -0.97,
+      "med": -0.92,
+      "excess": -3.59,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 9930,
+      "win": 46.8,
+      "avg": -0.04,
+      "med": -0.08,
+      "excess": -1.07,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Industrial Services",
+   "industry": "Oil & Gas Pipelines",
+   "segment": "NASDAQ",
+   "close": 25.7,
+   "chg": 0.69,
+   "gap": -0.02,
+   "sma5": 25.69,
+   "sma20": 24.64,
+   "sma200": 21.38,
+   "ext200": 20.19,
+   "rsi": 64.6,
+   "macd_h": 0.08,
+   "rvol": 0.72,
+   "pw": 0.78,
+   "p1": 8.9,
+   "p3": 12.57,
+   "ytd": 42.8,
+   "pos52": 97.0,
+   "hi52": 25.97,
+   "lo52": 15.69,
+   "val": 46.9,
+   "mcap": 18133.0,
+   "per": 7.1,
+   "pbr": 2.01,
+   "eps": 3.61,
+   "roe": 9.9,
+   "eqr": 41.5,
+   "div": 6.35,
+   "rev_q": 65.5,
+   "rev_ttm": 9.0,
+   "cagr5": 13.4,
+   "eps_q": 981.1,
+   "opm": 2.8,
+   "roic": 5.5,
+   "psr": 0.41,
+   "peg": 0.02,
+   "de": 0.78,
+   "inflow": null,
+   "biz": "Plains All American Pipeline, L.P., through its subsidiaries, engages in the pipeline transportation, terminalling, storage, and gathering of crude oil and natural gas liquids (NGL) in the United States and Canada. The c",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "KMT",
+   "name": "Kennametal Inc.",
+   "ticker": "NYSE:KMT",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_qual",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 6825,
+      "win": 38.5,
+      "avg": 1.16,
+      "med": -0.92,
+      "excess": -1.22,
+      "best": 3343.9,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 10009,
+      "win": 43.0,
+      "avg": 1.12,
+      "med": -0.23,
+      "excess": 0.43,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 2159,
+      "win": 38.8,
+      "avg": 0.86,
+      "med": -0.92,
+      "excess": -1.49,
+      "best": 2307.5,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 3325,
+      "win": 44.4,
+      "avg": 2.86,
+      "med": -0.2,
+      "excess": 2.05,
+      "best": 5598.3,
+      "worst": -47.9
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 3095,
+      "win": 43.7,
+      "avg": -0.56,
+      "med": -0.7,
+      "excess": -3.11,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 4471,
+      "win": 49.2,
+      "avg": 0.04,
+      "med": -0.01,
+      "excess": -0.9,
+      "best": 18.9,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 5952,
+      "win": 37.7,
+      "avg": -0.97,
+      "med": -0.92,
+      "excess": -3.59,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 9930,
+      "win": 46.8,
+      "avg": -0.04,
+      "med": -0.08,
+      "excess": -1.07,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 1484,
+      "win": 44.9,
+      "avg": -0.4,
+      "med": -0.44,
+      "excess": -3.03,
+      "best": 20.8,
+      "worst": -52.2
+     },
+     "1": {
+      "n": 2486,
+      "win": 48.5,
+      "avg": -0.01,
+      "med": -0.03,
+      "excess": -1.03,
+      "best": 16.0,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Producer Manufacturing",
+   "industry": "Industrial Machinery",
+   "segment": "NYSE",
+   "close": 31.02,
+   "chg": 5.4,
+   "gap": 0.58,
+   "sma5": 29.69,
+   "sma20": 30.19,
+   "sma200": 34.26,
+   "ext200": -9.45,
+   "rsi": 50.0,
+   "macd_h": 0.16,
+   "rvol": 2.1,
+   "pw": 2.48,
+   "p1": -23.41,
+   "p3": -4.7,
+   "ytd": 8.4,
+   "pos52": 45.0,
+   "hi52": 43.81,
+   "lo52": 20.35,
+   "val": 86.7,
+   "mcap": 2364.0,
+   "per": 7.0,
+   "pbr": 1.51,
+   "eps": 4.49,
+   "roe": 24.0,
+   "eqr": 50.9,
+   "div": 2.58,
+   "rev_q": 42.6,
+   "rev_ttm": 19.8,
+   "cagr5": 5.1,
+   "eps_q": 936.7,
+   "opm": 20.4,
+   "roic": 16.3,
+   "psr": 1.02,
+   "peg": 0.02,
+   "de": 0.49,
+   "inflow": null,
+   "biz": "Kennametal Inc. engages in development and application of tungsten carbides, ceramics, and hard materials and solutions worldwide. It operates through two segments, Metal Cutting and Infrastructure. The Metal Cutting seg",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "DFIN",
+   "name": "Donnelley Financial Solutions, Inc.",
+   "ticker": "NYSE:DFIN",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_trend",
+    "sig_macd",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 6825,
+      "win": 38.5,
+      "avg": 1.16,
+      "med": -0.92,
+      "excess": -1.22,
+      "best": 3343.9,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 10009,
+      "win": 43.0,
+      "avg": 1.12,
+      "med": -0.23,
+      "excess": 0.43,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 2159,
+      "win": 38.8,
+      "avg": 0.86,
+      "med": -0.92,
+      "excess": -1.49,
+      "best": 2307.5,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 3325,
+      "win": 44.4,
+      "avg": 2.86,
+      "med": -0.2,
+      "excess": 2.05,
+      "best": 5598.3,
+      "worst": -47.9
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 2380,
+      "win": 40.5,
+      "avg": -0.75,
+      "med": -0.62,
+      "excess": -3.16,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 3271,
+      "win": 44.4,
+      "avg": -0.18,
+      "med": -0.11,
+      "excess": -0.97,
+      "best": 16.6,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 6742,
+      "win": 41.2,
+      "avg": -0.26,
+      "med": -0.61,
+      "excess": -2.82,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 9496,
+      "win": 45.2,
+      "avg": -0.08,
+      "med": -0.08,
+      "excess": -1.01,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 5952,
+      "win": 37.7,
+      "avg": -0.97,
+      "med": -0.92,
+      "excess": -3.59,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 9930,
+      "win": 46.8,
+      "avg": -0.04,
+      "med": -0.08,
+      "excess": -1.07,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Packaged Software",
+   "segment": "NYSE",
+   "close": 50.92,
+   "chg": 3.77,
+   "gap": 1.02,
+   "sma5": 48.86,
+   "sma20": 48.29,
+   "sma200": 46.73,
+   "ext200": 8.97,
+   "rsi": 64.2,
+   "macd_h": 0.11,
+   "rvol": 1.49,
+   "pw": 5.56,
+   "p1": 1.37,
+   "p3": 30.66,
+   "ytd": 8.8,
+   "pos52": 70.0,
+   "hi52": 57.37,
+   "lo52": 36.11,
+   "val": 17.2,
+   "mcap": 1252.0,
+   "per": 35.1,
+   "pbr": 3.25,
+   "eps": 1.5,
+   "roe": 8.6,
+   "eqr": 47.7,
+   "div": 0.0,
+   "rev_q": 2.8,
+   "rev_ttm": 3.0,
+   "cagr5": -3.0,
+   "eps_q": 12.4,
+   "opm": 19.9,
+   "roic": 5.8,
+   "psr": 1.87,
+   "peg": null,
+   "de": 0.55,
+   "inflow": null,
+   "biz": "Donnelley Financial Solutions, Inc. provides compliance and regulatory software and services in the United States, Asia, Europe, Canada, and internationally. It operates through four segments: Capital Markets  Software ",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "SFL",
+   "name": "SFL Corporation Ltd",
+   "ticker": "NYSE:SFL",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_x5",
+    "sig_high",
+    "sig_macd",
+    "sig_div",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 6825,
+      "win": 38.5,
+      "avg": 1.16,
+      "med": -0.92,
+      "excess": -1.22,
+      "best": 3343.9,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 10009,
+      "win": 43.0,
+      "avg": 1.12,
+      "med": -0.23,
+      "excess": 0.43,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 1581,
+      "win": 43.1,
+      "avg": -0.65,
+      "med": -0.1,
+      "excess": -2.94,
+      "best": 308.4,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 2214,
+      "win": 40.2,
+      "avg": -0.06,
+      "med": 0.0,
+      "excess": -0.84,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 6742,
+      "win": 41.2,
+      "avg": -0.26,
+      "med": -0.61,
+      "excess": -2.82,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 9496,
+      "win": 45.2,
+      "avg": -0.08,
+      "med": -0.08,
+      "excess": -1.01,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 3020,
+      "win": 42.5,
+      "avg": -0.3,
+      "med": -0.36,
+      "excess": -2.86,
+      "best": 26.0,
+      "worst": -35.5
+     },
+     "1": {
+      "n": 4410,
+      "win": 48.8,
+      "avg": 0.04,
+      "med": 0.0,
+      "excess": -0.92,
+      "best": 12.2,
+      "worst": -30.3
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 5952,
+      "win": 37.7,
+      "avg": -0.97,
+      "med": -0.92,
+      "excess": -3.59,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 9930,
+      "win": 46.8,
+      "avg": -0.04,
+      "med": -0.08,
+      "excess": -1.07,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Transportation",
+   "industry": "Marine Shipping",
+   "segment": "NYSE",
+   "close": 12.86,
+   "chg": 1.9,
+   "gap": -0.08,
+   "sma5": 12.57,
+   "sma20": 12.31,
+   "sma200": 10.46,
+   "ext200": 22.98,
+   "rsi": 66.5,
+   "macd_h": 0.02,
+   "rvol": 1.49,
+   "pw": 3.96,
+   "p1": 5.93,
+   "p3": 17.55,
+   "ytd": 63.8,
+   "pos52": 99.0,
+   "hi52": 12.94,
+   "lo52": 6.73,
+   "val": 25.1,
+   "mcap": 1862.0,
+   "per": 27.3,
+   "pbr": 1.72,
+   "eps": 0.47,
+   "roe": 6.2,
+   "eqr": 23.8,
+   "div": 6.38,
+   "rev_q": 4.2,
+   "rev_ttm": -15.6,
+   "cagr5": 9.2,
+   "eps_q": 2386.1,
+   "opm": 27.8,
+   "roic": 2.2,
+   "psr": 2.33,
+   "peg": 0.33,
+   "de": 2.3,
+   "inflow": null,
+   "biz": "SFL Corporation Ltd., a maritime and offshore asset owning and chartering company, engages in the ownership, operation, and chartering out of vessels and offshore related assets on medium and long-term charters. The comp",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "NAVI",
+   "name": "Navient Corporation",
+   "ticker": "NASDAQ:NAVI",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_reclaim",
+    "sig_macd",
+    "sig_div"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 6825,
+      "win": 38.5,
+      "avg": 1.16,
+      "med": -0.92,
+      "excess": -1.22,
+      "best": 3343.9,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 10009,
+      "win": 43.0,
+      "avg": 1.12,
+      "med": -0.23,
+      "excess": 0.43,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 2159,
+      "win": 38.8,
+      "avg": 0.86,
+      "med": -0.92,
+      "excess": -1.49,
+      "best": 2307.5,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 3325,
+      "win": 44.4,
+      "avg": 2.86,
+      "med": -0.2,
+      "excess": 2.05,
+      "best": 5598.3,
+      "worst": -47.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 2205,
+      "win": 37.0,
+      "avg": -0.26,
+      "med": -0.8,
+      "excess": -2.86,
+      "best": 853.0,
+      "worst": -50.4
+     },
+     "1": {
+      "n": 3281,
+      "win": 47.1,
+      "avg": 0.02,
+      "med": -0.02,
+      "excess": -0.92,
+      "best": 355.6,
+      "worst": -44.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 6742,
+      "win": 41.2,
+      "avg": -0.26,
+      "med": -0.61,
+      "excess": -2.82,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 9496,
+      "win": 45.2,
+      "avg": -0.08,
+      "med": -0.08,
+      "excess": -1.01,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 3020,
+      "win": 42.5,
+      "avg": -0.3,
+      "med": -0.36,
+      "excess": -2.86,
+      "best": 26.0,
+      "worst": -35.5
+     },
+     "1": {
+      "n": 4410,
+      "win": 48.8,
+      "avg": 0.04,
+      "med": 0.0,
+      "excess": -0.92,
+      "best": 12.2,
+      "worst": -30.3
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Finance/Rental/Leasing",
+   "segment": "NASDAQ",
+   "close": 9.63,
+   "chg": 1.58,
+   "gap": -2.22,
+   "sma5": 9.49,
+   "sma20": 9.24,
+   "sma200": 9.6,
+   "ext200": 0.34,
+   "rsi": 59.7,
+   "macd_h": 0.0,
+   "rvol": 1.35,
+   "pw": 2.88,
+   "p1": 3.1,
+   "p3": 26.21,
+   "ytd": -26.0,
+   "pos52": 36.0,
+   "hi52": 13.75,
+   "lo52": 7.33,
+   "val": 13.6,
+   "mcap": 903.0,
+   "per": null,
+   "pbr": 0.38,
+   "eps": -0.48,
+   "roe": -2.0,
+   "eqr": 2.1,
+   "div": 6.65,
+   "rev_q": -11.9,
+   "rev_ttm": -17.2,
+   "cagr5": -2.8,
+   "eps_q": 89.9,
+   "opm": 78.9,
+   "roic": -0.1,
+   "psr": 0.3,
+   "peg": null,
+   "de": 18.49,
+   "inflow": null,
+   "biz": "Navient Corporation provides technology-enabled education finance  for education in the United States. It operates through two segments: Federal Education Loans and Consumer Lending. The company owns and manages portfoli",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "AMD",
+   "name": "Advanced Micro Devices, Inc.",
+   "ticker": "NASDAQ:AMD",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_macd",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 6825,
+      "win": 38.5,
+      "avg": 1.16,
+      "med": -0.92,
+      "excess": -1.22,
+      "best": 3343.9,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 10009,
+      "win": 43.0,
+      "avg": 1.12,
+      "med": -0.23,
+      "excess": 0.43,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 2159,
+      "win": 38.8,
+      "avg": 0.86,
+      "med": -0.92,
+      "excess": -1.49,
+      "best": 2307.5,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 3325,
+      "win": 44.4,
+      "avg": 2.86,
+      "med": -0.2,
+      "excess": 2.05,
+      "best": 5598.3,
+      "worst": -47.9
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 6742,
+      "win": 41.2,
+      "avg": -0.26,
+      "med": -0.61,
+      "excess": -2.82,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 9496,
+      "win": 45.2,
+      "avg": -0.08,
+      "med": -0.08,
+      "excess": -1.01,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 3117,
+      "win": 38.1,
+      "avg": -0.63,
+      "med": -1.24,
+      "excess": -3.25,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 5178,
+      "win": 46.3,
+      "avg": 0.1,
+      "med": -0.17,
+      "excess": -0.92,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 5952,
+      "win": 37.7,
+      "avg": -0.97,
+      "med": -0.92,
+      "excess": -3.59,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 9930,
+      "win": 46.8,
+      "avg": -0.04,
+      "med": -0.08,
+      "excess": -1.07,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Electronic Technology",
+   "industry": "Semiconductors",
+   "segment": "NASDAQ",
+   "close": 477.57,
+   "chg": 4.69,
+   "gap": 1.28,
+   "sma5": 464.22,
+   "sma20": 475.2,
+   "sma200": 341.0,
+   "ext200": 40.05,
+   "rsi": 49.7,
+   "macd_h": 0.14,
+   "rvol": 1.3,
+   "pw": 1.07,
+   "p1": -1.43,
+   "p3": -4.4,
+   "ytd": 118.2,
+   "pos52": 75.0,
+   "hi52": 584.73,
+   "lo52": 149.22,
+   "val": 9397.9,
+   "mcap": 779621.0,
+   "per": 122.6,
+   "pbr": 11.59,
+   "eps": 3.95,
+   "roe": 10.2,
+   "eqr": 83.5,
+   "div": 0.0,
+   "rev_q": 50.1,
+   "rev_ttm": 39.5,
+   "cagr5": 28.8,
+   "eps_q": 158.8,
+   "opm": 15.7,
+   "roic": 9.6,
+   "psr": 22.56,
+   "peg": 0.94,
+   "de": 0.06,
+   "inflow": null,
+   "biz": "Advanced Micro Devices, Inc. operates as a semiconductor company internationally. It operates in three segments: Data Center, Client and Gaming, and Embedded. The company offers artificial intelligence (AI) accelerators,",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "WDC",
+   "name": "Western Digital Corporation",
+   "ticker": "NASDAQ:WDC",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_macd",
+    "sig_qual",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 6825,
+      "win": 38.5,
+      "avg": 1.16,
+      "med": -0.92,
+      "excess": -1.22,
+      "best": 3343.9,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 10009,
+      "win": 43.0,
+      "avg": 1.12,
+      "med": -0.23,
+      "excess": 0.43,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 2159,
+      "win": 38.8,
+      "avg": 0.86,
+      "med": -0.92,
+      "excess": -1.49,
+      "best": 2307.5,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 3325,
+      "win": 44.4,
+      "avg": 2.86,
+      "med": -0.2,
+      "excess": 2.05,
+      "best": 5598.3,
+      "worst": -47.9
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 6742,
+      "win": 41.2,
+      "avg": -0.26,
+      "med": -0.61,
+      "excess": -2.82,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 9496,
+      "win": 45.2,
+      "avg": -0.08,
+      "med": -0.08,
+      "excess": -1.01,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 3095,
+      "win": 43.7,
+      "avg": -0.56,
+      "med": -0.7,
+      "excess": -3.11,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 4471,
+      "win": 49.2,
+      "avg": 0.04,
+      "med": -0.01,
+      "excess": -0.9,
+      "best": 18.9,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 5952,
+      "win": 37.7,
+      "avg": -0.97,
+      "med": -0.92,
+      "excess": -3.59,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 9930,
+      "win": 46.8,
+      "avg": -0.04,
+      "med": -0.08,
+      "excess": -1.07,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Electronic Technology",
+   "industry": "Computer Peripherals",
+   "segment": "NASDAQ",
+   "close": 467.46,
+   "chg": 5.86,
+   "gap": 2.41,
+   "sma5": 451.78,
+   "sma20": 464.23,
+   "sma200": 372.81,
+   "ext200": 25.39,
+   "rsi": 48.3,
+   "macd_h": 1.79,
+   "rvol": 1.06,
+   "pw": 1.13,
+   "p1": -14.22,
+   "p3": -14.27,
+   "ytd": 163.8,
+   "pos52": 53.0,
+   "hi52": 799.87,
+   "lo52": 91.65,
+   "val": 2717.0,
+   "mcap": 168538.0,
+   "per": 19.3,
+   "pbr": 19.04,
+   "eps": 26.96,
+   "roe": 131.4,
+   "eqr": 63.9,
+   "div": 0.11,
+   "rev_q": 43.8,
+   "rev_ttm": -2.7,
+   "cagr5": -5.3,
+   "eps_q": 980.7,
+   "opm": 35.6,
+   "roic": 108.9,
+   "psr": 13.86,
+   "peg": 0.05,
+   "de": 0.13,
+   "inflow": null,
+   "biz": "Western Digital Corporation engages in the development, manufacture, and sale of data storage devices and solutions based on hard disk drive (HDD) technology in the United States, Asia, Europe, the Middle East, and Afric",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "EE",
+   "name": "Excelerate Energy, Inc.",
+   "ticker": "NYSE:EE",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_trend",
+    "sig_macd",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 6825,
+      "win": 38.5,
+      "avg": 1.16,
+      "med": -0.92,
+      "excess": -1.22,
+      "best": 3343.9,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 10009,
+      "win": 43.0,
+      "avg": 1.12,
+      "med": -0.23,
+      "excess": 0.43,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 2380,
+      "win": 40.5,
+      "avg": -0.75,
+      "med": -0.62,
+      "excess": -3.16,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 3271,
+      "win": 44.4,
+      "avg": -0.18,
+      "med": -0.11,
+      "excess": -0.97,
+      "best": 16.6,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 6742,
+      "win": 41.2,
+      "avg": -0.26,
+      "med": -0.61,
+      "excess": -2.82,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 9496,
+      "win": 45.2,
+      "avg": -0.08,
+      "med": -0.08,
+      "excess": -1.01,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 3117,
+      "win": 38.1,
+      "avg": -0.63,
+      "med": -1.24,
+      "excess": -3.25,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 5178,
+      "win": 46.3,
+      "avg": 0.1,
+      "med": -0.17,
+      "excess": -0.92,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 5952,
+      "win": 37.7,
+      "avg": -0.97,
+      "med": -0.92,
+      "excess": -3.59,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 9930,
+      "win": 46.8,
+      "avg": -0.04,
+      "med": -0.08,
+      "excess": -1.07,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 1484,
+      "win": 44.9,
+      "avg": -0.4,
+      "med": -0.44,
+      "excess": -3.03,
+      "best": 20.8,
+      "worst": -52.2
+     },
+     "1": {
+      "n": 2486,
+      "win": 48.5,
+      "avg": -0.01,
+      "med": -0.03,
+      "excess": -1.03,
+      "best": 16.0,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Utilities",
+   "industry": "Gas Distributors",
+   "segment": "NYSE",
+   "close": 40.03,
+   "chg": 0.83,
+   "gap": -0.76,
+   "sma5": 39.72,
+   "sma20": 38.2,
+   "sma200": 34.75,
+   "ext200": 15.19,
+   "rsi": 58.6,
+   "macd_h": 0.16,
+   "rvol": 0.86,
+   "pw": 0.23,
+   "p1": 1.26,
+   "p3": 24.82,
+   "ytd": 43.8,
+   "pos52": 85.0,
+   "hi52": 43.17,
+   "lo52": 22.86,
+   "val": 12.3,
+   "mcap": 4539.0,
+   "per": 27.6,
+   "pbr": 1.83,
+   "eps": 1.49,
+   "roe": 7.0,
+   "eqr": 54.3,
+   "div": 0.82,
+   "rev_q": 61.0,
+   "rev_ttm": 49.0,
+   "cagr5": 23.3,
+   "eps_q": 153.9,
+   "opm": 22.0,
+   "roic": 2.3,
+   "psr": 1.0,
+   "peg": 0.74,
+   "de": 2.03,
+   "inflow": null,
+   "biz": "Excelerate Energy, Inc. owns and operates liquefied natural gas (LNG) and natural gas infrastructure assets. The company operates floating regasification terminals. It also offers various terminal services, including pro",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "KGC",
+   "name": "Kinross Gold Corporation",
+   "ticker": "NYSE:KGC",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_gc",
+    "sig_trend",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_gc": {
+     "5": {
+      "n": 1402,
+      "win": 41.2,
+      "avg": -0.55,
+      "med": -0.44,
+      "excess": -3.18,
+      "best": 46.8,
+      "worst": -22.0
+     },
+     "1": {
+      "n": 2098,
+      "win": 45.5,
+      "avg": -0.08,
+      "med": -0.05,
+      "excess": -1.03,
+      "best": 15.2,
+      "worst": -24.9
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 2380,
+      "win": 40.5,
+      "avg": -0.75,
+      "med": -0.62,
+      "excess": -3.16,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 3271,
+      "win": 44.4,
+      "avg": -0.18,
+      "med": -0.11,
+      "excess": -0.97,
+      "best": 16.6,
+      "worst": -24.0
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 3095,
+      "win": 43.7,
+      "avg": -0.56,
+      "med": -0.7,
+      "excess": -3.11,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 4471,
+      "win": 49.2,
+      "avg": 0.04,
+      "med": -0.01,
+      "excess": -0.9,
+      "best": 18.9,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 3117,
+      "win": 38.1,
+      "avg": -0.63,
+      "med": -1.24,
+      "excess": -3.25,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 5178,
+      "win": 46.3,
+      "avg": 0.1,
+      "med": -0.17,
+      "excess": -0.92,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 5952,
+      "win": 37.7,
+      "avg": -0.97,
+      "med": -0.92,
+      "excess": -3.59,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 9930,
+      "win": 46.8,
+      "avg": -0.04,
+      "med": -0.08,
+      "excess": -1.07,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Non-Energy Minerals",
+   "industry": "Precious Metals",
+   "segment": "NYSE",
+   "close": 30.87,
+   "chg": -2.28,
+   "gap": -2.25,
+   "sma5": 30.57,
+   "sma20": 30.03,
+   "sma200": 29.46,
+   "ext200": 4.78,
+   "rsi": 57.8,
+   "macd_h": -0.19,
+   "rvol": 0.57,
+   "pw": -5.63,
+   "p1": 23.48,
+   "p3": 10.57,
+   "ytd": 8.0,
+   "pos52": 52.0,
+   "hi52": 39.11,
+   "lo52": 21.94,
+   "val": 162.9,
+   "mcap": 36619.0,
+   "per": 12.0,
+   "pbr": 3.8,
+   "eps": 2.57,
+   "roe": 36.6,
+   "eqr": 72.7,
+   "div": 0.5,
+   "rev_q": 24.1,
+   "rev_ttm": 32.4,
+   "cagr5": 10.1,
+   "eps_q": 57.0,
+   "opm": 50.1,
+   "roic": 32.9,
+   "psr": 5.27,
+   "peg": 0.11,
+   "de": 0.08,
+   "inflow": null,
+   "biz": "Kinross Gold Corporation, together with its subsidiaries, engages in the acquisition, exploration, and development of gold properties principally in the United States, Brazil, Chile, Canada, and Mauritania. It is also in",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "TEN",
+   "name": "Tsakos Energy Navigation Ltd",
+   "ticker": "NYSE:TEN",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_macd",
+    "sig_value",
+    "sig_div",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_macd": {
+     "5": {
+      "n": 6742,
+      "win": 41.2,
+      "avg": -0.26,
+      "med": -0.61,
+      "excess": -2.82,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 9496,
+      "win": 45.2,
+      "avg": -0.08,
+      "med": -0.08,
+      "excess": -1.01,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_value": {
+     "5": {
+      "n": 557,
+      "win": 45.6,
+      "avg": 60.63,
+      "med": -0.3,
+      "excess": 58.07,
+      "best": 9808.9,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 820,
+      "win": 51.1,
+      "avg": 21.66,
+      "med": 0.08,
+      "excess": 20.7,
+      "best": 12293.2,
+      "worst": -47.0
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 3020,
+      "win": 42.5,
+      "avg": -0.3,
+      "med": -0.36,
+      "excess": -2.86,
+      "best": 26.0,
+      "worst": -35.5
+     },
+     "1": {
+      "n": 4410,
+      "win": 48.8,
+      "avg": 0.04,
+      "med": 0.0,
+      "excess": -0.92,
+      "best": 12.2,
+      "worst": -30.3
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 5952,
+      "win": 37.7,
+      "avg": -0.97,
+      "med": -0.92,
+      "excess": -3.59,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 9930,
+      "win": 46.8,
+      "avg": -0.04,
+      "med": -0.08,
+      "excess": -1.07,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 1484,
+      "win": 44.9,
+      "avg": -0.4,
+      "med": -0.44,
+      "excess": -3.03,
+      "best": 20.8,
+      "worst": -52.2
+     },
+     "1": {
+      "n": 2486,
+      "win": 48.5,
+      "avg": -0.01,
+      "med": -0.03,
+      "excess": -1.03,
+      "best": 16.0,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Transportation",
+   "industry": "Marine Shipping",
+   "segment": "NYSE",
+   "close": 43.74,
+   "chg": 1.06,
+   "gap": 0.3,
+   "sma5": 43.1,
+   "sma20": 41.76,
+   "sma200": 34.66,
+   "ext200": 26.2,
+   "rsi": 64.7,
+   "macd_h": 0.11,
+   "rvol": 1.29,
+   "pw": 3.81,
+   "p1": 11.16,
+   "p3": 18.99,
+   "ytd": 98.1,
+   "pos52": 92.0,
+   "hi52": 45.85,
+   "lo52": 20.5,
+   "val": 14.3,
+   "mcap": 1288.0,
+   "per": 7.1,
+   "pbr": 0.69,
+   "eps": 6.14,
+   "roe": 11.3,
+   "eqr": 50.7,
+   "div": 4.57,
+   "rev_q": 28.4,
+   "rev_ttm": 6.9,
+   "cagr5": 4.4,
+   "eps_q": 162.8,
+   "opm": 34.3,
+   "roic": 5.6,
+   "psr": 1.63,
+   "peg": 0.19,
+   "de": 1.1,
+   "inflow": null,
+   "biz": "Tsakos Energy Navigation Limited, together with its subsidiaries, provides seaborne crude oil and petroleum product transportation services in Greece and internationally. The company owns and operates various vessels, in",
+   "tdnet": [],
+   "llm": null
+  }
+ ],
+ "config": {
+  "MIN_VAL": 10.0,
+  "MIN_MCAP": 500.0,
+  "MIN_PRICE": 5.0,
+  "N_SHORT": 8,
+  "N_LONG": 8,
+  "N_NEWS": 4,
+  "MAX_PER_INDUSTRY": 3,
+  "COOLDOWN_DAYS": 3
+ }
+}
