@@ -39,6 +39,9 @@
   .dly{display:inline-block;margin-left:6px;padding:1px 8px;border:1px solid var(--line);border-radius:999px;
     font-size:10.5px;color:var(--faint);vertical-align:1px}
   .dly .q{margin:0 4px 0 0}
+  .fresh{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:4px;font-size:10.5px;color:var(--faint)}
+  .fresh b{color:var(--muted);font-weight:600;margin-right:3px}
+  .fresh .stale{color:var(--amber)}
   .idxstrip{display:flex;gap:6px;overflow-x:auto;flex:1 0 100%;min-width:0;
     padding:3px 0 5px;scrollbar-width:thin;order:3}
   .ix{flex:0 0 auto;display:flex;align-items:baseline;gap:5px;text-decoration:none;
@@ -89,6 +92,18 @@
   .sig.lng.on{color:#062a26;background:var(--teal);border-color:var(--teal);font-weight:700}
   .sig.fnd.on{color:#2a1245;background:var(--violet);border-color:var(--violet);font-weight:700}
   .sig.grw.on{color:#04283a;background:#60cdff;border-color:#60cdff;font-weight:700}
+  .sig.supc.on{color:#2a1a00;background:#ffb224;border-color:#ffb224;font-weight:700}
+  .tab.on.sup{border-color:var(--amber)} .tab.on.sup .cnt{color:var(--amber)}
+  .b.x{background:rgba(255,178,36,.14);color:var(--amber);border:1px solid rgba(255,178,36,.35)}
+  .b i{font-style:normal;font-size:8.5px;margin-left:3px;padding:0 3px;border-radius:3px;vertical-align:1px}
+  .b i.nw{background:var(--up);color:#fff;font-weight:800}
+  .b i.dd{background:rgba(255,255,255,.12);color:var(--muted)}
+  .b.drop{background:transparent;color:var(--faint);border:1px dashed var(--line);cursor:help}
+  .star{cursor:pointer;color:var(--faint);font-size:15px;line-height:1;user-select:none}
+  .star.on{color:var(--amber)} .star:hover{color:var(--amber)}
+  .tab.on.mine{border-color:var(--amber)} .tab.on.mine .cnt{color:var(--amber)}
+  .wlsep{width:1px;height:18px;background:var(--line);margin:0 4px}
+  label.wlbtn{cursor:pointer}
   .sig.andtog{border-style:dashed;color:var(--muted)}
   .sig.andtog.on{border-style:solid;background:var(--text);color:var(--bg);font-weight:700}
   .hint{color:var(--faint);font-size:11.5px;margin-left:auto}
@@ -235,6 +250,7 @@ __BTC_CSS__
   <div class="meta">__META_PRE__ <b>__GENERATED__</b> · __MARKET_LABEL__ <b>__COUNT__</b>__META_STOCKS__ ·
     <span style="color:var(--up)">__META_UP__</span> <span style="color:var(--down)">__META_DN__</span>
     <span class="dly"><span class="q" data-tip="__DELAY_TIP__">?</span>__DELAY__</span></div>
+  <div class="fresh" id="fresh"></div>
 </header>
 
 <div class="tabs">
@@ -242,6 +258,8 @@ __BTC_CSS__
   <div class="tab lng" data-tab="long">__TAB_LONG__<span class="cnt" id="cntLong"></span></div>
   <div class="tab fnd" data-tab="fund">__TAB_FUND__<span class="cnt" id="cntFund"></span></div>
   <div class="tab grw" data-tab="grow">__TAB_GROWTH__<span class="cnt" id="cntGrow"></span></div>
+  <div class="tab sup" data-tab="sup">__TAB_SUP__<span class="cnt" id="cntSup"></span></div>
+  <div class="tab mine" data-tab="mine">⭐ __TAB_MINE__<span class="cnt" id="cntMine"></span></div>
   <div class="tab on" data-tab="all">__TAB_ALL__<span class="cnt" id="cntAll"></span></div>
   <div class="tab dis" data-tab="dis" id="tabDis" style="display:none">__TAB_DIS__<span class="cnt" id="cntDis"></span></div>
 </div>
@@ -271,6 +289,9 @@ __BTC_CSS__
   <button id="wlClear" class="wlbtn">__WL_CLEAR__</button>
   <button id="wlDl" class="wlbtn primary" disabled>__WL_DL__</button>
   <span id="wlCount" class="wlcnt"></span>
+  <span class="wlsep"></span>
+  <button id="starExp" class="wlbtn">⭐ __STAR_EXP__</button>
+  <label class="wlbtn" for="starImp">__STAR_IMP__</label><input type="file" id="starImp" accept=".json" style="display:none">
   <span class="wlhint">__WL_HINT__</span>
 </div>
 
@@ -319,10 +340,13 @@ const SIGS = [
   {bit:10,label:T.s_value,k:'f'},{bit:11,label:T.s_dividend,k:'f'},{bit:12,label:T.s_qual,k:'f'},
   {bit:13,label:T.s_growth,k:'w'},{bit:14,label:T.s_accel,k:'w'},{bit:15,label:T.s_garp,k:'w'},
   {bit:16,label:T.s_inflow,k:'s'},
+  {bit:17,label:T.s_squeeze,k:'x'},{bit:18,label:T.s_churn,k:'x'},
+  {bit:19,label:T.s_accum,k:'x'},{bit:20,label:T.s_distrib,k:'x'},
 ];
 const SIGKEY={s_spike:0,s_x5:1,s_x20:2,s_high:3,s_gap:4,s_oversold:5,s_gc:6,s_reclaim:7,
-  s_trend:8,s_macd:9,s_value:10,s_dividend:11,s_qual:12,s_growth:13,s_accel:14,s_garp:15,s_inflow:16};
-const SHORT_MASK=0b10000000000111111, LONG_MASK=0b0000001111000000,
+  s_trend:8,s_macd:9,s_value:10,s_dividend:11,s_qual:12,s_growth:13,s_accel:14,s_garp:15,s_inflow:16,
+  s_squeeze:17,s_churn:18,s_accum:19,s_distrib:20};
+const SHORT_MASK=0b10000000000111111, SUP_MASK=0b111100000000000000000, LONG_MASK=0b0000001111000000,
       FUND_MASK=0b0001110000000000,  GROW_MASK=0b1110000000000000;
 
 /* g: b=always, t=technical, f=financial */
@@ -332,11 +356,11 @@ const HELPMAP = {12:'turn',20:'mcap',29:'biz',5:'c_chg',17:'c_gap',9:'c_ext',11:
   44:'c_pos52',48:'c_vwap',49:'c_fturn',50:'c_fpct',51:'c_mratio',52:'c_mdays',53:'c_mbuychg',54:'c_spct',55:'c_schg',28:'c_macd',21:'c_per',40:'c_peg',22:'c_pbr',24:'c_roe',37:'c_roic',38:'c_psr',
   26:'c_eq',39:'c_de',34:'c_cagr',30:'c_revq',46:'c_inflow',47:'c_score'};
 const COLS = [
-  {t:T.c_code,i:0,l:1,g:'b',fx:'f1'},{t:T.c_name,i:1,l:1,g:'b',fx:'f2'},
+  {t:'',i:-2,g:'b'},{t:T.c_code,i:0,l:1,g:'b',fx:'f1'},{t:T.c_name,i:1,l:1,g:'b',fx:'f2'},
   {t:T.c_sector,i:2,l:1,g:'b'},{t:T.c_seg,i:3,l:1,g:'t'},{t:T.c_sig,i:18,l:1,g:'b'},
   {t:T.c_price,i:4,g:'b'},{t:T.c_chg,i:5,g:'b'},{t:T.c_gap,i:17,g:'t'},
   {t:'5MA',i:6,g:'t'},{t:'20MA',i:7,g:'t'},{t:'200MA',i:8,g:'t'},{t:T.c_ext,i:9,g:'t'},
-  {t:T.c_vol,i:10,g:'t'},{t:'RVOL',i:11,g:'t'},{t:CFG.turnLabel,i:12,g:'b'},{t:T.c_inflow,i:46,g:'b'},{t:T.c_score,i:47,g:'b'},
+  {t:T.c_vol,i:10,g:'t'},{t:'RVOL',i:11,g:'t'},{t:CFG.turnLabel,i:12,g:'b'},{t:T.c_star_p,i:-3,g:'m'},{t:T.c_star_r,i:-4,g:'m'},{t:T.c_inflow,i:46,g:'b'},{t:T.c_score,i:47,g:'b'},
   {t:T.c_rsi,i:13,g:'t'},{t:T.c_pos52,i:44,g:'t'},{t:T.c_vwap,i:48,g:'t'},{t:T.c_fturn,i:49,g:'t'},{t:T.c_fpct,i:50,g:'t'},{t:T.c_macd,i:28,g:'t'},
   {t:T.c_w,i:14,g:'t'},{t:T.c_m,i:15,g:'t'},{t:T.c_3m,i:16,g:'t'},
   {t:T.c_ytd,i:41,g:'t'},{t:T.c_perfy,i:45,g:'t'},
@@ -356,6 +380,16 @@ const COLS = [
 const PAGE=100;
 const isNarrow = window.matchMedia('(max-width:760px)').matches;
 const picked=new Set();
+/* ── 관심종목 ⭐ (브라우저 저장) ── */
+const STAR_KEY='screener_stars_'+CFG.market;
+let STARS={}; try{ STARS=JSON.parse(localStorage.getItem(STAR_KEY)||'{}')||{}; }catch(_){ STARS={}; }
+function saveStars(){ try{ localStorage.setItem(STAR_KEY, JSON.stringify(STARS)); }catch(_){} }
+function toggleStar(code, price){
+  if(STARS[code]) delete STARS[code];
+  else STARS[code]={p:price, d:(CFG.today||'').slice(0,10)};
+  saveStars(); updateMineCount(); render();
+}
+function updateMineCount(){ const e=document.getElementById('cntMine'); if(e) e.textContent=Object.keys(STARS).length||''; }
 let state={tab:'all',sector:'',seg:'',min:0,q:'',sigOn:new Set(),sigAnd:false,
            sortI:12,sortD:-1,page:0,preset:'tech'};
 
@@ -397,12 +431,13 @@ function buildSigChips(){
   const vis = state.tab==='short'?SIGS.filter(s=>s.k==='s')
             : state.tab==='long' ?SIGS.filter(s=>s.k==='g')
             : state.tab==='fund' ?SIGS.filter(s=>s.k==='f')
-            : state.tab==='grow' ?SIGS.filter(s=>s.k==='w') : SIGS;
+            : state.tab==='grow' ?SIGS.filter(s=>s.k==='w')
+            : state.tab==='sup' ?SIGS.filter(s=>s.k==='x') : SIGS;
   const tog=`<div class="sig andtog ${state.sigAnd?'on':''}" data-tog="1">${state.sigAnd?T.and_on:T.and_off}<span class="q" data-tip="${esc(T.and_tip||'')}">?</span></div>`;
   $('#sigchips').innerHTML=tog+vis.map(s=>
     (()=>{const key=Object.keys(SIGKEY).find(k=>SIGKEY[k]===s.bit);
       const tip=key&&CFG.helpSig?CFG.helpSig[key]:'';
-      return `<div class="sig ${s.k==='s'?'shrt':s.k==='g'?'lng':s.k==='f'?'fnd':'grw'} ${state.sigOn.has(s.bit)?'on':''}" data-b="${s.bit}">${s.label}${tip?`<span class="q" data-tip="${esc(tip)}">?</span>`:''}</div>`;})()).join('');
+      return `<div class="sig ${s.k==='s'?'shrt':s.k==='g'?'lng':s.k==='f'?'fnd':s.k==='w'?'grw':'supc'} ${state.sigOn.has(s.bit)?'on':''}" data-b="${s.bit}">${s.label}${tip?`<span class="q" data-tip="${esc(tip)}">?</span>`:''}</div>`;})()).join('');
 }
 $('#sigchips').addEventListener('click',e=>{
   if(e.target.closest('.q')) return;          // 물음표 클릭은 설명만
@@ -423,14 +458,15 @@ $('#presets').addEventListener('click',e=>{
 
 function visibleCols(){
   // m 속성이 있으면 그 시장에서만 표시 (수급 지표는 시장별 공개 데이터가 다름)
-  const mine = c => !c.m || c.m === CFG.market;
+  const mine = c => (!c.m || c.m === CFG.market) && (c.g!=='m' || state.tab==='mine');
   if(state.preset==='all') return COLS.filter(mine);
   const want = state.preset==='tech'?'t':state.preset==='fin'?'f':state.preset==='grw'?'w':'x';
-  return COLS.filter(c=>(c.g==='b'||c.g===want) && mine(c));
+  return COLS.filter(c=>(c.g==='b'||c.g===want||c.g==='m') && mine(c));
 }
 function filtered(){
+  if(state.tab==='mine') return DATA.filter(r=>STARS[r[0]] && (!state.q || (r[0]+' '+r[1]).toLowerCase().includes(state.q.toLowerCase())));
   const tabMask = state.tab==='short'?SHORT_MASK:state.tab==='long'?LONG_MASK
-                : state.tab==='fund'?FUND_MASK:state.tab==='grow'?GROW_MASK:0;
+                : state.tab==='fund'?FUND_MASK:state.tab==='grow'?GROW_MASK:state.tab==='sup'?SUP_MASK:0;
   let sigMask=0; state.sigOn.forEach(b=>sigMask|=1<<b);
   const q=state.q.toLowerCase();
   return DATA.filter(r=>{
@@ -452,16 +488,27 @@ function sortRows(rows){
     return d*(x-y);
   });
 }
-function badges(bits,code){
+function parseStreak(s){const o={}; if(!s)return o; String(s).split(',').forEach(p=>{const [b,d]=p.split(':'); if(b!==''&&d) o[+b]=+d;}); return o;}
+function badges(bits,code,r){
   let h='';
-  for(const s of SIGS) if(bits&(1<<s.bit)) h+=`<span class="b ${s.k==='w'?'w':s.k}">${s.label}</span>`;
+  const st = parseStreak(r&&r[66]);
+  for(const s of SIGS) if(bits&(1<<s.bit)){
+    const d=st[s.bit]||0;
+    const tag = d===1 ? `<i class="nw">${T.streak_new}</i>` : d>1 ? `<i class="dd">${d}D</i>` : '';
+    h+=`<span class="b ${s.k==='w'?'w':s.k}">${s.label}${tag}</span>`;
+  }
+  if(r&&r[67]>0) h+=`<span class="b drop" data-tip="${esc(T.dropped_tip||'')}">${T.dropped} ${r[67]}</span>`;
   if(DIS&&DIS.map&&DIS.map[code]&DIS.strong) h+=`<span class="b d">__TAB_DIS__</span>`;
   return h||'<span class="fl">—</span>';
 }
 function cell(r,c){
   const i=c.i, cls=(c.l?'l ':'')+(c.fx||'');
+  if(i===-2) return `<td class="l"><span class="star ${STARS[r[0]]?'on':''}" data-star="${r[0]}">${STARS[r[0]]?'★':'☆'}</span></td>`;
+  if(i===-3){const s=STARS[r[0]]; return `<td class="num fl">${s&&s.p?priceFmt(s.p)+'<br><small>'+(s.d||'').slice(5)+'</small>':'—'}</td>`;}
+  if(i===-4){const s=STARS[r[0]]; if(!s||!s.p||!r[4]) return '<td class="num fl">—</td>';
+    const v=(r[4]/s.p-1)*100; return `<td class="num ${v>0?'up':v<0?'dn':'fl'}"><b>${v>0?'+':''}${v.toFixed(1)}%</b></td>`;}
   if(i<0) return `<td><a class="tv" href="${tvUrl(r[19])}" target="_blank" rel="noopener">↗</a></td>`;
-  if(i===18) return `<td class="l">${badges(r[18],r[0])}</td>`;
+  if(i===18) return `<td class="l">${badges(r[18],r[0],r)}</td>`;
   if(i===0)  return `<td class="l f1 num">${esc(r[0])}</td>`;
   if(i===1)  return `<td class="l f2 nm" title="${esc(r[1])}">${esc(r[1])}</td>`;
   if(i===2)  return `<td class="l sec" title="${esc(r[2])}">${esc(r[2])}</td>`;
@@ -546,7 +593,7 @@ $('#pnums').addEventListener('keydown',e=>{
 function tvUrl(t){return 'https://www.tradingview.com/chart/?symbol='+encodeURIComponent(t)}
 function buildHeader(cols){
   $('#hdr').innerHTML='<th class="ck"></th>'+cols.map(c=>{
-    if(c.i<0)return '<th></th>';
+    if(c.i<0) return c.t ? `<th class="num">${c.t}</th>` : '<th></th>';
     const on=c.i===state.sortI;
     const hk=HELPMAP[c.i], tip=hk&&CFG.help&&CFG.help[hk];
     const q=tip?`<span class="q" data-tip="${esc(tip)}">?</span>`:'';
@@ -595,6 +642,8 @@ $('#body').addEventListener('click',e=>{
     cb.closest('tr').classList.toggle('picked',cb.checked);
     updateWl(); return;
   }
+  const st=e.target.closest('.star');
+  if(st){ e.stopPropagation(); const row=DATA.find(x=>x[0]===st.dataset.star); toggleStar(st.dataset.star, row?row[4]:null); return; }
   const tr=e.target.closest('tr'); if(!tr)return;
   window.open(tvUrl(tr.dataset.t),'_blank');
 });
@@ -622,6 +671,25 @@ $('#wlDl').addEventListener('click',()=>{
   setTimeout(()=>URL.revokeObjectURL(a.href),2000);
 });
 
+/* ── 관심종목 ⭐ 내보내기/가져오기 (기기 간 이동용) ── */
+$('#starExp').addEventListener('click',()=>{
+  const blob=new Blob([JSON.stringify({market:CFG.market,stars:STARS},null,1)],{type:'application/json'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download=`stars_${CFG.market}_${(CFG.today||'').slice(0,10)}.json`;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+});
+$('#starImp').addEventListener('change',e=>{
+  const f=e.target.files[0]; if(!f)return;
+  const rd=new FileReader();
+  rd.onload=()=>{ try{ const j=JSON.parse(rd.result); const s=j.stars||j;
+    let n=0; for(const k in s){ if(!STARS[k]){STARS[k]=s[k]; n++;} }
+    saveStars(); updateMineCount(); render(); alert(T.star_imported.replace('{n}',n)); }
+    catch(_){ alert('JSON error'); } e.target.value=''; };
+  rd.readAsText(f);
+});
+updateMineCount();
+
 /* sync top & bottom scrollbars */
 let lock=false;
 $('#xscroll').addEventListener('scroll',()=>{ if(lock)return; lock=true; $('#tblwrap').scrollLeft=$('#xscroll').scrollLeft; lock=false; });
@@ -639,6 +707,8 @@ document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
     document.querySelectorAll('.pz').forEach(x=>x.classList.toggle('on',x.dataset.p==='fin'));}
   if(state.tab==='grow'&&state.preset!=='all'){state.preset='grw';
     document.querySelectorAll('.pz').forEach(x=>x.classList.toggle('on',x.dataset.p==='grw'));}
+  if(state.tab==='sup'&&state.preset!=='all'){state.preset='sup';
+    document.querySelectorAll('.pz').forEach(x=>x.classList.toggle('on',x.dataset.p==='sup'));}
   document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===t));
   buildSigChips(); render();
 }));
@@ -652,6 +722,7 @@ $('#cntShort').textContent=DATA.filter(r=>r[18]&SHORT_MASK && r[12]>=CFG.default
 $('#cntLong').textContent=DATA.filter(r=>r[18]&LONG_MASK && r[12]>=CFG.defaultMin).length;
 $('#cntFund').textContent=DATA.filter(r=>r[18]&FUND_MASK && r[12]>=CFG.defaultMin).length;
 $('#cntGrow').textContent=DATA.filter(r=>r[18]&GROW_MASK && r[12]>=CFG.defaultMin).length;
+$('#cntSup').textContent=DATA.filter(r=>r[18]&SUP_MASK && r[12]>=CFG.defaultMin).length;
 $('#cntAll').textContent=DATA.length.toLocaleString(NUMLOC);
 
 /* ── 공시(TDnet) 탭 ── */
@@ -765,6 +836,21 @@ renderIdx(); /* ── 물음표 도움말 ── */
 })();
 
 // 수급 프리셋은 3개 시장 모두 사용 (시장별로 채워지는 컬럼이 다름)
+/* ── 데이터 기준시각 패널 ── */
+(function(){
+  const f=CFG.fresh||{}; const el=document.getElementById('fresh'); if(!el||!Object.keys(f).length)return;
+  const today=(CFG.today||'').slice(0,10);
+  const items=[];
+  const L={price:T.fresh_price,margin:T.fresh_margin,short:T.fresh_short,investor:T.fresh_investor,finra:T.fresh_finra};
+  for(const k of ['price','margin','short','investor','finra']){
+    if(!f[k])continue;
+    const v=String(f[k]); const d=v.slice(0,10);
+    const old = k!=='price' && today && d<today;
+    items.push(`<span class="${old?'stale':''}"><b>${L[k]}</b>${k==='price'?v:d}</span>`);
+  }
+  el.innerHTML=`<span><b>${T.fresh_title}</b></span>`+items.join('');
+})();
+
 initDis(); buildStrip(); buildSigChips(); render();
 </script>
 __BTC_JS__

@@ -39,6 +39,13 @@ CONFIG = {
     "GARP_PSR": 2.0,       # 저평가성장: PSR 상한
     "GARP_YOY": 10.0,      # 저평가성장: 매출 YoY 하한
     "GARP_OPM": 5.0,       # 저평가성장: 영업이익률 하한
+    # ── 수급 ──
+    "SQZ_RATIO": 0.8,      # 숏스퀴즈: 대차배율 상한 (일본)
+    "SQZ_DTC": 3.0,        # 숏스퀴즈: 신용매도잔고 ÷ 10일평균거래량 ≥ N일
+    "CHURN_TURN": 30.0,    # 손바뀜: 유동주식 회전율 ≥ N% & 상승
+    "ACC_POS52": 25.0,     # 바닥매집: 52주 위치 ≤ N%
+    "ACC_DAYS": 3,         # 바닥매집: 외인·기관 연속 순매수 ≥ N일 (한국)
+    "DIST_POS52": 90.0,    # 상투분산: 52주 위치 ≥ N%
 }
 
 JST = ZoneInfo("Asia/Tokyo")
@@ -569,6 +576,60 @@ def fetch_tdnet(universe_codes):
     return {"items": merged, "map": dmap, "strong": KW_STRONG}
 
 
+SIG_STREAK_DAYS = 10     # 이만큼의 과거 스냅샷을 본다
+
+
+def compute_streaks(mkey, sig_keys):
+    """{code: {sig_key: 연속일수}} — 어제까지의 스냅샷에서 시그널이 연속으로 켜진 일수.
+    오늘 값은 build 시점에 더한다. 스냅샷이 없으면 빈 dict."""
+    import glob
+    files = sorted(glob.glob(str(BASE / "history" / mkey / "*.csv.gz")))[-SIG_STREAK_DAYS:]
+    if not files:
+        return {}, 0
+    days = []                      # 최신순 [{code: set(sig)}]
+    prev_close = None
+    for f in reversed(files):
+        try:
+            d = pd.read_csv(f, compression="gzip", dtype={"code": str})
+        except Exception:
+            continue
+        cols = [c for c in sig_keys if c in d.columns]
+        if not cols or "code" not in d.columns:
+            continue
+        d = d.dropna(subset=["code"]).drop_duplicates(subset="code")
+        if prev_close is not None and "close" in d.columns:      # 휴장일 스냅샷 제거
+            cur = d.set_index("code")["close"]
+            common = cur.index.intersection(prev_close.index)
+            if len(common) > 100 and (cur.loc[common] == prev_close.loc[common]).mean() > 0.97:
+                continue
+        if "close" in d.columns:
+            prev_close = d.set_index("code")["close"]
+        on = {}
+        for c in cols:
+            v = d[c].fillna(False).astype(bool).values
+            for code in d["code"].values[v]:
+                on.setdefault(str(code), set()).add(c)
+        days.append(on)
+    if not days:
+        return {}, 0
+    out = {}
+    all_codes = set().union(*[set(x) for x in days])
+    for code in all_codes:
+        st = {}
+        for c in sig_keys:
+            n = 0
+            for day in days:
+                if c in day.get(code, ()):
+                    n += 1
+                else:
+                    break
+            if n:
+                st[c] = n
+        if st:
+            out[code] = st
+    return out, len(days)
+
+
 def load_supply(mkey):
     """supply/{market}.json → {code: {...}}. 파일이 없으면 빈 dict."""
     if mkey not in ("jp", "kr", "us"):
@@ -602,12 +663,14 @@ SIG_WEIGHT = {
     "sig_value": 1.0, "sig_div": 1.0, "sig_qual": 1.0,
     "sig_growth": 1.0, "sig_accel": 1.0, "sig_garp": 1.0,
     "sig_inflow": 1.0,
+    "sig_squeeze": 1.0, "sig_churn": 1.0, "sig_accum": 1.0, "sig_distrib": 1.0,
 }
 
 SIG_KEYS = ["sig_spike", "sig_x5", "sig_x20", "sig_high", "sig_gap", "sig_oversold",
             "sig_gc", "sig_reclaim", "sig_trend", "sig_macd",
             "sig_value", "sig_div", "sig_qual",
-            "sig_growth", "sig_accel", "sig_garp", "sig_inflow"]
+            "sig_growth", "sig_accel", "sig_garp", "sig_inflow",
+            "sig_squeeze", "sig_churn", "sig_accum", "sig_distrib"]
 
 
 def compute_signals(df):
@@ -651,6 +714,8 @@ def compute_signals(df):
     d["sig_accel"] = (eps_q >= c["ACCEL_YOY"]) & (rev_q > 0) & (eps_q >= rev_q * c["ACCEL_GAP"])
     d["sig_garp"] = ((psr > 0) & (psr <= c["GARP_PSR"]) & (rev_q >= c["GARP_YOY"])
                      & (opm >= c["GARP_OPM"]))
+
+
     d["ext200"] = ((close / s200 - 1) * 100).where(valid)
     # 52주 밴드 내 위치: 저가=0%, 고가=100%
     hi, lo = d["price_52_week_high"], d["price_52_week_low"]
@@ -661,6 +726,37 @@ def compute_signals(df):
     d["vwap_dev"] = ((close / vw - 1) * 100).where(vw > 0)
     fl = d["float_shares_outstanding"]
     d["float_turn"] = (d["volume"] / fl * 100).where(fl > 0)
+
+    # ── 수급 시그널 (시장별 재료가 다름; 없는 컬럼은 False) ──
+    def col(name):
+        return pd.to_numeric(d[name], errors="coerce") if name in d else pd.Series(float("nan"), index=d.index)
+    pos52 = col("pos52")
+    chg = col("change")
+    # 숏스퀴즈(일본): 대차배율≤0.8 & 매도잔고 소화에 3일↑ & 종가>20MA
+    #   ※ 주주우대 크로스(優待つなぎ売り) 종목이 걸리기 쉬움 — 외식·소매 업종은 해석 주의
+    m_ratio, m_sell, av = col("m_ratio"), col("m_sell"), col("average_volume_10d_calc")
+    sell_dtc = (m_sell / av).where(av > 0)
+    d["sig_squeeze"] = ((m_ratio > 0) & (m_ratio <= c["SQZ_RATIO"]) & (sell_dtc >= c["SQZ_DTC"])
+                        & (close > s20)).fillna(False)
+    # 손바뀜(공통): 유동주식 회전율 ≥30% & 상승 마감
+    d["sig_churn"] = ((col("float_turn") >= c["CHURN_TURN"]) & (chg > 0)).fillna(False)
+    # 바닥매집: 52주 하단인데 큰손이 사는 중
+    #   한국: 외인 or 기관 3일↑ 연속 순매수 / 일본: 공개 숏포지션 감소 / 미국: 공매도비중 급감
+    low = pos52 <= c["ACC_POS52"]
+    if "kr_fd" in d:
+        buyers = (col("kr_fd") >= c["ACC_DAYS"]) & (col("kr_o5") > 0)
+    else:
+        buyers = pd.Series(False, index=d.index)
+    jp_cover = (col("s_chg") < -0.3) & (chg > 0)
+    us_cover = (col("us_svc") <= -10.0) & (chg > 0)
+    d["sig_accum"] = (low & (buyers | jp_cover | us_cover)).fillna(False)
+    # 상투분산: 52주 상단인데 개인만 사고 외인·기관은 판다 (한국) / 신용매수 급증+외인 매도
+    high = pos52 >= c["DIST_POS52"]
+    if "kr_i5" in d:
+        retail_only = (col("kr_i5") > 0) & (col("kr_fd") <= -2) & (col("kr_od") <= -2)
+    else:
+        retail_only = pd.Series(False, index=d.index)
+    d["sig_distrib"] = (high & retail_only).fillna(False)
     return d
 
 
@@ -724,6 +820,8 @@ def build_rows(df, mc):
         "c63": d["us_svc"].round(1),
         "c64": (d["us_si"] / 1e6).round(1),
         "c65": d["us_dtc"].round(2),
+        "c66": d["sig_streak"],
+        "c67": d["sig_dropped"],
     })
     out = out.astype(object).where(pd.notna(out), None)
     rows = out.values.tolist()
@@ -815,6 +913,7 @@ def build_market(mkey, template, out_dir, generated, indices=None):
             df[dst] = float("nan")
 
     df["m_ratio"] = df["code"].map(lambda c: sup.get(c, {}).get("m_ratio"))
+    df["m_sell"] = df["code"].map(lambda c: sup.get(c, {}).get("m_sell"))
     df["m_buy"] = df["code"].map(lambda c: sup.get(c, {}).get("m_buy"))
     df["m_buy_chg"] = df["code"].map(lambda c: sup.get(c, {}).get("m_buy_chg"))
     df["s_pct"] = df["code"].map(lambda c: sup.get(c, {}).get("s_pct"))
@@ -825,13 +924,31 @@ def build_market(mkey, template, out_dir, generated, indices=None):
         df["m_days"] = (pd.to_numeric(df["m_buy"], errors="coerce") / av).where(av > 0)
     else:
         df["m_days"] = float("nan")
-    for c in ("m_ratio", "m_buy", "m_buy_chg", "s_pct", "s_chg"):
+    for c in ("m_ratio", "m_sell", "m_buy", "m_buy_chg", "s_pct", "s_chg"):
         df[c] = pd.to_numeric(df[c], errors="coerce")
     if sup and mkey == "jp":
         print(f"  [{mkey}] 수급: 신용잔고 {df['m_ratio'].notna().sum()}종목 "
               f"({sup_meta.get('margin_asof')}) / 공매도 {df['s_pct'].notna().sum()}종목 ({sup_meta.get('short_asof')})")
 
     df = compute_signals(df)
+
+    streaks, n_hist = compute_streaks(mkey, SIG_KEYS)
+    def _streak_str(row):
+        parts = []
+        for i, k in enumerate(SIG_KEYS):
+            if bool(row.get(k, False)):
+                prev = streaks.get(str(row["code"]), {}).get(k, 0)
+                parts.append(f"{i}:{prev + 1}")
+        return ",".join(parts)
+    df["sig_streak"] = df.apply(_streak_str, axis=1)
+    # 이탈: 어제는 켜져 있었는데 오늘 꺼진 시그널 개수
+    def _dropped(row):
+        prev = streaks.get(str(row["code"]), {})
+        return sum(1 for k in prev if not bool(row.get(k, False)))
+    df["sig_dropped"] = df.apply(_dropped, axis=1)
+    if n_hist:
+        n_new = sum(1 for s in df["sig_streak"] if s and all(x.endswith(":1") for x in s.split(",")))
+        print(f"  [{mkey}] 신호 지속성: 스냅샷 {n_hist}일 기준 · 오늘 신규 진입 {n_new}종목")
 
     dis = fetch_tdnet(df["code"].tolist()) if mkey == "jp" else None
     profiles = load_profiles(mkey)
@@ -923,7 +1040,8 @@ def build_market(mkey, template, out_dir, generated, indices=None):
             "__PRESET_TECH__": L["preset_tech"], "__PRESET_FIN__": L["preset_fin"],
             "__PRESET_ALL__": L["preset_all"], "__HINT__": L["hint"],
             "__PRESET_GROWTH__": L["preset_growth"], "__TAB_GROWTH__": L["tab_growth"],
-            "__PRESET_SUPPLY__": L["preset_supply"],
+            "__PRESET_SUPPLY__": L["preset_supply"], "__TAB_SUP__": L["tab_sup"], "__TAB_MINE__": L["tab_mine"],
+            "__STAR_EXP__": L["star_exp"], "__STAR_IMP__": L["star_imp"],
             "__PREV__": L["prev"], "__NEXT__": L["next"],
             "__WL_ALL__": L["wl_all"], "__WL_CLEAR__": L["wl_clear"],
             "__WL_DL__": L["wl_dl"], "__WL_HINT__": L["wl_hint"],
@@ -938,6 +1056,17 @@ def build_market(mkey, template, out_dir, generated, indices=None):
         cfg["help"] = {k: v[idx_l] for k, v in i18n.HELP.items()}
         cfg["helpSig"] = {k: v[idx_l] for k, v in i18n.HELP_SIG.items()}
         cfg["market"] = mkey
+        cfg["today"] = datetime.now(JST).strftime("%Y-%m-%d")
+        # 데이터 신선도: 소스별 기준시각 (화면 상단 패널용)
+        _fresh = {"price": generated}
+        if mkey == "jp":
+            _fresh["margin"] = sup_meta.get("margin_asof")
+            _fresh["short"] = sup_meta.get("short_asof")
+        elif mkey == "kr":
+            _fresh["investor"] = (sup_meta.get("asof") or "")[:10]
+        elif mkey == "us":
+            _fresh["finra"] = sup_meta.get("finra_asof")
+        cfg["fresh"] = {k: v for k, v in _fresh.items() if v}
         cfg["profilesUrl"] = prof_url
         cfg["bizLoading"] = L["biz_loading"]
         cfg["bizNone"] = L["biz_none"]
@@ -960,8 +1089,9 @@ def build_market(mkey, template, out_dir, generated, indices=None):
     n_l = sum(1 for r in rows if r[18] & 0b0000001111000000 and (r[12] or 0) >= dm)
     n_f = sum(1 for r in rows if r[18] & 0b0001110000000000 and (r[12] or 0) >= dm)
     n_g = sum(1 for r in rows if r[18] & 0b1110000000000000 and (r[12] or 0) >= dm)
+    n_x = sum(1 for r in rows if r[18] & 0b111100000000000000000 and (r[12] or 0) >= dm)
     print(f"  [{mkey}] 완료 — {len(rows)}종목 / 단기 {n_s} / 중장기 {n_l} / "
-          f"펀더 {n_f} / 성장 {n_g} (ko+ja)")
+          f"펀더 {n_f} / 성장 {n_g} / 수급 {n_x} (ko+ja)")
 
 
 HUB = """<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">
