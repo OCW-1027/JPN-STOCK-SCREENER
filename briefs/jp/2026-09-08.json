@@ -1,0 +1,3131 @@
+{
+ "date": "2026-09-08",
+ "market": "jp",
+ "generated": "2026-09-08 16:36 JST",
+ "label_ko": "🇯🇵 일본",
+ "label_ja": "🇯🇵 日本",
+ "unit_ko": "억엔",
+ "unit_ja": "億円",
+ "llm_mode": "off",
+ "baserate_days": 11,
+ "universe": {
+  "total": 3772,
+  "liquid": 1081,
+  "candidates": 20,
+  "short": 8,
+  "long": 8,
+  "news": 4
+ },
+ "picks": [
+  {
+   "code": "9434",
+   "name": "SoftBank Corp.",
+   "ticker": "TSE:9434",
+   "bucket": "short",
+   "score": 4.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_high",
+    "sig_trend"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 2378,
+      "win": 35.9,
+      "avg": -0.89,
+      "med": -1.08,
+      "excess": 0.11,
+      "best": 87.8,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 3394,
+      "win": 40.3,
+      "avg": -0.36,
+      "med": -0.38,
+      "excess": 0.03,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 694,
+      "win": 40.8,
+      "avg": -0.27,
+      "med": -0.75,
+      "excess": 0.63,
+      "best": 129.8,
+      "worst": -45.0
+     },
+     "1": {
+      "n": 1129,
+      "win": 40.8,
+      "avg": -0.17,
+      "med": -0.32,
+      "excess": 0.16,
+      "best": 129.6,
+      "worst": -19.7
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 865,
+      "win": 33.6,
+      "avg": -1.37,
+      "med": -1.31,
+      "excess": -0.27,
+      "best": 43.6,
+      "worst": -48.8
+     },
+     "1": {
+      "n": 1203,
+      "win": 37.1,
+      "avg": -0.57,
+      "med": -0.35,
+      "excess": -0.08,
+      "best": 28.3,
+      "worst": -17.8
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1408,
+      "win": 36.2,
+      "avg": -0.87,
+      "med": -1.24,
+      "excess": 0.09,
+      "best": 84.0,
+      "worst": -17.1
+     },
+     "1": {
+      "n": 1933,
+      "win": 40.5,
+      "avg": -0.4,
+      "med": -0.34,
+      "excess": -0.01,
+      "best": 18.1,
+      "worst": -14.3
+     }
+    }
+   },
+   "sector": "Communications",
+   "industry": "Wireless Telecommunications",
+   "segment": "—",
+   "close": 241.0,
+   "chg": 1.01,
+   "gap": -0.75,
+   "sma5": 239.54,
+   "sma20": 236.54,
+   "sma200": 218.89,
+   "ext200": 10.1,
+   "rsi": 63.1,
+   "macd_h": -0.27,
+   "rvol": 0.89,
+   "pw": 1.26,
+   "p1": 4.33,
+   "p3": 13.41,
+   "ytd": 11.8,
+   "pos52": 96.0,
+   "hi52": 242.6,
+   "lo52": 202.6,
+   "val": 140.7,
+   "mcap": 114274.0,
+   "per": 21.3,
+   "pbr": 4.45,
+   "eps": 11.45,
+   "roe": 19.5,
+   "eqr": 28.5,
+   "div": 3.6,
+   "rev_q": 9.4,
+   "rev_ttm": 7.9,
+   "cagr5": 6.2,
+   "eps_q": 3.4,
+   "opm": 14.2,
+   "roic": 7.2,
+   "psr": 1.64,
+   "peg": 2.42,
+   "de": 2.55,
+   "inflow": null,
+   "biz": "【特色】「ソフトバンク」「ワイモバイル」展開の通信会社。ヤフー、ＺＯＺＯ、ペイペイなど非通信強化 連結事業 【連結事業】コンシューマ43(18)、エンタープライズ14(19)、ディストリビューション13(3)、メディア・ＥＣ23(14)、ファイナンス5(21)、他2(2026.3)",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "8628",
+   "name": "Matsui Securities Co., Ltd.",
+   "ticker": "TSE:8628",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_high",
+    "sig_macd",
+    "sig_div",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 2378,
+      "win": 35.9,
+      "avg": -0.89,
+      "med": -1.08,
+      "excess": 0.11,
+      "best": 87.8,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 3394,
+      "win": 40.3,
+      "avg": -0.36,
+      "med": -0.38,
+      "excess": 0.03,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 865,
+      "win": 33.6,
+      "avg": -1.37,
+      "med": -1.31,
+      "excess": -0.27,
+      "best": 43.6,
+      "worst": -48.8
+     },
+     "1": {
+      "n": 1203,
+      "win": 37.1,
+      "avg": -0.57,
+      "med": -0.35,
+      "excess": -0.08,
+      "best": 28.3,
+      "worst": -17.8
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3035,
+      "win": 35.3,
+      "avg": -0.87,
+      "med": -1.03,
+      "excess": 0.35,
+      "best": 84.0,
+      "worst": -23.1
+     },
+     "1": {
+      "n": 4958,
+      "win": 47.3,
+      "avg": -0.01,
+      "med": -0.07,
+      "excess": 0.05,
+      "best": 57.8,
+      "worst": -12.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 1075,
+      "win": 29.3,
+      "avg": -1.02,
+      "med": -1.16,
+      "excess": -0.04,
+      "best": 10.9,
+      "worst": -15.3
+     },
+     "1": {
+      "n": 1993,
+      "win": 42.0,
+      "avg": -0.11,
+      "med": -0.16,
+      "excess": -0.08,
+      "best": 12.1,
+      "worst": -6.8
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 677,
+      "win": 23.3,
+      "avg": -2.42,
+      "med": -2.84,
+      "excess": -0.37,
+      "best": 38.8,
+      "worst": -25.2
+     },
+     "1": {
+      "n": 1539,
+      "win": 40.2,
+      "avg": -0.49,
+      "med": -0.53,
+      "excess": -0.09,
+      "best": 29.0,
+      "worst": -19.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 2184,
+      "win": 22.2,
+      "avg": -2.32,
+      "med": -2.32,
+      "excess": -0.26,
+      "best": 31.5,
+      "worst": -19.9
+     },
+     "1": {
+      "n": 4992,
+      "win": 41.4,
+      "avg": -0.48,
+      "med": -0.33,
+      "excess": -0.07,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Investment Banks/Brokers",
+   "segment": "—",
+   "close": 1206.0,
+   "chg": 1.34,
+   "gap": -0.34,
+   "sma5": 1196.0,
+   "sma20": 1146.9,
+   "sma200": 956.99,
+   "ext200": 26.02,
+   "rsi": 66.7,
+   "macd_h": 3.2,
+   "rvol": 1.04,
+   "pw": 0.67,
+   "p1": 13.13,
+   "p3": 27.89,
+   "ytd": 41.5,
+   "pos52": 96.0,
+   "hi52": 1226.0,
+   "lo52": 747.0,
+   "val": 15.6,
+   "mcap": 3098.0,
+   "per": 17.1,
+   "pbr": 3.8,
+   "eps": 70.73,
+   "roe": 23.2,
+   "eqr": 16.5,
+   "div": 4.15,
+   "rev_q": 51.3,
+   "rev_ttm": 43.7,
+   "cagr5": 10.4,
+   "eps_q": 94.9,
+   "opm": 47.0,
+   "roic": 23.2,
+   "psr": 5.91,
+   "peg": 0.23,
+   "de": 6.07,
+   "inflow": null,
+   "biz": "Matsui Securities Co., Ltd. provides online securities brokerage services and trading platform to retail investors in Japan. The company offers brokerage services of stocks, futures, and options; services for underwritin",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "3197",
+   "name": "Skylark Holdings Co., Ltd.",
+   "ticker": "TSE:3197",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_trend",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 2378,
+      "win": 35.9,
+      "avg": -0.89,
+      "med": -1.08,
+      "excess": 0.11,
+      "best": 87.8,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 3394,
+      "win": 40.3,
+      "avg": -0.36,
+      "med": -0.38,
+      "excess": 0.03,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 694,
+      "win": 40.8,
+      "avg": -0.27,
+      "med": -0.75,
+      "excess": 0.63,
+      "best": 129.8,
+      "worst": -45.0
+     },
+     "1": {
+      "n": 1129,
+      "win": 40.8,
+      "avg": -0.17,
+      "med": -0.32,
+      "excess": 0.16,
+      "best": 129.6,
+      "worst": -19.7
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1408,
+      "win": 36.2,
+      "avg": -0.87,
+      "med": -1.24,
+      "excess": 0.09,
+      "best": 84.0,
+      "worst": -17.1
+     },
+     "1": {
+      "n": 1933,
+      "win": 40.5,
+      "avg": -0.4,
+      "med": -0.34,
+      "excess": -0.01,
+      "best": 18.1,
+      "worst": -14.3
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 2184,
+      "win": 22.2,
+      "avg": -2.32,
+      "med": -2.32,
+      "excess": -0.26,
+      "best": 31.5,
+      "worst": -19.9
+     },
+     "1": {
+      "n": 4992,
+      "win": 41.4,
+      "avg": -0.48,
+      "med": -0.33,
+      "excess": -0.07,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 1090,
+      "win": 24.7,
+      "avg": -2.17,
+      "med": -2.26,
+      "excess": -0.11,
+      "best": 31.5,
+      "worst": -18.4
+     },
+     "1": {
+      "n": 2541,
+      "win": 42.8,
+      "avg": -0.4,
+      "med": -0.31,
+      "excess": 0.01,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    }
+   },
+   "sector": "Consumer Services",
+   "industry": "Restaurants",
+   "segment": "—",
+   "close": 3420.0,
+   "chg": 3.11,
+   "gap": -0.39,
+   "sma5": 3370.0,
+   "sma20": 3319.65,
+   "sma200": 3214.98,
+   "ext200": 6.38,
+   "rsi": 62.1,
+   "macd_h": -7.16,
+   "rvol": 1.33,
+   "pw": 2.24,
+   "p1": 10.0,
+   "p3": 25.67,
+   "ytd": 1.5,
+   "pos52": 70.0,
+   "hi52": 3764.0,
+   "lo52": 2620.5,
+   "val": 40.4,
+   "mcap": 7699.0,
+   "per": 40.8,
+   "pbr": 3.99,
+   "eps": 83.74,
+   "roe": 10.2,
+   "eqr": 19.2,
+   "div": 0.71,
+   "rev_q": 10.9,
+   "rev_ttm": 11.3,
+   "cagr5": 9.7,
+   "eps_q": 32.4,
+   "opm": 7.3,
+   "roic": 5.6,
+   "psr": 1.7,
+   "peg": 1.76,
+   "de": 0.7,
+   "inflow": null,
+   "biz": "【特色】ファミレス最大手。主力は「ガスト」。中華「バーミヤン」や和食「夢庵」など多業態。１４年に再上場 連結事業 【連結事業】レストラン98、他2(2025.12)",
+   "tdnet": [
+    {
+     "pub": "2026-09-04 15:30",
+     "title": "2026年8月度　すかいらーくグループIRレポート",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260904531839.pdf",
+     "bits": 0,
+     "strong": false
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "2432",
+   "name": "DeNA Co., Ltd.",
+   "ticker": "TSE:2432",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_reclaim",
+    "sig_macd",
+    "sig_qual"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 2378,
+      "win": 35.9,
+      "avg": -0.89,
+      "med": -1.08,
+      "excess": 0.11,
+      "best": 87.8,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 3394,
+      "win": 40.3,
+      "avg": -0.36,
+      "med": -0.38,
+      "excess": 0.03,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 694,
+      "win": 40.8,
+      "avg": -0.27,
+      "med": -0.75,
+      "excess": 0.63,
+      "best": 129.8,
+      "worst": -45.0
+     },
+     "1": {
+      "n": 1129,
+      "win": 40.8,
+      "avg": -0.17,
+      "med": -0.32,
+      "excess": 0.16,
+      "best": 129.6,
+      "worst": -19.7
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 912,
+      "win": 42.5,
+      "avg": -0.39,
+      "med": -0.62,
+      "excess": 0.17,
+      "best": 25.4,
+      "worst": -21.3
+     },
+     "1": {
+      "n": 1521,
+      "win": 44.4,
+      "avg": -0.23,
+      "med": -0.14,
+      "excess": 0.0,
+      "best": 26.5,
+      "worst": -11.6
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3035,
+      "win": 35.3,
+      "avg": -0.87,
+      "med": -1.03,
+      "excess": 0.35,
+      "best": 84.0,
+      "worst": -23.1
+     },
+     "1": {
+      "n": 4958,
+      "win": 47.3,
+      "avg": -0.01,
+      "med": -0.07,
+      "excess": 0.05,
+      "best": 57.8,
+      "worst": -12.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 1301,
+      "win": 31.7,
+      "avg": -1.74,
+      "med": -1.87,
+      "excess": -0.78,
+      "best": 30.6,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 2345,
+      "win": 46.1,
+      "avg": -0.05,
+      "med": -0.11,
+      "excess": -0.06,
+      "best": 24.8,
+      "worst": -79.2
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Packaged Software",
+   "segment": "—",
+   "close": 2610.5,
+   "chg": 1.85,
+   "gap": -1.01,
+   "sma5": 2597.3,
+   "sma20": 2538.3,
+   "sma200": 2558.09,
+   "ext200": 2.05,
+   "rsi": 58.5,
+   "macd_h": 7.89,
+   "rvol": 1.14,
+   "pw": 1.54,
+   "p1": 8.39,
+   "p3": -2.94,
+   "ytd": 2.9,
+   "pos52": 55.0,
+   "hi52": 2885.0,
+   "lo52": 2276.5,
+   "val": 34.1,
+   "mcap": 2426.0,
+   "per": 6.5,
+   "pbr": 1.12,
+   "eps": 403.99,
+   "roe": 17.0,
+   "eqr": 69.7,
+   "div": 2.52,
+   "rev_q": -10.9,
+   "rev_ttm": -16.7,
+   "cagr5": 1.5,
+   "eps_q": 231.6,
+   "opm": 15.8,
+   "roic": 16.1,
+   "psr": 1.97,
+   "peg": 0.16,
+   "de": 0.06,
+   "inflow": null,
+   "biz": "DeNA Co., Ltd. develops and operates various mobile and online services in Japan and internationally. It operates DeNA games, a free-to-play mobile apps and browser games; Mobage, an entertainment platform; Yahoo! Mobage",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "9006",
+   "name": "Keikyu Corporation",
+   "ticker": "TSE:9006",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_trend"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 2378,
+      "win": 35.9,
+      "avg": -0.89,
+      "med": -1.08,
+      "excess": 0.11,
+      "best": 87.8,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 3394,
+      "win": 40.3,
+      "avg": -0.36,
+      "med": -0.38,
+      "excess": 0.03,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 694,
+      "win": 40.8,
+      "avg": -0.27,
+      "med": -0.75,
+      "excess": 0.63,
+      "best": 129.8,
+      "worst": -45.0
+     },
+     "1": {
+      "n": 1129,
+      "win": 40.8,
+      "avg": -0.17,
+      "med": -0.32,
+      "excess": 0.16,
+      "best": 129.6,
+      "worst": -19.7
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 715,
+      "win": 48.5,
+      "avg": 0.06,
+      "med": -0.12,
+      "excess": 0.57,
+      "best": 52.0,
+      "worst": -17.1
+     },
+     "1": {
+      "n": 1202,
+      "win": 45.2,
+      "avg": -0.19,
+      "med": -0.13,
+      "excess": 0.03,
+      "best": 19.1,
+      "worst": -21.7
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 912,
+      "win": 42.5,
+      "avg": -0.39,
+      "med": -0.62,
+      "excess": 0.17,
+      "best": 25.4,
+      "worst": -21.3
+     },
+     "1": {
+      "n": 1521,
+      "win": 44.4,
+      "avg": -0.23,
+      "med": -0.14,
+      "excess": 0.0,
+      "best": 26.5,
+      "worst": -11.6
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1408,
+      "win": 36.2,
+      "avg": -0.87,
+      "med": -1.24,
+      "excess": 0.09,
+      "best": 84.0,
+      "worst": -17.1
+     },
+     "1": {
+      "n": 1933,
+      "win": 40.5,
+      "avg": -0.4,
+      "med": -0.34,
+      "excess": -0.01,
+      "best": 18.1,
+      "worst": -14.3
+     }
+    }
+   },
+   "sector": "Transportation",
+   "industry": "Railroads",
+   "segment": "—",
+   "close": 1561.5,
+   "chg": 1.17,
+   "gap": 0.1,
+   "sma5": 1554.1,
+   "sma20": 1552.67,
+   "sma200": 1533.43,
+   "ext200": 1.83,
+   "rsi": 52.3,
+   "macd_h": -1.65,
+   "rvol": 1.06,
+   "pw": -0.51,
+   "p1": 3.86,
+   "p3": 5.47,
+   "ytd": 0.9,
+   "pos52": 60.0,
+   "hi52": 1668.0,
+   "lo52": 1400.5,
+   "val": 10.9,
+   "mcap": 4230.0,
+   "per": 15.7,
+   "pbr": 1.1,
+   "eps": 99.62,
+   "roe": 7.1,
+   "eqr": 33.0,
+   "div": 2.99,
+   "rev_q": 1.9,
+   "rev_ttm": 3.9,
+   "cagr5": 5.3,
+   "eps_q": -11.1,
+   "opm": 10.7,
+   "roic": 3.5,
+   "psr": 1.38,
+   "peg": 0.79,
+   "de": 1.42,
+   "inflow": null,
+   "biz": "Keikyu Corporation engages in the railway transportation business in Japan. The company operates through Transportation, Real Estate Business, Leisure and Service Business, Logistic Business, and Other segments. It provi",
+   "tdnet": [
+    {
+     "pub": "2026-09-04 16:15",
+     "title": "自己株式の取得状況に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260902530610.pdf",
+     "bits": 16,
+     "strong": true
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "1802",
+   "name": "Obayashi Corporation",
+   "ticker": "TSE:1802",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_macd",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 2378,
+      "win": 35.9,
+      "avg": -0.89,
+      "med": -1.08,
+      "excess": 0.11,
+      "best": 87.8,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 3394,
+      "win": 40.3,
+      "avg": -0.36,
+      "med": -0.38,
+      "excess": 0.03,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 694,
+      "win": 40.8,
+      "avg": -0.27,
+      "med": -0.75,
+      "excess": 0.63,
+      "best": 129.8,
+      "worst": -45.0
+     },
+     "1": {
+      "n": 1129,
+      "win": 40.8,
+      "avg": -0.17,
+      "med": -0.32,
+      "excess": 0.16,
+      "best": 129.6,
+      "worst": -19.7
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3035,
+      "win": 35.3,
+      "avg": -0.87,
+      "med": -1.03,
+      "excess": 0.35,
+      "best": 84.0,
+      "worst": -23.1
+     },
+     "1": {
+      "n": 4958,
+      "win": 47.3,
+      "avg": -0.01,
+      "med": -0.07,
+      "excess": 0.05,
+      "best": 57.8,
+      "worst": -12.3
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 2184,
+      "win": 22.2,
+      "avg": -2.32,
+      "med": -2.32,
+      "excess": -0.26,
+      "best": 31.5,
+      "worst": -19.9
+     },
+     "1": {
+      "n": 4992,
+      "win": 41.4,
+      "avg": -0.48,
+      "med": -0.33,
+      "excess": -0.07,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 1090,
+      "win": 24.7,
+      "avg": -2.17,
+      "med": -2.26,
+      "excess": -0.11,
+      "best": 31.5,
+      "worst": -18.4
+     },
+     "1": {
+      "n": 2541,
+      "win": 42.8,
+      "avg": -0.4,
+      "med": -0.31,
+      "excess": 0.01,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    }
+   },
+   "sector": "Consumer Durables",
+   "industry": "Homebuilding",
+   "segment": "—",
+   "close": 3050.0,
+   "chg": 1.06,
+   "gap": -0.17,
+   "sma5": 3026.8,
+   "sma20": 3007.03,
+   "sma200": 3438.28,
+   "ext200": -11.29,
+   "rsi": 49.7,
+   "macd_h": 14.04,
+   "rvol": 1.05,
+   "pw": 1.23,
+   "p1": -3.88,
+   "p3": -0.81,
+   "ytd": -8.2,
+   "pos52": 35.0,
+   "hi52": 4439.0,
+   "lo52": 2300.0,
+   "val": 80.1,
+   "mcap": 20694.0,
+   "per": 10.8,
+   "pbr": 1.68,
+   "eps": 281.49,
+   "roe": 16.5,
+   "eqr": 40.4,
+   "div": 2.92,
+   "rev_q": 19.0,
+   "rev_ttm": 4.5,
+   "cagr5": 7.9,
+   "eps_q": 122.3,
+   "opm": 7.9,
+   "roic": 13.6,
+   "psr": 0.82,
+   "peg": 0.24,
+   "de": 0.29,
+   "inflow": null,
+   "biz": "Obayashi Corporation engages in the construction business in Japan, North America, Asia and internationally. The company constructs buildings, including offices, condominiums, commercial facilities, factories, hospitals,",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "3659",
+   "name": "NEXON Co., Ltd.",
+   "ticker": "TSE:3659",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_gc",
+    "sig_trend",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 2378,
+      "win": 35.9,
+      "avg": -0.89,
+      "med": -1.08,
+      "excess": 0.11,
+      "best": 87.8,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 3394,
+      "win": 40.3,
+      "avg": -0.36,
+      "med": -0.38,
+      "excess": 0.03,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 694,
+      "win": 40.8,
+      "avg": -0.27,
+      "med": -0.75,
+      "excess": 0.63,
+      "best": 129.8,
+      "worst": -45.0
+     },
+     "1": {
+      "n": 1129,
+      "win": 40.8,
+      "avg": -0.17,
+      "med": -0.32,
+      "excess": 0.16,
+      "best": 129.6,
+      "worst": -19.7
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 715,
+      "win": 48.5,
+      "avg": 0.06,
+      "med": -0.12,
+      "excess": 0.57,
+      "best": 52.0,
+      "worst": -17.1
+     },
+     "1": {
+      "n": 1202,
+      "win": 45.2,
+      "avg": -0.19,
+      "med": -0.13,
+      "excess": 0.03,
+      "best": 19.1,
+      "worst": -21.7
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1408,
+      "win": 36.2,
+      "avg": -0.87,
+      "med": -1.24,
+      "excess": 0.09,
+      "best": 84.0,
+      "worst": -17.1
+     },
+     "1": {
+      "n": 1933,
+      "win": 40.5,
+      "avg": -0.4,
+      "med": -0.34,
+      "excess": -0.01,
+      "best": 18.1,
+      "worst": -14.3
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 2184,
+      "win": 22.2,
+      "avg": -2.32,
+      "med": -2.32,
+      "excess": -0.26,
+      "best": 31.5,
+      "worst": -19.9
+     },
+     "1": {
+      "n": 4992,
+      "win": 41.4,
+      "avg": -0.48,
+      "med": -0.33,
+      "excess": -0.07,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Internet Software/Services",
+   "segment": "—",
+   "close": 3132.0,
+   "chg": 2.65,
+   "gap": -0.29,
+   "sma5": 3110.0,
+   "sma20": 3037.88,
+   "sma200": 3009.57,
+   "ext200": 4.07,
+   "rsi": 67.0,
+   "macd_h": -22.24,
+   "rvol": 0.92,
+   "pw": -1.51,
+   "p1": 32.35,
+   "p3": 41.56,
+   "ytd": -19.0,
+   "pos52": 44.0,
+   "hi52": 4434.0,
+   "lo52": 2110.0,
+   "val": 84.9,
+   "mcap": 23739.0,
+   "per": 18.3,
+   "pbr": 2.28,
+   "eps": 171.54,
+   "roe": 12.8,
+   "eqr": 74.6,
+   "div": 1.92,
+   "rev_q": 1.9,
+   "rev_ttm": 15.1,
+   "cagr5": 10.1,
+   "eps_q": 80.4,
+   "opm": 25.9,
+   "roic": 12.5,
+   "psr": 5.32,
+   "peg": 0.47,
+   "de": 0.05,
+   "inflow": null,
+   "biz": "NEXON Co., Ltd. engages in the production, development, and distribution of video games and mobile games in Japan and internationally. It offers PC online games, mobile games, and console games. The company was formerly ",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "9064",
+   "name": "Yamato Holdings Co., Ltd.",
+   "ticker": "TSE:9064",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_macd"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 2378,
+      "win": 35.9,
+      "avg": -0.89,
+      "med": -1.08,
+      "excess": 0.11,
+      "best": 87.8,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 3394,
+      "win": 40.3,
+      "avg": -0.36,
+      "med": -0.38,
+      "excess": 0.03,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 694,
+      "win": 40.8,
+      "avg": -0.27,
+      "med": -0.75,
+      "excess": 0.63,
+      "best": 129.8,
+      "worst": -45.0
+     },
+     "1": {
+      "n": 1129,
+      "win": 40.8,
+      "avg": -0.17,
+      "med": -0.32,
+      "excess": 0.16,
+      "best": 129.6,
+      "worst": -19.7
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 715,
+      "win": 48.5,
+      "avg": 0.06,
+      "med": -0.12,
+      "excess": 0.57,
+      "best": 52.0,
+      "worst": -17.1
+     },
+     "1": {
+      "n": 1202,
+      "win": 45.2,
+      "avg": -0.19,
+      "med": -0.13,
+      "excess": 0.03,
+      "best": 19.1,
+      "worst": -21.7
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 912,
+      "win": 42.5,
+      "avg": -0.39,
+      "med": -0.62,
+      "excess": 0.17,
+      "best": 25.4,
+      "worst": -21.3
+     },
+     "1": {
+      "n": 1521,
+      "win": 44.4,
+      "avg": -0.23,
+      "med": -0.14,
+      "excess": 0.0,
+      "best": 26.5,
+      "worst": -11.6
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3035,
+      "win": 35.3,
+      "avg": -0.87,
+      "med": -1.03,
+      "excess": 0.35,
+      "best": 84.0,
+      "worst": -23.1
+     },
+     "1": {
+      "n": 4958,
+      "win": 47.3,
+      "avg": -0.01,
+      "med": -0.07,
+      "excess": 0.05,
+      "best": 57.8,
+      "worst": -12.3
+     }
+    }
+   },
+   "sector": "Transportation",
+   "industry": "Air Freight/Couriers",
+   "segment": "—",
+   "close": 1948.5,
+   "chg": 0.96,
+   "gap": -0.88,
+   "sma5": 1939.1,
+   "sma20": 1943.15,
+   "sma200": 1941.45,
+   "ext200": 0.36,
+   "rsi": 49.9,
+   "macd_h": 0.09,
+   "rvol": 0.83,
+   "pw": -0.26,
+   "p1": 3.23,
+   "p3": 8.7,
+   "ytd": -11.8,
+   "pos52": 32.0,
+   "hi52": 2480.0,
+   "lo52": 1697.0,
+   "val": 19.6,
+   "mcap": 6739.0,
+   "per": 46.7,
+   "pbr": 1.1,
+   "eps": 41.68,
+   "roe": 2.4,
+   "eqr": 45.9,
+   "div": 2.34,
+   "rev_q": 1.4,
+   "rev_ttm": 4.3,
+   "cagr5": 1.9,
+   "eps_q": -9.3,
+   "opm": 1.6,
+   "roic": 1.8,
+   "psr": 0.33,
+   "peg": null,
+   "de": 0.37,
+   "inflow": null,
+   "biz": "【特色】宅配便首位で国内シェア４割強。法人向けに注力。ＥＣ荷物増で専用網構築など構造改革進める 連結事業 【連結事業】エクスプレス83(0)、コントラクト・ロジスティクス9(3)、グローバル5(8)、モビリティ1(8)、他1(10)(2026.3)",
+   "tdnet": [
+    {
+     "pub": "2026-09-03 11:30",
+     "title": "国内線貨物専用機の運航完了に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260902530613.pdf",
+     "bits": 0,
+     "strong": false
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "1719",
+   "name": "HAZAMA ANDO Corporation",
+   "ticker": "TSE:1719",
+   "bucket": "long",
+   "score": 7.0,
+   "signals": [
+    "sig_x20",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_div",
+    "sig_qual",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x20": {
+     "5": {
+      "n": 694,
+      "win": 40.8,
+      "avg": -0.27,
+      "med": -0.75,
+      "excess": 0.63,
+      "best": 129.8,
+      "worst": -45.0
+     },
+     "1": {
+      "n": 1129,
+      "win": 40.8,
+      "avg": -0.17,
+      "med": -0.32,
+      "excess": 0.16,
+      "best": 129.6,
+      "worst": -19.7
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 715,
+      "win": 48.5,
+      "avg": 0.06,
+      "med": -0.12,
+      "excess": 0.57,
+      "best": 52.0,
+      "worst": -17.1
+     },
+     "1": {
+      "n": 1202,
+      "win": 45.2,
+      "avg": -0.19,
+      "med": -0.13,
+      "excess": 0.03,
+      "best": 19.1,
+      "worst": -21.7
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 912,
+      "win": 42.5,
+      "avg": -0.39,
+      "med": -0.62,
+      "excess": 0.17,
+      "best": 25.4,
+      "worst": -21.3
+     },
+     "1": {
+      "n": 1521,
+      "win": 44.4,
+      "avg": -0.23,
+      "med": -0.14,
+      "excess": 0.0,
+      "best": 26.5,
+      "worst": -11.6
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 1075,
+      "win": 29.3,
+      "avg": -1.02,
+      "med": -1.16,
+      "excess": -0.04,
+      "best": 10.9,
+      "worst": -15.3
+     },
+     "1": {
+      "n": 1993,
+      "win": 42.0,
+      "avg": -0.11,
+      "med": -0.16,
+      "excess": -0.08,
+      "best": 12.1,
+      "worst": -6.8
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 1301,
+      "win": 31.7,
+      "avg": -1.74,
+      "med": -1.87,
+      "excess": -0.78,
+      "best": 30.6,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 2345,
+      "win": 46.1,
+      "avg": -0.05,
+      "med": -0.11,
+      "excess": -0.06,
+      "best": 24.8,
+      "worst": -79.2
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 2184,
+      "win": 22.2,
+      "avg": -2.32,
+      "med": -2.32,
+      "excess": -0.26,
+      "best": 31.5,
+      "worst": -19.9
+     },
+     "1": {
+      "n": 4992,
+      "win": 41.4,
+      "avg": -0.48,
+      "med": -0.33,
+      "excess": -0.07,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 1090,
+      "win": 24.7,
+      "avg": -2.17,
+      "med": -2.26,
+      "excess": -0.11,
+      "best": 31.5,
+      "worst": -18.4
+     },
+     "1": {
+      "n": 2541,
+      "win": 42.8,
+      "avg": -0.4,
+      "med": -0.31,
+      "excess": 0.01,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    }
+   },
+   "sector": "Industrial Services",
+   "industry": "Engineering & Construction",
+   "segment": "—",
+   "close": 1911.0,
+   "chg": 0.47,
+   "gap": -0.05,
+   "sma5": 1914.7,
+   "sma20": 1905.9,
+   "sma200": 1900.69,
+   "ext200": 0.54,
+   "rsi": 55.4,
+   "macd_h": -3.54,
+   "rvol": 0.88,
+   "pw": -0.73,
+   "p1": 2.74,
+   "p3": 8.55,
+   "ytd": 0.1,
+   "pos52": 46.0,
+   "hi52": 2270.0,
+   "lo52": 1610.0,
+   "val": 11.4,
+   "mcap": 3453.0,
+   "per": 9.7,
+   "pbr": 1.39,
+   "eps": 196.62,
+   "roe": 16.0,
+   "eqr": 50.9,
+   "div": 4.18,
+   "rev_q": 12.4,
+   "rev_ttm": 3.7,
+   "cagr5": 4.5,
+   "eps_q": 34.8,
+   "opm": 7.7,
+   "roic": 15.4,
+   "psr": 0.68,
+   "peg": 0.76,
+   "de": 0.13,
+   "inflow": null,
+   "biz": "Hazama Ando Corporation engages in construction and related business in Japan and internationally. The company offers civil engineering, building, and other construction services. Its projects include offices, production",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "3245",
+   "name": "Dear Life Co., Ltd.",
+   "ticker": "TSE:3245",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_reclaim",
+    "sig_div",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_reclaim": {
+     "5": {
+      "n": 912,
+      "win": 42.5,
+      "avg": -0.39,
+      "med": -0.62,
+      "excess": 0.17,
+      "best": 25.4,
+      "worst": -21.3
+     },
+     "1": {
+      "n": 1521,
+      "win": 44.4,
+      "avg": -0.23,
+      "med": -0.14,
+      "excess": 0.0,
+      "best": 26.5,
+      "worst": -11.6
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 1075,
+      "win": 29.3,
+      "avg": -1.02,
+      "med": -1.16,
+      "excess": -0.04,
+      "best": 10.9,
+      "worst": -15.3
+     },
+     "1": {
+      "n": 1993,
+      "win": 42.0,
+      "avg": -0.11,
+      "med": -0.16,
+      "excess": -0.08,
+      "best": 12.1,
+      "worst": -6.8
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 1301,
+      "win": 31.7,
+      "avg": -1.74,
+      "med": -1.87,
+      "excess": -0.78,
+      "best": 30.6,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 2345,
+      "win": 46.1,
+      "avg": -0.05,
+      "med": -0.11,
+      "excess": -0.06,
+      "best": 24.8,
+      "worst": -79.2
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 677,
+      "win": 23.3,
+      "avg": -2.42,
+      "med": -2.84,
+      "excess": -0.37,
+      "best": 38.8,
+      "worst": -25.2
+     },
+     "1": {
+      "n": 1539,
+      "win": 40.2,
+      "avg": -0.49,
+      "med": -0.53,
+      "excess": -0.09,
+      "best": 29.0,
+      "worst": -19.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 2184,
+      "win": 22.2,
+      "avg": -2.32,
+      "med": -2.32,
+      "excess": -0.26,
+      "best": 31.5,
+      "worst": -19.9
+     },
+     "1": {
+      "n": 4992,
+      "win": 41.4,
+      "avg": -0.48,
+      "med": -0.33,
+      "excess": -0.07,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 1090,
+      "win": 24.7,
+      "avg": -2.17,
+      "med": -2.26,
+      "excess": -0.11,
+      "best": 31.5,
+      "worst": -18.4
+     },
+     "1": {
+      "n": 2541,
+      "win": 42.8,
+      "avg": -0.4,
+      "med": -0.31,
+      "excess": 0.01,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Real Estate Development",
+   "segment": "—",
+   "close": 1089.0,
+   "chg": -1.45,
+   "gap": -0.27,
+   "sma5": 1111.8,
+   "sma20": 1140.75,
+   "sma200": 1084.72,
+   "ext200": 0.39,
+   "rsi": 37.9,
+   "macd_h": -10.08,
+   "rvol": 1.11,
+   "pw": -5.71,
+   "p1": 1.11,
+   "p3": 10.9,
+   "ytd": -3.6,
+   "pos52": 34.0,
+   "hi52": 1349.0,
+   "lo52": 957.0,
+   "val": 4.0,
+   "mcap": 546.0,
+   "per": 9.8,
+   "pbr": 1.61,
+   "eps": 110.95,
+   "roe": 17.4,
+   "eqr": 73.3,
+   "div": 5.6,
+   "rev_q": 63.4,
+   "rev_ttm": 9.7,
+   "cagr5": 23.2,
+   "eps_q": 108.1,
+   "opm": 10.5,
+   "roic": 8.6,
+   "psr": 0.6,
+   "peg": 1.16,
+   "de": 0.98,
+   "inflow": null,
+   "biz": "【特色】都市型レジデンスや商業用ビルを開発・販売。都内中心。不動産や保険業界向け人材派遣も 連結事業 【連結事業】リアルエステート95(12)、セールスプロモーション5(2)(2025.9)",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "6101",
+   "name": "Tsugami Corp.",
+   "ticker": "TSE:6101",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_reclaim",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_reclaim": {
+     "5": {
+      "n": 912,
+      "win": 42.5,
+      "avg": -0.39,
+      "med": -0.62,
+      "excess": 0.17,
+      "best": 25.4,
+      "worst": -21.3
+     },
+     "1": {
+      "n": 1521,
+      "win": 44.4,
+      "avg": -0.23,
+      "med": -0.14,
+      "excess": 0.0,
+      "best": 26.5,
+      "worst": -11.6
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 1301,
+      "win": 31.7,
+      "avg": -1.74,
+      "med": -1.87,
+      "excess": -0.78,
+      "best": 30.6,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 2345,
+      "win": 46.1,
+      "avg": -0.05,
+      "med": -0.11,
+      "excess": -0.06,
+      "best": 24.8,
+      "worst": -79.2
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 677,
+      "win": 23.3,
+      "avg": -2.42,
+      "med": -2.84,
+      "excess": -0.37,
+      "best": 38.8,
+      "worst": -25.2
+     },
+     "1": {
+      "n": 1539,
+      "win": 40.2,
+      "avg": -0.49,
+      "med": -0.53,
+      "excess": -0.09,
+      "best": 29.0,
+      "worst": -19.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 2184,
+      "win": 22.2,
+      "avg": -2.32,
+      "med": -2.32,
+      "excess": -0.26,
+      "best": 31.5,
+      "worst": -19.9
+     },
+     "1": {
+      "n": 4992,
+      "win": 41.4,
+      "avg": -0.48,
+      "med": -0.33,
+      "excess": -0.07,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 1090,
+      "win": 24.7,
+      "avg": -2.17,
+      "med": -2.26,
+      "excess": -0.11,
+      "best": 31.5,
+      "worst": -18.4
+     },
+     "1": {
+      "n": 2541,
+      "win": 42.8,
+      "avg": -0.4,
+      "med": -0.31,
+      "excess": 0.01,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    }
+   },
+   "sector": "Producer Manufacturing",
+   "industry": "Industrial Machinery",
+   "segment": "—",
+   "close": 4850.0,
+   "chg": -8.32,
+   "gap": -1.89,
+   "sma5": 5078.0,
+   "sma20": 5503.5,
+   "sma200": 4714.89,
+   "ext200": 2.87,
+   "rsi": 33.2,
+   "macd_h": -2.04,
+   "rvol": 1.38,
+   "pw": -8.14,
+   "p1": -18.35,
+   "p3": -23.14,
+   "ytd": 66.1,
+   "pos52": 41.0,
+   "hi52": 8630.0,
+   "lo52": 2248.0,
+   "val": 18.4,
+   "mcap": 2424.0,
+   "per": 11.9,
+   "pbr": 2.59,
+   "eps": 410.42,
+   "roe": 25.2,
+   "eqr": 71.1,
+   "div": 1.64,
+   "rev_q": 35.3,
+   "rev_ttm": 23.7,
+   "cagr5": 15.9,
+   "eps_q": 57.7,
+   "opm": 27.4,
+   "roic": 25.1,
+   "psr": 1.76,
+   "peg": 0.23,
+   "de": 0.11,
+   "inflow": null,
+   "biz": "【特色】小型自動旋盤の首位。スマホや自動車向け強い。中国売上が過半で現地子会社は香港市場に上場 連結事業 【連結事業】自動旋盤84、研削盤4、マシニングセンタ・転造盤・専用機7、他5",
+   "tdnet": [
+    {
+     "pub": "2026-09-02 13:00",
+     "title": "自己株式の取得状況に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260901530269.pdf",
+     "bits": 16,
+     "strong": true
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "1980",
+   "name": "DAI-DAN Co., Ltd.",
+   "ticker": "TSE:1980",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_gc",
+    "sig_reclaim",
+    "sig_trend",
+    "sig_macd",
+    "sig_qual"
+   ],
+   "baserate": {
+    "sig_gc": {
+     "5": {
+      "n": 715,
+      "win": 48.5,
+      "avg": 0.06,
+      "med": -0.12,
+      "excess": 0.57,
+      "best": 52.0,
+      "worst": -17.1
+     },
+     "1": {
+      "n": 1202,
+      "win": 45.2,
+      "avg": -0.19,
+      "med": -0.13,
+      "excess": 0.03,
+      "best": 19.1,
+      "worst": -21.7
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 912,
+      "win": 42.5,
+      "avg": -0.39,
+      "med": -0.62,
+      "excess": 0.17,
+      "best": 25.4,
+      "worst": -21.3
+     },
+     "1": {
+      "n": 1521,
+      "win": 44.4,
+      "avg": -0.23,
+      "med": -0.14,
+      "excess": 0.0,
+      "best": 26.5,
+      "worst": -11.6
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1408,
+      "win": 36.2,
+      "avg": -0.87,
+      "med": -1.24,
+      "excess": 0.09,
+      "best": 84.0,
+      "worst": -17.1
+     },
+     "1": {
+      "n": 1933,
+      "win": 40.5,
+      "avg": -0.4,
+      "med": -0.34,
+      "excess": -0.01,
+      "best": 18.1,
+      "worst": -14.3
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3035,
+      "win": 35.3,
+      "avg": -0.87,
+      "med": -1.03,
+      "excess": 0.35,
+      "best": 84.0,
+      "worst": -23.1
+     },
+     "1": {
+      "n": 4958,
+      "win": 47.3,
+      "avg": -0.01,
+      "med": -0.07,
+      "excess": 0.05,
+      "best": 57.8,
+      "worst": -12.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 1301,
+      "win": 31.7,
+      "avg": -1.74,
+      "med": -1.87,
+      "excess": -0.78,
+      "best": 30.6,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 2345,
+      "win": 46.1,
+      "avg": -0.05,
+      "med": -0.11,
+      "excess": -0.06,
+      "best": 24.8,
+      "worst": -79.2
+     }
+    }
+   },
+   "sector": "Industrial Services",
+   "industry": "Engineering & Construction",
+   "segment": "—",
+   "close": 2800.0,
+   "chg": -1.03,
+   "gap": 1.31,
+   "sma5": 2765.0,
+   "sma20": 2757.2,
+   "sma200": 2724.74,
+   "ext200": 2.76,
+   "rsi": 54.5,
+   "macd_h": 2.93,
+   "rvol": 1.1,
+   "pw": 1.63,
+   "p1": 5.58,
+   "p3": 12.0,
+   "ytd": 12.0,
+   "pos52": 49.0,
+   "hi52": 3680.0,
+   "lo52": 1960.0,
+   "val": 15.2,
+   "mcap": 3731.0,
+   "per": 13.7,
+   "pbr": 2.78,
+   "eps": 204.58,
+   "roe": 22.2,
+   "eqr": 52.5,
+   "div": 3.04,
+   "rev_q": 2.4,
+   "rev_ttm": -7.5,
+   "cagr5": 10.2,
+   "eps_q": -5.1,
+   "opm": 13.9,
+   "roic": 22.1,
+   "psr": 1.41,
+   "peg": 0.97,
+   "de": 0.03,
+   "inflow": null,
+   "biz": "Dai-Dan Co., Ltd. engages in the design, supervision, and construction of electrical, air conditioning, water hygiene, and firefighting facilities works and machinery in Japan. The company offers Hot Cure, a hospital roo",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "3284",
+   "name": "Hoosiers Holdings Co.,Ltd.",
+   "ticker": "TSE:3284",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_reclaim",
+    "sig_div",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_reclaim": {
+     "5": {
+      "n": 912,
+      "win": 42.5,
+      "avg": -0.39,
+      "med": -0.62,
+      "excess": 0.17,
+      "best": 25.4,
+      "worst": -21.3
+     },
+     "1": {
+      "n": 1521,
+      "win": 44.4,
+      "avg": -0.23,
+      "med": -0.14,
+      "excess": 0.0,
+      "best": 26.5,
+      "worst": -11.6
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 1075,
+      "win": 29.3,
+      "avg": -1.02,
+      "med": -1.16,
+      "excess": -0.04,
+      "best": 10.9,
+      "worst": -15.3
+     },
+     "1": {
+      "n": 1993,
+      "win": 42.0,
+      "avg": -0.11,
+      "med": -0.16,
+      "excess": -0.08,
+      "best": 12.1,
+      "worst": -6.8
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 677,
+      "win": 23.3,
+      "avg": -2.42,
+      "med": -2.84,
+      "excess": -0.37,
+      "best": 38.8,
+      "worst": -25.2
+     },
+     "1": {
+      "n": 1539,
+      "win": 40.2,
+      "avg": -0.49,
+      "med": -0.53,
+      "excess": -0.09,
+      "best": 29.0,
+      "worst": -19.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 2184,
+      "win": 22.2,
+      "avg": -2.32,
+      "med": -2.32,
+      "excess": -0.26,
+      "best": 31.5,
+      "worst": -19.9
+     },
+     "1": {
+      "n": 4992,
+      "win": 41.4,
+      "avg": -0.48,
+      "med": -0.33,
+      "excess": -0.07,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 1090,
+      "win": 24.7,
+      "avg": -2.17,
+      "med": -2.26,
+      "excess": -0.11,
+      "best": 31.5,
+      "worst": -18.4
+     },
+     "1": {
+      "n": 2541,
+      "win": 42.8,
+      "avg": -0.4,
+      "med": -0.31,
+      "excess": 0.01,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Real Estate Development",
+   "segment": "—",
+   "close": 1279.0,
+   "chg": 0.16,
+   "gap": 0.0,
+   "sma5": 1292.2,
+   "sma20": 1309.45,
+   "sma200": 1257.2,
+   "ext200": 1.73,
+   "rsi": 45.6,
+   "macd_h": -8.61,
+   "rvol": 1.76,
+   "pw": -4.41,
+   "p1": 4.84,
+   "p3": 11.02,
+   "ytd": -3.0,
+   "pos52": 54.0,
+   "hi52": 1410.0,
+   "lo52": 1126.0,
+   "val": 4.4,
+   "mcap": 523.0,
+   "per": 6.5,
+   "pbr": 1.02,
+   "eps": 196.5,
+   "roe": 17.8,
+   "eqr": 31.3,
+   "div": 5.71,
+   "rev_q": 49.5,
+   "rev_ttm": 55.6,
+   "cagr5": 11.6,
+   "eps_q": 78.1,
+   "opm": 10.3,
+   "roic": 6.4,
+   "psr": 0.36,
+   "peg": 0.19,
+   "de": 2.41,
+   "inflow": null,
+   "biz": "Hoosiers Holdings Co., Ltd., a holding company, engages in housing-related businesses in Japan. The company is involved in sale of newly built condominium and detached house; participating in urban redevelopment projects",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "1820",
+   "name": "Nishimatsu Construction Co., Ltd.",
+   "ticker": "TSE:1820",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_x5",
+    "sig_macd",
+    "sig_div",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 2378,
+      "win": 35.9,
+      "avg": -0.89,
+      "med": -1.08,
+      "excess": 0.11,
+      "best": 87.8,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 3394,
+      "win": 40.3,
+      "avg": -0.36,
+      "med": -0.38,
+      "excess": 0.03,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3035,
+      "win": 35.3,
+      "avg": -0.87,
+      "med": -1.03,
+      "excess": 0.35,
+      "best": 84.0,
+      "worst": -23.1
+     },
+     "1": {
+      "n": 4958,
+      "win": 47.3,
+      "avg": -0.01,
+      "med": -0.07,
+      "excess": 0.05,
+      "best": 57.8,
+      "worst": -12.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 1075,
+      "win": 29.3,
+      "avg": -1.02,
+      "med": -1.16,
+      "excess": -0.04,
+      "best": 10.9,
+      "worst": -15.3
+     },
+     "1": {
+      "n": 1993,
+      "win": 42.0,
+      "avg": -0.11,
+      "med": -0.16,
+      "excess": -0.08,
+      "best": 12.1,
+      "worst": -6.8
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 2184,
+      "win": 22.2,
+      "avg": -2.32,
+      "med": -2.32,
+      "excess": -0.26,
+      "best": 31.5,
+      "worst": -19.9
+     },
+     "1": {
+      "n": 4992,
+      "win": 41.4,
+      "avg": -0.48,
+      "med": -0.33,
+      "excess": -0.07,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 1090,
+      "win": 24.7,
+      "avg": -2.17,
+      "med": -2.26,
+      "excess": -0.11,
+      "best": 31.5,
+      "worst": -18.4
+     },
+     "1": {
+      "n": 2541,
+      "win": 42.8,
+      "avg": -0.4,
+      "med": -0.31,
+      "excess": 0.01,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    }
+   },
+   "sector": "Consumer Durables",
+   "industry": "Homebuilding",
+   "segment": "—",
+   "close": 5634.0,
+   "chg": 0.84,
+   "gap": 0.05,
+   "sma5": 5615.2,
+   "sma20": 5548.85,
+   "sma200": 5700.19,
+   "ext200": -1.16,
+   "rsi": 60.5,
+   "macd_h": 2.71,
+   "rvol": 0.83,
+   "pw": 0.66,
+   "p1": 5.88,
+   "p3": 6.2,
+   "ytd": -1.5,
+   "pos52": 33.0,
+   "hi52": 6891.0,
+   "lo52": 5021.0,
+   "val": 6.1,
+   "mcap": 2217.0,
+   "per": 8.2,
+   "pbr": 1.16,
+   "eps": 685.55,
+   "roe": 15.0,
+   "eqr": 26.1,
+   "div": 4.09,
+   "rev_q": 23.8,
+   "rev_ttm": 13.7,
+   "cagr5": 3.3,
+   "eps_q": 182.0,
+   "opm": 7.7,
+   "roic": 8.8,
+   "psr": 0.56,
+   "peg": 0.12,
+   "de": 1.17,
+   "inflow": null,
+   "biz": "Nishimatsu Construction Co., Ltd. engages in the construction business in Japan and internationally. The company offers asset value-added services and regional environmental solutions. It also engages in the development,",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "4258",
+   "name": "AMIYA Corporation",
+   "ticker": "TSE:4258",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_x20",
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x20": {
+     "5": {
+      "n": 694,
+      "win": 40.8,
+      "avg": -0.27,
+      "med": -0.75,
+      "excess": 0.63,
+      "best": 129.8,
+      "worst": -45.0
+     },
+     "1": {
+      "n": 1129,
+      "win": 40.8,
+      "avg": -0.17,
+      "med": -0.32,
+      "excess": 0.16,
+      "best": 129.6,
+      "worst": -19.7
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3035,
+      "win": 35.3,
+      "avg": -0.87,
+      "med": -1.03,
+      "excess": 0.35,
+      "best": 84.0,
+      "worst": -23.1
+     },
+     "1": {
+      "n": 4958,
+      "win": 47.3,
+      "avg": -0.01,
+      "med": -0.07,
+      "excess": 0.05,
+      "best": 57.8,
+      "worst": -12.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 1301,
+      "win": 31.7,
+      "avg": -1.74,
+      "med": -1.87,
+      "excess": -0.78,
+      "best": 30.6,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 2345,
+      "win": 46.1,
+      "avg": -0.05,
+      "med": -0.11,
+      "excess": -0.06,
+      "best": 24.8,
+      "worst": -79.2
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 677,
+      "win": 23.3,
+      "avg": -2.42,
+      "med": -2.84,
+      "excess": -0.37,
+      "best": 38.8,
+      "worst": -25.2
+     },
+     "1": {
+      "n": 1539,
+      "win": 40.2,
+      "avg": -0.49,
+      "med": -0.53,
+      "excess": -0.09,
+      "best": 29.0,
+      "worst": -19.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 2184,
+      "win": 22.2,
+      "avg": -2.32,
+      "med": -2.32,
+      "excess": -0.26,
+      "best": 31.5,
+      "worst": -19.9
+     },
+     "1": {
+      "n": 4992,
+      "win": 41.4,
+      "avg": -0.48,
+      "med": -0.33,
+      "excess": -0.07,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Packaged Software",
+   "segment": "—",
+   "close": 4730.0,
+   "chg": 5.11,
+   "gap": -0.11,
+   "sma5": 4394.0,
+   "sma20": 4476.5,
+   "sma200": 3416.7,
+   "ext200": 38.44,
+   "rsi": 57.0,
+   "macd_h": 1.46,
+   "rvol": 1.35,
+   "pw": 3.16,
+   "p1": 3.28,
+   "p3": 34.95,
+   "ytd": 56.1,
+   "pos52": 85.0,
+   "hi52": 5100.0,
+   "lo52": 2571.0,
+   "val": 4.0,
+   "mcap": 377.0,
+   "per": 47.4,
+   "pbr": 16.61,
+   "eps": 103.75,
+   "roe": 35.3,
+   "eqr": 53.7,
+   "div": 0.36,
+   "rev_q": 20.5,
+   "rev_ttm": 24.8,
+   "cagr5": 20.7,
+   "eps_q": 69.1,
+   "opm": 18.3,
+   "roic": 24.9,
+   "psr": 6.78,
+   "peg": 0.69,
+   "de": 1.11,
+   "inflow": null,
+   "biz": "【特色】サイバーセキュリティ専業。ログ監視「ＡＬｏｇ」、ネットワーク対策「ベロナ」等の製品で有力 連結事業 【連結事業】データセキュリティ42(40)、ネットワークセキュリティ58(29)(2025.12)",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "5019",
+   "name": "Idemitsu Kosan Co., Ltd.",
+   "ticker": "TSE:5019",
+   "bucket": "long",
+   "score": 4.0,
+   "signals": [
+    "sig_trend",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_trend": {
+     "5": {
+      "n": 1408,
+      "win": 36.2,
+      "avg": -0.87,
+      "med": -1.24,
+      "excess": 0.09,
+      "best": 84.0,
+      "worst": -17.1
+     },
+     "1": {
+      "n": 1933,
+      "win": 40.5,
+      "avg": -0.4,
+      "med": -0.34,
+      "excess": -0.01,
+      "best": 18.1,
+      "worst": -14.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 677,
+      "win": 23.3,
+      "avg": -2.42,
+      "med": -2.84,
+      "excess": -0.37,
+      "best": 38.8,
+      "worst": -25.2
+     },
+     "1": {
+      "n": 1539,
+      "win": 40.2,
+      "avg": -0.49,
+      "med": -0.53,
+      "excess": -0.09,
+      "best": 29.0,
+      "worst": -19.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 2184,
+      "win": 22.2,
+      "avg": -2.32,
+      "med": -2.32,
+      "excess": -0.26,
+      "best": 31.5,
+      "worst": -19.9
+     },
+     "1": {
+      "n": 4992,
+      "win": 41.4,
+      "avg": -0.48,
+      "med": -0.33,
+      "excess": -0.07,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 1090,
+      "win": 24.7,
+      "avg": -2.17,
+      "med": -2.26,
+      "excess": -0.11,
+      "best": 31.5,
+      "worst": -18.4
+     },
+     "1": {
+      "n": 2541,
+      "win": 42.8,
+      "avg": -0.4,
+      "med": -0.31,
+      "excess": 0.01,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    }
+   },
+   "sector": "Energy Minerals",
+   "industry": "Oil Refining/Marketing",
+   "segment": "—",
+   "close": 1543.0,
+   "chg": 2.94,
+   "gap": 0.37,
+   "sma5": 1492.7,
+   "sma20": 1394.35,
+   "sma200": 1329.58,
+   "ext200": 16.05,
+   "rsi": 73.6,
+   "macd_h": 13.9,
+   "rvol": 1.34,
+   "pw": 9.32,
+   "p1": 18.33,
+   "p3": 16.23,
+   "ytd": 29.7,
+   "pos52": 81.0,
+   "hi52": 1671.0,
+   "lo52": 987.5,
+   "val": 92.0,
+   "mcap": 17973.0,
+   "per": 4.9,
+   "pbr": 1.12,
+   "eps": 315.73,
+   "roe": 23.1,
+   "eqr": 44.2,
+   "div": 2.45,
+   "rev_q": 23.8,
+   "rev_ttm": -2.7,
+   "cagr5": 12.2,
+   "eps_q": 705.1,
+   "opm": 6.3,
+   "roic": 16.5,
+   "psr": 0.23,
+   "peg": 0.0,
+   "de": 1.39,
+   "inflow": null,
+   "biz": "Idemitsu Kosan Co.,Ltd. engages in the fuel oil, basic chemicals, functional materials, power and renewable energy, and resources businesses in Japan, Singapore, Asia, Oceania, North America, and internationally. The Fue",
+   "tdnet": [
+    {
+     "pub": "2026-09-02 15:30",
+     "title": "連結子会社からの配当金受領に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260902530702.pdf",
+     "bits": 0,
+     "strong": false
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "8473",
+   "name": "SBI Holdings Incorporated",
+   "ticker": "TSE:8473",
+   "bucket": "news",
+   "score": 4.0,
+   "signals": [
+    "sig_trend",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_trend": {
+     "5": {
+      "n": 1408,
+      "win": 36.2,
+      "avg": -0.87,
+      "med": -1.24,
+      "excess": 0.09,
+      "best": 84.0,
+      "worst": -17.1
+     },
+     "1": {
+      "n": 1933,
+      "win": 40.5,
+      "avg": -0.4,
+      "med": -0.34,
+      "excess": -0.01,
+      "best": 18.1,
+      "worst": -14.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 677,
+      "win": 23.3,
+      "avg": -2.42,
+      "med": -2.84,
+      "excess": -0.37,
+      "best": 38.8,
+      "worst": -25.2
+     },
+     "1": {
+      "n": 1539,
+      "win": 40.2,
+      "avg": -0.49,
+      "med": -0.53,
+      "excess": -0.09,
+      "best": 29.0,
+      "worst": -19.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 2184,
+      "win": 22.2,
+      "avg": -2.32,
+      "med": -2.32,
+      "excess": -0.26,
+      "best": 31.5,
+      "worst": -19.9
+     },
+     "1": {
+      "n": 4992,
+      "win": 41.4,
+      "avg": -0.48,
+      "med": -0.33,
+      "excess": -0.07,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 1090,
+      "win": 24.7,
+      "avg": -2.17,
+      "med": -2.26,
+      "excess": -0.11,
+      "best": 31.5,
+      "worst": -18.4
+     },
+     "1": {
+      "n": 2541,
+      "win": 42.8,
+      "avg": -0.4,
+      "med": -0.31,
+      "excess": 0.01,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Financial Conglomerates",
+   "segment": "—",
+   "close": 3349.0,
+   "chg": -0.45,
+   "gap": -0.06,
+   "sma5": 3318.8,
+   "sma20": 3227.7,
+   "sma200": 3140.67,
+   "ext200": 6.63,
+   "rsi": 61.0,
+   "macd_h": -1.15,
+   "rvol": 0.69,
+   "pw": 1.39,
+   "p1": 7.65,
+   "p3": 14.3,
+   "ytd": -1.8,
+   "pos52": 58.0,
+   "hi52": 3866.0,
+   "lo52": 2631.0,
+   "val": 106.9,
+   "mcap": 22412.0,
+   "per": 4.7,
+   "pbr": 1.16,
+   "eps": 755.38,
+   "roe": 30.8,
+   "eqr": 8.4,
+   "div": 2.8,
+   "rev_q": 28.8,
+   "rev_ttm": 23.1,
+   "cagr5": 27.8,
+   "eps_q": 64.3,
+   "opm": 46.6,
+   "roic": 5.9,
+   "psr": 1.29,
+   "peg": 0.05,
+   "de": 4.02,
+   "inflow": null,
+   "biz": "SBI Holdings, Inc. engages in investment businesses in Japan and internationally. The company operates through five business segments: Financial Services Business, Asset Management Business, PE Investment Business, Crypt",
+   "tdnet": [
+    {
+     "pub": "2026-09-08 15:45",
+     "title": "（訂正）公開買付届出書の訂正届出書の提出に伴う「BASE株式会社株式（証券コード：4477）に対する公開買付けの開始（略）」等の訂正に関するお知らせ",
+     "url": "https://www.release.tdnet.info/inbs/140120260908533089.pdf",
+     "bits": 1024,
+     "strong": true
+    },
+    {
+     "pub": "2026-09-03 15:30",
+     "title": "株式会社ブランジスタ（証券コード：6176）株式の買集め行為に該当する株式取得についてのお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260903531214.pdf",
+     "bits": 0,
+     "strong": false
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "1436",
+   "name": "GreenEnergy & Company",
+   "ticker": "TSE:1436",
+   "bucket": "news",
+   "score": 3.0,
+   "signals": [
+    "sig_spike",
+    "sig_growth",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 416,
+      "win": 34.1,
+      "avg": -0.84,
+      "med": -1.52,
+      "excess": 0.17,
+      "best": 130.2,
+      "worst": -40.5
+     },
+     "1": {
+      "n": 599,
+      "win": 42.2,
+      "avg": -0.07,
+      "med": -0.3,
+      "excess": 0.18,
+      "best": 30.7,
+      "worst": -54.8
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 677,
+      "win": 23.3,
+      "avg": -2.42,
+      "med": -2.84,
+      "excess": -0.37,
+      "best": 38.8,
+      "worst": -25.2
+     },
+     "1": {
+      "n": 1539,
+      "win": 40.2,
+      "avg": -0.49,
+      "med": -0.53,
+      "excess": -0.09,
+      "best": 29.0,
+      "worst": -19.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 1090,
+      "win": 24.7,
+      "avg": -2.17,
+      "med": -2.26,
+      "excess": -0.11,
+      "best": 31.5,
+      "worst": -18.4
+     },
+     "1": {
+      "n": 2541,
+      "win": 42.8,
+      "avg": -0.4,
+      "med": -0.31,
+      "excess": 0.01,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    }
+   },
+   "sector": "Commercial Services",
+   "industry": "Miscellaneous Commercial Services",
+   "segment": "—",
+   "close": 1923.0,
+   "chg": 4.11,
+   "gap": 0.0,
+   "sma5": 1785.2,
+   "sma20": 1636.1,
+   "sma200": 1231.99,
+   "ext200": 56.09,
+   "rsi": 77.4,
+   "macd_h": 28.94,
+   "rvol": 4.38,
+   "pw": 14.46,
+   "p1": 26.68,
+   "p3": 22.48,
+   "ytd": 133.9,
+   "pos52": 82.0,
+   "hi52": 2184.0,
+   "lo52": 693.0,
+   "val": 3.5,
+   "mcap": 225.0,
+   "per": 49.6,
+   "pbr": 4.18,
+   "eps": 40.47,
+   "roe": 9.1,
+   "eqr": 34.4,
+   "div": 0.27,
+   "rev_q": 80.6,
+   "rev_ttm": 58.0,
+   "cagr5": 25.1,
+   "eps_q": 6.8,
+   "opm": 6.5,
+   "roic": 5.5,
+   "psr": 1.35,
+   "peg": 0.61,
+   "de": 1.04,
+   "inflow": null,
+   "biz": "GreenEnergy & Company Inc. engages in the sale, construction, and maintenance of solar power generation facilities and compact houses equipped with solar power generation. It also provides construction management service",
+   "tdnet": [
+    {
+     "pub": "2026-09-08 15:36",
+     "title": "2027年4月期第１四半期決算説明資料",
+     "url": "https://www.release.tdnet.info/inbs/140120260908533135.pdf",
+     "bits": 64,
+     "strong": false
+    },
+    {
+     "pub": "2026-09-08 15:30",
+     "title": "業績予想の修正（上方修正）に関するお知らせ",
+     "url": "https://www.release.tdnet.info/inbs/140120260908533009.pdf",
+     "bits": 129,
+     "strong": true
+    },
+    {
+     "pub": "2026-09-08 15:30",
+     "title": "2027年４月期第１四半期決算短信〔日本基準〕(連結)",
+     "url": "https://www.release.tdnet.info/inbs/140120260908533095.pdf",
+     "bits": 64,
+     "strong": false
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "3083",
+   "name": "Star seeds Co.,Ltd.",
+   "ticker": "TSE:3083",
+   "bucket": "news",
+   "score": 1.0,
+   "signals": [
+    "sig_growth"
+   ],
+   "baserate": {
+    "sig_growth": {
+     "5": {
+      "n": 677,
+      "win": 23.3,
+      "avg": -2.42,
+      "med": -2.84,
+      "excess": -0.37,
+      "best": 38.8,
+      "worst": -25.2
+     },
+     "1": {
+      "n": 1539,
+      "win": 40.2,
+      "avg": -0.49,
+      "med": -0.53,
+      "excess": -0.09,
+      "best": 29.0,
+      "worst": -19.7
+     }
+    }
+   },
+   "sector": "Retail Trade",
+   "industry": "Apparel/Footwear Retail",
+   "segment": "—",
+   "close": 1243.0,
+   "chg": -0.96,
+   "gap": 0.08,
+   "sma5": 1268.2,
+   "sma20": 1080.75,
+   "sma200": 932.07,
+   "ext200": 33.36,
+   "rsi": 66.5,
+   "macd_h": 22.43,
+   "rvol": 0.87,
+   "pw": 8.75,
+   "p1": 26.45,
+   "p3": 25.43,
+   "ytd": 66.8,
+   "pos52": 84.0,
+   "hi52": 1358.0,
+   "lo52": 632.0,
+   "val": 5.4,
+   "mcap": 108.0,
+   "per": null,
+   "pbr": 3.96,
+   "eps": -17.21,
+   "roe": -0.6,
+   "eqr": 46.3,
+   "div": 0.8,
+   "rev_q": 316.9,
+   "rev_ttm": 181.6,
+   "cagr5": 30.7,
+   "eps_q": -104.9,
+   "opm": 1.8,
+   "roic": -0.6,
+   "psr": 0.77,
+   "peg": null,
+   "de": 0.2,
+   "inflow": null,
+   "biz": "【特色】ＳＣ向けアパレルで創業。２５年から蓄電池やＣＰＵサーバー販売等デジタルインフラに軸足 連結事業 【連結事業】衣料品等49(-7)、系統用蓄電池22(21)、ＧＰＵサーバー等29(3)、他‥",
+   "tdnet": [
+    {
+     "pub": "2026-09-08 13:00",
+     "title": "2027年２月期通期連結業績予想の修正（上方修正）に関するお知らせ",
+     "url": "https://www.release.tdnet.info/inbs/140120260908532925.pdf",
+     "bits": 129,
+     "strong": true
+    },
+    {
+     "pub": "2026-09-04 13:00",
+     "title": "連結子会社におけるサーバー関連商品の仕入及び販売に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260904531706.pdf",
+     "bits": 0,
+     "strong": false
+    },
+    {
+     "pub": "2026-09-02 13:00",
+     "title": "継続的な株主優待制度の導入に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260902530547.pdf",
+     "bits": 0,
+     "strong": false
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "9532",
+   "name": "Osaka Gas Co., Ltd.",
+   "ticker": "TSE:9532",
+   "bucket": "news",
+   "score": 3.0,
+   "signals": [
+    "sig_x5",
+    "sig_reclaim",
+    "sig_macd"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 2378,
+      "win": 35.9,
+      "avg": -0.89,
+      "med": -1.08,
+      "excess": 0.11,
+      "best": 87.8,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 3394,
+      "win": 40.3,
+      "avg": -0.36,
+      "med": -0.38,
+      "excess": 0.03,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 912,
+      "win": 42.5,
+      "avg": -0.39,
+      "med": -0.62,
+      "excess": 0.17,
+      "best": 25.4,
+      "worst": -21.3
+     },
+     "1": {
+      "n": 1521,
+      "win": 44.4,
+      "avg": -0.23,
+      "med": -0.14,
+      "excess": 0.0,
+      "best": 26.5,
+      "worst": -11.6
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 3035,
+      "win": 35.3,
+      "avg": -0.87,
+      "med": -1.03,
+      "excess": 0.35,
+      "best": 84.0,
+      "worst": -23.1
+     },
+     "1": {
+      "n": 4958,
+      "win": 47.3,
+      "avg": -0.01,
+      "med": -0.07,
+      "excess": 0.05,
+      "best": 57.8,
+      "worst": -12.3
+     }
+    }
+   },
+   "sector": "Utilities",
+   "industry": "Gas Distributors",
+   "segment": "—",
+   "close": 5856.0,
+   "chg": 1.56,
+   "gap": -0.87,
+   "sma5": 5813.4,
+   "sma20": 5630.85,
+   "sma200": 5741.56,
+   "ext200": 1.99,
+   "rsi": 64.1,
+   "macd_h": 20.11,
+   "rvol": 0.96,
+   "pw": 1.67,
+   "p1": 8.46,
+   "p3": 5.51,
+   "ytd": 7.8,
+   "pos52": 65.0,
+   "hi52": 6828.0,
+   "lo52": 4075.0,
+   "val": 52.8,
+   "mcap": 21863.0,
+   "per": 16.2,
+   "pbr": 1.22,
+   "eps": 360.93,
+   "roe": 8.1,
+   "eqr": 57.9,
+   "div": 2.1,
+   "rev_q": 1.5,
+   "rev_ttm": -1.5,
+   "cagr5": 8.3,
+   "eps_q": -23.8,
+   "opm": 7.8,
+   "roic": 5.5,
+   "psr": 1.13,
+   "peg": null,
+   "de": 0.44,
+   "inflow": null,
+   "biz": "Osaka Gas Co., Ltd. provides natural gas, electricity, and other energy products and services in Japan and internationally. The company operates through three segments: Domestic Energy, Overseas Energy, and Life & Busine",
+   "tdnet": [
+    {
+     "pub": "2026-09-07 11:00",
+     "title": "自己株式の取得状況に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260901529552.pdf",
+     "bits": 16,
+     "strong": true
+    }
+   ],
+   "llm": null
+  }
+ ],
+ "config": {
+  "MIN_VAL": 3.0,
+  "MIN_MCAP": 100.0,
+  "MIN_PRICE": 0.0,
+  "N_SHORT": 8,
+  "N_LONG": 8,
+  "N_NEWS": 4,
+  "MAX_PER_INDUSTRY": 3,
+  "COOLDOWN_DAYS": 3
+ }
+}
