@@ -1,0 +1,2438 @@
+{
+ "date": "2026-09-10",
+ "market": "us",
+ "generated": "2026-09-10 06:35 JST",
+ "label_ko": "🇺🇸 미국",
+ "label_ja": "🇺🇸 米国",
+ "unit_ko": "$M",
+ "unit_ja": "$M",
+ "llm_mode": "off",
+ "baserate_days": 16,
+ "universe": {
+  "total": 5185,
+  "liquid": 2209,
+  "candidates": 16,
+  "short": 8,
+  "long": 8,
+  "news": 0
+ },
+ "picks": [
+  {
+   "code": "GFR",
+   "name": "Greenfire Resources Ltd.",
+   "ticker": "NYSE:GFR",
+   "bucket": "short",
+   "score": 4.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 1483,
+      "win": 44.2,
+      "avg": 31.13,
+      "med": -0.1,
+      "excess": 28.59,
+      "best": 8276.7,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 2105,
+      "win": 39.6,
+      "avg": 8.43,
+      "med": 0.0,
+      "excess": 7.72,
+      "best": 5598.3,
+      "worst": -89.7
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 7789,
+      "win": 38.9,
+      "avg": 1.26,
+      "med": -0.9,
+      "excess": -1.26,
+      "best": 3343.9,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 11524,
+      "win": 41.3,
+      "avg": 0.93,
+      "med": -0.33,
+      "excess": 0.46,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 2520,
+      "win": 39.2,
+      "avg": 1.87,
+      "med": -0.89,
+      "excess": -0.64,
+      "best": 3002.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 3954,
+      "win": 41.1,
+      "avg": 2.2,
+      "med": -0.39,
+      "excess": 1.67,
+      "best": 5598.3,
+      "worst": -47.9
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 1987,
+      "win": 47.5,
+      "avg": -0.19,
+      "med": -0.19,
+      "excess": -3.0,
+      "best": 20.8,
+      "worst": -52.2
+     },
+     "1": {
+      "n": 2983,
+      "win": 46.3,
+      "avg": -0.15,
+      "med": -0.15,
+      "excess": -0.83,
+      "best": 16.0,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Energy Minerals",
+   "industry": "Integrated Oil",
+   "segment": "NYSE",
+   "close": 6.39,
+   "chg": 2.57,
+   "gap": 1.28,
+   "sma5": 6.23,
+   "sma20": 6.36,
+   "sma200": 5.79,
+   "ext200": 10.43,
+   "rsi": 53.5,
+   "macd_h": -0.01,
+   "rvol": 2.99,
+   "pw": 2.24,
+   "p1": 2.57,
+   "p3": 10.17,
+   "ytd": 32.6,
+   "pos52": 74.0,
+   "hi52": 7.16,
+   "lo52": 4.15,
+   "val": 21.7,
+   "mcap": 1536.0,
+   "per": null,
+   "pbr": 1.16,
+   "eps": -0.24,
+   "roe": -3.7,
+   "eqr": 90.6,
+   "div": 0.0,
+   "rev_q": 38.5,
+   "rev_ttm": -5.9,
+   "cagr5": null,
+   "eps_q": -31.0,
+   "opm": 16.7,
+   "roic": -3.2,
+   "psr": 1.29,
+   "peg": null,
+   "de": 0.03,
+   "inflow": null,
+   "biz": "Greenfire Resources Ltd., together with its subsidiaries, engages in the exploration, development, and operation of oil and gas properties in the Athabasca oil sands region of Alberta, Canada. The company's principal ass",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "ACT",
+   "name": "Enact Holdings, Inc.",
+   "ticker": "NASDAQ:ACT",
+   "bucket": "short",
+   "score": 4.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_high",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 7789,
+      "win": 38.9,
+      "avg": 1.26,
+      "med": -0.9,
+      "excess": -1.26,
+      "best": 3343.9,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 11524,
+      "win": 41.3,
+      "avg": 0.93,
+      "med": -0.33,
+      "excess": 0.46,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 2520,
+      "win": 39.2,
+      "avg": 1.87,
+      "med": -0.89,
+      "excess": -0.64,
+      "best": 3002.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 3954,
+      "win": 41.1,
+      "avg": 2.2,
+      "med": -0.39,
+      "excess": 1.67,
+      "best": 5598.3,
+      "worst": -47.9
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 1812,
+      "win": 43.9,
+      "avg": -0.66,
+      "med": -0.07,
+      "excess": -3.09,
+      "best": 308.4,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 2495,
+      "win": 38.6,
+      "avg": -0.14,
+      "med": 0.0,
+      "excess": -0.72,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 7943,
+      "win": 40.7,
+      "avg": -0.76,
+      "med": -0.68,
+      "excess": -3.56,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 11935,
+      "win": 43.6,
+      "avg": -0.2,
+      "med": -0.22,
+      "excess": -0.88,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Multi-Line Insurance",
+   "segment": "NASDAQ",
+   "close": 49.55,
+   "chg": 0.51,
+   "gap": 0.0,
+   "sma5": 49.27,
+   "sma20": 49.33,
+   "sma200": 42.92,
+   "ext200": 15.44,
+   "rsi": 59.3,
+   "macd_h": -0.11,
+   "rvol": 0.95,
+   "pw": 1.85,
+   "p1": 1.79,
+   "p3": 16.34,
+   "ytd": 24.7,
+   "pos52": 94.0,
+   "hi52": 50.56,
+   "lo52": 34.64,
+   "val": 15.3,
+   "mcap": 6812.0,
+   "per": 10.4,
+   "pbr": 1.27,
+   "eps": 4.77,
+   "roe": 12.9,
+   "eqr": 77.4,
+   "div": 1.83,
+   "rev_q": 4.1,
+   "rev_ttm": 2.5,
+   "cagr5": 2.2,
+   "eps_q": 11.9,
+   "opm": 73.1,
+   "roic": 11.3,
+   "psr": 5.99,
+   "peg": 1.34,
+   "de": 0.14,
+   "inflow": null,
+   "biz": "Enact Holdings, Inc. operates as a private mortgage insurance company in the United States. The company engages in writing and assuming residential mortgage guaranty insurance. It also offers private mortgage insurance p",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "NEOG",
+   "name": "Neogen Corporation",
+   "ticker": "NASDAQ:NEOG",
+   "bucket": "short",
+   "score": 3.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 1483,
+      "win": 44.2,
+      "avg": 31.13,
+      "med": -0.1,
+      "excess": 28.59,
+      "best": 8276.7,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 2105,
+      "win": 39.6,
+      "avg": 8.43,
+      "med": 0.0,
+      "excess": 7.72,
+      "best": 5598.3,
+      "worst": -89.7
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 7789,
+      "win": 38.9,
+      "avg": 1.26,
+      "med": -0.9,
+      "excess": -1.26,
+      "best": 3343.9,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 11524,
+      "win": 41.3,
+      "avg": 0.93,
+      "med": -0.33,
+      "excess": 0.46,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 2520,
+      "win": 39.2,
+      "avg": 1.87,
+      "med": -0.89,
+      "excess": -0.64,
+      "best": 3002.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 3954,
+      "win": 41.1,
+      "avg": 2.2,
+      "med": -0.39,
+      "excess": 1.67,
+      "best": 5598.3,
+      "worst": -47.9
+     }
+    }
+   },
+   "sector": "Health Technology",
+   "industry": "Medical Specialties",
+   "segment": "NASDAQ",
+   "close": 11.92,
+   "chg": 0.29,
+   "gap": 1.72,
+   "sma5": 11.82,
+   "sma20": 11.75,
+   "sma200": 9.42,
+   "ext200": 26.48,
+   "rsi": 59.7,
+   "macd_h": -0.05,
+   "rvol": 3.69,
+   "pw": 1.79,
+   "p1": 5.3,
+   "p3": 29.42,
+   "ytd": 72.0,
+   "pos52": 88.0,
+   "hi52": 12.85,
+   "lo52": 4.9,
+   "val": 73.4,
+   "mcap": 2600.0,
+   "per": null,
+   "pbr": 1.24,
+   "eps": -0.04,
+   "roe": -0.4,
+   "eqr": 61.7,
+   "div": 0.0,
+   "rev_q": -0.1,
+   "rev_ttm": -2.7,
+   "cagr5": 13.2,
+   "eps_q": 98.2,
+   "opm": -1.7,
+   "roic": -0.3,
+   "psr": 2.98,
+   "peg": null,
+   "de": 0.39,
+   "inflow": null,
+   "biz": "Neogen Corporation develops, manufactures, and markets various products and services for food and animal safety in the United States and internationally. It operates through Food Safety and Animal Safety segments. The co",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "JMKE",
+   "name": "Jersey Mike's Subs Inc.",
+   "ticker": "NYSE:JMKE",
+   "bucket": "short",
+   "score": 3.0,
+   "signals": [
+    "sig_spike",
+    "sig_x20",
+    "sig_gap"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 1483,
+      "win": 44.2,
+      "avg": 31.13,
+      "med": -0.1,
+      "excess": 28.59,
+      "best": 8276.7,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 2105,
+      "win": 39.6,
+      "avg": 8.43,
+      "med": 0.0,
+      "excess": 7.72,
+      "best": 5598.3,
+      "worst": -89.7
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 2520,
+      "win": 39.2,
+      "avg": 1.87,
+      "med": -0.89,
+      "excess": -0.64,
+      "best": 3002.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 3954,
+      "win": 41.1,
+      "avg": 2.2,
+      "med": -0.39,
+      "excess": 1.67,
+      "best": 5598.3,
+      "worst": -47.9
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 1156,
+      "win": 36.0,
+      "avg": 10.49,
+      "med": -2.93,
+      "excess": 8.27,
+      "best": 7352.0,
+      "worst": -91.8
+     },
+     "1": {
+      "n": 1552,
+      "win": 38.6,
+      "avg": 3.43,
+      "med": -1.3,
+      "excess": 3.02,
+      "best": 4202.4,
+      "worst": -50.6
+     }
+    }
+   },
+   "sector": "Consumer Services",
+   "industry": "Restaurants",
+   "segment": "NYSE",
+   "close": 22.37,
+   "chg": 7.44,
+   "gap": 5.96,
+   "sma5": 20.94,
+   "sma20": 22.0,
+   "sma200": null,
+   "ext200": null,
+   "rsi": 54.2,
+   "macd_h": null,
+   "rvol": 3.4,
+   "pw": 9.12,
+   "p1": -2.01,
+   "p3": 6.52,
+   "ytd": 6.5,
+   "pos52": 49.0,
+   "hi52": 24.99,
+   "lo52": 19.86,
+   "val": 178.7,
+   "mcap": 7106.0,
+   "per": null,
+   "pbr": 1.22,
+   "eps": null,
+   "roe": null,
+   "eqr": 72.3,
+   "div": 0.0,
+   "rev_q": null,
+   "rev_ttm": null,
+   "cagr5": null,
+   "eps_q": null,
+   "opm": null,
+   "roic": null,
+   "psr": 9.81,
+   "peg": null,
+   "de": 0.36,
+   "inflow": null,
+   "biz": "Jersey Mike's Subs Inc. engages in franchising and operating fast casual, submarine-style sandwich restaurants specializing in authentic, hand-crafted, and craveable subs. The company also offers catering services, as we",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "PLSE",
+   "name": "Pulse Biosciences, Inc",
+   "ticker": "NASDAQ:PLSE",
+   "bucket": "short",
+   "score": 3.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 1483,
+      "win": 44.2,
+      "avg": 31.13,
+      "med": -0.1,
+      "excess": 28.59,
+      "best": 8276.7,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 2105,
+      "win": 39.6,
+      "avg": 8.43,
+      "med": 0.0,
+      "excess": 7.72,
+      "best": 5598.3,
+      "worst": -89.7
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 7789,
+      "win": 38.9,
+      "avg": 1.26,
+      "med": -0.9,
+      "excess": -1.26,
+      "best": 3343.9,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 11524,
+      "win": 41.3,
+      "avg": 0.93,
+      "med": -0.33,
+      "excess": 0.46,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 2520,
+      "win": 39.2,
+      "avg": 1.87,
+      "med": -0.89,
+      "excess": -0.64,
+      "best": 3002.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 3954,
+      "win": 41.1,
+      "avg": 2.2,
+      "med": -0.39,
+      "excess": 1.67,
+      "best": 5598.3,
+      "worst": -47.9
+     }
+    }
+   },
+   "sector": "Health Technology",
+   "industry": "Medical Specialties",
+   "segment": "NASDAQ",
+   "close": 52.97,
+   "chg": 8.57,
+   "gap": 1.99,
+   "sma5": 52.48,
+   "sma20": 48.9,
+   "sma200": 24.46,
+   "ext200": 116.58,
+   "rsi": 64.6,
+   "macd_h": -0.28,
+   "rvol": 2.63,
+   "pw": 1.59,
+   "p1": 23.85,
+   "p3": 110.37,
+   "ytd": 283.0,
+   "pos52": 87.0,
+   "hi52": 58.9,
+   "lo52": 12.56,
+   "val": 82.7,
+   "mcap": 3778.0,
+   "per": null,
+   "pbr": 37.69,
+   "eps": -1.17,
+   "roe": -78.5,
+   "eqr": 86.6,
+   "div": 0.0,
+   "rev_q": null,
+   "rev_ttm": null,
+   "cagr5": null,
+   "eps_q": -25.1,
+   "opm": -7007.8,
+   "roic": -74.2,
+   "psr": 10199.8,
+   "peg": -3.67,
+   "de": 0.07,
+   "inflow": null,
+   "biz": "Pulse Biosciences, Inc. operates as a novel bioelectric medicine company. It offers nPulse System, a novel Nanosecond Pulsed-Field Ablation delivery platform to treat benign lesions of the skin; nPulse Vybrance Percutane",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "CHYM",
+   "name": "Chime Financial, Inc.",
+   "ticker": "NASDAQ:CHYM",
+   "bucket": "short",
+   "score": 3.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_gap"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 1483,
+      "win": 44.2,
+      "avg": 31.13,
+      "med": -0.1,
+      "excess": 28.59,
+      "best": 8276.7,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 2105,
+      "win": 39.6,
+      "avg": 8.43,
+      "med": 0.0,
+      "excess": 7.72,
+      "best": 5598.3,
+      "worst": -89.7
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 7789,
+      "win": 38.9,
+      "avg": 1.26,
+      "med": -0.9,
+      "excess": -1.26,
+      "best": 3343.9,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 11524,
+      "win": 41.3,
+      "avg": 0.93,
+      "med": -0.33,
+      "excess": 0.46,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 1156,
+      "win": 36.0,
+      "avg": 10.49,
+      "med": -2.93,
+      "excess": 8.27,
+      "best": 7352.0,
+      "worst": -91.8
+     },
+     "1": {
+      "n": 1552,
+      "win": 38.6,
+      "avg": 3.43,
+      "med": -1.3,
+      "excess": 3.02,
+      "best": 4202.4,
+      "worst": -50.6
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Packaged Software",
+   "segment": "NASDAQ",
+   "close": 34.55,
+   "chg": 6.93,
+   "gap": 9.35,
+   "sma5": 33.54,
+   "sma20": 32.75,
+   "sma200": 22.93,
+   "ext200": 50.69,
+   "rsi": 66.4,
+   "macd_h": -0.3,
+   "rvol": 2.59,
+   "pw": 8.34,
+   "p1": 18.57,
+   "p3": 112.09,
+   "ytd": 36.8,
+   "pos52": 95.0,
+   "hi52": 35.55,
+   "lo52": 15.88,
+   "val": 486.5,
+   "mcap": 13080.0,
+   "per": null,
+   "pbr": 9.31,
+   "eps": -0.05,
+   "roe": -1.3,
+   "eqr": 71.8,
+   "div": 0.0,
+   "rev_q": 10.6,
+   "rev_ttm": 17.5,
+   "cagr5": null,
+   "eps_q": null,
+   "opm": -0.8,
+   "roic": -1.2,
+   "psr": 6.69,
+   "peg": null,
+   "de": 0.09,
+   "inflow": null,
+   "biz": "Chime Financial, Inc., a financial technology company, provides digital consumer banking and payment solutions in the United States and internationally. The company offers various products, such as spending, including ch",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "VREX",
+   "name": "Varex Imaging Corporation",
+   "ticker": "NASDAQ:VREX",
+   "bucket": "short",
+   "score": 3.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_high"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 7789,
+      "win": 38.9,
+      "avg": 1.26,
+      "med": -0.9,
+      "excess": -1.26,
+      "best": 3343.9,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 11524,
+      "win": 41.3,
+      "avg": 0.93,
+      "med": -0.33,
+      "excess": 0.46,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 2520,
+      "win": 39.2,
+      "avg": 1.87,
+      "med": -0.89,
+      "excess": -0.64,
+      "best": 3002.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 3954,
+      "win": 41.1,
+      "avg": 2.2,
+      "med": -0.39,
+      "excess": 1.67,
+      "best": 5598.3,
+      "worst": -47.9
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 1812,
+      "win": 43.9,
+      "avg": -0.66,
+      "med": -0.07,
+      "excess": -3.09,
+      "best": 308.4,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 2495,
+      "win": 38.6,
+      "avg": -0.14,
+      "med": 0.0,
+      "excess": -0.72,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    }
+   },
+   "sector": "Health Technology",
+   "industry": "Medical Specialties",
+   "segment": "NASDAQ",
+   "close": 18.5,
+   "chg": 0.05,
+   "gap": 0.05,
+   "sma5": 18.5,
+   "sma20": 18.49,
+   "sma200": 12.4,
+   "ext200": 49.23,
+   "rsi": 87.7,
+   "macd_h": -0.27,
+   "rvol": 2.19,
+   "pw": 0.11,
+   "p1": 0.6,
+   "p3": 75.19,
+   "ytd": 58.4,
+   "pos52": 99.0,
+   "hi52": 18.63,
+   "lo52": 9.09,
+   "val": 26.6,
+   "mcap": 780.0,
+   "per": 35.4,
+   "pbr": 1.57,
+   "eps": 0.53,
+   "roe": 4.6,
+   "eqr": 43.6,
+   "div": 0.0,
+   "rev_q": 3.7,
+   "rev_ttm": 5.3,
+   "cagr5": 2.7,
+   "eps_q": null,
+   "opm": 8.3,
+   "roic": 2.6,
+   "psr": 0.91,
+   "peg": null,
+   "de": 0.76,
+   "inflow": null,
+   "biz": "Varex Imaging Corporation designs, manufactures, and sells X-ray imaging components. It operates through two segments, Medical and Industrial. The Medical segment designs, manufactures, sells, and services X-ray imaging ",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "GTY",
+   "name": "Getty Realty Corporation",
+   "ticker": "NYSE:GTY",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_reclaim",
+    "sig_macd",
+    "sig_div",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 1483,
+      "win": 44.2,
+      "avg": 31.13,
+      "med": -0.1,
+      "excess": 28.59,
+      "best": 8276.7,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 2105,
+      "win": 39.6,
+      "avg": 8.43,
+      "med": 0.0,
+      "excess": 7.72,
+      "best": 5598.3,
+      "worst": -89.7
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 7789,
+      "win": 38.9,
+      "avg": 1.26,
+      "med": -0.9,
+      "excess": -1.26,
+      "best": 3343.9,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 11524,
+      "win": 41.3,
+      "avg": 0.93,
+      "med": -0.33,
+      "excess": 0.46,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 2731,
+      "win": 38.7,
+      "avg": -0.25,
+      "med": -0.72,
+      "excess": -2.98,
+      "best": 853.0,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 3812,
+      "win": 43.7,
+      "avg": -0.14,
+      "med": -0.14,
+      "excess": -0.8,
+      "best": 355.6,
+      "worst": -44.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 8108,
+      "win": 41.9,
+      "avg": -0.27,
+      "med": -0.55,
+      "excess": -2.98,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 11019,
+      "win": 42.6,
+      "avg": -0.21,
+      "med": -0.19,
+      "excess": -0.87,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 3713,
+      "win": 41.5,
+      "avg": -0.42,
+      "med": -0.43,
+      "excess": -3.12,
+      "best": 26.0,
+      "worst": -35.5
+     },
+     "1": {
+      "n": 5091,
+      "win": 45.4,
+      "avg": -0.11,
+      "med": -0.12,
+      "excess": -0.8,
+      "best": 12.2,
+      "worst": -30.3
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 7943,
+      "win": 40.7,
+      "avg": -0.76,
+      "med": -0.68,
+      "excess": -3.56,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 11935,
+      "win": 43.6,
+      "avg": -0.2,
+      "med": -0.22,
+      "excess": -0.88,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Real Estate Investment Trusts",
+   "segment": "NYSE",
+   "close": 32.76,
+   "chg": 0.46,
+   "gap": 0.09,
+   "sma5": 32.61,
+   "sma20": 32.93,
+   "sma200": 32.05,
+   "ext200": 2.23,
+   "rsi": 43.9,
+   "macd_h": 0.01,
+   "rvol": 3.12,
+   "pw": 0.71,
+   "p1": -1.18,
+   "p3": -2.96,
+   "ytd": 20.0,
+   "pos52": 64.0,
+   "hi52": 36.83,
+   "lo52": 25.39,
+   "val": 41.9,
+   "mcap": 2029.0,
+   "per": 20.0,
+   "pbr": 1.81,
+   "eps": 1.64,
+   "roe": 9.5,
+   "eqr": 51.9,
+   "div": 5.9,
+   "rev_q": 10.9,
+   "rev_ttm": 9.3,
+   "cagr5": 8.2,
+   "eps_q": 50.2,
+   "opm": 61.6,
+   "roic": 4.8,
+   "psr": 8.45,
+   "peg": 0.47,
+   "de": 0.96,
+   "inflow": null,
+   "biz": "Getty Realty Corp. is a publicly traded, net lease REIT specializing in the acquisition, financing and development of convenience, automotive and other single-tenant retail real estate. As of June 30, 2026, the Company's",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "AES",
+   "name": "The AES Corporation",
+   "ticker": "NYSE:AES",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_gc",
+    "sig_reclaim",
+    "sig_trend",
+    "sig_macd",
+    "sig_div",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_gc": {
+     "5": {
+      "n": 1751,
+      "win": 42.4,
+      "avg": -0.54,
+      "med": -0.36,
+      "excess": -3.3,
+      "best": 46.8,
+      "worst": -22.0
+     },
+     "1": {
+      "n": 2437,
+      "win": 42.9,
+      "avg": -0.2,
+      "med": -0.14,
+      "excess": -0.89,
+      "best": 15.2,
+      "worst": -24.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 2731,
+      "win": 38.7,
+      "avg": -0.25,
+      "med": -0.72,
+      "excess": -2.98,
+      "best": 853.0,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 3812,
+      "win": 43.7,
+      "avg": -0.14,
+      "med": -0.14,
+      "excess": -0.8,
+      "best": 355.6,
+      "worst": -44.0
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 2723,
+      "win": 40.8,
+      "avg": -0.76,
+      "med": -0.59,
+      "excess": -3.28,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 3706,
+      "win": 42.4,
+      "avg": -0.27,
+      "med": -0.17,
+      "excess": -0.85,
+      "best": 16.6,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 8108,
+      "win": 41.9,
+      "avg": -0.27,
+      "med": -0.55,
+      "excess": -2.98,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 11019,
+      "win": 42.6,
+      "avg": -0.21,
+      "med": -0.19,
+      "excess": -0.87,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 3713,
+      "win": 41.5,
+      "avg": -0.42,
+      "med": -0.43,
+      "excess": -3.12,
+      "best": 26.0,
+      "worst": -35.5
+     },
+     "1": {
+      "n": 5091,
+      "win": 45.4,
+      "avg": -0.11,
+      "med": -0.12,
+      "excess": -0.8,
+      "best": 12.2,
+      "worst": -30.3
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 1987,
+      "win": 47.5,
+      "avg": -0.19,
+      "med": -0.19,
+      "excess": -3.0,
+      "best": 20.8,
+      "worst": -52.2
+     },
+     "1": {
+      "n": 2983,
+      "win": 46.3,
+      "avg": -0.15,
+      "med": -0.15,
+      "excess": -0.83,
+      "best": 16.0,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Utilities",
+   "industry": "Electric Utilities",
+   "segment": "NYSE",
+   "close": 14.82,
+   "chg": -0.07,
+   "gap": -0.07,
+   "sma5": 14.8,
+   "sma20": 14.76,
+   "sma200": 14.6,
+   "ext200": 1.49,
+   "rsi": 60.0,
+   "macd_h": 0.01,
+   "rvol": 0.92,
+   "pw": 0.47,
+   "p1": 0.71,
+   "p3": 1.16,
+   "ytd": 2.1,
+   "pos52": 47.0,
+   "hi52": 17.65,
+   "lo52": 12.33,
+   "val": 98.5,
+   "mcap": 10573.0,
+   "per": 5.5,
+   "pbr": 2.14,
+   "eps": 2.68,
+   "roe": 28.2,
+   "eqr": 26.5,
+   "div": 4.75,
+   "rev_q": 19.9,
+   "rev_ttm": 8.2,
+   "cagr5": 4.8,
+   "eps_q": null,
+   "opm": 18.7,
+   "roic": 5.6,
+   "psr": 0.86,
+   "peg": 0.06,
+   "de": 4.02,
+   "inflow": null,
+   "biz": "The AES Corporation, together with its subsidiaries, operates as a power generation and utility company. It operates through four segments: Renewables, Utilities, Energy Infrastructure, and New Energy Technologies. The c",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "SU",
+   "name": "Suncor Energy Inc.",
+   "ticker": "NYSE:SU",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_high",
+    "sig_trend",
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_high": {
+     "5": {
+      "n": 1812,
+      "win": 43.9,
+      "avg": -0.66,
+      "med": -0.07,
+      "excess": -3.09,
+      "best": 308.4,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 2495,
+      "win": 38.6,
+      "avg": -0.14,
+      "med": 0.0,
+      "excess": -0.72,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 2723,
+      "win": 40.8,
+      "avg": -0.76,
+      "med": -0.59,
+      "excess": -3.28,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 3706,
+      "win": 42.4,
+      "avg": -0.27,
+      "med": -0.17,
+      "excess": -0.85,
+      "best": 16.6,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 8108,
+      "win": 41.9,
+      "avg": -0.27,
+      "med": -0.55,
+      "excess": -2.98,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 11019,
+      "win": 42.6,
+      "avg": -0.21,
+      "med": -0.19,
+      "excess": -0.87,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 3786,
+      "win": 44.6,
+      "avg": -0.48,
+      "med": -0.56,
+      "excess": -3.17,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 5165,
+      "win": 46.6,
+      "avg": -0.05,
+      "med": -0.13,
+      "excess": -0.74,
+      "best": 50.4,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 4144,
+      "win": 42.4,
+      "avg": -0.35,
+      "med": -0.76,
+      "excess": -3.14,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 6204,
+      "win": 44.8,
+      "avg": -0.02,
+      "med": -0.25,
+      "excess": -0.7,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 7943,
+      "win": 40.7,
+      "avg": -0.76,
+      "med": -0.68,
+      "excess": -3.56,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 11935,
+      "win": 43.6,
+      "avg": -0.2,
+      "med": -0.22,
+      "excess": -0.88,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Energy Minerals",
+   "industry": "Integrated Oil",
+   "segment": "NYSE",
+   "close": 69.02,
+   "chg": 1.66,
+   "gap": 1.58,
+   "sma5": 68.17,
+   "sma20": 67.01,
+   "sma200": 58.31,
+   "ext200": 18.37,
+   "rsi": 61.1,
+   "macd_h": 0.02,
+   "rvol": 0.86,
+   "pw": 0.69,
+   "p1": 12.72,
+   "p3": 9.56,
+   "ytd": 56.0,
+   "pos52": 96.0,
+   "hi52": 70.29,
+   "lo52": 37.77,
+   "val": 315.7,
+   "mcap": 80728.0,
+   "per": 13.1,
+   "pbr": 2.39,
+   "eps": 5.28,
+   "roe": 19.3,
+   "eqr": 51.1,
+   "div": 2.53,
+   "rev_q": 39.9,
+   "rev_ttm": 9.0,
+   "cagr5": 13.0,
+   "eps_q": 228.0,
+   "opm": 21.9,
+   "roic": 15.1,
+   "psr": 2.36,
+   "peg": 0.19,
+   "de": 0.3,
+   "inflow": null,
+   "biz": "Suncor Energy Inc. operates as an integrated energy company in Canada, the United States, and internationally. The company operates through Oil Sands; Exploration and Production; and Refining and Marketing segments. The ",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "EPD",
+   "name": "Enterprise Products Partners L.P.",
+   "ticker": "NYSE:EPD",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_trend",
+    "sig_macd",
+    "sig_div",
+    "sig_growth",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 7789,
+      "win": 38.9,
+      "avg": 1.26,
+      "med": -0.9,
+      "excess": -1.26,
+      "best": 3343.9,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 11524,
+      "win": 41.3,
+      "avg": 0.93,
+      "med": -0.33,
+      "excess": 0.46,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 2723,
+      "win": 40.8,
+      "avg": -0.76,
+      "med": -0.59,
+      "excess": -3.28,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 3706,
+      "win": 42.4,
+      "avg": -0.27,
+      "med": -0.17,
+      "excess": -0.85,
+      "best": 16.6,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 8108,
+      "win": 41.9,
+      "avg": -0.27,
+      "med": -0.55,
+      "excess": -2.98,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 11019,
+      "win": 42.6,
+      "avg": -0.21,
+      "med": -0.19,
+      "excess": -0.87,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 3713,
+      "win": 41.5,
+      "avg": -0.42,
+      "med": -0.43,
+      "excess": -3.12,
+      "best": 26.0,
+      "worst": -35.5
+     },
+     "1": {
+      "n": 5091,
+      "win": 45.4,
+      "avg": -0.11,
+      "med": -0.12,
+      "excess": -0.8,
+      "best": 12.2,
+      "worst": -30.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 4144,
+      "win": 42.4,
+      "avg": -0.35,
+      "med": -0.76,
+      "excess": -3.14,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 6204,
+      "win": 44.8,
+      "avg": -0.02,
+      "med": -0.25,
+      "excess": -0.7,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 1987,
+      "win": 47.5,
+      "avg": -0.19,
+      "med": -0.19,
+      "excess": -3.0,
+      "best": 20.8,
+      "worst": -52.2
+     },
+     "1": {
+      "n": 2983,
+      "win": 46.3,
+      "avg": -0.15,
+      "med": -0.15,
+      "excess": -0.83,
+      "best": 16.0,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Industrial Services",
+   "industry": "Oil & Gas Pipelines",
+   "segment": "NYSE",
+   "close": 39.32,
+   "chg": 1.26,
+   "gap": 0.44,
+   "sma5": 39.12,
+   "sma20": 38.71,
+   "sma200": 36.38,
+   "ext200": 8.09,
+   "rsi": 59.1,
+   "macd_h": 0.02,
+   "rvol": 0.92,
+   "pw": 0.1,
+   "p1": 4.13,
+   "p3": 3.64,
+   "ytd": 22.5,
+   "pos52": 92.0,
+   "hi52": 40.16,
+   "lo52": 30.01,
+   "val": 80.5,
+   "mcap": 84911.0,
+   "per": 13.7,
+   "pbr": 2.81,
+   "eps": 2.89,
+   "roe": 21.1,
+   "eqr": 42.1,
+   "div": 5.68,
+   "rev_q": 63.7,
+   "rev_ttm": 7.4,
+   "cagr5": 14.3,
+   "eps_q": 28.5,
+   "opm": 12.5,
+   "roic": 10.2,
+   "psr": 1.65,
+   "peg": 1.8,
+   "de": 1.13,
+   "inflow": null,
+   "biz": "Enterprise Products Partners L.P. provides midstream energy services to producers and consumers of natural gas, natural gas liquids (NGLs), crude oil, petrochemicals, and refined products. It operates in four segments: N",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "VNOM",
+   "name": "Viper Energy, Inc.",
+   "ticker": "NASDAQ:VNOM",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_gc",
+    "sig_trend",
+    "sig_macd",
+    "sig_div",
+    "sig_growth"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 7789,
+      "win": 38.9,
+      "avg": 1.26,
+      "med": -0.9,
+      "excess": -1.26,
+      "best": 3343.9,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 11524,
+      "win": 41.3,
+      "avg": 0.93,
+      "med": -0.33,
+      "excess": 0.46,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 1751,
+      "win": 42.4,
+      "avg": -0.54,
+      "med": -0.36,
+      "excess": -3.3,
+      "best": 46.8,
+      "worst": -22.0
+     },
+     "1": {
+      "n": 2437,
+      "win": 42.9,
+      "avg": -0.2,
+      "med": -0.14,
+      "excess": -0.89,
+      "best": 15.2,
+      "worst": -24.9
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 2723,
+      "win": 40.8,
+      "avg": -0.76,
+      "med": -0.59,
+      "excess": -3.28,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 3706,
+      "win": 42.4,
+      "avg": -0.27,
+      "med": -0.17,
+      "excess": -0.85,
+      "best": 16.6,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 8108,
+      "win": 41.9,
+      "avg": -0.27,
+      "med": -0.55,
+      "excess": -2.98,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 11019,
+      "win": 42.6,
+      "avg": -0.21,
+      "med": -0.19,
+      "excess": -0.87,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 3713,
+      "win": 41.5,
+      "avg": -0.42,
+      "med": -0.43,
+      "excess": -3.12,
+      "best": 26.0,
+      "worst": -35.5
+     },
+     "1": {
+      "n": 5091,
+      "win": 45.4,
+      "avg": -0.11,
+      "med": -0.12,
+      "excess": -0.8,
+      "best": 12.2,
+      "worst": -30.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 4144,
+      "win": 42.4,
+      "avg": -0.35,
+      "med": -0.76,
+      "excess": -3.14,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 6204,
+      "win": 44.8,
+      "avg": -0.02,
+      "med": -0.25,
+      "excess": -0.7,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Miscellaneous",
+   "industry": "Investment Trusts/Mutual Funds",
+   "segment": "NASDAQ",
+   "close": 45.27,
+   "chg": 0.85,
+   "gap": 0.8,
+   "sma5": 44.91,
+   "sma20": 44.16,
+   "sma200": 43.43,
+   "ext200": 4.25,
+   "rsi": 57.8,
+   "macd_h": 0.07,
+   "rvol": 0.72,
+   "pw": 0.58,
+   "p1": 9.06,
+   "p3": -0.06,
+   "ytd": 17.2,
+   "pos52": 63.0,
+   "hi52": 51.13,
+   "lo52": 35.1,
+   "val": 36.1,
+   "mcap": 16261.0,
+   "per": 354.5,
+   "pbr": 1.72,
+   "eps": 0.13,
+   "roe": 1.3,
+   "eqr": 80.9,
+   "div": 5.46,
+   "rev_q": 129.3,
+   "rev_ttm": 104.0,
+   "cagr5": 40.4,
+   "eps_q": 158.0,
+   "opm": 48.9,
+   "roic": 1.0,
+   "psr": 4.79,
+   "peg": null,
+   "de": 0.33,
+   "inflow": null,
+   "biz": "Viper Energy, Inc. owns, acquires, and exploits oil and natural gas properties in North America. It focuses on owning and acquiring mineral and royalty interests in the Permian Basin. Viper Energy, Inc. was formerly know",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "STLD",
+   "name": "Steel Dynamics, Inc.",
+   "ticker": "NASDAQ:STLD",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_macd": {
+     "5": {
+      "n": 8108,
+      "win": 41.9,
+      "avg": -0.27,
+      "med": -0.55,
+      "excess": -2.98,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 11019,
+      "win": 42.6,
+      "avg": -0.21,
+      "med": -0.19,
+      "excess": -0.87,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 3786,
+      "win": 44.6,
+      "avg": -0.48,
+      "med": -0.56,
+      "excess": -3.17,
+      "best": 33.6,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 5165,
+      "win": 46.6,
+      "avg": -0.05,
+      "med": -0.13,
+      "excess": -0.74,
+      "best": 50.4,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 4144,
+      "win": 42.4,
+      "avg": -0.35,
+      "med": -0.76,
+      "excess": -3.14,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 6204,
+      "win": 44.8,
+      "avg": -0.02,
+      "med": -0.25,
+      "excess": -0.7,
+      "best": 1084.6,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 7943,
+      "win": 40.7,
+      "avg": -0.76,
+      "med": -0.68,
+      "excess": -3.56,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 11935,
+      "win": 43.6,
+      "avg": -0.2,
+      "med": -0.22,
+      "excess": -0.88,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 1987,
+      "win": 47.5,
+      "avg": -0.19,
+      "med": -0.19,
+      "excess": -3.0,
+      "best": 20.8,
+      "worst": -52.2
+     },
+     "1": {
+      "n": 2983,
+      "win": 46.3,
+      "avg": -0.15,
+      "med": -0.15,
+      "excess": -0.83,
+      "best": 16.0,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Non-Energy Minerals",
+   "industry": "Steel",
+   "segment": "NASDAQ",
+   "close": 240.69,
+   "chg": 0.16,
+   "gap": -0.09,
+   "sma5": 243.35,
+   "sma20": 240.82,
+   "sma200": 211.17,
+   "ext200": 13.98,
+   "rsi": 48.4,
+   "macd_h": 0.7,
+   "rvol": 0.8,
+   "pw": 1.6,
+   "p1": -8.38,
+   "p3": -11.51,
+   "ytd": 40.2,
+   "pos52": 70.0,
+   "hi52": 288.74,
+   "lo52": 129.41,
+   "val": 194.5,
+   "mcap": 34498.0,
+   "per": 21.8,
+   "pbr": 3.67,
+   "eps": 11.07,
+   "roe": 17.6,
+   "eqr": 56.2,
+   "div": 0.86,
+   "rev_q": 33.4,
+   "rev_ttm": 19.8,
+   "cagr5": 13.6,
+   "eps_q": 84.2,
+   "opm": 10.0,
+   "roic": 12.2,
+   "psr": 1.97,
+   "peg": 0.36,
+   "de": 0.44,
+   "inflow": null,
+   "biz": "Steel Dynamics, Inc., together with its subsidiaries, operates as a steel producer and metal recycler in the United States. It operates through four segments: Steel Operations, Metals Recycling Operations, Steel Fabricat",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "TTE",
+   "name": "TotalEnergies SE",
+   "ticker": "NYSE:TTE",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_trend",
+    "sig_macd",
+    "sig_div",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_trend": {
+     "5": {
+      "n": 2723,
+      "win": 40.8,
+      "avg": -0.76,
+      "med": -0.59,
+      "excess": -3.28,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 3706,
+      "win": 42.4,
+      "avg": -0.27,
+      "med": -0.17,
+      "excess": -0.85,
+      "best": 16.6,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 8108,
+      "win": 41.9,
+      "avg": -0.27,
+      "med": -0.55,
+      "excess": -2.98,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 11019,
+      "win": 42.6,
+      "avg": -0.21,
+      "med": -0.19,
+      "excess": -0.87,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 3713,
+      "win": 41.5,
+      "avg": -0.42,
+      "med": -0.43,
+      "excess": -3.12,
+      "best": 26.0,
+      "worst": -35.5
+     },
+     "1": {
+      "n": 5091,
+      "win": 45.4,
+      "avg": -0.11,
+      "med": -0.12,
+      "excess": -0.8,
+      "best": 12.2,
+      "worst": -30.3
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 7943,
+      "win": 40.7,
+      "avg": -0.76,
+      "med": -0.68,
+      "excess": -3.56,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 11935,
+      "win": 43.6,
+      "avg": -0.2,
+      "med": -0.22,
+      "excess": -0.88,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 1987,
+      "win": 47.5,
+      "avg": -0.19,
+      "med": -0.19,
+      "excess": -3.0,
+      "best": 20.8,
+      "worst": -52.2
+     },
+     "1": {
+      "n": 2983,
+      "win": 46.3,
+      "avg": -0.15,
+      "med": -0.15,
+      "excess": -0.83,
+      "best": 16.0,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Energy Minerals",
+   "industry": "Integrated Oil",
+   "segment": "NYSE",
+   "close": 91.64,
+   "chg": 1.71,
+   "gap": 1.65,
+   "sma5": 89.96,
+   "sma20": 88.91,
+   "sma200": 80.78,
+   "ext200": 13.44,
+   "rsi": 63.2,
+   "macd_h": 0.06,
+   "rvol": 0.58,
+   "pw": 2.12,
+   "p1": 6.36,
+   "p3": 1.06,
+   "ytd": 40.0,
+   "pos52": 93.0,
+   "hi52": 94.17,
+   "lo52": 57.39,
+   "val": 100.6,
+   "mcap": 204558.0,
+   "per": 11.6,
+   "pbr": 1.59,
+   "eps": 8.05,
+   "roe": 14.4,
+   "eqr": 44.6,
+   "div": 4.37,
+   "rev_q": 20.8,
+   "rev_ttm": -5.2,
+   "cagr5": 8.1,
+   "eps_q": 88.5,
+   "opm": 14.2,
+   "roic": 10.3,
+   "psr": 1.07,
+   "peg": 0.32,
+   "de": 0.49,
+   "inflow": null,
+   "biz": "TotalEnergies SE, an integrated energy company, produces and markets oil and biofuels, natural gas, biogas and low-carbon hydrogen, renewables, and electricity in France, the United States, Europe, Africa, and internatio",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "BRK.B",
+   "name": "Berkshire Hathaway Inc. New",
+   "ticker": "NYSE:BRK.B",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_reclaim",
+    "sig_trend",
+    "sig_macd",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 7789,
+      "win": 38.9,
+      "avg": 1.26,
+      "med": -0.9,
+      "excess": -1.26,
+      "best": 3343.9,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 11524,
+      "win": 41.3,
+      "avg": 0.93,
+      "med": -0.33,
+      "excess": 0.46,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 2520,
+      "win": 39.2,
+      "avg": 1.87,
+      "med": -0.89,
+      "excess": -0.64,
+      "best": 3002.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 3954,
+      "win": 41.1,
+      "avg": 2.2,
+      "med": -0.39,
+      "excess": 1.67,
+      "best": 5598.3,
+      "worst": -47.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 2731,
+      "win": 38.7,
+      "avg": -0.25,
+      "med": -0.72,
+      "excess": -2.98,
+      "best": 853.0,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 3812,
+      "win": 43.7,
+      "avg": -0.14,
+      "med": -0.14,
+      "excess": -0.8,
+      "best": 355.6,
+      "worst": -44.0
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 2723,
+      "win": 40.8,
+      "avg": -0.76,
+      "med": -0.59,
+      "excess": -3.28,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 3706,
+      "win": 42.4,
+      "avg": -0.27,
+      "med": -0.17,
+      "excess": -0.85,
+      "best": 16.6,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 8108,
+      "win": 41.9,
+      "avg": -0.27,
+      "med": -0.55,
+      "excess": -2.98,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 11019,
+      "win": 42.6,
+      "avg": -0.21,
+      "med": -0.19,
+      "excess": -0.87,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 7943,
+      "win": 40.7,
+      "avg": -0.76,
+      "med": -0.68,
+      "excess": -3.56,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 11935,
+      "win": 43.6,
+      "avg": -0.2,
+      "med": -0.22,
+      "excess": -0.88,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Property/Casualty Insurance",
+   "segment": "NYSE",
+   "close": 506.72,
+   "chg": 0.18,
+   "gap": -0.34,
+   "sma5": 506.39,
+   "sma20": 503.75,
+   "sma200": 492.45,
+   "ext200": 2.9,
+   "rsi": 52.7,
+   "macd_h": 0.1,
+   "rvol": 0.8,
+   "pw": 0.65,
+   "p1": -3.41,
+   "p3": 4.94,
+   "ytd": 1.1,
+   "pos52": 58.0,
+   "hi52": 537.74,
+   "lo52": 464.01,
+   "val": 1700.3,
+   "mcap": 974959.0,
+   "per": 12.7,
+   "pbr": 1.45,
+   "eps": 39.77,
+   "roe": 12.1,
+   "eqr": 60.2,
+   "div": 0.0,
+   "rev_q": 10.0,
+   "rev_ttm": 3.9,
+   "cagr5": 8.6,
+   "eps_q": 107.8,
+   "opm": 16.3,
+   "roic": 10.3,
+   "psr": 2.94,
+   "peg": 0.35,
+   "de": 0.17,
+   "inflow": null,
+   "biz": "Berkshire Hathaway Inc., together with its subsidiaries, engages in the insurance, freight rail transportation, and utility businesses. The company provides property, casualty, life, accident, and health insurance and re",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "CXT",
+   "name": "Crane NXT, Co.",
+   "ticker": "NYSE:CXT",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_trend",
+    "sig_macd",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 7789,
+      "win": 38.9,
+      "avg": 1.26,
+      "med": -0.9,
+      "excess": -1.26,
+      "best": 3343.9,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 11524,
+      "win": 41.3,
+      "avg": 0.93,
+      "med": -0.33,
+      "excess": 0.46,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 2520,
+      "win": 39.2,
+      "avg": 1.87,
+      "med": -0.89,
+      "excess": -0.64,
+      "best": 3002.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 3954,
+      "win": 41.1,
+      "avg": 2.2,
+      "med": -0.39,
+      "excess": 1.67,
+      "best": 5598.3,
+      "worst": -47.9
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 2723,
+      "win": 40.8,
+      "avg": -0.76,
+      "med": -0.59,
+      "excess": -3.28,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 3706,
+      "win": 42.4,
+      "avg": -0.27,
+      "med": -0.17,
+      "excess": -0.85,
+      "best": 16.6,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 8108,
+      "win": 41.9,
+      "avg": -0.27,
+      "med": -0.55,
+      "excess": -2.98,
+      "best": 892.6,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 11019,
+      "win": 42.6,
+      "avg": -0.21,
+      "med": -0.19,
+      "excess": -0.87,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 7943,
+      "win": 40.7,
+      "avg": -0.76,
+      "med": -0.68,
+      "excess": -3.56,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 11935,
+      "win": 43.6,
+      "avg": -0.2,
+      "med": -0.22,
+      "excess": -0.88,
+      "best": 327.4,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 1987,
+      "win": 47.5,
+      "avg": -0.19,
+      "med": -0.19,
+      "excess": -3.0,
+      "best": 20.8,
+      "worst": -52.2
+     },
+     "1": {
+      "n": 2983,
+      "win": 46.3,
+      "avg": -0.15,
+      "med": -0.15,
+      "excess": -0.83,
+      "best": 16.0,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Producer Manufacturing",
+   "industry": "Industrial Machinery",
+   "segment": "NYSE",
+   "close": 50.67,
+   "chg": 2.16,
+   "gap": -0.2,
+   "sma5": 50.08,
+   "sma20": 50.02,
+   "sma200": 47.91,
+   "ext200": 5.77,
+   "rsi": 52.1,
+   "macd_h": 0.03,
+   "rvol": 1.46,
+   "pw": 3.34,
+   "p1": -3.8,
+   "p3": 33.48,
+   "ytd": 6.6,
+   "pos52": 45.0,
+   "hi52": 69.0,
+   "lo52": 35.7,
+   "val": 31.5,
+   "mcap": 2917.0,
+   "per": 21.0,
+   "pbr": 2.3,
+   "eps": 2.44,
+   "roe": 11.5,
+   "eqr": 48.3,
+   "div": 1.43,
+   "rev_q": 22.0,
+   "rev_ttm": 17.3,
+   "cagr5": -9.7,
+   "eps_q": 41.9,
+   "opm": 16.3,
+   "roic": 6.1,
+   "psr": 1.77,
+   "peg": null,
+   "de": 1.16,
+   "inflow": null,
+   "biz": "Crane NXT, Co. operates as an industrial technology company that provides technology solutions to secure, detect, and authenticate customers' important assets. The company operates through Crane Payment Innovations; and ",
+   "tdnet": [],
+   "llm": null
+  }
+ ],
+ "config": {
+  "MIN_VAL": 10.0,
+  "MIN_MCAP": 500.0,
+  "MIN_PRICE": 5.0,
+  "N_SHORT": 8,
+  "N_LONG": 8,
+  "N_NEWS": 4,
+  "MAX_PER_INDUSTRY": 3,
+  "COOLDOWN_DAYS": 3
+ }
+}
