@@ -1,0 +1,3234 @@
+{
+ "date": "2026-09-11",
+ "market": "jp",
+ "generated": "2026-09-11 16:36 JST",
+ "label_ko": "🇯🇵 일본",
+ "label_ja": "🇯🇵 日本",
+ "unit_ko": "억엔",
+ "unit_ja": "億円",
+ "llm_mode": "off",
+ "baserate_days": 14,
+ "universe": {
+  "total": 3770,
+  "liquid": 1156,
+  "candidates": 20,
+  "short": 8,
+  "long": 8,
+  "news": 4
+ },
+ "picks": [
+  {
+   "code": "9130",
+   "name": "Kyoei Tanker Co., Ltd.",
+   "ticker": "TSE:9130",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_gap",
+    "sig_trend",
+    "sig_value"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 560,
+      "win": 35.4,
+      "avg": -0.71,
+      "med": -1.51,
+      "excess": 0.38,
+      "best": 130.2,
+      "worst": -40.5
+     },
+     "1": {
+      "n": 732,
+      "win": 41.0,
+      "avg": -0.16,
+      "med": -0.35,
+      "excess": 0.09,
+      "best": 30.7,
+      "worst": -54.8
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 3095,
+      "win": 33.0,
+      "avg": -1.14,
+      "med": -1.37,
+      "excess": 0.02,
+      "best": 87.8,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 4162,
+      "win": 38.9,
+      "avg": -0.44,
+      "med": -0.43,
+      "excess": -0.05,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1011,
+      "win": 35.1,
+      "avg": -0.77,
+      "med": -1.28,
+      "excess": 0.38,
+      "best": 129.8,
+      "worst": -45.0
+     },
+     "1": {
+      "n": 1481,
+      "win": 39.6,
+      "avg": -0.29,
+      "med": -0.36,
+      "excess": 0.06,
+      "best": 129.6,
+      "worst": -19.7
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 269,
+      "win": 33.5,
+      "avg": -0.67,
+      "med": -2.5,
+      "excess": -0.06,
+      "best": 130.2,
+      "worst": -34.6
+     },
+     "1": {
+      "n": 403,
+      "win": 36.2,
+      "avg": -0.2,
+      "med": -1.52,
+      "excess": -0.23,
+      "best": 45.6,
+      "worst": -21.7
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1823,
+      "win": 32.4,
+      "avg": -1.11,
+      "med": -1.49,
+      "excess": -0.05,
+      "best": 84.0,
+      "worst": -17.1
+     },
+     "1": {
+      "n": 2181,
+      "win": 39.8,
+      "avg": -0.43,
+      "med": -0.35,
+      "excess": -0.05,
+      "best": 18.1,
+      "worst": -14.3
+     }
+    },
+    "sig_value": {
+     "5": {
+      "n": 919,
+      "win": 37.4,
+      "avg": -0.67,
+      "med": -1.15,
+      "excess": 0.34,
+      "best": 23.3,
+      "worst": -23.1
+     },
+     "1": {
+      "n": 1397,
+      "win": 50.5,
+      "avg": 0.07,
+      "med": 0.05,
+      "excess": 0.1,
+      "best": 16.3,
+      "worst": -21.6
+     }
+    }
+   },
+   "sector": "Transportation",
+   "industry": "Marine Shipping",
+   "segment": "—",
+   "close": 1713.0,
+   "chg": 8.97,
+   "gap": 4.96,
+   "sma5": 1622.6,
+   "sma20": 1622.55,
+   "sma200": 1438.45,
+   "ext200": 19.09,
+   "rsi": 62.3,
+   "macd_h": -2.21,
+   "rvol": 34.86,
+   "pw": 9.25,
+   "p1": 16.53,
+   "p3": 27.93,
+   "ytd": 63.0,
+   "pos52": 35.0,
+   "hi52": 3025.0,
+   "lo52": 1001.0,
+   "val": 29.4,
+   "mcap": 120.0,
+   "per": 7.2,
+   "pbr": 0.47,
+   "eps": 238.92,
+   "roe": 7.0,
+   "eqr": 31.8,
+   "div": 2.53,
+   "rev_q": -2.8,
+   "rev_ttm": -0.1,
+   "cagr5": 5.9,
+   "eps_q": 380.0,
+   "opm": 6.1,
+   "roic": 3.0,
+   "psr": 0.84,
+   "peg": 0.07,
+   "de": 1.54,
+   "inflow": null,
+   "biz": "Kyoei Tanker Co., Ltd. engages in ship operation and ship chartering businesses in Japan. It is also involved in shipping agency and brokerage, seamen's and worker dispatch, and non-life insurance agency, as well as real",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "9115",
+   "name": "Meiji Shipping Group Co. Ltd.",
+   "ticker": "TSE:9115",
+   "bucket": "short",
+   "score": 4.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_gap"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 560,
+      "win": 35.4,
+      "avg": -0.71,
+      "med": -1.51,
+      "excess": 0.38,
+      "best": 130.2,
+      "worst": -40.5
+     },
+     "1": {
+      "n": 732,
+      "win": 41.0,
+      "avg": -0.16,
+      "med": -0.35,
+      "excess": 0.09,
+      "best": 30.7,
+      "worst": -54.8
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 3095,
+      "win": 33.0,
+      "avg": -1.14,
+      "med": -1.37,
+      "excess": 0.02,
+      "best": 87.8,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 4162,
+      "win": 38.9,
+      "avg": -0.44,
+      "med": -0.43,
+      "excess": -0.05,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1011,
+      "win": 35.1,
+      "avg": -0.77,
+      "med": -1.28,
+      "excess": 0.38,
+      "best": 129.8,
+      "worst": -45.0
+     },
+     "1": {
+      "n": 1481,
+      "win": 39.6,
+      "avg": -0.29,
+      "med": -0.36,
+      "excess": 0.06,
+      "best": 129.6,
+      "worst": -19.7
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 269,
+      "win": 33.5,
+      "avg": -0.67,
+      "med": -2.5,
+      "excess": -0.06,
+      "best": 130.2,
+      "worst": -34.6
+     },
+     "1": {
+      "n": 403,
+      "win": 36.2,
+      "avg": -0.2,
+      "med": -1.52,
+      "excess": -0.23,
+      "best": 45.6,
+      "worst": -21.7
+     }
+    }
+   },
+   "sector": "Transportation",
+   "industry": "Marine Shipping",
+   "segment": "—",
+   "close": 1100.0,
+   "chg": 5.67,
+   "gap": 5.76,
+   "sma5": 1070.6,
+   "sma20": 1086.1,
+   "sma200": 917.08,
+   "ext200": 19.95,
+   "rsi": 56.2,
+   "macd_h": -9.45,
+   "rvol": 13.45,
+   "pw": 5.36,
+   "p1": 27.46,
+   "p3": 21.68,
+   "ytd": 61.8,
+   "pos52": 43.0,
+   "hi52": 1760.0,
+   "lo52": 600.0,
+   "val": 7.8,
+   "mcap": 351.0,
+   "per": 16.2,
+   "pbr": 0.68,
+   "eps": 68.07,
+   "roe": 4.5,
+   "eqr": 33.1,
+   "div": 0.48,
+   "rev_q": 0.6,
+   "rev_ttm": -8.3,
+   "cagr5": 8.8,
+   "eps_q": -69.0,
+   "opm": 4.3,
+   "roic": 1.3,
+   "psr": 0.61,
+   "peg": null,
+   "de": 2.77,
+   "inflow": null,
+   "biz": "【特色】外航船船主。自動車船、タンカー、ばら積み船を中長期貸船。ホテル、ゴルフ場、不動産賃貸も 連結事業 【連結事業】外航海運82(8)、ホテル関連17(-3)、不動産賃貸1(30)(2026.3)",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "8362",
+   "name": "Fukui Bank, Ltd.",
+   "ticker": "TSE:8362",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_high",
+    "sig_macd",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 3095,
+      "win": 33.0,
+      "avg": -1.14,
+      "med": -1.37,
+      "excess": 0.02,
+      "best": 87.8,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 4162,
+      "win": 38.9,
+      "avg": -0.44,
+      "med": -0.43,
+      "excess": -0.05,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1011,
+      "win": 35.1,
+      "avg": -0.77,
+      "med": -1.28,
+      "excess": 0.38,
+      "best": 129.8,
+      "worst": -45.0
+     },
+     "1": {
+      "n": 1481,
+      "win": 39.6,
+      "avg": -0.29,
+      "med": -0.36,
+      "excess": 0.06,
+      "best": 129.6,
+      "worst": -19.7
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 1123,
+      "win": 30.2,
+      "avg": -1.54,
+      "med": -1.41,
+      "excess": -0.36,
+      "best": 43.6,
+      "worst": -48.8
+     },
+     "1": {
+      "n": 1314,
+      "win": 37.7,
+      "avg": -0.53,
+      "med": -0.31,
+      "excess": -0.05,
+      "best": 28.8,
+      "worst": -17.8
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 4570,
+      "win": 32.6,
+      "avg": -1.02,
+      "med": -1.17,
+      "excess": 0.24,
+      "best": 88.1,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 5700,
+      "win": 46.5,
+      "avg": -0.07,
+      "med": -0.11,
+      "excess": 0.01,
+      "best": 57.8,
+      "worst": -19.6
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1326,
+      "win": 27.0,
+      "avg": -1.85,
+      "med": -2.28,
+      "excess": -0.13,
+      "best": 59.0,
+      "worst": -25.2
+     },
+     "1": {
+      "n": 2174,
+      "win": 39.7,
+      "avg": -0.47,
+      "med": -0.56,
+      "excess": -0.1,
+      "best": 29.0,
+      "worst": -19.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 4301,
+      "win": 23.8,
+      "avg": -2.0,
+      "med": -2.17,
+      "excess": -0.28,
+      "best": 59.0,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 7053,
+      "win": 41.3,
+      "avg": -0.41,
+      "med": -0.31,
+      "excess": -0.03,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Major Banks",
+   "segment": "—",
+   "close": 7680.0,
+   "chg": 4.92,
+   "gap": -2.19,
+   "sma5": 7308.0,
+   "sma20": 7011.5,
+   "sma200": 4256.44,
+   "ext200": 80.43,
+   "rsi": 66.8,
+   "macd_h": 14.76,
+   "rvol": 2.07,
+   "pw": 7.41,
+   "p1": 25.49,
+   "p3": 39.64,
+   "ytd": 193.8,
+   "pos52": 99.0,
+   "hi52": 7730.0,
+   "lo52": 1955.0,
+   "val": 15.1,
+   "mcap": 1714.0,
+   "per": 16.0,
+   "pbr": 1.12,
+   "eps": 481.21,
+   "roe": 7.5,
+   "eqr": 5.1,
+   "div": 1.54,
+   "rev_q": 27.7,
+   "rev_ttm": 16.3,
+   "cagr5": 13.4,
+   "eps_q": 92.8,
+   "opm": 5.7,
+   "roic": 2.0,
+   "psr": 2.67,
+   "peg": 0.17,
+   "de": 4.25,
+   "inflow": null,
+   "biz": "【特色】福井県地盤に石川、富山にも展開。地銀中位行。福邦銀行を２４年１０月に完全子会社化、２６年合併 連結事業",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "6208",
+   "name": "Ishikawa Seisakusho,Ltd.",
+   "ticker": "TSE:6208",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_reclaim",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 560,
+      "win": 35.4,
+      "avg": -0.71,
+      "med": -1.51,
+      "excess": 0.38,
+      "best": 130.2,
+      "worst": -40.5
+     },
+     "1": {
+      "n": 732,
+      "win": 41.0,
+      "avg": -0.16,
+      "med": -0.35,
+      "excess": 0.09,
+      "best": 30.7,
+      "worst": -54.8
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 3095,
+      "win": 33.0,
+      "avg": -1.14,
+      "med": -1.37,
+      "excess": 0.02,
+      "best": 87.8,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 4162,
+      "win": 38.9,
+      "avg": -0.44,
+      "med": -0.43,
+      "excess": -0.05,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1011,
+      "win": 35.1,
+      "avg": -0.77,
+      "med": -1.28,
+      "excess": 0.38,
+      "best": 129.8,
+      "worst": -45.0
+     },
+     "1": {
+      "n": 1481,
+      "win": 39.6,
+      "avg": -0.29,
+      "med": -0.36,
+      "excess": 0.06,
+      "best": 129.6,
+      "worst": -19.7
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 1372,
+      "win": 37.9,
+      "avg": -0.59,
+      "med": -0.94,
+      "excess": 0.25,
+      "best": 88.1,
+      "worst": -23.2
+     },
+     "1": {
+      "n": 2003,
+      "win": 43.1,
+      "avg": -0.26,
+      "med": -0.19,
+      "excess": -0.02,
+      "best": 26.5,
+      "worst": -13.8
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 4301,
+      "win": 23.8,
+      "avg": -2.0,
+      "med": -2.17,
+      "excess": -0.28,
+      "best": 59.0,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 7053,
+      "win": 41.3,
+      "avg": -0.41,
+      "med": -0.31,
+      "excess": -0.03,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    }
+   },
+   "sector": "Producer Manufacturing",
+   "industry": "Industrial Machinery",
+   "segment": "—",
+   "close": 1855.0,
+   "chg": 11.48,
+   "gap": -1.02,
+   "sma5": 1711.4,
+   "sma20": 1659.9,
+   "sma200": 1853.46,
+   "ext200": 0.08,
+   "rsi": 69.2,
+   "macd_h": 17.35,
+   "rvol": 94.66,
+   "pw": 16.23,
+   "p1": 11.48,
+   "p3": 7.35,
+   "ytd": 23.6,
+   "pos52": 26.0,
+   "hi52": 3135.0,
+   "lo52": 1407.0,
+   "val": 75.1,
+   "mcap": 106.0,
+   "per": 16.4,
+   "pbr": 1.88,
+   "eps": 113.15,
+   "roe": 12.0,
+   "eqr": 17.1,
+   "div": 1.19,
+   "rev_q": 4.8,
+   "rev_ttm": 8.3,
+   "cagr5": 10.2,
+   "eps_q": 45.7,
+   "opm": 7.4,
+   "roic": 9.8,
+   "psr": 0.63,
+   "peg": 0.53,
+   "de": 1.97,
+   "inflow": null,
+   "biz": "【特色】段ボール製函印刷機を中心とする機械メーカー。防衛機器加えた２本柱。レンゴーが筆頭株主 連結事業 【連結事業】紙工機械15(-1)、受託生産6(7)、防衛機器77(15)、他3(4)(2026.3)",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "2929",
+   "name": "Pharma Foods International Co., Ltd.",
+   "ticker": "TSE:2929",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_reclaim",
+    "sig_div"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 560,
+      "win": 35.4,
+      "avg": -0.71,
+      "med": -1.51,
+      "excess": 0.38,
+      "best": 130.2,
+      "worst": -40.5
+     },
+     "1": {
+      "n": 732,
+      "win": 41.0,
+      "avg": -0.16,
+      "med": -0.35,
+      "excess": 0.09,
+      "best": 30.7,
+      "worst": -54.8
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 3095,
+      "win": 33.0,
+      "avg": -1.14,
+      "med": -1.37,
+      "excess": 0.02,
+      "best": 87.8,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 4162,
+      "win": 38.9,
+      "avg": -0.44,
+      "med": -0.43,
+      "excess": -0.05,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1011,
+      "win": 35.1,
+      "avg": -0.77,
+      "med": -1.28,
+      "excess": 0.38,
+      "best": 129.8,
+      "worst": -45.0
+     },
+     "1": {
+      "n": 1481,
+      "win": 39.6,
+      "avg": -0.29,
+      "med": -0.36,
+      "excess": 0.06,
+      "best": 129.6,
+      "worst": -19.7
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 1372,
+      "win": 37.9,
+      "avg": -0.59,
+      "med": -0.94,
+      "excess": 0.25,
+      "best": 88.1,
+      "worst": -23.2
+     },
+     "1": {
+      "n": 2003,
+      "win": 43.1,
+      "avg": -0.26,
+      "med": -0.19,
+      "excess": -0.02,
+      "best": 26.5,
+      "worst": -13.8
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 1769,
+      "win": 23.8,
+      "avg": -1.31,
+      "med": -1.32,
+      "excess": -0.18,
+      "best": 10.9,
+      "worst": -15.3
+     },
+     "1": {
+      "n": 2697,
+      "win": 41.8,
+      "avg": -0.14,
+      "med": -0.17,
+      "excess": -0.05,
+      "best": 12.1,
+      "worst": -7.5
+     }
+    }
+   },
+   "sector": "Health Technology",
+   "industry": "Pharmaceuticals: Other",
+   "segment": "—",
+   "close": 692.0,
+   "chg": 11.25,
+   "gap": -2.25,
+   "sma5": 625.4,
+   "sma20": 615.85,
+   "sma200": 644.28,
+   "ext200": 7.41,
+   "rsi": 75.8,
+   "macd_h": 4.28,
+   "rvol": 9.51,
+   "pw": 15.14,
+   "p1": 19.31,
+   "p3": 27.21,
+   "ytd": 1.8,
+   "pos52": 51.0,
+   "hi52": 863.0,
+   "lo52": 513.0,
+   "val": 10.0,
+   "mcap": 180.0,
+   "per": 47.0,
+   "pbr": 1.99,
+   "eps": 14.72,
+   "roe": 4.2,
+   "eqr": 39.1,
+   "div": 4.09,
+   "rev_q": -5.0,
+   "rev_ttm": 8.4,
+   "cagr5": 33.6,
+   "eps_q": null,
+   "opm": 1.7,
+   "roic": 4.0,
+   "psr": 0.3,
+   "peg": 0.85,
+   "de": 1.71,
+   "inflow": null,
+   "biz": "【特色】卵黄由来サプリや化粧品の通販が柱。機能性食品素材「ギャバ」等は内外の食品メーカーへ販売 連結事業 【連結事業】ＢｔоＢ13(15)、ＢｔоＣ87(7)、バイオメディカル1(-114)、他0(-67)(2025.7)",
+   "tdnet": [
+    {
+     "pub": "2026-09-11 13:30",
+     "title": "2026年７月期 決算短信〔日本基準〕（連結）",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260909533854.pdf",
+     "bits": 64,
+     "strong": false
+    },
+    {
+     "pub": "2026-09-09 11:00",
+     "title": "2026年７月期　通期業績予想の修正に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260825525973.pdf",
+     "bits": 128,
+     "strong": false
+    },
+    {
+     "pub": "2026-09-09 11:00",
+     "title": "関係会社株式の減損処理による特別損失計上（個別）に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260908533281.pdf",
+     "bits": 0,
+     "strong": false
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "7777",
+   "name": "3-D Matrix, Ltd.",
+   "ticker": "TSE:7777",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_x20",
+    "sig_gap",
+    "sig_qual",
+    "sig_growth"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 560,
+      "win": 35.4,
+      "avg": -0.71,
+      "med": -1.51,
+      "excess": 0.38,
+      "best": 130.2,
+      "worst": -40.5
+     },
+     "1": {
+      "n": 732,
+      "win": 41.0,
+      "avg": -0.16,
+      "med": -0.35,
+      "excess": 0.09,
+      "best": 30.7,
+      "worst": -54.8
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1011,
+      "win": 35.1,
+      "avg": -0.77,
+      "med": -1.28,
+      "excess": 0.38,
+      "best": 129.8,
+      "worst": -45.0
+     },
+     "1": {
+      "n": 1481,
+      "win": 39.6,
+      "avg": -0.29,
+      "med": -0.36,
+      "excess": 0.06,
+      "best": 129.6,
+      "worst": -19.7
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 269,
+      "win": 33.5,
+      "avg": -0.67,
+      "med": -2.5,
+      "excess": -0.06,
+      "best": 130.2,
+      "worst": -34.6
+     },
+     "1": {
+      "n": 403,
+      "win": 36.2,
+      "avg": -0.2,
+      "med": -1.52,
+      "excess": -0.23,
+      "best": 45.6,
+      "worst": -21.7
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 2085,
+      "win": 32.3,
+      "avg": -1.45,
+      "med": -1.86,
+      "excess": -0.34,
+      "best": 59.0,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 3118,
+      "win": 43.4,
+      "avg": -0.16,
+      "med": -0.23,
+      "excess": -0.1,
+      "best": 24.8,
+      "worst": -79.2
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1326,
+      "win": 27.0,
+      "avg": -1.85,
+      "med": -2.28,
+      "excess": -0.13,
+      "best": 59.0,
+      "worst": -25.2
+     },
+     "1": {
+      "n": 2174,
+      "win": 39.7,
+      "avg": -0.47,
+      "med": -0.56,
+      "excess": -0.1,
+      "best": 29.0,
+      "worst": -19.7
+     }
+    }
+   },
+   "sector": "Health Technology",
+   "industry": "Medical Specialties",
+   "segment": "—",
+   "close": 379.0,
+   "chg": 10.82,
+   "gap": 6.14,
+   "sma5": 354.6,
+   "sma20": 363.45,
+   "sma200": 424.43,
+   "ext200": -10.7,
+   "rsi": 57.7,
+   "macd_h": -0.61,
+   "rvol": 6.45,
+   "pw": 7.37,
+   "p1": 7.67,
+   "p3": -5.25,
+   "ytd": 3.6,
+   "pos52": 22.0,
+   "hi52": 793.0,
+   "lo52": 264.0,
+   "val": 40.6,
+   "mcap": 438.0,
+   "per": 13.9,
+   "pbr": 6.72,
+   "eps": 29.74,
+   "roe": 74.6,
+   "eqr": 68.1,
+   "div": 0.0,
+   "rev_q": 46.9,
+   "rev_ttm": 55.9,
+   "cagr5": 60.4,
+   "eps_q": -62.8,
+   "opm": 15.3,
+   "roic": 61.9,
+   "psr": 4.66,
+   "peg": null,
+   "de": 0.08,
+   "inflow": null,
+   "biz": "3-D Matrix, Ltd. developing, manufacturing, and selling self-assembling peptide technology in Japan and internationally. It offers PuraMatrix, a self-assembling peptide hydrogel for use in the regenerative medicine, cell",
+   "tdnet": [
+    {
+     "pub": "2026-09-10 16:00",
+     "title": "2027年４月期第１四半期決算短信〔日本基準〕(連結)",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260910534044.pdf",
+     "bits": 64,
+     "strong": false
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "6184",
+   "name": "Kamakura Shinsho, Ltd.",
+   "ticker": "TSE:6184",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_x20",
+    "sig_gap",
+    "sig_qual",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 560,
+      "win": 35.4,
+      "avg": -0.71,
+      "med": -1.51,
+      "excess": 0.38,
+      "best": 130.2,
+      "worst": -40.5
+     },
+     "1": {
+      "n": 732,
+      "win": 41.0,
+      "avg": -0.16,
+      "med": -0.35,
+      "excess": 0.09,
+      "best": 30.7,
+      "worst": -54.8
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1011,
+      "win": 35.1,
+      "avg": -0.77,
+      "med": -1.28,
+      "excess": 0.38,
+      "best": 129.8,
+      "worst": -45.0
+     },
+     "1": {
+      "n": 1481,
+      "win": 39.6,
+      "avg": -0.29,
+      "med": -0.36,
+      "excess": 0.06,
+      "best": 129.6,
+      "worst": -19.7
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 269,
+      "win": 33.5,
+      "avg": -0.67,
+      "med": -2.5,
+      "excess": -0.06,
+      "best": 130.2,
+      "worst": -34.6
+     },
+     "1": {
+      "n": 403,
+      "win": 36.2,
+      "avg": -0.2,
+      "med": -1.52,
+      "excess": -0.23,
+      "best": 45.6,
+      "worst": -21.7
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 2085,
+      "win": 32.3,
+      "avg": -1.45,
+      "med": -1.86,
+      "excess": -0.34,
+      "best": 59.0,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 3118,
+      "win": 43.4,
+      "avg": -0.16,
+      "med": -0.23,
+      "excess": -0.1,
+      "best": 24.8,
+      "worst": -79.2
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 4301,
+      "win": 23.8,
+      "avg": -2.0,
+      "med": -2.17,
+      "excess": -0.28,
+      "best": 59.0,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 7053,
+      "win": 41.3,
+      "avg": -0.41,
+      "med": -0.31,
+      "excess": -0.03,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    }
+   },
+   "sector": "Commercial Services",
+   "industry": "Commercial Printing/Forms",
+   "segment": "—",
+   "close": 592.0,
+   "chg": 4.23,
+   "gap": 5.11,
+   "sma5": 572.0,
+   "sma20": 587.0,
+   "sma200": 531.09,
+   "ext200": 11.47,
+   "rsi": 61.8,
+   "macd_h": -4.12,
+   "rvol": 5.96,
+   "pw": 4.78,
+   "p1": 9.83,
+   "p3": 29.82,
+   "ytd": -5.6,
+   "pos52": 69.0,
+   "hi52": 657.0,
+   "lo52": 444.0,
+   "val": 4.4,
+   "mcap": 245.0,
+   "per": 25.8,
+   "pbr": 4.08,
+   "eps": 23.07,
+   "roe": 19.6,
+   "eqr": 77.3,
+   "div": 3.56,
+   "rev_q": 16.7,
+   "rev_ttm": 13.0,
+   "cagr5": 20.8,
+   "eps_q": 31.3,
+   "opm": 15.4,
+   "roic": 19.4,
+   "psr": 2.65,
+   "peg": 22.67,
+   "de": 0.01,
+   "inflow": null,
+   "biz": "【特色】葬儀、仏壇、墓のポータルサイト運営、紹介手数料と広告が収入源。相続、介護などへ領域拡大 連結事業 【連結事業】終活99、終活関連書籍出版1(2026.1)",
+   "tdnet": [
+    {
+     "pub": "2026-09-10 15:30",
+     "title": "2027年１月期 第２四半期（中間期）決算短信〔日本基準〕(連結)",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260910534136.pdf",
+     "bits": 64,
+     "strong": false
+    },
+    {
+     "pub": "2026-09-10 15:30",
+     "title": "2027年１月期 第２四半期決算説明資料",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260910534180.pdf",
+     "bits": 64,
+     "strong": false
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "5195",
+   "name": "Bando Chemical Industries Ltd.",
+   "ticker": "TSE:5195",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_div",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 560,
+      "win": 35.4,
+      "avg": -0.71,
+      "med": -1.51,
+      "excess": 0.38,
+      "best": 130.2,
+      "worst": -40.5
+     },
+     "1": {
+      "n": 732,
+      "win": 41.0,
+      "avg": -0.16,
+      "med": -0.35,
+      "excess": 0.09,
+      "best": 30.7,
+      "worst": -54.8
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 3095,
+      "win": 33.0,
+      "avg": -1.14,
+      "med": -1.37,
+      "excess": 0.02,
+      "best": 87.8,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 4162,
+      "win": 38.9,
+      "avg": -0.44,
+      "med": -0.43,
+      "excess": -0.05,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1011,
+      "win": 35.1,
+      "avg": -0.77,
+      "med": -1.28,
+      "excess": 0.38,
+      "best": 129.8,
+      "worst": -45.0
+     },
+     "1": {
+      "n": 1481,
+      "win": 39.6,
+      "avg": -0.29,
+      "med": -0.36,
+      "excess": 0.06,
+      "best": 129.6,
+      "worst": -19.7
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 1769,
+      "win": 23.8,
+      "avg": -1.31,
+      "med": -1.32,
+      "excess": -0.18,
+      "best": 10.9,
+      "worst": -15.3
+     },
+     "1": {
+      "n": 2697,
+      "win": 41.8,
+      "avg": -0.14,
+      "med": -0.17,
+      "excess": -0.05,
+      "best": 12.1,
+      "worst": -7.5
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 2185,
+      "win": 25.6,
+      "avg": -1.89,
+      "med": -2.15,
+      "excess": -0.18,
+      "best": 59.0,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 3607,
+      "win": 42.2,
+      "avg": -0.37,
+      "med": -0.3,
+      "excess": 0.0,
+      "best": 24.8,
+      "worst": -19.1
+     }
+    }
+   },
+   "sector": "Producer Manufacturing",
+   "industry": "Auto Parts: OEM",
+   "segment": "—",
+   "close": 2450.0,
+   "chg": 2.98,
+   "gap": -2.1,
+   "sma5": 2412.8,
+   "sma20": 2449.45,
+   "sma200": 2187.89,
+   "ext200": 11.98,
+   "rsi": 53.0,
+   "macd_h": -13.43,
+   "rvol": 3.65,
+   "pw": -0.69,
+   "p1": -3.81,
+   "p3": 10.96,
+   "ytd": 19.5,
+   "pos52": 83.0,
+   "hi52": 2560.0,
+   "lo52": 1895.0,
+   "val": 4.5,
+   "mcap": 1000.0,
+   "per": 9.4,
+   "pbr": 1.07,
+   "eps": 260.83,
+   "roe": 12.1,
+   "eqr": 70.8,
+   "div": 5.02,
+   "rev_q": 10.7,
+   "rev_ttm": 6.1,
+   "cagr5": 7.9,
+   "eps_q": 6.3,
+   "opm": 8.6,
+   "roic": 12.0,
+   "psr": 0.85,
+   "peg": 0.02,
+   "de": 0.05,
+   "inflow": null,
+   "biz": "Bando Chemical Industries, Ltd., together with its subsidiaries, engages in the manufactures and sale of automotive parts, industrial materials and high-performance elastomer products in Japan, China, Asia, Europe, Ameri",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "7269",
+   "name": "Suzuki Motor Corp.",
+   "ticker": "TSE:7269",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_gc",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 3095,
+      "win": 33.0,
+      "avg": -1.14,
+      "med": -1.37,
+      "excess": 0.02,
+      "best": 87.8,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 4162,
+      "win": 38.9,
+      "avg": -0.44,
+      "med": -0.43,
+      "excess": -0.05,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 1091,
+      "win": 40.1,
+      "avg": -0.48,
+      "med": -0.85,
+      "excess": 0.32,
+      "best": 56.1,
+      "worst": -34.6
+     },
+     "1": {
+      "n": 1544,
+      "win": 43.5,
+      "avg": -0.23,
+      "med": -0.21,
+      "excess": 0.01,
+      "best": 19.1,
+      "worst": -21.7
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 2085,
+      "win": 32.3,
+      "avg": -1.45,
+      "med": -1.86,
+      "excess": -0.34,
+      "best": 59.0,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 3118,
+      "win": 43.4,
+      "avg": -0.16,
+      "med": -0.23,
+      "excess": -0.1,
+      "best": 24.8,
+      "worst": -79.2
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1326,
+      "win": 27.0,
+      "avg": -1.85,
+      "med": -2.28,
+      "excess": -0.13,
+      "best": 59.0,
+      "worst": -25.2
+     },
+     "1": {
+      "n": 2174,
+      "win": 39.7,
+      "avg": -0.47,
+      "med": -0.56,
+      "excess": -0.1,
+      "best": 29.0,
+      "worst": -19.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 4301,
+      "win": 23.8,
+      "avg": -2.0,
+      "med": -2.17,
+      "excess": -0.28,
+      "best": 59.0,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 7053,
+      "win": 41.3,
+      "avg": -0.41,
+      "med": -0.31,
+      "excess": -0.03,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 2185,
+      "win": 25.6,
+      "avg": -1.89,
+      "med": -2.15,
+      "excess": -0.18,
+      "best": 59.0,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 3607,
+      "win": 42.2,
+      "avg": -0.37,
+      "med": -0.3,
+      "excess": 0.0,
+      "best": 24.8,
+      "worst": -19.1
+     }
+    }
+   },
+   "sector": "Consumer Durables",
+   "industry": "Motor Vehicles",
+   "segment": "—",
+   "close": 2047.0,
+   "chg": 1.76,
+   "gap": -2.49,
+   "sma5": 2016.6,
+   "sma20": 2097.55,
+   "sma200": 2075.1,
+   "ext200": -1.35,
+   "rsi": 47.7,
+   "macd_h": -18.01,
+   "rvol": 1.1,
+   "pw": -2.73,
+   "p1": 1.79,
+   "p3": 11.25,
+   "ytd": -13.0,
+   "pos52": 47.0,
+   "hi52": 2473.0,
+   "lo52": 1670.0,
+   "val": 151.5,
+   "mcap": 39407.0,
+   "per": 7.6,
+   "pbr": 1.12,
+   "eps": 269.97,
+   "roe": 15.9,
+   "eqr": 63.5,
+   "div": 2.31,
+   "rev_q": 22.0,
+   "rev_ttm": 14.5,
+   "cagr5": 14.6,
+   "eps_q": 80.0,
+   "opm": 9.0,
+   "roic": 13.9,
+   "psr": 0.63,
+   "peg": 0.26,
+   "de": 0.21,
+   "inflow": null,
+   "biz": "【特色】国内軽２強。２輪３位。インド４輪シェア約４割占有。小型車開発に強み。トヨタと資本提携 連結事業 【連結事業】四輪91(10)、二輪7(10)、マリン2(22)、他0(31)",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "6486",
+   "name": "Eagle Industry Co., Ltd.",
+   "ticker": "TSE:6486",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_div",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 3095,
+      "win": 33.0,
+      "avg": -1.14,
+      "med": -1.37,
+      "excess": 0.02,
+      "best": 87.8,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 4162,
+      "win": 38.9,
+      "avg": -0.44,
+      "med": -0.43,
+      "excess": -0.05,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 1091,
+      "win": 40.1,
+      "avg": -0.48,
+      "med": -0.85,
+      "excess": 0.32,
+      "best": 56.1,
+      "worst": -34.6
+     },
+     "1": {
+      "n": 1544,
+      "win": 43.5,
+      "avg": -0.23,
+      "med": -0.21,
+      "excess": 0.01,
+      "best": 19.1,
+      "worst": -21.7
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 1372,
+      "win": 37.9,
+      "avg": -0.59,
+      "med": -0.94,
+      "excess": 0.25,
+      "best": 88.1,
+      "worst": -23.2
+     },
+     "1": {
+      "n": 2003,
+      "win": 43.1,
+      "avg": -0.26,
+      "med": -0.19,
+      "excess": -0.02,
+      "best": 26.5,
+      "worst": -13.8
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 1769,
+      "win": 23.8,
+      "avg": -1.31,
+      "med": -1.32,
+      "excess": -0.18,
+      "best": 10.9,
+      "worst": -15.3
+     },
+     "1": {
+      "n": 2697,
+      "win": 41.8,
+      "avg": -0.14,
+      "med": -0.17,
+      "excess": -0.05,
+      "best": 12.1,
+      "worst": -7.5
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 4301,
+      "win": 23.8,
+      "avg": -2.0,
+      "med": -2.17,
+      "excess": -0.28,
+      "best": 59.0,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 7053,
+      "win": 41.3,
+      "avg": -0.41,
+      "med": -0.31,
+      "excess": -0.03,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 2185,
+      "win": 25.6,
+      "avg": -1.89,
+      "med": -2.15,
+      "excess": -0.18,
+      "best": 59.0,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 3607,
+      "win": 42.2,
+      "avg": -0.37,
+      "med": -0.3,
+      "excess": 0.0,
+      "best": 24.8,
+      "worst": -19.1
+     }
+    }
+   },
+   "sector": "Producer Manufacturing",
+   "industry": "Industrial Machinery",
+   "segment": "—",
+   "close": 2994.0,
+   "chg": 1.77,
+   "gap": -1.7,
+   "sma5": 2969.4,
+   "sma20": 3010.95,
+   "sma200": 2964.47,
+   "ext200": 1.0,
+   "rsi": 49.7,
+   "macd_h": -11.33,
+   "rvol": 0.99,
+   "pw": -1.35,
+   "p1": -2.63,
+   "p3": 3.81,
+   "ytd": 3.8,
+   "pos52": 46.0,
+   "hi52": 3535.0,
+   "lo52": 2542.0,
+   "val": 4.0,
+   "mcap": 1445.0,
+   "per": 12.7,
+   "pbr": 1.01,
+   "eps": 235.01,
+   "roe": 8.5,
+   "eqr": 63.2,
+   "div": 4.24,
+   "rev_q": 12.5,
+   "rev_ttm": 8.3,
+   "cagr5": 6.3,
+   "eps_q": 31.9,
+   "opm": 8.0,
+   "roic": 7.3,
+   "psr": 0.76,
+   "peg": 0.12,
+   "de": 0.3,
+   "inflow": null,
+   "biz": "【特色】車、舶用等メカニカルシール、特殊バルブ大手。親会社ＮＯＫと経営統合で１０月に持株会社上場 連結事業 【連結事業】自動車・建設機械業界向53(3)、一般産機業界向22(14)、半導体業界向9(-7)、舶用業界向11(26)、航空宇宙業界向5(8)",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "8601",
+   "name": "Daiwa Securities Group Inc.",
+   "ticker": "TSE:8601",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_trend",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 3095,
+      "win": 33.0,
+      "avg": -1.14,
+      "med": -1.37,
+      "excess": 0.02,
+      "best": 87.8,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 4162,
+      "win": 38.9,
+      "avg": -0.44,
+      "med": -0.43,
+      "excess": -0.05,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1011,
+      "win": 35.1,
+      "avg": -0.77,
+      "med": -1.28,
+      "excess": 0.38,
+      "best": 129.8,
+      "worst": -45.0
+     },
+     "1": {
+      "n": 1481,
+      "win": 39.6,
+      "avg": -0.29,
+      "med": -0.36,
+      "excess": 0.06,
+      "best": 129.6,
+      "worst": -19.7
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1823,
+      "win": 32.4,
+      "avg": -1.11,
+      "med": -1.49,
+      "excess": -0.05,
+      "best": 84.0,
+      "worst": -17.1
+     },
+     "1": {
+      "n": 2181,
+      "win": 39.8,
+      "avg": -0.43,
+      "med": -0.35,
+      "excess": -0.05,
+      "best": 18.1,
+      "worst": -14.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1326,
+      "win": 27.0,
+      "avg": -1.85,
+      "med": -2.28,
+      "excess": -0.13,
+      "best": 59.0,
+      "worst": -25.2
+     },
+     "1": {
+      "n": 2174,
+      "win": 39.7,
+      "avg": -0.47,
+      "med": -0.56,
+      "excess": -0.1,
+      "best": 29.0,
+      "worst": -19.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 4301,
+      "win": 23.8,
+      "avg": -2.0,
+      "med": -2.17,
+      "excess": -0.28,
+      "best": 59.0,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 7053,
+      "win": 41.3,
+      "avg": -0.41,
+      "med": -0.31,
+      "excess": -0.03,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 2185,
+      "win": 25.6,
+      "avg": -1.89,
+      "med": -2.15,
+      "excess": -0.18,
+      "best": 59.0,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 3607,
+      "win": 42.2,
+      "avg": -0.37,
+      "med": -0.3,
+      "excess": 0.0,
+      "best": 24.8,
+      "worst": -19.1
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Investment Banks/Brokers",
+   "segment": "—",
+   "close": 1842.0,
+   "chg": 0.27,
+   "gap": -2.59,
+   "sma5": 1835.4,
+   "sma20": 1817.15,
+   "sma200": 1569.05,
+   "ext200": 17.4,
+   "rsi": 54.1,
+   "macd_h": -1.93,
+   "rvol": 0.89,
+   "pw": -2.85,
+   "p1": 1.49,
+   "p3": 17.7,
+   "ytd": 33.5,
+   "pos52": 93.0,
+   "hi52": 1898.0,
+   "lo52": 1117.5,
+   "val": 76.6,
+   "mcap": 24860.0,
+   "per": 12.9,
+   "pbr": 1.42,
+   "eps": 144.55,
+   "roe": 11.7,
+   "eqr": 9.6,
+   "div": 3.56,
+   "rev_q": 32.9,
+   "rev_ttm": 15.9,
+   "cagr5": 20.6,
+   "eps_q": 82.6,
+   "opm": 16.3,
+   "roic": 4.2,
+   "psr": 1.76,
+   "peg": 0.49,
+   "de": 3.5,
+   "inflow": null,
+   "biz": "Daiwa Securities Group Inc., together with its subsidiaries, operates in the financial and capital markets in Japan and internationally. It operates through Wealth Management, Asset Management, Global Markets & Investmen",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "9766",
+   "name": "KONAMI Group Corporation",
+   "ticker": "TSE:9766",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_x5",
+    "sig_reclaim",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 3095,
+      "win": 33.0,
+      "avg": -1.14,
+      "med": -1.37,
+      "excess": 0.02,
+      "best": 87.8,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 4162,
+      "win": 38.9,
+      "avg": -0.44,
+      "med": -0.43,
+      "excess": -0.05,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 1372,
+      "win": 37.9,
+      "avg": -0.59,
+      "med": -0.94,
+      "excess": 0.25,
+      "best": 88.1,
+      "worst": -23.2
+     },
+     "1": {
+      "n": 2003,
+      "win": 43.1,
+      "avg": -0.26,
+      "med": -0.19,
+      "excess": -0.02,
+      "best": 26.5,
+      "worst": -13.8
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 2085,
+      "win": 32.3,
+      "avg": -1.45,
+      "med": -1.86,
+      "excess": -0.34,
+      "best": 59.0,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 3118,
+      "win": 43.4,
+      "avg": -0.16,
+      "med": -0.23,
+      "excess": -0.1,
+      "best": 24.8,
+      "worst": -79.2
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1326,
+      "win": 27.0,
+      "avg": -1.85,
+      "med": -2.28,
+      "excess": -0.13,
+      "best": 59.0,
+      "worst": -25.2
+     },
+     "1": {
+      "n": 2174,
+      "win": 39.7,
+      "avg": -0.47,
+      "med": -0.56,
+      "excess": -0.1,
+      "best": 29.0,
+      "worst": -19.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 4301,
+      "win": 23.8,
+      "avg": -2.0,
+      "med": -2.17,
+      "excess": -0.28,
+      "best": 59.0,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 7053,
+      "win": 41.3,
+      "avg": -0.41,
+      "med": -0.31,
+      "excess": -0.03,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Packaged Software",
+   "segment": "—",
+   "close": 20730.0,
+   "chg": 1.87,
+   "gap": -0.15,
+   "sma5": 20706.0,
+   "sma20": 21595.75,
+   "sma200": 20326.17,
+   "ext200": 1.99,
+   "rsi": 45.5,
+   "macd_h": -255.73,
+   "rvol": 1.68,
+   "pw": -5.86,
+   "p1": -4.43,
+   "p3": 5.58,
+   "ytd": -3.7,
+   "pos52": 40.0,
+   "hi52": 26645.0,
+   "lo52": 16850.0,
+   "val": 155.3,
+   "mcap": 27586.0,
+   "per": 24.9,
+   "pbr": 4.85,
+   "eps": 831.78,
+   "roe": 21.2,
+   "eqr": 75.5,
+   "div": 1.07,
+   "rev_q": 33.6,
+   "rev_ttm": 22.8,
+   "cagr5": 12.6,
+   "eps_q": 64.2,
+   "opm": 30.5,
+   "roic": 19.7,
+   "psr": 5.69,
+   "peg": 0.49,
+   "de": 0.07,
+   "inflow": null,
+   "biz": "【特色】家庭・携帯用ゲーム主力。スポーツ施設業界首位。カジノ機は米国・豪、パチスロ機は国内へ販売 連結事業 【連結事業】デジタルエンタテインメント75(37)、アーケードゲーム5(26)、ゲーミング＆システム9(8)、スポーツ10(7)、他1(9)",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "4540",
+   "name": "Tsumura & Co.",
+   "ticker": "TSE:4540",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_x5",
+    "sig_value",
+    "sig_div",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 3095,
+      "win": 33.0,
+      "avg": -1.14,
+      "med": -1.37,
+      "excess": 0.02,
+      "best": 87.8,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 4162,
+      "win": 38.9,
+      "avg": -0.44,
+      "med": -0.43,
+      "excess": -0.05,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_value": {
+     "5": {
+      "n": 919,
+      "win": 37.4,
+      "avg": -0.67,
+      "med": -1.15,
+      "excess": 0.34,
+      "best": 23.3,
+      "worst": -23.1
+     },
+     "1": {
+      "n": 1397,
+      "win": 50.5,
+      "avg": 0.07,
+      "med": 0.05,
+      "excess": 0.1,
+      "best": 16.3,
+      "worst": -21.6
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 1769,
+      "win": 23.8,
+      "avg": -1.31,
+      "med": -1.32,
+      "excess": -0.18,
+      "best": 10.9,
+      "worst": -15.3
+     },
+     "1": {
+      "n": 2697,
+      "win": 41.8,
+      "avg": -0.14,
+      "med": -0.17,
+      "excess": -0.05,
+      "best": 12.1,
+      "worst": -7.5
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 4301,
+      "win": 23.8,
+      "avg": -2.0,
+      "med": -2.17,
+      "excess": -0.28,
+      "best": 59.0,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 7053,
+      "win": 41.3,
+      "avg": -0.41,
+      "med": -0.31,
+      "excess": -0.03,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 2185,
+      "win": 25.6,
+      "avg": -1.89,
+      "med": -2.15,
+      "excess": -0.18,
+      "best": 59.0,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 3607,
+      "win": 42.2,
+      "avg": -0.37,
+      "med": -0.3,
+      "excess": 0.0,
+      "best": 24.8,
+      "worst": -19.1
+     }
+    }
+   },
+   "sector": "Health Technology",
+   "industry": "Pharmaceuticals: Major",
+   "segment": "—",
+   "close": 3717.0,
+   "chg": 0.16,
+   "gap": -1.29,
+   "sma5": 3694.2,
+   "sma20": 3748.25,
+   "sma200": 3865.51,
+   "ext200": -3.84,
+   "rsi": 44.5,
+   "macd_h": -6.37,
+   "rvol": 0.97,
+   "pw": -0.35,
+   "p1": -1.87,
+   "p3": -0.72,
+   "ytd": -9.1,
+   "pos52": 28.0,
+   "hi52": 4403.0,
+   "lo52": 3444.0,
+   "val": 20.2,
+   "mcap": 2839.0,
+   "per": 9.2,
+   "pbr": 0.85,
+   "eps": 405.52,
+   "roe": 9.8,
+   "eqr": 63.3,
+   "div": 4.01,
+   "rev_q": 15.3,
+   "rev_ttm": 10.4,
+   "cagr5": 10.6,
+   "eps_q": 49.0,
+   "opm": 17.8,
+   "roic": 7.6,
+   "psr": 1.44,
+   "peg": 0.46,
+   "de": 0.45,
+   "inflow": null,
+   "biz": "【特色】医療用漢方薬で国内シェア８割超。高齢者、がん支持療法、女性関連の３領域を重点に市場深耕 連結事業 【連結事業】医薬品100",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "7240",
+   "name": "NOK Corporation",
+   "ticker": "TSE:7240",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_x5",
+    "sig_reclaim",
+    "sig_value",
+    "sig_div",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 3095,
+      "win": 33.0,
+      "avg": -1.14,
+      "med": -1.37,
+      "excess": 0.02,
+      "best": 87.8,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 4162,
+      "win": 38.9,
+      "avg": -0.44,
+      "med": -0.43,
+      "excess": -0.05,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 1372,
+      "win": 37.9,
+      "avg": -0.59,
+      "med": -0.94,
+      "excess": 0.25,
+      "best": 88.1,
+      "worst": -23.2
+     },
+     "1": {
+      "n": 2003,
+      "win": 43.1,
+      "avg": -0.26,
+      "med": -0.19,
+      "excess": -0.02,
+      "best": 26.5,
+      "worst": -13.8
+     }
+    },
+    "sig_value": {
+     "5": {
+      "n": 919,
+      "win": 37.4,
+      "avg": -0.67,
+      "med": -1.15,
+      "excess": 0.34,
+      "best": 23.3,
+      "worst": -23.1
+     },
+     "1": {
+      "n": 1397,
+      "win": 50.5,
+      "avg": 0.07,
+      "med": 0.05,
+      "excess": 0.1,
+      "best": 16.3,
+      "worst": -21.6
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 1769,
+      "win": 23.8,
+      "avg": -1.31,
+      "med": -1.32,
+      "excess": -0.18,
+      "best": 10.9,
+      "worst": -15.3
+     },
+     "1": {
+      "n": 2697,
+      "win": 41.8,
+      "avg": -0.14,
+      "med": -0.17,
+      "excess": -0.05,
+      "best": 12.1,
+      "worst": -7.5
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 4301,
+      "win": 23.8,
+      "avg": -2.0,
+      "med": -2.17,
+      "excess": -0.28,
+      "best": 59.0,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 7053,
+      "win": 41.3,
+      "avg": -0.41,
+      "med": -0.31,
+      "excess": -0.03,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    }
+   },
+   "sector": "Producer Manufacturing",
+   "industry": "Industrial Machinery",
+   "segment": "—",
+   "close": 3021.0,
+   "chg": 2.32,
+   "gap": -1.15,
+   "sma5": 2987.6,
+   "sma20": 3027.7,
+   "sma200": 2942.41,
+   "ext200": 2.67,
+   "rsi": 50.4,
+   "macd_h": -10.66,
+   "rvol": 1.07,
+   "pw": -1.5,
+   "p1": -2.55,
+   "p3": 3.35,
+   "ytd": 6.4,
+   "pos52": 59.0,
+   "hi52": 3355.0,
+   "lo52": 2538.5,
+   "val": 12.9,
+   "mcap": 4459.0,
+   "per": 9.9,
+   "pbr": 0.76,
+   "eps": 306.63,
+   "roe": 8.2,
+   "eqr": 70.9,
+   "div": 4.39,
+   "rev_q": 5.5,
+   "rev_ttm": -0.4,
+   "cagr5": 4.4,
+   "eps_q": 62.3,
+   "opm": 4.5,
+   "roic": 8.0,
+   "psr": 0.67,
+   "peg": 0.13,
+   "de": 0.1,
+   "inflow": null,
+   "biz": "NOK Corporation manufactures, imports, and sells seal products, industrial mechanical parts, hydraulic and nuclear power equipment, synthetic chemical products, electronic and various other products, and installation wor",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "2975",
+   "name": "Star Mica Holdings Co., Ltd.",
+   "ticker": "TSE:2975",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_gc",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 560,
+      "win": 35.4,
+      "avg": -0.71,
+      "med": -1.51,
+      "excess": 0.38,
+      "best": 130.2,
+      "worst": -40.5
+     },
+     "1": {
+      "n": 732,
+      "win": 41.0,
+      "avg": -0.16,
+      "med": -0.35,
+      "excess": 0.09,
+      "best": 30.7,
+      "worst": -54.8
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 1091,
+      "win": 40.1,
+      "avg": -0.48,
+      "med": -0.85,
+      "excess": 0.32,
+      "best": 56.1,
+      "worst": -34.6
+     },
+     "1": {
+      "n": 1544,
+      "win": 43.5,
+      "avg": -0.23,
+      "med": -0.21,
+      "excess": 0.01,
+      "best": 19.1,
+      "worst": -21.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1326,
+      "win": 27.0,
+      "avg": -1.85,
+      "med": -2.28,
+      "excess": -0.13,
+      "best": 59.0,
+      "worst": -25.2
+     },
+     "1": {
+      "n": 2174,
+      "win": 39.7,
+      "avg": -0.47,
+      "med": -0.56,
+      "excess": -0.1,
+      "best": 29.0,
+      "worst": -19.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 4301,
+      "win": 23.8,
+      "avg": -2.0,
+      "med": -2.17,
+      "excess": -0.28,
+      "best": 59.0,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 7053,
+      "win": 41.3,
+      "avg": -0.41,
+      "med": -0.31,
+      "excess": -0.03,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 2185,
+      "win": 25.6,
+      "avg": -1.89,
+      "med": -2.15,
+      "excess": -0.18,
+      "best": 59.0,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 3607,
+      "win": 42.2,
+      "avg": -0.37,
+      "med": -0.3,
+      "excess": 0.0,
+      "best": 24.8,
+      "worst": -19.1
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Real Estate Development",
+   "segment": "—",
+   "close": 1360.0,
+   "chg": -1.66,
+   "gap": -4.77,
+   "sma5": 1412.4,
+   "sma20": 1527.75,
+   "sma200": 1519.28,
+   "ext200": -10.48,
+   "rsi": 26.9,
+   "macd_h": -23.2,
+   "rvol": 2.51,
+   "pw": -7.86,
+   "p1": -12.99,
+   "p3": -12.03,
+   "ytd": -0.5,
+   "pos52": 35.0,
+   "hi52": 1846.0,
+   "lo52": 1098.0,
+   "val": 6.2,
+   "mcap": 522.0,
+   "per": 7.6,
+   "pbr": 1.37,
+   "eps": 179.61,
+   "roe": 19.6,
+   "eqr": 36.9,
+   "div": 3.38,
+   "rev_q": 25.5,
+   "rev_ttm": 26.5,
+   "cagr5": 11.8,
+   "eps_q": 88.7,
+   "opm": 12.8,
+   "roic": 5.6,
+   "psr": 0.67,
+   "peg": 0.14,
+   "de": 2.87,
+   "inflow": null,
+   "biz": "【特色】中古区分所有マンションへ投資し賃貸、退去後に改装し売却する独自事業。１９年に持株会社移行 連結事業 【連結事業】リノベマンション95(10)、インベストメント3(10)、アドバイザリー1(54)(2025.11)",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "4503",
+   "name": "Astellas Pharma Inc.",
+   "ticker": "TSE:4503",
+   "bucket": "long",
+   "score": 4.0,
+   "signals": [
+    "sig_qual",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_qual": {
+     "5": {
+      "n": 2085,
+      "win": 32.3,
+      "avg": -1.45,
+      "med": -1.86,
+      "excess": -0.34,
+      "best": 59.0,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 3118,
+      "win": 43.4,
+      "avg": -0.16,
+      "med": -0.23,
+      "excess": -0.1,
+      "best": 24.8,
+      "worst": -79.2
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 1326,
+      "win": 27.0,
+      "avg": -1.85,
+      "med": -2.28,
+      "excess": -0.13,
+      "best": 59.0,
+      "worst": -25.2
+     },
+     "1": {
+      "n": 2174,
+      "win": 39.7,
+      "avg": -0.47,
+      "med": -0.56,
+      "excess": -0.1,
+      "best": 29.0,
+      "worst": -19.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 4301,
+      "win": 23.8,
+      "avg": -2.0,
+      "med": -2.17,
+      "excess": -0.28,
+      "best": 59.0,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 7053,
+      "win": 41.3,
+      "avg": -0.41,
+      "med": -0.31,
+      "excess": -0.03,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 2185,
+      "win": 25.6,
+      "avg": -1.89,
+      "med": -2.15,
+      "excess": -0.18,
+      "best": 59.0,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 3607,
+      "win": 42.2,
+      "avg": -0.37,
+      "med": -0.3,
+      "excess": 0.0,
+      "best": 24.8,
+      "worst": -19.1
+     }
+    }
+   },
+   "sector": "Health Technology",
+   "industry": "Pharmaceuticals: Major",
+   "segment": "—",
+   "close": 2240.5,
+   "chg": 0.61,
+   "gap": -1.98,
+   "sma5": 2257.6,
+   "sma20": 2348.75,
+   "sma200": 2276.0,
+   "ext200": -1.56,
+   "rsi": 40.9,
+   "macd_h": -25.36,
+   "rvol": 1.08,
+   "pw": -5.86,
+   "p1": -4.78,
+   "p3": 4.77,
+   "ytd": 6.5,
+   "pos52": 59.0,
+   "hi52": 2717.0,
+   "lo52": 1557.5,
+   "val": 152.8,
+   "mcap": 40103.0,
+   "per": 11.0,
+   "pbr": 2.07,
+   "eps": 203.71,
+   "roe": 21.3,
+   "eqr": 53.0,
+   "div": 3.49,
+   "rev_q": 26.7,
+   "rev_ttm": 16.9,
+   "cagr5": 11.4,
+   "eps_q": 107.2,
+   "opm": 21.8,
+   "roic": 17.0,
+   "psr": 1.88,
+   "peg": 0.03,
+   "de": 0.3,
+   "inflow": null,
+   "biz": "【特色】医薬品国内２位。開発技術起点の研究開発体制。前立腺がん薬が柱。遺伝子・細胞治療技術育成 連結事業 【連結事業】ＸＴＡＮＤＩ／イクスタンジ45、プログラフ10、ベタニス／ミラベトリック／ベットミガ9、パドセブ10、他26",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "2371",
+   "name": "Kakaku.com, Inc.",
+   "ticker": "TSE:2371",
+   "bucket": "news",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_high",
+    "sig_gap",
+    "sig_macd",
+    "sig_qual"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 560,
+      "win": 35.4,
+      "avg": -0.71,
+      "med": -1.51,
+      "excess": 0.38,
+      "best": 130.2,
+      "worst": -40.5
+     },
+     "1": {
+      "n": 732,
+      "win": 41.0,
+      "avg": -0.16,
+      "med": -0.35,
+      "excess": 0.09,
+      "best": 30.7,
+      "worst": -54.8
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 1123,
+      "win": 30.2,
+      "avg": -1.54,
+      "med": -1.41,
+      "excess": -0.36,
+      "best": 43.6,
+      "worst": -48.8
+     },
+     "1": {
+      "n": 1314,
+      "win": 37.7,
+      "avg": -0.53,
+      "med": -0.31,
+      "excess": -0.05,
+      "best": 28.8,
+      "worst": -17.8
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 269,
+      "win": 33.5,
+      "avg": -0.67,
+      "med": -2.5,
+      "excess": -0.06,
+      "best": 130.2,
+      "worst": -34.6
+     },
+     "1": {
+      "n": 403,
+      "win": 36.2,
+      "avg": -0.2,
+      "med": -1.52,
+      "excess": -0.23,
+      "best": 45.6,
+      "worst": -21.7
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 4570,
+      "win": 32.6,
+      "avg": -1.02,
+      "med": -1.17,
+      "excess": 0.24,
+      "best": 88.1,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 5700,
+      "win": 46.5,
+      "avg": -0.07,
+      "med": -0.11,
+      "excess": 0.01,
+      "best": 57.8,
+      "worst": -19.6
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 2085,
+      "win": 32.3,
+      "avg": -1.45,
+      "med": -1.86,
+      "excess": -0.34,
+      "best": 59.0,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 3118,
+      "win": 43.4,
+      "avg": -0.16,
+      "med": -0.23,
+      "excess": -0.1,
+      "best": 24.8,
+      "worst": -79.2
+     }
+    }
+   },
+   "sector": "Consumer Services",
+   "industry": "Other Consumer Services",
+   "segment": "—",
+   "close": 3796.0,
+   "chg": 2.73,
+   "gap": 3.46,
+   "sma5": 3716.8,
+   "sma20": 3693.55,
+   "sma200": 2746.03,
+   "ext200": 38.24,
+   "rsi": 73.5,
+   "macd_h": 2.94,
+   "rvol": 3.56,
+   "pw": 3.07,
+   "p1": 1.61,
+   "p3": 14.68,
+   "ytd": 65.8,
+   "pos52": 99.0,
+   "hi52": 3823.0,
+   "lo52": 1566.0,
+   "val": 24.7,
+   "mcap": 7258.0,
+   "per": 40.7,
+   "pbr": 11.59,
+   "eps": 93.35,
+   "roe": 30.6,
+   "eqr": 72.8,
+   "div": 1.35,
+   "rev_q": 17.0,
+   "rev_ttm": 18.4,
+   "cagr5": 13.0,
+   "eps_q": -6.4,
+   "opm": 27.3,
+   "roic": 29.4,
+   "psr": 7.98,
+   "peg": null,
+   "de": 0.13,
+   "inflow": null,
+   "biz": "【特色】「食べログ」と「価格．ｃｏｍ」が柱。ＥＱＴがＴＯＢ開始も、ＬＩＮＥヤフーが買収案提示 連結事業 【連結事業】価格．ｃｏｍ25(53)、食べログ43(55)、求人ボックス22(-7)、インキュベーション11(27)(2026.3)",
+   "tdnet": [
+    {
+     "pub": "2026-09-11 12:00",
+     "title": "（変更）「Kamgras １株式会社による当社株券等に対する公開買付けに関する賛同の意見表明及び応募推奨のお知らせ」の一部変更に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260911534874.pdf",
+     "bits": 1024,
+     "strong": true
+    },
+    {
+     "pub": "2026-09-10 17:00",
+     "title": "Kamgras １株式会社による株式会社カカクコム（証券コード：2371）の株券等に対する公開買付けの買付条件等の変更に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260910534451.pdf",
+     "bits": 1024,
+     "strong": true
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "3989",
+   "name": "SHARINGTECHNOLOGY. INC",
+   "ticker": "TSE:3989",
+   "bucket": "news",
+   "score": 4.0,
+   "signals": [
+    "sig_spike",
+    "sig_div",
+    "sig_qual",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 560,
+      "win": 35.4,
+      "avg": -0.71,
+      "med": -1.51,
+      "excess": 0.38,
+      "best": 130.2,
+      "worst": -40.5
+     },
+     "1": {
+      "n": 732,
+      "win": 41.0,
+      "avg": -0.16,
+      "med": -0.35,
+      "excess": 0.09,
+      "best": 30.7,
+      "worst": -54.8
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 1769,
+      "win": 23.8,
+      "avg": -1.31,
+      "med": -1.32,
+      "excess": -0.18,
+      "best": 10.9,
+      "worst": -15.3
+     },
+     "1": {
+      "n": 2697,
+      "win": 41.8,
+      "avg": -0.14,
+      "med": -0.17,
+      "excess": -0.05,
+      "best": 12.1,
+      "worst": -7.5
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 2085,
+      "win": 32.3,
+      "avg": -1.45,
+      "med": -1.86,
+      "excess": -0.34,
+      "best": 59.0,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 3118,
+      "win": 43.4,
+      "avg": -0.16,
+      "med": -0.23,
+      "excess": -0.1,
+      "best": 24.8,
+      "worst": -79.2
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 4301,
+      "win": 23.8,
+      "avg": -2.0,
+      "med": -2.17,
+      "excess": -0.28,
+      "best": 59.0,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 7053,
+      "win": 41.3,
+      "avg": -0.41,
+      "med": -0.31,
+      "excess": -0.03,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Internet Software/Services",
+   "segment": "—",
+   "close": 1544.0,
+   "chg": -0.06,
+   "gap": 0.0,
+   "sma5": 1514.4,
+   "sma20": 1535.5,
+   "sma200": 1222.07,
+   "ext200": 26.34,
+   "rsi": 56.6,
+   "macd_h": -10.46,
+   "rvol": 2.92,
+   "pw": 2.73,
+   "p1": 5.83,
+   "p3": 56.75,
+   "ytd": 30.3,
+   "pos52": 89.0,
+   "hi52": 1627.0,
+   "lo52": 901.0,
+   "val": 23.9,
+   "mcap": 374.0,
+   "per": 14.9,
+   "pbr": 6.55,
+   "eps": 104.8,
+   "roe": 48.5,
+   "eqr": 72.6,
+   "div": 4.61,
+   "rev_q": 10.9,
+   "rev_ttm": 13.6,
+   "cagr5": 16.6,
+   "eps_q": 275.1,
+   "opm": 21.4,
+   "roic": 46.8,
+   "psr": 4.3,
+   "peg": 0.21,
+   "de": 0.05,
+   "inflow": null,
+   "biz": "【特色】住まい関連トラブル対応のマッチングサイトを運営。多角化路線改め、柱の住まい関連に集中 連結事業 【連結事業】暮らしのお困りごと100(2025.9)",
+   "tdnet": [
+    {
+     "pub": "2026-09-09 20:00",
+     "title": "2026年9月期配当予想の修正（無配）に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260909533159.pdf",
+     "bits": 264,
+     "strong": false
+    },
+    {
+     "pub": "2026-09-09 20:00",
+     "title": "MP-2606株式会社による当社株券等に対する公開買付けに関する賛同及び応募推奨の意見表明のお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260909533309.pdf",
+     "bits": 1024,
+     "strong": true
+    },
+    {
+     "pub": "2026-09-09 20:00",
+     "title": "MP-2606株式会社によるシェアリングテクノロジー株式会社（証券コード：3989）に対する公開買付けの開始に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260909533311.pdf",
+     "bits": 1024,
+     "strong": true
+    },
+    {
+     "pub": "2026-09-09 17:17",
+     "title": "本日の一部報道について",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260909533747.pdf",
+     "bits": 0,
+     "strong": false
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "8473",
+   "name": "SBI Holdings Incorporated",
+   "ticker": "TSE:8473",
+   "bucket": "news",
+   "score": 3.0,
+   "signals": [
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_growth": {
+     "5": {
+      "n": 1326,
+      "win": 27.0,
+      "avg": -1.85,
+      "med": -2.28,
+      "excess": -0.13,
+      "best": 59.0,
+      "worst": -25.2
+     },
+     "1": {
+      "n": 2174,
+      "win": 39.7,
+      "avg": -0.47,
+      "med": -0.56,
+      "excess": -0.1,
+      "best": 29.0,
+      "worst": -19.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 4301,
+      "win": 23.8,
+      "avg": -2.0,
+      "med": -2.17,
+      "excess": -0.28,
+      "best": 59.0,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 7053,
+      "win": 41.3,
+      "avg": -0.41,
+      "med": -0.31,
+      "excess": -0.03,
+      "best": 24.8,
+      "worst": -18.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 2185,
+      "win": 25.6,
+      "avg": -1.89,
+      "med": -2.15,
+      "excess": -0.18,
+      "best": 59.0,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 3607,
+      "win": 42.2,
+      "avg": -0.37,
+      "med": -0.3,
+      "excess": 0.0,
+      "best": 24.8,
+      "worst": -19.1
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Financial Conglomerates",
+   "segment": "—",
+   "close": 3262.0,
+   "chg": -0.85,
+   "gap": -2.13,
+   "sma5": 3296.4,
+   "sma20": 3254.2,
+   "sma200": 3136.99,
+   "ext200": 3.99,
+   "rsi": 53.9,
+   "macd_h": -17.71,
+   "rvol": 0.67,
+   "pw": -2.34,
+   "p1": 7.73,
+   "p3": 16.33,
+   "ytd": -4.3,
+   "pos52": 51.0,
+   "hi52": 3866.0,
+   "lo52": 2631.0,
+   "val": 94.8,
+   "mcap": 21751.0,
+   "per": 4.6,
+   "pbr": 1.13,
+   "eps": 755.38,
+   "roe": 30.8,
+   "eqr": 8.4,
+   "div": 2.95,
+   "rev_q": 28.8,
+   "rev_ttm": 23.1,
+   "cagr5": 27.8,
+   "eps_q": 64.3,
+   "opm": 46.6,
+   "roic": 5.9,
+   "psr": 1.26,
+   "peg": 0.05,
+   "de": 4.02,
+   "inflow": null,
+   "biz": "SBI Holdings, Inc. engages in investment businesses in Japan and internationally. The company operates through five business segments: Financial Services Business, Asset Management Business, PE Investment Business, Crypt",
+   "tdnet": [
+    {
+     "pub": "2026-09-08 15:45",
+     "title": "（訂正）公開買付届出書の訂正届出書の提出に伴う「BASE株式会社株式（証券コード：4477）に対する公開買付けの開始（略）」等の訂正に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260908533089.pdf",
+     "bits": 1024,
+     "strong": true
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "6849",
+   "name": "Nihon Kohden Corporation",
+   "ticker": "TSE:6849",
+   "bucket": "news",
+   "score": 3.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_macd"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 3095,
+      "win": 33.0,
+      "avg": -1.14,
+      "med": -1.37,
+      "excess": 0.02,
+      "best": 87.8,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 4162,
+      "win": 38.9,
+      "avg": -0.44,
+      "med": -0.43,
+      "excess": -0.05,
+      "best": 129.6,
+      "worst": -52.2
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 1011,
+      "win": 35.1,
+      "avg": -0.77,
+      "med": -1.28,
+      "excess": 0.38,
+      "best": 129.8,
+      "worst": -45.0
+     },
+     "1": {
+      "n": 1481,
+      "win": 39.6,
+      "avg": -0.29,
+      "med": -0.36,
+      "excess": 0.06,
+      "best": 129.6,
+      "worst": -19.7
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 4570,
+      "win": 32.6,
+      "avg": -1.02,
+      "med": -1.17,
+      "excess": 0.24,
+      "best": 88.1,
+      "worst": -23.4
+     },
+     "1": {
+      "n": 5700,
+      "win": 46.5,
+      "avg": -0.07,
+      "med": -0.11,
+      "excess": 0.01,
+      "best": 57.8,
+      "worst": -19.6
+     }
+    }
+   },
+   "sector": "Health Technology",
+   "industry": "Medical Specialties",
+   "segment": "—",
+   "close": 1540.0,
+   "chg": 3.91,
+   "gap": -0.71,
+   "sma5": 1495.8,
+   "sma20": 1503.1,
+   "sma200": 1554.6,
+   "ext200": -0.94,
+   "rsi": 55.4,
+   "macd_h": 0.24,
+   "rvol": 1.62,
+   "pw": 2.12,
+   "p1": 1.05,
+   "p3": 11.39,
+   "ytd": -9.8,
+   "pos52": 39.0,
+   "hi52": 1885.5,
+   "lo52": 1323.0,
+   "val": 18.3,
+   "mcap": 2430.0,
+   "per": 18.4,
+   "pbr": 1.39,
+   "eps": 83.69,
+   "roe": 7.7,
+   "eqr": 68.8,
+   "div": 2.19,
+   "rev_q": -5.2,
+   "rev_ttm": 1.4,
+   "cagr5": 3.3,
+   "eps_q": -662.5,
+   "opm": 7.0,
+   "roic": 7.2,
+   "psr": 1.07,
+   "peg": 9.52,
+   "de": 0.14,
+   "inflow": null,
+   "biz": "【特色】医用電子機器専門。病院向け生体情報モニターが主力。国内首位の脳波計やＡＥＤにも強み 連結事業 【連結事業】生体計測機器23、生体情報モニタ36、治療機器24、他17",
+   "tdnet": [
+    {
+     "pub": "2026-09-10 15:30",
+     "title": "公開買付けに準ずる行為として政令で定める買集め行為に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260910534232.pdf",
+     "bits": 1024,
+     "strong": true
+    }
+   ],
+   "llm": null
+  }
+ ],
+ "config": {
+  "MIN_VAL": 3.0,
+  "MIN_MCAP": 100.0,
+  "MIN_PRICE": 0.0,
+  "N_SHORT": 8,
+  "N_LONG": 8,
+  "N_NEWS": 4,
+  "MAX_PER_INDUSTRY": 3,
+  "COOLDOWN_DAYS": 3
+ }
+}
