@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>シグナル・パフォーマンス分析 — 2026-09-12 23:50 JST</title><style>
+:root{--bg:#0f141c;--surface:#171e29;--surface2:#1d2634;--line:#26303f;--text:#e9eef6;
+--muted:#8a94a6;--faint:#5b6572;--up:#ff4f5e;--down:#3f8cff;--amber:#ffb224;--teal:#2dd4bf;--violet:#c084fc}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Pretendard','Malgun Gothic','Yu Gothic UI','Noto Sans JP',sans-serif;
+font-size:13px;line-height:1.5;padding:14px 16px 50px}
+.num{font-family:ui-monospace,Consolas,monospace;font-variant-numeric:tabular-nums}
+a{color:var(--amber);text-decoration:none}
+.topbar{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.studybtn{padding:5px 12px;border:1px solid rgba(192,132,252,.45);border-radius:999px;
+background:var(--surface2);color:var(--violet);font-weight:600;font-size:12.5px}
+.studybtn:hover{background:var(--violet);color:#2a1245}
+.dashbtn{padding:5px 12px;border:1px solid rgba(45,212,191,.45);border-radius:999px;
+background:var(--surface2);color:var(--teal);font-weight:600;font-size:12.5px}
+.dashbtn:hover{background:var(--teal);color:#062a26}
+.langbtn{margin-left:auto;padding:5px 12px;border:1px solid var(--line);border-radius:999px;
+background:var(--surface);color:var(--faint);font-weight:600;font-size:12.5px}
+.langbtn:hover{color:var(--text)}
+h1{font-size:18px;font-weight:800;margin-bottom:4px}h1 span{color:var(--amber)}
+.meta{color:var(--muted);font-size:12px;margin-bottom:12px}
+.tabs{display:flex;gap:5px;margin:10px 0;flex-wrap:wrap}
+.tab{padding:7px 13px;border:1px solid var(--line);border-radius:8px;background:var(--surface);
+cursor:pointer;font-weight:600;color:var(--muted);user-select:none}
+.tab.on{color:var(--text);border-color:var(--amber);background:var(--surface2)}
+.htabs .tab.on{border-color:var(--teal)}
+.note{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;
+color:var(--muted);margin:10px 0;line-height:1.8}
+.note b{color:var(--text)}
+table{border-collapse:collapse;width:100%;background:var(--surface);border:1px solid var(--line);
+border-radius:10px;overflow:hidden}
+th{background:var(--surface2);color:var(--muted);font-size:11.5px;font-weight:600;text-align:right;
+padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+th.l,td.l{text-align:left}
+td{padding:7px 10px;border-bottom:1px solid #1c2431;text-align:right;white-space:nowrap}
+.up{color:var(--up)}.dn{color:var(--down)}.fl{color:var(--muted)}
+.b{display:inline-block;font-size:10px;font-weight:700;border-radius:4px;padding:1.5px 6px;margin-right:6px}
+.b.s{background:rgba(255,178,36,.16);color:var(--amber)}
+.b.g{background:rgba(45,212,191,.13);color:var(--teal)}
+.b.f{background:rgba(192,132,252,.14);color:var(--violet)}
+.b.m{background:rgba(138,148,166,.15);color:var(--muted)}
+.b.w{background:rgba(96,205,255,.14);color:#60cdff}
+.wb{display:inline-block;height:8px;border-radius:4px;background:var(--amber);vertical-align:middle;margin-right:6px}
+footer{margin-top:14px;color:var(--faint);font-size:11px;line-height:1.7}
+@media(max-width:760px){body{padding:10px 8px 30px}.hide-m{display:none}}
+
+a.btc{color:var(--amber);border-color:rgba(255,178,36,.45);background:var(--surface2)}
+a.btc:hover{background:var(--amber);color:#2a1f05}
+a.btc b{font-variant-numeric:tabular-nums;font-weight:800;margin-left:2px}
+a.btc b.up{color:var(--up)} a.btc b.down{color:var(--down)}
+
+</style></head><body>
+<div class="topbar">
+  <a href="../jp/index.html">← スクリーナーへ</a>
+  <a class="studybtn" href="https://ocw-1027.github.io/investment-study/jp.html" target="_blank" rel="noopener">🧠 連想思考</a>
+  <a class="dashbtn" href="https://ocw-1027.github.io/dashboard/index_ja.html" target="_blank" rel="noopener">🌐 グローバル指標</a>
+  <a class="dashbtn" href="../ranking/index.html">📈 ランキング推移</a>
+  <a href="https://ocw-1027.github.io/BTC-DESK/" target="_blank" rel="noopener" class="langbtn btc">₿ BTCデスク <b id="btcNav">—</b></a>
+  <a class="langbtn" href="../../backtest/index.html">한국어</a>
+</div>
+<h1>シグナル <span>パフォーマンス分析</span></h1>
+<div class="meta">生成 2026-09-12 23:50 JST · シグナルが点灯した銘柄がその後どう動いたか（売買代金の下限を適用・市場平均との比較）</div>
+<div class="tabs" id="mt"></div>
+<div class="tabs htabs" id="ht"></div>
+<div id="body"></div>
+<footer>勝率 = リターン &gt; 0 の比率 ・ 市場比 = 同期間のユニバース平均リターンを差し引いた超過リターン ・ サンプル =（シグナル点灯銘柄 × 観測日）の累計 ・ スナップショットは各営業日の引け後に自動蓄積 ・ 過去の成績は将来の収益を保証するものではなく、参考資料です。</footer>
+<script>
+const R={"jp": {"dates": ["2026-08-18", "2026-08-19", "2026-08-20", "2026-08-28", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11"], "n_days": 14, "signals": {"sig_spike": {"name": "出来高急増", "1": {"n": 732, "win": 41.0, "avg": -0.16, "med": -0.35, "excess": 0.09, "best": 30.7, "worst": -54.8}, "5": {"n": 560, "win": 35.4, "avg": -0.71, "med": -1.51, "excess": 0.38, "best": 130.2, "worst": -40.5}, "20": null, "grp": "s"}, "sig_x5": {"name": "5MA突破", "1": {"n": 4162, "win": 38.9, "avg": -0.44, "med": -0.43, "excess": -0.05, "best": 129.6, "worst": -52.2}, "5": {"n": 3095, "win": 33.0, "avg": -1.14, "med": -1.37, "excess": 0.02, "best": 87.8, "worst": -51.8}, "20": null, "grp": "s"}, "sig_x20": {"name": "20MA突破", "1": {"n": 1481, "win": 39.6, "avg": -0.29, "med": -0.36, "excess": 0.06, "best": 129.6, "worst": -19.7}, "5": {"n": 1011, "win": 35.1, "avg": -0.77, "med": -1.28, "excess": 0.38, "best": 129.8, "worst": -45.0}, "20": null, "grp": "s"}, "sig_high": {"name": "高値圏", "1": {"n": 1314, "win": 37.7, "avg": -0.53, "med": -0.31, "excess": -0.05, "best": 28.8, "worst": -17.8}, "5": {"n": 1123, "win": 30.2, "avg": -1.54, "med": -1.41, "excess": -0.36, "best": 43.6, "worst": -48.8}, "20": null, "grp": "s"}, "sig_gap": {"name": "ギャップアップ", "1": {"n": 403, "win": 36.2, "avg": -0.2, "med": -1.52, "excess": -0.23, "best": 45.6, "worst": -21.7}, "5": {"n": 269, "win": 33.5, "avg": -0.67, "med": -2.5, "excess": -0.06, "best": 130.2, "worst": -34.6}, "20": null, "grp": "s"}, "sig_oversold": {"name": "売られすぎ反発", "1": {"n": 66, "win": 48.5, "avg": -0.01, "med": -0.07, "excess": 0.23, "best": 11.0, "worst": -8.6}, "5": {"n": 27, "win": 22.2, "avg": -1.94, "med": -2.01, "excess": -0.35, "best": 23.5, "worst": -15.9}, "20": null, "grp": "s"}, "sig_gc": {"name": "GC直後", "1": {"n": 1544, "win": 43.5, "avg": -0.23, "med": -0.21, "excess": 0.01, "best": 19.1, "worst": -21.7}, "5": {"n": 1091, "win": 40.1, "avg": -0.48, "med": -0.85, "excess": 0.32, "best": 56.1, "worst": -34.6}, "20": null, "grp": "g"}, "sig_reclaim": {"name": "200MA回復", "1": {"n": 2003, "win": 43.1, "avg": -0.26, "med": -0.19, "excess": -0.02, "best": 26.5, "worst": -13.8}, "5": {"n": 1372, "win": 37.9, "avg": -0.59, "med": -0.94, "excess": 0.25, "best": 88.1, "worst": -23.2}, "20": null, "grp": "g"}, "sig_trend": {"name": "パーフェクトオーダー", "1": {"n": 2181, "win": 39.8, "avg": -0.43, "med": -0.35, "excess": -0.05, "best": 18.1, "worst": -14.3}, "5": {"n": 1823, "win": 32.4, "avg": -1.11, "med": -1.49, "excess": -0.05, "best": 84.0, "worst": -17.1}, "20": null, "grp": "g"}, "sig_macd": {"name": "MACDゴールデン", "1": {"n": 5700, "win": 46.5, "avg": -0.07, "med": -0.11, "excess": 0.01, "best": 57.8, "worst": -19.6}, "5": {"n": 4570, "win": 32.6, "avg": -1.02, "med": -1.17, "excess": 0.24, "best": 88.1, "worst": -23.4}, "20": null, "grp": "g"}, "sig_value": {"name": "割安", "1": {"n": 1397, "win": 50.5, "avg": 0.07, "med": 0.05, "excess": 0.1, "best": 16.3, "worst": -21.6}, "5": {"n": 919, "win": 37.4, "avg": -0.67, "med": -1.15, "excess": 0.34, "best": 23.3, "worst": -23.1}, "20": null, "grp": "f"}, "sig_div": {"name": "高配当", "1": {"n": 2697, "win": 41.8, "avg": -0.14, "med": -0.17, "excess": -0.05, "best": 12.1, "worst": -7.5}, "5": {"n": 1769, "win": 23.8, "avg": -1.31, "med": -1.32, "excess": -0.18, "best": 10.9, "worst": -15.3}, "20": null, "grp": "f"}, "sig_qual": {"name": "優良", "1": {"n": 3118, "win": 43.4, "avg": -0.16, "med": -0.23, "excess": -0.1, "best": 24.8, "worst": -79.2}, "5": {"n": 2085, "win": 32.3, "avg": -1.45, "med": -1.86, "excess": -0.34, "best": 59.0, "worst": -81.5}, "20": null, "grp": "f"}, "sig_growth": {"name": "高成長", "1": {"n": 2174, "win": 39.7, "avg": -0.47, "med": -0.56, "excess": -0.1, "best": 29.0, "worst": -19.7}, "5": {"n": 1326, "win": 27.0, "avg": -1.85, "med": -2.28, "excess": -0.13, "best": 59.0, "worst": -25.2}, "20": null, "grp": "w"}, "sig_accel": {"name": "利益加速", "1": {"n": 7053, "win": 41.3, "avg": -0.41, "med": -0.31, "excess": -0.03, "best": 24.8, "worst": -18.8}, "5": {"n": 4301, "win": 23.8, "avg": -2.0, "med": -2.17, "excess": -0.28, "best": 59.0, "worst": -23.4}, "20": null, "grp": "w"}, "sig_garp": {"name": "割安成長", "1": {"n": 3607, "win": 42.2, "avg": -0.37, "med": -0.3, "excess": 0.0, "best": 24.8, "worst": -19.1}, "5": {"n": 2185, "win": 25.6, "avg": -1.89, "med": -2.15, "excess": -0.18, "best": 59.0, "worst": -23.4}, "20": null, "grp": "w"}, "grp_short": {"name": "短期(いずれか)", "1": {"n": 6141, "win": 38.9, "avg": -0.42, "med": -0.41, "excess": -0.07, "best": 129.6, "worst": -54.8}, "5": {"n": 4579, "win": 33.3, "avg": -1.09, "med": -1.36, "excess": 0.0, "best": 130.2, "worst": -51.8}, "20": null, "grp": "s"}, "grp_long": {"name": "中長期(いずれか)", "1": {"n": 8776, "win": 44.6, "avg": -0.18, "med": -0.16, "excess": 0.01, "best": 57.8, "worst": -21.7}, "5": {"n": 6680, "win": 35.1, "avg": -0.89, "med": -1.13, "excess": 0.17, "best": 88.1, "worst": -34.6}, "20": null, "grp": "g"}, "grp_fund": {"name": "財務(いずれか)", "1": {"n": 6563, "win": 44.1, "avg": -0.11, "med": -0.16, "excess": -0.04, "best": 24.8, "worst": -79.2}, "5": {"n": 4352, "win": 30.5, "avg": -1.21, "med": -1.42, "excess": -0.11, "best": 59.0, "worst": -81.5}, "20": null, "grp": "f"}, "grp_growth": {"name": "成長(いずれか)", "1": {"n": 9078, "win": 41.3, "avg": -0.41, "med": -0.33, "excess": -0.04, "best": 29.0, "worst": -19.7}, "5": {"n": 5540, "win": 24.7, "avg": -1.98, "med": -2.1, "excess": -0.26, "best": 59.0, "worst": -25.2}, "20": null, "grp": "w"}, "grp_multi": {"name": "シグナル2つ以上", "1": {"n": 11662, "win": 42.3, "avg": -0.28, "med": -0.26, "excess": -0.01, "best": 129.6, "worst": -21.7}, "5": {"n": 7975, "win": 30.4, "avg": -1.28, "med": -1.52, "excess": 0.02, "best": 130.2, "worst": -45.0}, "20": null, "grp": "m"}}, "horizon_days": {"1": 13, "5": 9, "20": 0}, "label": "🇯🇵 日本"}, "kr": {"dates": ["2026-08-18", "2026-08-19", "2026-08-20", "2026-08-28", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11"], "n_days": 14, "signals": {"sig_spike": {"name": "出来高急増", "1": {"n": 1839, "win": 36.9, "avg": -0.57, "med": -0.6, "excess": -0.43, "best": 34.9, "worst": -44.6}, "5": {"n": 1186, "win": 41.3, "avg": -0.46, "med": -0.91, "excess": -1.1, "best": 69.8, "worst": -55.7}, "20": null, "grp": "s"}, "sig_x5": {"name": "5MA突破", "1": {"n": 5035, "win": 39.8, "avg": -0.05, "med": -0.38, "excess": 0.03, "best": 57.9, "worst": -44.8}, "5": {"n": 3305, "win": 38.0, "avg": -0.03, "med": -1.12, "excess": 0.09, "best": 410.6, "worst": -57.5}, "20": null, "grp": "s"}, "sig_x20": {"name": "20MA突破", "1": {"n": 2133, "win": 40.7, "avg": 0.01, "med": -0.35, "excess": 0.03, "best": 30.0, "worst": -25.6}, "5": {"n": 1381, "win": 40.8, "avg": 0.48, "med": -0.85, "excess": 0.59, "best": 389.8, "worst": -37.4}, "20": null, "grp": "s"}, "sig_high": {"name": "高値圏", "1": {"n": 118, "win": 25.4, "avg": -1.91, "med": -0.58, "excess": -1.75, "best": 30.0, "worst": -78.4}, "5": {"n": 92, "win": 31.5, "avg": -5.36, "med": -2.37, "excess": -5.29, "best": 47.7, "worst": -78.3}, "20": null, "grp": "s"}, "sig_gap": {"name": "ギャップアップ", "1": {"n": 1119, "win": 39.4, "avg": -0.53, "med": -1.09, "excess": -0.66, "best": 36.2, "worst": -44.8}, "5": {"n": 804, "win": 37.3, "avg": -0.97, "med": -2.72, "excess": -1.12, "best": 157.7, "worst": -68.6}, "20": null, "grp": "s"}, "sig_oversold": {"name": "売られすぎ反発", "1": {"n": 73, "win": 45.2, "avg": 0.79, "med": 0.0, "excess": 0.7, "best": 75.7, "worst": -29.6}, "5": {"n": 47, "win": 25.5, "avg": -2.08, "med": -2.5, "excess": -1.96, "best": 35.1, "worst": -26.4}, "20": null, "grp": "s"}, "sig_gc": {"name": "GC直後", "1": {"n": 608, "win": 45.1, "avg": 0.06, "med": 0.0, "excess": 0.04, "best": 29.2, "worst": -18.9}, "5": {"n": 415, "win": 47.2, "avg": 0.56, "med": -0.2, "excess": 0.18, "best": 97.6, "worst": -30.6}, "20": null, "grp": "g"}, "sig_reclaim": {"name": "200MA回復", "1": {"n": 1102, "win": 41.6, "avg": -0.25, "med": -0.28, "excess": -0.24, "best": 29.9, "worst": -30.0}, "5": {"n": 767, "win": 41.9, "avg": -0.62, "med": -0.95, "excess": -0.97, "best": 69.8, "worst": -57.5}, "20": null, "grp": "g"}, "sig_trend": {"name": "パーフェクトオーダー", "1": {"n": 731, "win": 42.5, "avg": 0.14, "med": -0.21, "excess": 0.22, "best": 57.3, "worst": -18.9}, "5": {"n": 491, "win": 44.0, "avg": 0.21, "med": -0.59, "excess": 0.12, "best": 97.6, "worst": -23.4}, "20": null, "grp": "g"}, "sig_macd": {"name": "MACDゴールデン", "1": {"n": 4821, "win": 43.9, "avg": 0.12, "med": -0.12, "excess": 0.05, "best": 92.5, "worst": -27.6}, "5": {"n": 3224, "win": 45.9, "avg": 0.39, "med": -0.3, "excess": 0.29, "best": 83.2, "worst": -67.6}, "20": null, "grp": "g"}, "sig_value": {"name": "割安", "1": {"n": 5110, "win": 46.9, "avg": 0.21, "med": 0.0, "excess": 0.04, "best": 75.7, "worst": -30.0}, "5": {"n": 3423, "win": 44.2, "avg": 0.04, "med": -0.42, "excess": -0.1, "best": 64.4, "worst": -57.5}, "20": null, "grp": "f"}, "sig_div": {"name": "高配当", "1": {"n": 3014, "win": 46.1, "avg": 0.18, "med": 0.0, "excess": 0.0, "best": 30.0, "worst": -13.9}, "5": {"n": 2021, "win": 45.2, "avg": 0.18, "med": -0.21, "excess": 0.05, "best": 37.6, "worst": -18.4}, "20": null, "grp": "f"}, "sig_qual": {"name": "優良", "1": {"n": 2566, "win": 45.2, "avg": 0.16, "med": -0.19, "excess": -0.01, "best": 38.8, "worst": -23.8}, "5": {"n": 1722, "win": 42.2, "avg": -0.14, "med": -0.92, "excess": -0.26, "best": 36.8, "worst": -28.1}, "20": null, "grp": "f"}, "sig_growth": {"name": "高成長", "1": {"n": 2807, "win": 42.5, "avg": -0.14, "med": -0.33, "excess": -0.11, "best": 23.3, "worst": -29.9}, "5": {"n": 1689, "win": 45.6, "avg": 0.07, "med": -0.5, "excess": -0.28, "best": 51.1, "worst": -57.5}, "20": null, "grp": "w"}, "sig_accel": {"name": "利益加速", "1": {"n": 4877, "win": 43.0, "avg": -0.05, "med": -0.2, "excess": -0.02, "best": 30.0, "worst": -20.5}, "5": {"n": 2948, "win": 42.0, "avg": 0.2, "med": -0.72, "excess": -0.15, "best": 62.9, "worst": -24.0}, "20": null, "grp": "w"}, "sig_garp": {"name": "割安成長", "1": {"n": 2918, "win": 42.0, "avg": -0.12, "med": -0.23, "excess": -0.09, "best": 23.3, "worst": -16.8}, "5": {"n": 1771, "win": 38.9, "avg": -0.43, "med": -1.05, "excess": -0.79, "best": 51.1, "worst": -25.5}, "20": null, "grp": "w"}, "grp_short": {"name": "短期(いずれか)", "1": {"n": 7301, "win": 39.9, "avg": -0.17, "med": -0.38, "excess": -0.13, "best": 75.7, "worst": -78.4}, "5": {"n": 4815, "win": 39.1, "avg": -0.24, "med": -1.14, "excess": -0.28, "best": 410.6, "worst": -78.3}, "20": null, "grp": "s"}, "grp_long": {"name": "中長期(いずれか)", "1": {"n": 6326, "win": 43.7, "avg": 0.08, "med": -0.14, "excess": 0.03, "best": 92.5, "worst": -30.0}, "5": {"n": 4271, "win": 45.5, "avg": 0.27, "med": -0.38, "excess": 0.09, "best": 97.6, "worst": -67.6}, "20": null, "grp": "g"}, "grp_fund": {"name": "財務(いずれか)", "1": {"n": 8104, "win": 46.0, "avg": 0.18, "med": 0.0, "excess": 0.01, "best": 75.7, "worst": -30.0}, "5": {"n": 5427, "win": 43.5, "avg": 0.0, "med": -0.49, "excess": -0.12, "best": 64.4, "worst": -57.5}, "20": null, "grp": "f"}, "grp_growth": {"name": "成長(いずれか)", "1": {"n": 7555, "win": 42.8, "avg": -0.09, "med": -0.22, "excess": -0.06, "best": 30.0, "worst": -29.9}, "5": {"n": 4554, "win": 42.5, "avg": 0.07, "med": -0.71, "excess": -0.28, "best": 62.9, "worst": -57.5}, "20": null, "grp": "w"}, "grp_multi": {"name": "シグナル2つ以上", "1": {"n": 10939, "win": 43.3, "avg": 0.02, "med": -0.18, "excess": -0.03, "best": 75.7, "worst": -44.8}, "5": {"n": 7025, "win": 42.9, "avg": -0.0, "med": -0.62, "excess": -0.16, "best": 389.8, "worst": -57.5}, "20": null, "grp": "m"}}, "horizon_days": {"1": 13, "5": 9, "20": 0}, "label": "🇰🇷 韓国"}, "us": {"dates": ["2026-08-19", "2026-08-20", "2026-08-21", "2026-08-22", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-29", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12"], "n_days": 18, "signals": {"sig_spike": {"name": "出来高急増", "1": {"n": 2431, "win": 39.9, "avg": 7.32, "med": 0.0, "excess": 6.62, "best": 5598.3, "worst": -89.7}, "5": {"n": 1794, "win": 43.5, "avg": 31.02, "med": -0.1, "excess": 28.97, "best": 8276.7, "worst": -94.0}, "20": null, "grp": "s"}, "sig_x5": {"name": "5MA突破", "1": {"n": 12177, "win": 41.7, "avg": 0.87, "med": -0.31, "excess": 0.37, "best": 5598.3, "worst": -87.0}, "5": {"n": 9997, "win": 36.7, "avg": 1.73, "med": -1.14, "excess": -0.14, "best": 6010.5, "worst": -94.0}, "20": null, "grp": "s"}, "sig_x20": {"name": "20MA突破", "1": {"n": 4324, "win": 41.8, "avg": 1.98, "med": -0.35, "excess": 1.4, "best": 5598.3, "worst": -47.9}, "5": {"n": 3322, "win": 35.9, "avg": 4.57, "med": -1.28, "excess": 2.77, "best": 6010.5, "worst": -82.5}, "20": null, "grp": "s"}, "sig_high": {"name": "高値圏", "1": {"n": 2719, "win": 38.8, "avg": -0.12, "med": 0.0, "excess": -0.72, "best": 355.6, "worst": -87.0}, "5": {"n": 2188, "win": 43.5, "avg": -0.75, "med": -0.06, "excess": -2.72, "best": 308.4, "worst": -90.4}, "20": null, "grp": "s"}, "sig_gap": {"name": "ギャップアップ", "1": {"n": 1667, "win": 38.3, "avg": 3.1, "med": -1.33, "excess": 2.7, "best": 4202.4, "worst": -50.6}, "5": {"n": 1375, "win": 33.3, "avg": 8.97, "med": -3.27, "excess": 7.01, "best": 7352.0, "worst": -91.8}, "20": null, "grp": "s"}, "sig_oversold": {"name": "売られすぎ反発", "1": {"n": 598, "win": 46.2, "avg": 4.3, "med": -0.17, "excess": 3.56, "best": 1926.6, "worst": -37.1}, "5": {"n": 460, "win": 32.4, "avg": 18.49, "med": -1.68, "excess": 16.89, "best": 7352.0, "worst": -60.6}, "20": null, "grp": "s"}, "sig_gc": {"name": "GC直後", "1": {"n": 2780, "win": 42.7, "avg": -0.21, "med": -0.15, "excess": -0.91, "best": 15.2, "worst": -24.9}, "5": {"n": 2098, "win": 38.5, "avg": -0.91, "med": -0.62, "excess": -3.17, "best": 46.8, "worst": -23.7}, "20": null, "grp": "g"}, "sig_reclaim": {"name": "200MA回復", "1": {"n": 4337, "win": 44.0, "avg": -0.14, "med": -0.13, "excess": -0.82, "best": 355.6, "worst": -44.0}, "5": {"n": 3278, "win": 36.1, "avg": -0.56, "med": -0.86, "excess": -2.79, "best": 853.0, "worst": -94.0}, "20": null, "grp": "g"}, "sig_trend": {"name": "パーフェクトオーダー", "1": {"n": 3976, "win": 42.5, "avg": -0.27, "med": -0.16, "excess": -0.86, "best": 16.6, "worst": -24.0}, "5": {"n": 3268, "win": 38.2, "avg": -1.03, "med": -0.89, "excess": -3.11, "best": 29.7, "worst": -31.3}, "20": null, "grp": "g"}, "sig_macd": {"name": "MACDゴールデン", "1": {"n": 12324, "win": 43.0, "avg": -0.19, "med": -0.17, "excess": -0.86, "best": 327.4, "worst": -71.3}, "5": {"n": 9485, "win": 40.0, "avg": -0.4, "med": -0.73, "excess": -2.7, "best": 1559.7, "worst": -74.2}, "20": null, "grp": "g"}, "sig_value": {"name": "割安", "1": {"n": 1085, "win": 46.6, "avg": 16.24, "med": -0.08, "excess": 15.54, "best": 12293.2, "worst": -47.0}, "5": {"n": 820, "win": 43.8, "avg": 66.71, "med": -0.44, "excess": 64.48, "best": 10241.9, "worst": -81.8}, "20": null, "grp": "f"}, "sig_div": {"name": "高配当", "1": {"n": 5793, "win": 45.0, "avg": -0.13, "med": -0.13, "excess": -0.83, "best": 12.2, "worst": -30.3}, "5": {"n": 4410, "win": 38.0, "avg": -0.76, "med": -0.71, "excess": -2.99, "best": 26.0, "worst": -35.5}, "20": null, "grp": "f"}, "sig_qual": {"name": "優良", "1": {"n": 5866, "win": 47.0, "avg": -0.06, "med": -0.11, "excess": -0.76, "best": 50.4, "worst": -52.7}, "5": {"n": 4471, "win": 42.5, "avg": -0.68, "med": -0.77, "excess": -2.92, "best": 45.9, "worst": -57.6}, "20": null, "grp": "f"}, "sig_growth": {"name": "高成長", "1": {"n": 7229, "win": 45.0, "avg": -0.04, "med": -0.24, "excess": -0.73, "best": 1084.6, "worst": -52.7}, "5": {"n": 5175, "win": 40.8, "avg": -0.63, "med": -0.95, "excess": -2.81, "best": 998.6, "worst": -54.8}, "20": null, "grp": "w"}, "sig_accel": {"name": "利益加速", "1": {"n": 13954, "win": 44.6, "avg": -0.17, "med": -0.17, "excess": -0.87, "best": 327.4, "worst": -52.7}, "5": {"n": 9926, "win": 39.1, "avg": -0.96, "med": -0.82, "excess": -3.14, "best": 227.7, "worst": -81.5}, "20": null, "grp": "w"}, "sig_garp": {"name": "割安成長", "1": {"n": 3489, "win": 46.5, "avg": -0.12, "med": -0.13, "excess": -0.82, "best": 16.0, "worst": -30.7}, "5": {"n": 2483, "win": 45.1, "avg": -0.43, "med": -0.41, "excess": -2.61, "best": 20.8, "worst": -52.2}, "20": null, "grp": "w"}, "grp_short": {"name": "短期(いずれか)", "1": {"n": 18168, "win": 41.5, "avg": 0.73, "med": -0.23, "excess": 0.18, "best": 5598.3, "worst": -89.7}, "5": {"n": 14606, "win": 37.5, "avg": 3.59, "med": -1.01, "excess": 1.68, "best": 8276.7, "worst": -94.0}, "20": null, "grp": "s"}, "grp_long": {"name": "中長期(いずれか)", "1": {"n": 18977, "win": 43.5, "avg": -0.19, "med": -0.16, "excess": -0.86, "best": 355.6, "worst": -71.3}, "5": {"n": 14678, "win": 39.1, "avg": -0.53, "med": -0.8, "excess": -2.79, "best": 1559.7, "worst": -94.0}, "20": null, "grp": "g"}, "grp_fund": {"name": "財務(いずれか)", "1": {"n": 11909, "win": 45.8, "avg": 1.38, "med": -0.13, "excess": 0.68, "best": 12293.2, "worst": -52.7}, "5": {"n": 9070, "win": 40.0, "avg": 5.31, "med": -0.76, "excess": 3.07, "best": 10241.9, "worst": -81.8}, "20": null, "grp": "f"}, "grp_growth": {"name": "成長(いずれか)", "1": {"n": 20090, "win": 44.5, "avg": -0.14, "med": -0.2, "excess": -0.83, "best": 1084.6, "worst": -52.7}, "5": {"n": 14319, "win": 39.2, "avg": -0.87, "med": -0.88, "excess": -3.05, "best": 998.6, "worst": -81.5}, "20": null, "grp": "w"}, "grp_multi": {"name": "シグナル2つ以上", "1": {"n": 23877, "win": 43.1, "avg": 0.52, "med": -0.18, "excess": -0.1, "best": 5598.3, "worst": -87.0}, "5": {"n": 18285, "win": 38.7, "avg": 1.3, "med": -0.85, "excess": -0.8, "best": 7352.0, "worst": -94.0}, "20": null, "grp": "m"}}, "horizon_days": {"1": 17, "5": 13, "20": 0}, "label": "🇺🇸 米国"}};
+const T={"title": "シグナル <span>パフォーマンス分析<\/span>", "page_title": "シグナル・パフォーマンス分析", "back": "← スクリーナーへ", "gen": "生成", "lead": "シグナルが点灯した銘柄がその後どう動いたか（売買代金の下限を適用・市場平均との比較）", "days": "日", "obs": "回 観測", "h1": "+1日", "h5": "+5日", "h20": "+20日", "col_sig": "シグナル", "col_n": "サンプル", "col_win": "勝率", "col_avg": "平均リターン", "col_med": "中央値", "col_exc": "市場比", "col_minmax": "最高/最低", "acc_title": "データ蓄積中です（現在 {n}日）", "acc_body": "営業日ごとの引け後実行でスナップショットが自動的に蓄積されます。<br>・2日目 → <b>+1日リターン<\/b>の初集計 ・6日目 → +5日 ・21日目 → +20日<br>1〜2ヶ月後には「どのシグナルが実際に機能したか」を数百〜数千件のサンプルで評価できます。", "none": "この期間（+{h}日）はまだ観測値がありません — スナップショットが{need}日分必要です。", "howto": "見方: <b>市場比<\/b>がプラスなら、そのシグナルが市場平均を上回ったという意味です。サンプルが少ない場合（数十件以下）は偶然の可能性があるため、サンプル数も併せて確認してください。", "foot": "勝率 = リターン &gt; 0 の比率 ・ 市場比 = 同期間のユニバース平均リターンを差し引いた超過リターン ・ サンプル =（シグナル点灯銘柄 × 観測日）の累計 ・ スナップショットは各営業日の引け後に自動蓄積 ・ 過去の成績は将来の収益を保証するものではなく、参考資料です。", "markets": {"jp": "🇯🇵 日本", "kr": "🇰🇷 韓国", "us": "🇺🇸 米国"}, "other_lang": "한국어"};
+const H=[["1",T.h1],["5",T.h5],["20",T.h20]];
+let mkt=Object.keys(R)[0], hz="1";
+const $=s=>document.querySelector(s);
+const pc=v=>v==null?'—':`<span class="${v>0?'up':v<0?'dn':'fl'}">${v>0?'+':''}${v.toFixed(2)}%</span>`;
+function tabs(){
+  $('#mt').innerHTML=Object.keys(R).map(m=>`<div class="tab ${m===mkt?'on':''}" data-m="${m}">${R[m].label} <span style="color:var(--faint);font-size:11px">${R[m].n_days}${T.days}</span></div>`).join('');
+  $('#ht').innerHTML=H.map(([k,l])=>{
+    const d=R[mkt].horizon_days[k]||0;
+    return `<div class="tab ${k===hz?'on':''}" data-h="${k}">${l} <span style="color:var(--faint);font-size:11px">${d}${T.obs}</span></div>`}).join('');
+}
+function render(){
+  tabs();
+  const M=R[mkt];
+  if(M.n_days<2){
+    $('#body').innerHTML=`<div class="note"><b>${T.acc_title.replace('{n}',M.n_days)}</b><br>${T.acc_body}</div>`;
+    return;
+  }
+  const rows=Object.entries(M.signals).map(([k,v])=>({k,name:v.name,grp:v.grp,st:v[hz]}))
+    .filter(r=>r.st).sort((a,b)=>b.st.excess-a.st.excess);
+  if(!rows.length){
+    $('#body').innerHTML=`<div class="note">${T.none.replace('{h}',hz).replace('{need}',(+hz)+1)}</div>`;
+    return;
+  }
+  $('#body').innerHTML=`<table><thead><tr>
+  <th class="l">${T.col_sig}</th><th>${T.col_n}</th><th class="l">${T.col_win}</th><th>${T.col_avg}</th>
+  <th class="hide-m">${T.col_med}</th><th>${T.col_exc}</th><th class="hide-m">${T.col_minmax}</th></tr></thead><tbody>`+
+  rows.map(r=>`<tr><td class="l"><span class="b ${r.grp}">${r.name}</span></td>
+  <td class="num">${r.st.n.toLocaleString()}</td>
+  <td class="l num"><span class="wb" style="width:${Math.max(4,r.st.win)*0.9}px"></span>${r.st.win.toFixed(1)}%</td>
+  <td class="num">${pc(r.st.avg)}</td>
+  <td class="num hide-m">${pc(r.st.med)}</td>
+  <td class="num">${pc(r.st.excess)}</td>
+  <td class="num hide-m fl">+${r.st.best}% / ${r.st.worst}%</td></tr>`).join('')+`</tbody></table>
+  <div class="note" style="margin-top:10px">${T.howto}</div>`;
+}
+$('#mt').addEventListener('click',e=>{const t=e.target.closest('.tab');if(t){mkt=t.dataset.m;render()}});
+$('#ht').addEventListener('click',e=>{const t=e.target.closest('.tab');if(t){hz=t.dataset.h;render()}});
+render();
+</script>
+<script>
+(function () {
+  var el = document.getElementById('btcNav');
+  if (!el) return;
+  var prev = null, ws = null, poll = null, tries = 0;
+
+  function show(px) {
+    if (!isFinite(px) || px <= 0) return;
+    el.textContent = '$' + Math.round(px).toLocaleString('en-US');
+    if (prev != null && px !== prev) el.className = px > prev ? 'up' : 'down';
+    prev = px;
+  }
+  function startPoll() {
+    if (poll) return;
+    poll = setInterval(function () {
+      fetch('https://www.okx.com/api/v5/market/ticker?instId=BTC-USDT-SWAP')
+        .then(function (r) { return r.json(); })
+        .then(function (j) { var d = j.data && j.data[0]; if (d) show(parseFloat(d.last)); })
+        .catch(function () {});
+    }, 10000);
+  }
+  function connect() {
+    try { ws = new WebSocket('wss://ws.okx.com:8443/ws/v5/public'); }
+    catch (e) { startPoll(); return; }
+    ws.onopen = function () {
+      tries = 0;
+      ws.send(JSON.stringify({ op: 'subscribe', args: [{ channel: 'tickers', instId: 'BTC-USDT-SWAP' }] }));
+    };
+    ws.onmessage = function (e) {
+      try {
+        var m = JSON.parse(e.data);
+        if (m.data && m.data[0] && m.data[0].last) show(parseFloat(m.data[0].last));
+      } catch (_) {}
+    };
+    ws.onerror = function () { try { ws.close(); } catch (_) {} };
+    ws.onclose = function () {
+      ws = null;
+      if (poll) return;
+      tries++;
+      if (tries <= 3) setTimeout(connect, 2000 * tries); else startPoll();
+    };
+  }
+  fetch('https://ocw-1027.github.io/BTC-DESK/btc.json', { cache: 'no-store' })
+    .then(function (r) { return r.json(); })
+    .then(function (j) { show(j.price); })
+    .catch(function () {});
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+      if (ws) { try { ws.close(); } catch (_) {} ws = null; }
+      if (poll) { clearInterval(poll); poll = null; }
+    } else if (!ws && !poll) { tries = 0; connect(); }
+  });
+  connect();
+})();
+</script>
+
+</body></html>
