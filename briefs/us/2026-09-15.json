@@ -1,0 +1,2564 @@
+{
+ "date": "2026-09-15",
+ "market": "us",
+ "generated": "2026-09-15 06:35 JST",
+ "label_ko": "🇺🇸 미국",
+ "label_ja": "🇺🇸 米国",
+ "unit_ko": "$M",
+ "unit_ja": "$M",
+ "llm_mode": "off",
+ "baserate_days": 19,
+ "universe": {
+  "total": 5195,
+  "liquid": 2259,
+  "candidates": 16,
+  "short": 8,
+  "long": 8,
+  "news": 0
+ },
+ "picks": [
+  {
+   "code": "KRT",
+   "name": "Karat Packaging Inc.",
+   "ticker": "NASDAQ:KRT",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_qual",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 1915,
+      "win": 42.8,
+      "avg": 29.43,
+      "med": -0.1,
+      "excess": 27.56,
+      "best": 8276.7,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 2565,
+      "win": 39.9,
+      "avg": 9.55,
+      "med": 0.0,
+      "excess": 8.76,
+      "best": 5598.3,
+      "worst": -89.7
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 10970,
+      "win": 35.2,
+      "avg": 1.35,
+      "med": -1.32,
+      "excess": -0.26,
+      "best": 6010.5,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 12949,
+      "win": 41.8,
+      "avg": 1.1,
+      "med": -0.3,
+      "excess": 0.48,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 3721,
+      "win": 34.2,
+      "avg": 4.09,
+      "med": -1.41,
+      "excess": 2.58,
+      "best": 6010.5,
+      "worst": -82.5
+     },
+     "1": {
+      "n": 4611,
+      "win": 42.1,
+      "avg": 2.7,
+      "med": -0.33,
+      "excess": 2.0,
+      "best": 5598.3,
+      "worst": -47.9
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 4816,
+      "win": 41.5,
+      "avg": -0.79,
+      "med": -0.88,
+      "excess": -2.81,
+      "best": 51.0,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 6216,
+      "win": 46.8,
+      "avg": -0.1,
+      "med": -0.12,
+      "excess": -0.9,
+      "best": 50.4,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 10920,
+      "win": 38.0,
+      "avg": -1.07,
+      "med": -0.92,
+      "excess": -2.96,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 14959,
+      "win": 45.0,
+      "avg": 0.09,
+      "med": -0.17,
+      "excess": -0.73,
+      "best": 4111.2,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Process Industries",
+   "industry": "Containers/Packaging",
+   "segment": "NASDAQ",
+   "close": 49.16,
+   "chg": 4.73,
+   "gap": 0.04,
+   "sma5": 47.62,
+   "sma20": 48.08,
+   "sma200": 30.61,
+   "ext200": 60.61,
+   "rsi": 63.9,
+   "macd_h": -0.44,
+   "rvol": 3.61,
+   "pw": 5.61,
+   "p1": 2.87,
+   "p3": 63.87,
+   "ytd": 117.6,
+   "pos52": 95.0,
+   "hi52": 50.81,
+   "lo52": 20.61,
+   "val": 17.6,
+   "mcap": 980.0,
+   "per": 19.7,
+   "pbr": 5.88,
+   "eps": 2.51,
+   "roe": 31.2,
+   "eqr": 59.4,
+   "div": 3.88,
+   "rev_q": 9.9,
+   "rev_ttm": 11.6,
+   "cagr5": 9.6,
+   "eps_q": 169.4,
+   "opm": 12.8,
+   "roic": 22.0,
+   "psr": 2.12,
+   "peg": 0.33,
+   "de": 0.44,
+   "inflow": null,
+   "biz": "Karat Packaging Inc., together with its subsidiaries, engages in the manufacture and distribution of single-use disposable products in plastic, paper, biopolymer-based, and other compostable forms used in various restaur",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "ROKU",
+   "name": "Roku, Inc.",
+   "ticker": "NASDAQ:ROKU",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_high",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 10970,
+      "win": 35.2,
+      "avg": 1.35,
+      "med": -1.32,
+      "excess": -0.26,
+      "best": 6010.5,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 12949,
+      "win": 41.8,
+      "avg": 1.1,
+      "med": -0.3,
+      "excess": 0.48,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 3721,
+      "win": 34.2,
+      "avg": 4.09,
+      "med": -1.41,
+      "excess": 2.58,
+      "best": 6010.5,
+      "worst": -82.5
+     },
+     "1": {
+      "n": 4611,
+      "win": 42.1,
+      "avg": 2.7,
+      "med": -0.33,
+      "excess": 2.0,
+      "best": 5598.3,
+      "worst": -47.9
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 2360,
+      "win": 43.1,
+      "avg": -0.77,
+      "med": -0.07,
+      "excess": -2.53,
+      "best": 308.4,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 2853,
+      "win": 38.8,
+      "avg": -0.12,
+      "med": 0.0,
+      "excess": -0.8,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 5683,
+      "win": 39.7,
+      "avg": -0.78,
+      "med": -1.08,
+      "excess": -2.68,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 7746,
+      "win": 44.8,
+      "avg": 0.24,
+      "med": -0.24,
+      "excess": -0.58,
+      "best": 2463.4,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 10920,
+      "win": 38.0,
+      "avg": -1.07,
+      "med": -0.92,
+      "excess": -2.96,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 14959,
+      "win": 45.0,
+      "avg": 0.09,
+      "med": -0.17,
+      "excess": -0.73,
+      "best": 4111.2,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Packaged Software",
+   "segment": "NASDAQ",
+   "close": 157.45,
+   "chg": 1.63,
+   "gap": 0.25,
+   "sma5": 154.95,
+   "sma20": 156.84,
+   "sma200": 119.54,
+   "ext200": 31.72,
+   "rsi": 58.9,
+   "macd_h": -0.73,
+   "rvol": 0.63,
+   "pw": -0.18,
+   "p1": 1.27,
+   "p3": 13.89,
+   "ytd": 44.2,
+   "pos52": 97.0,
+   "hi52": 159.89,
+   "lo52": 78.53,
+   "val": 248.8,
+   "mcap": 23383.0,
+   "per": 67.3,
+   "pbr": 8.28,
+   "eps": 2.4,
+   "roe": 13.1,
+   "eqr": 61.2,
+   "div": 0.0,
+   "rev_q": 21.9,
+   "rev_ttm": 18.5,
+   "cagr5": 21.6,
+   "eps_q": 1440.0,
+   "opm": 5.2,
+   "roic": 11.3,
+   "psr": 5.02,
+   "peg": null,
+   "de": 0.17,
+   "inflow": null,
+   "biz": "Roku, Inc., together with its subsidiaries, operates a TV streaming platform in the United States and internationally. The company operates in two segments, Platform and Devices. Its streaming platform allows users to fi",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "BWIN",
+   "name": "The Baldwin Insurance Group, Inc.",
+   "ticker": "NASDAQ:BWIN",
+   "bucket": "short",
+   "score": 4.0,
+   "signals": [
+    "sig_spike",
+    "sig_high",
+    "sig_gap",
+    "sig_growth"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 1915,
+      "win": 42.8,
+      "avg": 29.43,
+      "med": -0.1,
+      "excess": 27.56,
+      "best": 8276.7,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 2565,
+      "win": 39.9,
+      "avg": 9.55,
+      "med": 0.0,
+      "excess": 8.76,
+      "best": 5598.3,
+      "worst": -89.7
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 2360,
+      "win": 43.1,
+      "avg": -0.77,
+      "med": -0.07,
+      "excess": -2.53,
+      "best": 308.4,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 2853,
+      "win": 38.8,
+      "avg": -0.12,
+      "med": 0.0,
+      "excess": -0.8,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 1429,
+      "win": 32.9,
+      "avg": 8.38,
+      "med": -3.4,
+      "excess": 6.53,
+      "best": 7352.0,
+      "worst": -91.8
+     },
+     "1": {
+      "n": 1760,
+      "win": 38.6,
+      "avg": 3.0,
+      "med": -1.32,
+      "excess": 2.48,
+      "best": 4202.4,
+      "worst": -50.6
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 5683,
+      "win": 39.7,
+      "avg": -0.78,
+      "med": -1.08,
+      "excess": -2.68,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 7746,
+      "win": 44.8,
+      "avg": 0.24,
+      "med": -0.24,
+      "excess": -0.58,
+      "best": 2463.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Insurance Brokers/Services",
+   "segment": "NASDAQ",
+   "close": 32.0,
+   "chg": 7.93,
+   "gap": 7.39,
+   "sma5": 29.8,
+   "sma20": 30.61,
+   "sma200": 23.91,
+   "ext200": 33.83,
+   "rsi": 60.1,
+   "macd_h": -0.17,
+   "rvol": 22.8,
+   "pw": 3.19,
+   "p1": 4.13,
+   "p3": 76.02,
+   "ytd": 33.2,
+   "pos52": 96.0,
+   "hi52": 32.59,
+   "lo52": 15.88,
+   "val": 725.0,
+   "mcap": 4464.0,
+   "per": null,
+   "pbr": 3.49,
+   "eps": -1.04,
+   "roe": -10.7,
+   "eqr": 55.0,
+   "div": 0.0,
+   "rev_q": 30.1,
+   "rev_ttm": 18.9,
+   "cagr5": 44.3,
+   "eps_q": -804.1,
+   "opm": -2.6,
+   "roic": -2.8,
+   "psr": 1.44,
+   "peg": -0.11,
+   "de": 2.9,
+   "inflow": null,
+   "biz": "The Baldwin Insurance Group, Inc. operates as an independent insurance distribution firm that delivers insurance and risk management solutions in the United States. The company operates through three segments: Insurance ",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "OKTA",
+   "name": "Okta, Inc.",
+   "ticker": "NASDAQ:OKTA",
+   "bucket": "short",
+   "score": 4.0,
+   "signals": [
+    "sig_x5",
+    "sig_high",
+    "sig_gap",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 10970,
+      "win": 35.2,
+      "avg": 1.35,
+      "med": -1.32,
+      "excess": -0.26,
+      "best": 6010.5,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 12949,
+      "win": 41.8,
+      "avg": 1.1,
+      "med": -0.3,
+      "excess": 0.48,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 2360,
+      "win": 43.1,
+      "avg": -0.77,
+      "med": -0.07,
+      "excess": -2.53,
+      "best": 308.4,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 2853,
+      "win": 38.8,
+      "avg": -0.12,
+      "med": 0.0,
+      "excess": -0.8,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 1429,
+      "win": 32.9,
+      "avg": 8.38,
+      "med": -3.4,
+      "excess": 6.53,
+      "best": 7352.0,
+      "worst": -91.8
+     },
+     "1": {
+      "n": 1760,
+      "win": 38.6,
+      "avg": 3.0,
+      "med": -1.32,
+      "excess": 2.48,
+      "best": 4202.4,
+      "worst": -50.6
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 10920,
+      "win": 38.0,
+      "avg": -1.07,
+      "med": -0.92,
+      "excess": -2.96,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 14959,
+      "win": 45.0,
+      "avg": 0.09,
+      "med": -0.17,
+      "excess": -0.73,
+      "best": 4111.2,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Packaged Software",
+   "segment": "NASDAQ",
+   "close": 186.45,
+   "chg": 11.98,
+   "gap": 3.78,
+   "sma5": 172.88,
+   "sma20": 157.04,
+   "sma200": 104.19,
+   "ext200": 78.96,
+   "rsi": 67.8,
+   "macd_h": 1.83,
+   "rvol": 1.83,
+   "pw": 10.73,
+   "p1": 19.38,
+   "p3": 59.37,
+   "ytd": 113.9,
+   "pos52": 97.0,
+   "hi52": 189.72,
+   "lo52": 62.66,
+   "val": 1230.8,
+   "mcap": 32595.0,
+   "per": 112.6,
+   "pbr": 4.67,
+   "eps": 1.68,
+   "roe": 4.3,
+   "eqr": 70.3,
+   "div": 0.0,
+   "rev_q": 10.6,
+   "rev_ttm": 11.2,
+   "cagr5": 28.4,
+   "eps_q": 75.2,
+   "opm": 7.7,
+   "roic": 4.3,
+   "psr": 11.45,
+   "peg": 1.06,
+   "de": 0.01,
+   "inflow": null,
+   "biz": "Okta, Inc. operates as an identity partner in the United States and internationally. It offers Single Sign-on to secure access to cloud and on-premises applications from any device; Adaptive MFA for a risk-based layer of",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "PANW",
+   "name": "Palo Alto Networks, Inc.",
+   "ticker": "NASDAQ:PANW",
+   "bucket": "short",
+   "score": 4.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_gap",
+    "sig_growth"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 10970,
+      "win": 35.2,
+      "avg": 1.35,
+      "med": -1.32,
+      "excess": -0.26,
+      "best": 6010.5,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 12949,
+      "win": 41.8,
+      "avg": 1.1,
+      "med": -0.3,
+      "excess": 0.48,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 3721,
+      "win": 34.2,
+      "avg": 4.09,
+      "med": -1.41,
+      "excess": 2.58,
+      "best": 6010.5,
+      "worst": -82.5
+     },
+     "1": {
+      "n": 4611,
+      "win": 42.1,
+      "avg": 2.7,
+      "med": -0.33,
+      "excess": 2.0,
+      "best": 5598.3,
+      "worst": -47.9
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 1429,
+      "win": 32.9,
+      "avg": 8.38,
+      "med": -3.4,
+      "excess": 6.53,
+      "best": 7352.0,
+      "worst": -91.8
+     },
+     "1": {
+      "n": 1760,
+      "win": 38.6,
+      "avg": 3.0,
+      "med": -1.32,
+      "excess": 2.48,
+      "best": 4202.4,
+      "worst": -50.6
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 5683,
+      "win": 39.7,
+      "avg": -0.78,
+      "med": -1.08,
+      "excess": -2.68,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 7746,
+      "win": 44.8,
+      "avg": 0.24,
+      "med": -0.24,
+      "excess": -0.58,
+      "best": 2463.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Packaged Software",
+   "segment": "NASDAQ",
+   "close": 373.94,
+   "chg": 13.09,
+   "gap": 4.79,
+   "sma5": 343.03,
+   "sma20": 352.74,
+   "sma200": 236.88,
+   "ext200": 57.86,
+   "rsi": 57.7,
+   "macd_h": -1.1,
+   "rvol": 1.7,
+   "pw": 13.43,
+   "p1": -5.75,
+   "p3": 32.04,
+   "ytd": 102.3,
+   "pos52": 90.0,
+   "hi52": 398.88,
+   "lo52": 139.57,
+   "val": 4432.0,
+   "mcap": 305883.0,
+   "per": 729.6,
+   "pbr": 11.09,
+   "eps": 0.54,
+   "roe": 1.7,
+   "eqr": 56.7,
+   "div": 0.0,
+   "rev_q": 34.4,
+   "rev_ttm": 24.5,
+   "cagr5": 22.0,
+   "eps_q": -196.4,
+   "opm": 5.4,
+   "roic": 1.6,
+   "psr": 24.89,
+   "peg": null,
+   "de": 0.09,
+   "inflow": null,
+   "biz": "Palo Alto Networks, Inc. provides cybersecurity solutions in the Americas, Europe, the Middle East, Africa, the Asia Pacific, and Japan. It offers Prisma Access, a secure access service edge solution; Strata Cloud Manage",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "CON",
+   "name": "Concentra Group Holdings Parent, Inc.",
+   "ticker": "NYSE:CON",
+   "bucket": "short",
+   "score": 4.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_high",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 10970,
+      "win": 35.2,
+      "avg": 1.35,
+      "med": -1.32,
+      "excess": -0.26,
+      "best": 6010.5,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 12949,
+      "win": 41.8,
+      "avg": 1.1,
+      "med": -0.3,
+      "excess": 0.48,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 3721,
+      "win": 34.2,
+      "avg": 4.09,
+      "med": -1.41,
+      "excess": 2.58,
+      "best": 6010.5,
+      "worst": -82.5
+     },
+     "1": {
+      "n": 4611,
+      "win": 42.1,
+      "avg": 2.7,
+      "med": -0.33,
+      "excess": 2.0,
+      "best": 5598.3,
+      "worst": -47.9
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 2360,
+      "win": 43.1,
+      "avg": -0.77,
+      "med": -0.07,
+      "excess": -2.53,
+      "best": 308.4,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 2853,
+      "win": 38.8,
+      "avg": -0.12,
+      "med": 0.0,
+      "excess": -0.8,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 10920,
+      "win": 38.0,
+      "avg": -1.07,
+      "med": -0.92,
+      "excess": -2.96,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 14959,
+      "win": 45.0,
+      "avg": 0.09,
+      "med": -0.17,
+      "excess": -0.73,
+      "best": 4111.2,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Health Services",
+   "industry": "Medical/Nursing Services",
+   "segment": "NYSE",
+   "close": 35.81,
+   "chg": 2.46,
+   "gap": -1.12,
+   "sma5": 34.61,
+   "sma20": 34.63,
+   "sma200": 25.56,
+   "ext200": 40.08,
+   "rsi": 66.6,
+   "macd_h": -0.04,
+   "rvol": 1.69,
+   "pw": 4.59,
+   "p1": 2.58,
+   "p3": 26.45,
+   "ytd": 82.9,
+   "pos52": 99.0,
+   "hi52": 36.05,
+   "lo52": 18.55,
+   "val": 38.9,
+   "mcap": 4566.0,
+   "per": 23.5,
+   "pbr": 9.57,
+   "eps": 1.54,
+   "roe": 47.9,
+   "eqr": 13.0,
+   "div": 0.72,
+   "rev_q": 10.0,
+   "rev_ttm": 14.0,
+   "cagr5": null,
+   "eps_q": 45.6,
+   "opm": 16.7,
+   "roic": 7.9,
+   "psr": 2.12,
+   "peg": 0.76,
+   "de": 4.49,
+   "inflow": null,
+   "biz": "Concentra Group Holdings Parent, Inc. provides occupational health services in the United States. The company operates in three segments: Occupational Health centers, Onsite health clinics, and Other business. It offers ",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "RBRK",
+   "name": "Rubrik, Inc.",
+   "ticker": "NYSE:RBRK",
+   "bucket": "short",
+   "score": 4.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_gap",
+    "sig_growth"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 10970,
+      "win": 35.2,
+      "avg": 1.35,
+      "med": -1.32,
+      "excess": -0.26,
+      "best": 6010.5,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 12949,
+      "win": 41.8,
+      "avg": 1.1,
+      "med": -0.3,
+      "excess": 0.48,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 3721,
+      "win": 34.2,
+      "avg": 4.09,
+      "med": -1.41,
+      "excess": 2.58,
+      "best": 6010.5,
+      "worst": -82.5
+     },
+     "1": {
+      "n": 4611,
+      "win": 42.1,
+      "avg": 2.7,
+      "med": -0.33,
+      "excess": 2.0,
+      "best": 5598.3,
+      "worst": -47.9
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 1429,
+      "win": 32.9,
+      "avg": 8.38,
+      "med": -3.4,
+      "excess": 6.53,
+      "best": 7352.0,
+      "worst": -91.8
+     },
+     "1": {
+      "n": 1760,
+      "win": 38.6,
+      "avg": 3.0,
+      "med": -1.32,
+      "excess": 2.48,
+      "best": 4202.4,
+      "worst": -50.6
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 5683,
+      "win": 39.7,
+      "avg": -0.78,
+      "med": -1.08,
+      "excess": -2.68,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 7746,
+      "win": 44.8,
+      "avg": 0.24,
+      "med": -0.24,
+      "excess": -0.58,
+      "best": 2463.4,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Information Technology Services",
+   "segment": "NYSE",
+   "close": 100.2,
+   "chg": 15.64,
+   "gap": 4.04,
+   "sma5": 91.24,
+   "sma20": 94.82,
+   "sma200": 69.5,
+   "ext200": 44.18,
+   "rsi": 58.5,
+   "macd_h": -0.72,
+   "rvol": 1.42,
+   "pw": 8.75,
+   "p1": -5.37,
+   "p3": 44.17,
+   "ytd": 29.0,
+   "pos52": 88.0,
+   "hi52": 107.91,
+   "lo52": 42.25,
+   "val": 544.4,
+   "mcap": 20772.0,
+   "per": null,
+   "pbr": null,
+   "eps": -1.26,
+   "roe": null,
+   "eqr": -15.5,
+   "div": 0.0,
+   "rev_q": 37.9,
+   "rev_ttm": 42.4,
+   "cagr5": 27.7,
+   "eps_q": 39.1,
+   "opm": -18.3,
+   "roic": -41.6,
+   "psr": 14.96,
+   "peg": null,
+   "de": null,
+   "inflow": null,
+   "biz": "Rubrik, Inc. provides data security solutions to individuals and businesses worldwide. The company offers enterprise data protection, unstructured data protection, cloud data protection, SaaS data protection solutions, a",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "DSGR",
+   "name": "Distribution Solutions Group, Inc.",
+   "ticker": "NASDAQ:DSGR",
+   "bucket": "short",
+   "score": 4.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_high",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 10970,
+      "win": 35.2,
+      "avg": 1.35,
+      "med": -1.32,
+      "excess": -0.26,
+      "best": 6010.5,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 12949,
+      "win": 41.8,
+      "avg": 1.1,
+      "med": -0.3,
+      "excess": 0.48,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 3721,
+      "win": 34.2,
+      "avg": 4.09,
+      "med": -1.41,
+      "excess": 2.58,
+      "best": 6010.5,
+      "worst": -82.5
+     },
+     "1": {
+      "n": 4611,
+      "win": 42.1,
+      "avg": 2.7,
+      "med": -0.33,
+      "excess": 2.0,
+      "best": 5598.3,
+      "worst": -47.9
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 2360,
+      "win": 43.1,
+      "avg": -0.77,
+      "med": -0.07,
+      "excess": -2.53,
+      "best": 308.4,
+      "worst": -90.4
+     },
+     "1": {
+      "n": 2853,
+      "win": 38.8,
+      "avg": -0.12,
+      "med": 0.0,
+      "excess": -0.8,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 10920,
+      "win": 38.0,
+      "avg": -1.07,
+      "med": -0.92,
+      "excess": -2.96,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 14959,
+      "win": 45.0,
+      "avg": 0.09,
+      "med": -0.17,
+      "excess": -0.73,
+      "best": 4111.2,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Distribution Services",
+   "industry": "Wholesale Distributors",
+   "segment": "NASDAQ",
+   "close": 34.79,
+   "chg": 0.12,
+   "gap": 0.09,
+   "sma5": 34.76,
+   "sma20": 34.76,
+   "sma200": 29.17,
+   "ext200": 19.25,
+   "rsi": 69.1,
+   "macd_h": -0.12,
+   "rvol": 1.31,
+   "pw": 0.17,
+   "p1": -0.23,
+   "p3": 24.29,
+   "ytd": 26.8,
+   "pos52": 98.0,
+   "hi52": 35.05,
+   "lo52": 19.02,
+   "val": 10.3,
+   "mcap": 1609.0,
+   "per": 182.9,
+   "pbr": 2.46,
+   "eps": 0.19,
+   "roe": 1.4,
+   "eqr": 39.5,
+   "div": 0.0,
+   "rev_q": 11.0,
+   "rev_ttm": 6.4,
+   "cagr5": 41.3,
+   "eps_q": 70.3,
+   "opm": 4.2,
+   "roic": 0.6,
+   "psr": 0.83,
+   "peg": 1.44,
+   "de": 1.29,
+   "inflow": null,
+   "biz": "Distribution Solutions Group, Inc., a specialty distribution company, provides value-added distribution solutions to the maintenance, repair and operations (MRO), original equipment manufacturer, and industrial technolog",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "LNC",
+   "name": "Lincoln National Corporation",
+   "ticker": "NYSE:LNC",
+   "bucket": "long",
+   "score": 7.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_trend",
+    "sig_value",
+    "sig_div",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 10970,
+      "win": 35.2,
+      "avg": 1.35,
+      "med": -1.32,
+      "excess": -0.26,
+      "best": 6010.5,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 12949,
+      "win": 41.8,
+      "avg": 1.1,
+      "med": -0.3,
+      "excess": 0.48,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 3721,
+      "win": 34.2,
+      "avg": 4.09,
+      "med": -1.41,
+      "excess": 2.58,
+      "best": 6010.5,
+      "worst": -82.5
+     },
+     "1": {
+      "n": 4611,
+      "win": 42.1,
+      "avg": 2.7,
+      "med": -0.33,
+      "excess": 2.0,
+      "best": 5598.3,
+      "worst": -47.9
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 3514,
+      "win": 37.2,
+      "avg": -1.13,
+      "med": -0.95,
+      "excess": -2.99,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 4176,
+      "win": 42.5,
+      "avg": -0.31,
+      "med": -0.15,
+      "excess": -0.99,
+      "best": 16.6,
+      "worst": -24.0
+     }
+    },
+    "sig_value": {
+     "5": {
+      "n": 881,
+      "win": 41.9,
+      "avg": 61.9,
+      "med": -0.61,
+      "excess": 59.88,
+      "best": 10241.9,
+      "worst": -81.8
+     },
+     "1": {
+      "n": 1154,
+      "win": 45.7,
+      "avg": 15.22,
+      "med": -0.1,
+      "excess": 14.4,
+      "best": 12293.2,
+      "worst": -47.0
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 4744,
+      "win": 36.7,
+      "avg": -0.89,
+      "med": -0.8,
+      "excess": -2.89,
+      "best": 26.0,
+      "worst": -35.5
+     },
+     "1": {
+      "n": 6153,
+      "win": 45.3,
+      "avg": -0.12,
+      "med": -0.12,
+      "excess": -0.93,
+      "best": 12.2,
+      "worst": -30.3
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 10920,
+      "win": 38.0,
+      "avg": -1.07,
+      "med": -0.92,
+      "excess": -2.96,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 14959,
+      "win": 45.0,
+      "avg": 0.09,
+      "med": -0.17,
+      "excess": -0.73,
+      "best": 4111.2,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 2727,
+      "win": 43.7,
+      "avg": -0.6,
+      "med": -0.59,
+      "excess": -2.5,
+      "best": 20.8,
+      "worst": -52.2
+     },
+     "1": {
+      "n": 3743,
+      "win": 46.0,
+      "avg": -0.16,
+      "med": -0.15,
+      "excess": -0.99,
+      "best": 16.0,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Multi-Line Insurance",
+   "segment": "NYSE",
+   "close": 44.04,
+   "chg": 0.46,
+   "gap": -0.43,
+   "sma5": 43.66,
+   "sma20": 43.57,
+   "sma200": 39.52,
+   "ext200": 11.43,
+   "rsi": 52.7,
+   "macd_h": -0.06,
+   "rvol": 1.5,
+   "pw": -2.72,
+   "p1": -2.95,
+   "p3": 15.89,
+   "ytd": -1.1,
+   "pos52": 77.0,
+   "hi52": 47.66,
+   "lo52": 32.18,
+   "val": 114.0,
+   "mcap": 8431.0,
+   "per": 3.8,
+   "pbr": 0.81,
+   "eps": 11.83,
+   "roe": 22.6,
+   "eqr": 4.8,
+   "div": 4.11,
+   "rev_q": 19.4,
+   "rev_ttm": 12.3,
+   "cagr5": 1.6,
+   "eps_q": 76.5,
+   "opm": 15.3,
+   "roic": 14.2,
+   "psr": 0.44,
+   "peg": 0.04,
+   "de": 0.6,
+   "inflow": null,
+   "biz": "Lincoln National Corporation, through its subsidiaries, operates multiple insurance and retirement businesses in the United States. It operates through four segments: Life Insurance, Annuities, Group Protection, and Reti",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "GRNT",
+   "name": "Granite Ridge Resources, Inc.",
+   "ticker": "NYSE:GRNT",
+   "bucket": "long",
+   "score": 7.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_trend",
+    "sig_div",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 10970,
+      "win": 35.2,
+      "avg": 1.35,
+      "med": -1.32,
+      "excess": -0.26,
+      "best": 6010.5,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 12949,
+      "win": 41.8,
+      "avg": 1.1,
+      "med": -0.3,
+      "excess": 0.48,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 3721,
+      "win": 34.2,
+      "avg": 4.09,
+      "med": -1.41,
+      "excess": 2.58,
+      "best": 6010.5,
+      "worst": -82.5
+     },
+     "1": {
+      "n": 4611,
+      "win": 42.1,
+      "avg": 2.7,
+      "med": -0.33,
+      "excess": 2.0,
+      "best": 5598.3,
+      "worst": -47.9
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 2269,
+      "win": 37.1,
+      "avg": -1.07,
+      "med": -0.76,
+      "excess": -3.08,
+      "best": 46.8,
+      "worst": -23.7
+     },
+     "1": {
+      "n": 2952,
+      "win": 42.9,
+      "avg": -0.21,
+      "med": -0.14,
+      "excess": -1.01,
+      "best": 15.2,
+      "worst": -24.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 3541,
+      "win": 34.9,
+      "avg": -0.73,
+      "med": -0.98,
+      "excess": -2.72,
+      "best": 853.0,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 4588,
+      "win": 44.2,
+      "avg": -0.15,
+      "med": -0.11,
+      "excess": -0.92,
+      "best": 355.6,
+      "worst": -44.0
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 3514,
+      "win": 37.2,
+      "avg": -1.13,
+      "med": -0.95,
+      "excess": -2.99,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 4176,
+      "win": 42.5,
+      "avg": -0.31,
+      "med": -0.15,
+      "excess": -0.99,
+      "best": 16.6,
+      "worst": -24.0
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 4744,
+      "win": 36.7,
+      "avg": -0.89,
+      "med": -0.8,
+      "excess": -2.89,
+      "best": 26.0,
+      "worst": -35.5
+     },
+     "1": {
+      "n": 6153,
+      "win": 45.3,
+      "avg": -0.12,
+      "med": -0.12,
+      "excess": -0.93,
+      "best": 12.2,
+      "worst": -30.3
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 2727,
+      "win": 43.7,
+      "avg": -0.6,
+      "med": -0.59,
+      "excess": -2.5,
+      "best": 20.8,
+      "worst": -52.2
+     },
+     "1": {
+      "n": 3743,
+      "win": 46.0,
+      "avg": -0.16,
+      "med": -0.15,
+      "excess": -0.99,
+      "best": 16.0,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Energy Minerals",
+   "industry": "Oil & Gas Production",
+   "segment": "NYSE",
+   "close": 5.12,
+   "chg": 0.2,
+   "gap": 0.98,
+   "sma5": 5.11,
+   "sma20": 5.1,
+   "sma200": 5.05,
+   "ext200": 1.44,
+   "rsi": 57.1,
+   "macd_h": -0.01,
+   "rvol": 1.45,
+   "pw": 1.79,
+   "p1": -0.58,
+   "p3": 10.11,
+   "ytd": 9.4,
+   "pos52": 48.0,
+   "hi52": 6.14,
+   "lo52": 4.18,
+   "val": 13.1,
+   "mcap": 675.0,
+   "per": null,
+   "pbr": 1.2,
+   "eps": -0.22,
+   "roe": -4.7,
+   "eqr": 52.6,
+   "div": 8.61,
+   "rev_q": 36.7,
+   "rev_ttm": 14.6,
+   "cagr5": null,
+   "eps_q": 19.0,
+   "opm": 20.7,
+   "roic": -2.9,
+   "psr": 1.48,
+   "peg": null,
+   "de": 0.82,
+   "inflow": null,
+   "biz": "Granite Ridge Resources, Inc. operates as a non-operated oil and natural gas exploration and production company. It owns a portfolio of wells and acreage across the Permian, Eagle Ford, Bakken, Haynesville, Denver-Julesb",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "OKE",
+   "name": "ONEOK, Inc.",
+   "ticker": "NYSE:OKE",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_trend",
+    "sig_macd",
+    "sig_div",
+    "sig_growth",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 10970,
+      "win": 35.2,
+      "avg": 1.35,
+      "med": -1.32,
+      "excess": -0.26,
+      "best": 6010.5,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 12949,
+      "win": 41.8,
+      "avg": 1.1,
+      "med": -0.3,
+      "excess": 0.48,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 3514,
+      "win": 37.2,
+      "avg": -1.13,
+      "med": -0.95,
+      "excess": -2.99,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 4176,
+      "win": 42.5,
+      "avg": -0.31,
+      "med": -0.15,
+      "excess": -0.99,
+      "best": 16.6,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 10226,
+      "win": 39.0,
+      "avg": -0.55,
+      "med": -0.8,
+      "excess": -2.61,
+      "best": 1559.7,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 12925,
+      "win": 42.9,
+      "avg": -0.22,
+      "med": -0.17,
+      "excess": -0.97,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 4744,
+      "win": 36.7,
+      "avg": -0.89,
+      "med": -0.8,
+      "excess": -2.89,
+      "best": 26.0,
+      "worst": -35.5
+     },
+     "1": {
+      "n": 6153,
+      "win": 45.3,
+      "avg": -0.12,
+      "med": -0.12,
+      "excess": -0.93,
+      "best": 12.2,
+      "worst": -30.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 5683,
+      "win": 39.7,
+      "avg": -0.78,
+      "med": -1.08,
+      "excess": -2.68,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 7746,
+      "win": 44.8,
+      "avg": 0.24,
+      "med": -0.24,
+      "excess": -0.58,
+      "best": 2463.4,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 2727,
+      "win": 43.7,
+      "avg": -0.6,
+      "med": -0.59,
+      "excess": -2.5,
+      "best": 20.8,
+      "worst": -52.2
+     },
+     "1": {
+      "n": 3743,
+      "win": 46.0,
+      "avg": -0.16,
+      "med": -0.15,
+      "excess": -0.99,
+      "best": 16.0,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Industrial Services",
+   "industry": "Oil & Gas Pipelines",
+   "segment": "NYSE",
+   "close": 96.97,
+   "chg": 0.36,
+   "gap": 1.01,
+   "sma5": 96.53,
+   "sma20": 95.35,
+   "sma200": 85.6,
+   "ext200": 13.29,
+   "rsi": 60.0,
+   "macd_h": 0.01,
+   "rvol": 1.09,
+   "pw": 2.18,
+   "p1": 3.71,
+   "p3": 12.12,
+   "ytd": 32.0,
+   "pos52": 92.0,
+   "hi52": 99.84,
+   "lo52": 64.02,
+   "val": 359.5,
+   "mcap": 61127.0,
+   "per": 16.8,
+   "pbr": 2.66,
+   "eps": 5.8,
+   "roe": 16.3,
+   "eqr": 31.0,
+   "div": 4.39,
+   "rev_q": 56.3,
+   "rev_ttm": 41.8,
+   "cagr5": 31.8,
+   "eps_q": 14.2,
+   "opm": 16.1,
+   "roic": 7.0,
+   "psr": 1.81,
+   "peg": 1.3,
+   "de": 1.44,
+   "inflow": null,
+   "biz": "ONEOK, Inc. operates as a midstream service provider of gathering, processing, fractionation, transportation, storage, and marine export services in the United States. It operates in four segments: Natural Gas Gathering ",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "CINF",
+   "name": "Cincinnati Financial Corporation",
+   "ticker": "NASDAQ:CINF",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x20",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_macd",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x20": {
+     "5": {
+      "n": 3721,
+      "win": 34.2,
+      "avg": 4.09,
+      "med": -1.41,
+      "excess": 2.58,
+      "best": 6010.5,
+      "worst": -82.5
+     },
+     "1": {
+      "n": 4611,
+      "win": 42.1,
+      "avg": 2.7,
+      "med": -0.33,
+      "excess": 2.0,
+      "best": 5598.3,
+      "worst": -47.9
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 2269,
+      "win": 37.1,
+      "avg": -1.07,
+      "med": -0.76,
+      "excess": -3.08,
+      "best": 46.8,
+      "worst": -23.7
+     },
+     "1": {
+      "n": 2952,
+      "win": 42.9,
+      "avg": -0.21,
+      "med": -0.14,
+      "excess": -1.01,
+      "best": 15.2,
+      "worst": -24.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 3541,
+      "win": 34.9,
+      "avg": -0.73,
+      "med": -0.98,
+      "excess": -2.72,
+      "best": 853.0,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 4588,
+      "win": 44.2,
+      "avg": -0.15,
+      "med": -0.11,
+      "excess": -0.92,
+      "best": 355.6,
+      "worst": -44.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 10226,
+      "win": 39.0,
+      "avg": -0.55,
+      "med": -0.8,
+      "excess": -2.61,
+      "best": 1559.7,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 12925,
+      "win": 42.9,
+      "avg": -0.22,
+      "med": -0.17,
+      "excess": -0.97,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 5683,
+      "win": 39.7,
+      "avg": -0.78,
+      "med": -1.08,
+      "excess": -2.68,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 7746,
+      "win": 44.8,
+      "avg": 0.24,
+      "med": -0.24,
+      "excess": -0.58,
+      "best": 2463.4,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 10920,
+      "win": 38.0,
+      "avg": -1.07,
+      "med": -0.92,
+      "excess": -2.96,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 14959,
+      "win": 45.0,
+      "avg": 0.09,
+      "med": -0.17,
+      "excess": -0.73,
+      "best": 4111.2,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Multi-Line Insurance",
+   "segment": "NASDAQ",
+   "close": 172.02,
+   "chg": 1.31,
+   "gap": 1.2,
+   "sma5": 169.95,
+   "sma20": 170.72,
+   "sma200": 167.45,
+   "ext200": 2.73,
+   "rsi": 49.7,
+   "macd_h": 0.21,
+   "rvol": 1.1,
+   "pw": -0.6,
+   "p1": -0.32,
+   "p3": 0.6,
+   "ytd": 5.3,
+   "pos52": 49.0,
+   "hi52": 194.81,
+   "lo52": 150.0,
+   "val": 85.4,
+   "mcap": 26401.0,
+   "per": 8.1,
+   "pbr": 1.58,
+   "eps": 21.44,
+   "roe": 21.5,
+   "eqr": 41.5,
+   "div": 2.13,
+   "rev_q": 31.6,
+   "rev_ttm": 19.6,
+   "cagr5": 10.9,
+   "eps_q": 85.7,
+   "opm": 30.2,
+   "roic": 20.4,
+   "psr": 2.15,
+   "peg": 0.1,
+   "de": 0.05,
+   "inflow": null,
+   "biz": "Cincinnati Financial Corporation provides property casualty insurance products in the United States. The company operates through five segments: Commercial Lines Insurance, Personal Lines Insurance, Excess and Surplus Li",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "SU",
+   "name": "Suncor Energy Inc.",
+   "ticker": "NYSE:SU",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_trend",
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_trend": {
+     "5": {
+      "n": 3514,
+      "win": 37.2,
+      "avg": -1.13,
+      "med": -0.95,
+      "excess": -2.99,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 4176,
+      "win": 42.5,
+      "avg": -0.31,
+      "med": -0.15,
+      "excess": -0.99,
+      "best": 16.6,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 10226,
+      "win": 39.0,
+      "avg": -0.55,
+      "med": -0.8,
+      "excess": -2.61,
+      "best": 1559.7,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 12925,
+      "win": 42.9,
+      "avg": -0.22,
+      "med": -0.17,
+      "excess": -0.97,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 4816,
+      "win": 41.5,
+      "avg": -0.79,
+      "med": -0.88,
+      "excess": -2.81,
+      "best": 51.0,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 6216,
+      "win": 46.8,
+      "avg": -0.1,
+      "med": -0.12,
+      "excess": -0.9,
+      "best": 50.4,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 5683,
+      "win": 39.7,
+      "avg": -0.78,
+      "med": -1.08,
+      "excess": -2.68,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 7746,
+      "win": 44.8,
+      "avg": 0.24,
+      "med": -0.24,
+      "excess": -0.58,
+      "best": 2463.4,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 10920,
+      "win": 38.0,
+      "avg": -1.07,
+      "med": -0.92,
+      "excess": -2.96,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 14959,
+      "win": 45.0,
+      "avg": 0.09,
+      "med": -0.17,
+      "excess": -0.73,
+      "best": 4111.2,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Energy Minerals",
+   "industry": "Integrated Oil",
+   "segment": "NYSE",
+   "close": 68.72,
+   "chg": -0.16,
+   "gap": 1.66,
+   "sma5": 68.68,
+   "sma20": 67.58,
+   "sma200": 58.67,
+   "ext200": 17.12,
+   "rsi": 59.5,
+   "macd_h": 0.0,
+   "rvol": 0.84,
+   "pw": 2.4,
+   "p1": 4.15,
+   "p3": 17.09,
+   "ytd": 55.3,
+   "pos52": 94.0,
+   "hi52": 70.84,
+   "lo52": 37.77,
+   "val": 332.1,
+   "mcap": 80377.0,
+   "per": 13.0,
+   "pbr": 2.38,
+   "eps": 5.28,
+   "roe": 19.3,
+   "eqr": 51.1,
+   "div": 2.49,
+   "rev_q": 39.9,
+   "rev_ttm": 9.0,
+   "cagr5": 13.0,
+   "eps_q": 228.0,
+   "opm": 21.9,
+   "roic": 15.1,
+   "psr": 2.35,
+   "peg": 0.19,
+   "de": 0.3,
+   "inflow": null,
+   "biz": "Suncor Energy Inc. operates as an integrated energy company in Canada, the United States, and internationally. The company operates through Oil Sands; Exploration and Production; and Refining and Marketing segments. The ",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "STLD",
+   "name": "Steel Dynamics, Inc.",
+   "ticker": "NASDAQ:STLD",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_macd": {
+     "5": {
+      "n": 10226,
+      "win": 39.0,
+      "avg": -0.55,
+      "med": -0.8,
+      "excess": -2.61,
+      "best": 1559.7,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 12925,
+      "win": 42.9,
+      "avg": -0.22,
+      "med": -0.17,
+      "excess": -0.97,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 4816,
+      "win": 41.5,
+      "avg": -0.79,
+      "med": -0.88,
+      "excess": -2.81,
+      "best": 51.0,
+      "worst": -57.6
+     },
+     "1": {
+      "n": 6216,
+      "win": 46.8,
+      "avg": -0.1,
+      "med": -0.12,
+      "excess": -0.9,
+      "best": 50.4,
+      "worst": -52.7
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 5683,
+      "win": 39.7,
+      "avg": -0.78,
+      "med": -1.08,
+      "excess": -2.68,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 7746,
+      "win": 44.8,
+      "avg": 0.24,
+      "med": -0.24,
+      "excess": -0.58,
+      "best": 2463.4,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 10920,
+      "win": 38.0,
+      "avg": -1.07,
+      "med": -0.92,
+      "excess": -2.96,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 14959,
+      "win": 45.0,
+      "avg": 0.09,
+      "med": -0.17,
+      "excess": -0.73,
+      "best": 4111.2,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 2727,
+      "win": 43.7,
+      "avg": -0.6,
+      "med": -0.59,
+      "excess": -2.5,
+      "best": 20.8,
+      "worst": -52.2
+     },
+     "1": {
+      "n": 3743,
+      "win": 46.0,
+      "avg": -0.16,
+      "med": -0.15,
+      "excess": -0.99,
+      "best": 16.0,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Non-Energy Minerals",
+   "industry": "Steel",
+   "segment": "NASDAQ",
+   "close": 234.53,
+   "chg": -2.19,
+   "gap": 0.52,
+   "sma5": 238.48,
+   "sma20": 237.41,
+   "sma200": 212.36,
+   "ext200": 10.44,
+   "rsi": 43.6,
+   "macd_h": 0.17,
+   "rvol": 1.16,
+   "pw": -4.61,
+   "p1": -10.53,
+   "p3": -14.36,
+   "ytd": 36.6,
+   "pos52": 65.0,
+   "hi52": 288.74,
+   "lo52": 134.87,
+   "val": 243.1,
+   "mcap": 33615.0,
+   "per": 21.3,
+   "pbr": 3.58,
+   "eps": 11.07,
+   "roe": 17.6,
+   "eqr": 56.2,
+   "div": 0.86,
+   "rev_q": 33.4,
+   "rev_ttm": 19.8,
+   "cagr5": 13.6,
+   "eps_q": 84.2,
+   "opm": 10.0,
+   "roic": 12.2,
+   "psr": 1.91,
+   "peg": 0.36,
+   "de": 0.44,
+   "inflow": null,
+   "biz": "Steel Dynamics, Inc., together with its subsidiaries, operates as a steel producer and metal recycler in the United States. It operates through four segments: Steel Operations, Metals Recycling Operations, Steel Fabricat",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "AES",
+   "name": "The AES Corporation",
+   "ticker": "NYSE:AES",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_gc",
+    "sig_reclaim",
+    "sig_macd",
+    "sig_div",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_gc": {
+     "5": {
+      "n": 2269,
+      "win": 37.1,
+      "avg": -1.07,
+      "med": -0.76,
+      "excess": -3.08,
+      "best": 46.8,
+      "worst": -23.7
+     },
+     "1": {
+      "n": 2952,
+      "win": 42.9,
+      "avg": -0.21,
+      "med": -0.14,
+      "excess": -1.01,
+      "best": 15.2,
+      "worst": -24.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 3541,
+      "win": 34.9,
+      "avg": -0.73,
+      "med": -0.98,
+      "excess": -2.72,
+      "best": 853.0,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 4588,
+      "win": 44.2,
+      "avg": -0.15,
+      "med": -0.11,
+      "excess": -0.92,
+      "best": 355.6,
+      "worst": -44.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 10226,
+      "win": 39.0,
+      "avg": -0.55,
+      "med": -0.8,
+      "excess": -2.61,
+      "best": 1559.7,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 12925,
+      "win": 42.9,
+      "avg": -0.22,
+      "med": -0.17,
+      "excess": -0.97,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 4744,
+      "win": 36.7,
+      "avg": -0.89,
+      "med": -0.8,
+      "excess": -2.89,
+      "best": 26.0,
+      "worst": -35.5
+     },
+     "1": {
+      "n": 6153,
+      "win": 45.3,
+      "avg": -0.12,
+      "med": -0.12,
+      "excess": -0.93,
+      "best": 12.2,
+      "worst": -30.3
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 2727,
+      "win": 43.7,
+      "avg": -0.6,
+      "med": -0.59,
+      "excess": -2.5,
+      "best": 20.8,
+      "worst": -52.2
+     },
+     "1": {
+      "n": 3743,
+      "win": 46.0,
+      "avg": -0.16,
+      "med": -0.15,
+      "excess": -0.99,
+      "best": 16.0,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Utilities",
+   "industry": "Electric Utilities",
+   "segment": "NYSE",
+   "close": 14.8,
+   "chg": 0.07,
+   "gap": 0.07,
+   "sma5": 14.81,
+   "sma20": 14.77,
+   "sma200": 14.62,
+   "ext200": 1.24,
+   "rsi": 56.0,
+   "macd_h": 0.0,
+   "rvol": 0.67,
+   "pw": 0.07,
+   "p1": 0.41,
+   "p3": 0.95,
+   "ytd": 2.0,
+   "pos52": 46.0,
+   "hi52": 17.65,
+   "lo52": 12.33,
+   "val": 71.5,
+   "mcap": 10559.0,
+   "per": 5.5,
+   "pbr": 2.14,
+   "eps": 2.68,
+   "roe": 28.2,
+   "eqr": 26.5,
+   "div": 4.76,
+   "rev_q": 19.9,
+   "rev_ttm": 8.2,
+   "cagr5": 4.8,
+   "eps_q": null,
+   "opm": 18.7,
+   "roic": 5.6,
+   "psr": 0.86,
+   "peg": 0.06,
+   "de": 4.02,
+   "inflow": null,
+   "biz": "The AES Corporation, together with its subsidiaries, operates as a power generation and utility company. It operates through four segments: Renewables, Utilities, Energy Infrastructure, and New Energy Technologies. The c",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "BTSG",
+   "name": "BrightSpring Health Services, Inc.",
+   "ticker": "NASDAQ:BTSG",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_trend",
+    "sig_macd",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 10970,
+      "win": 35.2,
+      "avg": 1.35,
+      "med": -1.32,
+      "excess": -0.26,
+      "best": 6010.5,
+      "worst": -94.0
+     },
+     "1": {
+      "n": 12949,
+      "win": 41.8,
+      "avg": 1.1,
+      "med": -0.3,
+      "excess": 0.48,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 3721,
+      "win": 34.2,
+      "avg": 4.09,
+      "med": -1.41,
+      "excess": 2.58,
+      "best": 6010.5,
+      "worst": -82.5
+     },
+     "1": {
+      "n": 4611,
+      "win": 42.1,
+      "avg": 2.7,
+      "med": -0.33,
+      "excess": 2.0,
+      "best": 5598.3,
+      "worst": -47.9
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 3514,
+      "win": 37.2,
+      "avg": -1.13,
+      "med": -0.95,
+      "excess": -2.99,
+      "best": 29.7,
+      "worst": -31.3
+     },
+     "1": {
+      "n": 4176,
+      "win": 42.5,
+      "avg": -0.31,
+      "med": -0.15,
+      "excess": -0.99,
+      "best": 16.6,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 10226,
+      "win": 39.0,
+      "avg": -0.55,
+      "med": -0.8,
+      "excess": -2.61,
+      "best": 1559.7,
+      "worst": -74.2
+     },
+     "1": {
+      "n": 12925,
+      "win": 42.9,
+      "avg": -0.22,
+      "med": -0.17,
+      "excess": -0.97,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 5683,
+      "win": 39.7,
+      "avg": -0.78,
+      "med": -1.08,
+      "excess": -2.68,
+      "best": 998.6,
+      "worst": -54.8
+     },
+     "1": {
+      "n": 7746,
+      "win": 44.8,
+      "avg": 0.24,
+      "med": -0.24,
+      "excess": -0.58,
+      "best": 2463.4,
+      "worst": -52.7
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 10920,
+      "win": 38.0,
+      "avg": -1.07,
+      "med": -0.92,
+      "excess": -2.96,
+      "best": 227.7,
+      "worst": -81.5
+     },
+     "1": {
+      "n": 14959,
+      "win": 45.0,
+      "avg": 0.09,
+      "med": -0.17,
+      "excess": -0.73,
+      "best": 4111.2,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Health Services",
+   "industry": "Medical/Nursing Services",
+   "segment": "NASDAQ",
+   "close": 60.3,
+   "chg": 2.67,
+   "gap": -1.4,
+   "sma5": 60.29,
+   "sma20": 59.86,
+   "sma200": 50.79,
+   "ext200": 18.71,
+   "rsi": 48.2,
+   "macd_h": 0.24,
+   "rvol": 1.66,
+   "pw": -0.35,
+   "p1": 1.09,
+   "p3": -6.21,
+   "ytd": 60.7,
+   "pos52": 72.0,
+   "hi52": 73.75,
+   "lo52": 26.28,
+   "val": 208.0,
+   "mcap": 11931.0,
+   "per": 45.0,
+   "pbr": 5.81,
+   "eps": 1.44,
+   "roe": 13.1,
+   "eqr": 24.4,
+   "div": 0.0,
+   "rev_q": 23.0,
+   "rev_ttm": 19.9,
+   "cagr5": 18.3,
+   "eps_q": 201.8,
+   "opm": 3.7,
+   "roic": 5.7,
+   "psr": 1.03,
+   "peg": 0.12,
+   "de": 1.17,
+   "inflow": null,
+   "biz": "BrightSpring Health Services, Inc. operates as a home and community-based healthcare services platform in the United States. The company operates through two segments, Pharmacy Solutions and Provider Services. Its platfo",
+   "tdnet": [],
+   "llm": null
+  }
+ ],
+ "config": {
+  "MIN_VAL": 10.0,
+  "MIN_MCAP": 500.0,
+  "MIN_PRICE": 5.0,
+  "N_SHORT": 8,
+  "N_LONG": 8,
+  "N_NEWS": 4,
+  "MAX_PER_INDUSTRY": 3,
+  "COOLDOWN_DAYS": 3
+ }
+}
