@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>시그널 성과 분석 — 2026-09-16 09:04 JST</title><style>
+:root{--bg:#0f141c;--surface:#171e29;--surface2:#1d2634;--line:#26303f;--text:#e9eef6;
+--muted:#8a94a6;--faint:#5b6572;--up:#ff4f5e;--down:#3f8cff;--amber:#ffb224;--teal:#2dd4bf;--violet:#c084fc}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Pretendard','Malgun Gothic','Yu Gothic UI','Noto Sans JP',sans-serif;
+font-size:13px;line-height:1.5;padding:14px 16px 50px}
+.num{font-family:ui-monospace,Consolas,monospace;font-variant-numeric:tabular-nums}
+a{color:var(--amber);text-decoration:none}
+.topbar{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.studybtn{padding:5px 12px;border:1px solid rgba(192,132,252,.45);border-radius:999px;
+background:var(--surface2);color:var(--violet);font-weight:600;font-size:12.5px}
+.studybtn:hover{background:var(--violet);color:#2a1245}
+.dashbtn{padding:5px 12px;border:1px solid rgba(45,212,191,.45);border-radius:999px;
+background:var(--surface2);color:var(--teal);font-weight:600;font-size:12.5px}
+.dashbtn:hover{background:var(--teal);color:#062a26}
+.langbtn{margin-left:auto;padding:5px 12px;border:1px solid var(--line);border-radius:999px;
+background:var(--surface);color:var(--faint);font-weight:600;font-size:12.5px}
+.langbtn:hover{color:var(--text)}
+h1{font-size:18px;font-weight:800;margin-bottom:4px}h1 span{color:var(--amber)}
+.meta{color:var(--muted);font-size:12px;margin-bottom:12px}
+.tabs{display:flex;gap:5px;margin:10px 0;flex-wrap:wrap}
+.tab{padding:7px 13px;border:1px solid var(--line);border-radius:8px;background:var(--surface);
+cursor:pointer;font-weight:600;color:var(--muted);user-select:none}
+.tab.on{color:var(--text);border-color:var(--amber);background:var(--surface2)}
+.htabs .tab.on{border-color:var(--teal)}
+.note{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;
+color:var(--muted);margin:10px 0;line-height:1.8}
+.note b{color:var(--text)}
+table{border-collapse:collapse;width:100%;background:var(--surface);border:1px solid var(--line);
+border-radius:10px;overflow:hidden}
+th{background:var(--surface2);color:var(--muted);font-size:11.5px;font-weight:600;text-align:right;
+padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+th.l,td.l{text-align:left}
+td{padding:7px 10px;border-bottom:1px solid #1c2431;text-align:right;white-space:nowrap}
+.up{color:var(--up)}.dn{color:var(--down)}.fl{color:var(--muted)}
+.b{display:inline-block;font-size:10px;font-weight:700;border-radius:4px;padding:1.5px 6px;margin-right:6px}
+.b.s{background:rgba(255,178,36,.16);color:var(--amber)}
+.b.g{background:rgba(45,212,191,.13);color:var(--teal)}
+.b.f{background:rgba(192,132,252,.14);color:var(--violet)}
+.b.m{background:rgba(138,148,166,.15);color:var(--muted)}
+.b.w{background:rgba(96,205,255,.14);color:#60cdff}
+.wb{display:inline-block;height:8px;border-radius:4px;background:var(--amber);vertical-align:middle;margin-right:6px}
+footer{margin-top:14px;color:var(--faint);font-size:11px;line-height:1.7}
+@media(max-width:760px){body{padding:10px 8px 30px}.hide-m{display:none}}
+
+a.btc{color:var(--amber);border-color:rgba(255,178,36,.45);background:var(--surface2)}
+a.btc:hover{background:var(--amber);color:#2a1f05}
+a.btc b{font-variant-numeric:tabular-nums;font-weight:800;margin-left:2px}
+a.btc b.up{color:var(--up)} a.btc b.down{color:var(--down)}
+
+</style></head><body>
+<div class="topbar">
+  <a href="../jp/index.html">← 스크리너로</a>
+  <a class="studybtn" href="https://ocw-1027.github.io/investment-study/" target="_blank" rel="noopener">🧠 연상 사고</a>
+  <a class="dashbtn" href="https://ocw-1027.github.io/dashboard/" target="_blank" rel="noopener">🌐 글로벌 대시보드</a>
+  <a class="dashbtn" href="../ranking/index.html">📈 순위 추이</a>
+  <a href="https://ocw-1027.github.io/BTC-DESK/" target="_blank" rel="noopener" class="langbtn btc">₿ BTC 데스크 <b id="btcNav">—</b></a>
+  <a class="langbtn" href="../ja/backtest/index.html">日本語</a>
+</div>
+<h1>시그널 <span>성과 분석</span></h1>
+<div class="meta">생성 2026-09-16 09:04 JST · 시그널에 걸린 종목이 이후 실제로 어떻게 움직였는지 (거래대금 하한 적용, 시장평균 대비)</div>
+<div class="tabs" id="mt"></div>
+<div class="tabs htabs" id="ht"></div>
+<div id="body"></div>
+<footer>승률 = 수익률 &gt; 0 비율 · 시장대비 = 같은 기간 유니버스 평균수익 차감(초과수익) · 표본 = (시그널 발생 종목 × 관측일) 누적 · 스냅샷은 매 영업일 종가판에서 자동 축적 · 과거 성과는 미래 수익을 보장하지 않으며 참고 자료입니다.</footer>
+<script>
+const R={"jp": {"dates": ["2026-08-18", "2026-08-19", "2026-08-20", "2026-08-28", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-14", "2026-09-15"], "n_days": 16, "signals": {"sig_spike": {"name": "급증", "1": {"n": 873, "win": 42.3, "avg": -0.1, "med": -0.21, "excess": 0.03, "best": 30.7, "worst": -54.8}, "5": {"n": 641, "win": 36.2, "avg": -0.77, "med": -1.43, "excess": 0.26, "best": 130.2, "worst": -40.5}, "20": null, "grp": "s"}, "sig_x5": {"name": "5MA돌파", "1": {"n": 5112, "win": 42.1, "avg": -0.3, "med": -0.26, "excess": -0.04, "best": 129.6, "worst": -52.2}, "5": {"n": 3571, "win": 32.7, "avg": -1.23, "med": -1.37, "excess": -0.11, "best": 87.8, "worst": -51.8}, "20": null, "grp": "s"}, "sig_x20": {"name": "20MA돌파", "1": {"n": 1867, "win": 42.4, "avg": -0.18, "med": -0.21, "excess": 0.02, "best": 129.6, "worst": -19.7}, "5": {"n": 1233, "win": 35.1, "avg": -0.91, "med": -1.3, "excess": 0.18, "best": 129.8, "worst": -45.0}, "20": null, "grp": "s"}, "sig_high": {"name": "신고가권", "1": {"n": 1462, "win": 38.0, "avg": -0.49, "med": -0.29, "excess": -0.1, "best": 28.8, "worst": -17.8}, "5": {"n": 1234, "win": 32.0, "avg": -1.43, "med": -1.27, "excess": -0.26, "best": 43.6, "worst": -48.8}, "20": null, "grp": "s"}, "sig_gap": {"name": "갭업", "1": {"n": 460, "win": 36.3, "avg": -0.35, "med": -1.41, "excess": -0.41, "best": 45.6, "worst": -21.7}, "5": {"n": 353, "win": 28.9, "avg": -2.11, "med": -3.58, "excess": -1.36, "best": 130.2, "worst": -34.6}, "20": null, "grp": "s"}, "sig_oversold": {"name": "과매도반등", "1": {"n": 96, "win": 52.1, "avg": 0.13, "med": 0.07, "excess": 0.17, "best": 11.0, "worst": -8.6}, "5": {"n": 35, "win": 22.9, "avg": -1.98, "med": -2.01, "excess": -0.48, "best": 23.5, "worst": -15.9}, "20": null, "grp": "s"}, "sig_gc": {"name": "GC직후", "1": {"n": 1777, "win": 46.8, "avg": -0.11, "med": -0.09, "excess": 0.03, "best": 19.1, "worst": -21.7}, "5": {"n": 1317, "win": 41.4, "avg": -0.5, "med": -0.69, "excess": 0.28, "best": 56.1, "worst": -34.6}, "20": null, "grp": "g"}, "sig_reclaim": {"name": "200탈환", "1": {"n": 2344, "win": 46.1, "avg": -0.15, "med": -0.09, "excess": -0.02, "best": 26.5, "worst": -16.3}, "5": {"n": 1686, "win": 39.5, "avg": -0.5, "med": -0.74, "excess": 0.31, "best": 88.1, "worst": -23.2}, "20": null, "grp": "g"}, "sig_trend": {"name": "정배열", "1": {"n": 2383, "win": 40.7, "avg": -0.39, "med": -0.33, "excess": -0.07, "best": 18.1, "worst": -14.3}, "5": {"n": 2018, "win": 32.6, "avg": -1.12, "med": -1.47, "excess": -0.08, "best": 84.0, "worst": -17.1}, "20": null, "grp": "g"}, "sig_macd": {"name": "MACD골든", "1": {"n": 6183, "win": 47.0, "avg": -0.06, "med": -0.08, "excess": -0.01, "best": 57.8, "worst": -19.6}, "5": {"n": 5238, "win": 33.8, "avg": -1.01, "med": -1.08, "excess": 0.2, "best": 88.1, "worst": -23.4}, "20": null, "grp": "g"}, "sig_value": {"name": "저평가", "1": {"n": 1647, "win": 52.8, "avg": 0.14, "med": 0.15, "excess": 0.09, "best": 16.3, "worst": -21.6}, "5": {"n": 1159, "win": 40.6, "avg": -0.49, "med": -0.79, "excess": 0.44, "best": 23.3, "worst": -23.1}, "20": null, "grp": "f"}, "sig_div": {"name": "고배당", "1": {"n": 3190, "win": 46.1, "avg": -0.02, "med": -0.06, "excess": -0.01, "best": 12.1, "worst": -7.5}, "5": {"n": 2231, "win": 29.2, "avg": -1.05, "med": -1.06, "excess": -0.0, "best": 10.9, "worst": -15.3}, "20": null, "grp": "f"}, "sig_qual": {"name": "우량", "1": {"n": 3636, "win": 46.3, "avg": -0.02, "med": -0.1, "excess": -0.04, "best": 24.8, "worst": -79.2}, "5": {"n": 2597, "win": 34.2, "avg": -1.35, "med": -1.67, "excess": -0.31, "best": 59.0, "worst": -81.5}, "20": null, "grp": "f"}, "sig_growth": {"name": "고성장", "1": {"n": 2601, "win": 42.8, "avg": -0.3, "med": -0.35, "excess": -0.07, "best": 29.0, "worst": -19.7}, "5": {"n": 1756, "win": 29.3, "avg": -1.77, "med": -2.02, "excess": -0.29, "best": 59.0, "worst": -25.2}, "20": null, "grp": "w"}, "sig_accel": {"name": "이익가속", "1": {"n": 8447, "win": 44.5, "avg": -0.26, "med": -0.17, "excess": -0.03, "best": 24.8, "worst": -18.8}, "5": {"n": 5690, "win": 27.9, "avg": -1.77, "med": -1.84, "excess": -0.29, "best": 59.0, "worst": -27.4}, "20": null, "grp": "w"}, "sig_garp": {"name": "저평가성장", "1": {"n": 4334, "win": 45.2, "avg": -0.23, "med": -0.15, "excess": -0.0, "best": 24.8, "worst": -19.1}, "5": {"n": 2900, "win": 28.1, "avg": -1.74, "med": -1.84, "excess": -0.27, "best": 59.0, "worst": -27.4}, "20": null, "grp": "w"}, "grp_short": {"name": "단기(아무거나)", "1": {"n": 7398, "win": 41.3, "avg": -0.32, "med": -0.27, "excess": -0.08, "best": 129.6, "worst": -54.8}, "5": {"n": 5331, "win": 33.3, "avg": -1.22, "med": -1.36, "excess": -0.15, "best": 130.2, "worst": -51.8}, "20": null, "grp": "s"}, "grp_long": {"name": "중장기(아무거나)", "1": {"n": 9803, "win": 46.2, "avg": -0.12, "med": -0.1, "excess": -0.0, "best": 57.8, "worst": -21.7}, "5": {"n": 7818, "win": 36.4, "avg": -0.86, "med": -1.01, "excess": 0.15, "best": 88.1, "worst": -34.6}, "20": null, "grp": "g"}, "grp_fund": {"name": "펀더(아무거나)", "1": {"n": 7697, "win": 47.3, "avg": 0.01, "med": -0.02, "excess": -0.0, "best": 24.8, "worst": -79.2}, "5": {"n": 5458, "win": 33.7, "avg": -1.05, "med": -1.16, "excess": -0.03, "best": 59.0, "worst": -81.5}, "20": null, "grp": "f"}, "grp_growth": {"name": "성장(아무거나)", "1": {"n": 10866, "win": 44.3, "avg": -0.26, "med": -0.19, "excess": -0.03, "best": 29.0, "worst": -19.7}, "5": {"n": 7321, "win": 28.6, "avg": -1.75, "med": -1.76, "excess": -0.27, "best": 59.0, "worst": -27.4}, "20": null, "grp": "w"}, "grp_multi": {"name": "시그널 2개 이상", "1": {"n": 13745, "win": 44.9, "avg": -0.16, "med": -0.14, "excess": -0.01, "best": 129.6, "worst": -21.7}, "5": {"n": 9845, "win": 32.3, "avg": -1.24, "med": -1.35, "excess": -0.04, "best": 130.2, "worst": -45.0}, "20": null, "grp": "m"}}, "horizon_days": {"1": 15, "5": 11, "20": 0}, "label": "🇯🇵 일본"}, "kr": {"dates": ["2026-08-18", "2026-08-19", "2026-08-20", "2026-08-28", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-14", "2026-09-15"], "n_days": 16, "signals": {"sig_spike": {"name": "급증", "1": {"n": 2133, "win": 38.3, "avg": -0.48, "med": -0.52, "excess": -0.31, "best": 34.9, "worst": -44.6}, "5": {"n": 1499, "win": 41.0, "avg": -0.31, "med": -0.82, "excess": -0.82, "best": 71.4, "worst": -76.2}, "20": null, "grp": "s"}, "sig_x5": {"name": "5MA돌파", "1": {"n": 5832, "win": 39.5, "avg": -0.06, "med": -0.39, "excess": 0.05, "best": 57.9, "worst": -44.8}, "5": {"n": 4018, "win": 38.9, "avg": 0.02, "med": -1.07, "excess": 0.15, "best": 410.6, "worst": -66.7}, "20": null, "grp": "s"}, "sig_x20": {"name": "20MA돌파", "1": {"n": 2500, "win": 40.4, "avg": 0.0, "med": -0.36, "excess": 0.07, "best": 30.0, "worst": -25.6}, "5": {"n": 1664, "win": 41.6, "avg": 0.52, "med": -0.76, "excess": 0.62, "best": 389.8, "worst": -37.4}, "20": null, "grp": "s"}, "sig_high": {"name": "신고가권", "1": {"n": 132, "win": 26.5, "avg": -1.9, "med": -0.7, "excess": -1.72, "best": 30.0, "worst": -78.4}, "5": {"n": 108, "win": 30.6, "avg": -4.9, "med": -1.5, "excess": -4.81, "best": 47.7, "worst": -78.3}, "20": null, "grp": "s"}, "sig_gap": {"name": "갭업", "1": {"n": 1221, "win": 40.3, "avg": -0.48, "med": -1.0, "excess": -0.57, "best": 36.2, "worst": -44.8}, "5": {"n": 994, "win": 37.2, "avg": -1.0, "med": -2.79, "excess": -1.11, "best": 157.7, "worst": -71.2}, "20": null, "grp": "s"}, "sig_oversold": {"name": "과매도반등", "1": {"n": 100, "win": 46.0, "avg": 0.12, "med": -0.06, "excess": 0.14, "best": 75.7, "worst": -33.6}, "5": {"n": 62, "win": 22.6, "avg": -3.63, "med": -3.11, "excess": -3.52, "best": 35.1, "worst": -31.5}, "20": null, "grp": "s"}, "sig_gc": {"name": "GC직후", "1": {"n": 718, "win": 44.2, "avg": -0.02, "med": 0.0, "excess": 0.02, "best": 29.2, "worst": -18.9}, "5": {"n": 513, "win": 44.2, "avg": 0.33, "med": -0.38, "excess": 0.02, "best": 97.6, "worst": -30.6}, "20": null, "grp": "g"}, "sig_reclaim": {"name": "200탈환", "1": {"n": 1256, "win": 40.4, "avg": -0.3, "med": -0.35, "excess": -0.25, "best": 29.9, "worst": -30.0}, "5": {"n": 939, "win": 41.0, "avg": -0.43, "med": -0.79, "excess": -0.71, "best": 71.4, "worst": -57.5}, "20": null, "grp": "g"}, "sig_trend": {"name": "정배열", "1": {"n": 861, "win": 41.5, "avg": 0.02, "med": -0.23, "excess": 0.14, "best": 57.3, "worst": -18.9}, "5": {"n": 601, "win": 44.4, "avg": 0.17, "med": -0.57, "excess": 0.1, "best": 97.6, "worst": -23.4}, "20": null, "grp": "g"}, "sig_macd": {"name": "MACD골든", "1": {"n": 5553, "win": 42.8, "avg": 0.08, "med": -0.16, "excess": 0.07, "best": 92.5, "worst": -27.6}, "5": {"n": 4045, "win": 45.2, "avg": 0.39, "med": -0.36, "excess": 0.31, "best": 83.2, "worst": -67.6}, "20": null, "grp": "g"}, "sig_value": {"name": "저평가", "1": {"n": 5895, "win": 45.1, "avg": 0.12, "med": -0.06, "excess": 0.02, "best": 75.7, "worst": -33.6}, "5": {"n": 4288, "win": 43.2, "avg": 0.02, "med": -0.48, "excess": -0.1, "best": 71.4, "worst": -64.0}, "20": null, "grp": "f"}, "sig_div": {"name": "고배당", "1": {"n": 3474, "win": 44.8, "avg": 0.12, "med": 0.0, "excess": 0.01, "best": 30.0, "worst": -13.9}, "5": {"n": 2532, "win": 43.7, "avg": 0.11, "med": -0.34, "excess": -0.0, "best": 37.6, "worst": -18.4}, "20": null, "grp": "f"}, "sig_qual": {"name": "우량", "1": {"n": 2975, "win": 43.3, "avg": 0.06, "med": -0.25, "excess": -0.04, "best": 38.8, "worst": -23.8}, "5": {"n": 2153, "win": 41.0, "avg": -0.26, "med": -1.03, "excess": -0.36, "best": 46.0, "worst": -28.1}, "20": null, "grp": "f"}, "sig_growth": {"name": "고성장", "1": {"n": 3357, "win": 41.3, "avg": -0.2, "med": -0.38, "excess": -0.12, "best": 25.8, "worst": -29.9}, "5": {"n": 2252, "win": 44.9, "avg": 0.06, "med": -0.62, "excess": -0.21, "best": 51.1, "worst": -64.0}, "20": null, "grp": "w"}, "sig_accel": {"name": "이익가속", "1": {"n": 5808, "win": 41.5, "avg": -0.11, "med": -0.24, "excess": -0.03, "best": 30.0, "worst": -40.8}, "5": {"n": 3927, "win": 41.7, "avg": 0.16, "med": -0.75, "excess": -0.11, "best": 62.9, "worst": -76.2}, "20": null, "grp": "w"}, "sig_garp": {"name": "저평가성장", "1": {"n": 3476, "win": 41.1, "avg": -0.14, "med": -0.27, "excess": -0.06, "best": 24.6, "worst": -16.8}, "5": {"n": 2354, "win": 38.7, "avg": -0.39, "med": -1.02, "excess": -0.66, "best": 51.1, "worst": -25.5}, "20": null, "grp": "w"}, "grp_short": {"name": "단기(아무거나)", "1": {"n": 8343, "win": 39.8, "avg": -0.19, "med": -0.39, "excess": -0.11, "best": 75.7, "worst": -78.4}, "5": {"n": 5919, "win": 39.6, "avg": -0.21, "med": -1.09, "excess": -0.23, "best": 410.6, "worst": -78.3}, "20": null, "grp": "s"}, "grp_long": {"name": "중장기(아무거나)", "1": {"n": 7295, "win": 42.7, "avg": 0.03, "med": -0.18, "excess": 0.04, "best": 92.5, "worst": -30.0}, "5": {"n": 5306, "win": 44.7, "avg": 0.26, "med": -0.45, "excess": 0.12, "best": 97.6, "worst": -67.6}, "20": null, "grp": "g"}, "grp_fund": {"name": "펀더(아무거나)", "1": {"n": 9358, "win": 44.4, "avg": 0.1, "med": -0.13, "excess": -0.01, "best": 75.7, "worst": -33.6}, "5": {"n": 6796, "win": 42.6, "avg": -0.05, "med": -0.58, "excess": -0.15, "best": 71.4, "worst": -64.0}, "20": null, "grp": "f"}, "grp_growth": {"name": "성장(아무거나)", "1": {"n": 9008, "win": 41.7, "avg": -0.14, "med": -0.27, "excess": -0.06, "best": 30.0, "worst": -40.8}, "5": {"n": 6078, "win": 41.9, "avg": 0.01, "med": -0.78, "excess": -0.26, "best": 62.9, "worst": -76.2}, "20": null, "grp": "w"}, "grp_multi": {"name": "시그널 2개 이상", "1": {"n": 12725, "win": 42.4, "avg": -0.03, "med": -0.21, "excess": -0.02, "best": 75.7, "worst": -44.8}, "5": {"n": 8959, "win": 42.3, "avg": -0.02, "med": -0.67, "excess": -0.14, "best": 389.8, "worst": -76.2}, "20": null, "grp": "m"}}, "horizon_days": {"1": 15, "5": 11, "20": 0}, "label": "🇰🇷 한국"}, "us": {"dates": ["2026-08-19", "2026-08-20", "2026-08-21", "2026-08-22", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-29", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-15", "2026-09-16"], "n_days": 20, "signals": {"sig_spike": {"name": "급증", "1": {"n": 2713, "win": 39.6, "avg": 8.94, "med": 0.0, "excess": 8.25, "best": 5598.3, "worst": -89.7}, "5": {"n": 2082, "win": 41.7, "avg": 27.25, "med": -0.2, "excess": 25.63, "best": 8276.7, "worst": -95.1}, "20": null, "grp": "s"}, "sig_x5": {"name": "5MA돌파", "1": {"n": 13809, "win": 41.3, "avg": 0.98, "med": -0.33, "excess": 0.46, "best": 5598.3, "worst": -87.0}, "5": {"n": 11510, "win": 34.8, "avg": 1.61, "med": -1.38, "excess": 0.13, "best": 6010.5, "worst": -94.0}, "20": null, "grp": "s"}, "sig_x20": {"name": "20MA돌파", "1": {"n": 4967, "win": 41.6, "avg": 2.48, "med": -0.35, "excess": 1.9, "best": 5598.3, "worst": -47.9}, "5": {"n": 3950, "win": 33.5, "avg": 4.97, "med": -1.54, "excess": 3.62, "best": 6010.5, "worst": -82.5}, "20": null, "grp": "s"}, "sig_high": {"name": "신고가권", "1": {"n": 2986, "win": 39.5, "avg": -0.1, "med": 0.0, "excess": -0.71, "best": 355.6, "worst": -87.0}, "5": {"n": 2468, "win": 43.3, "avg": -0.74, "med": -0.06, "excess": -2.36, "best": 308.4, "worst": -90.4}, "20": null, "grp": "s"}, "sig_gap": {"name": "갭업", "1": {"n": 1858, "win": 38.2, "avg": 2.67, "med": -1.34, "excess": 2.24, "best": 4202.4, "worst": -50.6}, "5": {"n": 1547, "win": 31.9, "avg": 7.34, "med": -3.71, "excess": 5.72, "best": 7352.0, "worst": -91.8}, "20": null, "grp": "s"}, "sig_oversold": {"name": "과매도반등", "1": {"n": 784, "win": 43.6, "avg": 2.98, "med": -0.29, "excess": 2.18, "best": 1926.6, "worst": -86.9}, "5": {"n": 527, "win": 30.4, "avg": 15.4, "med": -1.88, "excess": 14.14, "best": 7352.0, "worst": -60.6}, "20": null, "grp": "s"}, "sig_gc": {"name": "GC직후", "1": {"n": 3123, "win": 42.0, "avg": -0.24, "med": -0.18, "excess": -0.94, "best": 15.2, "worst": -24.9}, "5": {"n": 2437, "win": 36.4, "avg": -1.16, "med": -0.84, "excess": -2.95, "best": 46.8, "worst": -24.0}, "20": null, "grp": "g"}, "sig_reclaim": {"name": "200탈환", "1": {"n": 4835, "win": 43.5, "avg": -0.18, "med": -0.14, "excess": -0.86, "best": 355.6, "worst": -44.0}, "5": {"n": 3809, "win": 33.8, "avg": -0.93, "med": -1.06, "excess": -2.7, "best": 853.0, "worst": -94.0}, "20": null, "grp": "g"}, "sig_trend": {"name": "정배열", "1": {"n": 4377, "win": 43.0, "avg": -0.3, "med": -0.14, "excess": -0.9, "best": 16.6, "worst": -24.0}, "5": {"n": 3703, "win": 36.9, "avg": -1.17, "med": -0.98, "excess": -2.87, "best": 29.7, "worst": -31.3}, "20": null, "grp": "g"}, "sig_macd": {"name": "MACD골든", "1": {"n": 13575, "win": 42.7, "avg": -0.24, "med": -0.17, "excess": -0.91, "best": 327.4, "worst": -71.3}, "5": {"n": 11008, "win": 38.4, "avg": -0.59, "med": -0.85, "excess": -2.41, "best": 1559.7, "worst": -74.2}, "20": null, "grp": "g"}, "sig_value": {"name": "저평가", "1": {"n": 1225, "win": 44.7, "avg": 14.28, "med": -0.15, "excess": 13.57, "best": 12293.2, "worst": -47.0}, "5": {"n": 949, "win": 40.6, "avg": 57.3, "med": -0.73, "excess": 55.52, "best": 10241.9, "worst": -81.8}, "20": null, "grp": "f"}, "sig_div": {"name": "고배당", "1": {"n": 6511, "win": 44.4, "avg": -0.15, "med": -0.14, "excess": -0.86, "best": 12.2, "worst": -30.3}, "5": {"n": 5091, "win": 35.8, "avg": -0.98, "med": -0.89, "excess": -2.77, "best": 26.0, "worst": -35.5}, "20": null, "grp": "f"}, "sig_qual": {"name": "우량", "1": {"n": 6568, "win": 46.3, "avg": -0.12, "med": -0.14, "excess": -0.83, "best": 50.4, "worst": -52.7}, "5": {"n": 5165, "win": 40.8, "avg": -0.89, "med": -0.97, "excess": -2.68, "best": 51.0, "worst": -57.6}, "20": null, "grp": "f"}, "sig_growth": {"name": "고성장", "1": {"n": 8266, "win": 44.3, "avg": 0.17, "med": -0.27, "excess": -0.53, "best": 2463.4, "worst": -52.7}, "5": {"n": 6201, "win": 39.0, "avg": -0.77, "med": -1.16, "excess": -2.41, "best": 1168.6, "worst": -54.8}, "20": null, "grp": "w"}, "sig_accel": {"name": "이익가속", "1": {"n": 15974, "win": 44.4, "avg": 0.05, "med": -0.19, "excess": -0.66, "best": 4111.2, "worst": -52.7}, "5": {"n": 11931, "win": 37.9, "avg": -1.14, "med": -0.95, "excess": -2.77, "best": 227.7, "worst": -81.5}, "20": null, "grp": "w"}, "sig_garp": {"name": "저평가성장", "1": {"n": 4004, "win": 45.4, "avg": -0.19, "med": -0.19, "excess": -0.9, "best": 16.0, "worst": -30.7}, "5": {"n": 2980, "win": 42.7, "avg": -0.74, "med": -0.68, "excess": -2.38, "best": 20.8, "worst": -52.2}, "20": null, "grp": "w"}, "grp_short": {"name": "단기(아무거나)", "1": {"n": 20576, "win": 41.2, "avg": 0.88, "med": -0.24, "excess": 0.31, "best": 5598.3, "worst": -89.7}, "5": {"n": 16850, "win": 35.6, "avg": 3.07, "med": -1.25, "excess": 1.56, "best": 8276.7, "worst": -95.1}, "20": null, "grp": "s"}, "grp_long": {"name": "중장기(아무거나)", "1": {"n": 20994, "win": 43.2, "avg": -0.23, "med": -0.17, "excess": -0.91, "best": 355.6, "worst": -71.3}, "5": {"n": 16915, "win": 37.4, "avg": -0.75, "med": -0.96, "excess": -2.56, "best": 1559.7, "worst": -94.0}, "20": null, "grp": "g"}, "grp_fund": {"name": "펀더(아무거나)", "1": {"n": 13356, "win": 45.1, "avg": 1.18, "med": -0.15, "excess": 0.47, "best": 12293.2, "worst": -52.7}, "5": {"n": 10477, "win": 38.0, "avg": 4.27, "med": -0.96, "excess": 2.48, "best": 10241.9, "worst": -81.8}, "20": null, "grp": "f"}, "grp_growth": {"name": "성장(아무거나)", "1": {"n": 22993, "win": 44.2, "avg": 0.1, "med": -0.21, "excess": -0.61, "best": 4111.2, "worst": -52.7}, "5": {"n": 17193, "win": 37.6, "avg": -1.05, "med": -1.04, "excess": -2.68, "best": 1168.6, "worst": -81.5}, "20": null, "grp": "w"}, "grp_multi": {"name": "시그널 2개 이상", "1": {"n": 26989, "win": 42.7, "avg": 0.63, "med": -0.2, "excess": 0.0, "best": 5598.3, "worst": -87.0}, "5": {"n": 21375, "win": 36.8, "avg": 1.08, "med": -1.06, "excess": -0.56, "best": 7352.0, "worst": -94.0}, "20": null, "grp": "m"}}, "horizon_days": {"1": 19, "5": 15, "20": 0}, "label": "🇺🇸 미국"}};
+const T={"title": "시그널 <span>성과 분석<\/span>", "page_title": "시그널 성과 분석", "back": "← 스크리너로", "gen": "생성", "lead": "시그널에 걸린 종목이 이후 실제로 어떻게 움직였는지 (거래대금 하한 적용, 시장평균 대비)", "days": "일", "obs": "회 관측", "h1": "+1일", "h5": "+5일", "h20": "+20일", "col_sig": "시그널", "col_n": "표본", "col_win": "승률", "col_avg": "평균수익", "col_med": "중앙값", "col_exc": "시장대비", "col_minmax": "최고/최저", "acc_title": "데이터 축적 중입니다 (현재 {n}일)", "acc_body": "매 영업일 종가판 실행마다 스냅샷이 자동으로 쌓입니다.<br>· 스냅샷 2일차 → <b>+1일 수익률<\/b> 첫 집계 · 6일차 → +5일 · 21일차 → +20일<br>한두 달 뒤에는 \"어떤 시그널이 실제로 먹혔는가\"를 표본 수백~수천 건으로 평가할 수 있습니다.", "none": "이 구간(+{h}일)은 아직 관측치가 없습니다 — 스냅샷 {need}일 이상 필요.", "howto": "읽는 법: <b>시장대비<\/b>가 +면 그 시그널이 시장평균보다 잘 갔다는 뜻입니다. 표본이 적을 때(수십 건 이하)는 우연일 수 있으니 표본 수를 함께 보세요.", "foot": "승률 = 수익률 &gt; 0 비율 · 시장대비 = 같은 기간 유니버스 평균수익 차감(초과수익) · 표본 = (시그널 발생 종목 × 관측일) 누적 · 스냅샷은 매 영업일 종가판에서 자동 축적 · 과거 성과는 미래 수익을 보장하지 않으며 참고 자료입니다.", "markets": {"jp": "🇯🇵 일본", "kr": "🇰🇷 한국", "us": "🇺🇸 미국"}, "other_lang": "日本語"};
+const H=[["1",T.h1],["5",T.h5],["20",T.h20]];
+let mkt=Object.keys(R)[0], hz="1";
+const $=s=>document.querySelector(s);
+const pc=v=>v==null?'—':`<span class="${v>0?'up':v<0?'dn':'fl'}">${v>0?'+':''}${v.toFixed(2)}%</span>`;
+function tabs(){
+  $('#mt').innerHTML=Object.keys(R).map(m=>`<div class="tab ${m===mkt?'on':''}" data-m="${m}">${R[m].label} <span style="color:var(--faint);font-size:11px">${R[m].n_days}${T.days}</span></div>`).join('');
+  $('#ht').innerHTML=H.map(([k,l])=>{
+    const d=R[mkt].horizon_days[k]||0;
+    return `<div class="tab ${k===hz?'on':''}" data-h="${k}">${l} <span style="color:var(--faint);font-size:11px">${d}${T.obs}</span></div>`}).join('');
+}
+function render(){
+  tabs();
+  const M=R[mkt];
+  if(M.n_days<2){
+    $('#body').innerHTML=`<div class="note"><b>${T.acc_title.replace('{n}',M.n_days)}</b><br>${T.acc_body}</div>`;
+    return;
+  }
+  const rows=Object.entries(M.signals).map(([k,v])=>({k,name:v.name,grp:v.grp,st:v[hz]}))
+    .filter(r=>r.st).sort((a,b)=>b.st.excess-a.st.excess);
+  if(!rows.length){
+    $('#body').innerHTML=`<div class="note">${T.none.replace('{h}',hz).replace('{need}',(+hz)+1)}</div>`;
+    return;
+  }
+  $('#body').innerHTML=`<table><thead><tr>
+  <th class="l">${T.col_sig}</th><th>${T.col_n}</th><th class="l">${T.col_win}</th><th>${T.col_avg}</th>
+  <th class="hide-m">${T.col_med}</th><th>${T.col_exc}</th><th class="hide-m">${T.col_minmax}</th></tr></thead><tbody>`+
+  rows.map(r=>`<tr><td class="l"><span class="b ${r.grp}">${r.name}</span></td>
+  <td class="num">${r.st.n.toLocaleString()}</td>
+  <td class="l num"><span class="wb" style="width:${Math.max(4,r.st.win)*0.9}px"></span>${r.st.win.toFixed(1)}%</td>
+  <td class="num">${pc(r.st.avg)}</td>
+  <td class="num hide-m">${pc(r.st.med)}</td>
+  <td class="num">${pc(r.st.excess)}</td>
+  <td class="num hide-m fl">+${r.st.best}% / ${r.st.worst}%</td></tr>`).join('')+`</tbody></table>
+  <div class="note" style="margin-top:10px">${T.howto}</div>`;
+}
+$('#mt').addEventListener('click',e=>{const t=e.target.closest('.tab');if(t){mkt=t.dataset.m;render()}});
+$('#ht').addEventListener('click',e=>{const t=e.target.closest('.tab');if(t){hz=t.dataset.h;render()}});
+render();
+</script>
+<script>
+(function () {
+  var el = document.getElementById('btcNav');
+  if (!el) return;
+  var prev = null, ws = null, poll = null, tries = 0;
+
+  function show(px) {
+    if (!isFinite(px) || px <= 0) return;
+    el.textContent = '$' + Math.round(px).toLocaleString('en-US');
+    if (prev != null && px !== prev) el.className = px > prev ? 'up' : 'down';
+    prev = px;
+  }
+  function startPoll() {
+    if (poll) return;
+    poll = setInterval(function () {
+      fetch('https://www.okx.com/api/v5/market/ticker?instId=BTC-USDT-SWAP')
+        .then(function (r) { return r.json(); })
+        .then(function (j) { var d = j.data && j.data[0]; if (d) show(parseFloat(d.last)); })
+        .catch(function () {});
+    }, 10000);
+  }
+  function connect() {
+    try { ws = new WebSocket('wss://ws.okx.com:8443/ws/v5/public'); }
+    catch (e) { startPoll(); return; }
+    ws.onopen = function () {
+      tries = 0;
+      ws.send(JSON.stringify({ op: 'subscribe', args: [{ channel: 'tickers', instId: 'BTC-USDT-SWAP' }] }));
+    };
+    ws.onmessage = function (e) {
+      try {
+        var m = JSON.parse(e.data);
+        if (m.data && m.data[0] && m.data[0].last) show(parseFloat(m.data[0].last));
+      } catch (_) {}
+    };
+    ws.onerror = function () { try { ws.close(); } catch (_) {} };
+    ws.onclose = function () {
+      ws = null;
+      if (poll) return;
+      tries++;
+      if (tries <= 3) setTimeout(connect, 2000 * tries); else startPoll();
+    };
+  }
+  fetch('https://ocw-1027.github.io/BTC-DESK/btc.json', { cache: 'no-store' })
+    .then(function (r) { return r.json(); })
+    .then(function (j) { show(j.price); })
+    .catch(function () {});
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+      if (ws) { try { ws.close(); } catch (_) {} ws = null; }
+      if (poll) { clearInterval(poll); poll = null; }
+    } else if (!ws && !poll) { tries = 0; connect(); }
+  });
+  connect();
+})();
+</script>
+
+</body></html>
