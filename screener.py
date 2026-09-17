@@ -1018,7 +1018,9 @@ def build_market(mkey, template, out_dir, generated, indices=None):
                     if lang == "ko" else "https://ocw-1027.github.io/dashboard/index_ja.html")
         study_url = ("https://ocw-1027.github.io/investment-study/"
                      if lang == "ko" else "https://ocw-1027.github.io/investment-study/jp.html")
-        macro_url = "https://daiji-data.streamlit.app/"
+        # 일본어 화면에서는 마켓 지표도 일본어로 열리게 ?lang=ja 를 붙인다
+        macro_url = ("https://daiji-data.streamlit.app/"
+                     if lang == "ko" else "https://daiji-data.streamlit.app/?lang=ja")
         extra_nav = (f'<a href="{macro_url}" target="_blank" rel="noopener" '
                      f'class="macro">{L["nav_macro"]}</a>'
                      f'<a href="{study_url}" target="_blank" rel="noopener" '
