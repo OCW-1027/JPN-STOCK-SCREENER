@@ -26,6 +26,8 @@
   .lang{margin-left:auto}
   .lang{display:flex;gap:5px;flex-wrap:wrap;min-width:0}
   .lang a{color:var(--faint);font-weight:600}
+  .lang a.macro{color:#7dd3fc;border-color:rgba(125,211,252,.45);background:var(--surface2)}
+  .lang a.macro:hover{background:#7dd3fc;color:#04283a}
   .lang a.study{color:var(--violet);border-color:rgba(192,132,252,.45);background:var(--surface2)}
   .lang a.study:hover{background:var(--violet);color:#2a1245}
   .lang a.dash{color:var(--teal);border-color:rgba(45,212,191,.45);background:var(--surface2)}
@@ -290,6 +292,7 @@ __BTC_CSS__
   <button id="wlDl" class="wlbtn primary" disabled>__WL_DL__</button>
   <span id="wlCount" class="wlcnt"></span>
   <span class="wlsep"></span>
+  <button id="lnkBtn" class="wlbtn">🔗 __LINK_COPY__</button>
   <button id="starExp" class="wlbtn">⭐ __STAR_EXP__</button>
   <label class="wlbtn" for="starImp">__STAR_IMP__</label><input type="file" id="starImp" accept=".json" style="display:none">
   <span class="wlhint">__WL_HINT__</span>
@@ -628,6 +631,7 @@ function render(){
   $('#prev').disabled=state.page===0; $('#next').disabled=state.page>=pages-1;
   renderPnums(pages);
   $('#stat').textContent=T.stat.replace('{n}',rows.length.toLocaleString(NUMLOC));
+  writeURL();
   syncScrollWidth();
 }
 $('#body').addEventListener('click',e=>{
@@ -836,6 +840,45 @@ renderIdx(); /* ── 물음표 도움말 ── */
 })();
 
 // 수급 프리셋은 3개 시장 모두 사용 (시장별로 채워지는 컬럼이 다름)
+/* ── URL 필터 (공유·재현·외부 링크 진입) ──
+   예) ?tab=sup&sig=17,19&and=1&sector=電気機器&min=10
+   외부(daiji-data 섹터 차트 등)에서 업종 필터가 걸린 채로 열 수 있다. */
+function readURL(){
+  const q=new URLSearchParams(location.search);
+  if(!q.toString()) return false;
+  const tab=q.get('tab'); if(tab) state.tab=tab;
+  const pre=q.get('preset'); if(pre) state.preset=pre;
+  const sec=q.get('sector'); if(sec) state.sector=sec;
+  const seg=q.get('seg'); if(seg) state.seg=seg;
+  const mn=q.get('min'); if(mn!==null && !isNaN(+mn)) state.min=+mn;
+  const kw=q.get('q'); if(kw) state.q=kw;
+  const sg=q.get('sig'); if(sg) sg.split(',').forEach(x=>{ if(x!=='') state.sigOn.add(+x); });
+  if(q.get('and')==='1') state.sigAnd=true;
+  const so=q.get('sort'); if(so!==null && !isNaN(+so)) state.sortI=+so;
+  const sd=q.get('dir'); if(sd) state.sortD = sd==='asc'?1:-1;
+  return true;
+}
+function writeURL(){
+  const q=new URLSearchParams();
+  if(state.tab!=='all') q.set('tab',state.tab);
+  if(state.preset!=='tech') q.set('preset',state.preset);
+  if(state.sector) q.set('sector',state.sector);
+  if(state.seg) q.set('seg',state.seg);
+  if(state.min) q.set('min',state.min);
+  if(state.q) q.set('q',state.q);
+  if(state.sigOn.size) q.set('sig',[...state.sigOn].join(','));
+  if(state.sigAnd) q.set('and','1');
+  if(state.sortI!==12){ q.set('sort',state.sortI); q.set('dir', state.sortD>0?'asc':'desc'); }
+  const s=q.toString();
+  try{ history.replaceState(null,'', s ? location.pathname+'?'+s : location.pathname); }catch(_){}
+}
+function copyLink(){
+  const u=location.href;
+  (navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject())
+    .then(()=>{ const b=$('#lnkBtn'); const o=b.textContent; b.textContent=T.link_copied; setTimeout(()=>b.textContent=o,1500); })
+    .catch(()=>prompt(T.link_copy, u));
+}
+
 /* ── 데이터 기준시각 패널 ── */
 (function(){
   const f=CFG.fresh||{}; const el=document.getElementById('fresh'); if(!el||!Object.keys(f).length)return;
@@ -851,7 +894,11 @@ renderIdx(); /* ── 물음표 도움말 ── */
   el.innerHTML=`<span><b>${T.fresh_title}</b></span>`+items.join('');
 })();
 
+readURL();                       // URL에 필터가 있으면 상태에 반영
+document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x.dataset.tab===state.tab));
+document.querySelectorAll('.pz').forEach(x=>x.classList.toggle('on',x.dataset.p===state.preset));
 initDis(); buildStrip(); buildSigChips(); render();
+$('#lnkBtn').addEventListener('click',copyLink);
 </script>
 __BTC_JS__
 </body>

@@ -1018,7 +1018,10 @@ def build_market(mkey, template, out_dir, generated, indices=None):
                     if lang == "ko" else "https://ocw-1027.github.io/dashboard/index_ja.html")
         study_url = ("https://ocw-1027.github.io/investment-study/"
                      if lang == "ko" else "https://ocw-1027.github.io/investment-study/jp.html")
-        extra_nav = (f'<a href="{study_url}" target="_blank" rel="noopener" '
+        macro_url = "https://daiji-data.streamlit.app/"
+        extra_nav = (f'<a href="{macro_url}" target="_blank" rel="noopener" '
+                     f'class="macro">{L["nav_macro"]}</a>'
+                     f'<a href="{study_url}" target="_blank" rel="noopener" '
                      f'class="study">{L["nav_study"]}</a>'
                      f'<a href="{dash_url}" target="_blank" rel="noopener" '
                      f'class="dash">{L["nav_dash"]}</a>'
@@ -1042,6 +1045,7 @@ def build_market(mkey, template, out_dir, generated, indices=None):
             "__PRESET_GROWTH__": L["preset_growth"], "__TAB_GROWTH__": L["tab_growth"],
             "__PRESET_SUPPLY__": L["preset_supply"], "__TAB_SUP__": L["tab_sup"], "__TAB_MINE__": L["tab_mine"],
             "__STAR_EXP__": L["star_exp"], "__STAR_IMP__": L["star_imp"],
+            "__LINK_COPY__": L["link_copy"],
             "__PREV__": L["prev"], "__NEXT__": L["next"],
             "__WL_ALL__": L["wl_all"], "__WL_CLEAR__": L["wl_clear"],
             "__WL_DL__": L["wl_dl"], "__WL_HINT__": L["wl_hint"],
