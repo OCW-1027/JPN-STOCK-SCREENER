@@ -1,0 +1,935 @@
+{
+ "date": "2026-09-26",
+ "market": "kr",
+ "generated": "2026-09-26 16:36 JST",
+ "label_ko": "🇰🇷 한국",
+ "label_ja": "🇰🇷 韓国",
+ "unit_ko": "억원",
+ "unit_ja": "億ウォン",
+ "llm_mode": "off",
+ "baserate_days": 24,
+ "universe": {
+  "total": 2739,
+  "liquid": 662,
+  "candidates": 4,
+  "short": 1,
+  "long": 3,
+  "news": 0
+ },
+ "picks": [
+  {
+   "code": "264450",
+   "name": "유비쿼스",
+   "ticker": "KRX:264450",
+   "bucket": "short",
+   "score": 8.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_value",
+    "sig_div",
+    "sig_qual",
+    "sig_accel",
+    "sig_garp",
+    "sig_inflow"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 2751,
+      "win": 42.4,
+      "avg": -0.23,
+      "med": -0.74,
+      "excess": -0.7,
+      "best": 87.2,
+      "worst": -90.0
+     },
+     "20": {
+      "n": 551,
+      "win": 40.7,
+      "avg": 1.19,
+      "med": -2.35,
+      "excess": -3.38,
+      "best": 460.9,
+      "worst": -78.3
+     },
+     "1": {
+      "n": 3415,
+      "win": 39.2,
+      "avg": -0.32,
+      "med": -0.31,
+      "excess": -0.26,
+      "best": 34.9,
+      "worst": -44.6
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 7501,
+      "win": 40.2,
+      "avg": 0.3,
+      "med": -0.92,
+      "excess": 0.17,
+      "best": 410.6,
+      "worst": -69.4
+     },
+     "20": {
+      "n": 1389,
+      "win": 35.3,
+      "avg": 0.0,
+      "med": -3.1,
+      "excess": -2.84,
+      "best": 391.1,
+      "worst": -78.3
+     },
+     "1": {
+      "n": 9029,
+      "win": 39.4,
+      "avg": -0.06,
+      "med": -0.33,
+      "excess": -0.05,
+      "best": 57.9,
+      "worst": -44.8
+     }
+    },
+    "sig_value": {
+     "5": {
+      "n": 7508,
+      "win": 40.2,
+      "avg": -0.16,
+      "med": -0.62,
+      "excess": -0.43,
+      "best": 71.4,
+      "worst": -69.0
+     },
+     "20": {
+      "n": 1272,
+      "win": 42.4,
+      "avg": 1.21,
+      "med": -1.24,
+      "excess": -2.23,
+      "best": 423.9,
+      "worst": -84.6
+     },
+     "1": {
+      "n": 9201,
+      "win": 44.3,
+      "avg": 0.06,
+      "med": -0.05,
+      "excess": -0.07,
+      "best": 75.7,
+      "worst": -45.1
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 4408,
+      "win": 40.3,
+      "avg": -0.18,
+      "med": -0.51,
+      "excess": -0.44,
+      "best": 37.6,
+      "worst": -43.6
+     },
+     "20": {
+      "n": 766,
+      "win": 41.1,
+      "avg": 0.0,
+      "med": -1.13,
+      "excess": -3.47,
+      "best": 82.1,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 5359,
+      "win": 44.2,
+      "avg": 0.06,
+      "med": 0.0,
+      "excess": -0.06,
+      "best": 30.0,
+      "worst": -13.9
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 3799,
+      "win": 46.2,
+      "avg": 0.91,
+      "med": -0.41,
+      "excess": 0.65,
+      "best": 61.6,
+      "worst": -28.1
+     },
+     "20": {
+      "n": 631,
+      "win": 54.2,
+      "avg": 3.61,
+      "med": 1.14,
+      "excess": 0.25,
+      "best": 69.9,
+      "worst": -34.0
+     },
+     "1": {
+      "n": 4633,
+      "win": 46.6,
+      "avg": 0.29,
+      "med": 0.0,
+      "excess": 0.17,
+      "best": 38.8,
+      "worst": -23.8
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 7677,
+      "win": 43.5,
+      "avg": 0.61,
+      "med": -0.57,
+      "excess": 0.24,
+      "best": 68.3,
+      "worst": -76.2
+     },
+     "20": {
+      "n": 491,
+      "win": 40.1,
+      "avg": 1.17,
+      "med": -2.69,
+      "excess": 0.32,
+      "best": 83.5,
+      "worst": -43.1
+     },
+     "1": {
+      "n": 9633,
+      "win": 44.2,
+      "avg": 0.05,
+      "med": -0.11,
+      "excess": 0.04,
+      "best": 30.0,
+      "worst": -40.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 4586,
+      "win": 41.4,
+      "avg": 0.36,
+      "med": -0.73,
+      "excess": -0.02,
+      "best": 68.3,
+      "worst": -37.8
+     },
+     "20": {
+      "n": 291,
+      "win": 35.7,
+      "avg": 0.07,
+      "med": -3.32,
+      "excess": -0.78,
+      "best": 62.8,
+      "worst": -20.8
+     },
+     "1": {
+      "n": 5726,
+      "win": 43.5,
+      "avg": 0.03,
+      "med": -0.15,
+      "excess": 0.02,
+      "best": 29.7,
+      "worst": -29.9
+     }
+    },
+    "sig_inflow": {
+     "1": {
+      "n": 280,
+      "win": 49.3,
+      "avg": 0.1,
+      "med": 0.0,
+      "excess": 0.04,
+      "best": 4.0,
+      "worst": -7.0
+     }
+    }
+   },
+   "sector": "Electronic Technology",
+   "industry": "Telecommunications Equipment",
+   "segment": "코스닥",
+   "close": 11410.0,
+   "chg": 7.14,
+   "gap": -0.47,
+   "sma5": 10768.0,
+   "sma20": 10432.0,
+   "sma200": 11851.15,
+   "ext200": -3.72,
+   "rsi": 66.6,
+   "macd_h": 87.03,
+   "rvol": 12.95,
+   "pw": 12.17,
+   "p1": 11.07,
+   "p3": 14.43,
+   "ytd": 18.0,
+   "pos52": 27.0,
+   "hi52": 19000.0,
+   "lo52": 8600.0,
+   "val": 57.9,
+   "mcap": 1647.0,
+   "per": 5.1,
+   "pbr": 0.81,
+   "eps": 2214.18,
+   "roe": 16.8,
+   "eqr": 88.5,
+   "div": 4.14,
+   "rev_q": 12.3,
+   "rev_ttm": 13.7,
+   "cagr5": 1.1,
+   "eps_q": 88.0,
+   "opm": 21.2,
+   "roic": 16.8,
+   "psr": 1.44,
+   "peg": 0.08,
+   "de": 0.01,
+   "inflow": 3.19,
+   "biz": "[업종] 통신 및 방송 장비 제조업 · [주요제품] 스위치, FTTH",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "071050",
+   "name": "한국금융지주",
+   "ticker": "KRX:071050",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_macd",
+    "sig_value",
+    "sig_div",
+    "sig_growth",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 7501,
+      "win": 40.2,
+      "avg": 0.3,
+      "med": -0.92,
+      "excess": 0.17,
+      "best": 410.6,
+      "worst": -69.4
+     },
+     "20": {
+      "n": 1389,
+      "win": 35.3,
+      "avg": 0.0,
+      "med": -3.1,
+      "excess": -2.84,
+      "best": 391.1,
+      "worst": -78.3
+     },
+     "1": {
+      "n": 9029,
+      "win": 39.4,
+      "avg": -0.06,
+      "med": -0.33,
+      "excess": -0.05,
+      "best": 57.9,
+      "worst": -44.8
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 6851,
+      "win": 44.5,
+      "avg": 0.56,
+      "med": -0.44,
+      "excess": 0.34,
+      "best": 83.2,
+      "worst": -67.6
+     },
+     "20": {
+      "n": 1063,
+      "win": 40.1,
+      "avg": 1.68,
+      "med": -1.52,
+      "excess": -1.38,
+      "best": 505.0,
+      "worst": -47.1
+     },
+     "1": {
+      "n": 8196,
+      "win": 43.9,
+      "avg": 0.12,
+      "med": -0.1,
+      "excess": 0.07,
+      "best": 92.5,
+      "worst": -27.6
+     }
+    },
+    "sig_value": {
+     "5": {
+      "n": 7508,
+      "win": 40.2,
+      "avg": -0.16,
+      "med": -0.62,
+      "excess": -0.43,
+      "best": 71.4,
+      "worst": -69.0
+     },
+     "20": {
+      "n": 1272,
+      "win": 42.4,
+      "avg": 1.21,
+      "med": -1.24,
+      "excess": -2.23,
+      "best": 423.9,
+      "worst": -84.6
+     },
+     "1": {
+      "n": 9201,
+      "win": 44.3,
+      "avg": 0.06,
+      "med": -0.05,
+      "excess": -0.07,
+      "best": 75.7,
+      "worst": -45.1
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 4408,
+      "win": 40.3,
+      "avg": -0.18,
+      "med": -0.51,
+      "excess": -0.44,
+      "best": 37.6,
+      "worst": -43.6
+     },
+     "20": {
+      "n": 766,
+      "win": 41.1,
+      "avg": 0.0,
+      "med": -1.13,
+      "excess": -3.47,
+      "best": 82.1,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 5359,
+      "win": 44.2,
+      "avg": 0.06,
+      "med": 0.0,
+      "excess": -0.06,
+      "best": 30.0,
+      "worst": -13.9
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 4448,
+      "win": 47.5,
+      "avg": 0.82,
+      "med": -0.2,
+      "excess": 0.45,
+      "best": 61.6,
+      "worst": -70.3
+     },
+     "20": {
+      "n": 279,
+      "win": 46.2,
+      "avg": 1.77,
+      "med": -0.88,
+      "excess": 0.92,
+      "best": 69.9,
+      "worst": -84.6
+     },
+     "1": {
+      "n": 5569,
+      "win": 44.8,
+      "avg": 0.07,
+      "med": -0.12,
+      "excess": 0.06,
+      "best": 28.9,
+      "worst": -68.4
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 4586,
+      "win": 41.4,
+      "avg": 0.36,
+      "med": -0.73,
+      "excess": -0.02,
+      "best": 68.3,
+      "worst": -37.8
+     },
+     "20": {
+      "n": 291,
+      "win": 35.7,
+      "avg": 0.07,
+      "med": -3.32,
+      "excess": -0.78,
+      "best": 62.8,
+      "worst": -20.8
+     },
+     "1": {
+      "n": 5726,
+      "win": 43.5,
+      "avg": 0.03,
+      "med": -0.15,
+      "excess": 0.02,
+      "best": 29.7,
+      "worst": -29.9
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Investment Banks/Brokers",
+   "segment": "코스피",
+   "close": 186600.0,
+   "chg": 0.16,
+   "gap": 0.91,
+   "sma5": 185000.0,
+   "sma20": 189335.0,
+   "sma200": 214001.5,
+   "ext200": -12.8,
+   "rsi": 43.4,
+   "macd_h": 114.78,
+   "rvol": 1.06,
+   "pw": -2.0,
+   "p1": 0.59,
+   "p3": -11.87,
+   "ytd": 15.3,
+   "pos52": 30.0,
+   "hi52": 300500.0,
+   "lo52": 138100.0,
+   "val": 304.6,
+   "mcap": 106560.0,
+   "per": 3.7,
+   "pbr": 0.84,
+   "eps": 50236.48,
+   "roe": 25.2,
+   "eqr": 28.4,
+   "div": 4.66,
+   "rev_q": 233.5,
+   "rev_ttm": 100.2,
+   "cagr5": 23.1,
+   "eps_q": 84.7,
+   "opm": 50.8,
+   "roic": 7.0,
+   "psr": 1.41,
+   "peg": 0.03,
+   "de": 6.94,
+   "inflow": 0.92,
+   "biz": "Korea Investment Holdings Co., Ltd., through its subsidiaries, provides various financial products and services. The company offers securities, asset management, savings bank, credit finance, venture capital, private equ",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "068930",
+   "name": "디지털대성",
+   "ticker": "KRX:068930",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_spike",
+    "sig_trend",
+    "sig_div",
+    "sig_accel",
+    "sig_garp",
+    "sig_inflow"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 2751,
+      "win": 42.4,
+      "avg": -0.23,
+      "med": -0.74,
+      "excess": -0.7,
+      "best": 87.2,
+      "worst": -90.0
+     },
+     "20": {
+      "n": 551,
+      "win": 40.7,
+      "avg": 1.19,
+      "med": -2.35,
+      "excess": -3.38,
+      "best": 460.9,
+      "worst": -78.3
+     },
+     "1": {
+      "n": 3415,
+      "win": 39.2,
+      "avg": -0.32,
+      "med": -0.31,
+      "excess": -0.26,
+      "best": 34.9,
+      "worst": -44.6
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1078,
+      "win": 43.4,
+      "avg": 0.24,
+      "med": -0.59,
+      "excess": -0.01,
+      "best": 97.6,
+      "worst": -23.4
+     },
+     "20": {
+      "n": 187,
+      "win": 41.7,
+      "avg": 2.34,
+      "med": -0.89,
+      "excess": -0.79,
+      "best": 125.8,
+      "worst": -28.0
+     },
+     "1": {
+      "n": 1296,
+      "win": 41.1,
+      "avg": 0.05,
+      "med": -0.2,
+      "excess": 0.07,
+      "best": 57.3,
+      "worst": -18.9
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 4408,
+      "win": 40.3,
+      "avg": -0.18,
+      "med": -0.51,
+      "excess": -0.44,
+      "best": 37.6,
+      "worst": -43.6
+     },
+     "20": {
+      "n": 766,
+      "win": 41.1,
+      "avg": 0.0,
+      "med": -1.13,
+      "excess": -3.47,
+      "best": 82.1,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 5359,
+      "win": 44.2,
+      "avg": 0.06,
+      "med": 0.0,
+      "excess": -0.06,
+      "best": 30.0,
+      "worst": -13.9
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 7677,
+      "win": 43.5,
+      "avg": 0.61,
+      "med": -0.57,
+      "excess": 0.24,
+      "best": 68.3,
+      "worst": -76.2
+     },
+     "20": {
+      "n": 491,
+      "win": 40.1,
+      "avg": 1.17,
+      "med": -2.69,
+      "excess": 0.32,
+      "best": 83.5,
+      "worst": -43.1
+     },
+     "1": {
+      "n": 9633,
+      "win": 44.2,
+      "avg": 0.05,
+      "med": -0.11,
+      "excess": 0.04,
+      "best": 30.0,
+      "worst": -40.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 4586,
+      "win": 41.4,
+      "avg": 0.36,
+      "med": -0.73,
+      "excess": -0.02,
+      "best": 68.3,
+      "worst": -37.8
+     },
+     "20": {
+      "n": 291,
+      "win": 35.7,
+      "avg": 0.07,
+      "med": -3.32,
+      "excess": -0.78,
+      "best": 62.8,
+      "worst": -20.8
+     },
+     "1": {
+      "n": 5726,
+      "win": 43.5,
+      "avg": 0.03,
+      "med": -0.15,
+      "excess": 0.02,
+      "best": 29.7,
+      "worst": -29.9
+     }
+    },
+    "sig_inflow": {
+     "1": {
+      "n": 280,
+      "win": 49.3,
+      "avg": 0.1,
+      "med": 0.0,
+      "excess": 0.04,
+      "best": 4.0,
+      "worst": -7.0
+     }
+    }
+   },
+   "sector": "Commercial Services",
+   "industry": "Miscellaneous Commercial Services",
+   "segment": "코스닥",
+   "close": 9650.0,
+   "chg": 0.84,
+   "gap": 1.36,
+   "sma5": 9146.0,
+   "sma20": 8768.0,
+   "sma200": 8102.45,
+   "ext200": 19.1,
+   "rsi": 78.6,
+   "macd_h": 60.09,
+   "rvol": 5.1,
+   "pw": 9.59,
+   "p1": 16.79,
+   "p3": 36.56,
+   "ytd": 22.0,
+   "pos52": 91.0,
+   "hi52": 9950.0,
+   "lo52": 6760.0,
+   "val": 33.4,
+   "mcap": 2506.0,
+   "per": 6.8,
+   "pbr": 1.66,
+   "eps": 1413.34,
+   "roe": 26.3,
+   "eqr": 49.0,
+   "div": 5.42,
+   "rev_q": 16.4,
+   "rev_ttm": 12.5,
+   "cagr5": 11.3,
+   "eps_q": 174.2,
+   "opm": 15.2,
+   "roic": 22.7,
+   "psr": 0.99,
+   "peg": 0.06,
+   "de": 0.53,
+   "inflow": 3.52,
+   "biz": "[업종] 일반 교습 학원 · [주요제품] 온라인 강의, 오프라인 학원, 교재",
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "007810",
+   "name": "코리아써키트",
+   "ticker": "KRX:007810",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_qual",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp",
+    "sig_inflow"
+   ],
+   "baserate": {
+    "sig_qual": {
+     "5": {
+      "n": 3799,
+      "win": 46.2,
+      "avg": 0.91,
+      "med": -0.41,
+      "excess": 0.65,
+      "best": 61.6,
+      "worst": -28.1
+     },
+     "20": {
+      "n": 631,
+      "win": 54.2,
+      "avg": 3.61,
+      "med": 1.14,
+      "excess": 0.25,
+      "best": 69.9,
+      "worst": -34.0
+     },
+     "1": {
+      "n": 4633,
+      "win": 46.6,
+      "avg": 0.29,
+      "med": 0.0,
+      "excess": 0.17,
+      "best": 38.8,
+      "worst": -23.8
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 4448,
+      "win": 47.5,
+      "avg": 0.82,
+      "med": -0.2,
+      "excess": 0.45,
+      "best": 61.6,
+      "worst": -70.3
+     },
+     "20": {
+      "n": 279,
+      "win": 46.2,
+      "avg": 1.77,
+      "med": -0.88,
+      "excess": 0.92,
+      "best": 69.9,
+      "worst": -84.6
+     },
+     "1": {
+      "n": 5569,
+      "win": 44.8,
+      "avg": 0.07,
+      "med": -0.12,
+      "excess": 0.06,
+      "best": 28.9,
+      "worst": -68.4
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 7677,
+      "win": 43.5,
+      "avg": 0.61,
+      "med": -0.57,
+      "excess": 0.24,
+      "best": 68.3,
+      "worst": -76.2
+     },
+     "20": {
+      "n": 491,
+      "win": 40.1,
+      "avg": 1.17,
+      "med": -2.69,
+      "excess": 0.32,
+      "best": 83.5,
+      "worst": -43.1
+     },
+     "1": {
+      "n": 9633,
+      "win": 44.2,
+      "avg": 0.05,
+      "med": -0.11,
+      "excess": 0.04,
+      "best": 30.0,
+      "worst": -40.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 4586,
+      "win": 41.4,
+      "avg": 0.36,
+      "med": -0.73,
+      "excess": -0.02,
+      "best": 68.3,
+      "worst": -37.8
+     },
+     "20": {
+      "n": 291,
+      "win": 35.7,
+      "avg": 0.07,
+      "med": -3.32,
+      "excess": -0.78,
+      "best": 62.8,
+      "worst": -20.8
+     },
+     "1": {
+      "n": 5726,
+      "win": 43.5,
+      "avg": 0.03,
+      "med": -0.15,
+      "excess": 0.02,
+      "best": 29.7,
+      "worst": -29.9
+     }
+    },
+    "sig_inflow": {
+     "1": {
+      "n": 280,
+      "win": 49.3,
+      "avg": 0.1,
+      "med": 0.0,
+      "excess": 0.04,
+      "best": 4.0,
+      "worst": -7.0
+     }
+    }
+   },
+   "sector": "Electronic Technology",
+   "industry": "Electronic Components",
+   "segment": "코스피",
+   "close": 65100.0,
+   "chg": -0.76,
+   "gap": 0.61,
+   "sma5": 57480.0,
+   "sma20": 54912.5,
+   "sma200": 69370.5,
+   "ext200": -6.16,
+   "rsi": 63.6,
+   "macd_h": 1753.39,
+   "rvol": 1.51,
+   "pw": 30.99,
+   "p1": 17.3,
+   "p3": -37.4,
+   "ytd": 34.4,
+   "pos52": 37.0,
+   "hi52": 148300.0,
+   "lo52": 16300.0,
+   "val": 452.4,
+   "mcap": 16284.0,
+   "per": 21.1,
+   "pbr": 3.65,
+   "eps": 3084.62,
+   "roe": 20.3,
+   "eqr": 58.6,
+   "div": 0.15,
+   "rev_q": 22.9,
+   "rev_ttm": 21.2,
+   "cagr5": 10.8,
+   "eps_q": 192.3,
+   "opm": 5.8,
+   "roic": 14.1,
+   "psr": 1.18,
+   "peg": null,
+   "de": 0.75,
+   "inflow": 2.49,
+   "biz": "[업종] 전자부품 제조업 · [주요제품] 인쇄회로기판,Module 제조/부동산(건물) 임대",
+   "tdnet": [],
+   "llm": null
+  }
+ ],
+ "config": {
+  "MIN_VAL": 10.0,
+  "MIN_MCAP": 1000.0,
+  "MIN_PRICE": 0.0,
+  "N_SHORT": 8,
+  "N_LONG": 8,
+  "N_NEWS": 4,
+  "MAX_PER_INDUSTRY": 3,
+  "COOLDOWN_DAYS": 3
+ }
+}
