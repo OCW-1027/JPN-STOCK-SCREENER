@@ -1,0 +1,3443 @@
+{
+ "date": "2026-09-30",
+ "market": "kr",
+ "generated": "2026-09-30 16:36 JST",
+ "label_ko": "🇰🇷 한국",
+ "label_ja": "🇰🇷 韓国",
+ "unit_ko": "억원",
+ "unit_ja": "億ウォン",
+ "llm_mode": "off",
+ "baserate_days": 27,
+ "universe": {
+  "total": 2743,
+  "liquid": 671,
+  "candidates": 16,
+  "short": 8,
+  "long": 8,
+  "news": 0
+ },
+ "picks": [
+  {
+   "code": "005720",
+   "name": "넥센",
+   "ticker": "KRX:005720",
+   "bucket": "short",
+   "score": 7.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_macd",
+    "sig_value",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 3285,
+      "win": 42.8,
+      "avg": -0.1,
+      "med": -0.71,
+      "excess": -0.61,
+      "best": 124.0,
+      "worst": -90.0
+     },
+     "20": {
+      "n": 927,
+      "win": 41.4,
+      "avg": 1.38,
+      "med": -2.2,
+      "excess": -2.3,
+      "best": 460.9,
+      "worst": -78.3
+     },
+     "1": {
+      "n": 3831,
+      "win": 39.8,
+      "avg": -0.29,
+      "med": -0.3,
+      "excess": -0.24,
+      "best": 34.9,
+      "worst": -44.6
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 8651,
+      "win": 40.4,
+      "avg": 0.32,
+      "med": -0.88,
+      "excess": 0.12,
+      "best": 410.6,
+      "worst": -69.4
+     },
+     "20": {
+      "n": 2496,
+      "win": 37.4,
+      "avg": 0.32,
+      "med": -2.69,
+      "excess": -2.17,
+      "best": 391.1,
+      "worst": -86.1
+     },
+     "1": {
+      "n": 10436,
+      "win": 39.3,
+      "avg": -0.07,
+      "med": -0.35,
+      "excess": -0.05,
+      "best": 57.9,
+      "worst": -44.8
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 3694,
+      "win": 42.3,
+      "avg": 0.64,
+      "med": -0.72,
+      "excess": 0.42,
+      "best": 389.8,
+      "worst": -37.4
+     },
+     "20": {
+      "n": 1034,
+      "win": 41.7,
+      "avg": 3.26,
+      "med": -1.56,
+      "excess": 0.85,
+      "best": 405.6,
+      "worst": -78.3
+     },
+     "1": {
+      "n": 4342,
+      "win": 39.8,
+      "avg": -0.06,
+      "med": -0.32,
+      "excess": -0.07,
+      "best": 31.8,
+      "worst": -25.6
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 7890,
+      "win": 44.9,
+      "avg": 0.61,
+      "med": -0.39,
+      "excess": 0.32,
+      "best": 83.2,
+      "worst": -67.6
+     },
+     "20": {
+      "n": 2452,
+      "win": 42.6,
+      "avg": 1.98,
+      "med": -1.21,
+      "excess": -0.71,
+      "best": 505.0,
+      "worst": -47.1
+     },
+     "1": {
+      "n": 9154,
+      "win": 44.0,
+      "avg": 0.12,
+      "med": -0.1,
+      "excess": 0.06,
+      "best": 92.5,
+      "worst": -28.7
+     }
+    },
+    "sig_value": {
+     "5": {
+      "n": 8776,
+      "win": 40.4,
+      "avg": -0.17,
+      "med": -0.59,
+      "excess": -0.5,
+      "best": 71.4,
+      "worst": -69.0
+     },
+     "20": {
+      "n": 2548,
+      "win": 38.7,
+      "avg": 0.15,
+      "med": -1.66,
+      "excess": -2.77,
+      "best": 423.9,
+      "worst": -85.8
+     },
+     "1": {
+      "n": 10426,
+      "win": 44.4,
+      "avg": 0.05,
+      "med": -0.06,
+      "excess": -0.07,
+      "best": 75.7,
+      "worst": -45.1
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 9139,
+      "win": 43.7,
+      "avg": 0.59,
+      "med": -0.5,
+      "excess": 0.18,
+      "best": 68.3,
+      "worst": -76.2
+     },
+     "20": {
+      "n": 1962,
+      "win": 42.9,
+      "avg": 1.82,
+      "med": -1.62,
+      "excess": -0.19,
+      "best": 92.2,
+      "worst": -69.7
+     },
+     "1": {
+      "n": 11096,
+      "win": 44.4,
+      "avg": 0.04,
+      "med": -0.11,
+      "excess": 0.02,
+      "best": 30.0,
+      "worst": -40.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 5449,
+      "win": 42.4,
+      "avg": 0.47,
+      "med": -0.61,
+      "excess": 0.04,
+      "best": 68.3,
+      "worst": -56.7
+     },
+     "20": {
+      "n": 1192,
+      "win": 40.8,
+      "avg": 1.21,
+      "med": -1.85,
+      "excess": -0.82,
+      "best": 78.2,
+      "worst": -68.2
+     },
+     "1": {
+      "n": 6555,
+      "win": 43.8,
+      "avg": 0.05,
+      "med": -0.14,
+      "excess": 0.03,
+      "best": 29.7,
+      "worst": -29.9
+     }
+    }
+   },
+   "sector": "Consumer Durables",
+   "industry": "Automotive Aftermarket",
+   "segment": "코스피",
+   "close": 5960.0,
+   "chg": 10.17,
+   "gap": 0.74,
+   "sma5": 5546.0,
+   "sma20": 5728.0,
+   "sma200": 6319.35,
+   "ext200": -5.69,
+   "rsi": 59.1,
+   "macd_h": 16.27,
+   "rvol": 21.51,
+   "pw": 9.06,
+   "p1": -3.37,
+   "p3": -1.79,
+   "ytd": -1.8,
+   "pos52": 32.0,
+   "hi52": 8090.0,
+   "lo52": 4965.0,
+   "val": 20.2,
+   "mcap": 2714.0,
+   "per": 2.7,
+   "pbr": 0.21,
+   "eps": 2241.84,
+   "roe": 8.4,
+   "eqr": 50.1,
+   "div": 3.19,
+   "rev_q": 11.6,
+   "rev_ttm": 11.5,
+   "cagr5": 12.7,
+   "eps_q": 78.8,
+   "opm": 5.8,
+   "roic": 5.1,
+   "psr": 0.09,
+   "peg": 0.03,
+   "de": 1.15,
+   "inflow": 1.14,
+   "biz": "[업종] 고무제품 제조업 · [주요제품] 자동차용 재생타이어튜브,솔리드타이어,고무부품,골프볼,와이어로프소재,특수강선,열처리도금선,건자재 제조,판매,수출입",
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "259630",
+   "name": "엠플러스",
+   "ticker": "KRX:259630",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_macd",
+    "sig_value"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 3285,
+      "win": 42.8,
+      "avg": -0.1,
+      "med": -0.71,
+      "excess": -0.61,
+      "best": 124.0,
+      "worst": -90.0
+     },
+     "20": {
+      "n": 927,
+      "win": 41.4,
+      "avg": 1.38,
+      "med": -2.2,
+      "excess": -2.3,
+      "best": 460.9,
+      "worst": -78.3
+     },
+     "1": {
+      "n": 3831,
+      "win": 39.8,
+      "avg": -0.29,
+      "med": -0.3,
+      "excess": -0.24,
+      "best": 34.9,
+      "worst": -44.6
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 8651,
+      "win": 40.4,
+      "avg": 0.32,
+      "med": -0.88,
+      "excess": 0.12,
+      "best": 410.6,
+      "worst": -69.4
+     },
+     "20": {
+      "n": 2496,
+      "win": 37.4,
+      "avg": 0.32,
+      "med": -2.69,
+      "excess": -2.17,
+      "best": 391.1,
+      "worst": -86.1
+     },
+     "1": {
+      "n": 10436,
+      "win": 39.3,
+      "avg": -0.07,
+      "med": -0.35,
+      "excess": -0.05,
+      "best": 57.9,
+      "worst": -44.8
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 3694,
+      "win": 42.3,
+      "avg": 0.64,
+      "med": -0.72,
+      "excess": 0.42,
+      "best": 389.8,
+      "worst": -37.4
+     },
+     "20": {
+      "n": 1034,
+      "win": 41.7,
+      "avg": 3.26,
+      "med": -1.56,
+      "excess": 0.85,
+      "best": 405.6,
+      "worst": -78.3
+     },
+     "1": {
+      "n": 4342,
+      "win": 39.8,
+      "avg": -0.06,
+      "med": -0.32,
+      "excess": -0.07,
+      "best": 31.8,
+      "worst": -25.6
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 7890,
+      "win": 44.9,
+      "avg": 0.61,
+      "med": -0.39,
+      "excess": 0.32,
+      "best": 83.2,
+      "worst": -67.6
+     },
+     "20": {
+      "n": 2452,
+      "win": 42.6,
+      "avg": 1.98,
+      "med": -1.21,
+      "excess": -0.71,
+      "best": 505.0,
+      "worst": -47.1
+     },
+     "1": {
+      "n": 9154,
+      "win": 44.0,
+      "avg": 0.12,
+      "med": -0.1,
+      "excess": 0.06,
+      "best": 92.5,
+      "worst": -28.7
+     }
+    },
+    "sig_value": {
+     "5": {
+      "n": 8776,
+      "win": 40.4,
+      "avg": -0.17,
+      "med": -0.59,
+      "excess": -0.5,
+      "best": 71.4,
+      "worst": -69.0
+     },
+     "20": {
+      "n": 2548,
+      "win": 38.7,
+      "avg": 0.15,
+      "med": -1.66,
+      "excess": -2.77,
+      "best": 423.9,
+      "worst": -85.8
+     },
+     "1": {
+      "n": 10426,
+      "win": 44.4,
+      "avg": 0.05,
+      "med": -0.06,
+      "excess": -0.07,
+      "best": 75.7,
+      "worst": -45.1
+     }
+    }
+   },
+   "sector": "Producer Manufacturing",
+   "industry": "Industrial Machinery",
+   "segment": "코스닥",
+   "close": 9520.0,
+   "chg": 4.96,
+   "gap": 1.1,
+   "sma5": 9162.0,
+   "sma20": 9244.5,
+   "sma200": 12126.35,
+   "ext200": -21.49,
+   "rsi": 54.7,
+   "macd_h": 25.21,
+   "rvol": 5.4,
+   "pw": 4.61,
+   "p1": 2.69,
+   "p3": -5.74,
+   "ytd": -19.4,
+   "pos52": 19.0,
+   "hi52": 20100.0,
+   "lo52": 6990.0,
+   "val": 27.1,
+   "mcap": 1089.0,
+   "per": 4.9,
+   "pbr": 0.98,
+   "eps": 2182.57,
+   "roe": 24.6,
+   "eqr": 41.8,
+   "div": 2.17,
+   "rev_q": -46.3,
+   "rev_ttm": 7.8,
+   "cagr5": 3.0,
+   "eps_q": -50.5,
+   "opm": 13.1,
+   "roic": 17.6,
+   "psr": 0.7,
+   "peg": 0.14,
+   "de": 0.73,
+   "inflow": 0.9,
+   "biz": "[업종] 특수 목적용 기계 제조업 · [주요제품] 이차전지 자동화 조립설비",
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "119830",
+   "name": "아이텍",
+   "ticker": "KRX:119830",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_reclaim",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 3285,
+      "win": 42.8,
+      "avg": -0.1,
+      "med": -0.71,
+      "excess": -0.61,
+      "best": 124.0,
+      "worst": -90.0
+     },
+     "20": {
+      "n": 927,
+      "win": 41.4,
+      "avg": 1.38,
+      "med": -2.2,
+      "excess": -2.3,
+      "best": 460.9,
+      "worst": -78.3
+     },
+     "1": {
+      "n": 3831,
+      "win": 39.8,
+      "avg": -0.29,
+      "med": -0.3,
+      "excess": -0.24,
+      "best": 34.9,
+      "worst": -44.6
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 8651,
+      "win": 40.4,
+      "avg": 0.32,
+      "med": -0.88,
+      "excess": 0.12,
+      "best": 410.6,
+      "worst": -69.4
+     },
+     "20": {
+      "n": 2496,
+      "win": 37.4,
+      "avg": 0.32,
+      "med": -2.69,
+      "excess": -2.17,
+      "best": 391.1,
+      "worst": -86.1
+     },
+     "1": {
+      "n": 10436,
+      "win": 39.3,
+      "avg": -0.07,
+      "med": -0.35,
+      "excess": -0.05,
+      "best": 57.9,
+      "worst": -44.8
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 3694,
+      "win": 42.3,
+      "avg": 0.64,
+      "med": -0.72,
+      "excess": 0.42,
+      "best": 389.8,
+      "worst": -37.4
+     },
+     "20": {
+      "n": 1034,
+      "win": 41.7,
+      "avg": 3.26,
+      "med": -1.56,
+      "excess": 0.85,
+      "best": 405.6,
+      "worst": -78.3
+     },
+     "1": {
+      "n": 4342,
+      "win": 39.8,
+      "avg": -0.06,
+      "med": -0.32,
+      "excess": -0.07,
+      "best": 31.8,
+      "worst": -25.6
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 1807,
+      "win": 41.4,
+      "avg": -0.13,
+      "med": -0.74,
+      "excess": -0.54,
+      "best": 71.4,
+      "worst": -57.5
+     },
+     "20": {
+      "n": 597,
+      "win": 39.9,
+      "avg": 1.72,
+      "med": -2.13,
+      "excess": -1.6,
+      "best": 649.0,
+      "worst": -85.8
+     },
+     "1": {
+      "n": 2120,
+      "win": 41.1,
+      "avg": -0.18,
+      "med": -0.21,
+      "excess": -0.21,
+      "best": 31.8,
+      "worst": -30.0
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 9139,
+      "win": 43.7,
+      "avg": 0.59,
+      "med": -0.5,
+      "excess": 0.18,
+      "best": 68.3,
+      "worst": -76.2
+     },
+     "20": {
+      "n": 1962,
+      "win": 42.9,
+      "avg": 1.82,
+      "med": -1.62,
+      "excess": -0.19,
+      "best": 92.2,
+      "worst": -69.7
+     },
+     "1": {
+      "n": 11096,
+      "win": 44.4,
+      "avg": 0.04,
+      "med": -0.11,
+      "excess": 0.02,
+      "best": 30.0,
+      "worst": -40.8
+     }
+    }
+   },
+   "sector": "Commercial Services",
+   "industry": "Miscellaneous Commercial Services",
+   "segment": "코스닥",
+   "close": 6850.0,
+   "chg": 10.66,
+   "gap": 0.0,
+   "sma5": 6338.0,
+   "sma20": 6199.0,
+   "sma200": 6627.73,
+   "ext200": 3.35,
+   "rsi": 61.4,
+   "macd_h": 37.57,
+   "rvol": 3.22,
+   "pw": 7.45,
+   "p1": -3.0,
+   "p3": 12.81,
+   "ytd": 21.5,
+   "pos52": 47.0,
+   "hi52": 9730.0,
+   "lo52": 4300.0,
+   "val": 22.9,
+   "mcap": 1634.0,
+   "per": null,
+   "pbr": 0.92,
+   "eps": -561.86,
+   "roe": -6.0,
+   "eqr": 85.4,
+   "div": 0.0,
+   "rev_q": 24.1,
+   "rev_ttm": -52.2,
+   "cagr5": 1.3,
+   "eps_q": 46.4,
+   "opm": 7.9,
+   "roic": -5.9,
+   "psr": 3.05,
+   "peg": null,
+   "de": 0.18,
+   "inflow": 0.54,
+   "biz": "[업종] 그외 기타 전문, 과학 및 기술 서비스업 · [주요제품] 비메모리 반도체 테스트",
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "047050",
+   "name": "포스코인터내셔널",
+   "ticker": "KRX:047050",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_gap",
+    "sig_div",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 8651,
+      "win": 40.4,
+      "avg": 0.32,
+      "med": -0.88,
+      "excess": 0.12,
+      "best": 410.6,
+      "worst": -69.4
+     },
+     "20": {
+      "n": 2496,
+      "win": 37.4,
+      "avg": 0.32,
+      "med": -2.69,
+      "excess": -2.17,
+      "best": 391.1,
+      "worst": -86.1
+     },
+     "1": {
+      "n": 10436,
+      "win": 39.3,
+      "avg": -0.07,
+      "med": -0.35,
+      "excess": -0.05,
+      "best": 57.9,
+      "worst": -44.8
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 3694,
+      "win": 42.3,
+      "avg": 0.64,
+      "med": -0.72,
+      "excess": 0.42,
+      "best": 389.8,
+      "worst": -37.4
+     },
+     "20": {
+      "n": 1034,
+      "win": 41.7,
+      "avg": 3.26,
+      "med": -1.56,
+      "excess": 0.85,
+      "best": 405.6,
+      "worst": -78.3
+     },
+     "1": {
+      "n": 4342,
+      "win": 39.8,
+      "avg": -0.06,
+      "med": -0.32,
+      "excess": -0.07,
+      "best": 31.8,
+      "worst": -25.6
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 1828,
+      "win": 42.9,
+      "avg": -0.17,
+      "med": -1.31,
+      "excess": -0.47,
+      "best": 157.7,
+      "worst": -71.2
+     },
+     "20": {
+      "n": 618,
+      "win": 41.7,
+      "avg": 0.75,
+      "med": -2.86,
+      "excess": -3.01,
+      "best": 368.0,
+      "worst": -85.6
+     },
+     "1": {
+      "n": 2108,
+      "win": 42.0,
+      "avg": -0.2,
+      "med": -0.34,
+      "excess": -0.29,
+      "best": 36.2,
+      "worst": -45.1
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 5126,
+      "win": 41.1,
+      "avg": -0.14,
+      "med": -0.43,
+      "excess": -0.46,
+      "best": 37.6,
+      "worst": -43.6
+     },
+     "20": {
+      "n": 1509,
+      "win": 38.0,
+      "avg": -0.46,
+      "med": -1.43,
+      "excess": -3.4,
+      "best": 82.1,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 6073,
+      "win": 44.1,
+      "avg": 0.05,
+      "med": 0.0,
+      "excess": -0.07,
+      "best": 30.0,
+      "worst": -13.9
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 9139,
+      "win": 43.7,
+      "avg": 0.59,
+      "med": -0.5,
+      "excess": 0.18,
+      "best": 68.3,
+      "worst": -76.2
+     },
+     "20": {
+      "n": 1962,
+      "win": 42.9,
+      "avg": 1.82,
+      "med": -1.62,
+      "excess": -0.19,
+      "best": 92.2,
+      "worst": -69.7
+     },
+     "1": {
+      "n": 11096,
+      "win": 44.4,
+      "avg": 0.04,
+      "med": -0.11,
+      "excess": 0.02,
+      "best": 30.0,
+      "worst": -40.8
+     }
+    }
+   },
+   "sector": "Producer Manufacturing",
+   "industry": "Industrial Conglomerates",
+   "segment": "코스피",
+   "close": 56900.0,
+   "chg": 4.6,
+   "gap": 3.12,
+   "sma5": 56040.0,
+   "sma20": 56005.0,
+   "sma200": 61864.75,
+   "ext200": -8.03,
+   "rsi": 53.8,
+   "macd_h": -118.79,
+   "rvol": 0.94,
+   "pw": -0.52,
+   "p1": 9.63,
+   "p3": 11.57,
+   "ytd": 16.1,
+   "pos52": 26.0,
+   "hi52": 91200.0,
+   "lo52": 44850.0,
+   "val": 289.9,
+   "mcap": 92722.0,
+   "per": 11.7,
+   "pbr": 1.39,
+   "eps": 4860.01,
+   "roe": 13.4,
+   "eqr": 46.6,
+   "div": 4.22,
+   "rev_q": 18.4,
+   "rev_ttm": 4.6,
+   "cagr5": 8.6,
+   "eps_q": 165.5,
+   "opm": 4.0,
+   "roic": 8.1,
+   "psr": 0.3,
+   "peg": 0.13,
+   "de": 1.14,
+   "inflow": 0.59,
+   "biz": "Posco International Corporation operates as a trading company in South Korea and internationally. It engages in the development of oil and gas resources; LNG terminal and connected business; power generation project deve",
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "018880",
+   "name": "한온시스템",
+   "ticker": "KRX:018880",
+   "bucket": "short",
+   "score": 4.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_macd"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 3285,
+      "win": 42.8,
+      "avg": -0.1,
+      "med": -0.71,
+      "excess": -0.61,
+      "best": 124.0,
+      "worst": -90.0
+     },
+     "20": {
+      "n": 927,
+      "win": 41.4,
+      "avg": 1.38,
+      "med": -2.2,
+      "excess": -2.3,
+      "best": 460.9,
+      "worst": -78.3
+     },
+     "1": {
+      "n": 3831,
+      "win": 39.8,
+      "avg": -0.29,
+      "med": -0.3,
+      "excess": -0.24,
+      "best": 34.9,
+      "worst": -44.6
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 8651,
+      "win": 40.4,
+      "avg": 0.32,
+      "med": -0.88,
+      "excess": 0.12,
+      "best": 410.6,
+      "worst": -69.4
+     },
+     "20": {
+      "n": 2496,
+      "win": 37.4,
+      "avg": 0.32,
+      "med": -2.69,
+      "excess": -2.17,
+      "best": 391.1,
+      "worst": -86.1
+     },
+     "1": {
+      "n": 10436,
+      "win": 39.3,
+      "avg": -0.07,
+      "med": -0.35,
+      "excess": -0.05,
+      "best": 57.9,
+      "worst": -44.8
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 3694,
+      "win": 42.3,
+      "avg": 0.64,
+      "med": -0.72,
+      "excess": 0.42,
+      "best": 389.8,
+      "worst": -37.4
+     },
+     "20": {
+      "n": 1034,
+      "win": 41.7,
+      "avg": 3.26,
+      "med": -1.56,
+      "excess": 0.85,
+      "best": 405.6,
+      "worst": -78.3
+     },
+     "1": {
+      "n": 4342,
+      "win": 39.8,
+      "avg": -0.06,
+      "med": -0.32,
+      "excess": -0.07,
+      "best": 31.8,
+      "worst": -25.6
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 7890,
+      "win": 44.9,
+      "avg": 0.61,
+      "med": -0.39,
+      "excess": 0.32,
+      "best": 83.2,
+      "worst": -67.6
+     },
+     "20": {
+      "n": 2452,
+      "win": 42.6,
+      "avg": 1.98,
+      "med": -1.21,
+      "excess": -0.71,
+      "best": 505.0,
+      "worst": -47.1
+     },
+     "1": {
+      "n": 9154,
+      "win": 44.0,
+      "avg": 0.12,
+      "med": -0.1,
+      "excess": 0.06,
+      "best": 92.5,
+      "worst": -28.7
+     }
+    }
+   },
+   "sector": "Producer Manufacturing",
+   "industry": "Auto Parts: OEM",
+   "segment": "코스피",
+   "close": 3520.0,
+   "chg": 10.0,
+   "gap": 1.72,
+   "sma5": 3311.0,
+   "sma20": 3419.25,
+   "sma200": 3875.45,
+   "ext200": -9.17,
+   "rsi": 53.5,
+   "macd_h": 1.21,
+   "rvol": 8.21,
+   "pw": 5.07,
+   "p1": 2.03,
+   "p3": -6.26,
+   "ytd": 18.7,
+   "pos52": 24.0,
+   "hi52": 5940.0,
+   "lo52": 2755.0,
+   "val": 803.4,
+   "mcap": 32836.0,
+   "per": null,
+   "pbr": 0.88,
+   "eps": -91.81,
+   "roe": -0.1,
+   "eqr": 40.0,
+   "div": 0.0,
+   "rev_q": 0.6,
+   "rev_ttm": 5.0,
+   "cagr5": 9.6,
+   "eps_q": null,
+   "opm": 3.5,
+   "roic": -0.1,
+   "psr": 0.22,
+   "peg": null,
+   "de": 0.92,
+   "inflow": 1.11,
+   "biz": "Hanon Systems provides automotive thermal management solutions in Korea. The company offers heating, ventilation, and air conditioning technologies, such as omnifarious HVAC designs, high-efficiency blower scrolls, visib",
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "290650",
+   "name": "엘앤씨바이오",
+   "ticker": "KRX:290650",
+   "bucket": "short",
+   "score": 4.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_growth"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 3285,
+      "win": 42.8,
+      "avg": -0.1,
+      "med": -0.71,
+      "excess": -0.61,
+      "best": 124.0,
+      "worst": -90.0
+     },
+     "20": {
+      "n": 927,
+      "win": 41.4,
+      "avg": 1.38,
+      "med": -2.2,
+      "excess": -2.3,
+      "best": 460.9,
+      "worst": -78.3
+     },
+     "1": {
+      "n": 3831,
+      "win": 39.8,
+      "avg": -0.29,
+      "med": -0.3,
+      "excess": -0.24,
+      "best": 34.9,
+      "worst": -44.6
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 8651,
+      "win": 40.4,
+      "avg": 0.32,
+      "med": -0.88,
+      "excess": 0.12,
+      "best": 410.6,
+      "worst": -69.4
+     },
+     "20": {
+      "n": 2496,
+      "win": 37.4,
+      "avg": 0.32,
+      "med": -2.69,
+      "excess": -2.17,
+      "best": 391.1,
+      "worst": -86.1
+     },
+     "1": {
+      "n": 10436,
+      "win": 39.3,
+      "avg": -0.07,
+      "med": -0.35,
+      "excess": -0.05,
+      "best": 57.9,
+      "worst": -44.8
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 3694,
+      "win": 42.3,
+      "avg": 0.64,
+      "med": -0.72,
+      "excess": 0.42,
+      "best": 389.8,
+      "worst": -37.4
+     },
+     "20": {
+      "n": 1034,
+      "win": 41.7,
+      "avg": 3.26,
+      "med": -1.56,
+      "excess": 0.85,
+      "best": 405.6,
+      "worst": -78.3
+     },
+     "1": {
+      "n": 4342,
+      "win": 39.8,
+      "avg": -0.06,
+      "med": -0.32,
+      "excess": -0.07,
+      "best": 31.8,
+      "worst": -25.6
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 5292,
+      "win": 47.8,
+      "avg": 0.92,
+      "med": -0.17,
+      "excess": 0.5,
+      "best": 61.6,
+      "worst": -70.3
+     },
+     "20": {
+      "n": 1120,
+      "win": 50.4,
+      "avg": 3.28,
+      "med": 0.15,
+      "excess": 1.27,
+      "best": 78.2,
+      "worst": -85.8
+     },
+     "1": {
+      "n": 6390,
+      "win": 45.0,
+      "avg": 0.09,
+      "med": -0.12,
+      "excess": 0.07,
+      "best": 28.9,
+      "worst": -68.4
+     }
+    }
+   },
+   "sector": "Health Technology",
+   "industry": "Medical Specialties",
+   "segment": "코스닥",
+   "close": 51600.0,
+   "chg": 9.09,
+   "gap": 0.95,
+   "sma5": 47810.0,
+   "sma20": 48177.93,
+   "sma200": 66782.74,
+   "ext200": -22.73,
+   "rsi": 55.2,
+   "macd_h": 674.26,
+   "rvol": 3.87,
+   "pw": 11.52,
+   "p1": 2.61,
+   "p3": -39.68,
+   "ytd": -11.2,
+   "pos52": 14.0,
+   "hi52": 120889.75,
+   "lo52": 40764.02,
+   "val": 199.3,
+   "mcap": 14472.0,
+   "per": null,
+   "pbr": 4.41,
+   "eps": -6013.46,
+   "roe": -47.0,
+   "eqr": 48.0,
+   "div": 0.11,
+   "rev_q": 88.4,
+   "rev_ttm": 53.1,
+   "cagr5": 21.0,
+   "eps_q": -82.5,
+   "opm": 16.6,
+   "roic": -44.7,
+   "psr": 14.9,
+   "peg": null,
+   "de": 0.2,
+   "inflow": 0.61,
+   "biz": "[업종] 의약품 제조업 · [주요제품] 인체조직(피부, 뼈, 연골)",
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "053260",
+   "name": "금강철강",
+   "ticker": "KRX:053260",
+   "bucket": "short",
+   "score": 3.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_gap"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 3285,
+      "win": 42.8,
+      "avg": -0.1,
+      "med": -0.71,
+      "excess": -0.61,
+      "best": 124.0,
+      "worst": -90.0
+     },
+     "20": {
+      "n": 927,
+      "win": 41.4,
+      "avg": 1.38,
+      "med": -2.2,
+      "excess": -2.3,
+      "best": 460.9,
+      "worst": -78.3
+     },
+     "1": {
+      "n": 3831,
+      "win": 39.8,
+      "avg": -0.29,
+      "med": -0.3,
+      "excess": -0.24,
+      "best": 34.9,
+      "worst": -44.6
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 8651,
+      "win": 40.4,
+      "avg": 0.32,
+      "med": -0.88,
+      "excess": 0.12,
+      "best": 410.6,
+      "worst": -69.4
+     },
+     "20": {
+      "n": 2496,
+      "win": 37.4,
+      "avg": 0.32,
+      "med": -2.69,
+      "excess": -2.17,
+      "best": 391.1,
+      "worst": -86.1
+     },
+     "1": {
+      "n": 10436,
+      "win": 39.3,
+      "avg": -0.07,
+      "med": -0.35,
+      "excess": -0.05,
+      "best": 57.9,
+      "worst": -44.8
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 1828,
+      "win": 42.9,
+      "avg": -0.17,
+      "med": -1.31,
+      "excess": -0.47,
+      "best": 157.7,
+      "worst": -71.2
+     },
+     "20": {
+      "n": 618,
+      "win": 41.7,
+      "avg": 0.75,
+      "med": -2.86,
+      "excess": -3.01,
+      "best": 368.0,
+      "worst": -85.6
+     },
+     "1": {
+      "n": 2108,
+      "win": 42.0,
+      "avg": -0.2,
+      "med": -0.34,
+      "excess": -0.29,
+      "best": 36.2,
+      "worst": -45.1
+     }
+    }
+   },
+   "sector": "Non-Energy Minerals",
+   "industry": "Steel",
+   "segment": "코스닥",
+   "close": 8140.0,
+   "chg": 23.15,
+   "gap": 8.77,
+   "sma5": 7198.0,
+   "sma20": 7064.0,
+   "sma200": 5033.75,
+   "ext200": 61.71,
+   "rsi": 65.0,
+   "macd_h": -58.62,
+   "rvol": 6.36,
+   "pw": 10.94,
+   "p1": 53.02,
+   "p3": 59.65,
+   "ytd": 103.3,
+   "pos52": 81.0,
+   "hi52": 9170.0,
+   "lo52": 3720.0,
+   "val": 699.2,
+   "mcap": 1039.0,
+   "per": 20.0,
+   "pbr": 1.0,
+   "eps": 404.8,
+   "roe": 5.1,
+   "eqr": 84.4,
+   "div": 2.43,
+   "rev_q": 8.5,
+   "rev_ttm": -7.6,
+   "cagr5": 0.2,
+   "eps_q": null,
+   "opm": 0.9,
+   "roic": 5.1,
+   "psr": 0.72,
+   "peg": null,
+   "de": 0.01,
+   "inflow": 0.32,
+   "biz": "[업종] 1차 철강 제조업 · [주요제품] 냉연압연강판, 산세코일",
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "101360",
+   "name": "에코앤드림",
+   "ticker": "KRX:101360",
+   "bucket": "short",
+   "score": 3.0,
+   "signals": [
+    "sig_spike",
+    "sig_x20",
+    "sig_gap"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 3285,
+      "win": 42.8,
+      "avg": -0.1,
+      "med": -0.71,
+      "excess": -0.61,
+      "best": 124.0,
+      "worst": -90.0
+     },
+     "20": {
+      "n": 927,
+      "win": 41.4,
+      "avg": 1.38,
+      "med": -2.2,
+      "excess": -2.3,
+      "best": 460.9,
+      "worst": -78.3
+     },
+     "1": {
+      "n": 3831,
+      "win": 39.8,
+      "avg": -0.29,
+      "med": -0.3,
+      "excess": -0.24,
+      "best": 34.9,
+      "worst": -44.6
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 3694,
+      "win": 42.3,
+      "avg": 0.64,
+      "med": -0.72,
+      "excess": 0.42,
+      "best": 389.8,
+      "worst": -37.4
+     },
+     "20": {
+      "n": 1034,
+      "win": 41.7,
+      "avg": 3.26,
+      "med": -1.56,
+      "excess": 0.85,
+      "best": 405.6,
+      "worst": -78.3
+     },
+     "1": {
+      "n": 4342,
+      "win": 39.8,
+      "avg": -0.06,
+      "med": -0.32,
+      "excess": -0.07,
+      "best": 31.8,
+      "worst": -25.6
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 1828,
+      "win": 42.9,
+      "avg": -0.17,
+      "med": -1.31,
+      "excess": -0.47,
+      "best": 157.7,
+      "worst": -71.2
+     },
+     "20": {
+      "n": 618,
+      "win": 41.7,
+      "avg": 0.75,
+      "med": -2.86,
+      "excess": -3.01,
+      "best": 368.0,
+      "worst": -85.6
+     },
+     "1": {
+      "n": 2108,
+      "win": 42.0,
+      "avg": -0.2,
+      "med": -0.34,
+      "excess": -0.29,
+      "best": 36.2,
+      "worst": -45.1
+     }
+    }
+   },
+   "sector": "Producer Manufacturing",
+   "industry": "Industrial Machinery",
+   "segment": "코스닥",
+   "close": 8100.0,
+   "chg": 7.43,
+   "gap": 9.02,
+   "sma5": 7728.0,
+   "sma20": 7950.0,
+   "sma200": 14380.7,
+   "ext200": -43.67,
+   "rsi": 55.0,
+   "macd_h": -9.03,
+   "rvol": 4.89,
+   "pw": 10.53,
+   "p1": -9.6,
+   "p3": -4.77,
+   "ytd": -53.0,
+   "pos52": 15.0,
+   "hi52": 26900.0,
+   "lo52": 4855.0,
+   "val": 15.3,
+   "mcap": 1323.0,
+   "per": null,
+   "pbr": 0.69,
+   "eps": -805.51,
+   "roe": -6.6,
+   "eqr": 47.0,
+   "div": 0.0,
+   "rev_q": -49.0,
+   "rev_ttm": -14.4,
+   "cagr5": 9.0,
+   "eps_q": -1043.4,
+   "opm": -6.2,
+   "roic": -4.0,
+   "psr": 1.01,
+   "peg": null,
+   "de": 1.24,
+   "inflow": 0.61,
+   "biz": "[업종] 일차전지 및 이차전지 제조업 · [주요제품] 배출가스 저감용 촉매 및 이차전지 양극활물질 전구체",
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "192080",
+   "name": "더블유게임즈",
+   "ticker": "KRX:192080",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_gc",
+    "sig_reclaim",
+    "sig_macd",
+    "sig_value",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_gc": {
+     "5": {
+      "n": 1061,
+      "win": 42.8,
+      "avg": 0.28,
+      "med": -0.51,
+      "excess": -0.15,
+      "best": 97.6,
+      "worst": -30.6
+     },
+     "20": {
+      "n": 322,
+      "win": 48.4,
+      "avg": 1.93,
+      "med": -0.27,
+      "excess": -1.5,
+      "best": 125.8,
+      "worst": -57.0
+     },
+     "1": {
+      "n": 1274,
+      "win": 43.9,
+      "avg": -0.02,
+      "med": 0.0,
+      "excess": -0.05,
+      "best": 29.2,
+      "worst": -30.0
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 1807,
+      "win": 41.4,
+      "avg": -0.13,
+      "med": -0.74,
+      "excess": -0.54,
+      "best": 71.4,
+      "worst": -57.5
+     },
+     "20": {
+      "n": 597,
+      "win": 39.9,
+      "avg": 1.72,
+      "med": -2.13,
+      "excess": -1.6,
+      "best": 649.0,
+      "worst": -85.8
+     },
+     "1": {
+      "n": 2120,
+      "win": 41.1,
+      "avg": -0.18,
+      "med": -0.21,
+      "excess": -0.21,
+      "best": 31.8,
+      "worst": -30.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 7890,
+      "win": 44.9,
+      "avg": 0.61,
+      "med": -0.39,
+      "excess": 0.32,
+      "best": 83.2,
+      "worst": -67.6
+     },
+     "20": {
+      "n": 2452,
+      "win": 42.6,
+      "avg": 1.98,
+      "med": -1.21,
+      "excess": -0.71,
+      "best": 505.0,
+      "worst": -47.1
+     },
+     "1": {
+      "n": 9154,
+      "win": 44.0,
+      "avg": 0.12,
+      "med": -0.1,
+      "excess": 0.06,
+      "best": 92.5,
+      "worst": -28.7
+     }
+    },
+    "sig_value": {
+     "5": {
+      "n": 8776,
+      "win": 40.4,
+      "avg": -0.17,
+      "med": -0.59,
+      "excess": -0.5,
+      "best": 71.4,
+      "worst": -69.0
+     },
+     "20": {
+      "n": 2548,
+      "win": 38.7,
+      "avg": 0.15,
+      "med": -1.66,
+      "excess": -2.77,
+      "best": 423.9,
+      "worst": -85.8
+     },
+     "1": {
+      "n": 10426,
+      "win": 44.4,
+      "avg": 0.05,
+      "med": -0.06,
+      "excess": -0.07,
+      "best": 75.7,
+      "worst": -45.1
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 9139,
+      "win": 43.7,
+      "avg": 0.59,
+      "med": -0.5,
+      "excess": 0.18,
+      "best": 68.3,
+      "worst": -76.2
+     },
+     "20": {
+      "n": 1962,
+      "win": 42.9,
+      "avg": 1.82,
+      "med": -1.62,
+      "excess": -0.19,
+      "best": 92.2,
+      "worst": -69.7
+     },
+     "1": {
+      "n": 11096,
+      "win": 44.4,
+      "avg": 0.04,
+      "med": -0.11,
+      "excess": 0.02,
+      "best": 30.0,
+      "worst": -40.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 5449,
+      "win": 42.4,
+      "avg": 0.47,
+      "med": -0.61,
+      "excess": 0.04,
+      "best": 68.3,
+      "worst": -56.7
+     },
+     "20": {
+      "n": 1192,
+      "win": 40.8,
+      "avg": 1.21,
+      "med": -1.85,
+      "excess": -0.82,
+      "best": 78.2,
+      "worst": -68.2
+     },
+     "1": {
+      "n": 6555,
+      "win": 43.8,
+      "avg": 0.05,
+      "med": -0.14,
+      "excess": 0.03,
+      "best": 29.7,
+      "worst": -29.9
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Packaged Software",
+   "segment": "코스피",
+   "close": 58100.0,
+   "chg": -1.36,
+   "gap": 0.34,
+   "sma5": 58540.0,
+   "sma20": 57770.0,
+   "sma200": 57223.5,
+   "ext200": 1.53,
+   "rsi": 47.7,
+   "macd_h": 225.23,
+   "rvol": 1.22,
+   "pw": -1.53,
+   "p1": -2.52,
+   "p3": -11.72,
+   "ytd": 8.2,
+   "pos52": 38.0,
+   "hi52": 76500.0,
+   "lo52": 47000.0,
+   "val": 28.7,
+   "mcap": 11557.0,
+   "per": 6.3,
+   "pbr": 0.84,
+   "eps": 9225.87,
+   "roe": 14.7,
+   "eqr": 90.6,
+   "div": 2.04,
+   "rev_q": 22.5,
+   "rev_ttm": 24.5,
+   "cagr5": 1.8,
+   "eps_q": 119.5,
+   "opm": 32.6,
+   "roic": 14.5,
+   "psr": 1.59,
+   "peg": 0.27,
+   "de": 0.01,
+   "inflow": 0.82,
+   "biz": "[업종] 소프트웨어 개발 및 공급업 · [주요제품] 모바일게임",
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "013990",
+   "name": "아가방컴퍼니",
+   "ticker": "KRX:013990",
+   "bucket": "long",
+   "score": 7.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_trend",
+    "sig_macd",
+    "sig_value",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 3285,
+      "win": 42.8,
+      "avg": -0.1,
+      "med": -0.71,
+      "excess": -0.61,
+      "best": 124.0,
+      "worst": -90.0
+     },
+     "20": {
+      "n": 927,
+      "win": 41.4,
+      "avg": 1.38,
+      "med": -2.2,
+      "excess": -2.3,
+      "best": 460.9,
+      "worst": -78.3
+     },
+     "1": {
+      "n": 3831,
+      "win": 39.8,
+      "avg": -0.29,
+      "med": -0.3,
+      "excess": -0.24,
+      "best": 34.9,
+      "worst": -44.6
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 8651,
+      "win": 40.4,
+      "avg": 0.32,
+      "med": -0.88,
+      "excess": 0.12,
+      "best": 410.6,
+      "worst": -69.4
+     },
+     "20": {
+      "n": 2496,
+      "win": 37.4,
+      "avg": 0.32,
+      "med": -2.69,
+      "excess": -2.17,
+      "best": 391.1,
+      "worst": -86.1
+     },
+     "1": {
+      "n": 10436,
+      "win": 39.3,
+      "avg": -0.07,
+      "med": -0.35,
+      "excess": -0.05,
+      "best": 57.9,
+      "worst": -44.8
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1244,
+      "win": 43.9,
+      "avg": 0.3,
+      "med": -0.58,
+      "excess": -0.01,
+      "best": 97.6,
+      "worst": -23.4
+     },
+     "20": {
+      "n": 382,
+      "win": 39.8,
+      "avg": 1.15,
+      "med": -1.2,
+      "excess": -1.52,
+      "best": 125.8,
+      "worst": -28.0
+     },
+     "1": {
+      "n": 1456,
+      "win": 41.3,
+      "avg": 0.02,
+      "med": -0.2,
+      "excess": 0.03,
+      "best": 57.3,
+      "worst": -18.9
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 7890,
+      "win": 44.9,
+      "avg": 0.61,
+      "med": -0.39,
+      "excess": 0.32,
+      "best": 83.2,
+      "worst": -67.6
+     },
+     "20": {
+      "n": 2452,
+      "win": 42.6,
+      "avg": 1.98,
+      "med": -1.21,
+      "excess": -0.71,
+      "best": 505.0,
+      "worst": -47.1
+     },
+     "1": {
+      "n": 9154,
+      "win": 44.0,
+      "avg": 0.12,
+      "med": -0.1,
+      "excess": 0.06,
+      "best": 92.5,
+      "worst": -28.7
+     }
+    },
+    "sig_value": {
+     "5": {
+      "n": 8776,
+      "win": 40.4,
+      "avg": -0.17,
+      "med": -0.59,
+      "excess": -0.5,
+      "best": 71.4,
+      "worst": -69.0
+     },
+     "20": {
+      "n": 2548,
+      "win": 38.7,
+      "avg": 0.15,
+      "med": -1.66,
+      "excess": -2.77,
+      "best": 423.9,
+      "worst": -85.8
+     },
+     "1": {
+      "n": 10426,
+      "win": 44.4,
+      "avg": 0.05,
+      "med": -0.06,
+      "excess": -0.07,
+      "best": 75.7,
+      "worst": -45.1
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 9139,
+      "win": 43.7,
+      "avg": 0.59,
+      "med": -0.5,
+      "excess": 0.18,
+      "best": 68.3,
+      "worst": -76.2
+     },
+     "20": {
+      "n": 1962,
+      "win": 42.9,
+      "avg": 1.82,
+      "med": -1.62,
+      "excess": -0.19,
+      "best": 92.2,
+      "worst": -69.7
+     },
+     "1": {
+      "n": 11096,
+      "win": 44.4,
+      "avg": 0.04,
+      "med": -0.11,
+      "excess": 0.02,
+      "best": 30.0,
+      "worst": -40.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 5449,
+      "win": 42.4,
+      "avg": 0.47,
+      "med": -0.61,
+      "excess": 0.04,
+      "best": 68.3,
+      "worst": -56.7
+     },
+     "20": {
+      "n": 1192,
+      "win": 40.8,
+      "avg": 1.21,
+      "med": -1.85,
+      "excess": -0.82,
+      "best": 78.2,
+      "worst": -68.2
+     },
+     "1": {
+      "n": 6555,
+      "win": 43.8,
+      "avg": 0.05,
+      "med": -0.14,
+      "excess": 0.03,
+      "best": 29.7,
+      "worst": -29.9
+     }
+    }
+   },
+   "sector": "Consumer Non-Durables",
+   "industry": "Apparel/Footwear",
+   "segment": "코스닥",
+   "close": 5110.0,
+   "chg": 5.04,
+   "gap": 0.0,
+   "sma5": 4885.0,
+   "sma20": 4762.25,
+   "sma200": 4530.48,
+   "ext200": 12.79,
+   "rsi": 66.3,
+   "macd_h": 17.64,
+   "rvol": 6.15,
+   "pw": 6.46,
+   "p1": 16.14,
+   "p3": 47.05,
+   "ytd": 14.4,
+   "pos52": 78.0,
+   "hi52": 5670.0,
+   "lo52": 3115.0,
+   "val": 13.1,
+   "mcap": 1348.0,
+   "per": 6.2,
+   "pbr": 0.7,
+   "eps": 828.61,
+   "roe": 12.0,
+   "eqr": 75.0,
+   "div": 0.0,
+   "rev_q": 13.2,
+   "rev_ttm": 8.8,
+   "cagr5": 9.1,
+   "eps_q": 225.1,
+   "opm": 8.6,
+   "roic": 11.7,
+   "psr": 0.75,
+   "peg": 0.04,
+   "de": 0.06,
+   "inflow": 0.84,
+   "biz": "[업종] 생활용품 도매업 · [주요제품] 유아용 의류 및 용품",
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "001120",
+   "name": "LX인터내셔널",
+   "ticker": "KRX:001120",
+   "bucket": "long",
+   "score": 7.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_trend",
+    "sig_macd",
+    "sig_div"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 8651,
+      "win": 40.4,
+      "avg": 0.32,
+      "med": -0.88,
+      "excess": 0.12,
+      "best": 410.6,
+      "worst": -69.4
+     },
+     "20": {
+      "n": 2496,
+      "win": 37.4,
+      "avg": 0.32,
+      "med": -2.69,
+      "excess": -2.17,
+      "best": 391.1,
+      "worst": -86.1
+     },
+     "1": {
+      "n": 10436,
+      "win": 39.3,
+      "avg": -0.07,
+      "med": -0.35,
+      "excess": -0.05,
+      "best": 57.9,
+      "worst": -44.8
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 3694,
+      "win": 42.3,
+      "avg": 0.64,
+      "med": -0.72,
+      "excess": 0.42,
+      "best": 389.8,
+      "worst": -37.4
+     },
+     "20": {
+      "n": 1034,
+      "win": 41.7,
+      "avg": 3.26,
+      "med": -1.56,
+      "excess": 0.85,
+      "best": 405.6,
+      "worst": -78.3
+     },
+     "1": {
+      "n": 4342,
+      "win": 39.8,
+      "avg": -0.06,
+      "med": -0.32,
+      "excess": -0.07,
+      "best": 31.8,
+      "worst": -25.6
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 1061,
+      "win": 42.8,
+      "avg": 0.28,
+      "med": -0.51,
+      "excess": -0.15,
+      "best": 97.6,
+      "worst": -30.6
+     },
+     "20": {
+      "n": 322,
+      "win": 48.4,
+      "avg": 1.93,
+      "med": -0.27,
+      "excess": -1.5,
+      "best": 125.8,
+      "worst": -57.0
+     },
+     "1": {
+      "n": 1274,
+      "win": 43.9,
+      "avg": -0.02,
+      "med": 0.0,
+      "excess": -0.05,
+      "best": 29.2,
+      "worst": -30.0
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 1807,
+      "win": 41.4,
+      "avg": -0.13,
+      "med": -0.74,
+      "excess": -0.54,
+      "best": 71.4,
+      "worst": -57.5
+     },
+     "20": {
+      "n": 597,
+      "win": 39.9,
+      "avg": 1.72,
+      "med": -2.13,
+      "excess": -1.6,
+      "best": 649.0,
+      "worst": -85.8
+     },
+     "1": {
+      "n": 2120,
+      "win": 41.1,
+      "avg": -0.18,
+      "med": -0.21,
+      "excess": -0.21,
+      "best": 31.8,
+      "worst": -30.0
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1244,
+      "win": 43.9,
+      "avg": 0.3,
+      "med": -0.58,
+      "excess": -0.01,
+      "best": 97.6,
+      "worst": -23.4
+     },
+     "20": {
+      "n": 382,
+      "win": 39.8,
+      "avg": 1.15,
+      "med": -1.2,
+      "excess": -1.52,
+      "best": 125.8,
+      "worst": -28.0
+     },
+     "1": {
+      "n": 1456,
+      "win": 41.3,
+      "avg": 0.02,
+      "med": -0.2,
+      "excess": 0.03,
+      "best": 57.3,
+      "worst": -18.9
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 7890,
+      "win": 44.9,
+      "avg": 0.61,
+      "med": -0.39,
+      "excess": 0.32,
+      "best": 83.2,
+      "worst": -67.6
+     },
+     "20": {
+      "n": 2452,
+      "win": 42.6,
+      "avg": 1.98,
+      "med": -1.21,
+      "excess": -0.71,
+      "best": 505.0,
+      "worst": -47.1
+     },
+     "1": {
+      "n": 9154,
+      "win": 44.0,
+      "avg": 0.12,
+      "med": -0.1,
+      "excess": 0.06,
+      "best": 92.5,
+      "worst": -28.7
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 5126,
+      "win": 41.1,
+      "avg": -0.14,
+      "med": -0.43,
+      "excess": -0.46,
+      "best": 37.6,
+      "worst": -43.6
+     },
+     "20": {
+      "n": 1509,
+      "win": 38.0,
+      "avg": -0.46,
+      "med": -1.43,
+      "excess": -3.4,
+      "best": 82.1,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 6073,
+      "win": 44.1,
+      "avg": 0.05,
+      "med": 0.0,
+      "excess": -0.07,
+      "best": 30.0,
+      "worst": -13.9
+     }
+    }
+   },
+   "sector": "Distribution Services",
+   "industry": "Wholesale Distributors",
+   "segment": "코스피",
+   "close": 43050.0,
+   "chg": 6.56,
+   "gap": 2.1,
+   "sma5": 41250.0,
+   "sma20": 40725.0,
+   "sma200": 40669.25,
+   "ext200": 5.85,
+   "rsi": 65.9,
+   "macd_h": 39.61,
+   "rvol": 1.48,
+   "pw": 4.34,
+   "p1": 13.05,
+   "p3": 14.55,
+   "ytd": 33.0,
+   "pos52": 49.0,
+   "hi52": 57700.0,
+   "lo52": 29000.0,
+   "val": 71.4,
+   "mcap": 14531.0,
+   "per": 13.0,
+   "pbr": 0.52,
+   "eps": 3328.03,
+   "roe": 4.2,
+   "eqr": 42.2,
+   "div": 4.88,
+   "rev_q": 24.7,
+   "rev_ttm": 6.9,
+   "cagr5": 8.2,
+   "eps_q": 29.7,
+   "opm": 1.9,
+   "roic": 2.4,
+   "psr": 0.09,
+   "peg": null,
+   "de": 1.06,
+   "inflow": 0.82,
+   "biz": "[업종] 상품 중개업 · [주요제품] 전자,기계,화공,유류.금속,의류 수출입,도소매",
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "382800",
+   "name": "지앤비에스 에코",
+   "ticker": "KRX:382800",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_spike",
+    "sig_gc",
+    "sig_trend",
+    "sig_div",
+    "sig_qual",
+    "sig_growth"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 3285,
+      "win": 42.8,
+      "avg": -0.1,
+      "med": -0.71,
+      "excess": -0.61,
+      "best": 124.0,
+      "worst": -90.0
+     },
+     "20": {
+      "n": 927,
+      "win": 41.4,
+      "avg": 1.38,
+      "med": -2.2,
+      "excess": -2.3,
+      "best": 460.9,
+      "worst": -78.3
+     },
+     "1": {
+      "n": 3831,
+      "win": 39.8,
+      "avg": -0.29,
+      "med": -0.3,
+      "excess": -0.24,
+      "best": 34.9,
+      "worst": -44.6
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 1061,
+      "win": 42.8,
+      "avg": 0.28,
+      "med": -0.51,
+      "excess": -0.15,
+      "best": 97.6,
+      "worst": -30.6
+     },
+     "20": {
+      "n": 322,
+      "win": 48.4,
+      "avg": 1.93,
+      "med": -0.27,
+      "excess": -1.5,
+      "best": 125.8,
+      "worst": -57.0
+     },
+     "1": {
+      "n": 1274,
+      "win": 43.9,
+      "avg": -0.02,
+      "med": 0.0,
+      "excess": -0.05,
+      "best": 29.2,
+      "worst": -30.0
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 1244,
+      "win": 43.9,
+      "avg": 0.3,
+      "med": -0.58,
+      "excess": -0.01,
+      "best": 97.6,
+      "worst": -23.4
+     },
+     "20": {
+      "n": 382,
+      "win": 39.8,
+      "avg": 1.15,
+      "med": -1.2,
+      "excess": -1.52,
+      "best": 125.8,
+      "worst": -28.0
+     },
+     "1": {
+      "n": 1456,
+      "win": 41.3,
+      "avg": 0.02,
+      "med": -0.2,
+      "excess": 0.03,
+      "best": 57.3,
+      "worst": -18.9
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 5126,
+      "win": 41.1,
+      "avg": -0.14,
+      "med": -0.43,
+      "excess": -0.46,
+      "best": 37.6,
+      "worst": -43.6
+     },
+     "20": {
+      "n": 1509,
+      "win": 38.0,
+      "avg": -0.46,
+      "med": -1.43,
+      "excess": -3.4,
+      "best": 82.1,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 6073,
+      "win": 44.1,
+      "avg": 0.05,
+      "med": 0.0,
+      "excess": -0.07,
+      "best": 30.0,
+      "worst": -13.9
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 4429,
+      "win": 47.1,
+      "avg": 1.04,
+      "med": -0.28,
+      "excess": 0.72,
+      "best": 61.6,
+      "worst": -28.1
+     },
+     "20": {
+      "n": 1284,
+      "win": 53.9,
+      "avg": 4.04,
+      "med": 1.18,
+      "excess": 1.17,
+      "best": 70.8,
+      "worst": -35.2
+     },
+     "1": {
+      "n": 5252,
+      "win": 47.0,
+      "avg": 0.29,
+      "med": 0.0,
+      "excess": 0.17,
+      "best": 38.8,
+      "worst": -23.8
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 5292,
+      "win": 47.8,
+      "avg": 0.92,
+      "med": -0.17,
+      "excess": 0.5,
+      "best": 61.6,
+      "worst": -70.3
+     },
+     "20": {
+      "n": 1120,
+      "win": 50.4,
+      "avg": 3.28,
+      "med": 0.15,
+      "excess": 1.27,
+      "best": 78.2,
+      "worst": -85.8
+     },
+     "1": {
+      "n": 6390,
+      "win": 45.0,
+      "avg": 0.09,
+      "med": -0.12,
+      "excess": 0.07,
+      "best": 28.9,
+      "worst": -68.4
+     }
+    }
+   },
+   "sector": "Producer Manufacturing",
+   "industry": "Industrial Machinery",
+   "segment": "코스닥",
+   "close": 5940.0,
+   "chg": 11.24,
+   "gap": 1.69,
+   "sma5": 5402.0,
+   "sma20": 5124.0,
+   "sma200": 5031.48,
+   "ext200": 18.06,
+   "rsi": 68.0,
+   "macd_h": 68.64,
+   "rvol": 4.62,
+   "pw": 14.81,
+   "p1": 14.81,
+   "p3": 18.69,
+   "ytd": 111.0,
+   "pos52": 45.0,
+   "hi52": 10150.0,
+   "lo52": 2550.0,
+   "val": 160.7,
+   "mcap": 1700.0,
+   "per": 8.8,
+   "pbr": 1.47,
+   "eps": 678.59,
+   "roe": 18.0,
+   "eqr": 86.2,
+   "div": 4.16,
+   "rev_q": 43.9,
+   "rev_ttm": 71.4,
+   "cagr5": 16.7,
+   "eps_q": null,
+   "opm": 15.2,
+   "roic": 17.0,
+   "psr": 2.1,
+   "peg": 0.01,
+   "de": 0.1,
+   "inflow": 0.82,
+   "biz": "[업종] 특수 목적용 기계 제조업 · [주요제품] 스크러버, 트랩, 백연제거장치 등",
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "019210",
+   "name": "와이지-원",
+   "ticker": "KRX:019210",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_value",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 8651,
+      "win": 40.4,
+      "avg": 0.32,
+      "med": -0.88,
+      "excess": 0.12,
+      "best": 410.6,
+      "worst": -69.4
+     },
+     "20": {
+      "n": 2496,
+      "win": 37.4,
+      "avg": 0.32,
+      "med": -2.69,
+      "excess": -2.17,
+      "best": 391.1,
+      "worst": -86.1
+     },
+     "1": {
+      "n": 10436,
+      "win": 39.3,
+      "avg": -0.07,
+      "med": -0.35,
+      "excess": -0.05,
+      "best": 57.9,
+      "worst": -44.8
+     }
+    },
+    "sig_value": {
+     "5": {
+      "n": 8776,
+      "win": 40.4,
+      "avg": -0.17,
+      "med": -0.59,
+      "excess": -0.5,
+      "best": 71.4,
+      "worst": -69.0
+     },
+     "20": {
+      "n": 2548,
+      "win": 38.7,
+      "avg": 0.15,
+      "med": -1.66,
+      "excess": -2.77,
+      "best": 423.9,
+      "worst": -85.8
+     },
+     "1": {
+      "n": 10426,
+      "win": 44.4,
+      "avg": 0.05,
+      "med": -0.06,
+      "excess": -0.07,
+      "best": 75.7,
+      "worst": -45.1
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 4429,
+      "win": 47.1,
+      "avg": 1.04,
+      "med": -0.28,
+      "excess": 0.72,
+      "best": 61.6,
+      "worst": -28.1
+     },
+     "20": {
+      "n": 1284,
+      "win": 53.9,
+      "avg": 4.04,
+      "med": 1.18,
+      "excess": 1.17,
+      "best": 70.8,
+      "worst": -35.2
+     },
+     "1": {
+      "n": 5252,
+      "win": 47.0,
+      "avg": 0.29,
+      "med": 0.0,
+      "excess": 0.17,
+      "best": 38.8,
+      "worst": -23.8
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 5292,
+      "win": 47.8,
+      "avg": 0.92,
+      "med": -0.17,
+      "excess": 0.5,
+      "best": 61.6,
+      "worst": -70.3
+     },
+     "20": {
+      "n": 1120,
+      "win": 50.4,
+      "avg": 3.28,
+      "med": 0.15,
+      "excess": 1.27,
+      "best": 78.2,
+      "worst": -85.8
+     },
+     "1": {
+      "n": 6390,
+      "win": 45.0,
+      "avg": 0.09,
+      "med": -0.12,
+      "excess": 0.07,
+      "best": 28.9,
+      "worst": -68.4
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 9139,
+      "win": 43.7,
+      "avg": 0.59,
+      "med": -0.5,
+      "excess": 0.18,
+      "best": 68.3,
+      "worst": -76.2
+     },
+     "20": {
+      "n": 1962,
+      "win": 42.9,
+      "avg": 1.82,
+      "med": -1.62,
+      "excess": -0.19,
+      "best": 92.2,
+      "worst": -69.7
+     },
+     "1": {
+      "n": 11096,
+      "win": 44.4,
+      "avg": 0.04,
+      "med": -0.11,
+      "excess": 0.02,
+      "best": 30.0,
+      "worst": -40.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 5449,
+      "win": 42.4,
+      "avg": 0.47,
+      "med": -0.61,
+      "excess": 0.04,
+      "best": 68.3,
+      "worst": -56.7
+     },
+     "20": {
+      "n": 1192,
+      "win": 40.8,
+      "avg": 1.21,
+      "med": -1.85,
+      "excess": -0.82,
+      "best": 78.2,
+      "worst": -68.2
+     },
+     "1": {
+      "n": 6555,
+      "win": 43.8,
+      "avg": 0.05,
+      "med": -0.14,
+      "excess": 0.03,
+      "best": 29.7,
+      "worst": -29.9
+     }
+    }
+   },
+   "sector": "Producer Manufacturing",
+   "industry": "Metal Fabrication",
+   "segment": "코스닥",
+   "close": 12710.0,
+   "chg": 3.5,
+   "gap": 0.65,
+   "sma5": 12494.0,
+   "sma20": 13106.0,
+   "sma200": 13308.85,
+   "ext200": -4.5,
+   "rsi": 41.6,
+   "macd_h": 109.16,
+   "rvol": 0.71,
+   "pw": -0.7,
+   "p1": -11.12,
+   "p3": -38.89,
+   "ytd": 139.8,
+   "pos52": 33.0,
+   "hi52": 28500.0,
+   "lo52": 4900.0,
+   "val": 46.2,
+   "mcap": 4567.0,
+   "per": 6.3,
+   "pbr": 0.94,
+   "eps": 2059.18,
+   "roe": 16.8,
+   "eqr": 50.8,
+   "div": 1.49,
+   "rev_q": 41.5,
+   "rev_ttm": 29.3,
+   "cagr5": 11.3,
+   "eps_q": 1192.8,
+   "opm": 16.5,
+   "roic": 12.0,
+   "psr": 0.74,
+   "peg": 0.01,
+   "de": 1.59,
+   "inflow": 0.8,
+   "biz": "[업종] 기타 금속 가공제품 제조업 · [주요제품] 엔드밀, 탭, 드릴",
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "007340",
+   "name": "DN오토모티브",
+   "ticker": "KRX:007340",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_macd": {
+     "5": {
+      "n": 7890,
+      "win": 44.9,
+      "avg": 0.61,
+      "med": -0.39,
+      "excess": 0.32,
+      "best": 83.2,
+      "worst": -67.6
+     },
+     "20": {
+      "n": 2452,
+      "win": 42.6,
+      "avg": 1.98,
+      "med": -1.21,
+      "excess": -0.71,
+      "best": 505.0,
+      "worst": -47.1
+     },
+     "1": {
+      "n": 9154,
+      "win": 44.0,
+      "avg": 0.12,
+      "med": -0.1,
+      "excess": 0.06,
+      "best": 92.5,
+      "worst": -28.7
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 4429,
+      "win": 47.1,
+      "avg": 1.04,
+      "med": -0.28,
+      "excess": 0.72,
+      "best": 61.6,
+      "worst": -28.1
+     },
+     "20": {
+      "n": 1284,
+      "win": 53.9,
+      "avg": 4.04,
+      "med": 1.18,
+      "excess": 1.17,
+      "best": 70.8,
+      "worst": -35.2
+     },
+     "1": {
+      "n": 5252,
+      "win": 47.0,
+      "avg": 0.29,
+      "med": 0.0,
+      "excess": 0.17,
+      "best": 38.8,
+      "worst": -23.8
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 5292,
+      "win": 47.8,
+      "avg": 0.92,
+      "med": -0.17,
+      "excess": 0.5,
+      "best": 61.6,
+      "worst": -70.3
+     },
+     "20": {
+      "n": 1120,
+      "win": 50.4,
+      "avg": 3.28,
+      "med": 0.15,
+      "excess": 1.27,
+      "best": 78.2,
+      "worst": -85.8
+     },
+     "1": {
+      "n": 6390,
+      "win": 45.0,
+      "avg": 0.09,
+      "med": -0.12,
+      "excess": 0.07,
+      "best": 28.9,
+      "worst": -68.4
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 9139,
+      "win": 43.7,
+      "avg": 0.59,
+      "med": -0.5,
+      "excess": 0.18,
+      "best": 68.3,
+      "worst": -76.2
+     },
+     "20": {
+      "n": 1962,
+      "win": 42.9,
+      "avg": 1.82,
+      "med": -1.62,
+      "excess": -0.19,
+      "best": 92.2,
+      "worst": -69.7
+     },
+     "1": {
+      "n": 11096,
+      "win": 44.4,
+      "avg": 0.04,
+      "med": -0.11,
+      "excess": 0.02,
+      "best": 30.0,
+      "worst": -40.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 5449,
+      "win": 42.4,
+      "avg": 0.47,
+      "med": -0.61,
+      "excess": 0.04,
+      "best": 68.3,
+      "worst": -56.7
+     },
+     "20": {
+      "n": 1192,
+      "win": 40.8,
+      "avg": 1.21,
+      "med": -1.85,
+      "excess": -0.82,
+      "best": 78.2,
+      "worst": -68.2
+     },
+     "1": {
+      "n": 6555,
+      "win": 43.8,
+      "avg": 0.05,
+      "med": -0.14,
+      "excess": 0.03,
+      "best": 29.7,
+      "worst": -29.9
+     }
+    }
+   },
+   "sector": "Producer Manufacturing",
+   "industry": "Auto Parts: OEM",
+   "segment": "코스피",
+   "close": 48550.0,
+   "chg": -1.12,
+   "gap": 2.85,
+   "sma5": 49200.0,
+   "sma20": 46980.0,
+   "sma200": 37409.75,
+   "ext200": 29.78,
+   "rsi": 53.8,
+   "macd_h": 191.96,
+   "rvol": 1.18,
+   "pw": -1.81,
+   "p1": 5.53,
+   "p3": 28.84,
+   "ytd": 98.8,
+   "pos52": 59.0,
+   "hi52": 67500.0,
+   "lo52": 21550.0,
+   "val": 68.9,
+   "mcap": 25351.0,
+   "per": 6.5,
+   "pbr": 1.06,
+   "eps": 7492.53,
+   "roe": 18.5,
+   "eqr": 55.5,
+   "div": 1.97,
+   "rev_q": 37.3,
+   "rev_ttm": 16.8,
+   "cagr5": 35.6,
+   "eps_q": 214.1,
+   "opm": 14.9,
+   "roic": 11.4,
+   "psr": 0.69,
+   "peg": 0.06,
+   "de": 0.94,
+   "inflow": 0.75,
+   "biz": "DN Automotive Corporation, together with its subsidiaries, engages in the manufacture and sale of automotive battery products in South Korea, China, the United States, Europe, and internationally. The company also offers",
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "009540",
+   "name": "HD한국조선해양",
+   "ticker": "KRX:009540",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_div",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_div": {
+     "5": {
+      "n": 5126,
+      "win": 41.1,
+      "avg": -0.14,
+      "med": -0.43,
+      "excess": -0.46,
+      "best": 37.6,
+      "worst": -43.6
+     },
+     "20": {
+      "n": 1509,
+      "win": 38.0,
+      "avg": -0.46,
+      "med": -1.43,
+      "excess": -3.4,
+      "best": 82.1,
+      "worst": -51.8
+     },
+     "1": {
+      "n": 6073,
+      "win": 44.1,
+      "avg": 0.05,
+      "med": 0.0,
+      "excess": -0.07,
+      "best": 30.0,
+      "worst": -13.9
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 4429,
+      "win": 47.1,
+      "avg": 1.04,
+      "med": -0.28,
+      "excess": 0.72,
+      "best": 61.6,
+      "worst": -28.1
+     },
+     "20": {
+      "n": 1284,
+      "win": 53.9,
+      "avg": 4.04,
+      "med": 1.18,
+      "excess": 1.17,
+      "best": 70.8,
+      "worst": -35.2
+     },
+     "1": {
+      "n": 5252,
+      "win": 47.0,
+      "avg": 0.29,
+      "med": 0.0,
+      "excess": 0.17,
+      "best": 38.8,
+      "worst": -23.8
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 5292,
+      "win": 47.8,
+      "avg": 0.92,
+      "med": -0.17,
+      "excess": 0.5,
+      "best": 61.6,
+      "worst": -70.3
+     },
+     "20": {
+      "n": 1120,
+      "win": 50.4,
+      "avg": 3.28,
+      "med": 0.15,
+      "excess": 1.27,
+      "best": 78.2,
+      "worst": -85.8
+     },
+     "1": {
+      "n": 6390,
+      "win": 45.0,
+      "avg": 0.09,
+      "med": -0.12,
+      "excess": 0.07,
+      "best": 28.9,
+      "worst": -68.4
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 9139,
+      "win": 43.7,
+      "avg": 0.59,
+      "med": -0.5,
+      "excess": 0.18,
+      "best": 68.3,
+      "worst": -76.2
+     },
+     "20": {
+      "n": 1962,
+      "win": 42.9,
+      "avg": 1.82,
+      "med": -1.62,
+      "excess": -0.19,
+      "best": 92.2,
+      "worst": -69.7
+     },
+     "1": {
+      "n": 11096,
+      "win": 44.4,
+      "avg": 0.04,
+      "med": -0.11,
+      "excess": 0.02,
+      "best": 30.0,
+      "worst": -40.8
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 5449,
+      "win": 42.4,
+      "avg": 0.47,
+      "med": -0.61,
+      "excess": 0.04,
+      "best": 68.3,
+      "worst": -56.7
+     },
+     "20": {
+      "n": 1192,
+      "win": 40.8,
+      "avg": 1.21,
+      "med": -1.85,
+      "excess": -0.82,
+      "best": 78.2,
+      "worst": -68.2
+     },
+     "1": {
+      "n": 6555,
+      "win": 43.8,
+      "avg": 0.05,
+      "med": -0.14,
+      "excess": 0.03,
+      "best": 29.7,
+      "worst": -29.9
+     }
+    }
+   },
+   "sector": "Producer Manufacturing",
+   "industry": "Trucks/Construction/Farm Machinery",
+   "segment": "코스피",
+   "close": 324500.0,
+   "chg": 0.31,
+   "gap": 0.46,
+   "sma5": 330200.0,
+   "sma20": 342875.0,
+   "sma200": 397087.5,
+   "ext200": -18.28,
+   "rsi": 38.6,
+   "macd_h": -1800.64,
+   "rvol": 1.34,
+   "pw": -5.41,
+   "p1": -7.04,
+   "p3": -10.01,
+   "ytd": -20.5,
+   "pos52": 6.0,
+   "hi52": 494500.0,
+   "lo52": 314000.0,
+   "val": 607.3,
+   "mcap": 228762.0,
+   "per": 6.6,
+   "pbr": 1.54,
+   "eps": 48763.94,
+   "roe": 25.7,
+   "eqr": 51.6,
+   "div": 5.66,
+   "rev_q": 21.9,
+   "rev_ttm": 23.3,
+   "cagr5": 15.7,
+   "eps_q": 261.2,
+   "opm": 22.0,
+   "roic": 24.2,
+   "psr": 0.73,
+   "peg": 0.05,
+   "de": 0.23,
+   "inflow": 0.73,
+   "biz": "HD Korea Shipbuilding & Offshore Engineering Co., Ltd. engages in shipbuilding and offshore engineering business in South Korea. The company offers ship types, including tankers, container ships, petrochemical carriers, ",
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "445180",
+   "name": "퓨릿",
+   "ticker": "KRX:445180",
+   "bucket": "long",
+   "score": 7.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_reclaim",
+    "sig_qual",
+    "sig_growth",
+    "sig_garp",
+    "sig_inflow"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 3285,
+      "win": 42.8,
+      "avg": -0.1,
+      "med": -0.71,
+      "excess": -0.61,
+      "best": 124.0,
+      "worst": -90.0
+     },
+     "20": {
+      "n": 927,
+      "win": 41.4,
+      "avg": 1.38,
+      "med": -2.2,
+      "excess": -2.3,
+      "best": 460.9,
+      "worst": -78.3
+     },
+     "1": {
+      "n": 3831,
+      "win": 39.8,
+      "avg": -0.29,
+      "med": -0.3,
+      "excess": -0.24,
+      "best": 34.9,
+      "worst": -44.6
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 8651,
+      "win": 40.4,
+      "avg": 0.32,
+      "med": -0.88,
+      "excess": 0.12,
+      "best": 410.6,
+      "worst": -69.4
+     },
+     "20": {
+      "n": 2496,
+      "win": 37.4,
+      "avg": 0.32,
+      "med": -2.69,
+      "excess": -2.17,
+      "best": 391.1,
+      "worst": -86.1
+     },
+     "1": {
+      "n": 10436,
+      "win": 39.3,
+      "avg": -0.07,
+      "med": -0.35,
+      "excess": -0.05,
+      "best": 57.9,
+      "worst": -44.8
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 1807,
+      "win": 41.4,
+      "avg": -0.13,
+      "med": -0.74,
+      "excess": -0.54,
+      "best": 71.4,
+      "worst": -57.5
+     },
+     "20": {
+      "n": 597,
+      "win": 39.9,
+      "avg": 1.72,
+      "med": -2.13,
+      "excess": -1.6,
+      "best": 649.0,
+      "worst": -85.8
+     },
+     "1": {
+      "n": 2120,
+      "win": 41.1,
+      "avg": -0.18,
+      "med": -0.21,
+      "excess": -0.21,
+      "best": 31.8,
+      "worst": -30.0
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 4429,
+      "win": 47.1,
+      "avg": 1.04,
+      "med": -0.28,
+      "excess": 0.72,
+      "best": 61.6,
+      "worst": -28.1
+     },
+     "20": {
+      "n": 1284,
+      "win": 53.9,
+      "avg": 4.04,
+      "med": 1.18,
+      "excess": 1.17,
+      "best": 70.8,
+      "worst": -35.2
+     },
+     "1": {
+      "n": 5252,
+      "win": 47.0,
+      "avg": 0.29,
+      "med": 0.0,
+      "excess": 0.17,
+      "best": 38.8,
+      "worst": -23.8
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 5292,
+      "win": 47.8,
+      "avg": 0.92,
+      "med": -0.17,
+      "excess": 0.5,
+      "best": 61.6,
+      "worst": -70.3
+     },
+     "20": {
+      "n": 1120,
+      "win": 50.4,
+      "avg": 3.28,
+      "med": 0.15,
+      "excess": 1.27,
+      "best": 78.2,
+      "worst": -85.8
+     },
+     "1": {
+      "n": 6390,
+      "win": 45.0,
+      "avg": 0.09,
+      "med": -0.12,
+      "excess": 0.07,
+      "best": 28.9,
+      "worst": -68.4
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 5449,
+      "win": 42.4,
+      "avg": 0.47,
+      "med": -0.61,
+      "excess": 0.04,
+      "best": 68.3,
+      "worst": -56.7
+     },
+     "20": {
+      "n": 1192,
+      "win": 40.8,
+      "avg": 1.21,
+      "med": -1.85,
+      "excess": -0.82,
+      "best": 78.2,
+      "worst": -68.2
+     },
+     "1": {
+      "n": 6555,
+      "win": 43.8,
+      "avg": 0.05,
+      "med": -0.14,
+      "excess": 0.03,
+      "best": 29.7,
+      "worst": -29.9
+     }
+    },
+    "sig_inflow": {
+     "1": {
+      "n": 1088,
+      "win": 47.4,
+      "avg": 0.27,
+      "med": 0.0,
+      "excess": 0.17,
+      "best": 31.4,
+      "worst": -29.9
+     }
+    }
+   },
+   "sector": "Process Industries",
+   "industry": "Chemicals: Specialty",
+   "segment": "코스닥",
+   "close": 9630.0,
+   "chg": 5.82,
+   "gap": 0.0,
+   "sma5": 8968.0,
+   "sma20": 8145.0,
+   "sma200": 9059.3,
+   "ext200": 6.3,
+   "rsi": 72.5,
+   "macd_h": 196.89,
+   "rvol": 2.6,
+   "pw": 20.75,
+   "p1": 13.65,
+   "p3": 13.78,
+   "ytd": 8.8,
+   "pos52": 49.0,
+   "hi52": 13400.0,
+   "lo52": 5990.0,
+   "val": 18.0,
+   "mcap": 1564.0,
+   "per": 9.1,
+   "pbr": 1.44,
+   "eps": 1068.88,
+   "roe": 17.1,
+   "eqr": 87.7,
+   "div": 1.32,
+   "rev_q": 26.6,
+   "rev_ttm": 16.4,
+   "cagr5": 15.6,
+   "eps_q": 37.8,
+   "opm": 14.2,
+   "roic": 17.0,
+   "psr": 1.15,
+   "peg": 0.23,
+   "de": 0.0,
+   "inflow": 3.05,
+   "biz": "[업종] 기초 화학물질 제조업 · [주요제품] 반도체용 케미컬, 디스플레이용 케미컬, 산업용 케미컬",
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  }
+ ],
+ "config": {
+  "MIN_VAL": 10.0,
+  "MIN_MCAP": 1000.0,
+  "MIN_PRICE": 0.0,
+  "N_SHORT": 8,
+  "N_LONG": 8,
+  "N_NEWS": 4,
+  "MAX_PER_INDUSTRY": 3,
+  "COOLDOWN_DAYS": 3
+ }
+}
