@@ -58,9 +58,26 @@ jobs:
           echo "HM=$HM" >> $GITHUB_ENV
           echo "JST ${H}:${M} | 대상 '${WANT}' → 저장 '${HM}'"
 
+      # 거래량 곡선은 15분마다 한 줄씩 누적되는 파일이라 실행 사이에 보관이 필요하다.
+      # 예전엔 매 실행 커밋으로 보관했지만 커밋 이력이 하루 30개씩 쌓여, 대신 Actions 캐시로 넘긴다.
+      # (캐시 → 기록 → 캐시 저장) 하고, 리포 커밋은 종가판에 하루 한 번만.
+      - name: 거래량 곡선 캐시 복원
+        uses: actions/cache/restore@v4
+        with:
+          path: volcurve
+          key: volcurve-${{ github.run_id }}
+          restore-keys: volcurve-
+
       - name: 장중 거래량 곡선 기록 (RVOL 보정용, 실패해도 계속)
         continue-on-error: true
         run: python volcurve.py
+
+      - name: 거래량 곡선 캐시 저장
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: volcurve
+          key: volcurve-${{ github.run_id }}
 
       - name: 일본 수급 데이터 (JPX 신용잔고·공매도, 하루 1회, 실패해도 계속)
         # history 저장(HM)과 분리한다. HM은 하루 한 번만 켜지므로,
@@ -136,7 +153,8 @@ jobs:
         run: |
           git config user.name "screener-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add history/ volcurve/ supply/
+          git add history/ supply/
+          if [ -n "$HM" ]; then git add volcurve/; fi        # 거래량 곡선은 종가판에 하루 한 번만
           if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
           git commit -m "data $(TZ=Asia/Tokyo date +'%Y-%m-%d')${HM:+ ($HM)}"
 
