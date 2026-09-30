@@ -107,6 +107,12 @@
   .whotbl td:first-child{color:var(--text)}
   .calc{background:var(--surface2);border-radius:8px;padding:9px 12px;margin:0 0 10px;display:inline-block;min-width:min(760px,100%);max-width:100%}
   .calch{margin-bottom:4px} .calch b{color:var(--amber)}
+  .dbtn{display:inline-block;font-size:10px;line-height:1;padding:3px 6px;margin-right:6px;border:1px solid var(--line);border-radius:5px;
+    color:var(--muted);background:var(--surface2);cursor:pointer;white-space:nowrap;font-weight:600;vertical-align:1px}
+  tr:hover .dbtn{color:var(--amber);border-color:rgba(255,178,36,.5)}
+  tr.open .dbtn{color:#2a1a00;background:var(--amber);border-color:var(--amber)}
+  .hint{flex-basis:100%;color:var(--muted);font-size:11.5px;margin-top:2px}
+  #body tr[data-t]{cursor:pointer}
   .calcrow{display:flex;flex-wrap:wrap;gap:5px 12px;align-items:center;margin:5px 0;font-size:12px}
   .calcrow label{display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
   .ci{width:100px;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:3px 6px;font-size:12px;font-family:ui-monospace,Consolas,monospace}
@@ -530,7 +536,7 @@ function cell(r,c){
     const v=(r[4]/s.p-1)*100; return `<td class="num ${v>0?'up':v<0?'dn':'fl'}"><b>${v>0?'+':''}${v.toFixed(1)}%</b></td>`;}
   if(i<0) return `<td><a class="tv" href="${tvUrl(r[19])}" target="_blank" rel="noopener">↗</a></td>`;
   if(i===18) return `<td class="l">${badges(r[18],r[0],r)}</td>`;
-  if(i===0)  return `<td class="l f1 num">${esc(r[0])}</td>`;
+  if(i===0)  return `<td class="l f1 num"><span class="dbtn" title="${esc(T.detail_hint)}">${T.detail_open}</span>${esc(r[0])}</td>`;
   if(i===1)  return `<td class="l f2 nm" title="${esc(r[1])}">${esc(r[1])}</td>`;
   if(i===2)  return `<td class="l sec" title="${esc(r[2])}">${esc(r[2])}</td>`;
   if(i===3)  return `<td class="l seg">${esc(r[3])}</td>`;
@@ -671,8 +677,10 @@ $('#body').addEventListener('click',e=>{
   if(e.target.closest('.calc')) return;           // 계산기 조작은 행 클릭 아님
   const st=e.target.closest('.star');
   if(st){ e.stopPropagation(); const row=DATA.find(x=>x[0]===st.dataset.star); toggleStar(st.dataset.star, row?row[4]:null); return; }
-  const tr=e.target.closest('tr'); if(!tr)return;
-  window.open(tvUrl(tr.dataset.t),'_blank');
+  const tr=e.target.closest('tr.drow'); if(tr) return;          // 상세 행 안 클릭은 무시
+  const row=e.target.closest('tr'); if(!row||!row.dataset.t)return;
+  const code=(DATA.find(x=>x[19]===row.dataset.t)||[])[0];
+  if(code) toggleDetail(row, code);                            // 행 클릭 = 상세(계산기·레벨·숏기관·소개)
 });
 
 /* ── 관심종목 내보내기 ── */
@@ -805,8 +813,11 @@ async function ensureProfiles(){
 }
 async function toggleDetail(tr, code){
   const nx=tr.nextElementSibling;
-  if(nx&&nx.classList.contains('drow')){ nx.remove(); return; }
+  const setBtn=(row,on)=>{ row.classList.toggle('open',on); const b=row.querySelector('.dbtn'); if(b) b.textContent=on?T.detail_close:T.detail_open; };
+  if(nx&&nx.classList.contains('drow')){ nx.remove(); setBtn(tr,false); return; }
+  document.querySelectorAll('tr.open').forEach(x=>setBtn(x,false));
   document.querySelectorAll('tr.drow').forEach(x=>x.remove());
+  setBtn(tr,true);
   const d=document.createElement('tr'); d.className='drow';
   const span=(visibleCols().length+1);
   d.innerHTML=`<td colspan="${span}"><div class="dtext">${CFG.bizLoading}</div></td>`;

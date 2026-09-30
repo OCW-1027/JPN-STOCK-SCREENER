@@ -1089,7 +1089,7 @@ def build_market(mkey, template, out_dir, generated, indices=None):
             "__PRESET_GROWTH__": L["preset_growth"], "__TAB_GROWTH__": L["tab_growth"],
             "__PRESET_SUPPLY__": L["preset_supply"], "__TAB_SUP__": L["tab_sup"], "__TAB_MINE__": L["tab_mine"],
             "__STAR_EXP__": L["star_exp"], "__STAR_IMP__": L["star_imp"],
-            "__LINK_COPY__": L["link_copy"],
+            "__LINK_COPY__": L["link_copy"], "__DETAIL_HINT__": L["detail_hint"],
             "__PREV__": L["prev"], "__NEXT__": L["next"],
             "__WL_ALL__": L["wl_all"], "__WL_CLEAR__": L["wl_clear"],
             "__WL_DL__": L["wl_dl"], "__WL_HINT__": L["wl_hint"],
