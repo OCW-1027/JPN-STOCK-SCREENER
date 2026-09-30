@@ -71,6 +71,10 @@ SCAN_COLUMNS = [
     # 수급
     "VWAP", "float_shares_outstanding", "float_shares_percent_current",
     "average_volume_10d_calc",
+    # 포지션 계산기·테크니컬 레벨용 (브리프 상세에서 사용)
+    "ATR", "SMA50", "BB.upper", "BB.lower", "ADX", "Stoch.K", "Stoch.D",
+    "Ichimoku.BLine", "Ichimoku.CLine", "Ichimoku.Lead1", "Ichimoku.Lead2",
+    "Pivot.M.Classic.S1", "Pivot.M.Classic.R1", "Recommend.All",
 ]
 
 SECTOR_KO = {

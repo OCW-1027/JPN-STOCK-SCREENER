@@ -355,6 +355,14 @@ def pick_record(bucket, r, profiles, baserates, tdnet, mkey, supw=None):
         opm=_f(r.get("operating_margin_ttm"), 1), roic=_f(r.get("return_on_invested_capital"), 1),
         psr=_f(r.get("price_sales_ratio")), peg=_f(r.get("price_earnings_growth_ttm")), de=_f(r.get("debt_to_equity")),
         inflow=_f(r.get("inflow")), biz=biz,
+        # 포지션 계산기·테크니컬 레벨 (2026-09-30 이후 스냅샷에만 존재)
+        atr=_f(r.get("ATR")), sma50=_f(r.get("SMA50")),
+        bb_up=_f(r.get("BB.upper")), bb_lo=_f(r.get("BB.lower")),
+        adx=_f(r.get("ADX"), 1), stk=_f(r.get("Stoch.K"), 1), std=_f(r.get("Stoch.D"), 1),
+        ich_base=_f(r.get("Ichimoku.BLine")), ich_conv=_f(r.get("Ichimoku.CLine")),
+        ich_a=_f(r.get("Ichimoku.Lead1")), ich_b=_f(r.get("Ichimoku.Lead2")),
+        piv_s1=_f(r.get("Pivot.M.Classic.S1")), piv_r1=_f(r.get("Pivot.M.Classic.R1")),
+        tv_rec=_f(r.get("Recommend.All")),
         who=(supw.get(code) or {}).get("who"), s_pct=(supw.get(code) or {}).get("s_pct"),
         gy=(supw.get(code) or {}).get("gy"),
         tdnet=[dict(pub=x["pub"], title=x["title"], url=x["url"], bits=x["bits"], strong=x["strong"])
@@ -583,6 +591,15 @@ PAGE_T = {
                tv="📈 트레이딩뷰 차트", ext="🔎 종목 정보",
                nollm="미평가", verdict_lbl="판단", base_lbl="시그널 기저율", dis_lbl="TDnet 공시 (5영업일)", biz_lbl="사업",
                who_title="공개 숏 포지션 기관", who_sum="합계 {p}% · {n}곳", who_gy="역일보 {r}엔/일",
+               calc_title="📐 포지션 계산기", calc_sub="손절 거리로 수량을 정합니다 · 계좌·리스크는 시장별로 기억",
+               c_acct="계좌 자산", c_risk="1회 리스크", c_gap="갭 시나리오", c_entry="진입가", c_stop="손절", c_custom="직접",
+               c_levels="테크니컬 레벨 (현재가 대비)", c_ind="보조 지표", c_need="계좌 자산·리스크·진입가를 입력하세요",
+               c_badstop="손절가는 진입가보다 낮아야 합니다",
+               o_dist="손절 거리", o_riskamt="리스크 금액", o_qty="수량", o_calc="계산", o_unit="주 단위 내림",
+               o_realrisk="실제 리스크", o_inv="투자금액", o_stoploss="손절 손실", o_gap="갭 -{g}% 시", o_target="목표", o_ev="기대값",
+               w_tight="손절이 ATR의 {r}배 — 일상 변동에 걸릴 수 있음 (0.7배 미만)", w_far="손절 거리 {p}% — 너무 멀어 수량이 비현실적",
+               w_nolot="계산 수량 {q}주 < 최소 {lot}주. 1단원 사면 리스크 {r}% — 계좌 규모 대비 진입 부담",
+               w_conc="한 종목에 계좌의 {p}% — 집중도 주의 (20%↑)",
                who_note="JPX 0.5%↑ 공시분만. 바클레이즈·골드만·모건MUFG 등은 대부분 헤지펀드 고객의 프라임 브로커 명의.",
                empty="아직 브리프가 없습니다. 첫 실행은 평일 18:03 JST 이후 자동으로 만들어집니다.",
                howto="복사한 텍스트를 Claude 채팅에 붙여 넣으면 100점 체계(펀더·테크·리스크·촉매)로 평가받을 수 있습니다. "
@@ -600,6 +617,15 @@ PAGE_T = {
                tv="📈 TradingViewチャート", ext="🔎 銘柄情報",
                nollm="未評価", verdict_lbl="判断", base_lbl="シグナル基準率", dis_lbl="TDnet開示 (5営業日)", biz_lbl="事業",
                who_title="公開ショートポジション機関", who_sum="合計 {p}% · {n}社", who_gy="逆日歩 {r}円/日",
+               calc_title="📐 ポジション計算機", calc_sub="損切り幅から数量を決めます · 口座・リスクは市場別に記憶",
+               c_acct="口座資産", c_risk="1回リスク", c_gap="ギャップ想定", c_entry="エントリー", c_stop="損切り", c_custom="手入力",
+               c_levels="テクニカル水準 (現在値比)", c_ind="補助指標", c_need="口座資産・リスク・エントリー価格を入力してください",
+               c_badstop="損切りはエントリーより低い必要があります",
+               o_dist="損切り幅", o_riskamt="リスク金額", o_qty="数量", o_calc="計算", o_unit="株単位で切捨",
+               o_realrisk="実リスク", o_inv="投資額", o_stoploss="損切り損失", o_gap="ギャップ-{g}%時", o_target="目標", o_ev="期待値",
+               w_tight="損切りがATRの{r}倍 — 日常変動で刈られる恐れ (0.7倍未満)", w_far="損切り幅{p}% — 遠すぎて数量が非現実的",
+               w_nolot="計算数量{q}株 < 最小{lot}株。1単元で リスク{r}% — 口座規模に対し負担大",
+               w_conc="1銘柄に口座の{p}% — 集中リスク (20%↑)",
                who_note="JPX 0.5%↑開示分のみ。バークレイズ・ゴールドマン・モルガンMUFG等は多くがヘッジファンド顧客のプライムブローカー名義。",
                empty="ブリーフはまだありません。平日18:03 JST以降に自動生成されます。",
                howto="コピーしたテキストをClaudeのチャットに貼り付けると、100点方式(ファンダ・テクニカル・リスク・カタリスト)で評価が得られます。"
@@ -637,6 +663,15 @@ h1{font-size:18px;font-weight:800;margin-bottom:2px;display:flex;align-items:bas
 .btn:hover{background:var(--amber);color:#2a1800}.btn.small{padding:3px 9px;font-size:11px}
 .tabs .btn{margin-left:auto}
 .whotbl{border-collapse:collapse;margin-top:4px} .whotbl td{padding:2px 12px 2px 0;border:0;font-size:11.5px}
+.calc{background:var(--surface2);border-radius:8px;padding:10px 12px;margin-bottom:10px}
+.calcrow{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;margin:6px 0;font-size:12px}
+.calcrow label{display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
+.ci{width:110px;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:3px 6px;font-size:12px;font-family:ui-monospace,Consolas,monospace}
+.stops label{margin-right:4px} .calcout{margin:8px 0} .calcout td{padding:3px 14px 3px 0}
+.warn{color:var(--amber);font-size:11.5px;margin-top:6px;line-height:1.6}
+.techgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;font-size:11.5px}
+.indl{line-height:1.9;font-family:ui-monospace,Consolas,monospace}
+@media(max-width:760px){.techgrid{grid-template-columns:1fr}.ci{width:90px}}
 table{border-collapse:collapse;width:100%;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
 th{background:var(--surface2);color:var(--muted);font-size:11.5px;font-weight:600;text-align:right;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
 th.l,td.l{text-align:left}
@@ -702,6 +737,123 @@ function extUrl(p){
   if(m==='kr') return 'https://finance.naver.com/item/main.naver?code='+p.code;
   return 'https://finance.yahoo.com/quote/'+encodeURIComponent(p.code);
 }
+
+/* ══════════ 포지션 계산기 + 테크니컬 레벨 ══════════ */
+const LOT = {jp:100, kr:1, us:1};                 // 최소 매매 단위
+const CUR = {jp:'¥', kr:'₩', us:'$'};
+const ACC_KEY = 'brief_acct_'+B.market;
+function loadAcct(){ try{ return JSON.parse(localStorage.getItem(ACC_KEY)||'{}'); }catch(_){ return {}; } }
+function saveAcct(o){ try{ localStorage.setItem(ACC_KEY, JSON.stringify(o)); }catch(_){} }
+function nf(v,d){ return v==null||isNaN(v)?'—':Number(v).toLocaleString(undefined,{maximumFractionDigits:d==null?0:d,minimumFractionDigits:d==null?0:d}); }
+function pct(a,b){ return (a==null||b==null||!b)?null:(a/b-1)*100; }
+
+// 시그널 기저율에서 +5일 승률(가장 강한 시그널 기준)과 기대 R 계산
+function winRate5(p){
+  let best=null;
+  for(const k in (p.baserate||{})){ const b=p.baserate[k]&&p.baserate[k]['5']; if(b&&b.n>=20&&(best==null||b.win>best.win)) best={k,win:b.win,n:b.n}; }
+  return best;
+}
+
+function techLevels(p){
+  const c=p.close; if(!c) return [];
+  const L=[
+    ['52주 고가', p.hi52], ['BB 상단', p.bb_up], ['피벗 R1', p.piv_r1],
+    ['구름 상단', p.ich_a!=null&&p.ich_b!=null?Math.max(p.ich_a,p.ich_b):null],
+    ['5MA', p.sma5], ['전환선', p.ich_conv], ['20MA', p.sma20], ['기준선', p.ich_base], ['50MA', p.sma50],
+    ['구름 하단', p.ich_a!=null&&p.ich_b!=null?Math.min(p.ich_a,p.ich_b):null],
+    ['피벗 S1', p.piv_s1], ['BB 하단', p.bb_lo], ['200MA', p.sma200], ['52주 저가', p.lo52],
+  ].filter(x=>x[1]!=null).map(x=>({n:x[0],v:x[1],d:pct(x[1],c)}));
+  L.sort((a,b)=>b.v-a.v);
+  return L;
+}
+
+function stopCandidates(p){
+  const c=p.close, out=[];
+  if(p.atr) out.push({k:'atr2', n:'ATR×2', v:c-2*p.atr});
+  if(p.sma20&&p.sma20<c) out.push({k:'ma20', n:'20MA 아래', v:p.sma20*0.995});
+  if(p.sma50&&p.sma50<c) out.push({k:'ma50', n:'50MA 아래', v:p.sma50*0.995});
+  if(p.bb_lo&&p.bb_lo<c) out.push({k:'bb', n:'BB 하단', v:p.bb_lo});
+  if(p.ich_base&&p.ich_base<c) out.push({k:'ich', n:'기준선 아래', v:p.ich_base*0.995});
+  if(p.lo52&&p.lo52<c) out.push({k:'lo52', n:'52주 저가', v:p.lo52*0.99});
+  return out;
+}
+
+function calcBlock(p){
+  if(!p.close) return '';
+  const a=loadAcct(); const acct=a.acct||''; const risk=a.risk||1.0; const gap=a.gap||8;
+  const stops=stopCandidates(p);
+  const lv=techLevels(p);
+  const lvHtml=lv.map(x=>{const cls=x.d>0?'up':x.d<0?'dn':'';
+    return `<tr><td>${x.n}</td><td class="num">${nf(x.v,p.close<100?2:0)}</td><td class="num ${cls}">${x.d>0?'+':''}${x.d.toFixed(1)}%</td></tr>`;}).join('');
+  const ind=[];
+  if(p.atr) ind.push(`ATR ${nf(p.atr,p.close<100?2:0)} (${(p.atr/p.close*100).toFixed(1)}%)`);
+  if(p.adx!=null) ind.push(`ADX ${p.adx.toFixed(0)} ${p.adx>=25?'<span class="up">추세</span>':'<span class="mu">횡보</span>'}`);
+  if(p.stk!=null) ind.push(`Stoch ${p.stk.toFixed(0)}/${p.std!=null?p.std.toFixed(0):'—'} ${p.stk<20?'<span class="dn">과매도</span>':p.stk>80?'<span class="up">과매수</span>':''}`);
+  if(p.tv_rec!=null) ind.push(`TV종합 ${p.tv_rec>0.5?'<span class="up">강한매수</span>':p.tv_rec>0.1?'<span class="up">매수</span>':p.tv_rec<-0.5?'<span class="dn">강한매도</span>':p.tv_rec<-0.1?'<span class="dn">매도</span>':'중립'}`);
+  return `
+  <div class="sec calc" data-code="${esc(p.code)}">
+    <div class="sh">${T.calc_title} <span class="mu">${T.calc_sub}</span></div>
+    <div class="calcrow">
+      <label>${T.c_acct} <input class="ci" data-f="acct" type="number" value="${acct}" placeholder="${CUR[B.market]}"></label>
+      <label>${T.c_risk} <input class="ci" data-f="risk" type="number" step="0.1" value="${risk}">%</label>
+      <label>${T.c_gap} <input class="ci" data-f="gap" type="number" step="1" value="${gap}">%</label>
+      <label>${T.c_entry} <input class="ci" data-f="entry" type="number" value="${p.close}"></label>
+    </div>
+    <div class="calcrow stops">${T.c_stop}:
+      ${stops.map((s,i)=>`<label><input type="radio" name="stop_${esc(p.code)}" value="${s.v}" ${i===0?'checked':''}> ${s.n} <span class="mu">${nf(s.v,p.close<100?2:0)}</span></label>`).join('')}
+      <label><input type="radio" name="stop_${esc(p.code)}" value="custom"> ${T.c_custom} <input class="ci" data-f="stopc" type="number" style="width:90px"></label>
+    </div>
+    <div class="calcout"></div>
+    <div class="techgrid">
+      <div><div class="mu">${T.c_levels}</div><table class="whotbl">${lvHtml}</table></div>
+      <div><div class="mu">${T.c_ind}</div><div class="indl">${ind.join('<br>')}</div></div>
+    </div>
+  </div>`;
+}
+
+function runCalc(box, p){
+  const g=f=>{const el=box.querySelector(`.ci[data-f="${f}"]`); return el?parseFloat(el.value):NaN;};
+  const acct=g('acct'), risk=g('risk'), gap=g('gap'), entry=g('entry');
+  const sel=box.querySelector(`input[name="stop_${p.code}"]:checked`);
+  let stop = sel ? (sel.value==='custom' ? g('stopc') : parseFloat(sel.value)) : NaN;
+  const out=box.querySelector('.calcout');
+  if(!(acct>0)||!(risk>0)||!(entry>0)){ out.innerHTML=`<div class="mu">${T.c_need}</div>`; return; }
+  if(!(stop>0)||stop>=entry){ out.innerHTML=`<div class="dn">${T.c_badstop}</div>`; return; }
+  saveAcct({acct,risk,gap});
+  const lot=LOT[B.market], cur=CUR[B.market];
+  const dist=entry-stop, distp=dist/entry*100;
+  const riskAmt=acct*risk/100;
+  const rawQty=riskAmt/dist;
+  const qty=Math.floor(rawQty/lot)*lot;
+  const warn=[];
+  if(p.atr){ const r=dist/p.atr; if(r<0.7) warn.push(T.w_tight.replace('{r}',r.toFixed(1))); }
+  if(distp>15) warn.push(T.w_far.replace('{p}',distp.toFixed(1)));
+  let rows='';
+  if(qty<lot){
+    const q1=lot, r1=q1*dist/acct*100;
+    rows+=`<div class="dn">${T.w_nolot.replace('{q}',nf(rawQty,0)).replace('{lot}',lot).replace('{r}',r1.toFixed(2))}</div>`;
+  } else {
+    const inv=qty*entry, invp=inv/acct*100, loss=qty*dist, lossp=loss/acct*100;
+    const gapLoss=qty*entry*gap/100, gapp=gapLoss/acct*100;
+    if(invp>20) warn.push(T.w_conc.replace('{p}',invp.toFixed(0)));
+    const Rp=x=>nf(entry+dist*x, entry<100?2:0);
+    const wr=winRate5(p);
+    let ev='';
+    if(wr){ const e=(wr.win/100)*2-(1-wr.win/100)*1; ev=`<b class="${e>0?'up':'dn'}">${e>=0?'+':''}${e.toFixed(2)}R</b> <span class="mu">(${SIG[wr.k]||wr.k} +5일 승률 ${wr.win.toFixed(0)}%, 2R 목표 기준, n=${wr.n})</span>`; }
+    rows+=`<table class="whotbl">
+      <tr><td>${T.o_dist}</td><td class="num">-${distp.toFixed(1)}%${p.atr?` <span class="mu">(ATR ${(dist/p.atr).toFixed(1)}배)</span>`:''}</td><td>${T.o_riskamt}</td><td class="num">${cur}${nf(riskAmt)}</td></tr>
+      <tr><td><b>${T.o_qty}</b></td><td class="num"><b>${nf(qty)}</b> <span class="mu">${rawQty!==qty?`(${T.o_calc} ${nf(rawQty,0)} → ${lot}${T.o_unit})`:''}</span></td><td>${T.o_realrisk}</td><td class="num">${lossp.toFixed(2)}%</td></tr>
+      <tr><td>${T.o_inv}</td><td class="num">${cur}${nf(inv)} <span class="mu">(${invp.toFixed(1)}%)</span></td><td>${T.o_stoploss}</td><td class="num dn">-${cur}${nf(loss)}</td></tr>
+      <tr><td>${T.o_gap.replace('{g}',gap)}</td><td class="num dn">-${cur}${nf(gapLoss)} <span class="mu">(${gapp.toFixed(1)}%)</span></td><td>${T.o_target}</td><td class="num">1R ${Rp(1)} · 2R ${Rp(2)} · 3R ${Rp(3)}${p.hi52&&p.hi52>entry?` · 52H ${nf(p.hi52,entry<100?2:0)} (${((p.hi52-entry)/dist).toFixed(1)}R)`:''}</td></tr>
+      ${ev?`<tr><td>${T.o_ev}</td><td class="num" colspan="3">${ev}</td></tr>`:''}
+    </table>`;
+  }
+  if(warn.length) rows+=`<div class="warn">${warn.map(w=>'⚠ '+w).join('<br>')}</div>`;
+  out.innerHTML=rows;
+}
+document.addEventListener('input',e=>{ const box=e.target.closest('.calc'); if(!box)return; const p=(B&&B.picks||[]).find(x=>x.code===box.dataset.code); if(p) runCalc(box,p); });
+document.addEventListener('change',e=>{ const box=e.target.closest('.calc'); if(!box)return; const p=(B&&B.picks||[]).find(x=>x.code===box.dataset.code); if(p) runCalc(box,p); });
+
 function whoBlock(p){
   if(!p.who||!p.who.length) return '';
   const rows=p.who.map(w=>{const d=w[2]==null?'—':(w[2]>0?'<span class="up">+'+w[2].toFixed(2)+'%p</span>':w[2]<0?'<span class="dn">'+w[2].toFixed(2)+'%p</span>':'0');
@@ -726,6 +878,7 @@ function detail(p){
   return `<div class="dw"><div class="grid">${g.map(([k,v])=>`<div><span class="k">${k}</span><span class="num">${v}</span></div>`).join('')}</div>
     ${llm}
     ${base?`<div class="sec">${T.base_lbl}</div><div>${base}</div>`:''}
+    ${calcBlock(p)}
     ${whoBlock(p)}
     ${dis?`<div class="sec">${T.dis_lbl}</div>${dis}`:''}
     ${p.biz?`<div class="sec">${T.biz_lbl}</div><div style="color:var(--muted)">${esc(p.biz)}</div>`:''}
@@ -761,8 +914,12 @@ document.addEventListener('click',e=>{
   const mt=e.target.closest('[data-m]');if(mt){e.preventDefault();mkt=mt.dataset.m;B=BB[mkt];tab='all';open=new Set();history.replaceState(null,'','#'+mkt);render();return}
   const t=e.target.closest('.tab');if(t){tab=t.dataset.t;render();return}
   if(e.target.closest('a.tv, a.lnk'))return;      // 링크 클릭은 그대로 열기
+  if(e.target.closest('.calc'))return;            // 계산기 조작은 행 토글 아님
   const r=e.target.closest('tr.row');if(r){const k=r.dataset.c;open.has(k)?open.delete(k):open.add(k);render()}
 });
+// 상세가 열릴 때마다 계산기 초기 실행
+const _render=render;
+render=function(){ _render(); document.querySelectorAll('.calc').forEach(box=>{const p=(B&&B.picks||[]).find(x=>x.code===box.dataset.code); if(p) runCalc(box,p);}); };
 window.addEventListener('hashchange',()=>{const h=location.hash.slice(1);if(MK.includes(h)&&h!==mkt){mkt=h;B=BB[mkt];tab='all';open=new Set();render()}});
 render();
 </script>__BTC_JS__

@@ -19,7 +19,7 @@ GitHub Pages와 Cloudflare Pages(gh-pages 브랜치)에 동시 배포한다.
 | `profiles.py` | 회사 소개문 수집 (야후) → `profiles/` | 250건/일, 40분 소요 |
 | `backtest.py` | history/ 스냅샷으로 시그널별 +1/+5/+20일 성과 → `/backtest/` | |
 | `ranking.py` | 거래대금·시총 상위 100위 순위 추이 → `/ranking/` | |
-| `brief.py` | 운용 데스크 브리프 → `/brief/` | |
+| `brief.py` | 운용 데스크 브리프 → `/brief/`. 상세에 **포지션 계산기**(계좌·리스크%·손절→수량, 단원주·갭·기대값)와 테크니컬 레벨 14종 | 계산기 데이터는 스냅샷의 ATR·SMA50·BB·Ichimoku·Pivot·ADX·Stoch (2026-09-30 이후 스냅샷) |
 | `volcurve.py` | 장중 거래량 곡선 기록 (RVOL 보정용 재료 수집 중) | 아직 보정 미적용 |
 
 ## 워크플로 — 반드시 분리 유지
