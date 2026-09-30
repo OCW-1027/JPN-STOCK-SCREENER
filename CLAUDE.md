@@ -60,7 +60,10 @@ GitHub Pages와 Cloudflare Pages(gh-pages 브랜치)에 동시 배포한다.
 
 ## 화면 규칙
 
-- 행 배열은 현재 71열(0~70). 68=숏 기관 배열, 69=역일보(엔), 70=역일보 연율%.
+- 행 배열은 현재 85열(0~84). 68=숏 기관 배열, 69=역일보(엔), 70=역일보 연율%,
+  71~84=ATR·50MA·BB상하·ADX·StochK/D·일목(기준·전환·선행A/B)·피벗S1/R1·TV종합 (포지션 계산기용).
+- 포지션 계산기는 상세 영역(사업내용 클릭)에 3개 시장 공통. 기대값은 `CFG.win5`(backtest results.json의 +5일 승률)에서 —
+  그래서 `daily.yml`에서 **backtest.py가 screener.py보다 먼저** 돈다. 순서를 바꾸면 기대값이 빈다.
 - 시그널 21종은 비트마스크(`r[18]`). 추가 시 `SIG_KEYS`·`SIG_WEIGHT`(screener.py),
   `SIGS`·마스크(template.html), `UI.s_*`·`HELP_SIG`·`SIGNAL_I18N`(i18n.py), `SIGNALS`(backtest.py) 전부 수정.
 - 컬럼은 `COLS`에 `g:`(프리셋 그룹)·`m:`(시장 한정) 속성. 수급 컬럼은 `m:'jp'|'kr'|'us'`로 해당 시장에만 표시.

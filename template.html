@@ -105,6 +105,16 @@
   .shortwho b{color:var(--amber)} .shortwho .whosum{color:var(--muted);margin-left:8px}
   .whotbl{margin-top:5px;border-collapse:collapse} .whotbl td{padding:2px 12px 2px 0;border:0;font-size:11.5px}
   .whotbl td:first-child{color:var(--text)}
+  .calc{background:var(--surface2);border-radius:8px;padding:9px 12px;margin:0 0 10px;display:inline-block;min-width:min(760px,100%);max-width:100%}
+  .calch{margin-bottom:4px} .calch b{color:var(--amber)}
+  .calcrow{display:flex;flex-wrap:wrap;gap:5px 12px;align-items:center;margin:5px 0;font-size:12px}
+  .calcrow label{display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
+  .ci{width:100px;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:3px 6px;font-size:12px;font-family:ui-monospace,Consolas,monospace}
+  .ci.sm{width:52px} .calcout{margin:7px 0} .co td{padding:3px 14px 3px 0}
+  .warn{color:var(--amber);font-size:11.5px;margin-top:5px;line-height:1.6}
+  .techgrid{display:grid;grid-template-columns:auto 1fr;gap:10px 24px;margin-top:8px;font-size:11.5px}
+  .indl{line-height:1.9;font-family:ui-monospace,Consolas,monospace;white-space:nowrap}
+  @media(max-width:760px){.techgrid{grid-template-columns:1fr}.calc{display:block}}
   .star{cursor:pointer;color:var(--faint);font-size:15px;line-height:1;user-select:none}
   .star.on{color:var(--amber)} .star:hover{color:var(--amber)}
   .tab.on.mine{border-color:var(--amber)} .tab.on.mine .cnt{color:var(--amber)}
@@ -658,6 +668,7 @@ $('#body').addEventListener('click',e=>{
     cb.closest('tr').classList.toggle('picked',cb.checked);
     updateWl(); return;
   }
+  if(e.target.closest('.calc')) return;           // 계산기 조작은 행 클릭 아님
   const st=e.target.closest('.star');
   if(st){ e.stopPropagation(); const row=DATA.find(x=>x[0]===st.dataset.star); toggleStar(st.dataset.star, row?row[4]:null); return; }
   const tr=e.target.closest('tr'); if(!tr)return;
@@ -804,10 +815,11 @@ async function toggleDetail(tr, code){
   let p=PROFILES&&PROFILES[code];
   const box=d.querySelector('.dtext');
   const _row=DATA.find(x=>x[0]===code);
-  if((!p||(!p.l&&!p.d)) && !(_row&&_row[68]&&_row[68].length)){ box.textContent=CFG.bizNone; return; }
+  if(!_row){ box.textContent=CFG.bizNone; return; }
   p = p || {};
   let html='';
   const row=DATA.find(x=>x[0]===code);
+  if(row) html+=calcHTML(row);
   const who=row&&row[68];
   if(who&&who.length){
     html+=`<div class="shortwho"><b>${T.who_title}</b> <span class="q" data-tip="${esc(T.who_tip)}">?</span>`+
@@ -821,6 +833,7 @@ async function toggleDetail(tr, code){
   if(p.l) html+=`<div class="loc">${esc(p.l)}</div>`;
   if(p.d) html+=`<div class="eng">${p.l?'<span class="eglabel">EN</span> ':''}${esc(p.d)}</div>`;
   box.innerHTML=html;
+  const cb=box.querySelector('.calc'); if(cb) runCalc(cb);
 }
 
 /* ── 대표지수 스트립 ── */
@@ -835,7 +848,75 @@ function renderIdx(){
       <span class="cg ${cls}">${cg>0?'+':''}${cg.toFixed(2)}%</span></a>`;
   }).join('');
 }
-renderIdx(); /* ── 물음표 도움말 ── */
+renderIdx(); 
+/* ══════════ 포지션 계산기 + 테크니컬 레벨 (상세 영역) ══════════ */
+const LOT={jp:100,kr:1,us:1}[CFG.market]||1, CURS={jp:'¥',kr:'₩',us:'$'}[CFG.market]||'';
+const ACC_KEY='screener_acct_'+CFG.market;
+function loadAcct(){try{return JSON.parse(localStorage.getItem(ACC_KEY)||'{}')}catch(_){return {}}}
+function saveAcct(o){try{localStorage.setItem(ACC_KEY,JSON.stringify(o))}catch(_){}}
+function nfx(v,d){return v==null||isNaN(v)?'—':Number(v).toLocaleString(NUMLOC,{maximumFractionDigits:d==null?0:d,minimumFractionDigits:d==null?0:d})}
+// 행 배열 → 계산용 객체
+function techOf(r){ return {code:r[0], close:r[4], sma5:r[6], sma20:r[7], sma200:r[8], hi52:r[42], lo52:r[43], bits:r[18],
+  atr:r[71], sma50:r[72], bb_up:r[73], bb_lo:r[74], adx:r[75], stk:r[76], std:r[77],
+  ich_base:r[78], ich_conv:r[79], ich_a:r[80], ich_b:r[81], piv_s1:r[82], piv_r1:r[83], tv_rec:r[84]}; }
+function winRate5(bits){ let best=null; const W=CFG.win5||{};
+  for(const s of SIGS){ if(!(bits&(1<<s.bit)))continue; const key=Object.keys(SIGKEY).find(k=>SIGKEY[k]===s.bit); const w=W['sig_'+key.slice(2)];
+    if(w&&(best==null||w.win>best.win)) best={label:s.label,win:w.win,n:w.n}; }
+  return best; }
+function techLevels(p){ const c=p.close; if(!c)return[];
+  const L=[[T.lv_hi52,p.hi52],[T.lv_bbu,p.bb_up],[T.lv_r1,p.piv_r1],[T.lv_cloudt,(p.ich_a!=null&&p.ich_b!=null)?Math.max(p.ich_a,p.ich_b):null],
+    ['5MA',p.sma5],[T.lv_conv,p.ich_conv],['20MA',p.sma20],[T.lv_base,p.ich_base],['50MA',p.sma50],
+    [T.lv_cloudb,(p.ich_a!=null&&p.ich_b!=null)?Math.min(p.ich_a,p.ich_b):null],[T.lv_s1,p.piv_s1],[T.lv_bbl,p.bb_lo],['200MA',p.sma200],[T.lv_lo52,p.lo52]]
+    .filter(x=>x[1]!=null).map(x=>({n:x[0],v:x[1],d:(x[1]/c-1)*100}));
+  return L.sort((a,b)=>b.v-a.v); }
+function stopCands(p){ const c=p.close,o=[];
+  if(p.atr)o.push({n:'ATR×2',v:c-2*p.atr}); if(p.sma20&&p.sma20<c)o.push({n:T.st_ma20,v:p.sma20*0.995});
+  if(p.sma50&&p.sma50<c)o.push({n:T.st_ma50,v:p.sma50*0.995}); if(p.bb_lo&&p.bb_lo<c)o.push({n:T.lv_bbl,v:p.bb_lo});
+  if(p.ich_base&&p.ich_base<c)o.push({n:T.st_base,v:p.ich_base*0.995}); if(p.lo52&&p.lo52<c)o.push({n:T.lv_lo52,v:p.lo52*0.99});
+  return o; }
+function calcHTML(r){ const p=techOf(r); if(!p.close)return '';
+  const a=loadAcct(), dp=p.close<100?2:0, lv=techLevels(p), stops=stopCands(p);
+  const ind=[]; if(p.atr)ind.push(`ATR ${nfx(p.atr,dp)} (${(p.atr/p.close*100).toFixed(1)}%)`);
+  if(p.adx!=null)ind.push(`ADX ${p.adx.toFixed(0)} ${p.adx>=25?'<span class="up">'+T.i_trend+'</span>':'<span class="fl">'+T.i_range+'</span>'}`);
+  if(p.stk!=null)ind.push(`Stoch ${p.stk.toFixed(0)}/${p.std!=null?p.std.toFixed(0):'—'} ${p.stk<20?'<span class="dn">'+T.i_os+'</span>':p.stk>80?'<span class="up">'+T.i_ob+'</span>':''}`);
+  if(p.tv_rec!=null)ind.push(`TV ${p.tv_rec>0.5?'<span class="up">'+T.i_sbuy+'</span>':p.tv_rec>0.1?'<span class="up">'+T.i_buy+'</span>':p.tv_rec<-0.5?'<span class="dn">'+T.i_ssell+'</span>':p.tv_rec<-0.1?'<span class="dn">'+T.i_sell+'</span>':T.i_neutral}`);
+  return `<div class="calc" data-code="${esc(p.code)}"><div class="calch"><b>${T.calc_title}</b> <span class="fl">${T.calc_sub}</span></div>
+    <div class="calcrow"><label>${T.c_acct} <input class="ci" data-f="acct" type="number" value="${a.acct||''}" placeholder="${CURS}"></label>
+      <label>${T.c_risk} <input class="ci sm" data-f="risk" type="number" step="0.1" value="${a.risk||1}">%</label>
+      <label>${T.c_gapsc} <input class="ci sm" data-f="gap" type="number" step="1" value="${a.gap||8}">%</label>
+      <label>${T.c_entry} <input class="ci" data-f="entry" type="number" value="${p.close}"></label></div>
+    <div class="calcrow stops">${T.c_stop}: ${stops.map((s,i)=>`<label><input type="radio" name="stop_${esc(p.code)}" value="${s.v}" ${i===0?'checked':''}> ${s.n} <span class="fl">${nfx(s.v,dp)}</span></label>`).join('')}
+      <label><input type="radio" name="stop_${esc(p.code)}" value="custom"> ${T.c_custom} <input class="ci sm" data-f="stopc" type="number"></label></div>
+    <div class="calcout"></div>
+    <div class="techgrid"><div><div class="fl">${T.c_levels}</div><table class="whotbl">${lv.map(x=>`<tr><td>${x.n}</td><td class="num">${nfx(x.v,dp)}</td><td class="num ${x.d>0?'up':x.d<0?'dn':''}">${x.d>0?'+':''}${x.d.toFixed(1)}%</td></tr>`).join('')}</table></div>
+      <div><div class="fl">${T.c_ind}</div><div class="indl">${ind.join('<br>')||'—'}</div></div></div></div>`; }
+function runCalc(box){ const r=DATA.find(x=>x[0]===box.dataset.code); if(!r)return; const p=techOf(r);
+  const g=f=>{const el=box.querySelector(`.ci[data-f="${f}"]`);return el?parseFloat(el.value):NaN};
+  const acct=g('acct'),risk=g('risk'),gap=g('gap'),entry=g('entry');
+  const sel=box.querySelector(`input[name="stop_${p.code}"]:checked`); const stop=sel?(sel.value==='custom'?g('stopc'):parseFloat(sel.value)):NaN;
+  const out=box.querySelector('.calcout');
+  if(!(acct>0)||!(risk>0)||!(entry>0)){out.innerHTML=`<div class="fl">${T.c_need}</div>`;return}
+  if(!(stop>0)||stop>=entry){out.innerHTML=`<div class="dn">${T.c_badstop}</div>`;return}
+  saveAcct({acct,risk,gap});
+  const dp=entry<100?2:0, dist=entry-stop, distp=dist/entry*100, riskAmt=acct*risk/100, rawQty=riskAmt/dist, qty=Math.floor(rawQty/LOT)*LOT, warn=[];
+  if(p.atr){const k=dist/p.atr; if(k<0.7)warn.push(T.w_tight.replace('{r}',k.toFixed(1)))} if(distp>15)warn.push(T.w_far.replace('{p}',distp.toFixed(1)));
+  let html='';
+  if(qty<LOT){ html+=`<div class="dn">${T.w_nolot.replace('{q}',nfx(rawQty,0)).replace('{lot}',LOT).replace('{r}',(LOT*dist/acct*100).toFixed(2))}</div>`; }
+  else{ const inv=qty*entry,invp=inv/acct*100,loss=qty*dist,lossp=loss/acct*100,gapL=inv*gap/100,gapp=gapL/acct*100;
+    if(invp>20)warn.push(T.w_conc.replace('{p}',invp.toFixed(0)));
+    const Rp=x=>nfx(entry+dist*x,dp); const wr=winRate5(p.bits); let ev='';
+    if(wr){const e=(wr.win/100)*2-(1-wr.win/100); ev=`<b class="${e>0?'up':'dn'}">${e>=0?'+':''}${e.toFixed(2)}R</b> <span class="fl">(${wr.label} +5d ${wr.win.toFixed(0)}%, 2R, n=${wr.n})</span>`}
+    html+=`<table class="whotbl co"><tr><td>${T.o_dist}</td><td class="num">-${distp.toFixed(1)}%${p.atr?` <span class="fl">(ATR ${(dist/p.atr).toFixed(1)}×)</span>`:''}</td><td>${T.o_riskamt}</td><td class="num">${CURS}${nfx(riskAmt)}</td></tr>
+      <tr><td><b>${T.o_qty}</b></td><td class="num"><b>${nfx(qty)}</b> ${rawQty!==qty?`<span class="fl">(${nfx(rawQty,0)}→${LOT}${T.o_unit})</span>`:''}</td><td>${T.o_realrisk}</td><td class="num">${lossp.toFixed(2)}%</td></tr>
+      <tr><td>${T.o_inv}</td><td class="num">${CURS}${nfx(inv)} <span class="fl">(${invp.toFixed(1)}%)</span></td><td>${T.o_stoploss}</td><td class="num dn">-${CURS}${nfx(loss)}</td></tr>
+      <tr><td>${T.o_gap.replace('{g}',gap)}</td><td class="num dn">-${CURS}${nfx(gapL)} <span class="fl">(${gapp.toFixed(1)}%)</span></td><td>${T.o_target}</td><td class="num">1R ${Rp(1)} · 2R ${Rp(2)} · 3R ${Rp(3)}${p.hi52&&p.hi52>entry?` · 52H ${nfx(p.hi52,dp)} (${((p.hi52-entry)/dist).toFixed(1)}R)`:''}</td></tr>
+      ${ev?`<tr><td>${T.o_ev}</td><td class="num" colspan="3">${ev}</td></tr>`:''}</table>`; }
+  if(warn.length)html+=`<div class="warn">${warn.map(w=>'⚠ '+w).join('<br>')}</div>`;
+  out.innerHTML=html; }
+document.addEventListener('input',e=>{const b=e.target.closest('.calc');if(b)runCalc(b)});
+document.addEventListener('change',e=>{const b=e.target.closest('.calc');if(b)runCalc(b)});
+
+/* ── 물음표 도움말 ── */
 (function(){
   const tip=document.getElementById('tip');
   let cur=null;

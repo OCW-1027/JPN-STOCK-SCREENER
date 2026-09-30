@@ -72,7 +72,7 @@ SCAN_COLUMNS = [
     "VWAP", "float_shares_outstanding", "float_shares_percent_current",
     "average_volume_10d_calc",
     # 포지션 계산기·테크니컬 레벨용 (브리프 상세에서 사용)
-    "ATR", "SMA50", "BB.upper", "BB.lower", "ADX", "Stoch.K", "Stoch.D",
+    "ATR", "BB.upper", "BB.lower", "ADX", "Stoch.K", "Stoch.D",
     "Ichimoku.BLine", "Ichimoku.CLine", "Ichimoku.Lead1", "Ichimoku.Lead2",
     "Pivot.M.Classic.S1", "Pivot.M.Classic.R1", "Recommend.All",
 ]
@@ -776,6 +776,17 @@ def compute_signals(df):
     return d
 
 
+def _num(d, col, nd=None):
+    """행 배열용 숫자 컬럼 — 없으면 NaN 시리즈, 있으면 반올림."""
+    if col not in d:
+        return pd.Series(float("nan"), index=d.index)
+    s = pd.to_numeric(d[col], errors="coerce")
+    if nd is not None:
+        return s.round(nd)
+    # 가격 계열: 100 미만은 소수 2자리, 이상은 정수 — 페이지 용량 절약
+    return s.where(s >= 100, s.round(2)).round(0).where(s >= 100, s.round(2))
+
+
 def build_rows(df, mc):
     df = df.copy()
     df["score"] = 0.0
@@ -841,6 +852,14 @@ def build_rows(df, mc):
         "c68": d["s_who"].apply(lambda v: v if isinstance(v, list) else None) if "s_who" in d else None,
         "c69": d["gy_rate"].round(2) if "gy_rate" in d else None,
         "c70": d["gy_pct"].round(1) if "gy_pct" in d else None,
+        # 포지션 계산기·테크니컬 레벨 (71~82)
+        "c71": _num(d, "ATR"), "c72": _num(d, "SMA50"),
+        "c73": _num(d, "BB.upper"), "c74": _num(d, "BB.lower"),
+        "c75": _num(d, "ADX", 1), "c76": _num(d, "Stoch.K", 1), "c77": _num(d, "Stoch.D", 1),
+        "c78": _num(d, "Ichimoku.BLine"), "c79": _num(d, "Ichimoku.CLine"),
+        "c80": _num(d, "Ichimoku.Lead1"), "c81": _num(d, "Ichimoku.Lead2"),
+        "c82": _num(d, "Pivot.M.Classic.S1"), "c83": _num(d, "Pivot.M.Classic.R1"),
+        "c84": _num(d, "Recommend.All", 2),
     })
     out = out.astype(object).where(pd.notna(out), None)
     rows = out.values.tolist()
@@ -1085,6 +1104,14 @@ def build_market(mkey, template, out_dir, generated, indices=None):
         cfg["help"] = {k: v[idx_l] for k, v in i18n.HELP.items()}
         cfg["helpSig"] = {k: v[idx_l] for k, v in i18n.HELP_SIG.items()}
         cfg["market"] = mkey
+        # 포지션 계산기 기대값용: 시그널별 +5일 승률 (backtest.py 산출물)
+        try:
+            _bt = json.loads((out_dir / "backtest" / "results.json").read_text(encoding="utf-8"))
+            _sig = (_bt.get(mkey) or {}).get("signals") or {}
+            cfg["win5"] = {k: {"win": v["5"]["win"], "n": v["5"]["n"]}
+                           for k, v in _sig.items() if isinstance(v.get("5"), dict) and v["5"].get("n", 0) >= 20}
+        except Exception:
+            cfg["win5"] = {}
         cfg["today"] = datetime.now(JST).strftime("%Y-%m-%d")
         # 데이터 신선도: 소스별 기준시각 (화면 상단 패널용)
         _fresh = {"price": generated}

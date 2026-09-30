@@ -93,17 +93,19 @@ jobs:
           fi
           python supply.py
 
-      - name: Run screener (JP + KR + US)
-        run: python screener.py
-        env:
-          OUTPUT_DIR: site
-          HISTORY_MARKETS: ${{ env.HM }}
-
+      # 스크리너보다 먼저 — 포지션 계산기 기대값이 backtest/results.json의 승률을 읽는다
       - name: 시그널 성과 백테스트 (실패해도 계속)
         continue-on-error: true
         run: python backtest.py
         env:
           OUTPUT_DIR: site
+
+
+      - name: Run screener (JP + KR + US)
+        run: python screener.py
+        env:
+          OUTPUT_DIR: site
+          HISTORY_MARKETS: ${{ env.HM }}
 
       - name: 거래대금 순위 추이 (실패해도 계속)
         continue-on-error: true
