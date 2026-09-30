@@ -176,6 +176,22 @@ def recent_picks(days, today):
     return codes
 
 
+# ───────────────────────── 공개 숏 기관 (일본, supply/jp.json) ─────────────────────────
+def load_supply_who(mkey):
+    """{code: {"who": [[기관, %, Δ], ...], "s_pct": .., "gy": 역일보}} — 일본만."""
+    if mkey != "jp":
+        return {}
+    f = BASE / "supply" / "jp.json"
+    if not f.exists():
+        return {}
+    try:
+        d = json.loads(f.read_text(encoding="utf-8")).get("data", {})
+        return {c: {"who": v.get("s_who") or [], "s_pct": v.get("s_pct"), "gy": v.get("gy_rate")}
+                for c, v in d.items() if v.get("s_who") or v.get("gy_rate")}
+    except Exception:
+        return {}
+
+
 # ───────────────────────── TDnet 공시 (일본) ─────────────────────────
 def tdnet_day(yyyymmdd, retries=3):
     url = f"https://webapi.yanoshin.jp/webapi/tdnet/list/{yyyymmdd}.json?limit=3000"
@@ -306,7 +322,8 @@ def _f(v, nd=2):
         return None
 
 
-def pick_record(bucket, r, profiles, baserates, tdnet, mkey):
+def pick_record(bucket, r, profiles, baserates, tdnet, mkey, supw=None):
+    supw = supw or {}
     m = MARKETS[mkey]
     code = r["code"]
     sigs = [k for k in SIG_ALL if bool(r.get(k, False))]
@@ -338,6 +355,8 @@ def pick_record(bucket, r, profiles, baserates, tdnet, mkey):
         opm=_f(r.get("operating_margin_ttm"), 1), roic=_f(r.get("return_on_invested_capital"), 1),
         psr=_f(r.get("price_sales_ratio")), peg=_f(r.get("price_earnings_growth_ttm")), de=_f(r.get("debt_to_equity")),
         inflow=_f(r.get("inflow")), biz=biz,
+        who=(supw.get(code) or {}).get("who"), s_pct=(supw.get(code) or {}).get("s_pct"),
+        gy=(supw.get(code) or {}).get("gy"),
         tdnet=[dict(pub=x["pub"], title=x["title"], url=x["url"], bits=x["bits"], strong=x["strong"])
                for x in (tdnet.get(code) or [])[:6]],
         llm=None,
@@ -528,7 +547,8 @@ def generate():
           f"(단기 {stats['short']} · 중장기 {stats['long']} · 공시 {stats['news']}) / 쿨다운 제외 {len(cooldown)}")
     profiles = load_profiles(m)
     baserates, n_days = load_baserates(m)
-    picks = [pick_record(b, r, profiles, baserates, tdnet, m) for b, r in picked]
+    supw = load_supply_who(m)
+    picks = [pick_record(b, r, profiles, baserates, tdnet, m, supw) for b, r in picked]
 
     if CFG["LLM_MODE"] == "api":
         for i, pk in enumerate(picks, 1):
@@ -562,6 +582,8 @@ PAGE_T = {
                copy="분석 요청 복사", copy_all="표시 중인 종목 전체 분석 요청 복사", copied="복사됨 ✓",
                tv="📈 트레이딩뷰 차트", ext="🔎 종목 정보",
                nollm="미평가", verdict_lbl="판단", base_lbl="시그널 기저율", dis_lbl="TDnet 공시 (5영업일)", biz_lbl="사업",
+               who_title="공개 숏 포지션 기관", who_sum="합계 {p}% · {n}곳", who_gy="역일보 {r}엔/일",
+               who_note="JPX 0.5%↑ 공시분만. 바클레이즈·골드만·모건MUFG 등은 대부분 헤지펀드 고객의 프라임 브로커 명의.",
                empty="아직 브리프가 없습니다. 첫 실행은 평일 18:03 JST 이후 자동으로 만들어집니다.",
                howto="복사한 텍스트를 Claude 채팅에 붙여 넣으면 100점 체계(펀더·테크·리스크·촉매)로 평가받을 수 있습니다. "
                      "숫자는 스크리너 값이 그대로 들어가 있어 모델이 새로 추정하지 않습니다. 주문 실행 기능은 없습니다.",
@@ -577,6 +599,8 @@ PAGE_T = {
 
                tv="📈 TradingViewチャート", ext="🔎 銘柄情報",
                nollm="未評価", verdict_lbl="判断", base_lbl="シグナル基準率", dis_lbl="TDnet開示 (5営業日)", biz_lbl="事業",
+               who_title="公開ショートポジション機関", who_sum="合計 {p}% · {n}社", who_gy="逆日歩 {r}円/日",
+               who_note="JPX 0.5%↑開示分のみ。バークレイズ・ゴールドマン・モルガンMUFG等は多くがヘッジファンド顧客のプライムブローカー名義。",
                empty="ブリーフはまだありません。平日18:03 JST以降に自動生成されます。",
                howto="コピーしたテキストをClaudeのチャットに貼り付けると、100点方式(ファンダ・テクニカル・リスク・カタリスト)で評価が得られます。"
                      "数値はスクリーナーの値がそのまま入っており、モデルが新たに推定することはありません。発注機能はありません。",
@@ -612,6 +636,7 @@ h1{font-size:18px;font-weight:800;margin-bottom:2px;display:flex;align-items:bas
 .btn{padding:6px 12px;border:1px solid rgba(255,178,36,.5);border-radius:8px;background:var(--surface2);color:var(--amber);font-weight:700;font-size:12px;cursor:pointer;font-family:inherit}
 .btn:hover{background:var(--amber);color:#2a1800}.btn.small{padding:3px 9px;font-size:11px}
 .tabs .btn{margin-left:auto}
+.whotbl{border-collapse:collapse;margin-top:4px} .whotbl td{padding:2px 12px 2px 0;border:0;font-size:11.5px}
 table{border-collapse:collapse;width:100%;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
 th{background:var(--surface2);color:var(--muted);font-size:11.5px;font-weight:600;text-align:right;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
 th.l,td.l{text-align:left}
@@ -677,6 +702,14 @@ function extUrl(p){
   if(m==='kr') return 'https://finance.naver.com/item/main.naver?code='+p.code;
   return 'https://finance.yahoo.com/quote/'+encodeURIComponent(p.code);
 }
+function whoBlock(p){
+  if(!p.who||!p.who.length) return '';
+  const rows=p.who.map(w=>{const d=w[2]==null?'—':(w[2]>0?'<span class="up">+'+w[2].toFixed(2)+'%p</span>':w[2]<0?'<span class="dn">'+w[2].toFixed(2)+'%p</span>':'0');
+    return `<tr><td>${esc(w[0])}</td><td class="num">${w[1].toFixed(2)}%</td><td class="num">${d}</td></tr>`;}).join('');
+  const gy = p.gy!=null ? ` · ${T.who_gy.replace('{r}',p.gy.toFixed(2))}` : '';
+  return `<div class="sec"><div class="sh">${T.who_title} <span class="mu">${T.who_sum.replace('{p}',(p.s_pct||0).toFixed(2)).replace('{n}',p.who.length)}${gy}</span></div>
+    <table class="whotbl">${rows}</table><div class="mu" style="font-size:10.5px;margin-top:3px">${T.who_note}</div></div>`;
+}
 function detail(p){
   const g=[['200MA',n(p.sma200)],['5MA / 20MA',`${n(p.sma5)} / ${n(p.sma20)}`],['52w',`${n(p.lo52)} – ${n(p.hi52)} (${n(p.pos52,0)}%)`],
     ['1W / 1M / 3M',`${pc(p.pw,1)} / ${pc(p.p1,1)} / ${pc(p.p3,1)}`],['YTD',pc(p.ytd,1)],['MACD-H',n(p.macd_h)],
@@ -693,6 +726,7 @@ function detail(p){
   return `<div class="dw"><div class="grid">${g.map(([k,v])=>`<div><span class="k">${k}</span><span class="num">${v}</span></div>`).join('')}</div>
     ${llm}
     ${base?`<div class="sec">${T.base_lbl}</div><div>${base}</div>`:''}
+    ${whoBlock(p)}
     ${dis?`<div class="sec">${T.dis_lbl}</div>${dis}`:''}
     ${p.biz?`<div class="sec">${T.biz_lbl}</div><div style="color:var(--muted)">${esc(p.biz)}</div>`:''}
     <div style="margin-top:10px" class="acts"><button class="btn small" data-copy="${p.code}">${T.copy}</button>

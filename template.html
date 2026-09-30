@@ -101,6 +101,10 @@
   .b i.nw{background:var(--up);color:#fff;font-weight:800}
   .b i.dd{background:rgba(255,255,255,.12);color:var(--muted)}
   .b.drop{background:transparent;color:var(--faint);border:1px dashed var(--line);cursor:help}
+  .shortwho{margin:0 0 10px;padding:8px 10px;background:var(--surface2);border-radius:8px;font-size:12px}
+  .shortwho b{color:var(--amber)} .shortwho .whosum{color:var(--muted);margin-left:8px}
+  .whotbl{margin-top:5px;border-collapse:collapse} .whotbl td{padding:2px 12px 2px 0;border:0;font-size:11.5px}
+  .whotbl td:first-child{color:var(--text)}
   .star{cursor:pointer;color:var(--faint);font-size:15px;line-height:1;user-select:none}
   .star.on{color:var(--amber)} .star:hover{color:var(--amber)}
   .tab.on.mine{border-color:var(--amber)} .tab.on.mine .cnt{color:var(--amber)}
@@ -121,7 +125,10 @@
   .b.d{background:rgba(122,162,247,.15);color:#7aa2f7;border:1px solid rgba(122,162,247,.35)}
   td.biz{cursor:pointer;text-decoration:underline dotted var(--faint);text-underline-offset:3px}
   tr.drow td{background:#141a24;white-space:normal}
-  .dtext{color:var(--muted);font-size:12px;line-height:1.65;padding:9px 12px;max-width:1100px;white-space:normal}
+  .dtext{color:var(--muted);font-size:12px;line-height:1.65;padding:9px 12px;max-width:1100px;white-space:normal;
+    position:sticky;left:0;text-align:left}
+  .shortwho{display:inline-block;min-width:360px}
+  .whotbl td{text-align:left} .whotbl td.num{text-align:right}
   .dtext .loc{color:var(--text);font-size:12.5px;margin-bottom:6px}
   .dtext .eng{color:var(--faint);font-size:11.5px;line-height:1.6}
   .eglabel{display:inline-block;font-size:9.5px;font-weight:700;border:1px solid var(--line);
@@ -354,7 +361,7 @@ const SHORT_MASK=0b10000000000111111, SUP_MASK=0b111100000000000000000, LONG_MAS
 
 /* g: b=always, t=technical, f=financial */
 const HELPMAP = {12:'turn',20:'mcap',29:'biz',5:'c_chg',17:'c_gap',9:'c_ext',11:'rvol',13:'c_rsi',
-  62:'c_svpct',63:'c_svchg',64:'c_si',65:'c_dtc',
+  62:'c_svpct',63:'c_svchg',64:'c_si',65:'c_dtc',69:'c_gy',70:'c_gypct',
   56:'c_frgn_d',57:'c_frgn5',58:'c_frgn_r',59:'c_inst_d',60:'c_inst5',61:'c_indi5',
   44:'c_pos52',48:'c_vwap',49:'c_fturn',50:'c_fpct',51:'c_mratio',52:'c_mdays',53:'c_mbuychg',54:'c_spct',55:'c_schg',28:'c_macd',21:'c_per',40:'c_peg',22:'c_pbr',24:'c_roe',37:'c_roic',38:'c_psr',
   26:'c_eq',39:'c_de',34:'c_cagr',30:'c_revq',46:'c_inflow',47:'c_score'};
@@ -378,6 +385,7 @@ const COLS = [
   {t:T.c_inst_d,i:59,g:'x',m:'kr'},{t:T.c_inst5,i:60,g:'x',m:'kr'},{t:T.c_indi5,i:61,g:'x',m:'kr'},
   {t:T.c_mratio,i:51,g:'x',m:'jp'},{t:T.c_mdays,i:52,g:'x',m:'jp'},{t:T.c_mbuychg,i:53,g:'x',m:'jp'},
   {t:T.c_spct,i:54,g:'x',m:'jp'},{t:T.c_schg,i:55,g:'x',m:'jp'},
+  {t:T.c_gy,i:69,g:'x',m:'jp'},{t:T.c_gypct,i:70,g:'x',m:'jp'},
   {t:T.c_biz,i:29,l:1,g:'b'},{t:'',i:-1,g:'b'}
 ];
 const PAGE=100;
@@ -544,6 +552,10 @@ function cell(r,c){
     return `<td class="num ${v>=60?'inf2':v>=45?'inf1':''}">${fmt(v,1)}</td>`;}
   if(i===63) return `<td class="num">${r[63]==null?'—':pc(r[63])}</td>`;
   if(i===64) return `<td class="num">${r[64]==null?'—':fmt(r[64],1)}</td>`;
+  if(i===69){const v=r[69]; if(v==null) return '<td class="num fl">—</td>';
+    return `<td class="num ${v>=10?'inf2':'inf1'}">${fmt(v,2)}</td>`;}
+  if(i===70){const v=r[70]; if(v==null) return '<td class="num fl">—</td>';
+    return `<td class="num ${v>=20?'inf2':v>=5?'inf1':''}">${fmt(v,1)}%</td>`;}
   if(i===65){const v=r[65];
     if(v==null) return '<td class="num fl">—</td>';
     return `<td class="num ${v>=5?'inf2':''}">${fmt(v,2)}</td>`;}
@@ -789,10 +801,23 @@ async function toggleDetail(tr, code){
   d.innerHTML=`<td colspan="${span}"><div class="dtext">${CFG.bizLoading}</div></td>`;
   tr.after(d);
   await ensureProfiles();
-  const p=PROFILES&&PROFILES[code];
+  let p=PROFILES&&PROFILES[code];
   const box=d.querySelector('.dtext');
-  if(!p||(!p.l&&!p.d)){ box.textContent=CFG.bizNone; return; }
+  const _row=DATA.find(x=>x[0]===code);
+  if((!p||(!p.l&&!p.d)) && !(_row&&_row[68]&&_row[68].length)){ box.textContent=CFG.bizNone; return; }
+  p = p || {};
   let html='';
+  const row=DATA.find(x=>x[0]===code);
+  const who=row&&row[68];
+  if(who&&who.length){
+    html+=`<div class="shortwho"><b>${T.who_title}</b> <span class="q" data-tip="${esc(T.who_tip)}">?</span>`+
+      `<span class="whosum">${T.who_sum.replace('{p}',fmt(row[54],2)).replace('{n}',who.length)}`+
+      (row[69]!=null?` · ${T.who_gy.replace('{r}',fmt(row[69],2)).replace('{p}',fmt(row[70],1))}`:'')+`</span>`+
+      `<table class="whotbl">`+who.map(w=>{
+        const d=w[2]==null?'—':(w[2]>0?'<span class="up">+'+w[2].toFixed(2)+'%p</span>':w[2]<0?'<span class="dn">'+w[2].toFixed(2)+'%p</span>':'<span class="fl">0</span>');
+        return `<tr><td>${esc(w[0])}</td><td class="num">${w[1].toFixed(2)}%</td><td class="num">${d}</td></tr>`;}).join('')+
+      `</table></div>`;
+  }
   if(p.l) html+=`<div class="loc">${esc(p.l)}</div>`;
   if(p.d) html+=`<div class="eng">${p.l?'<span class="eglabel">EN</span> ':''}${esc(p.d)}</div>`;
   box.innerHTML=html;

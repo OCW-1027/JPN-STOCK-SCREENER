@@ -45,10 +45,15 @@ def _num(s):
 # ─────────────── ① 신용잔고 (주간 PDF) ───────────────
 def fetch_margin():
     import pdfplumber
-    page = requests.get(f"{JPX}/markets/statistics-equities/margin/05.html", headers=UA, timeout=20).text
-    files = sorted(set(re.findall(r'href="([^"]+syumatsu\d{10}\.pdf)"', page)))
+    # 2026-09 JPX 페이지 재편: 종목별 주간 파일이 05.html → 01.html 로 이동. 둘 다 시도.
+    files = []
+    for pg in ("01.html", "05.html", "index.html"):
+        page = requests.get(f"{JPX}/markets/statistics-equities/margin/{pg}", headers=UA, timeout=20).text
+        files = sorted(set(re.findall(r'href="([^"]+syumatsu\d{10}\.pdf)"', page)))
+        if files:
+            break
     if not files:
-        raise RuntimeError("신용잔고 PDF 링크 없음")
+        raise RuntimeError("신용잔고 PDF 링크 없음 (01/05/index 모두)")
     latest = files[-1]
     asof = re.search(r"syumatsu(\d{4})(\d{2})(\d{2})", latest)
     asof = f"{asof.group(1)}-{asof.group(2)}-{asof.group(3)}"
@@ -81,6 +86,27 @@ def fetch_margin():
 
 
 # ─────────────── ② 공매도 잔고 (일별 Excel) ───────────────
+# 긴 법인명 → 화면용 짧은 표기
+_SHORT = [
+    ("GOLDMAN SACHS", "Goldman Sachs"), ("Barclays Capital", "Barclays"),
+    ("モルガン・スタンレーMUFG", "Morgan Stanley MUFG"), ("Morgan Stanley & Co", "Morgan Stanley Intl"),
+    ("Nomura International", "Nomura Intl"), ("JPM Securities Japan", "JPMorgan Japan"),
+    ("J.P. Morgan Securities", "JPMorgan"), ("MERRILL LYNCH", "Merrill Lynch"),
+    ("UBS AG", "UBS"), ("Citigroup Global Markets", "Citi"), ("BNP Paribas", "BNP Paribas"),
+    ("Societe Generale", "SocGen"), ("Diversified Select Opportunities", "Diversified Select Opp."),
+    ("Man Numeric", "Man Numeric"), ("Two Sigma", "Two Sigma"), ("Millennium", "Millennium"),
+    ("Marshall Wace", "Marshall Wace"), ("Point72", "Point72"), ("Citadel", "Citadel"),
+    ("AQR", "AQR"), ("Squarepoint", "Squarepoint"), ("Qube", "Qube"),
+]
+
+
+def _short_name(name):
+    for k, v in _SHORT:
+        if k.lower() in name.lower():
+            return v
+    return name[:26]
+
+
 def fetch_short():
     page = requests.get(f"{JPX}/markets/public/short-selling/index.html", headers=UA, timeout=20).text
     files = sorted(set(re.findall(r'href="([^"]+_Short_Positions\.xls)"', page)))
@@ -104,16 +130,52 @@ def fetch_short():
         prev = pd.to_numeric(r.iloc[14], errors="coerce")
         if pd.isna(cur):
             continue
-        a = agg.setdefault(code, {"s_pct": 0.0, "s_prev": 0.0, "s_n": 0})
+        a = agg.setdefault(code, {"s_pct": 0.0, "s_prev": 0.0, "s_n": 0, "_who": []})
         a["s_pct"] += float(cur) * 100
         a["s_prev"] += (float(prev) * 100) if not pd.isna(prev) else float(cur) * 100
         a["s_n"] += 1
+        # 기관명: 종목별 상위 5곳을 이름·현재%·증감%p로 보존
+        #   ※ 대부분 프라임 브로커 명의(헤지펀드 고객 포지션)이므로 "그 증권사의 견해"로 읽지 말 것
+        name = str(r.iloc[5]).strip().replace("\n", " ")
+        pct = round(float(cur) * 100, 2)
+        chg = round(pct - float(prev) * 100, 2) if not pd.isna(prev) else None
+        a["_who"].append([_short_name(name), pct, chg])
     for a in agg.values():
         a["s_pct"] = round(a["s_pct"], 2)
         a["s_chg"] = round(a["s_pct"] - a["s_prev"], 2)
         del a["s_prev"]
+        a["s_who"] = sorted(a.pop("_who"), key=lambda x: -x[1])[:5]
     print(f"  [공매도] {asof} 기준 {len(agg)}종목 (0.5%↑ 포지션 보유 기관 합산)")
     return agg, asof
+
+
+# ─────────────── ③ 역일보 / 품대료 (일별 Excel) ───────────────
+def fetch_premium():
+    """JPX 品貸料率一覧 → {code: {gy_rate, gy_excess}}. 역일보 미발생 종목은 제외."""
+    page = requests.get(f"{JPX}/markets/statistics-equities/margin/02.html", headers=UA, timeout=20).text
+    links = re.findall(r'href="([^"]+Premium_Charges\.xlsx)"', page)
+    if not links:
+        raise RuntimeError("품대료 파일 링크 없음")
+    xl = requests.get(JPX + links[0], headers=UA, timeout=60).content
+    df = pd.read_excel(io.BytesIO(xl), header=None)
+    hdr = next(i for i in range(min(10, len(df))) if "Code" in "".join(map(str, df.iloc[i].tolist())))
+    body = df.iloc[hdr + 1:].copy()
+    body.columns = ["date", "code", "name", "ex", "excess", "maxrate", "rate"][:body.shape[1]]
+    asof = str(body["date"].iloc[0])
+    asof = f"{asof[:4]}-{asof[4:6]}-{asof[6:8]}"
+    out = {}
+    for _, r in body.iterrows():
+        code = str(r["code"]).strip()
+        if not re.match(r"^[0-9][0-9A-Z]{3}$", code):
+            continue
+        rate = pd.to_numeric(r["rate"], errors="coerce")     # '*****' = 미발생 → NaN
+        if pd.isna(rate) or rate <= 0:
+            continue
+        ex = pd.to_numeric(r["excess"], errors="coerce")
+        out[code] = {"gy_rate": round(float(rate), 2),
+                     "gy_excess": int(ex) if not pd.isna(ex) else None}
+    print(f"  [역일보] {asof} 기준 {len(out)}종목 발생 (대차종목 {len(body)}개 중)")
+    return out, asof
 
 
 def main():
@@ -135,6 +197,14 @@ def main():
             merged.setdefault(c, {}).update(v)
     except Exception as e:  # noqa: BLE001
         print(f"  [공매도] 실패: {type(e).__name__}: {str(e)[:80]}")
+
+    try:
+        g, asof = fetch_premium()
+        meta["premium_asof"] = asof
+        for c, v in g.items():
+            merged.setdefault(c, {}).update(v)
+    except Exception as e:  # noqa: BLE001
+        print(f"  [역일보] 실패: {type(e).__name__}: {str(e)[:80]}")
 
     out = BASE / "supply"
     out.mkdir(exist_ok=True)

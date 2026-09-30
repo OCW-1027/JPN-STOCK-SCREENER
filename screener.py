@@ -137,7 +137,18 @@ def fetch_tv(mkey, retries=3):
 
 
 def master_jp():
-    url = "https://www.jpx.co.jp/markets/statistics-equities/misc/tvdivq0000001vg2-att/data_j.xls"
+    # JPX가 2026-09 xls → xlsx 로 변경. 페이지에서 링크를 찾고, 실패하면 알려진 경로 순으로 시도
+    url = None
+    try:
+        pg = requests.get("https://www.jpx.co.jp/markets/statistics-equities/misc/01.html",
+                          timeout=20, headers={"User-Agent": "Mozilla/5.0"}).text
+        m = re.search(r'href="([^"]*data_j\.xlsx?)"', pg)
+        if m:
+            url = "https://www.jpx.co.jp" + m.group(1)
+    except Exception:
+        pass
+    if not url:
+        url = "https://www.jpx.co.jp/markets/statistics-equities/misc/tvdivq0000001vg2-att/data_j.xlsx"
     seg = {"プライム（内国株式）": "프라임", "スタンダード（内国株式）": "스탠다드",
            "グロース（内国株式）": "그로스", "プライム（外国株式）": "프라임",
            "スタンダード（外国株式）": "스탠다드", "グロース（外国株式）": "그로스"}
@@ -736,8 +747,9 @@ def compute_signals(df):
     #   ※ 주주우대 크로스(優待つなぎ売り) 종목이 걸리기 쉬움 — 외식·소매 업종은 해석 주의
     m_ratio, m_sell, av = col("m_ratio"), col("m_sell"), col("average_volume_10d_calc")
     sell_dtc = (m_sell / av).where(av > 0)
-    d["sig_squeeze"] = ((m_ratio > 0) & (m_ratio <= c["SQZ_RATIO"]) & (sell_dtc >= c["SQZ_DTC"])
-                        & (close > s20)).fillna(False)
+    gy = col("gy_rate")
+    d["sig_squeeze"] = ((m_ratio > 0) & (m_ratio <= c["SQZ_RATIO"]) & (close > s20)
+                        & ((sell_dtc >= c["SQZ_DTC"]) | (gy > 0))).fillna(False)
     # 손바뀜(공통): 유동주식 회전율 ≥30% & 상승 마감
     d["sig_churn"] = ((col("float_turn") >= c["CHURN_TURN"]) & (chg > 0)).fillna(False)
     # 바닥매집: 52주 하단인데 큰손이 사는 중
@@ -822,6 +834,9 @@ def build_rows(df, mc):
         "c65": d["us_dtc"].round(2),
         "c66": d["sig_streak"],
         "c67": d["sig_dropped"],
+        "c68": d["s_who"].apply(lambda v: v if isinstance(v, list) else None) if "s_who" in d else None,
+        "c69": d["gy_rate"].round(2) if "gy_rate" in d else None,
+        "c70": d["gy_pct"].round(1) if "gy_pct" in d else None,
     })
     out = out.astype(object).where(pd.notna(out), None)
     rows = out.values.tolist()
@@ -914,6 +929,10 @@ def build_market(mkey, template, out_dir, generated, indices=None):
 
     df["m_ratio"] = df["code"].map(lambda c: sup.get(c, {}).get("m_ratio"))
     df["m_sell"] = df["code"].map(lambda c: sup.get(c, {}).get("m_sell"))
+    df["s_who"] = df["code"].map(lambda c: sup.get(c, {}).get("s_who"))       # 공개 숏 기관 상위 5
+    df["gy_rate"] = pd.to_numeric(df["code"].map(lambda c: sup.get(c, {}).get("gy_rate")), errors="coerce")
+    # 역일보 연율 부담(%) = 품대료(엔/주·일) ÷ 주가 × 365 — 숏 보유 비용의 체감치
+    df["gy_pct"] = (df["gy_rate"] / pd.to_numeric(df["close"], errors="coerce") * 365 * 100).where(df["gy_rate"] > 0)
     df["m_buy"] = df["code"].map(lambda c: sup.get(c, {}).get("m_buy"))
     df["m_buy_chg"] = df["code"].map(lambda c: sup.get(c, {}).get("m_buy_chg"))
     df["s_pct"] = df["code"].map(lambda c: sup.get(c, {}).get("s_pct"))
@@ -1068,6 +1087,7 @@ def build_market(mkey, template, out_dir, generated, indices=None):
         if mkey == "jp":
             _fresh["margin"] = sup_meta.get("margin_asof")
             _fresh["short"] = sup_meta.get("short_asof")
+            _fresh["premium"] = sup_meta.get("premium_asof")
         elif mkey == "kr":
             _fresh["investor"] = (sup_meta.get("asof") or "")[:10]
         elif mkey == "us":
