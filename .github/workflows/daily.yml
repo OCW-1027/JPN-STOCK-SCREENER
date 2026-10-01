@@ -160,9 +160,11 @@ jobs:
           if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
           git commit -m "data $(TZ=Asia/Tokyo date +'%Y-%m-%d')${HM:+ ($HM)}"
 
+          # 장중엔 volcurve/ 가 수정된 채(캐시 복원분) 남아 있어 rebase가 거부된다
+          # ("cannot rebase: You have unstaged changes"). --autostash 로 잠시 치워두고 진행.
           for i in 1 2 3 4 5; do
             git fetch origin main
-            if git rebase origin/main; then
+            if git rebase --autostash origin/main; then
               if git push origin HEAD:main; then
                 echo "push 성공 (시도 $i)"; exit 0
               fi
