@@ -595,6 +595,25 @@ SIG_STREAK_DAYS = 10     # 이만큼의 과거 스냅샷을 본다
 SPARK_DAYS = 60          # 미니 차트에 쓰는 최근 거래일 수
 
 
+def _adjust_splits(arr):
+    """history 스냅샷은 분할 미조정 종가라 분할일에 절벽이 생긴다.
+    하루 사이 비율이 2:1·3:1·5:1… (±8%)이면 분할(또는 병합)로 보고 그 이전 값을 조정한다."""
+    out = list(arr)
+    idx = [i for i, v in enumerate(out) if v]
+    for a, b in reversed(list(zip(idx, idx[1:]))):
+        q = out[a] / out[b]
+        f = None
+        if q >= 1.8 and abs(q / round(q) - 1) < 0.08:          # 분할: 전날이 n배 높음
+            f = 1 / round(q)
+        elif q <= 1 / 1.8 and abs((1 / q) / round(1 / q) - 1) < 0.08:   # 병합
+            f = round(1 / q)
+        if f:
+            for k in idx:
+                if k <= a:
+                    out[k] = out[k] * f
+    return out
+
+
 def compute_streaks(mkey, sig_keys):
     """{code: {sig_key: 연속일수}} — 어제까지의 스냅샷에서 시그널이 연속으로 켜진 일수.
     오늘 값은 build 시점에 더한다. 스냅샷이 없으면 빈 dict."""
@@ -1024,8 +1043,9 @@ def build_market(mkey, template, out_dir, generated, indices=None):
         for c, m in series.items():
             arr = [None] * n
             for j, v in m.items():
-                arr[j] = round(v, 2) if v < 100 else round(v)
-            packed[c] = arr
+                arr[j] = v
+            arr = _adjust_splits(arr)
+            packed[c] = [None if v is None else (round(v, 2) if v < 100 else round(v)) for v in arr]
         (out_dir / mkey).mkdir(parents=True, exist_ok=True)
         (out_dir / mkey / "spark.json").write_text(
             json.dumps({"dates": dates, "d": packed}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

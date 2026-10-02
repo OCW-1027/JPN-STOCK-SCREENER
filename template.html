@@ -118,7 +118,8 @@
   .ci{width:100px;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:3px 6px;font-size:12px;font-family:ui-monospace,Consolas,monospace}
   .ci.sm{width:52px} .calcout{margin:7px 0} .co td{padding:3px 14px 3px 0}
   .warn{color:var(--amber);font-size:11.5px;margin-top:5px;line-height:1.6}
-  .techgrid{display:grid;grid-template-columns:auto auto 1fr;gap:10px 28px;margin-top:10px;font-size:11.5px;align-items:start}
+  .techgrid{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px 28px;margin-top:12px;font-size:11.5px;align-items:start;border-top:1px solid var(--line);padding-top:10px}
+  .chhead{display:flex;align-items:center;gap:10px}
   .cgrid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;align-items:start}
   .cright .ladder{margin-top:4px} .lsvg{width:100%;max-width:340px;height:auto;font-family:ui-monospace,Consolas,monospace}
   .lnote{font-size:10.5px;margin-top:2px}
@@ -129,9 +130,11 @@
   .sb{position:absolute;top:0;bottom:0;border-radius:3px} .sb.neg{background:var(--down)} .sb.pos{background:var(--up)}
   .sv{font-family:ui-monospace,Consolas,monospace}
   .chbtn{background:var(--surface2);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:4px 10px;font-size:11.5px;cursor:pointer}
-  .chbtn:hover{border-color:#60cdff;color:#60cdff} .csvg{width:100%;max-width:440px;height:auto;margin-top:6px;font-family:ui-monospace,Consolas,monospace}
+  .chbtn:hover{border-color:#60cdff;color:#60cdff} .chbtn{padding:2px 8px;font-size:10.5px}
+  .csvg{width:100%;max-width:640px;height:auto;margin-top:4px;font-family:ui-monospace,Consolas,monospace}
   .indl{line-height:1.9;font-family:ui-monospace,Consolas,monospace;white-space:nowrap}
   @media(max-width:900px){.cgrid{grid-template-columns:1fr}.techgrid{grid-template-columns:1fr 1fr}.chartcol{grid-column:1/-1}}
+  .minlot{color:var(--amber);font-size:11px;margin:2px 0 4px}
   @media(max-width:760px){.techgrid{grid-template-columns:1fr}.calc{display:block}.sbar{grid-template-columns:70px 1fr 130px}}
   .star{cursor:pointer;color:var(--faint);font-size:15px;line-height:1;user-select:none}
   .star.on{color:var(--amber)} .star:hover{color:var(--amber)}
@@ -856,7 +859,7 @@ async function toggleDetail(tr, code){
   if(p.l) html+=`<div class="loc">${esc(p.l)}</div>`;
   if(p.d) html+=`<div class="eng">${p.l?'<span class="eglabel">EN</span> ':''}${esc(p.d)}</div>`;
   box.innerHTML=html;
-  const cb=box.querySelector('.calc'); if(cb) runCalc(cb);
+  const cb=box.querySelector('.calc'); if(cb){ runCalc(cb); ensureSpark().then(()=>runCalc(cb)); }   // 차트 데이터는 한 번만 받아 캐시
 }
 
 /* ── 대표지수 스트립 ── */
@@ -913,9 +916,9 @@ function calcHTML(r){ const p=techOf(r); if(!p.close)return '';
       <label><input type="radio" name="stop_${esc(p.code)}" value="custom"> ${T.c_custom} <input class="ci sm" data-f="stopc" type="number"></label></div>
     <div class="calcout"></div><div class="formula"></div><div class="scen"></div>
    </div><div class="cright"><div class="fl">${T.c_ladder}</div><div class="ladder"></div></div></div>
-   <div class="techgrid"><div><div class="fl">${T.c_levels}</div><table class="whotbl">${lv.map(x=>`<tr><td>${x.n}</td><td class="num">${nfx(x.v,dp)}</td><td class="num ${x.d>0?'up':x.d<0?'dn':''}">${x.d>0?'+':''}${x.d.toFixed(1)}%</td></tr>`).join('')}</table></div>
-      <div><div class="fl">${T.c_ind}</div><div class="indl">${ind.join('<br>')||'—'}</div></div>
-      <div class="chartcol"><button type="button" class="chbtn">📈 ${T.c_chart}</button><div class="chart"></div></div></div></div>`; }
+   <div class="techgrid"><div class="chartcol"><div class="chhead"><span class="fl">${T.c_chart_t}</span><button type="button" class="chbtn">${T.c_chart_close}</button></div><div class="chart" data-on="1"></div></div>
+      <div><div class="fl">${T.c_levels}</div><table class="whotbl">${lv.map(x=>`<tr><td>${x.n}</td><td class="num">${nfx(x.v,dp)}</td><td class="num ${x.d>0?'up':x.d<0?'dn':''}">${x.d>0?'+':''}${x.d.toFixed(1)}%</td></tr>`).join('')}</table></div>
+      <div><div class="fl">${T.c_ind}</div><div class="indl">${ind.join('<br>')||'—'}</div></div></div></div>`; }
 
 /* 가격 사다리: 손절·진입·R 목표와 테크니컬 레벨을 한 축에 */
 function ladderSVG(p, entry, stop){
@@ -925,7 +928,9 @@ function ladderSVG(p, entry, stop){
   const out=techLevels(p).filter(x=>x.v>=top).slice(-1)[0];
   const marks=[{v:stop,n:T.c_stop,k:'stop'},{v:entry,n:T.c_entry,k:'entry'},
     {v:entry+dist,n:'1R',k:'r'},{v:entry+2*dist,n:'2R',k:'r'},{v:entry+3*dist,n:'3R',k:'r'}];
-  const H=300, W=330, y=v=>8+(top-v)/(top-bot)*(H-16);
+  const H0=300, W=330, y=v=>8+(top-v)/(top-bot)*(H0-16);
+  let last0=-99; const tys=lv.slice().sort((a,b)=>b.v-a.v).map(x=>{const t=Math.max(y(x.v),last0+11); last0=t; return t;});
+  const H=Math.max(H0, (tys.length?tys[tys.length-1]:0)+14);
   let s=`<svg viewBox="0 0 ${W} ${H}" class="lsvg">`;
   s+=`<rect x="96" y="${y(entry)}" width="10" height="${y(stop)-y(entry)}" fill="rgba(76,154,255,.35)"/>`;
   s+=`<rect x="96" y="${y(entry+3*dist)}" width="10" height="${y(entry)-y(entry+3*dist)}" fill="rgba(255,90,90,.22)"/>`;
@@ -960,21 +965,25 @@ async function ensureSpark(){ if(SPARK) return SPARK; if(!CFG.sparkUrl) return (
   if(!sparkLoading) sparkLoading=fetch(CFG.sparkUrl).then(r=>r.json()).catch(()=>({dates:[],d:{}}));
   SPARK=await sparkLoading; return SPARK; }
 function chartSVG(p, entry, stop){
-  const s=SPARK&&SPARK.d[p.code]; if(!s) return `<div class="fl">${T.c_nochart}</div>`;
+  if(!SPARK) return `<div class="fl">…</div>`;
+  const s=SPARK.d[p.code]; if(!s) return `<div class="fl">${T.c_nochart}</div>`;
   const pts=s.map((v,i)=>[i,v]).filter(x=>x[1]!=null); pts.push([s.length, p.close]);
   if(pts.length<3) return `<div class="fl">${T.c_nochart}</div>`;
   const ok=stop>0&&stop<entry, dist=ok?entry-stop:0, dp=(CFG.market==='us'||entry<100)?2:0;
   const vals=pts.map(x=>x[1]).concat(ok?[stop,entry+2*dist]:[]);
-  const lo=Math.min(...vals), hi=Math.max(...vals), W=420, H=170, n=s.length;
-  const X=i=>6+i/n*(W-60), Y=v=>8+(hi-v)/((hi-lo)||1)*(H-26);
+  let lo=Math.min(...vals), hi=Math.max(...vals); const pad=(hi-lo)*0.05||hi*0.02; lo-=pad; hi+=pad;
+  const W=600, H=190, n=s.length, R0=W-78;
+  const X=i=>6+i/n*(R0-10), Y=v=>8+(hi-v)/((hi-lo)||1)*(H-26);
   let g=`<svg viewBox="0 0 ${W} ${H}" class="csvg">`;
-  const hl=(v,c,lab,da)=>{g+=`<line x1="6" x2="${W-54}" y1="${Y(v)}" y2="${Y(v)}" stroke="${c}" stroke-width="1" ${da?'stroke-dasharray="4 3"':''}/><text x="${W-50}" y="${Y(v)+3.5}" fill="${c}" font-size="10">${lab}</text>`};
-  if(ok){ hl(stop,'var(--down)',`${T.c_stop} ${nfx(stop,dp)}`,1); hl(entry+dist,'var(--up)','1R',1); hl(entry+2*dist,'var(--up)','2R',1); }
-  hl(entry,'var(--muted)',`${nfx(entry,dp)}`,1);
+  let lastY=-99; const hl=(v,c,lab,da)=>{const yy=Y(v), ty=Math.abs(yy-lastY)<11?lastY+11:yy; lastY=ty;
+    g+=`<line x1="6" x2="${R0}" y1="${yy}" y2="${yy}" stroke="${c}" stroke-width="1" ${da?'stroke-dasharray="4 3"':''}/><text x="${R0+4}" y="${ty+3.5}" fill="${c}" font-size="10">${lab}</text>`};
+  if(ok){ hl(entry+2*dist,'var(--up)',`2R ${nfx(entry+2*dist,dp)}`,1); hl(entry+dist,'var(--up)',`1R ${nfx(entry+dist,dp)}`,1); }
+  hl(entry,'var(--text)',`${nfx(entry,dp)}`,0);
+  if(ok) hl(stop,'var(--down)',`${T.c_stop} ${nfx(stop,dp)}`,1);
   g+=`<polyline fill="none" stroke="#60cdff" stroke-width="1.6" points="${pts.map(([i,v])=>X(i).toFixed(1)+','+Y(v).toFixed(1)).join(' ')}"/>`;
   const l=pts[pts.length-1]; g+=`<circle cx="${X(l[0])}" cy="${Y(l[1])}" r="3" fill="#60cdff"/>`;
   const d0=SPARK.dates[0]||'';
-  g+=`<text x="6" y="${H-3}" fill="var(--muted)" font-size="9.5">${d0.slice(5)}</text><text x="${W-54}" y="${H-3}" text-anchor="end" fill="var(--muted)" font-size="9.5">${T.c_now}</text></svg>`;
+  g+=`<text x="6" y="${H-3}" fill="var(--muted)" font-size="9.5">${d0.slice(5)}</text><text x="${R0}" y="${H-3}" text-anchor="end" fill="var(--muted)" font-size="9.5">${T.c_now}</text></svg>`;
   return g+`<div class="fl" style="font-size:10.5px">${T.c_chartnote.replace('{n}',n)}</div>`;
 }
 
@@ -994,8 +1003,9 @@ function runCalc(box){ const r=DATA.find(x=>x[0]===box.dataset.code); if(!r)retu
   if(p.atr){const k=dist/p.atr; if(k<0.7)warn.push(T.w_tight.replace('{r}',k.toFixed(1)))} if(distp>15)warn.push(T.w_far.replace('{p}',distp.toFixed(1)));
   fm.innerHTML=`<span class="fl">${T.f_label}</span> (${nfx(acct)} × ${risk}%) ÷ (${nfx(entry,dp)} − ${nfx(stop,dp)}) = ${CURS}${nfx(riskAmt)} ÷ ${nfx(dist,dp)} = <b>${nfx(rawQty,1)}</b>${LOT>1?` → <b>${nfx(qty)}</b> <span class="fl">(${LOT}${T.o_unit})</span>`:''}`;
   let html='';
-  if(qty<LOT){ html+=`<div class="dn">${T.w_nolot.replace('{q}',nfx(rawQty,0)).replace('{lot}',LOT).replace('{r}',(LOT*dist/acct*100).toFixed(2))}</div>`; sc.innerHTML=''; }
-  else{ const inv=qty*entry,invp=inv/acct*100,loss=qty*dist,lossp=loss/acct*100,gapL=inv*gap/100,gapp=gapL/acct*100;
+  let q=qty;
+  if(qty<LOT){ html+=`<div class="dn">${T.w_nolot.replace('{q}',nfx(rawQty,0)).replace('{lot}',LOT).replace('{r}',(LOT*dist/acct*100).toFixed(2))}</div><div class="minlot">${T.c_minlot.replace('{lot}',LOT)}</div>`; q=LOT; }
+  { const qty=q, inv=qty*entry,invp=inv/acct*100,loss=qty*dist,lossp=loss/acct*100,gapL=inv*gap/100,gapp=gapL/acct*100;
     if(invp>20)warn.push(T.w_conc.replace('{p}',invp.toFixed(0)));
     const Rp=x=>nfx(entry+dist*x,dp); const wr=winRate5(p.bits); let ev='';
     if(wr){const e=(wr.win/100)*2-(1-wr.win/100); ev=`<b class="${e>0?'up':'dn'}">${e>=0?'+':''}${e.toFixed(2)}R</b> <span class="fl">(${wr.label} +5d ${wr.win.toFixed(0)}%, 2R, n=${wr.n})</span>`}
@@ -1006,10 +1016,10 @@ function runCalc(box){ const r=DATA.find(x=>x[0]===box.dataset.code); if(!r)retu
     sc.innerHTML=scenHTML(qty,entry,dist,gap,acct); }
   if(warn.length)html+=`<div class="warn">${warn.map(w=>'⚠ '+w).join('<br>')}</div>`;
   out.innerHTML=html; }
-document.addEventListener('click',async e=>{ const btn=e.target.closest('.chbtn'); if(!btn)return; e.stopPropagation();
+document.addEventListener('click',e=>{ const btn=e.target.closest('.chbtn'); if(!btn)return; e.stopPropagation();
   const box=btn.closest('.calc'), ch=box.querySelector('.chart');
-  if(ch.dataset.on==='1'){ ch.dataset.on='0'; ch.innerHTML=''; btn.textContent='📈 '+T.c_chart; return; }
-  btn.textContent='…'; await ensureSpark(); ch.dataset.on='1'; btn.textContent='📈 '+T.c_chart_close; runCalc(box); });
+  if(ch.dataset.on==='1'){ ch.dataset.on='0'; ch.innerHTML=''; btn.textContent=T.c_chart; return; }
+  ch.dataset.on='1'; btn.textContent=T.c_chart_close; runCalc(box); });
 document.addEventListener('input',e=>{const b=e.target.closest('.calc');if(b)runCalc(b)});
 document.addEventListener('change',e=>{const b=e.target.closest('.calc');if(b)runCalc(b)});
 
