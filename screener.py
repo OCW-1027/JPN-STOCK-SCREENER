@@ -592,6 +592,7 @@ def fetch_tdnet(universe_codes):
 
 
 SIG_STREAK_DAYS = 10     # 이만큼의 과거 스냅샷을 본다
+SPARK_DAYS = 60          # 미니 차트에 쓰는 최근 거래일 수
 
 
 def compute_streaks(mkey, sig_keys):
@@ -1002,6 +1003,36 @@ def build_market(mkey, template, out_dir, generated, indices=None):
         filled = sum(1 for v in profiles.values() if v.get("d"))
         print(f"  [{mkey}] 프로필 캐시 배포: {len(profiles)}건 (서술 {filled})")
 
+    # ── 미니 차트용 종가 시계열 (상세 영역, 펼칠 때만 로드) ──
+    #   트레이딩뷰 위젯은 TSE·KRX 임베드가 막혀 있어 history 스냅샷으로 직접 그린다.
+    try:
+        import glob
+        files = sorted(glob.glob(str(BASE / "history" / mkey / "*.csv.gz")))[-SPARK_DAYS:]
+        dates, series = [], {}
+        for i, f in enumerate(files):
+            try:
+                h = pd.read_csv(f, compression="gzip", usecols=["code", "close"], dtype={"code": str})
+            except Exception:
+                continue
+            dates.append(Path(f).name[:10])
+            j = len(dates) - 1
+            for c, v in zip(h["code"].values, pd.to_numeric(h["close"], errors="coerce").values):
+                if v == v:
+                    series.setdefault(str(c), {})[j] = float(v)
+        n = len(dates)
+        packed = {}
+        for c, m in series.items():
+            arr = [None] * n
+            for j, v in m.items():
+                arr[j] = round(v, 2) if v < 100 else round(v)
+            packed[c] = arr
+        (out_dir / mkey).mkdir(parents=True, exist_ok=True)
+        (out_dir / mkey / "spark.json").write_text(
+            json.dumps({"dates": dates, "d": packed}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        print(f"  [{mkey}] 미니차트 시계열: {n}거래일 · {len(packed)}종목")
+    except Exception as e:  # noqa: BLE001
+        print(f"  [{mkey}] 미니차트 시계열 실패: {type(e).__name__}: {str(e)[:60]}")
+
     if mkey in CONFIG["HISTORY_MARKETS"]:
         hist = BASE / "history" / mkey
         hist.mkdir(parents=True, exist_ok=True)
@@ -1125,6 +1156,7 @@ def build_market(mkey, template, out_dir, generated, indices=None):
             _fresh["finra"] = sup_meta.get("finra_asof")
         cfg["fresh"] = {k: v for k, v in _fresh.items() if v}
         cfg["profilesUrl"] = prof_url
+        cfg["sparkUrl"] = "spark.json" if lang == "ko" else f"../../{mkey}/spark.json"
         cfg["bizLoading"] = L["biz_loading"]
         cfg["bizNone"] = L["biz_none"]
         idx_payload = json.dumps(
