@@ -82,7 +82,7 @@ SCAN_COLUMNS = [
     "close|1W", "EMA20|1W", "EMA50|1W", "RSI|1W", "MACD.hist|1W", "Recommend.All|1W",
     "close|1M", "EMA20|1M", "EMA50|1M", "RSI|1M", "MACD.hist|1M", "Recommend.All|1M",
     # 상대강도(RS) 등급 — IBD 방식 가중 성과의 시장 내 백분위
-    "Perf.6M", "SMA150",
+    "Perf.6M", "SMA150", "earnings_release_next_date",
 ]
 
 SECTOR_KO = {
@@ -707,13 +707,14 @@ SIG_WEIGHT = {
     "sig_growth": 1.0, "sig_accel": 1.0, "sig_garp": 1.0,
     "sig_inflow": 1.0,
     "sig_squeeze": 1.0, "sig_churn": 1.0, "sig_accum": 1.0, "sig_distrib": 1.0,
+    "sig_tt": 1.5,
 }
 
 SIG_KEYS = ["sig_spike", "sig_x5", "sig_x20", "sig_high", "sig_gap", "sig_oversold",
             "sig_gc", "sig_reclaim", "sig_trend", "sig_macd",
             "sig_value", "sig_div", "sig_qual",
             "sig_growth", "sig_accel", "sig_garp", "sig_inflow",
-            "sig_squeeze", "sig_churn", "sig_accum", "sig_distrib"]
+            "sig_squeeze", "sig_churn", "sig_accum", "sig_distrib", "sig_tt"]
 
 
 MTF_TFS = [("60", "|60"), ("240", "|240"), ("D", ""), ("W", "|1W"), ("M", "|1M")]
@@ -758,6 +759,50 @@ def compute_rs(d):
     score = 0.4 * p3 + 0.2 * p6.fillna(p3) + 0.2 * p12.fillna(p6.fillna(p3)) + 0.2 * p3
     rank = score.rank(pct=True)
     d["rs"] = (rank * 98 + 1).round().where(score.notna())
+    return d
+
+
+def _ma_ago(mkey, col, days=20):
+    """약 days 거래일 전 스냅샷의 이동평균 {code: value} — 200MA·150MA 기울기 판정용. 없으면 {}."""
+    import glob
+    files = sorted(glob.glob(str(BASE / "history" / mkey / "*.csv.gz")))
+    if len(files) <= days:
+        return {}
+    try:
+        h = pd.read_csv(files[-days - 1], compression="gzip", usecols=["code", col], dtype={"code": str})
+        return dict(zip(h["code"], pd.to_numeric(h[col], errors="coerce")))
+    except Exception:
+        return {}
+
+
+def compute_trend_template(d, mkey):
+    """미너비니 트렌드 템플릿(sig_tt) + 와인스타인 스테이지(stage 1~4).
+    템플릿: 종가>150MA>200MA · 50MA>150MA · 종가>50MA · 200MA 1개월↑ 상승 · 52주저 +30%↑ · 52주고 -25% 이내 · RS 70↑"""
+    close = pd.to_numeric(d["close"], errors="coerce")
+    s50 = pd.to_numeric(d.get("SMA50"), errors="coerce")
+    s150 = pd.to_numeric(d.get("SMA150"), errors="coerce")
+    s200 = pd.to_numeric(d.get("SMA200"), errors="coerce")
+    hi = pd.to_numeric(d.get("price_52_week_high"), errors="coerce")
+    lo = pd.to_numeric(d.get("price_52_week_low"), errors="coerce")
+    rs = pd.to_numeric(d.get("rs"), errors="coerce")
+    ago200 = _ma_ago(mkey, "SMA200")
+    ago150 = _ma_ago(mkey, "SMA150")
+    s200_ago = d["code"].map(ago200) if ago200 else pd.Series(float("nan"), index=d.index)
+    s150_ago = d["code"].map(ago150) if ago150 else pd.Series(float("nan"), index=d.index)
+    rising200 = (s200 > s200_ago).where(s200_ago.notna(), close > s200)      # 기울기 데이터 없으면 200MA 위로 대체
+    d["sig_tt"] = ((close > s150) & (s150 > s200) & (s50 > s150) & (close > s50)
+                   & rising200 & (close >= lo * 1.30) & (close >= hi * 0.75) & (rs >= 70)).fillna(False)
+    # 스테이지: 30주선(≈150MA) 기울기 × 가격 위치. 150MA 과거값이 없으면 200MA 기울기 사용
+    base = s150.fillna(s200)
+    base_ago = s150_ago.where(s150_ago.notna(), s200_ago)
+    slope = (base - base_ago) / base_ago * 100
+    flat = slope.abs() < 0.5
+    above = close > base
+    stage = pd.Series(float("nan"), index=d.index)
+    stage = stage.mask(above & (slope > 0), 2).mask(~above & (slope < 0), 4)
+    stage = stage.mask(above & ~(slope > 0) & stage.isna(), 3).mask(~above & ~(slope < 0) & stage.isna(), 1)
+    stage = stage.where(base.notna() & base_ago.notna())
+    d["stage"] = stage
     return d
 
 
@@ -937,6 +982,8 @@ def build_rows(df, mc):
         "c85": _num(d, "mtf_60", 0), "c86": _num(d, "mtf_240", 0), "c87": _num(d, "mtf_D", 0),
         "c88": _num(d, "mtf_W", 0), "c89": _num(d, "mtf_M", 0),
         "c90": _num(d, "rs", 0),
+        "c91": _num(d, "stage", 0),
+        "c92": _num(d, "earn_d", 0),
     })
     out = out.astype(object).where(pd.notna(out), None)
     rows = out.values.tolist()
@@ -1052,6 +1099,7 @@ def build_market(mkey, template, out_dir, generated, indices=None):
     df = compute_signals(df)
     df = compute_mtf(df)
     df = compute_rs(df)
+    df = compute_trend_template(df, mkey)
 
     streaks, n_hist = compute_streaks(mkey, SIG_KEYS)
     def _streak_str(row):
@@ -1152,6 +1200,10 @@ def build_market(mkey, template, out_dir, generated, indices=None):
         d["biz"] = [biz_text(sec, ind, kp, lang) for sec, ind, kp
                     in zip(d["sector"], d["industry"], kps)]
 
+        # 다음 실적 발표까지 남은 거래일 수(음수면 지난 것). 포지션 계산기 갭 경고용
+        _ed = pd.to_numeric(d.get("earnings_release_next_date"), errors="coerce")
+        _now = pd.Timestamp.now(tz="Asia/Tokyo").tz_localize(None).normalize()
+        d["earn_d"] = ((pd.to_datetime(_ed, unit="s", errors="coerce") - _now).dt.days).where(_ed.notna())
         rows = build_rows(d, mc)
         cfg = dict(market=mkey, lang=lang, t=L,
                    turnLabel=ML["turn"], mcapLabel=ML["mcap"], ebitdaLabel=ML["ebitda"],

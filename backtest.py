@@ -46,6 +46,7 @@ SIGNALS = [  # (컬럼, 표시명, 그룹)
     ("sig_growth", "고성장", "w"), ("sig_accel", "이익가속", "w"), ("sig_garp", "저평가성장", "w"),
     ("sig_inflow", "지속유입", "x"), ("sig_squeeze", "숏스퀴즈", "x"), ("sig_churn", "손바뀜", "x"),
     ("sig_accum", "바닥매집", "x"), ("sig_distrib", "상투분산", "x"),
+    ("sig_tt", "트렌드템플릿", "g"),
 ]
 GROUPS = [("grp_short", "단기(아무거나)", "s"), ("grp_long", "중장기(아무거나)", "g"),
           ("grp_fund", "펀더(아무거나)", "f"), ("grp_growth", "성장(아무거나)", "w"),

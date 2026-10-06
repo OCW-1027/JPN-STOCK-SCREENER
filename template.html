@@ -140,7 +140,7 @@
   .mtft td:first-child{text-align:left;color:var(--text);font-weight:600;padding-right:10px} .mtft tr.h td{color:var(--muted);font-size:10px}
   .mt{font-size:11px} .mt.up{color:var(--up)} .mt.dn{color:var(--down)} .mt.fl{color:var(--faint)} .mtr{font-size:9.5px;margin-left:2px}
   .mtft tr.mtbull td:first-child{color:var(--up)} .mtft tr.mtbear td:first-child{color:var(--down)}
-  .mtfnote{font-size:11px;color:var(--amber);margin-top:4px}
+  .mtfnote{font-size:11px;color:var(--amber);margin-top:4px} .warnearn{color:var(--amber);font-weight:700}
   @media(max-width:760px){.techgrid{grid-template-columns:1fr}.calc{display:block}.sbar{grid-template-columns:70px 1fr 130px}}
   .star{cursor:pointer;color:var(--faint);font-size:15px;line-height:1;user-select:none}
   .star.on{color:var(--amber)} .star:hover{color:var(--amber)}
@@ -389,11 +389,12 @@ const SIGS = [
   {bit:16,label:T.s_inflow,k:'s'},
   {bit:17,label:T.s_squeeze,k:'x'},{bit:18,label:T.s_churn,k:'x'},
   {bit:19,label:T.s_accum,k:'x'},{bit:20,label:T.s_distrib,k:'x'},
+  {bit:21,label:T.s_tt,k:'g'},
 ];
 const SIGKEY={s_spike:0,s_x5:1,s_x20:2,s_high:3,s_gap:4,s_oversold:5,s_gc:6,s_reclaim:7,
   s_trend:8,s_macd:9,s_value:10,s_dividend:11,s_qual:12,s_growth:13,s_accel:14,s_garp:15,s_inflow:16,
-  s_squeeze:17,s_churn:18,s_accum:19,s_distrib:20};
-const SHORT_MASK=0b10000000000111111, SUP_MASK=0b111100000000000000000, LONG_MASK=0b0000001111000000,
+  s_squeeze:17,s_churn:18,s_accum:19,s_distrib:20,s_tt:21};
+const SHORT_MASK=0b10000000000111111, SUP_MASK=0b111100000000000000000, LONG_MASK=0b1000000000001111000000,
       FUND_MASK=0b0001110000000000,  GROW_MASK=0b1110000000000000;
 
 /* g: b=always, t=technical, f=financial */
@@ -892,7 +893,7 @@ function nfx(v,d){return v==null||isNaN(v)?'—':Number(v).toLocaleString(NUMLOC
 // 행 배열 → 계산용 객체
 function techOf(r){ return {code:r[0], close:r[4], sma5:r[6], sma20:r[7], sma200:r[8], hi52:r[42], lo52:r[43], bits:r[18],
   atr:r[71], sma50:r[72], bb_up:r[73], bb_lo:r[74], adx:r[75], stk:r[76], std:r[77],
-  ich_base:r[78], ich_conv:r[79], ich_a:r[80], ich_b:r[81], piv_s1:r[82], piv_r1:r[83], tv_rec:r[84], rs:r[90]}; }
+  ich_base:r[78], ich_conv:r[79], ich_a:r[80], ich_b:r[81], piv_s1:r[82], piv_r1:r[83], tv_rec:r[84], rs:r[90], stage:r[91], earn_d:r[92]}; }
 function winRate5(bits){ let best=null; const W=CFG.win5||{};
   for(const s of SIGS){ if(!(bits&(1<<s.bit)))continue; const key=Object.keys(SIGKEY).find(k=>SIGKEY[k]===s.bit); const w=W['sig_'+key.slice(2)];
     if(w&&(best==null||w.win>best.win)) best={label:s.label,win:w.win,n:w.n}; }
@@ -933,6 +934,8 @@ function calcHTML(r){ const p=techOf(r); if(!p.close)return '';
   const ind=[]; if(p.atr)ind.push(`ATR ${nfx(p.atr,dp)} (${(p.atr/p.close*100).toFixed(1)}%)`);
   if(p.adx!=null)ind.push(`ADX ${p.adx.toFixed(0)} ${p.adx>=25?'<span class="up">'+T.i_trend+'</span>':'<span class="fl">'+T.i_range+'</span>'}`);
   if(p.stk!=null)ind.push(`Stoch ${p.stk.toFixed(0)}/${p.std!=null?p.std.toFixed(0):'—'} ${p.stk<20?'<span class="dn">'+T.i_os+'</span>':p.stk>80?'<span class="up">'+T.i_ob+'</span>':''}`);
+  if(p.stage!=null)ind.push(`${T.stage_lbl} <b class="${p.stage===2?'up':p.stage===4?'dn':''}">${p.stage}</b> <span class="fl">${T['stage_'+p.stage]||''}</span>`);
+  if(p.earn_d!=null&&p.earn_d>=-1&&p.earn_d<=30)ind.push(`<span class="${p.earn_d<=5?'warnearn':''}">📅 ${T.earn_lbl.replace('{d}',p.earn_d)}</span>`);
   if(p.tv_rec!=null)ind.push(`TV ${p.tv_rec>0.5?'<span class="up">'+T.i_sbuy+'</span>':p.tv_rec>0.1?'<span class="up">'+T.i_buy+'</span>':p.tv_rec<-0.5?'<span class="dn">'+T.i_ssell+'</span>':p.tv_rec<-0.1?'<span class="dn">'+T.i_sell+'</span>':T.i_neutral}`);
   return `<div class="calc" data-code="${esc(p.code)}"><div class="calch"><b>${T.calc_title}</b> <span class="fl">${T.calc_sub}</span></div>
    <div class="cgrid"><div class="cleft">
@@ -1029,6 +1032,7 @@ function runCalc(box){ const r=DATA.find(x=>x[0]===box.dataset.code); if(!r)retu
   saveAcct({acct,risk,gap});
   const dp=(CFG.market==='us'||entry<100)?2:0, dist=entry-stop, distp=dist/entry*100, riskAmt=acct*risk/100, rawQty=riskAmt/dist, qty=Math.floor(rawQty/LOT)*LOT, warn=[];
   if(p.atr){const k=dist/p.atr; if(k<0.7)warn.push(T.w_tight.replace('{r}',k.toFixed(1)))} if(distp>15)warn.push(T.w_far.replace('{p}',distp.toFixed(1)));
+  if(p.earn_d!=null&&p.earn_d>=0&&p.earn_d<=5)warn.push(T.w_earn.replace('{d}',p.earn_d).replace('{g}',gap));
   fm.innerHTML=`<span class="fl">${T.f_label}</span> (${nfx(acct)} × ${risk}%) ÷ (${nfx(entry,dp)} − ${nfx(stop,dp)}) = ${CURS}${nfx(riskAmt)} ÷ ${nfx(dist,dp)} = <b>${nfx(rawQty,1)}</b>${LOT>1?` → <b>${nfx(qty)}</b> <span class="fl">(${LOT}${T.o_unit})</span>`:''}`;
   let html='';
   let q=qty;
