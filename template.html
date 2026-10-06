@@ -149,6 +149,9 @@
   .rgi{color:var(--muted)} .rgi b{color:var(--text);font-family:ui-monospace,Consolas,monospace}
   .srk{font-style:normal;font-size:9.5px;margin-left:5px;padding:0 4px;border-radius:4px;background:rgba(255,255,255,.08);color:var(--muted)}
   .srk.top{background:rgba(255,178,36,.25);color:var(--amber);font-weight:700}
+  .rscell{position:relative} .rscell small{font-size:9.5px;color:var(--muted);margin-left:3px}
+  .rsb{position:absolute;left:4px;right:4px;bottom:2px;height:2px;background:var(--line);border-radius:2px}
+  .rsb::after{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--w);background:currentColor;opacity:.55;border-radius:2px}
   @media(max-width:760px){.techgrid{grid-template-columns:1fr}.calc{display:block}.sbar{grid-template-columns:70px 1fr 130px}}
   .star{cursor:pointer;color:var(--faint);font-size:15px;line-height:1;user-select:none}
   .star.on{color:var(--amber)} .star:hover{color:var(--amber)}
@@ -622,7 +625,8 @@ function cell(r,c){
   if(i===63) return `<td class="num">${r[63]==null?'—':pc(r[63])}</td>`;
   if(i===64) return `<td class="num">${r[64]==null?'—':fmt(r[64],1)}</td>`;
   if(i===90){const v=r[90]; if(v==null) return '<td class="num fl">—</td>';
-    return `<td class="num ${v>=80?'inf2':v>=60?'inf1':v<=30?'fl':''}">${v}</td>`;}
+    const lab=v>=80?T.rs_l4:v>=60?T.rs_l3:v>=40?T.rs_l2:T.rs_l1, cls=v>=80?'inf2':v>=60?'inf1':v<=30?'fl':'';
+    return `<td class="num rscell ${cls}" title="${esc(T.rs_expl.replace('{p}',100-v).replace('{r}',v))}"><span class="rsb" style="--w:${v}%"></span>${v} <small>${lab}</small></td>`;}
   if(i===69){const v=r[69]; if(v==null) return '<td class="num fl">—</td>';
     return `<td class="num ${v>=10?'inf2':'inf1'}">${fmt(v,2)}</td>`;}
   if(i===70){const v=r[70]; if(v==null) return '<td class="num fl">—</td>';
@@ -965,7 +969,7 @@ function calcHTML(r){ const p=techOf(r); if(!p.close)return '';
   const ind=[]; if(p.atr)ind.push(`ATR ${nfx(p.atr,dp)} (${(p.atr/p.close*100).toFixed(1)}%)`);
   if(p.adx!=null)ind.push(`ADX ${p.adx.toFixed(0)} ${p.adx>=25?'<span class="up">'+T.i_trend+'</span>':'<span class="fl">'+T.i_range+'</span>'}`);
   if(p.stk!=null)ind.push(`Stoch ${p.stk.toFixed(0)}/${p.std!=null?p.std.toFixed(0):'—'} ${p.stk<20?'<span class="dn">'+T.i_os+'</span>':p.stk>80?'<span class="up">'+T.i_ob+'</span>':''}`);
-  { const rk=SECTOR_RS.get(r[2]); if(rk) ind.push(`${T.sec_rs} <b class="${rk<=5?'up':''}">#${rk}</b><span class="fl">/${SECTOR_RS.size}</span>`); }
+  { const rk=SECTOR_RS.get(r[2]); if(rk) ind.push(`${T.sec_rs} <b class="${rk<=5?'up':''}">#${rk}</b><span class="fl">/${SECTOR_RS.size} · ${rk<=5?T.sec_lead:rk>SECTOR_RS.size*0.7?T.sec_lag:T.sec_mid}</span>`); }
   if(p.stage!=null)ind.push(`${T.stage_lbl} <b class="${p.stage===2?'up':p.stage===4?'dn':''}">${p.stage}</b> <span class="fl">${T['stage_'+p.stage]||''}</span>`);
   if(p.earn_d!=null&&p.earn_d>=-1&&p.earn_d<=30)ind.push(`<span class="${p.earn_d<=5?'warnearn':''}">📅 ${T.earn_lbl.replace('{d}',p.earn_d)}</span>`);
   if(p.tv_rec!=null)ind.push(`TV ${p.tv_rec>0.5?'<span class="up">'+T.i_sbuy+'</span>':p.tv_rec>0.1?'<span class="up">'+T.i_buy+'</span>':p.tv_rec<-0.5?'<span class="dn">'+T.i_ssell+'</span>':p.tv_rec<-0.1?'<span class="dn">'+T.i_sell+'</span>':T.i_neutral}`);
@@ -982,7 +986,7 @@ function calcHTML(r){ const p=techOf(r); if(!p.close)return '';
    </div><div class="cright"><div class="fl">${T.c_ladder}</div><div class="ladder"></div></div></div>
    <div class="techgrid"><div class="chartcol"><div class="chhead"><span class="fl">${T.c_chart_t}</span><button type="button" class="chbtn">${T.c_chart_close}</button></div><div class="chart" data-on="1"></div></div>
       <div><div class="fl">${T.c_levels}</div><table class="whotbl">${lv.map(x=>`<tr><td>${x.n}</td><td class="num">${nfx(x.v,dp)}</td><td class="num ${x.d>0?'up':x.d<0?'dn':''}">${x.d>0?'+':''}${x.d.toFixed(1)}%</td></tr>`).join('')}</table></div>
-      <div><div class="fl">${T.c_ind}</div><div class="indl">${ind.join('<br>')||'—'}${p.rs!=null?`<br>RS ${p.rs}${p.rs>=80?' <span class="up">'+T.rs_strong+'</span>':p.rs<=30?' <span class="fl">'+T.rs_weak+'</span>':''}`:''}</div>${mtfHTML(r)}</div></div></div>`; }
+      <div><div class="fl">${T.c_ind}</div><div class="indl">${ind.join('<br>')||'—'}${p.rs!=null?`<br>RS <b class="${p.rs>=80?'up':p.rs<=30?'dn':''}">${p.rs}</b> <span class="fl">${T.rs_expl.replace('{p}',100-p.rs).replace('{r}',p.rs)}</span>`:''}</div>${mtfHTML(r)}</div></div></div>`; }
 
 /* 가격 사다리: 손절·진입·R 목표와 테크니컬 레벨을 한 축에 */
 function ladderSVG(p, entry, stop){
