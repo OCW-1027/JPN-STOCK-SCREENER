@@ -499,7 +499,7 @@ function buildStrip(){
   $('#strip').innerHTML=arr.map(o=>{
     const a=Math.min(Math.abs(o.med)/2.5,1)*0.5+0.06;
     const bg=o.med>0?`rgba(255,79,94,${a})`:o.med<0?`rgba(63,140,255,${a})`:'var(--surface)';
-    const rk=o.rk?`<i class="srk ${o.rk<=5?'top':''}">RS#${o.rk}</i>`:'';
+    const rk=o.rk?`<i class="srk ${o.rk<=5?'top':''}" title="${esc(T.srk_tip)}">RS#${o.rk}</i>`:'';
     return `<div class="chip" data-s="${esc(o.s)}" style="background:${bg}"><small>${esc(o.s)} (${o.n})${rk}</small><b class="num">${o.med>0?'+':''}${o.med.toFixed(Math.abs(o.med)<1?2:1)}%</b></div>`;
   }).join('');
 }
@@ -986,7 +986,7 @@ function calcHTML(r){ const p=techOf(r); if(!p.close)return '';
    </div><div class="cright"><div class="fl">${T.c_ladder}</div><div class="ladder"></div></div></div>
    <div class="techgrid"><div class="chartcol"><div class="chhead"><span class="fl">${T.c_chart_t}</span><button type="button" class="chbtn">${T.c_chart_close}</button></div><div class="chart" data-on="1"></div></div>
       <div><div class="fl">${T.c_levels}</div><table class="whotbl">${lv.map(x=>`<tr><td>${x.n}</td><td class="num">${nfx(x.v,dp)}</td><td class="num ${x.d>0?'up':x.d<0?'dn':''}">${x.d>0?'+':''}${x.d.toFixed(1)}%</td></tr>`).join('')}</table></div>
-      <div><div class="fl">${T.c_ind}</div><div class="indl">${ind.join('<br>')||'—'}${p.rs!=null?`<br>RS <b class="${p.rs>=80?'up':p.rs<=30?'dn':''}">${p.rs}</b> <span class="fl">${T.rs_expl.replace('{p}',100-p.rs).replace('{r}',p.rs)}</span>`:''}</div>${mtfHTML(r)}</div></div></div>`; }
+      <div><div class="fl">${T.c_ind}</div><div class="indl">${ind.join('<br>')||'—'}${p.rs!=null?`<br>${T.rs_name} <b class="${p.rs>=80?'up':p.rs<=30?'dn':''}">${p.rs}</b> <span class="fl">${T.rs_expl.replace('{p}',100-p.rs).replace('{r}',p.rs)}</span>`:''}</div>${mtfHTML(r)}</div></div></div>`; }
 
 /* 가격 사다리: 손절·진입·R 목표와 테크니컬 레벨을 한 축에 */
 function ladderSVG(p, entry, stop){
