@@ -75,6 +75,14 @@ SCAN_COLUMNS = [
     "ATR", "BB.upper", "BB.lower", "ADX", "Stoch.K", "Stoch.D",
     "Ichimoku.BLine", "Ichimoku.CLine", "Ichimoku.Lead1", "Ichimoku.Lead2",
     "Pivot.M.Classic.S1", "Pivot.M.Classic.R1", "Recommend.All",
+    # 멀티 타임프레임 매트릭스 (60분·4시간·일·주·월) — 추세(EMA20/50)·RSI·MACD 히스토그램·TV 판정
+    "EMA20", "EMA50", "MACD.hist",
+    "close|60", "EMA20|60", "EMA50|60", "RSI|60", "MACD.hist|60", "Recommend.All|60",
+    "close|240", "EMA20|240", "EMA50|240", "RSI|240", "MACD.hist|240", "Recommend.All|240",
+    "close|1W", "EMA20|1W", "EMA50|1W", "RSI|1W", "MACD.hist|1W", "Recommend.All|1W",
+    "close|1M", "EMA20|1M", "EMA50|1M", "RSI|1M", "MACD.hist|1M", "Recommend.All|1M",
+    # 상대강도(RS) 등급 — IBD 방식 가중 성과의 시장 내 백분위
+    "Perf.6M", "SMA150",
 ]
 
 SECTOR_KO = {
@@ -708,6 +716,51 @@ SIG_KEYS = ["sig_spike", "sig_x5", "sig_x20", "sig_high", "sig_gap", "sig_overso
             "sig_squeeze", "sig_churn", "sig_accum", "sig_distrib"]
 
 
+MTF_TFS = [("60", "|60"), ("240", "|240"), ("D", ""), ("W", "|1W"), ("M", "|1M")]
+
+
+def _tri(bull, bear):
+    """상태 코드: 0 중립 · 1 강세 · 2 약세 (Series)."""
+    return bull.astype(int) * 1 + (bear & ~bull).astype(int) * 2
+
+
+def compute_mtf(d):
+    """TF별로 추세·RSI·MACD·TV판정 상태를 하나의 정수로 압축해 d['mtf_<tf>'] 에 넣는다.
+    값 = (추세 + 3·RSI + 9·MACD + 27·판정) × 100 + RSI(0~99). 값이 없으면 NaN."""
+    for key, sfx in MTF_TFS:
+        close = pd.to_numeric(d.get(f"close{sfx}", d["close"] if sfx == "" else None), errors="coerce")
+        e20 = pd.to_numeric(d.get(f"EMA20{sfx}"), errors="coerce")
+        e50 = pd.to_numeric(d.get(f"EMA50{sfx}"), errors="coerce")
+        rsi = pd.to_numeric(d.get(f"RSI{sfx}"), errors="coerce")
+        mh = pd.to_numeric(d.get(f"MACD.hist{sfx}"), errors="coerce")
+        rec = pd.to_numeric(d.get(f"Recommend.All{sfx}"), errors="coerce")
+        if close is None or e20 is None:
+            d[f"mtf_{key}"] = float("nan")
+            continue
+        t = _tri((close > e20) & (close > e50), (close < e20) & (close < e50))
+        r = _tri(rsi > 60, rsi < 40)
+        m = _tri(mh > 0, mh < 0)
+        c = _tri(rec > 0.1, rec < -0.1)
+        code = t + 3 * r + 9 * m + 27 * c
+        val = code * 100 + rsi.fillna(50).clip(0, 99).round()
+        d[f"mtf_{key}"] = val.where(close.notna() & e20.notna())
+    return d
+
+
+def compute_rs(d):
+    """RS 등급 1~99: IBD식 가중 성과(최근 3개월 2배 가중)의 시장 내 백분위."""
+    p3 = pd.to_numeric(d.get("Perf.3M"), errors="coerce")
+    p6 = pd.to_numeric(d.get("Perf.6M"), errors="coerce")
+    p12 = pd.to_numeric(d.get("Perf.Y"), errors="coerce")
+    if p3 is None:
+        d["rs"] = float("nan")
+        return d
+    score = 0.4 * p3 + 0.2 * p6.fillna(p3) + 0.2 * p12.fillna(p6.fillna(p3)) + 0.2 * p3
+    rank = score.rank(pct=True)
+    d["rs"] = (rank * 98 + 1).round().where(score.notna())
+    return d
+
+
 def compute_signals(df):
     c = CONFIG
     d = df
@@ -880,6 +933,10 @@ def build_rows(df, mc):
         "c80": _num(d, "Ichimoku.Lead1"), "c81": _num(d, "Ichimoku.Lead2"),
         "c82": _num(d, "Pivot.M.Classic.S1"), "c83": _num(d, "Pivot.M.Classic.R1"),
         "c84": _num(d, "Recommend.All", 2),
+        # 멀티 TF 상태 코드 (85~89: 60분·4H·일·주·월) · RS 등급 (90)
+        "c85": _num(d, "mtf_60", 0), "c86": _num(d, "mtf_240", 0), "c87": _num(d, "mtf_D", 0),
+        "c88": _num(d, "mtf_W", 0), "c89": _num(d, "mtf_M", 0),
+        "c90": _num(d, "rs", 0),
     })
     out = out.astype(object).where(pd.notna(out), None)
     rows = out.values.tolist()
@@ -993,6 +1050,8 @@ def build_market(mkey, template, out_dir, generated, indices=None):
               f"({sup_meta.get('margin_asof')}) / 공매도 {df['s_pct'].notna().sum()}종목 ({sup_meta.get('short_asof')})")
 
     df = compute_signals(df)
+    df = compute_mtf(df)
+    df = compute_rs(df)
 
     streaks, n_hist = compute_streaks(mkey, SIG_KEYS)
     def _streak_str(row):

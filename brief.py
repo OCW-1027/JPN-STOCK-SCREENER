@@ -363,6 +363,7 @@ def pick_record(bucket, r, profiles, baserates, tdnet, mkey, supw=None):
         ich_a=_f(r.get("Ichimoku.Lead1")), ich_b=_f(r.get("Ichimoku.Lead2")),
         piv_s1=_f(r.get("Pivot.M.Classic.S1")), piv_r1=_f(r.get("Pivot.M.Classic.R1")),
         tv_rec=_f(r.get("Recommend.All")),
+        mtf=[_f(r.get(f"mtf_{k}"), 0) for k in ("60", "240", "D", "W", "M")], rs=_f(r.get("rs"), 0),
         who=(supw.get(code) or {}).get("who"), s_pct=(supw.get(code) or {}).get("s_pct"),
         gy=(supw.get(code) or {}).get("gy"),
         tdnet=[dict(pub=x["pub"], title=x["title"], url=x["url"], bits=x["bits"], strong=x["strong"])
@@ -595,6 +596,14 @@ PAGE_T = {
                c_acct="운용자금", c_acct_ex="예: 15000000", c_risk="리스크", c_gap="갭", c_entry="진입가", c_stop="손절", c_custom="직접",
                c_levels="테크니컬 레벨 (현재가 대비)", c_ind="보조 지표", c_need="운용자금·리스크·진입가를 입력하세요",
                c_ladder="가격 사다리 (손절·진입·목표 vs 테크니컬 레벨)", c_scen="손익 시나리오 (운용자금 대비)",
+               rs_strong="주도주권", rs_weak="약세", mtf_title="멀티 타임프레임", mtf_sum="강세 {b} · 약세 {s} / {n}", mtf_trend="추세",
+               tf_60="60분", tf_240="4시간", tf_D="일봉", tf_W="주봉", tf_M="월봉",
+               mtf_pullback="추세 내 눌림목 — 상위 TF 강세, 단기 조정 중. 손절 후보(20MA·기준선)와 궁합",
+               mtf_aligned_up="전 TF 정렬 상승 — 추세 추종 유리, 다만 과열(RSI 70↑) 확인",
+               mtf_counter="역추세 반등 — 상위 TF 약세에서 단기만 강세. 기대값 낮게, 목표 짧게",
+               mtf_aligned_dn="전 TF 정렬 하락 — 매수 보류. 바닥매집·숏스퀴즈 시그널 있을 때만 검토",
+               mtf_mixed="TF 간 엇갈림 — 방향성 약함. 포지션 축소 또는 관망",
+               mtf_asof="60분·4시간은 브리프 생성 시각(종가 후)의 마지막 봉 기준",
                c_chart="차트 보기", c_chart_close="숨기기", c_chart_t="최근 종가 차트", c_minlot="↓ 최소 {lot}주로 살 경우",
                c_nochart="차트 데이터가 아직 없습니다", c_now="현재", c_chartnote="최근 {n}거래일 종가 (스크리너 일별 기록) · 점선: 손절·1R·2R",
                l_res="진입~2R 사이 저항 {n}개", l_sup="진입~손절 사이 지지 {n}개", f_label="수량 =",
@@ -629,6 +638,14 @@ PAGE_T = {
                c_acct="運用資金", c_acct_ex="例: 15000000", c_risk="リスク", c_gap="ギャップ", c_entry="エントリー", c_stop="損切り", c_custom="手入力",
                c_levels="テクニカル水準 (現在値比)", c_ind="補助指標", c_need="運用資金・リスク・エントリーを入力してください",
                c_ladder="価格ラダー (損切り・エントリー・目標 vs テクニカル水準)", c_scen="損益シナリオ (運用資金比)",
+               rs_strong="主導株圏", rs_weak="弱い", mtf_title="マルチタイムフレーム", mtf_sum="強気 {b} · 弱気 {s} / {n}", mtf_trend="トレンド",
+               tf_60="60分", tf_240="4時間", tf_D="日足", tf_W="週足", tf_M="月足",
+               mtf_pullback="トレンド内の押し目 — 上位TF強気、短期は調整中。損切り候補(20MA・基準線)と相性良",
+               mtf_aligned_up="全TF上昇で一致 — 順張り有利、ただし過熱(RSI70↑)を確認",
+               mtf_counter="逆張り反発 — 上位TF弱気で短期のみ強気。期待値は低め、目標は短く",
+               mtf_aligned_dn="全TF下落で一致 — 買い見送り。底値集積・踏み上げシグナル時のみ検討",
+               mtf_mixed="TF間で不一致 — 方向感弱い。ポジション縮小か様子見",
+               mtf_asof="60分・4時間はブリーフ生成時刻(大引け後)の最終足基準",
                c_chart="チャート", c_chart_close="隠す", c_chart_t="直近終値チャート", c_minlot="↓ 最小{lot}株で買う場合",
                c_nochart="チャートデータがまだありません", c_now="現在", c_chartnote="直近{n}営業日の終値 (スクリーナー日次記録) · 点線: 損切り・1R・2R",
                l_res="エントリー〜2R間の抵抗 {n}本", l_sup="エントリー〜損切り間の支持 {n}本", f_label="数量 =",
@@ -698,6 +715,12 @@ tr.det .calc .co td{padding:4px 18px 4px 0}
 .lnote{font-size:10.5px;margin-top:2px}
 .formula{font-size:11.5px;font-family:ui-monospace,Consolas,monospace;margin:4px 0;line-height:1.6}
 .minlot{color:var(--amber);font-size:11px;margin:2px 0 4px}
+.mtfbox{margin-top:10px} .mtfsum{color:var(--text);margin-left:6px}
+tr.det .calc .mtft td{padding:2px 9px 2px 0;text-align:center;white-space:nowrap;font-size:11px}
+tr.det .calc .mtft td:first-child{text-align:left;color:var(--text);font-weight:600;padding-right:10px} .mtft tr.h td{color:var(--muted);font-size:10px}
+.mt{font-size:11px} .mt.up{color:var(--up)} .mt.dn{color:var(--down)} .mt.fl{color:var(--faint)} .mtr{font-size:9.5px;margin-left:2px}
+.mtft tr.mtbull td:first-child{color:var(--up)} .mtft tr.mtbear td:first-child{color:var(--down)}
+.mtfnote{font-size:11px;color:var(--amber);margin-top:4px}
 .sbar{display:grid;grid-template-columns:86px 1fr 170px;gap:6px;align-items:center;font-size:11px;margin:2px 0}
 .sl{color:var(--muted);text-align:right} .st{position:relative;height:9px;background:var(--bg);border-radius:3px}
 .st::after{content:"";position:absolute;left:50%;top:-2px;bottom:-2px;border-left:1px solid var(--line)}
@@ -814,6 +837,27 @@ function stopCandidates(p){
   return out;
 }
 
+/* 멀티 타임프레임 매트릭스 (스크리너와 동일 코드 체계) */
+function mtfDecode(v){ if(v==null||isNaN(v)) return null; const code=Math.floor(v/100), rsi=v%100;
+  return {t:code%3, r:Math.floor(code/3)%3, m:Math.floor(code/9)%3, c:Math.floor(code/27)%3, rsi}; }
+function mtfHTML(p){
+  const vals=(p.mtf||[]).map(mtfDecode); if(!vals.length||vals.every(v=>!v)) return '';
+  const labels=[T.tf_60,T.tf_240,T.tf_D,T.tf_W,T.tf_M];
+  const dot=s=>s===1?'<span class="mt up">●</span>':s===2?'<span class="mt dn">●</span>':'<span class="mt fl">○</span>';
+  const sc=v=>v?[v.t,v.r,v.m,v.c].reduce((a,s)=>a+(s===1?1:s===2?-1:0),0):0;
+  let bull=0,bear=0,n=0;
+  const rows=vals.map((v,i)=>{ if(!v) return `<tr><td>${labels[i]}</td><td colspan="4" class="mu">—</td></tr>`;
+    const s=sc(v); n++; if(s>=2)bull++; else if(s<=-2)bear++;
+    return `<tr class="${s>=2?'mtbull':s<=-2?'mtbear':''}"><td>${labels[i]}</td><td>${dot(v.t)}</td><td>${dot(v.r)}<span class="mu mtr">${v.rsi}</span></td><td>${dot(v.m)}</td><td>${dot(v.c)}</td></tr>`; }).join('');
+  const hi=sc(vals[3])+sc(vals[4]), lo=sc(vals[0])+sc(vals[1]), d=sc(vals[2]);
+  let note=T.mtf_mixed;
+  if(hi>=3&&lo<=-1) note=T.mtf_pullback; else if(hi>=3&&lo>=1&&d>=1) note=T.mtf_aligned_up;
+  else if(hi<=-3&&lo>=1) note=T.mtf_counter; else if(hi<=-3&&lo<=-1) note=T.mtf_aligned_dn;
+  return `<div class="mtfbox"><div class="mu">${T.mtf_title} <span class="mtfsum">${T.mtf_sum.replace('{b}',bull).replace('{s}',bear).replace('{n}',n)}</span></div>
+    <table class="mtft"><tr class="h"><td></td><td>${T.mtf_trend}</td><td>RSI</td><td>MACD</td><td>TV</td></tr>${rows}</table>
+    <div class="mtfnote">${note}</div><div class="mu" style="font-size:10px">${T.mtf_asof}</div></div>`;
+}
+
 function calcBlock(p){
   if(!p.close) return '';
   const a=loadAcct(), dp=dpOf(p.close), lv=techLevels(p), stops=stopCandidates(p), cur=CUR[B.market];
@@ -841,7 +885,7 @@ function calcBlock(p){
     <div class="techgrid">
       <div class="chartcol"><div class="chhead"><span class="mu">${T.c_chart_t}</span><button type="button" class="chbtn">${T.c_chart_close}</button></div><div class="chart" data-on="1"></div></div>
       <div><div class="mu">${T.c_levels}</div><table class="whotbl">${lv.map(x=>`<tr><td>${x.n}</td><td class="num">${nf(x.v,dp)}</td><td class="num ${x.d>0?'up':x.d<0?'dn':''}">${x.d>0?'+':''}${x.d.toFixed(1)}%</td></tr>`).join('')}</table></div>
-      <div><div class="mu">${T.c_ind}</div><div class="indl">${ind.join('<br>')||'—'}</div></div>
+      <div><div class="mu">${T.c_ind}</div><div class="indl">${ind.join('<br>')||'—'}${p.rs!=null?`<br>RS ${p.rs}${p.rs>=80?' <span class="up">'+T.rs_strong+'</span>':p.rs<=30?' <span class="mu">'+T.rs_weak+'</span>':''}`:''}</div>${mtfHTML(p)}</div>
     </div>
   </div>`;
 }
