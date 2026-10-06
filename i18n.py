@@ -631,6 +631,7 @@ def btc_link(lang, cls="btc"):
 
 BTC_CSS = """
 a.btc{color:var(--amber);border-color:rgba(255,178,36,.45);background:var(--surface2)}
+a.langbtn.btc{margin-left:0}   /* 서브페이지: langbtn의 margin-left:auto 를 끄고 다른 버튼 옆에 붙인다 (언어 버튼만 오른쪽 끝) */
 a.btc:hover{background:var(--amber);color:#2a1f05}
 a.btc b{font-variant-numeric:tabular-nums;font-weight:800;margin-left:2px}
 a.btc b.up{color:var(--up)} a.btc b.down{color:var(--down)}
