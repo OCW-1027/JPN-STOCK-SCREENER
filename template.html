@@ -141,6 +141,14 @@
   .mt{font-size:11px} .mt.up{color:var(--up)} .mt.dn{color:var(--down)} .mt.fl{color:var(--faint)} .mtr{font-size:9.5px;margin-left:2px}
   .mtft tr.mtbull td:first-child{color:var(--up)} .mtft tr.mtbear td:first-child{color:var(--down)}
   .mtfnote{font-size:11px;color:var(--amber);margin-top:4px} .warnearn{color:var(--amber);font-weight:700}
+  .regime{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin:6px 0 2px;font-size:12px}
+  .rgb{padding:3px 10px;border-radius:999px;font-weight:800;font-size:12px;letter-spacing:.2px}
+  .rgb.ron{background:rgba(255,79,94,.18);color:var(--up);border:1px solid rgba(255,79,94,.5)}
+  .rgb.roff{background:rgba(63,140,255,.18);color:var(--down);border:1px solid rgba(63,140,255,.5)}
+  .rgb.rmid{background:var(--surface2);color:var(--amber);border:1px solid rgba(255,178,36,.45)}
+  .rgi{color:var(--muted)} .rgi b{color:var(--text);font-family:ui-monospace,Consolas,monospace}
+  .srk{font-style:normal;font-size:9.5px;margin-left:5px;padding:0 4px;border-radius:4px;background:rgba(255,255,255,.08);color:var(--muted)}
+  .srk.top{background:rgba(255,178,36,.25);color:var(--amber);font-weight:700}
   @media(max-width:760px){.techgrid{grid-template-columns:1fr}.calc{display:block}.sbar{grid-template-columns:70px 1fr 130px}}
   .star{cursor:pointer;color:var(--faint);font-size:15px;line-height:1;user-select:none}
   .star.on{color:var(--amber)} .star:hover{color:var(--amber)}
@@ -296,6 +304,7 @@ __BTC_CSS__
   <div class="meta">__META_PRE__ <b>__GENERATED__</b> · __MARKET_LABEL__ <b>__COUNT__</b>__META_STOCKS__ ·
     <span style="color:var(--up)">__META_UP__</span> <span style="color:var(--down)">__META_DN__</span>
     <span class="dly"><span class="q" data-tip="__DELAY_TIP__">?</span>__DELAY__</span></div>
+  <div class="regime" id="regime"></div>
   <div class="fresh" id="fresh"></div>
 </header>
 
@@ -452,21 +461,43 @@ const priceFmt=v=>{if(v==null)return '—';
   const d=CFG.usPrice?2:(v>=1000?0:v>=100?1:2);return fmt(v,d)};
 /* 퍼센트·지표: 작은 값일수록 자세히 (|v|<10 → 2자리, <100 → 1자리, 그 이상 → 0자리) */
 const decOf=v=>{const a=Math.abs(v);return a<10?2:a<100?1:0};
+let SECTOR_RS=new Map();
 const pc=v=>v==null?'<span class="fl">—</span>':`<span class="${v>0?'up':v<0?'dn':'fl'}">${v>0?'+':''}${fmt(v,decOf(v))}</span>`;
 const adp=v=>v==null?'—':fmt(v,decOf(v));
 
 $('#seg').innerHTML = `<option value="">${T.c_seg}: ${CFG.allLabel}</option>` + CFG.segments.map(s=>`<option>${s}</option>`).join('');
 $('#minVal').innerHTML = CFG.minOptions.map(o=>`<option value="${o[0]}" ${o[0]===state.min?'selected':''}>${o[1]}</option>`).join('');
 
+/* 시장 체제 배너 — 오닐 "시장 방향이 절반": 넓이(브레드스)로 Risk-on/중립/off */
+function renderRegime(){
+  const g=CFG.regime; const el=$('#regime'); if(!g||!el) return;
+  const cls=g.regime==='on'?'ron':g.regime==='off'?'roff':'rmid';
+  const lab=g.regime==='on'?T.rg_on:g.regime==='off'?T.rg_off:T.rg_mid;
+  const d=g.a200_prev!=null?(g.a200-g.a200_prev):null;
+  const dtxt=d==null?'':` <span class="${d>0?'up':d<0?'dn':'fl'}">(${d>0?'+':''}${d.toFixed(1)}%p ${T.rg_10d})</span>`;
+  el.innerHTML=`<span class="rgb ${cls}">${lab}</span>
+    <span class="rgi">200MA↑ <b>${g.a200}%</b>${dtxt}</span>
+    ${g.a50!=null?`<span class="rgi">50MA↑ <b>${g.a50}%</b></span>`:''}
+    ${g.trend!=null?`<span class="rgi">${T.s_trend} <b>${g.trend}%</b></span>`:''}
+    <span class="rgi">${T.rg_nhnl} <b class="${g.nh-g.nl>0?'up':g.nh-g.nl<0?'dn':''}">${g.nh} / ${g.nl}</b></span>
+    <span class="q" data-tip="${esc(T.rg_tip)}">?</span>`;
+}
 function buildStrip(){
   const m=new Map();
   for(const r of DATA){ if(!m.has(r[2])) m.set(r[2],[]); m.get(r[2]).push(r[5]??0); }
-  const arr=[...m.entries()].map(([s,v])=>{v.sort((a,b)=>a-b);return{s,med:v[v.length>>1],n:v.length}})
+  // 업종 RS = 업종 내 종목 RS 등급 평균 → 순위 (오닐·미너비니의 "주도 업종")
+  const rsm=new Map();
+  for(const r of DATA){ if(r[90]==null)continue; if(!rsm.has(r[2])) rsm.set(r[2],[]); rsm.get(r[2]).push(r[90]); }
+  const rsAvg=new Map([...rsm.entries()].map(([s,v])=>[s, v.reduce((a,b)=>a+b,0)/v.length]));
+  const rsRank=new Map([...rsAvg.entries()].sort((a,b)=>b[1]-a[1]).map(([s],i)=>[s,i+1]));
+  SECTOR_RS=rsRank;
+  const arr=[...m.entries()].map(([s,v])=>{v.sort((a,b)=>a-b);return{s,med:v[v.length>>1],n:v.length,rk:rsRank.get(s)}})
     .sort((a,b)=>b.med-a.med);
   $('#strip').innerHTML=arr.map(o=>{
     const a=Math.min(Math.abs(o.med)/2.5,1)*0.5+0.06;
     const bg=o.med>0?`rgba(255,79,94,${a})`:o.med<0?`rgba(63,140,255,${a})`:'var(--surface)';
-    return `<div class="chip" data-s="${esc(o.s)}" style="background:${bg}"><small>${esc(o.s)} (${o.n})</small><b class="num">${o.med>0?'+':''}${o.med.toFixed(Math.abs(o.med)<1?2:1)}%</b></div>`;
+    const rk=o.rk?`<i class="srk ${o.rk<=5?'top':''}">RS#${o.rk}</i>`:'';
+    return `<div class="chip" data-s="${esc(o.s)}" style="background:${bg}"><small>${esc(o.s)} (${o.n})${rk}</small><b class="num">${o.med>0?'+':''}${o.med.toFixed(Math.abs(o.med)<1?2:1)}%</b></div>`;
   }).join('');
 }
 $('#strip').addEventListener('click',e=>{
@@ -934,6 +965,7 @@ function calcHTML(r){ const p=techOf(r); if(!p.close)return '';
   const ind=[]; if(p.atr)ind.push(`ATR ${nfx(p.atr,dp)} (${(p.atr/p.close*100).toFixed(1)}%)`);
   if(p.adx!=null)ind.push(`ADX ${p.adx.toFixed(0)} ${p.adx>=25?'<span class="up">'+T.i_trend+'</span>':'<span class="fl">'+T.i_range+'</span>'}`);
   if(p.stk!=null)ind.push(`Stoch ${p.stk.toFixed(0)}/${p.std!=null?p.std.toFixed(0):'—'} ${p.stk<20?'<span class="dn">'+T.i_os+'</span>':p.stk>80?'<span class="up">'+T.i_ob+'</span>':''}`);
+  { const rk=SECTOR_RS.get(r[2]); if(rk) ind.push(`${T.sec_rs} <b class="${rk<=5?'up':''}">#${rk}</b><span class="fl">/${SECTOR_RS.size}</span>`); }
   if(p.stage!=null)ind.push(`${T.stage_lbl} <b class="${p.stage===2?'up':p.stage===4?'dn':''}">${p.stage}</b> <span class="fl">${T['stage_'+p.stage]||''}</span>`);
   if(p.earn_d!=null&&p.earn_d>=-1&&p.earn_d<=30)ind.push(`<span class="${p.earn_d<=5?'warnearn':''}">📅 ${T.earn_lbl.replace('{d}',p.earn_d)}</span>`);
   if(p.tv_rec!=null)ind.push(`TV ${p.tv_rec>0.5?'<span class="up">'+T.i_sbuy+'</span>':p.tv_rec>0.1?'<span class="up">'+T.i_buy+'</span>':p.tv_rec<-0.5?'<span class="dn">'+T.i_ssell+'</span>':p.tv_rec<-0.1?'<span class="dn">'+T.i_sell+'</span>':T.i_neutral}`);
@@ -942,7 +974,8 @@ function calcHTML(r){ const p=techOf(r); if(!p.close)return '';
     <div class="calcrow"><label>${T.c_acct} <input class="ci" data-f="acct" type="number" value="${a.acct||''}" placeholder="${CURS} ${T.c_acct_ex}"></label>
       <label>${T.c_risk} <input class="ci sm" data-f="risk" type="number" step="0.1" value="${a.risk||1}">%</label>
       <label>${T.c_gapsc} <input class="ci sm" data-f="gap" type="number" step="1" value="${a.gap||8}">%</label>
-      <label>${T.c_entry} <input class="ci" data-f="entry" type="number" value="${p.close}"></label></div>
+      <label>${T.c_entry} <input class="ci" data-f="entry" type="number" value="${p.close}"></label>
+      <label>${T.c_tvol} <input class="ci sm" data-f="tvol" type="number" step="1" value="${a.tvol||15}">%</label></div>
     <div class="calcrow stops">${T.c_stop}: ${stops.map((s,i)=>`<label><input type="radio" name="stop_${esc(p.code)}" value="${s.v}" ${i===0?'checked':''}> ${s.n} <span class="fl">${nfx(s.v,dp)}</span></label>`).join('')}
       <label><input type="radio" name="stop_${esc(p.code)}" value="custom"> ${T.c_custom} <input class="ci sm" data-f="stopc" type="number"></label></div>
     <div class="calcout"></div><div class="formula"></div><div class="scen"></div>
@@ -1023,17 +1056,19 @@ function curStop(box,p){ const g=f=>{const el=box.querySelector(`.ci[data-f="${f
 
 function runCalc(box){ const r=DATA.find(x=>x[0]===box.dataset.code); if(!r)return; const p=techOf(r);
   const g=f=>{const el=box.querySelector(`.ci[data-f="${f}"]`);return el?parseFloat(el.value):NaN};
-  const acct=g('acct'),risk=g('risk'),gap=g('gap'),entry=g('entry'), stop=curStop(box,p);
+  const acct=g('acct'),risk=g('risk'),gap=g('gap'),entry=g('entry'),tvol=g('tvol')||15, stop=curStop(box,p);
   const out=box.querySelector('.calcout'), fm=box.querySelector('.formula'), sc=box.querySelector('.scen'), lad=box.querySelector('.ladder');
   const ch=box.querySelector('.chart'); if(ch&&ch.dataset.on==='1') ch.innerHTML=chartSVG(p,entry,stop);
   if(!(stop>0)||!(entry>0)||stop>=entry){ out.innerHTML=`<div class="dn">${T.c_badstop}</div>`; fm.innerHTML=sc.innerHTML=lad.innerHTML=''; return; }
   lad.innerHTML=ladderSVG(p,entry,stop);
   if(!(acct>0)||!(risk>0)){ out.innerHTML=`<div class="fl">${T.c_need}</div>`; fm.innerHTML=sc.innerHTML=''; return; }
-  saveAcct({acct,risk,gap});
+  saveAcct({acct,risk,gap,tvol});
   const dp=(CFG.market==='us'||entry<100)?2:0, dist=entry-stop, distp=dist/entry*100, riskAmt=acct*risk/100, rawQty=riskAmt/dist, qty=Math.floor(rawQty/LOT)*LOT, warn=[];
   if(p.atr){const k=dist/p.atr; if(k<0.7)warn.push(T.w_tight.replace('{r}',k.toFixed(1)))} if(distp>15)warn.push(T.w_far.replace('{p}',distp.toFixed(1)));
   if(p.earn_d!=null&&p.earn_d>=0&&p.earn_d<=5)warn.push(T.w_earn.replace('{d}',p.earn_d).replace('{g}',gap));
   fm.innerHTML=`<span class="fl">${T.f_label}</span> (${nfx(acct)} × ${risk}%) ÷ (${nfx(entry,dp)} − ${nfx(stop,dp)}) = ${CURS}${nfx(riskAmt)} ÷ ${nfx(dist,dp)} = <b>${nfx(rawQty,1)}</b>${LOT>1?` → <b>${nfx(qty)}</b> <span class="fl">(${LOT}${T.o_unit})</span>`:''}`;
+  if(p.atr&&acct>0){ const av=p.atr/entry*100*Math.sqrt(250), w=Math.min(tvol/av,1), vq=Math.floor(acct*w/entry/LOT)*LOT;
+    fm.innerHTML+=`<br><span class="fl">${T.f_vt}</span> ${T.f_vt_calc.replace('{a}',(p.atr/entry*100).toFixed(1)).replace(/\{v\}/g,av.toFixed(0)).replace('{t}',tvol).replace('{w}',(w*100).toFixed(0))} = <b>${nfx(vq)}</b> <span class="${vq<qty?'dn':vq>qty?'up':'fl'}">(${vq<qty?T.f_vt_less:vq>qty?T.f_vt_more:T.f_vt_same})</span>`; }
   let html='';
   let q=qty;
   if(qty<LOT){ html+=`<div class="dn">${T.w_nolot.replace('{q}',nfx(rawQty,0)).replace('{lot}',LOT).replace('{r}',(LOT*dist/acct*100).toFixed(2))}</div><div class="minlot">${T.c_minlot.replace('{lot}',LOT)}</div>`; q=LOT; }
@@ -1142,7 +1177,7 @@ function copyLink(){
 readURL();                       // URL에 필터가 있으면 상태에 반영
 document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x.dataset.tab===state.tab));
 document.querySelectorAll('.pz').forEach(x=>x.classList.toggle('on',x.dataset.p===state.preset));
-initDis(); buildStrip(); buildSigChips(); render();
+initDis(); buildStrip(); renderRegime(); buildSigChips(); render();
 $('#lnkBtn').addEventListener('click',copyLink);
 </script>
 __BTC_JS__

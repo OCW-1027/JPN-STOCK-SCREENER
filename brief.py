@@ -306,7 +306,17 @@ def select_candidates(df, tdnet, cooldown, mkey):
             per_ind[ind] = per_ind.get(ind, 0) + 1
             quota[bucket] -= 1
             picked.append((bucket, r))
+    # 시장 체제(브레드스) — 스크리너 배너와 같은 기준
+    _c = pd.to_numeric(df["close"], errors="coerce"); _s200 = pd.to_numeric(df.get("SMA200"), errors="coerce")
+    _s50 = pd.to_numeric(df.get("SMA50"), errors="coerce"); _pos = pd.to_numeric(df.get("pos52"), errors="coerce")
+    _ok = _c.notna() & _s200.notna()
+    a200 = round(float((_c > _s200)[_ok].mean() * 100), 1) if _ok.any() else None
+    a50 = round(float((_c > _s50)[_ok & _s50.notna()].mean() * 100), 1) if _s50 is not None and (_ok & _s50.notna()).any() else None
+    regime = None
+    if a200 is not None:
+        regime = "on" if (a200 >= 60 and (a50 is None or a50 >= 55)) else "off" if (a200 < 40 or (a50 is not None and a50 < 35)) else "mid"
     stats = dict(total=int(len(df)), liquid=int(len(liquid)), candidates=len(picked),
+                 regime=regime, a200=a200, a50=a50, nh=int((_pos >= 95).sum()), nl=int((_pos <= 5).sum()),
                  short=sum(1 for b, _ in picked if b == "short"),
                  long=sum(1 for b, _ in picked if b == "long"),
                  news=sum(1 for b, _ in picked if b == "news"))
@@ -596,6 +606,10 @@ PAGE_T = {
                c_acct="운용자금", c_acct_ex="예: 15000000", c_risk="리스크", c_gap="갭", c_entry="진입가", c_stop="손절", c_custom="직접",
                c_levels="테크니컬 레벨 (현재가 대비)", c_ind="보조 지표", c_need="운용자금·리스크·진입가를 입력하세요",
                c_ladder="가격 사다리 (손절·진입·목표 vs 테크니컬 레벨)", c_scen="손익 시나리오 (운용자금 대비)",
+               rg_on="RISK-ON · 상승 장세", rg_mid="중립 · 혼조", rg_off="RISK-OFF · 조정 장세", rg_nhnl="52주 신고가/신저가",
+               rg_tip="시장 넓이(브레드스)로 판정. 200MA 위 60%↑ & 50MA 위 55%↑ = Risk-on / 200MA 위 40%↓ 또는 50MA 위 35%↓ = Risk-off. Risk-off에선 신규 매수 보류·포지션 축소가 기본.",
+               c_tvol="목표변동성", f_vt="변동성 타게팅 =", f_vt_calc="ATR {a}%×√250 ≈ 연변동성 {v}% → 목표 {t}% ÷ {v}% = 비중 {w}%",
+               f_vt_less="손절 기준보다 적게 — 변동성이 커서 줄여야", f_vt_more="손절 기준보다 많아도 됨", f_vt_same="손절 기준과 비슷",
                rs_strong="주도주권", rs_weak="약세", mtf_title="멀티 타임프레임", mtf_sum="강세 {b} · 약세 {s} / {n}", mtf_trend="추세",
                tf_60="60분", tf_240="4시간", tf_D="일봉", tf_W="주봉", tf_M="월봉",
                mtf_pullback="추세 내 눌림목 — 상위 TF 강세, 단기 조정 중. 손절 후보(20MA·기준선)와 궁합",
@@ -638,6 +652,10 @@ PAGE_T = {
                c_acct="運用資金", c_acct_ex="例: 15000000", c_risk="リスク", c_gap="ギャップ", c_entry="エントリー", c_stop="損切り", c_custom="手入力",
                c_levels="テクニカル水準 (現在値比)", c_ind="補助指標", c_need="運用資金・リスク・エントリーを入力してください",
                c_ladder="価格ラダー (損切り・エントリー・目標 vs テクニカル水準)", c_scen="損益シナリオ (運用資金比)",
+               rg_on="RISK-ON · 上昇相場", rg_mid="中立 · まちまち", rg_off="RISK-OFF · 調整相場", rg_nhnl="52週高値/安値更新",
+               rg_tip="市場の広がりで判定。200MA上60%↑かつ50MA上55%↑=Risk-on / 200MA上40%↓または50MA上35%↓=Risk-off。Risk-offでは新規買い見送り・縮小が基本。",
+               c_tvol="目標ボラ", f_vt="ボラティリティ・ターゲティング =", f_vt_calc="ATR {a}%×√250 ≈ 年率ボラ {v}% → 目標 {t}% ÷ {v}% = 比率 {w}%",
+               f_vt_less="損切り基準より少なく — ボラが大きいので縮小", f_vt_more="損切り基準より多くてよい", f_vt_same="損切り基準とほぼ同じ",
                rs_strong="主導株圏", rs_weak="弱い", mtf_title="マルチタイムフレーム", mtf_sum="強気 {b} · 弱気 {s} / {n}", mtf_trend="トレンド",
                tf_60="60分", tf_240="4時間", tf_D="日足", tf_W="週足", tf_M="月足",
                mtf_pullback="トレンド内の押し目 — 上位TF強気、短期は調整中。損切り候補(20MA・基準線)と相性良",
@@ -721,6 +739,12 @@ tr.det .calc .mtft td:first-child{text-align:left;color:var(--text);font-weight:
 .mt{font-size:11px} .mt.up{color:var(--up)} .mt.dn{color:var(--down)} .mt.fl{color:var(--faint)} .mtr{font-size:9.5px;margin-left:2px}
 .mtft tr.mtbull td:first-child{color:var(--up)} .mtft tr.mtbear td:first-child{color:var(--down)}
 .mtfnote{font-size:11px;color:var(--amber);margin-top:4px}
+.regime{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin:0 0 8px;font-size:12px}
+.rgb{padding:3px 10px;border-radius:999px;font-weight:800;font-size:12px}
+.rgb.ron{background:rgba(255,79,94,.18);color:var(--up);border:1px solid rgba(255,79,94,.5)}
+.rgb.roff{background:rgba(63,140,255,.18);color:var(--down);border:1px solid rgba(63,140,255,.5)}
+.rgb.rmid{background:var(--surface2);color:var(--amber);border:1px solid rgba(255,178,36,.45)}
+.rgi{color:var(--muted)} .rgi b{color:var(--text);font-family:ui-monospace,Consolas,monospace}
 .sbar{display:grid;grid-template-columns:86px 1fr 170px;gap:6px;align-items:center;font-size:11px;margin:2px 0}
 .sl{color:var(--muted);text-align:right} .st{position:relative;height:9px;background:var(--bg);border-radius:3px}
 .st::after{content:"";position:absolute;left:50%;top:-2px;bottom:-2px;border-left:1px solid var(--line)}
@@ -875,6 +899,7 @@ function calcBlock(p){
         <label>${T.c_risk} <input class="ci sm" data-f="risk" type="number" step="0.1" value="${a.risk||1}">%</label>
         <label>${T.c_gap} <input class="ci sm" data-f="gap" type="number" step="1" value="${a.gap||8}">%</label>
         <label>${T.c_entry} <input class="ci" data-f="entry" type="number" value="${p.close}"></label>
+        <label>${T.c_tvol} <input class="ci sm" data-f="tvol" type="number" step="1" value="${a.tvol||15}">%</label>
       </div>
       <div class="calcrow stops">${T.c_stop}:
         ${stops.map((s,i)=>`<label><input type="radio" name="stop_${esc(p.code)}" value="${s.v}" ${i===0?'checked':''}> ${s.n} <span class="mu">${nf(s.v,dp)}</span></label>`).join('')}
@@ -952,7 +977,7 @@ function chartSVG(p, entry, stop){
 
 function runCalc(box, p){
   const g=f=>{const el=box.querySelector(`.ci[data-f="${f}"]`); return el?parseFloat(el.value):NaN;};
-  const acct=g('acct'), risk=g('risk'), gap=g('gap'), entry=g('entry');
+  const acct=g('acct'), risk=g('risk'), gap=g('gap'), entry=g('entry'), tvol=g('tvol')||15;
   const sel=box.querySelector(`input[name="stop_${p.code}"]:checked`);
   const stop = sel ? (sel.value==='custom' ? g('stopc') : parseFloat(sel.value)) : NaN;
   const out=box.querySelector('.calcout'), fm=box.querySelector('.formula'), sc=box.querySelector('.scen'), lad=box.querySelector('.ladder');
@@ -960,13 +985,15 @@ function runCalc(box, p){
   if(!(stop>0)||!(entry>0)||stop>=entry){ out.innerHTML=`<div class="dn">${T.c_badstop}</div>`; fm.innerHTML=sc.innerHTML=lad.innerHTML=''; return; }
   lad.innerHTML=ladderSVG(p,entry,stop);
   if(!(acct>0)||!(risk>0)){ out.innerHTML=`<div class="mu">${T.c_need}</div>`; fm.innerHTML=sc.innerHTML=''; return; }
-  saveAcct({acct,risk,gap});
+  saveAcct({acct,risk,gap,tvol});
   const lot=LOT[B.market], cur=CUR[B.market], dp=dpOf(entry);
   const dist=entry-stop, distp=dist/entry*100, riskAmt=acct*risk/100, rawQty=riskAmt/dist, qty0=Math.floor(rawQty/lot)*lot;
   const warn=[];
   if(p.atr){ const r=dist/p.atr; if(r<0.7) warn.push(T.w_tight.replace('{r}',r.toFixed(1))); }
   if(distp>15) warn.push(T.w_far.replace('{p}',distp.toFixed(1)));
   fm.innerHTML=`<span class="mu">${T.f_label}</span> (${nf(acct)} × ${risk}%) ÷ (${nf(entry,dp)} − ${nf(stop,dp)}) = ${cur}${nf(riskAmt)} ÷ ${nf(dist,dp)} = <b>${nf(rawQty,1)}</b>${lot>1?` → <b>${nf(qty0)}</b> <span class="mu">(${lot}${T.o_unit})</span>`:''}`;
+  if(p.atr){ const av=p.atr/entry*100*Math.sqrt(250), w=Math.min(tvol/av,1), vq=Math.floor(acct*w/entry/lot)*lot;
+    fm.innerHTML+=`<br><span class="mu">${T.f_vt}</span> ${T.f_vt_calc.replace('{a}',(p.atr/entry*100).toFixed(1)).split('{v}').join(av.toFixed(0)).replace('{t}',tvol).replace('{w}',(w*100).toFixed(0))} = <b>${nf(vq)}</b> <span class="${vq<qty0?'dn':vq>qty0?'up':'mu'}">(${vq<qty0?T.f_vt_less:vq>qty0?T.f_vt_more:T.f_vt_same})</span>`; }
   let rows='', qty=qty0;
   if(qty0<lot){ rows+=`<div class="dn">${T.w_nolot.replace('{q}',nf(rawQty,0)).replace('{lot}',lot).replace('{r}',(lot*dist/acct*100).toFixed(2))}</div><div class="minlot">${T.c_minlot.replace('{lot}',lot)}</div>`; qty=lot; }
   const inv=qty*entry, invp=inv/acct*100, lossp=qty*dist/acct*100;
@@ -1032,7 +1059,9 @@ function render(){
   const fu=v=>B.market==='us'?`$${v}M`:`${v}${B[UN]}`;
   $('#foot').textContent=T.foot.replace('{minval}{unit}',fu(c.MIN_VAL)).replace('{mcap}{unit}',fu(c.MIN_MCAP)).replace('{extra}',extra).replace('{maxind}',c.MAX_PER_INDUSTRY).replace('{cool}',c.COOLDOWN_DAYS);
   const ps=B.picks.filter(p=>tab==='all'||p.bucket===tab);
-  $('#app').innerHTML=`<div class="funnel"><span><span class="k">${T.total}</span> <b>${u.total.toLocaleString()}</b></span><span class="k">→</span>
+  const rg=u.regime?`<div class="regime"><span class="rgb ${u.regime==='on'?'ron':u.regime==='off'?'roff':'rmid'}">${u.regime==='on'?T.rg_on:u.regime==='off'?T.rg_off:T.rg_mid}</span>
+    <span class="rgi">200MA↑ <b>${u.a200}%</b></span>${u.a50!=null?`<span class="rgi">50MA↑ <b>${u.a50}%</b></span>`:''}<span class="rgi">${T.rg_nhnl} <b>${u.nh} / ${u.nl}</b></span><span class="mu" title="${T.rg_tip}">?</span></div>`:'';
+  $('#app').innerHTML=rg+`<div class="funnel"><span><span class="k">${T.total}</span> <b>${u.total.toLocaleString()}</b></span><span class="k">→</span>
     <span><span class="k">${T.liquid}</span> <b>${u.liquid.toLocaleString()}</b></span><span class="k">→</span>
     <span><span class="k">${T.picks}</span> <b>${u.candidates}</b> <span class="k">(${BK.short} ${u.short} · ${BK.long} ${u.long} · ${BK.news} ${u.news})</span></span></div>
   <div class="tabs">${T.tabs.map(([k,l])=>`<div class="tab ${k===tab?'on':''}" data-t="${k}">${l}</div>`).join('')}<button class="btn" id="copyall">${T.copy_all}</button></div>

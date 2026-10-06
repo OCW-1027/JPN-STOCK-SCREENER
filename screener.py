@@ -806,6 +806,39 @@ def compute_trend_template(d, mkey):
     return d
 
 
+def compute_regime(d, mkey):
+    """시장 체제(브레드스): 200MA·50MA 위 비율, 정배열 비율, 52주 신고가−신저가. 10거래일 전과 비교."""
+    close = pd.to_numeric(d["close"], errors="coerce")
+    s200 = pd.to_numeric(d.get("SMA200"), errors="coerce")
+    s50 = pd.to_numeric(d.get("SMA50"), errors="coerce")
+    pos = pd.to_numeric(d.get("pos52"), errors="coerce")
+    ok = close.notna() & s200.notna()
+    n = int(ok.sum()) or 1
+    a200 = round(float((close > s200)[ok].mean() * 100), 1)
+    a50 = round(float((close > s50)[ok & s50.notna()].mean() * 100), 1) if s50 is not None else None
+    tr = round(float(d["sig_trend"].fillna(False)[ok].mean() * 100), 1) if "sig_trend" in d else None
+    nh = int((pos >= 95).sum()); nl = int((pos <= 5).sum())
+    prev = None
+    try:
+        import glob
+        files = sorted(glob.glob(str(BASE / "history" / mkey / "*.csv.gz")))
+        if len(files) > 10:
+            h = pd.read_csv(files[-11], compression="gzip", usecols=["close", "SMA200"])
+            hc = pd.to_numeric(h["close"], errors="coerce"); hs = pd.to_numeric(h["SMA200"], errors="coerce")
+            m = hc.notna() & hs.notna()
+            prev = round(float((hc > hs)[m].mean() * 100), 1)
+    except Exception:
+        prev = None
+    # 판정: 오닐식 — 넓이가 살아 있으면 Risk-on, 무너졌으면 Risk-off
+    if a200 >= 60 and (a50 is None or a50 >= 55):
+        regime = "on"
+    elif a200 < 40 or (a50 is not None and a50 < 35):
+        regime = "off"
+    else:
+        regime = "mid"
+    return {"a200": a200, "a50": a50, "trend": tr, "nh": nh, "nl": nl, "a200_prev": prev, "n": n, "regime": regime}
+
+
 def compute_signals(df):
     c = CONFIG
     d = df
@@ -1286,6 +1319,7 @@ def build_market(mkey, template, out_dir, generated, indices=None):
         elif mkey == "us":
             _fresh["finra"] = sup_meta.get("finra_asof")
         cfg["fresh"] = {k: v for k, v in _fresh.items() if v}
+        cfg["regime"] = compute_regime(d, mkey)
         cfg["profilesUrl"] = prof_url
         cfg["sparkUrl"] = "spark.json" if lang == "ko" else f"../../{mkey}/spark.json"
         cfg["bizLoading"] = L["biz_loading"]
