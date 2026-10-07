@@ -1,0 +1,4058 @@
+{
+ "date": "2026-10-08",
+ "market": "us",
+ "generated": "2026-10-08 06:35 JST",
+ "label_ko": "🇺🇸 미국",
+ "label_ja": "🇺🇸 米国",
+ "unit_ko": "$M",
+ "unit_ja": "$M",
+ "llm_mode": "off",
+ "baserate_days": 36,
+ "universe": {
+  "total": 5189,
+  "liquid": 2241,
+  "candidates": 16,
+  "regime": "off",
+  "a200": 38.0,
+  "a50": 25.8,
+  "nh": 153,
+  "nl": 1126,
+  "short": 8,
+  "long": 8,
+  "news": 0
+ },
+ "picks": [
+  {
+   "code": "DSP",
+   "name": "Viant Technology Inc.",
+   "ticker": "NASDAQ:DSP",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_trend",
+    "sig_macd",
+    "sig_growth"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 5496,
+      "win": 39.5,
+      "avg": 16.85,
+      "med": -0.43,
+      "excess": 15.65,
+      "best": 8276.7,
+      "worst": -96.2
+     },
+     "20": {
+      "n": 2237,
+      "win": 40.3,
+      "avg": 42.73,
+      "med": -1.46,
+      "excess": 42.91,
+      "best": 7191.5,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 6045,
+      "win": 41.2,
+      "avg": 5.22,
+      "med": 0.0,
+      "excess": 4.64,
+      "best": 5598.3,
+      "worst": -89.7
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 21427,
+      "win": 36.1,
+      "avg": 1.29,
+      "med": -1.29,
+      "excess": -0.12,
+      "best": 6010.5,
+      "worst": -94.0
+     },
+     "20": {
+      "n": 11759,
+      "win": 25.3,
+      "avg": 0.35,
+      "med": -5.61,
+      "excess": 0.73,
+      "best": 7524.5,
+      "worst": -94.8
+     },
+     "1": {
+      "n": 24966,
+      "win": 42.2,
+      "avg": 0.53,
+      "med": -0.28,
+      "excess": 0.0,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 7510,
+      "win": 35.4,
+      "avg": 3.48,
+      "med": -1.38,
+      "excess": 2.15,
+      "best": 6010.5,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 4091,
+      "win": 23.1,
+      "avg": 5.03,
+      "med": -5.98,
+      "excess": 5.44,
+      "best": 6580.0,
+      "worst": -86.1
+     },
+     "1": {
+      "n": 8683,
+      "win": 42.0,
+      "avg": 1.64,
+      "med": -0.31,
+      "excess": 1.15,
+      "best": 5598.3,
+      "worst": -82.4
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 6120,
+      "win": 37.4,
+      "avg": -0.95,
+      "med": -0.93,
+      "excess": -2.57,
+      "best": 272.6,
+      "worst": -48.9
+     },
+     "20": {
+      "n": 3842,
+      "win": 22.0,
+      "avg": -5.58,
+      "med": -5.25,
+      "excess": -5.5,
+      "best": 91.8,
+      "worst": -86.5
+     },
+     "1": {
+      "n": 6811,
+      "win": 42.7,
+      "avg": -0.25,
+      "med": -0.14,
+      "excess": -0.82,
+      "best": 30.9,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 20574,
+      "win": 37.8,
+      "avg": -0.2,
+      "med": -0.96,
+      "excess": -1.85,
+      "best": 6762.9,
+      "worst": -95.7
+     },
+     "20": {
+      "n": 11658,
+      "win": 24.1,
+      "avg": -4.1,
+      "med": -5.27,
+      "excess": -3.95,
+      "best": 6274.5,
+      "worst": -95.6
+     },
+     "1": {
+      "n": 23590,
+      "win": 42.8,
+      "avg": -0.21,
+      "med": -0.17,
+      "excess": -0.78,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 14542,
+      "win": 40.5,
+      "avg": -0.48,
+      "med": -1.05,
+      "excess": -2.0,
+      "best": 1881.2,
+      "worst": -63.3
+     },
+     "20": {
+      "n": 6709,
+      "win": 31.5,
+      "avg": -2.96,
+      "med": -4.48,
+      "excess": -2.73,
+      "best": 1031.0,
+      "worst": -61.7
+     },
+     "1": {
+      "n": 16612,
+      "win": 45.4,
+      "avg": 0.04,
+      "med": -0.19,
+      "excess": -0.55,
+      "best": 2463.4,
+      "worst": -57.2
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Packaged Software",
+   "segment": "NASDAQ",
+   "close": 12.78,
+   "chg": 7.12,
+   "gap": -0.92,
+   "sma5": 12.36,
+   "sma20": 12.3,
+   "sma200": 11.64,
+   "ext200": 9.83,
+   "rsi": 53.5,
+   "macd_h": 0.02,
+   "rvol": 2.63,
+   "pw": 4.58,
+   "p1": -4.91,
+   "p3": 1.83,
+   "ytd": 6.0,
+   "pos52": 70.0,
+   "hi52": 14.8,
+   "lo52": 8.11,
+   "val": 15.3,
+   "mcap": 850.0,
+   "per": 92.4,
+   "pbr": 7.49,
+   "eps": 0.14,
+   "roe": 12.3,
+   "eqr": 62.7,
+   "div": 0.0,
+   "rev_q": 33.9,
+   "rev_ttm": 22.0,
+   "cagr5": 15.8,
+   "eps_q": -138.6,
+   "opm": 36.5,
+   "roic": 9.8,
+   "psr": 2.31,
+   "peg": 0.28,
+   "de": 0.2,
+   "inflow": 1.11,
+   "biz": "Viant Technology Inc. operates a cloud-based demand side platform (DSP) that enables the programmatic purchase of digital advertising across multiple channels, including connected TV (CTV), streaming audio, digital out-o",
+   "atr": 0.75,
+   "sma50": 12.54,
+   "bb_up": 13.49,
+   "bb_lo": 11.1,
+   "adx": 11.7,
+   "stk": 77.8,
+   "std": 78.3,
+   "ich_base": 11.6,
+   "ich_conv": 12.39,
+   "ich_a": 12.86,
+   "ich_b": 12.48,
+   "piv_s1": 9.98,
+   "piv_r1": 14.17,
+   "tv_rec": 0.56,
+   "mtf": [
+    4071.0,
+    3758.0,
+    3754.0,
+    4654.0,
+    3751.0
+   ],
+   "rs": 81.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "STZ",
+   "name": "Constellation Brands, Inc.",
+   "ticker": "NYSE:STZ",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_macd",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 5496,
+      "win": 39.5,
+      "avg": 16.85,
+      "med": -0.43,
+      "excess": 15.65,
+      "best": 8276.7,
+      "worst": -96.2
+     },
+     "20": {
+      "n": 2237,
+      "win": 40.3,
+      "avg": 42.73,
+      "med": -1.46,
+      "excess": 42.91,
+      "best": 7191.5,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 6045,
+      "win": 41.2,
+      "avg": 5.22,
+      "med": 0.0,
+      "excess": 4.64,
+      "best": 5598.3,
+      "worst": -89.7
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 21427,
+      "win": 36.1,
+      "avg": 1.29,
+      "med": -1.29,
+      "excess": -0.12,
+      "best": 6010.5,
+      "worst": -94.0
+     },
+     "20": {
+      "n": 11759,
+      "win": 25.3,
+      "avg": 0.35,
+      "med": -5.61,
+      "excess": 0.73,
+      "best": 7524.5,
+      "worst": -94.8
+     },
+     "1": {
+      "n": 24966,
+      "win": 42.2,
+      "avg": 0.53,
+      "med": -0.28,
+      "excess": 0.0,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 7510,
+      "win": 35.4,
+      "avg": 3.48,
+      "med": -1.38,
+      "excess": 2.15,
+      "best": 6010.5,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 4091,
+      "win": 23.1,
+      "avg": 5.03,
+      "med": -5.98,
+      "excess": 5.44,
+      "best": 6580.0,
+      "worst": -86.1
+     },
+     "1": {
+      "n": 8683,
+      "win": 42.0,
+      "avg": 1.64,
+      "med": -0.31,
+      "excess": 1.15,
+      "best": 5598.3,
+      "worst": -82.4
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 20574,
+      "win": 37.8,
+      "avg": -0.2,
+      "med": -0.96,
+      "excess": -1.85,
+      "best": 6762.9,
+      "worst": -95.7
+     },
+     "20": {
+      "n": 11658,
+      "win": 24.1,
+      "avg": -4.1,
+      "med": -5.27,
+      "excess": -3.95,
+      "best": 6274.5,
+      "worst": -95.6
+     },
+     "1": {
+      "n": 23590,
+      "win": 42.8,
+      "avg": -0.21,
+      "med": -0.17,
+      "excess": -0.78,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 28199,
+      "win": 40.3,
+      "avg": -0.23,
+      "med": -0.8,
+      "excess": -1.75,
+      "best": 4487.5,
+      "worst": -81.5
+     },
+     "20": {
+      "n": 12931,
+      "win": 28.7,
+      "avg": -2.84,
+      "med": -3.89,
+      "excess": -2.6,
+      "best": 2859.3,
+      "worst": -67.8
+     },
+     "1": {
+      "n": 32235,
+      "win": 45.4,
+      "avg": -0.02,
+      "med": -0.15,
+      "excess": -0.62,
+      "best": 4111.2,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Consumer Non-Durables",
+   "industry": "Beverages: Alcoholic",
+   "segment": "NYSE",
+   "close": 118.39,
+   "chg": 2.35,
+   "gap": -1.15,
+   "sma5": 114.65,
+   "sma20": 117.59,
+   "sma200": 142.89,
+   "ext200": -17.15,
+   "rsi": 46.4,
+   "macd_h": 0.57,
+   "rvol": 2.9,
+   "pw": 4.77,
+   "p1": -7.87,
+   "p3": -10.7,
+   "ytd": -14.5,
+   "pos52": 13.0,
+   "hi52": 168.6,
+   "lo52": 110.6,
+   "val": 750.2,
+   "mcap": 20218.0,
+   "per": 10.6,
+   "pbr": null,
+   "eps": 11.16,
+   "roe": 23.9,
+   "eqr": 38.8,
+   "div": 3.54,
+   "rev_q": 6.1,
+   "rev_ttm": -4.3,
+   "cagr5": 1.2,
+   "eps_q": 25.2,
+   "opm": 29.8,
+   "roic": 11.0,
+   "psr": 2.27,
+   "peg": 0.17,
+   "de": 1.2,
+   "inflow": 1.2,
+   "biz": "Constellation Brands, Inc., together with its subsidiaries, produces, imports, markets, and sells beer, wine, and spirits in the United States, Canada, Mexico, New Zealand, and Italy. It offers beer under the Corona Extr",
+   "atr": 3.08,
+   "sma50": 126.14,
+   "bb_up": 126.18,
+   "bb_lo": 108.99,
+   "adx": 29.2,
+   "stk": 41.8,
+   "std": 25.8,
+   "ich_base": 121.75,
+   "ich_conv": 115.46,
+   "ich_a": 134.06,
+   "ich_b": 138.2,
+   "piv_s1": 105.44,
+   "piv_r1": 126.79,
+   "tv_rec": 0.02,
+   "mtf": [
+    4073.0,
+    3961.0,
+    946.0,
+    8037.0,
+    8032.0
+   ],
+   "rs": 33.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "UVE",
+   "name": "UNIVERSAL INSURANCE HOLDINGS INC",
+   "ticker": "NYSE:UVE",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_high",
+    "sig_macd",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 21427,
+      "win": 36.1,
+      "avg": 1.29,
+      "med": -1.29,
+      "excess": -0.12,
+      "best": 6010.5,
+      "worst": -94.0
+     },
+     "20": {
+      "n": 11759,
+      "win": 25.3,
+      "avg": 0.35,
+      "med": -5.61,
+      "excess": 0.73,
+      "best": 7524.5,
+      "worst": -94.8
+     },
+     "1": {
+      "n": 24966,
+      "win": 42.2,
+      "avg": 0.53,
+      "med": -0.28,
+      "excess": 0.0,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 7510,
+      "win": 35.4,
+      "avg": 3.48,
+      "med": -1.38,
+      "excess": 2.15,
+      "best": 6010.5,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 4091,
+      "win": 23.1,
+      "avg": 5.03,
+      "med": -5.98,
+      "excess": 5.44,
+      "best": 6580.0,
+      "worst": -86.1
+     },
+     "1": {
+      "n": 8683,
+      "win": 42.0,
+      "avg": 1.64,
+      "med": -0.31,
+      "excess": 1.15,
+      "best": 5598.3,
+      "worst": -82.4
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 4282,
+      "win": 44.0,
+      "avg": -0.62,
+      "med": 0.0,
+      "excess": -2.15,
+      "best": 308.4,
+      "worst": -90.4
+     },
+     "20": {
+      "n": 2526,
+      "win": 41.1,
+      "avg": -2.15,
+      "med": -0.39,
+      "excess": -1.9,
+      "best": 230.5,
+      "worst": -90.8
+     },
+     "1": {
+      "n": 4824,
+      "win": 39.2,
+      "avg": -0.13,
+      "med": 0.0,
+      "excess": -0.66,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 20574,
+      "win": 37.8,
+      "avg": -0.2,
+      "med": -0.96,
+      "excess": -1.85,
+      "best": 6762.9,
+      "worst": -95.7
+     },
+     "20": {
+      "n": 11658,
+      "win": 24.1,
+      "avg": -4.1,
+      "med": -5.27,
+      "excess": -3.95,
+      "best": 6274.5,
+      "worst": -95.6
+     },
+     "1": {
+      "n": 23590,
+      "win": 42.8,
+      "avg": -0.21,
+      "med": -0.17,
+      "excess": -0.78,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 28199,
+      "win": 40.3,
+      "avg": -0.23,
+      "med": -0.8,
+      "excess": -1.75,
+      "best": 4487.5,
+      "worst": -81.5
+     },
+     "20": {
+      "n": 12931,
+      "win": 28.7,
+      "avg": -2.84,
+      "med": -3.89,
+      "excess": -2.6,
+      "best": 2859.3,
+      "worst": -67.8
+     },
+     "1": {
+      "n": 32235,
+      "win": 45.4,
+      "avg": -0.02,
+      "med": -0.15,
+      "excess": -0.62,
+      "best": 4111.2,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Property/Casualty Insurance",
+   "segment": "NYSE",
+   "close": 45.25,
+   "chg": 4.0,
+   "gap": -0.57,
+   "sma5": 43.9,
+   "sma20": 43.5,
+   "sma200": 37.63,
+   "ext200": 20.25,
+   "rsi": 64.2,
+   "macd_h": 0.15,
+   "rvol": 2.02,
+   "pw": 6.65,
+   "p1": 1.96,
+   "p3": 7.66,
+   "ytd": 35.4,
+   "pos52": 99.0,
+   "hi52": 45.36,
+   "lo52": 27.89,
+   "val": 14.9,
+   "mcap": 1259.0,
+   "per": 6.0,
+   "pbr": 1.98,
+   "eps": 7.93,
+   "roe": 40.2,
+   "eqr": 29.8,
+   "div": 1.47,
+   "rev_q": 6.7,
+   "rev_ttm": 4.0,
+   "cagr5": 8.4,
+   "eps_q": 68.8,
+   "opm": 18.4,
+   "roic": 34.0,
+   "psr": 0.82,
+   "peg": 0.02,
+   "de": 0.15,
+   "inflow": 0.88,
+   "biz": "Universal Insurance Holdings, Inc., together with its subsidiaries, operates as an integrated insurance holding company in the United States. The company offers insurance products for personal residential insurance, such",
+   "atr": 1.16,
+   "sma50": 43.51,
+   "bb_up": 45.35,
+   "bb_lo": 41.64,
+   "adx": 13.1,
+   "stk": 72.4,
+   "std": 65.1,
+   "ich_base": 43.51,
+   "ich_conv": 43.51,
+   "ich_a": 43.21,
+   "ich_b": 40.87,
+   "piv_s1": 40.78,
+   "piv_r1": 44.27,
+   "tv_rec": 0.51,
+   "mtf": [
+    4072.0,
+    4070.0,
+    4064.0,
+    4964.0,
+    4072.0
+   ],
+   "rs": 85.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "BSP",
+   "name": "Bending Spoons S.p.A.",
+   "ticker": "NASDAQ:BSP",
+   "bucket": "short",
+   "score": 3.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 5496,
+      "win": 39.5,
+      "avg": 16.85,
+      "med": -0.43,
+      "excess": 15.65,
+      "best": 8276.7,
+      "worst": -96.2
+     },
+     "20": {
+      "n": 2237,
+      "win": 40.3,
+      "avg": 42.73,
+      "med": -1.46,
+      "excess": 42.91,
+      "best": 7191.5,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 6045,
+      "win": 41.2,
+      "avg": 5.22,
+      "med": 0.0,
+      "excess": 4.64,
+      "best": 5598.3,
+      "worst": -89.7
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 21427,
+      "win": 36.1,
+      "avg": 1.29,
+      "med": -1.29,
+      "excess": -0.12,
+      "best": 6010.5,
+      "worst": -94.0
+     },
+     "20": {
+      "n": 11759,
+      "win": 25.3,
+      "avg": 0.35,
+      "med": -5.61,
+      "excess": 0.73,
+      "best": 7524.5,
+      "worst": -94.8
+     },
+     "1": {
+      "n": 24966,
+      "win": 42.2,
+      "avg": 0.53,
+      "med": -0.28,
+      "excess": 0.0,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 7510,
+      "win": 35.4,
+      "avg": 3.48,
+      "med": -1.38,
+      "excess": 2.15,
+      "best": 6010.5,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 4091,
+      "win": 23.1,
+      "avg": 5.03,
+      "med": -5.98,
+      "excess": 5.44,
+      "best": 6580.0,
+      "worst": -86.1
+     },
+     "1": {
+      "n": 8683,
+      "win": 42.0,
+      "avg": 1.64,
+      "med": -0.31,
+      "excess": 1.15,
+      "best": 5598.3,
+      "worst": -82.4
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Packaged Software",
+   "segment": "NASDAQ",
+   "close": 41.07,
+   "chg": 24.19,
+   "gap": 0.0,
+   "sma5": 34.16,
+   "sma20": 36.04,
+   "sma200": null,
+   "ext200": null,
+   "rsi": 61.1,
+   "macd_h": 0.32,
+   "rvol": 2.94,
+   "pw": 25.62,
+   "p1": -0.63,
+   "p3": 20.4,
+   "ytd": 32.5,
+   "pos52": 38.0,
+   "hi52": 58.94,
+   "lo52": 30.11,
+   "val": 361.6,
+   "mcap": 26088.0,
+   "per": null,
+   "pbr": 20.25,
+   "eps": null,
+   "roe": null,
+   "eqr": 53.3,
+   "div": 0.0,
+   "rev_q": null,
+   "rev_ttm": null,
+   "cagr5": null,
+   "eps_q": null,
+   "opm": null,
+   "roic": null,
+   "psr": 19.97,
+   "peg": null,
+   "de": 3.94,
+   "inflow": 1.23,
+   "biz": "Bending Spoons S.p.A., through its subsidiaries, acquires and transforms digital businesses in the United States, the United Kingdom, Germany, Canada, Japan, Australia, France, Brazil, Italy, and internationally. The com",
+   "atr": 2.89,
+   "sma50": 39.22,
+   "bb_up": 42.49,
+   "bb_lo": 29.59,
+   "adx": 21.1,
+   "stk": 38.3,
+   "std": 19.0,
+   "ich_base": 37.01,
+   "ich_conv": 36.85,
+   "ich_a": 44.21,
+   "ich_b": null,
+   "piv_s1": 28.97,
+   "piv_r1": 40.13,
+   "tv_rec": 0.59,
+   "mtf": [
+    4084.0,
+    4071.0,
+    4061.0,
+    null,
+    null
+   ],
+   "rs": 88.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "GOOG",
+   "name": "Alphabet Inc.",
+   "ticker": "NASDAQ:GOOG",
+   "bucket": "short",
+   "score": 9.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_trend",
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 21427,
+      "win": 36.1,
+      "avg": 1.29,
+      "med": -1.29,
+      "excess": -0.12,
+      "best": 6010.5,
+      "worst": -94.0
+     },
+     "20": {
+      "n": 11759,
+      "win": 25.3,
+      "avg": 0.35,
+      "med": -5.61,
+      "excess": 0.73,
+      "best": 7524.5,
+      "worst": -94.8
+     },
+     "1": {
+      "n": 24966,
+      "win": 42.2,
+      "avg": 0.53,
+      "med": -0.28,
+      "excess": 0.0,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 7510,
+      "win": 35.4,
+      "avg": 3.48,
+      "med": -1.38,
+      "excess": 2.15,
+      "best": 6010.5,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 4091,
+      "win": 23.1,
+      "avg": 5.03,
+      "med": -5.98,
+      "excess": 5.44,
+      "best": 6580.0,
+      "worst": -86.1
+     },
+     "1": {
+      "n": 8683,
+      "win": 42.0,
+      "avg": 1.64,
+      "med": -0.31,
+      "excess": 1.15,
+      "best": 5598.3,
+      "worst": -82.4
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 5281,
+      "win": 35.5,
+      "avg": -0.89,
+      "med": -0.97,
+      "excess": -2.48,
+      "best": 272.6,
+      "worst": -33.5
+     },
+     "20": {
+      "n": 2599,
+      "win": 22.4,
+      "avg": -5.07,
+      "med": -5.13,
+      "excess": -4.87,
+      "best": 118.0,
+      "worst": -39.7
+     },
+     "1": {
+      "n": 5980,
+      "win": 42.0,
+      "avg": -0.19,
+      "med": -0.17,
+      "excess": -0.78,
+      "best": 178.0,
+      "worst": -24.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 7744,
+      "win": 35.1,
+      "avg": -0.87,
+      "med": -1.04,
+      "excess": -2.48,
+      "best": 853.0,
+      "worst": -94.0
+     },
+     "20": {
+      "n": 4064,
+      "win": 21.3,
+      "avg": -4.81,
+      "med": -5.37,
+      "excess": -4.62,
+      "best": 796.3,
+      "worst": -72.3
+     },
+     "1": {
+      "n": 8747,
+      "win": 43.6,
+      "avg": -0.19,
+      "med": -0.13,
+      "excess": -0.8,
+      "best": 355.6,
+      "worst": -69.9
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 6120,
+      "win": 37.4,
+      "avg": -0.95,
+      "med": -0.93,
+      "excess": -2.57,
+      "best": 272.6,
+      "worst": -48.9
+     },
+     "20": {
+      "n": 3842,
+      "win": 22.0,
+      "avg": -5.58,
+      "med": -5.25,
+      "excess": -5.5,
+      "best": 91.8,
+      "worst": -86.5
+     },
+     "1": {
+      "n": 6811,
+      "win": 42.7,
+      "avg": -0.25,
+      "med": -0.14,
+      "excess": -0.82,
+      "best": 30.9,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 20574,
+      "win": 37.8,
+      "avg": -0.2,
+      "med": -0.96,
+      "excess": -1.85,
+      "best": 6762.9,
+      "worst": -95.7
+     },
+     "20": {
+      "n": 11658,
+      "win": 24.1,
+      "avg": -4.1,
+      "med": -5.27,
+      "excess": -3.95,
+      "best": 6274.5,
+      "worst": -95.6
+     },
+     "1": {
+      "n": 23590,
+      "win": 42.8,
+      "avg": -0.21,
+      "med": -0.17,
+      "excess": -0.78,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 10750,
+      "win": 44.1,
+      "avg": -0.43,
+      "med": -0.59,
+      "excess": -2.04,
+      "best": 54.0,
+      "worst": -77.0
+     },
+     "20": {
+      "n": 5498,
+      "win": 34.9,
+      "avg": -2.59,
+      "med": -3.5,
+      "excess": -2.45,
+      "best": 796.3,
+      "worst": -56.0
+     },
+     "1": {
+      "n": 12134,
+      "win": 47.7,
+      "avg": -0.06,
+      "med": -0.07,
+      "excess": -0.66,
+      "best": 133.3,
+      "worst": -79.1
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 14542,
+      "win": 40.5,
+      "avg": -0.48,
+      "med": -1.05,
+      "excess": -2.0,
+      "best": 1881.2,
+      "worst": -63.3
+     },
+     "20": {
+      "n": 6709,
+      "win": 31.5,
+      "avg": -2.96,
+      "med": -4.48,
+      "excess": -2.73,
+      "best": 1031.0,
+      "worst": -61.7
+     },
+     "1": {
+      "n": 16612,
+      "win": 45.4,
+      "avg": 0.04,
+      "med": -0.19,
+      "excess": -0.55,
+      "best": 2463.4,
+      "worst": -57.2
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 28199,
+      "win": 40.3,
+      "avg": -0.23,
+      "med": -0.8,
+      "excess": -1.75,
+      "best": 4487.5,
+      "worst": -81.5
+     },
+     "20": {
+      "n": 12931,
+      "win": 28.7,
+      "avg": -2.84,
+      "med": -3.89,
+      "excess": -2.6,
+      "best": 2859.3,
+      "worst": -67.8
+     },
+     "1": {
+      "n": 32235,
+      "win": 45.4,
+      "avg": -0.02,
+      "med": -0.15,
+      "excess": -0.62,
+      "best": 4111.2,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Internet Software/Services",
+   "segment": "NASDAQ",
+   "close": 347.37,
+   "chg": 0.81,
+   "gap": -0.26,
+   "sma5": 342.21,
+   "sma20": 341.1,
+   "sma200": 338.02,
+   "ext200": 2.77,
+   "rsi": 55.9,
+   "macd_h": 0.82,
+   "rvol": 0.66,
+   "pw": 1.97,
+   "p1": 2.41,
+   "p3": -1.06,
+   "ytd": 9.4,
+   "pos52": 66.0,
+   "hi52": 404.47,
+   "lo52": 236.69,
+   "val": 3924.0,
+   "mcap": 4269214.0,
+   "per": 17.5,
+   "pbr": 6.83,
+   "eps": 20.15,
+   "roe": 48.7,
+   "eqr": 80.5,
+   "div": 0.25,
+   "rev_q": 24.0,
+   "rev_ttm": 20.2,
+   "cagr5": 17.2,
+   "eps_q": 294.0,
+   "opm": 34.0,
+   "roic": 42.3,
+   "psr": 10.54,
+   "peg": 0.15,
+   "de": 0.18,
+   "inflow": 1.05,
+   "biz": "Alphabet Inc. offers various products and platforms in the United States, Europe, the Middle East, Africa, the Asia-Pacific, Canada, and Latin America. It operates through Google Services, Google Cloud, and Other Bets se",
+   "atr": 8.2,
+   "sma50": 342.93,
+   "bb_up": 350.92,
+   "bb_lo": 331.29,
+   "adx": 15.0,
+   "stk": 46.2,
+   "std": 36.5,
+   "ich_base": 342.81,
+   "ich_conv": 341.37,
+   "ich_a": 345.93,
+   "ich_b": 348.35,
+   "piv_s1": 324.25,
+   "piv_r1": 358.6,
+   "tv_rec": 0.49,
+   "mtf": [
+    4065.0,
+    3759.0,
+    3756.0,
+    4653.0,
+    4065.0
+   ],
+   "rs": 74.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "GOOGL",
+   "name": "Alphabet Inc.",
+   "ticker": "NASDAQ:GOOGL",
+   "bucket": "short",
+   "score": 8.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_gc",
+    "sig_trend",
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 21427,
+      "win": 36.1,
+      "avg": 1.29,
+      "med": -1.29,
+      "excess": -0.12,
+      "best": 6010.5,
+      "worst": -94.0
+     },
+     "20": {
+      "n": 11759,
+      "win": 25.3,
+      "avg": 0.35,
+      "med": -5.61,
+      "excess": 0.73,
+      "best": 7524.5,
+      "worst": -94.8
+     },
+     "1": {
+      "n": 24966,
+      "win": 42.2,
+      "avg": 0.53,
+      "med": -0.28,
+      "excess": 0.0,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 7510,
+      "win": 35.4,
+      "avg": 3.48,
+      "med": -1.38,
+      "excess": 2.15,
+      "best": 6010.5,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 4091,
+      "win": 23.1,
+      "avg": 5.03,
+      "med": -5.98,
+      "excess": 5.44,
+      "best": 6580.0,
+      "worst": -86.1
+     },
+     "1": {
+      "n": 8683,
+      "win": 42.0,
+      "avg": 1.64,
+      "med": -0.31,
+      "excess": 1.15,
+      "best": 5598.3,
+      "worst": -82.4
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 5281,
+      "win": 35.5,
+      "avg": -0.89,
+      "med": -0.97,
+      "excess": -2.48,
+      "best": 272.6,
+      "worst": -33.5
+     },
+     "20": {
+      "n": 2599,
+      "win": 22.4,
+      "avg": -5.07,
+      "med": -5.13,
+      "excess": -4.87,
+      "best": 118.0,
+      "worst": -39.7
+     },
+     "1": {
+      "n": 5980,
+      "win": 42.0,
+      "avg": -0.19,
+      "med": -0.17,
+      "excess": -0.78,
+      "best": 178.0,
+      "worst": -24.9
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 6120,
+      "win": 37.4,
+      "avg": -0.95,
+      "med": -0.93,
+      "excess": -2.57,
+      "best": 272.6,
+      "worst": -48.9
+     },
+     "20": {
+      "n": 3842,
+      "win": 22.0,
+      "avg": -5.58,
+      "med": -5.25,
+      "excess": -5.5,
+      "best": 91.8,
+      "worst": -86.5
+     },
+     "1": {
+      "n": 6811,
+      "win": 42.7,
+      "avg": -0.25,
+      "med": -0.14,
+      "excess": -0.82,
+      "best": 30.9,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 20574,
+      "win": 37.8,
+      "avg": -0.2,
+      "med": -0.96,
+      "excess": -1.85,
+      "best": 6762.9,
+      "worst": -95.7
+     },
+     "20": {
+      "n": 11658,
+      "win": 24.1,
+      "avg": -4.1,
+      "med": -5.27,
+      "excess": -3.95,
+      "best": 6274.5,
+      "worst": -95.6
+     },
+     "1": {
+      "n": 23590,
+      "win": 42.8,
+      "avg": -0.21,
+      "med": -0.17,
+      "excess": -0.78,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 10750,
+      "win": 44.1,
+      "avg": -0.43,
+      "med": -0.59,
+      "excess": -2.04,
+      "best": 54.0,
+      "worst": -77.0
+     },
+     "20": {
+      "n": 5498,
+      "win": 34.9,
+      "avg": -2.59,
+      "med": -3.5,
+      "excess": -2.45,
+      "best": 796.3,
+      "worst": -56.0
+     },
+     "1": {
+      "n": 12134,
+      "win": 47.7,
+      "avg": -0.06,
+      "med": -0.07,
+      "excess": -0.66,
+      "best": 133.3,
+      "worst": -79.1
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 14542,
+      "win": 40.5,
+      "avg": -0.48,
+      "med": -1.05,
+      "excess": -2.0,
+      "best": 1881.2,
+      "worst": -63.3
+     },
+     "20": {
+      "n": 6709,
+      "win": 31.5,
+      "avg": -2.96,
+      "med": -4.48,
+      "excess": -2.73,
+      "best": 1031.0,
+      "worst": -61.7
+     },
+     "1": {
+      "n": 16612,
+      "win": 45.4,
+      "avg": 0.04,
+      "med": -0.19,
+      "excess": -0.55,
+      "best": 2463.4,
+      "worst": -57.2
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 28199,
+      "win": 40.3,
+      "avg": -0.23,
+      "med": -0.8,
+      "excess": -1.75,
+      "best": 4487.5,
+      "worst": -81.5
+     },
+     "20": {
+      "n": 12931,
+      "win": 28.7,
+      "avg": -2.84,
+      "med": -3.89,
+      "excess": -2.6,
+      "best": 2859.3,
+      "worst": -67.8
+     },
+     "1": {
+      "n": 32235,
+      "win": 45.4,
+      "avg": -0.02,
+      "med": -0.15,
+      "excess": -0.62,
+      "best": 4111.2,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Internet Software/Services",
+   "segment": "NASDAQ",
+   "close": 350.5,
+   "chg": 0.81,
+   "gap": -0.28,
+   "sma5": 345.28,
+   "sma20": 344.48,
+   "sma200": 339.61,
+   "ext200": 3.21,
+   "rsi": 55.7,
+   "macd_h": 0.71,
+   "rvol": 0.79,
+   "pw": 1.85,
+   "p1": 2.35,
+   "p3": -1.08,
+   "ytd": 10.6,
+   "pos52": 66.0,
+   "hi52": 408.61,
+   "lo52": 235.84,
+   "val": 7179.4,
+   "mcap": 4269398.0,
+   "per": 17.6,
+   "pbr": 6.89,
+   "eps": 20.15,
+   "roe": 48.7,
+   "eqr": 80.5,
+   "div": 0.25,
+   "rev_q": 24.0,
+   "rev_ttm": 20.2,
+   "cagr5": 17.2,
+   "eps_q": 294.0,
+   "opm": 34.0,
+   "roic": 42.3,
+   "psr": 10.64,
+   "peg": 0.16,
+   "de": 0.18,
+   "inflow": 1.09,
+   "biz": "Alphabet Inc. offers various products and platforms in the United States, Europe, the Middle East, Africa, the Asia-Pacific, Canada, and Latin America. It operates through Google Services, Google Cloud, and Other Bets se",
+   "atr": 8.4,
+   "sma50": 345.66,
+   "bb_up": 354.94,
+   "bb_lo": 334.02,
+   "adx": 14.2,
+   "stk": 44.3,
+   "std": 35.2,
+   "ich_base": 345.96,
+   "ich_conv": 344.37,
+   "ich_a": 348.39,
+   "ich_b": 349.69,
+   "piv_s1": 326.49,
+   "piv_r1": 362.92,
+   "tv_rec": 0.49,
+   "mtf": [
+    4064.0,
+    3758.0,
+    3756.0,
+    4653.0,
+    4066.0
+   ],
+   "rs": 75.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "HAFN",
+   "name": "Hafnia Limited",
+   "ticker": "NYSE:HAFN",
+   "bucket": "short",
+   "score": 7.0,
+   "signals": [
+    "sig_x5",
+    "sig_high",
+    "sig_macd",
+    "sig_div",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 21427,
+      "win": 36.1,
+      "avg": 1.29,
+      "med": -1.29,
+      "excess": -0.12,
+      "best": 6010.5,
+      "worst": -94.0
+     },
+     "20": {
+      "n": 11759,
+      "win": 25.3,
+      "avg": 0.35,
+      "med": -5.61,
+      "excess": 0.73,
+      "best": 7524.5,
+      "worst": -94.8
+     },
+     "1": {
+      "n": 24966,
+      "win": 42.2,
+      "avg": 0.53,
+      "med": -0.28,
+      "excess": 0.0,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 4282,
+      "win": 44.0,
+      "avg": -0.62,
+      "med": 0.0,
+      "excess": -2.15,
+      "best": 308.4,
+      "worst": -90.4
+     },
+     "20": {
+      "n": 2526,
+      "win": 41.1,
+      "avg": -2.15,
+      "med": -0.39,
+      "excess": -1.9,
+      "best": 230.5,
+      "worst": -90.8
+     },
+     "1": {
+      "n": 4824,
+      "win": 39.2,
+      "avg": -0.13,
+      "med": 0.0,
+      "excess": -0.66,
+      "best": 355.6,
+      "worst": -87.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 20574,
+      "win": 37.8,
+      "avg": -0.2,
+      "med": -0.96,
+      "excess": -1.85,
+      "best": 6762.9,
+      "worst": -95.7
+     },
+     "20": {
+      "n": 11658,
+      "win": 24.1,
+      "avg": -4.1,
+      "med": -5.27,
+      "excess": -3.95,
+      "best": 6274.5,
+      "worst": -95.6
+     },
+     "1": {
+      "n": 23590,
+      "win": 42.8,
+      "avg": -0.21,
+      "med": -0.17,
+      "excess": -0.78,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 10994,
+      "win": 30.5,
+      "avg": -1.47,
+      "med": -1.4,
+      "excess": -3.06,
+      "best": 26.0,
+      "worst": -35.5
+     },
+     "20": {
+      "n": 5439,
+      "win": 14.8,
+      "avg": -6.35,
+      "med": -6.59,
+      "excess": -6.2,
+      "best": 365.8,
+      "worst": -63.3
+     },
+     "1": {
+      "n": 12571,
+      "win": 42.3,
+      "avg": -0.25,
+      "med": -0.21,
+      "excess": -0.86,
+      "best": 12.3,
+      "worst": -30.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 10750,
+      "win": 44.1,
+      "avg": -0.43,
+      "med": -0.59,
+      "excess": -2.04,
+      "best": 54.0,
+      "worst": -77.0
+     },
+     "20": {
+      "n": 5498,
+      "win": 34.9,
+      "avg": -2.59,
+      "med": -3.5,
+      "excess": -2.45,
+      "best": 796.3,
+      "worst": -56.0
+     },
+     "1": {
+      "n": 12134,
+      "win": 47.7,
+      "avg": -0.06,
+      "med": -0.07,
+      "excess": -0.66,
+      "best": 133.3,
+      "worst": -79.1
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 14542,
+      "win": 40.5,
+      "avg": -0.48,
+      "med": -1.05,
+      "excess": -2.0,
+      "best": 1881.2,
+      "worst": -63.3
+     },
+     "20": {
+      "n": 6709,
+      "win": 31.5,
+      "avg": -2.96,
+      "med": -4.48,
+      "excess": -2.73,
+      "best": 1031.0,
+      "worst": -61.7
+     },
+     "1": {
+      "n": 16612,
+      "win": 45.4,
+      "avg": 0.04,
+      "med": -0.19,
+      "excess": -0.55,
+      "best": 2463.4,
+      "worst": -57.2
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 28199,
+      "win": 40.3,
+      "avg": -0.23,
+      "med": -0.8,
+      "excess": -1.75,
+      "best": 4487.5,
+      "worst": -81.5
+     },
+     "20": {
+      "n": 12931,
+      "win": 28.7,
+      "avg": -2.84,
+      "med": -3.89,
+      "excess": -2.6,
+      "best": 2859.3,
+      "worst": -67.8
+     },
+     "1": {
+      "n": 32235,
+      "win": 45.4,
+      "avg": -0.02,
+      "med": -0.15,
+      "excess": -0.62,
+      "best": 4111.2,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Transportation",
+   "industry": "Marine Shipping",
+   "segment": "NYSE",
+   "close": 10.33,
+   "chg": 1.97,
+   "gap": 0.59,
+   "sma5": 10.21,
+   "sma20": 9.64,
+   "sma200": 7.61,
+   "ext200": 35.77,
+   "rsi": 68.3,
+   "macd_h": 0.04,
+   "rvol": 0.97,
+   "pw": 4.03,
+   "p1": 15.55,
+   "p3": 43.47,
+   "ytd": 94.9,
+   "pos52": 97.0,
+   "hi52": 10.48,
+   "lo52": 5.17,
+   "val": 37.8,
+   "mcap": 5457.0,
+   "per": 8.1,
+   "pbr": 1.95,
+   "eps": 1.29,
+   "roe": 25.9,
+   "eqr": 62.5,
+   "div": 10.84,
+   "rev_q": 37.4,
+   "rev_ttm": 5.1,
+   "cagr5": 19.6,
+   "eps_q": 242.9,
+   "opm": 20.1,
+   "roic": 20.5,
+   "psr": 2.22,
+   "peg": 0.2,
+   "de": 0.33,
+   "inflow": 1.25,
+   "biz": "Hafnia Limited., an investment holding company, owns and operates oil product tankers in Bermuda. It operates through Long Range II, Long Range I, Medium Range (MR), and Handy Size segments. The company transports clean ",
+   "atr": 0.36,
+   "sma50": 8.67,
+   "bb_up": 10.54,
+   "bb_lo": 8.74,
+   "adx": 25.4,
+   "stk": 90.5,
+   "std": 92.9,
+   "ich_base": 9.44,
+   "ich_conv": 9.62,
+   "ich_a": 8.1,
+   "ich_b": 7.61,
+   "piv_s1": 8.86,
+   "piv_r1": 10.58,
+   "tv_rec": 0.54,
+   "mtf": [
+    4960.0,
+    4066.0,
+    4068.0,
+    4068.0,
+    4068.0
+   ],
+   "rs": 93.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "M",
+   "name": "Macy's Inc",
+   "ticker": "NYSE:M",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_reclaim",
+    "sig_trend",
+    "sig_macd",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 21427,
+      "win": 36.1,
+      "avg": 1.29,
+      "med": -1.29,
+      "excess": -0.12,
+      "best": 6010.5,
+      "worst": -94.0
+     },
+     "20": {
+      "n": 11759,
+      "win": 25.3,
+      "avg": 0.35,
+      "med": -5.61,
+      "excess": 0.73,
+      "best": 7524.5,
+      "worst": -94.8
+     },
+     "1": {
+      "n": 24966,
+      "win": 42.2,
+      "avg": 0.53,
+      "med": -0.28,
+      "excess": 0.0,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 7510,
+      "win": 35.4,
+      "avg": 3.48,
+      "med": -1.38,
+      "excess": 2.15,
+      "best": 6010.5,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 4091,
+      "win": 23.1,
+      "avg": 5.03,
+      "med": -5.98,
+      "excess": 5.44,
+      "best": 6580.0,
+      "worst": -86.1
+     },
+     "1": {
+      "n": 8683,
+      "win": 42.0,
+      "avg": 1.64,
+      "med": -0.31,
+      "excess": 1.15,
+      "best": 5598.3,
+      "worst": -82.4
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 7744,
+      "win": 35.1,
+      "avg": -0.87,
+      "med": -1.04,
+      "excess": -2.48,
+      "best": 853.0,
+      "worst": -94.0
+     },
+     "20": {
+      "n": 4064,
+      "win": 21.3,
+      "avg": -4.81,
+      "med": -5.37,
+      "excess": -4.62,
+      "best": 796.3,
+      "worst": -72.3
+     },
+     "1": {
+      "n": 8747,
+      "win": 43.6,
+      "avg": -0.19,
+      "med": -0.13,
+      "excess": -0.8,
+      "best": 355.6,
+      "worst": -69.9
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 6120,
+      "win": 37.4,
+      "avg": -0.95,
+      "med": -0.93,
+      "excess": -2.57,
+      "best": 272.6,
+      "worst": -48.9
+     },
+     "20": {
+      "n": 3842,
+      "win": 22.0,
+      "avg": -5.58,
+      "med": -5.25,
+      "excess": -5.5,
+      "best": 91.8,
+      "worst": -86.5
+     },
+     "1": {
+      "n": 6811,
+      "win": 42.7,
+      "avg": -0.25,
+      "med": -0.14,
+      "excess": -0.82,
+      "best": 30.9,
+      "worst": -24.0
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 20574,
+      "win": 37.8,
+      "avg": -0.2,
+      "med": -0.96,
+      "excess": -1.85,
+      "best": 6762.9,
+      "worst": -95.7
+     },
+     "20": {
+      "n": 11658,
+      "win": 24.1,
+      "avg": -4.1,
+      "med": -5.27,
+      "excess": -3.95,
+      "best": 6274.5,
+      "worst": -95.6
+     },
+     "1": {
+      "n": 23590,
+      "win": 42.8,
+      "avg": -0.21,
+      "med": -0.17,
+      "excess": -0.78,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 28199,
+      "win": 40.3,
+      "avg": -0.23,
+      "med": -0.8,
+      "excess": -1.75,
+      "best": 4487.5,
+      "worst": -81.5
+     },
+     "20": {
+      "n": 12931,
+      "win": 28.7,
+      "avg": -2.84,
+      "med": -3.89,
+      "excess": -2.6,
+      "best": 2859.3,
+      "worst": -67.8
+     },
+     "1": {
+      "n": 32235,
+      "win": 45.4,
+      "avg": -0.02,
+      "med": -0.15,
+      "excess": -0.62,
+      "best": 4111.2,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Retail Trade",
+   "industry": "Department Stores",
+   "segment": "NYSE",
+   "close": 22.79,
+   "chg": 1.47,
+   "gap": -1.96,
+   "sma5": 22.65,
+   "sma20": 22.35,
+   "sma200": 21.57,
+   "ext200": 5.63,
+   "rsi": 52.0,
+   "macd_h": 0.07,
+   "rvol": 1.86,
+   "pw": -2.36,
+   "p1": 1.7,
+   "p3": 0.18,
+   "ytd": 2.5,
+   "pos52": 63.0,
+   "hi52": 26.59,
+   "lo52": 16.41,
+   "val": 258.2,
+   "mcap": 5952.0,
+   "per": 8.3,
+   "pbr": 1.21,
+   "eps": 2.83,
+   "roe": 16.0,
+   "eqr": 21.0,
+   "div": 3.37,
+   "rev_q": 1.2,
+   "rev_ttm": 0.3,
+   "cagr5": 4.6,
+   "eps_q": 97.1,
+   "opm": 4.3,
+   "roic": 7.6,
+   "psr": 0.28,
+   "peg": 0.15,
+   "de": 1.03,
+   "inflow": 1.01,
+   "biz": "Macy's, Inc., an omni-channel retail organization, operates stores, websites, and mobile applications in the United States. The company sells various merchandise, such as apparel and accessories for men, women, and kids;",
+   "atr": 0.84,
+   "sma50": 23.09,
+   "bb_up": 23.53,
+   "bb_lo": 21.18,
+   "adx": 13.3,
+   "stk": 50.6,
+   "std": 51.2,
+   "ich_base": 21.7,
+   "ich_conv": 22.54,
+   "ich_a": 23.35,
+   "ich_b": 24.12,
+   "piv_s1": 20.48,
+   "piv_r1": 24.34,
+   "tv_rec": 0.42,
+   "mtf": [
+    3754.0,
+    4653.0,
+    3752.0,
+    4652.0,
+    3759.0
+   ],
+   "rs": 74.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "KALU",
+   "name": "Kaiser Aluminum Corporation",
+   "ticker": "NASDAQ:KALU",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_gc",
+    "sig_reclaim",
+    "sig_macd",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_gc": {
+     "5": {
+      "n": 5281,
+      "win": 35.5,
+      "avg": -0.89,
+      "med": -0.97,
+      "excess": -2.48,
+      "best": 272.6,
+      "worst": -33.5
+     },
+     "20": {
+      "n": 2599,
+      "win": 22.4,
+      "avg": -5.07,
+      "med": -5.13,
+      "excess": -4.87,
+      "best": 118.0,
+      "worst": -39.7
+     },
+     "1": {
+      "n": 5980,
+      "win": 42.0,
+      "avg": -0.19,
+      "med": -0.17,
+      "excess": -0.78,
+      "best": 178.0,
+      "worst": -24.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 7744,
+      "win": 35.1,
+      "avg": -0.87,
+      "med": -1.04,
+      "excess": -2.48,
+      "best": 853.0,
+      "worst": -94.0
+     },
+     "20": {
+      "n": 4064,
+      "win": 21.3,
+      "avg": -4.81,
+      "med": -5.37,
+      "excess": -4.62,
+      "best": 796.3,
+      "worst": -72.3
+     },
+     "1": {
+      "n": 8747,
+      "win": 43.6,
+      "avg": -0.19,
+      "med": -0.13,
+      "excess": -0.8,
+      "best": 355.6,
+      "worst": -69.9
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 20574,
+      "win": 37.8,
+      "avg": -0.2,
+      "med": -0.96,
+      "excess": -1.85,
+      "best": 6762.9,
+      "worst": -95.7
+     },
+     "20": {
+      "n": 11658,
+      "win": 24.1,
+      "avg": -4.1,
+      "med": -5.27,
+      "excess": -3.95,
+      "best": 6274.5,
+      "worst": -95.6
+     },
+     "1": {
+      "n": 23590,
+      "win": 42.8,
+      "avg": -0.21,
+      "med": -0.17,
+      "excess": -0.78,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 14542,
+      "win": 40.5,
+      "avg": -0.48,
+      "med": -1.05,
+      "excess": -2.0,
+      "best": 1881.2,
+      "worst": -63.3
+     },
+     "20": {
+      "n": 6709,
+      "win": 31.5,
+      "avg": -2.96,
+      "med": -4.48,
+      "excess": -2.73,
+      "best": 1031.0,
+      "worst": -61.7
+     },
+     "1": {
+      "n": 16612,
+      "win": 45.4,
+      "avg": 0.04,
+      "med": -0.19,
+      "excess": -0.55,
+      "best": 2463.4,
+      "worst": -57.2
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 28199,
+      "win": 40.3,
+      "avg": -0.23,
+      "med": -0.8,
+      "excess": -1.75,
+      "best": 4487.5,
+      "worst": -81.5
+     },
+     "20": {
+      "n": 12931,
+      "win": 28.7,
+      "avg": -2.84,
+      "med": -3.89,
+      "excess": -2.6,
+      "best": 2859.3,
+      "worst": -67.8
+     },
+     "1": {
+      "n": 32235,
+      "win": 45.4,
+      "avg": -0.02,
+      "med": -0.15,
+      "excess": -0.62,
+      "best": 4111.2,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 7232,
+      "win": 40.1,
+      "avg": -0.98,
+      "med": -0.99,
+      "excess": -2.5,
+      "best": 52.1,
+      "worst": -52.2
+     },
+     "20": {
+      "n": 3220,
+      "win": 26.9,
+      "avg": -4.99,
+      "med": -5.0,
+      "excess": -4.75,
+      "best": 58.9,
+      "worst": -61.8
+     },
+     "1": {
+      "n": 8303,
+      "win": 45.7,
+      "avg": -0.18,
+      "med": -0.15,
+      "excess": -0.78,
+      "best": 27.8,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Non-Energy Minerals",
+   "industry": "Aluminum",
+   "segment": "NASDAQ",
+   "close": 152.24,
+   "chg": -0.99,
+   "gap": -2.86,
+   "sma5": 152.44,
+   "sma20": 152.36,
+   "sma200": 152.03,
+   "ext200": 0.14,
+   "rsi": 46.6,
+   "macd_h": 0.68,
+   "rvol": 0.75,
+   "pw": 0.11,
+   "p1": -5.33,
+   "p3": -8.15,
+   "ytd": 30.9,
+   "pos52": 61.0,
+   "hi52": 199.89,
+   "lo52": 76.45,
+   "val": 25.7,
+   "mcap": 2489.0,
+   "per": 11.3,
+   "pbr": 2.64,
+   "eps": 13.95,
+   "roe": 26.4,
+   "eqr": 40.2,
+   "div": 2.0,
+   "rev_q": 52.7,
+   "rev_ttm": 32.8,
+   "cagr5": 23.5,
+   "eps_q": 306.4,
+   "opm": 8.2,
+   "roic": 11.7,
+   "psr": 0.75,
+   "peg": 0.05,
+   "de": 1.13,
+   "inflow": 1.02,
+   "biz": "Kaiser Aluminum Corporation, together with its subsidiaries, manufactures and sells semi-fabricated specialty aluminum mill products. It offers flat-rolled plate, sheet, and coil; extruded rod, bar, hollows, and shapes; ",
+   "atr": 6.36,
+   "sma50": 161.07,
+   "bb_up": 158.65,
+   "bb_lo": 146.08,
+   "adx": 9.8,
+   "stk": 74.7,
+   "std": 71.0,
+   "ich_base": 156.73,
+   "ich_conv": 149.34,
+   "ich_a": 166.34,
+   "ich_b": 173.94,
+   "piv_s1": 135.08,
+   "piv_r1": 163.84,
+   "tv_rec": -0.25,
+   "mtf": [
+    7249.0,
+    6549.0,
+    6547.0,
+    4548.0,
+    4061.0
+   ],
+   "rs": 82.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "EVER",
+   "name": "EverQuote, Inc.",
+   "ticker": "NASDAQ:EVER",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_gc",
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_gc": {
+     "5": {
+      "n": 5281,
+      "win": 35.5,
+      "avg": -0.89,
+      "med": -0.97,
+      "excess": -2.48,
+      "best": 272.6,
+      "worst": -33.5
+     },
+     "20": {
+      "n": 2599,
+      "win": 22.4,
+      "avg": -5.07,
+      "med": -5.13,
+      "excess": -4.87,
+      "best": 118.0,
+      "worst": -39.7
+     },
+     "1": {
+      "n": 5980,
+      "win": 42.0,
+      "avg": -0.19,
+      "med": -0.17,
+      "excess": -0.78,
+      "best": 178.0,
+      "worst": -24.9
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 20574,
+      "win": 37.8,
+      "avg": -0.2,
+      "med": -0.96,
+      "excess": -1.85,
+      "best": 6762.9,
+      "worst": -95.7
+     },
+     "20": {
+      "n": 11658,
+      "win": 24.1,
+      "avg": -4.1,
+      "med": -5.27,
+      "excess": -3.95,
+      "best": 6274.5,
+      "worst": -95.6
+     },
+     "1": {
+      "n": 23590,
+      "win": 42.8,
+      "avg": -0.21,
+      "med": -0.17,
+      "excess": -0.78,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 10750,
+      "win": 44.1,
+      "avg": -0.43,
+      "med": -0.59,
+      "excess": -2.04,
+      "best": 54.0,
+      "worst": -77.0
+     },
+     "20": {
+      "n": 5498,
+      "win": 34.9,
+      "avg": -2.59,
+      "med": -3.5,
+      "excess": -2.45,
+      "best": 796.3,
+      "worst": -56.0
+     },
+     "1": {
+      "n": 12134,
+      "win": 47.7,
+      "avg": -0.06,
+      "med": -0.07,
+      "excess": -0.66,
+      "best": 133.3,
+      "worst": -79.1
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 14542,
+      "win": 40.5,
+      "avg": -0.48,
+      "med": -1.05,
+      "excess": -2.0,
+      "best": 1881.2,
+      "worst": -63.3
+     },
+     "20": {
+      "n": 6709,
+      "win": 31.5,
+      "avg": -2.96,
+      "med": -4.48,
+      "excess": -2.73,
+      "best": 1031.0,
+      "worst": -61.7
+     },
+     "1": {
+      "n": 16612,
+      "win": 45.4,
+      "avg": 0.04,
+      "med": -0.19,
+      "excess": -0.55,
+      "best": 2463.4,
+      "worst": -57.2
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 28199,
+      "win": 40.3,
+      "avg": -0.23,
+      "med": -0.8,
+      "excess": -1.75,
+      "best": 4487.5,
+      "worst": -81.5
+     },
+     "20": {
+      "n": 12931,
+      "win": 28.7,
+      "avg": -2.84,
+      "med": -3.89,
+      "excess": -2.6,
+      "best": 2859.3,
+      "worst": -67.8
+     },
+     "1": {
+      "n": 32235,
+      "win": 45.4,
+      "avg": -0.02,
+      "med": -0.15,
+      "excess": -0.62,
+      "best": 4111.2,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 7232,
+      "win": 40.1,
+      "avg": -0.98,
+      "med": -0.99,
+      "excess": -2.5,
+      "best": 52.1,
+      "worst": -52.2
+     },
+     "20": {
+      "n": 3220,
+      "win": 26.9,
+      "avg": -4.99,
+      "med": -5.0,
+      "excess": -4.75,
+      "best": 58.9,
+      "worst": -61.8
+     },
+     "1": {
+      "n": 8303,
+      "win": 45.7,
+      "avg": -0.18,
+      "med": -0.15,
+      "excess": -0.78,
+      "best": 27.8,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Internet Software/Services",
+   "segment": "NASDAQ",
+   "close": 19.39,
+   "chg": 0.0,
+   "gap": -1.08,
+   "sma5": 19.53,
+   "sma20": 20.86,
+   "sma200": 20.79,
+   "ext200": -6.75,
+   "rsi": 36.4,
+   "macd_h": 0.03,
+   "rvol": 0.54,
+   "pw": 1.41,
+   "p1": -21.97,
+   "p3": -20.3,
+   "ytd": -28.5,
+   "pos52": 37.0,
+   "hi52": 28.73,
+   "lo52": 13.88,
+   "val": 10.9,
+   "mcap": 683.0,
+   "per": 6.3,
+   "pbr": 2.66,
+   "eps": 3.18,
+   "roe": 53.6,
+   "eqr": 73.9,
+   "div": 0.0,
+   "rev_q": 24.6,
+   "rev_ttm": 22.7,
+   "cagr5": 14.8,
+   "eps_q": 37.2,
+   "opm": 11.0,
+   "roic": 53.3,
+   "psr": 1.06,
+   "peg": 0.04,
+   "de": 0.01,
+   "inflow": 0.98,
+   "biz": "EverQuote, Inc. operates an online marketplace for insurance shopping in the United States. The company provides automotive, and home and renters insurance, as well as campaign management tools. The company serves insura",
+   "atr": 1.09,
+   "sma50": 23.35,
+   "bb_up": 25.39,
+   "bb_lo": 16.33,
+   "adx": 27.6,
+   "stk": 31.2,
+   "std": 30.7,
+   "ich_base": 21.97,
+   "ich_conv": 19.09,
+   "ich_a": 25.21,
+   "ich_b": 23.86,
+   "piv_s1": 16.11,
+   "piv_r1": 25.28,
+   "tv_rec": -0.31,
+   "mtf": [
+    951.0,
+    6543.0,
+    7136.0,
+    7441.0,
+    7448.0
+   ],
+   "rs": 40.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "WTM",
+   "name": "White Mountains Insurance Group, Ltd.",
+   "ticker": "NYSE:WTM",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_macd",
+    "sig_value",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_macd": {
+     "5": {
+      "n": 20574,
+      "win": 37.8,
+      "avg": -0.2,
+      "med": -0.96,
+      "excess": -1.85,
+      "best": 6762.9,
+      "worst": -95.7
+     },
+     "20": {
+      "n": 11658,
+      "win": 24.1,
+      "avg": -4.1,
+      "med": -5.27,
+      "excess": -3.95,
+      "best": 6274.5,
+      "worst": -95.6
+     },
+     "1": {
+      "n": 23590,
+      "win": 42.8,
+      "avg": -0.21,
+      "med": -0.17,
+      "excess": -0.78,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_value": {
+     "5": {
+      "n": 2234,
+      "win": 32.0,
+      "avg": 23.0,
+      "med": -1.54,
+      "excess": 21.44,
+      "best": 10241.9,
+      "worst": -81.8
+     },
+     "20": {
+      "n": 1018,
+      "win": 19.2,
+      "avg": 51.7,
+      "med": -5.91,
+      "excess": 51.85,
+      "best": 7934.2,
+      "worst": -80.6
+     },
+     "1": {
+      "n": 2594,
+      "win": 42.0,
+      "avg": 6.49,
+      "med": -0.27,
+      "excess": 5.91,
+      "best": 12293.2,
+      "worst": -47.0
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 10750,
+      "win": 44.1,
+      "avg": -0.43,
+      "med": -0.59,
+      "excess": -2.04,
+      "best": 54.0,
+      "worst": -77.0
+     },
+     "20": {
+      "n": 5498,
+      "win": 34.9,
+      "avg": -2.59,
+      "med": -3.5,
+      "excess": -2.45,
+      "best": 796.3,
+      "worst": -56.0
+     },
+     "1": {
+      "n": 12134,
+      "win": 47.7,
+      "avg": -0.06,
+      "med": -0.07,
+      "excess": -0.66,
+      "best": 133.3,
+      "worst": -79.1
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 14542,
+      "win": 40.5,
+      "avg": -0.48,
+      "med": -1.05,
+      "excess": -2.0,
+      "best": 1881.2,
+      "worst": -63.3
+     },
+     "20": {
+      "n": 6709,
+      "win": 31.5,
+      "avg": -2.96,
+      "med": -4.48,
+      "excess": -2.73,
+      "best": 1031.0,
+      "worst": -61.7
+     },
+     "1": {
+      "n": 16612,
+      "win": 45.4,
+      "avg": 0.04,
+      "med": -0.19,
+      "excess": -0.55,
+      "best": 2463.4,
+      "worst": -57.2
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 28199,
+      "win": 40.3,
+      "avg": -0.23,
+      "med": -0.8,
+      "excess": -1.75,
+      "best": 4487.5,
+      "worst": -81.5
+     },
+     "20": {
+      "n": 12931,
+      "win": 28.7,
+      "avg": -2.84,
+      "med": -3.89,
+      "excess": -2.6,
+      "best": 2859.3,
+      "worst": -67.8
+     },
+     "1": {
+      "n": 32235,
+      "win": 45.4,
+      "avg": -0.02,
+      "med": -0.15,
+      "excess": -0.62,
+      "best": 4111.2,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 7232,
+      "win": 40.1,
+      "avg": -0.98,
+      "med": -0.99,
+      "excess": -2.5,
+      "best": 52.1,
+      "worst": -52.2
+     },
+     "20": {
+      "n": 3220,
+      "win": 26.9,
+      "avg": -4.99,
+      "med": -5.0,
+      "excess": -4.75,
+      "best": 58.9,
+      "worst": -61.8
+     },
+     "1": {
+      "n": 8303,
+      "win": 45.7,
+      "avg": -0.18,
+      "med": -0.15,
+      "excess": -0.78,
+      "best": 27.8,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Multi-Line Insurance",
+   "segment": "NYSE",
+   "close": 2031.5,
+   "chg": -0.28,
+   "gap": 1.31,
+   "sma5": 2024.43,
+   "sma20": 2038.98,
+   "sma200": 2127.79,
+   "ext200": -4.53,
+   "rsi": 42.7,
+   "macd_h": 2.57,
+   "rvol": 1.39,
+   "pw": 0.15,
+   "p1": -3.26,
+   "p3": -6.25,
+   "ytd": -2.5,
+   "pos52": 40.0,
+   "hi52": 2333.0,
+   "lo52": 1830.13,
+   "val": 41.4,
+   "mcap": 4849.0,
+   "per": 4.6,
+   "pbr": 0.9,
+   "eps": 439.4,
+   "roe": 21.9,
+   "eqr": 57.8,
+   "div": 0.05,
+   "rev_q": 22.5,
+   "rev_ttm": 20.9,
+   "cagr5": 19.6,
+   "eps_q": 68.8,
+   "opm": 24.0,
+   "roic": 18.8,
+   "psr": 1.78,
+   "peg": 0.01,
+   "de": 0.17,
+   "inflow": 0.83,
+   "biz": "White Mountains Insurance Group, Ltd. provides insurance services in the United States, the United Kingdom, Bermuda, and internationally. It operates through Ark/WM Outrigger, HG Global, Kudu, Distinguished, and Other Op",
+   "atr": 35.04,
+   "sma50": 2085.97,
+   "bb_up": 2077.77,
+   "bb_lo": 2000.19,
+   "adx": 15.7,
+   "stk": 36.0,
+   "std": 30.1,
+   "ich_base": 2068.51,
+   "ich_conv": 2030.57,
+   "ich_a": 2136.76,
+   "ich_b": 2119.91,
+   "piv_s1": 1955.78,
+   "piv_r1": 2098.54,
+   "tv_rec": -0.18,
+   "mtf": [
+    7250.0,
+    6549.0,
+    6543.0,
+    2042.0,
+    4655.0
+   ],
+   "rs": 49.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "NOG",
+   "name": "Northern Oil and Gas, Inc.",
+   "ticker": "NYSE:NOG",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_div",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 21427,
+      "win": 36.1,
+      "avg": 1.29,
+      "med": -1.29,
+      "excess": -0.12,
+      "best": 6010.5,
+      "worst": -94.0
+     },
+     "20": {
+      "n": 11759,
+      "win": 25.3,
+      "avg": 0.35,
+      "med": -5.61,
+      "excess": 0.73,
+      "best": 7524.5,
+      "worst": -94.8
+     },
+     "1": {
+      "n": 24966,
+      "win": 42.2,
+      "avg": 0.53,
+      "med": -0.28,
+      "excess": 0.0,
+      "best": 5598.3,
+      "worst": -87.0
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 5281,
+      "win": 35.5,
+      "avg": -0.89,
+      "med": -0.97,
+      "excess": -2.48,
+      "best": 272.6,
+      "worst": -33.5
+     },
+     "20": {
+      "n": 2599,
+      "win": 22.4,
+      "avg": -5.07,
+      "med": -5.13,
+      "excess": -4.87,
+      "best": 118.0,
+      "worst": -39.7
+     },
+     "1": {
+      "n": 5980,
+      "win": 42.0,
+      "avg": -0.19,
+      "med": -0.17,
+      "excess": -0.78,
+      "best": 178.0,
+      "worst": -24.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 7744,
+      "win": 35.1,
+      "avg": -0.87,
+      "med": -1.04,
+      "excess": -2.48,
+      "best": 853.0,
+      "worst": -94.0
+     },
+     "20": {
+      "n": 4064,
+      "win": 21.3,
+      "avg": -4.81,
+      "med": -5.37,
+      "excess": -4.62,
+      "best": 796.3,
+      "worst": -72.3
+     },
+     "1": {
+      "n": 8747,
+      "win": 43.6,
+      "avg": -0.19,
+      "med": -0.13,
+      "excess": -0.8,
+      "best": 355.6,
+      "worst": -69.9
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 10994,
+      "win": 30.5,
+      "avg": -1.47,
+      "med": -1.4,
+      "excess": -3.06,
+      "best": 26.0,
+      "worst": -35.5
+     },
+     "20": {
+      "n": 5439,
+      "win": 14.8,
+      "avg": -6.35,
+      "med": -6.59,
+      "excess": -6.2,
+      "best": 365.8,
+      "worst": -63.3
+     },
+     "1": {
+      "n": 12571,
+      "win": 42.3,
+      "avg": -0.25,
+      "med": -0.21,
+      "excess": -0.86,
+      "best": 12.3,
+      "worst": -30.3
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 28199,
+      "win": 40.3,
+      "avg": -0.23,
+      "med": -0.8,
+      "excess": -1.75,
+      "best": 4487.5,
+      "worst": -81.5
+     },
+     "20": {
+      "n": 12931,
+      "win": 28.7,
+      "avg": -2.84,
+      "med": -3.89,
+      "excess": -2.6,
+      "best": 2859.3,
+      "worst": -67.8
+     },
+     "1": {
+      "n": 32235,
+      "win": 45.4,
+      "avg": -0.02,
+      "med": -0.15,
+      "excess": -0.62,
+      "best": 4111.2,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 7232,
+      "win": 40.1,
+      "avg": -0.98,
+      "med": -0.99,
+      "excess": -2.5,
+      "best": 52.1,
+      "worst": -52.2
+     },
+     "20": {
+      "n": 3220,
+      "win": 26.9,
+      "avg": -4.99,
+      "med": -5.0,
+      "excess": -4.75,
+      "best": 58.9,
+      "worst": -61.8
+     },
+     "1": {
+      "n": 8303,
+      "win": 45.7,
+      "avg": -0.18,
+      "med": -0.15,
+      "excess": -0.78,
+      "best": 27.8,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Energy Minerals",
+   "industry": "Oil & Gas Production",
+   "segment": "NYSE",
+   "close": 24.18,
+   "chg": 1.13,
+   "gap": 0.75,
+   "sma5": 23.89,
+   "sma20": 24.34,
+   "sma200": 24.09,
+   "ext200": 0.36,
+   "rsi": 49.8,
+   "macd_h": -0.01,
+   "rvol": 0.73,
+   "pw": 5.31,
+   "p1": -6.02,
+   "p3": 27.26,
+   "ytd": 12.5,
+   "pos52": 50.0,
+   "hi52": 31.17,
+   "lo52": 17.18,
+   "val": 37.1,
+   "mcap": 2576.0,
+   "per": null,
+   "pbr": 1.29,
+   "eps": -5.13,
+   "roe": -22.1,
+   "eqr": 43.7,
+   "div": 7.53,
+   "rev_q": 16.8,
+   "rev_ttm": -3.0,
+   "cagr5": 45.2,
+   "eps_q": 118.5,
+   "opm": 29.6,
+   "roic": -10.2,
+   "psr": 1.15,
+   "peg": null,
+   "de": 1.37,
+   "inflow": 0.85,
+   "biz": "Northern Oil and Gas, Inc., an independent energy company, engages in the acquisition, exploration, exploitation, development, and production of crude oil and natural gas properties in the United States. Northern Oil and",
+   "atr": 0.83,
+   "sma50": 24.36,
+   "bb_up": 27.02,
+   "bb_lo": 21.66,
+   "adx": 18.1,
+   "stk": 48.1,
+   "std": 38.3,
+   "ich_base": 24.87,
+   "ich_conv": 23.43,
+   "ich_a": 24.94,
+   "ich_b": 22.27,
+   "piv_s1": 21.11,
+   "piv_r1": 25.98,
+   "tv_rec": -0.07,
+   "mtf": [
+    4659.0,
+    3653.0,
+    1950.0,
+    3651.0,
+    6546.0
+   ],
+   "rs": 79.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "INOD",
+   "name": "Innodata Inc.",
+   "ticker": "NASDAQ:INOD",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_reclaim",
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_reclaim": {
+     "5": {
+      "n": 7744,
+      "win": 35.1,
+      "avg": -0.87,
+      "med": -1.04,
+      "excess": -2.48,
+      "best": 853.0,
+      "worst": -94.0
+     },
+     "20": {
+      "n": 4064,
+      "win": 21.3,
+      "avg": -4.81,
+      "med": -5.37,
+      "excess": -4.62,
+      "best": 796.3,
+      "worst": -72.3
+     },
+     "1": {
+      "n": 8747,
+      "win": 43.6,
+      "avg": -0.19,
+      "med": -0.13,
+      "excess": -0.8,
+      "best": 355.6,
+      "worst": -69.9
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 20574,
+      "win": 37.8,
+      "avg": -0.2,
+      "med": -0.96,
+      "excess": -1.85,
+      "best": 6762.9,
+      "worst": -95.7
+     },
+     "20": {
+      "n": 11658,
+      "win": 24.1,
+      "avg": -4.1,
+      "med": -5.27,
+      "excess": -3.95,
+      "best": 6274.5,
+      "worst": -95.6
+     },
+     "1": {
+      "n": 23590,
+      "win": 42.8,
+      "avg": -0.21,
+      "med": -0.17,
+      "excess": -0.78,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 10750,
+      "win": 44.1,
+      "avg": -0.43,
+      "med": -0.59,
+      "excess": -2.04,
+      "best": 54.0,
+      "worst": -77.0
+     },
+     "20": {
+      "n": 5498,
+      "win": 34.9,
+      "avg": -2.59,
+      "med": -3.5,
+      "excess": -2.45,
+      "best": 796.3,
+      "worst": -56.0
+     },
+     "1": {
+      "n": 12134,
+      "win": 47.7,
+      "avg": -0.06,
+      "med": -0.07,
+      "excess": -0.66,
+      "best": 133.3,
+      "worst": -79.1
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 14542,
+      "win": 40.5,
+      "avg": -0.48,
+      "med": -1.05,
+      "excess": -2.0,
+      "best": 1881.2,
+      "worst": -63.3
+     },
+     "20": {
+      "n": 6709,
+      "win": 31.5,
+      "avg": -2.96,
+      "med": -4.48,
+      "excess": -2.73,
+      "best": 1031.0,
+      "worst": -61.7
+     },
+     "1": {
+      "n": 16612,
+      "win": 45.4,
+      "avg": 0.04,
+      "med": -0.19,
+      "excess": -0.55,
+      "best": 2463.4,
+      "worst": -57.2
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 28199,
+      "win": 40.3,
+      "avg": -0.23,
+      "med": -0.8,
+      "excess": -1.75,
+      "best": 4487.5,
+      "worst": -81.5
+     },
+     "20": {
+      "n": 12931,
+      "win": 28.7,
+      "avg": -2.84,
+      "med": -3.89,
+      "excess": -2.6,
+      "best": 2859.3,
+      "worst": -67.8
+     },
+     "1": {
+      "n": 32235,
+      "win": 45.4,
+      "avg": -0.02,
+      "med": -0.15,
+      "excess": -0.62,
+      "best": 4111.2,
+      "worst": -52.7
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Data Processing Services",
+   "segment": "NASDAQ",
+   "close": 63.415,
+   "chg": -4.26,
+   "gap": -2.43,
+   "sma5": 67.71,
+   "sma20": 63.38,
+   "sma200": 61.63,
+   "ext200": 2.9,
+   "rsi": 49.1,
+   "macd_h": 0.01,
+   "rvol": 0.77,
+   "pw": -5.24,
+   "p1": 15.28,
+   "p3": -9.47,
+   "ytd": 20.9,
+   "pos52": 32.0,
+   "hi52": 125.14,
+   "lo52": 34.23,
+   "val": 89.8,
+   "mcap": 2180.0,
+   "per": 48.1,
+   "pbr": 13.66,
+   "eps": 1.42,
+   "roe": 37.7,
+   "eqr": 82.7,
+   "div": 0.0,
+   "rev_q": 57.8,
+   "rev_ttm": 39.0,
+   "cagr5": 34.0,
+   "eps_q": 102.7,
+   "opm": 17.1,
+   "roic": 36.9,
+   "psr": 8.83,
+   "peg": 8.44,
+   "de": 0.02,
+   "inflow": 1.28,
+   "biz": "Innodata Inc. operates as a data engineering company in the United States, the United Kingdom, the Netherlands, Canada, Germany, Belgium, and internationally. The company operates through three segments: Digital Data Sol",
+   "atr": 4.6,
+   "sma50": 61.55,
+   "bb_up": 76.77,
+   "bb_lo": 49.99,
+   "adx": 27.3,
+   "stk": 53.4,
+   "std": 64.4,
+   "ich_base": 63.58,
+   "ich_conv": 68.82,
+   "ich_a": 63.58,
+   "ich_b": 79.49,
+   "piv_s1": 53.51,
+   "piv_r1": 76.47,
+   "tv_rec": -0.13,
+   "mtf": [
+    8035.0,
+    7444.0,
+    6549.0,
+    1849.0,
+    4654.0
+   ],
+   "rs": 67.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "EPD",
+   "name": "Enterprise Products Partners L.P.",
+   "ticker": "NYSE:EPD",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_gc",
+    "sig_reclaim",
+    "sig_div",
+    "sig_growth",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_gc": {
+     "5": {
+      "n": 5281,
+      "win": 35.5,
+      "avg": -0.89,
+      "med": -0.97,
+      "excess": -2.48,
+      "best": 272.6,
+      "worst": -33.5
+     },
+     "20": {
+      "n": 2599,
+      "win": 22.4,
+      "avg": -5.07,
+      "med": -5.13,
+      "excess": -4.87,
+      "best": 118.0,
+      "worst": -39.7
+     },
+     "1": {
+      "n": 5980,
+      "win": 42.0,
+      "avg": -0.19,
+      "med": -0.17,
+      "excess": -0.78,
+      "best": 178.0,
+      "worst": -24.9
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 7744,
+      "win": 35.1,
+      "avg": -0.87,
+      "med": -1.04,
+      "excess": -2.48,
+      "best": 853.0,
+      "worst": -94.0
+     },
+     "20": {
+      "n": 4064,
+      "win": 21.3,
+      "avg": -4.81,
+      "med": -5.37,
+      "excess": -4.62,
+      "best": 796.3,
+      "worst": -72.3
+     },
+     "1": {
+      "n": 8747,
+      "win": 43.6,
+      "avg": -0.19,
+      "med": -0.13,
+      "excess": -0.8,
+      "best": 355.6,
+      "worst": -69.9
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 10994,
+      "win": 30.5,
+      "avg": -1.47,
+      "med": -1.4,
+      "excess": -3.06,
+      "best": 26.0,
+      "worst": -35.5
+     },
+     "20": {
+      "n": 5439,
+      "win": 14.8,
+      "avg": -6.35,
+      "med": -6.59,
+      "excess": -6.2,
+      "best": 365.8,
+      "worst": -63.3
+     },
+     "1": {
+      "n": 12571,
+      "win": 42.3,
+      "avg": -0.25,
+      "med": -0.21,
+      "excess": -0.86,
+      "best": 12.3,
+      "worst": -30.3
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 14542,
+      "win": 40.5,
+      "avg": -0.48,
+      "med": -1.05,
+      "excess": -2.0,
+      "best": 1881.2,
+      "worst": -63.3
+     },
+     "20": {
+      "n": 6709,
+      "win": 31.5,
+      "avg": -2.96,
+      "med": -4.48,
+      "excess": -2.73,
+      "best": 1031.0,
+      "worst": -61.7
+     },
+     "1": {
+      "n": 16612,
+      "win": 45.4,
+      "avg": 0.04,
+      "med": -0.19,
+      "excess": -0.55,
+      "best": 2463.4,
+      "worst": -57.2
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 7232,
+      "win": 40.1,
+      "avg": -0.98,
+      "med": -0.99,
+      "excess": -2.5,
+      "best": 52.1,
+      "worst": -52.2
+     },
+     "20": {
+      "n": 3220,
+      "win": 26.9,
+      "avg": -4.99,
+      "med": -5.0,
+      "excess": -4.75,
+      "best": 58.9,
+      "worst": -61.8
+     },
+     "1": {
+      "n": 8303,
+      "win": 45.7,
+      "avg": -0.18,
+      "med": -0.15,
+      "excess": -0.78,
+      "best": 27.8,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Industrial Services",
+   "industry": "Oil & Gas Pipelines",
+   "segment": "NYSE",
+   "close": 36.91,
+   "chg": -0.94,
+   "gap": 0.3,
+   "sma5": 36.56,
+   "sma20": 37.52,
+   "sma200": 36.9,
+   "ext200": 0.04,
+   "rsi": 44.0,
+   "macd_h": -0.04,
+   "rvol": 0.56,
+   "pw": 2.07,
+   "p1": -5.46,
+   "p3": -2.33,
+   "ytd": 15.0,
+   "pos52": 68.0,
+   "hi52": 40.16,
+   "lo52": 30.01,
+   "val": 76.1,
+   "mcap": 79706.0,
+   "per": 12.8,
+   "pbr": 2.64,
+   "eps": 2.89,
+   "roe": 21.1,
+   "eqr": 42.1,
+   "div": 5.92,
+   "rev_q": 63.7,
+   "rev_ttm": 7.4,
+   "cagr5": 14.3,
+   "eps_q": 28.5,
+   "opm": 12.5,
+   "roic": 10.2,
+   "psr": 1.55,
+   "peg": 1.73,
+   "de": 1.13,
+   "inflow": 1.18,
+   "biz": "Enterprise Products Partners L.P. provides midstream energy services to producers and consumers of natural gas, natural gas liquids (NGLs), crude oil, petrochemicals, and refined products. It operates in four segments: N",
+   "atr": 0.66,
+   "sma50": 38.1,
+   "bb_up": 39.79,
+   "bb_lo": 35.24,
+   "adx": 27.1,
+   "stk": 43.4,
+   "std": 34.3,
+   "ich_base": 37.53,
+   "ich_conv": 36.39,
+   "ich_a": 38.5,
+   "ich_b": 37.74,
+   "piv_s1": 34.23,
+   "piv_r1": 38.34,
+   "tv_rec": -0.2,
+   "mtf": [
+    1955.0,
+    6348.0,
+    7444.0,
+    1848.0,
+    3759.0
+   ],
+   "rs": 63.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "LNC",
+   "name": "Lincoln National Corporation",
+   "ticker": "NYSE:LNC",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_macd",
+    "sig_value",
+    "sig_div",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_macd": {
+     "5": {
+      "n": 20574,
+      "win": 37.8,
+      "avg": -0.2,
+      "med": -0.96,
+      "excess": -1.85,
+      "best": 6762.9,
+      "worst": -95.7
+     },
+     "20": {
+      "n": 11658,
+      "win": 24.1,
+      "avg": -4.1,
+      "med": -5.27,
+      "excess": -3.95,
+      "best": 6274.5,
+      "worst": -95.6
+     },
+     "1": {
+      "n": 23590,
+      "win": 42.8,
+      "avg": -0.21,
+      "med": -0.17,
+      "excess": -0.78,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_value": {
+     "5": {
+      "n": 2234,
+      "win": 32.0,
+      "avg": 23.0,
+      "med": -1.54,
+      "excess": 21.44,
+      "best": 10241.9,
+      "worst": -81.8
+     },
+     "20": {
+      "n": 1018,
+      "win": 19.2,
+      "avg": 51.7,
+      "med": -5.91,
+      "excess": 51.85,
+      "best": 7934.2,
+      "worst": -80.6
+     },
+     "1": {
+      "n": 2594,
+      "win": 42.0,
+      "avg": 6.49,
+      "med": -0.27,
+      "excess": 5.91,
+      "best": 12293.2,
+      "worst": -47.0
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 10994,
+      "win": 30.5,
+      "avg": -1.47,
+      "med": -1.4,
+      "excess": -3.06,
+      "best": 26.0,
+      "worst": -35.5
+     },
+     "20": {
+      "n": 5439,
+      "win": 14.8,
+      "avg": -6.35,
+      "med": -6.59,
+      "excess": -6.2,
+      "best": 365.8,
+      "worst": -63.3
+     },
+     "1": {
+      "n": 12571,
+      "win": 42.3,
+      "avg": -0.25,
+      "med": -0.21,
+      "excess": -0.86,
+      "best": 12.3,
+      "worst": -30.3
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 28199,
+      "win": 40.3,
+      "avg": -0.23,
+      "med": -0.8,
+      "excess": -1.75,
+      "best": 4487.5,
+      "worst": -81.5
+     },
+     "20": {
+      "n": 12931,
+      "win": 28.7,
+      "avg": -2.84,
+      "med": -3.89,
+      "excess": -2.6,
+      "best": 2859.3,
+      "worst": -67.8
+     },
+     "1": {
+      "n": 32235,
+      "win": 45.4,
+      "avg": -0.02,
+      "med": -0.15,
+      "excess": -0.62,
+      "best": 4111.2,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 7232,
+      "win": 40.1,
+      "avg": -0.98,
+      "med": -0.99,
+      "excess": -2.5,
+      "best": 52.1,
+      "worst": -52.2
+     },
+     "20": {
+      "n": 3220,
+      "win": 26.9,
+      "avg": -4.99,
+      "med": -5.0,
+      "excess": -4.75,
+      "best": 58.9,
+      "worst": -61.8
+     },
+     "1": {
+      "n": 8303,
+      "win": 45.7,
+      "avg": -0.18,
+      "med": -0.15,
+      "excess": -0.78,
+      "best": 27.8,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Multi-Line Insurance",
+   "segment": "NYSE",
+   "close": 41.0,
+   "chg": -2.57,
+   "gap": -1.38,
+   "sma5": 40.8,
+   "sma20": 41.74,
+   "sma200": 39.35,
+   "ext200": 4.18,
+   "rsi": 44.5,
+   "macd_h": 0.01,
+   "rvol": 1.84,
+   "pw": 0.56,
+   "p1": -9.43,
+   "p3": 3.8,
+   "ytd": -7.9,
+   "pos52": 57.0,
+   "hi52": 47.66,
+   "lo52": 32.18,
+   "val": 141.8,
+   "mcap": 7849.0,
+   "per": 3.5,
+   "pbr": 0.76,
+   "eps": 11.83,
+   "roe": 22.6,
+   "eqr": 4.8,
+   "div": 4.28,
+   "rev_q": 19.4,
+   "rev_ttm": 12.3,
+   "cagr5": 1.6,
+   "eps_q": 76.5,
+   "opm": 15.3,
+   "roic": 14.2,
+   "psr": 0.41,
+   "peg": 0.04,
+   "de": 0.6,
+   "inflow": 1.09,
+   "biz": "Lincoln National Corporation, through its subsidiaries, operates multiple insurance and retirement businesses in the United States. It operates through four segments: Life Insurance, Annuities, Group Protection, and Reti",
+   "atr": 1.23,
+   "sma50": 43.31,
+   "bb_up": 44.15,
+   "bb_lo": 39.33,
+   "adx": 19.0,
+   "stk": 53.9,
+   "std": 42.0,
+   "ich_base": 42.39,
+   "ich_conv": 40.83,
+   "ich_a": 43.7,
+   "ich_b": 41.47,
+   "piv_s1": 38.36,
+   "piv_r1": 44.03,
+   "tv_rec": -0.25,
+   "mtf": [
+    7448.0,
+    6547.0,
+    6545.0,
+    4551.0,
+    3754.0
+   ],
+   "rs": 71.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "DINO",
+   "name": "HF Sinclair Corporation",
+   "ticker": "NYSE:DINO",
+   "bucket": "long",
+   "score": 5.0,
+   "signals": [
+    "sig_macd",
+    "sig_qual",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_macd": {
+     "5": {
+      "n": 20574,
+      "win": 37.8,
+      "avg": -0.2,
+      "med": -0.96,
+      "excess": -1.85,
+      "best": 6762.9,
+      "worst": -95.7
+     },
+     "20": {
+      "n": 11658,
+      "win": 24.1,
+      "avg": -4.1,
+      "med": -5.27,
+      "excess": -3.95,
+      "best": 6274.5,
+      "worst": -95.6
+     },
+     "1": {
+      "n": 23590,
+      "win": 42.8,
+      "avg": -0.21,
+      "med": -0.17,
+      "excess": -0.78,
+      "best": 327.4,
+      "worst": -71.3
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 10750,
+      "win": 44.1,
+      "avg": -0.43,
+      "med": -0.59,
+      "excess": -2.04,
+      "best": 54.0,
+      "worst": -77.0
+     },
+     "20": {
+      "n": 5498,
+      "win": 34.9,
+      "avg": -2.59,
+      "med": -3.5,
+      "excess": -2.45,
+      "best": 796.3,
+      "worst": -56.0
+     },
+     "1": {
+      "n": 12134,
+      "win": 47.7,
+      "avg": -0.06,
+      "med": -0.07,
+      "excess": -0.66,
+      "best": 133.3,
+      "worst": -79.1
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 14542,
+      "win": 40.5,
+      "avg": -0.48,
+      "med": -1.05,
+      "excess": -2.0,
+      "best": 1881.2,
+      "worst": -63.3
+     },
+     "20": {
+      "n": 6709,
+      "win": 31.5,
+      "avg": -2.96,
+      "med": -4.48,
+      "excess": -2.73,
+      "best": 1031.0,
+      "worst": -61.7
+     },
+     "1": {
+      "n": 16612,
+      "win": 45.4,
+      "avg": 0.04,
+      "med": -0.19,
+      "excess": -0.55,
+      "best": 2463.4,
+      "worst": -57.2
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 28199,
+      "win": 40.3,
+      "avg": -0.23,
+      "med": -0.8,
+      "excess": -1.75,
+      "best": 4487.5,
+      "worst": -81.5
+     },
+     "20": {
+      "n": 12931,
+      "win": 28.7,
+      "avg": -2.84,
+      "med": -3.89,
+      "excess": -2.6,
+      "best": 2859.3,
+      "worst": -67.8
+     },
+     "1": {
+      "n": 32235,
+      "win": 45.4,
+      "avg": -0.02,
+      "med": -0.15,
+      "excess": -0.62,
+      "best": 4111.2,
+      "worst": -52.7
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 7232,
+      "win": 40.1,
+      "avg": -0.98,
+      "med": -0.99,
+      "excess": -2.5,
+      "best": 52.1,
+      "worst": -52.2
+     },
+     "20": {
+      "n": 3220,
+      "win": 26.9,
+      "avg": -4.99,
+      "med": -5.0,
+      "excess": -4.75,
+      "best": 58.9,
+      "worst": -61.8
+     },
+     "1": {
+      "n": 8303,
+      "win": 45.7,
+      "avg": -0.18,
+      "med": -0.15,
+      "excess": -0.78,
+      "best": 27.8,
+      "worst": -30.7
+     }
+    }
+   },
+   "sector": "Energy Minerals",
+   "industry": "Oil Refining/Marketing",
+   "segment": "NYSE",
+   "close": 115.63,
+   "chg": 0.9,
+   "gap": 1.48,
+   "sma5": 114.3,
+   "sma20": 110.33,
+   "sma200": 72.14,
+   "ext200": 60.29,
+   "rsi": 67.8,
+   "macd_h": 0.11,
+   "rvol": 0.89,
+   "pw": 7.72,
+   "p1": 9.98,
+   "p3": 49.68,
+   "ytd": 151.4,
+   "pos52": 96.0,
+   "hi52": 118.39,
+   "lo52": 45.71,
+   "val": 254.9,
+   "mcap": 20557.0,
+   "per": 11.0,
+   "pbr": 2.0,
+   "eps": 10.48,
+   "roe": 19.4,
+   "eqr": 60.6,
+   "div": 1.77,
+   "rev_q": 53.2,
+   "rev_ttm": 16.3,
+   "cagr5": 19.1,
+   "eps_q": 350.4,
+   "opm": 8.6,
+   "roic": 14.7,
+   "psr": 0.8,
+   "peg": null,
+   "de": 0.32,
+   "inflow": 0.87,
+   "biz": "HF Sinclair Corporation operates as an independent energy company in the United States. It operates through five segments: Refining, Renewables, Marketing, Lubricants & Specialties, and Midstream. The company produces an",
+   "atr": 4.45,
+   "sma50": 100.91,
+   "bb_up": 118.21,
+   "bb_lo": 102.44,
+   "adx": 25.1,
+   "stk": 79.0,
+   "std": 74.3,
+   "ich_base": 109.69,
+   "ich_conv": 110.41,
+   "ich_a": 94.97,
+   "ich_b": 83.91,
+   "piv_s1": 99.41,
+   "piv_r1": 116.81,
+   "tv_rec": 0.49,
+   "mtf": [
+    4659.0,
+    4063.0,
+    4068.0,
+    4072.0,
+    4084.0
+   ],
+   "rs": 97.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  }
+ ],
+ "config": {
+  "MIN_VAL": 10.0,
+  "MIN_MCAP": 500.0,
+  "MIN_PRICE": 5.0,
+  "N_SHORT": 8,
+  "N_LONG": 8,
+  "N_NEWS": 4,
+  "MAX_PER_INDUSTRY": 3,
+  "COOLDOWN_DAYS": 3
+ }
+}
