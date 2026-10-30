@@ -1,0 +1,5012 @@
+{
+ "date": "2026-10-30",
+ "market": "jp",
+ "generated": "2026-10-30 16:35 JST",
+ "label_ko": "🇯🇵 일본",
+ "label_ja": "🇯🇵 日本",
+ "unit_ko": "억엔",
+ "unit_ja": "億円",
+ "llm_mode": "off",
+ "baserate_days": 45,
+ "universe": {
+  "total": 3761,
+  "liquid": 1158,
+  "candidates": 20,
+  "regime": "off",
+  "a200": 40.0,
+  "a50": 25.8,
+  "nh": 66,
+  "nl": 448,
+  "short": 8,
+  "long": 8,
+  "news": 4
+ },
+ "picks": [
+  {
+   "code": "7947",
+   "name": "エフピコ",
+   "ticker": "TSE:7947",
+   "bucket": "short",
+   "score": 6.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_high",
+    "sig_trend",
+    "sig_macd"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 2730,
+      "win": 35.8,
+      "avg": -0.98,
+      "med": -1.56,
+      "excess": -0.17,
+      "best": 131.9,
+      "worst": -89.4
+     },
+     "20": {
+      "n": 1685,
+      "win": 32.7,
+      "avg": -2.7,
+      "med": -3.37,
+      "excess": 0.45,
+      "best": 768.2,
+      "worst": -91.7
+     },
+     "1": {
+      "n": 3692,
+      "win": 47.0,
+      "avg": 0.19,
+      "med": 0.0,
+      "excess": 0.42,
+      "best": 1054.6,
+      "worst": -75.4
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 13102,
+      "win": 43.0,
+      "avg": -0.75,
+      "med": -0.57,
+      "excess": 0.03,
+      "best": 146.2,
+      "worst": -89.9
+     },
+     "20": {
+      "n": 8311,
+      "win": 34.7,
+      "avg": -3.43,
+      "med": -2.77,
+      "excess": -0.6,
+      "best": 768.2,
+      "worst": -93.2
+     },
+     "1": {
+      "n": 14374,
+      "win": 44.0,
+      "avg": -0.14,
+      "med": -0.17,
+      "excess": 0.01,
+      "best": 1054.6,
+      "worst": -68.3
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 5023,
+      "win": 42.5,
+      "avg": -0.83,
+      "med": -0.68,
+      "excess": 0.01,
+      "best": 146.2,
+      "worst": -89.4
+     },
+     "20": {
+      "n": 3397,
+      "win": 33.8,
+      "avg": -3.29,
+      "med": -2.73,
+      "excess": -0.33,
+      "best": 211.1,
+      "worst": -93.0
+     },
+     "1": {
+      "n": 5473,
+      "win": 43.9,
+      "avg": -0.14,
+      "med": -0.18,
+      "excess": -0.04,
+      "best": 129.6,
+      "worst": -26.5
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 3724,
+      "win": 38.3,
+      "avg": -1.44,
+      "med": -0.88,
+      "excess": -0.31,
+      "best": 99.2,
+      "worst": -90.1
+     },
+     "20": {
+      "n": 2520,
+      "win": 32.0,
+      "avg": -5.03,
+      "med": -2.64,
+      "excess": -1.84,
+      "best": 50.1,
+      "worst": -92.1
+     },
+     "1": {
+      "n": 3918,
+      "win": 40.8,
+      "avg": -0.41,
+      "med": -0.19,
+      "excess": -0.08,
+      "best": 33.1,
+      "worst": -90.5
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 6731,
+      "win": 41.5,
+      "avg": -0.55,
+      "med": -0.72,
+      "excess": 0.51,
+      "best": 97.4,
+      "worst": -93.4
+     },
+     "20": {
+      "n": 4153,
+      "win": 29.5,
+      "avg": -3.03,
+      "med": -3.01,
+      "excess": 0.05,
+      "best": 768.2,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 7233,
+      "win": 44.2,
+      "avg": -0.21,
+      "med": -0.18,
+      "excess": 0.07,
+      "best": 24.5,
+      "worst": -79.6
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 16842,
+      "win": 39.8,
+      "avg": -1.03,
+      "med": -0.8,
+      "excess": -0.01,
+      "best": 183.1,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 10669,
+      "win": 32.7,
+      "avg": -3.57,
+      "med": -2.87,
+      "excess": -0.51,
+      "best": 768.2,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 18965,
+      "win": 47.0,
+      "avg": -0.18,
+      "med": -0.06,
+      "excess": -0.03,
+      "best": 57.8,
+      "worst": -93.5
+     }
+    }
+   },
+   "sector": "Producer Manufacturing",
+   "industry": "Miscellaneous Manufacturing",
+   "segment": "프라임",
+   "close": 2965.0,
+   "chg": 5.74,
+   "gap": 0.82,
+   "sma5": 2843.0,
+   "sma20": 2801.35,
+   "sma200": 2600.58,
+   "ext200": 14.01,
+   "rsi": 73.7,
+   "macd_h": 10.1,
+   "rvol": 3.03,
+   "pw": 4.96,
+   "p1": 7.23,
+   "p3": 14.13,
+   "ytd": 13.4,
+   "pos52": 95.0,
+   "hi52": 3000.0,
+   "lo52": 2243.0,
+   "val": 20.5,
+   "mcap": 2295.0,
+   "per": 16.1,
+   "pbr": 1.46,
+   "eps": 184.2,
+   "roe": 9.4,
+   "eqr": 56.0,
+   "div": 2.6,
+   "rev_q": 7.0,
+   "rev_ttm": 2.6,
+   "cagr5": 5.1,
+   "eps_q": 1.0,
+   "opm": 8.9,
+   "roic": 7.2,
+   "psr": 1.0,
+   "peg": 2.0,
+   "de": 0.52,
+   "inflow": 1.49,
+   "biz": "FP Corporation manufactures and markets polystyrene and compound resin disposable food containers in Japan. It markets packaging related materials. The company serves supermarkets, groceries, and convenience stores. The ",
+   "atr": 65.23,
+   "sma50": 2804.16,
+   "bb_up": 2889.85,
+   "bb_lo": 2712.85,
+   "adx": 16.2,
+   "stk": 52.3,
+   "std": 46.2,
+   "ich_base": 2852.5,
+   "ich_conv": 2860.5,
+   "ich_a": 2792.75,
+   "ich_b": 2692.5,
+   "piv_s1": 2706.33,
+   "piv_r1": 2885.33,
+   "tv_rec": 0.56,
+   "mtf": [
+    4077.0,
+    4075.0,
+    4074.0,
+    4069.0,
+    3756.0
+   ],
+   "rs": 86.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [
+    {
+     "pub": "2026-10-30 15:00",
+     "title": "2027年３月期 第２四半期（中間期）決算短信〔日本基準〕（連結）",
+     "url": "https://www.release.tdnet.info/inbs/140120261029559781.pdf",
+     "bits": 64,
+     "strong": false
+    },
+    {
+     "pub": "2026-10-30 15:00",
+     "title": "連結業績予想の公表及び剰余金の配当（中間配当・増配）に関するお知らせ",
+     "url": "https://www.release.tdnet.info/inbs/140120261030560369.pdf",
+     "bits": 132,
+     "strong": true
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "4410",
+   "name": "ハリマ化成グループ",
+   "ticker": "TSE:4410",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_high",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 2730,
+      "win": 35.8,
+      "avg": -0.98,
+      "med": -1.56,
+      "excess": -0.17,
+      "best": 131.9,
+      "worst": -89.4
+     },
+     "20": {
+      "n": 1685,
+      "win": 32.7,
+      "avg": -2.7,
+      "med": -3.37,
+      "excess": 0.45,
+      "best": 768.2,
+      "worst": -91.7
+     },
+     "1": {
+      "n": 3692,
+      "win": 47.0,
+      "avg": 0.19,
+      "med": 0.0,
+      "excess": 0.42,
+      "best": 1054.6,
+      "worst": -75.4
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 13102,
+      "win": 43.0,
+      "avg": -0.75,
+      "med": -0.57,
+      "excess": 0.03,
+      "best": 146.2,
+      "worst": -89.9
+     },
+     "20": {
+      "n": 8311,
+      "win": 34.7,
+      "avg": -3.43,
+      "med": -2.77,
+      "excess": -0.6,
+      "best": 768.2,
+      "worst": -93.2
+     },
+     "1": {
+      "n": 14374,
+      "win": 44.0,
+      "avg": -0.14,
+      "med": -0.17,
+      "excess": 0.01,
+      "best": 1054.6,
+      "worst": -68.3
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 5023,
+      "win": 42.5,
+      "avg": -0.83,
+      "med": -0.68,
+      "excess": 0.01,
+      "best": 146.2,
+      "worst": -89.4
+     },
+     "20": {
+      "n": 3397,
+      "win": 33.8,
+      "avg": -3.29,
+      "med": -2.73,
+      "excess": -0.33,
+      "best": 211.1,
+      "worst": -93.0
+     },
+     "1": {
+      "n": 5473,
+      "win": 43.9,
+      "avg": -0.14,
+      "med": -0.18,
+      "excess": -0.04,
+      "best": 129.6,
+      "worst": -26.5
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 3724,
+      "win": 38.3,
+      "avg": -1.44,
+      "med": -0.88,
+      "excess": -0.31,
+      "best": 99.2,
+      "worst": -90.1
+     },
+     "20": {
+      "n": 2520,
+      "win": 32.0,
+      "avg": -5.03,
+      "med": -2.64,
+      "excess": -1.84,
+      "best": 50.1,
+      "worst": -92.1
+     },
+     "1": {
+      "n": 3918,
+      "win": 40.8,
+      "avg": -0.41,
+      "med": -0.19,
+      "excess": -0.08,
+      "best": 33.1,
+      "worst": -90.5
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 25951,
+      "win": 43.8,
+      "avg": -0.76,
+      "med": -0.53,
+      "excess": 0.02,
+      "best": 1220.6,
+      "worst": -90.1
+     },
+     "20": {
+      "n": 15440,
+      "win": 40.1,
+      "avg": -2.47,
+      "med": -1.78,
+      "excess": 0.56,
+      "best": 768.2,
+      "worst": -92.1
+     },
+     "1": {
+      "n": 28881,
+      "win": 48.2,
+      "avg": -0.14,
+      "med": 0.0,
+      "excess": 0.03,
+      "best": 1054.6,
+      "worst": -90.5
+     }
+    }
+   },
+   "sector": "Process Industries",
+   "industry": "Chemicals: Specialty",
+   "segment": "프라임",
+   "close": 1355.0,
+   "chg": 28.44,
+   "gap": 2.27,
+   "sma5": 1111.6,
+   "sma20": 1099.65,
+   "sma200": 1030.57,
+   "ext200": 31.48,
+   "rsi": 76.8,
+   "macd_h": 16.39,
+   "rvol": 22.08,
+   "pw": 30.54,
+   "p1": 21.42,
+   "p3": 34.56,
+   "ytd": 46.3,
+   "pos52": 100.0,
+   "hi52": 1355.0,
+   "lo52": 840.0,
+   "val": 22.3,
+   "mcap": 265.0,
+   "per": 11.2,
+   "pbr": 0.79,
+   "eps": 121.27,
+   "roe": 7.6,
+   "eqr": 44.1,
+   "div": 3.95,
+   "rev_q": 11.5,
+   "rev_ttm": 3.7,
+   "cagr5": 10.5,
+   "eps_q": 153.0,
+   "opm": 3.6,
+   "roic": 5.4,
+   "psr": 0.32,
+   "peg": 0.03,
+   "de": 0.94,
+   "inflow": 1.15,
+   "biz": "Harima Chemicals Group, Inc. primarily manufactures and sells various chemicals in Japan, China, rest of Asia, South and North America, Europe, and internationally. The company operates through Resins and Chemicals, Pape",
+   "atr": 48.34,
+   "sma50": 1115.4,
+   "bb_up": 1235.53,
+   "bb_lo": 963.77,
+   "adx": 22.3,
+   "stk": 64.5,
+   "std": 47.0,
+   "ich_base": 1181.0,
+   "ich_conv": 1181.0,
+   "ich_a": 1110.5,
+   "ich_b": 1080.0,
+   "piv_s1": 1071.67,
+   "piv_r1": 1189.67,
+   "tv_rec": 0.65,
+   "mtf": [
+    4092.0,
+    4084.0,
+    4077.0,
+    4068.0,
+    4075.0
+   ],
+   "rs": 95.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [
+    {
+     "pub": "2026-10-30 13:00",
+     "title": "2027年3月期第2四半期（中間期）決算短信〔日本基準〕(連結)",
+     "url": "https://www.release.tdnet.info/inbs/140120261023555091.pdf",
+     "bits": 64,
+     "strong": false
+    },
+    {
+     "pub": "2026-10-30 13:00",
+     "title": "2027年3月期第2四半期（中間期）決算補足説明資料",
+     "url": "https://www.release.tdnet.info/inbs/140120261029559374.pdf",
+     "bits": 0,
+     "strong": false
+    },
+    {
+     "pub": "2026-10-30 13:00",
+     "title": "第2四半期(中間期)連結業績予想と実績との差異、通期連結業績予想の修正、剰余金の配当(中間)および配当予想(期末)の修正(増配)に関するお知らせ",
+     "url": "https://www.release.tdnet.info/inbs/140120261029559376.pdf",
+     "bits": 388,
+     "strong": true
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "7867",
+   "name": "タカラトミー",
+   "ticker": "TSE:7867",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_high",
+    "sig_gap",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 2730,
+      "win": 35.8,
+      "avg": -0.98,
+      "med": -1.56,
+      "excess": -0.17,
+      "best": 131.9,
+      "worst": -89.4
+     },
+     "20": {
+      "n": 1685,
+      "win": 32.7,
+      "avg": -2.7,
+      "med": -3.37,
+      "excess": 0.45,
+      "best": 768.2,
+      "worst": -91.7
+     },
+     "1": {
+      "n": 3692,
+      "win": 47.0,
+      "avg": 0.19,
+      "med": 0.0,
+      "excess": 0.42,
+      "best": 1054.6,
+      "worst": -75.4
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 13102,
+      "win": 43.0,
+      "avg": -0.75,
+      "med": -0.57,
+      "excess": 0.03,
+      "best": 146.2,
+      "worst": -89.9
+     },
+     "20": {
+      "n": 8311,
+      "win": 34.7,
+      "avg": -3.43,
+      "med": -2.77,
+      "excess": -0.6,
+      "best": 768.2,
+      "worst": -93.2
+     },
+     "1": {
+      "n": 14374,
+      "win": 44.0,
+      "avg": -0.14,
+      "med": -0.17,
+      "excess": 0.01,
+      "best": 1054.6,
+      "worst": -68.3
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 3724,
+      "win": 38.3,
+      "avg": -1.44,
+      "med": -0.88,
+      "excess": -0.31,
+      "best": 99.2,
+      "worst": -90.1
+     },
+     "20": {
+      "n": 2520,
+      "win": 32.0,
+      "avg": -5.03,
+      "med": -2.64,
+      "excess": -1.84,
+      "best": 50.1,
+      "worst": -92.1
+     },
+     "1": {
+      "n": 3918,
+      "win": 40.8,
+      "avg": -0.41,
+      "med": -0.19,
+      "excess": -0.08,
+      "best": 33.1,
+      "worst": -90.5
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 1399,
+      "win": 38.0,
+      "avg": -1.07,
+      "med": -1.96,
+      "excess": -0.28,
+      "best": 131.9,
+      "worst": -65.0
+     },
+     "20": {
+      "n": 775,
+      "win": 31.6,
+      "avg": -6.19,
+      "med": -5.85,
+      "excess": -3.23,
+      "best": 108.3,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 1722,
+      "win": 44.8,
+      "avg": 0.05,
+      "med": -0.25,
+      "excess": 0.17,
+      "best": 45.6,
+      "worst": -52.4
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 25951,
+      "win": 43.8,
+      "avg": -0.76,
+      "med": -0.53,
+      "excess": 0.02,
+      "best": 1220.6,
+      "worst": -90.1
+     },
+     "20": {
+      "n": 15440,
+      "win": 40.1,
+      "avg": -2.47,
+      "med": -1.78,
+      "excess": 0.56,
+      "best": 768.2,
+      "worst": -92.1
+     },
+     "1": {
+      "n": 28881,
+      "win": 48.2,
+      "avg": -0.14,
+      "med": 0.0,
+      "excess": 0.03,
+      "best": 1054.6,
+      "worst": -90.5
+     }
+    }
+   },
+   "sector": "Consumer Durables",
+   "industry": "Recreational Products",
+   "segment": "프라임",
+   "close": 4922.0,
+   "chg": 11.66,
+   "gap": 4.47,
+   "sma5": 4614.2,
+   "sma20": 4448.3,
+   "sma200": 3231.81,
+   "ext200": 52.3,
+   "rsi": 73.0,
+   "macd_h": -1.48,
+   "rvol": 3.5,
+   "pw": 3.84,
+   "p1": 18.46,
+   "p3": 38.41,
+   "ytd": 78.0,
+   "pos52": 99.0,
+   "hi52": 4935.0,
+   "lo52": 2496.0,
+   "val": 131.4,
+   "mcap": 3952.0,
+   "per": 35.2,
+   "pbr": 3.89,
+   "eps": 140.08,
+   "roe": 11.7,
+   "eqr": 67.5,
+   "div": 1.52,
+   "rev_q": 7.7,
+   "rev_ttm": 7.4,
+   "cagr5": 13.9,
+   "eps_q": 23.0,
+   "opm": 9.1,
+   "roic": 11.4,
+   "psr": 1.62,
+   "peg": null,
+   "de": 0.05,
+   "inflow": 1.57,
+   "biz": "【特色】玩具大手。０６年タカラ吸収合併。「トミカ」等定番品多い。海外中心にネット通販を強化中 連結事業 【連結事業】玩具他・日本78(13)、同・アメリカズ11(2)、同・欧州3(-4)、同・オセアニア1(6)、同・アジア7(3)",
+   "atr": 160.26,
+   "sma50": 4054.04,
+   "bb_up": 4858.2,
+   "bb_lo": 4038.4,
+   "adx": 49.9,
+   "stk": 58.6,
+   "std": 60.5,
+   "ich_base": 4477.5,
+   "ich_conv": 4639.5,
+   "ich_a": 3780.5,
+   "ich_b": 3667.5,
+   "piv_s1": 3723.0,
+   "piv_r1": 4524.0,
+   "tv_rec": 0.47,
+   "mtf": [
+    4072.0,
+    4072.0,
+    4973.0,
+    4086.0,
+    4074.0
+   ],
+   "rs": 97.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [
+    {
+     "pub": "2026-10-29 15:30",
+     "title": "連結業績予想の修正に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120261029559277.pdf",
+     "bits": 128,
+     "strong": false
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "6445",
+   "name": "ジャノメ",
+   "ticker": "TSE:6445",
+   "bucket": "short",
+   "score": 8.0,
+   "signals": [
+    "sig_spike",
+    "sig_x5",
+    "sig_x20",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_trend",
+    "sig_div",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 2730,
+      "win": 35.8,
+      "avg": -0.98,
+      "med": -1.56,
+      "excess": -0.17,
+      "best": 131.9,
+      "worst": -89.4
+     },
+     "20": {
+      "n": 1685,
+      "win": 32.7,
+      "avg": -2.7,
+      "med": -3.37,
+      "excess": 0.45,
+      "best": 768.2,
+      "worst": -91.7
+     },
+     "1": {
+      "n": 3692,
+      "win": 47.0,
+      "avg": 0.19,
+      "med": 0.0,
+      "excess": 0.42,
+      "best": 1054.6,
+      "worst": -75.4
+     }
+    },
+    "sig_x5": {
+     "5": {
+      "n": 13102,
+      "win": 43.0,
+      "avg": -0.75,
+      "med": -0.57,
+      "excess": 0.03,
+      "best": 146.2,
+      "worst": -89.9
+     },
+     "20": {
+      "n": 8311,
+      "win": 34.7,
+      "avg": -3.43,
+      "med": -2.77,
+      "excess": -0.6,
+      "best": 768.2,
+      "worst": -93.2
+     },
+     "1": {
+      "n": 14374,
+      "win": 44.0,
+      "avg": -0.14,
+      "med": -0.17,
+      "excess": 0.01,
+      "best": 1054.6,
+      "worst": -68.3
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 5023,
+      "win": 42.5,
+      "avg": -0.83,
+      "med": -0.68,
+      "excess": 0.01,
+      "best": 146.2,
+      "worst": -89.4
+     },
+     "20": {
+      "n": 3397,
+      "win": 33.8,
+      "avg": -3.29,
+      "med": -2.73,
+      "excess": -0.33,
+      "best": 211.1,
+      "worst": -93.0
+     },
+     "1": {
+      "n": 5473,
+      "win": 43.9,
+      "avg": -0.14,
+      "med": -0.18,
+      "excess": -0.04,
+      "best": 129.6,
+      "worst": -26.5
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 4504,
+      "win": 45.0,
+      "avg": -0.44,
+      "med": -0.39,
+      "excess": 0.19,
+      "best": 88.9,
+      "worst": -75.7
+     },
+     "20": {
+      "n": 2883,
+      "win": 39.1,
+      "avg": -0.97,
+      "med": -1.66,
+      "excess": 1.59,
+      "best": 70.3,
+      "worst": -81.4
+     },
+     "1": {
+      "n": 4976,
+      "win": 47.1,
+      "avg": -0.13,
+      "med": -0.03,
+      "excess": 0.01,
+      "best": 24.5,
+      "worst": -75.6
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 6125,
+      "win": 46.2,
+      "avg": -0.35,
+      "med": -0.24,
+      "excess": 0.27,
+      "best": 131.9,
+      "worst": -79.5
+     },
+     "20": {
+      "n": 3928,
+      "win": 38.7,
+      "avg": -1.35,
+      "med": -1.79,
+      "excess": 1.29,
+      "best": 211.1,
+      "worst": -83.6
+     },
+     "1": {
+      "n": 6764,
+      "win": 47.5,
+      "avg": -0.16,
+      "med": 0.0,
+      "excess": -0.03,
+      "best": 49.5,
+      "worst": -80.6
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 6731,
+      "win": 41.5,
+      "avg": -0.55,
+      "med": -0.72,
+      "excess": 0.51,
+      "best": 97.4,
+      "worst": -93.4
+     },
+     "20": {
+      "n": 4153,
+      "win": 29.5,
+      "avg": -3.03,
+      "med": -3.01,
+      "excess": 0.05,
+      "best": 768.2,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 7233,
+      "win": 44.2,
+      "avg": -0.21,
+      "med": -0.18,
+      "excess": 0.07,
+      "best": 24.5,
+      "worst": -79.6
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 10095,
+      "win": 39.2,
+      "avg": -0.6,
+      "med": -0.61,
+      "excess": 0.08,
+      "best": 43.9,
+      "worst": -69.5
+     },
+     "20": {
+      "n": 5553,
+      "win": 21.0,
+      "avg": -3.14,
+      "med": -3.75,
+      "excess": -0.38,
+      "best": 52.6,
+      "worst": -67.9
+     },
+     "1": {
+      "n": 11422,
+      "win": 45.2,
+      "avg": -0.09,
+      "med": -0.08,
+      "excess": -0.01,
+      "best": 37.2,
+      "worst": -18.5
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 13352,
+      "win": 44.0,
+      "avg": -0.73,
+      "med": -0.49,
+      "excess": 0.04,
+      "best": 88.9,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 7882,
+      "win": 40.5,
+      "avg": -2.49,
+      "med": -1.66,
+      "excess": 0.51,
+      "best": 70.3,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 14933,
+      "win": 48.0,
+      "avg": -0.15,
+      "med": 0.0,
+      "excess": 0.01,
+      "best": 26.1,
+      "worst": -93.5
+     }
+    }
+   },
+   "sector": "Consumer Durables",
+   "industry": "Electronics/Appliances",
+   "segment": "프라임",
+   "close": 1506.0,
+   "chg": 18.4,
+   "gap": 0.79,
+   "sma5": 1328.8,
+   "sma20": 1327.15,
+   "sma200": 1306.06,
+   "ext200": 15.31,
+   "rsi": 72.0,
+   "macd_h": 9.82,
+   "rvol": 6.26,
+   "pw": 14.26,
+   "p1": 9.37,
+   "p3": 14.0,
+   "ytd": 29.5,
+   "pos52": 93.0,
+   "hi52": 1540.0,
+   "lo52": 1078.0,
+   "val": 6.0,
+   "mcap": 214.0,
+   "per": 16.0,
+   "pbr": 0.72,
+   "eps": 94.41,
+   "roe": 4.7,
+   "eqr": 71.1,
+   "div": 4.32,
+   "rev_q": 31.0,
+   "rev_ttm": 16.3,
+   "cagr5": -2.3,
+   "eps_q": null,
+   "opm": 6.3,
+   "roic": 4.6,
+   "psr": 0.68,
+   "peg": 0.14,
+   "de": 0.08,
+   "inflow": 1.99,
+   "biz": "JANOME Corporation, together with its subsidiaries, manufactures and sells sewing machines in Japan, Asia, North America, Europe, and internationally. It operates through four segments: Household Appliances, Industrial E",
+   "atr": 47.28,
+   "sma50": 1363.88,
+   "bb_up": 1419.69,
+   "bb_lo": 1234.61,
+   "adx": 16.6,
+   "stk": 35.1,
+   "std": 18.4,
+   "ich_base": 1396.5,
+   "ich_conv": 1396.5,
+   "ich_a": 1363.25,
+   "ich_b": 1367.0,
+   "piv_s1": 1309.0,
+   "piv_r1": 1433.0,
+   "tv_rec": 0.56,
+   "mtf": [
+    4087.0,
+    4077.0,
+    4072.0,
+    4063.0,
+    4067.0
+   ],
+   "rs": 89.0,
+   "who": [
+    [
+     "UBS",
+     0.87,
+     0.17
+    ],
+    [
+     "UBS",
+     0.7,
+     0.05
+    ]
+   ],
+   "s_pct": 1.57,
+   "gy": null,
+   "tdnet": [
+    {
+     "pub": "2026-10-30 13:00",
+     "title": "配当予想の修正（増配）に関するお知らせ",
+     "url": "https://www.release.tdnet.info/inbs/140120261029558781.pdf",
+     "bits": 260,
+     "strong": true
+    },
+    {
+     "pub": "2026-10-30 13:00",
+     "title": "自己株式取得に係る事項の決定に関するお知らせ",
+     "url": "https://www.release.tdnet.info/inbs/140120261029558792.pdf",
+     "bits": 16,
+     "strong": true
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "2053",
+   "name": "中部飼料",
+   "ticker": "TSE:2053",
+   "bucket": "short",
+   "score": 7.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_high",
+    "sig_trend",
+    "sig_macd",
+    "sig_value",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 13102,
+      "win": 43.0,
+      "avg": -0.75,
+      "med": -0.57,
+      "excess": 0.03,
+      "best": 146.2,
+      "worst": -89.9
+     },
+     "20": {
+      "n": 8311,
+      "win": 34.7,
+      "avg": -3.43,
+      "med": -2.77,
+      "excess": -0.6,
+      "best": 768.2,
+      "worst": -93.2
+     },
+     "1": {
+      "n": 14374,
+      "win": 44.0,
+      "avg": -0.14,
+      "med": -0.17,
+      "excess": 0.01,
+      "best": 1054.6,
+      "worst": -68.3
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 5023,
+      "win": 42.5,
+      "avg": -0.83,
+      "med": -0.68,
+      "excess": 0.01,
+      "best": 146.2,
+      "worst": -89.4
+     },
+     "20": {
+      "n": 3397,
+      "win": 33.8,
+      "avg": -3.29,
+      "med": -2.73,
+      "excess": -0.33,
+      "best": 211.1,
+      "worst": -93.0
+     },
+     "1": {
+      "n": 5473,
+      "win": 43.9,
+      "avg": -0.14,
+      "med": -0.18,
+      "excess": -0.04,
+      "best": 129.6,
+      "worst": -26.5
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 3724,
+      "win": 38.3,
+      "avg": -1.44,
+      "med": -0.88,
+      "excess": -0.31,
+      "best": 99.2,
+      "worst": -90.1
+     },
+     "20": {
+      "n": 2520,
+      "win": 32.0,
+      "avg": -5.03,
+      "med": -2.64,
+      "excess": -1.84,
+      "best": 50.1,
+      "worst": -92.1
+     },
+     "1": {
+      "n": 3918,
+      "win": 40.8,
+      "avg": -0.41,
+      "med": -0.19,
+      "excess": -0.08,
+      "best": 33.1,
+      "worst": -90.5
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 6731,
+      "win": 41.5,
+      "avg": -0.55,
+      "med": -0.72,
+      "excess": 0.51,
+      "best": 97.4,
+      "worst": -93.4
+     },
+     "20": {
+      "n": 4153,
+      "win": 29.5,
+      "avg": -3.03,
+      "med": -3.01,
+      "excess": 0.05,
+      "best": 768.2,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 7233,
+      "win": 44.2,
+      "avg": -0.21,
+      "med": -0.18,
+      "excess": 0.07,
+      "best": 24.5,
+      "worst": -79.6
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 16842,
+      "win": 39.8,
+      "avg": -1.03,
+      "med": -0.8,
+      "excess": -0.01,
+      "best": 183.1,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 10669,
+      "win": 32.7,
+      "avg": -3.57,
+      "med": -2.87,
+      "excess": -0.51,
+      "best": 768.2,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 18965,
+      "win": 47.0,
+      "avg": -0.18,
+      "med": -0.06,
+      "excess": -0.03,
+      "best": 57.8,
+      "worst": -93.5
+     }
+    },
+    "sig_value": {
+     "5": {
+      "n": 5011,
+      "win": 44.2,
+      "avg": -0.58,
+      "med": -0.42,
+      "excess": 0.04,
+      "best": 36.7,
+      "worst": -68.2
+     },
+     "20": {
+      "n": 2858,
+      "win": 28.0,
+      "avg": -3.86,
+      "med": -3.11,
+      "excess": -1.18,
+      "best": 38.1,
+      "worst": -68.7
+     },
+     "1": {
+      "n": 5674,
+      "win": 49.9,
+      "avg": -0.03,
+      "med": 0.0,
+      "excess": 0.02,
+      "best": 28.4,
+      "worst": -68.0
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 25951,
+      "win": 43.8,
+      "avg": -0.76,
+      "med": -0.53,
+      "excess": 0.02,
+      "best": 1220.6,
+      "worst": -90.1
+     },
+     "20": {
+      "n": 15440,
+      "win": 40.1,
+      "avg": -2.47,
+      "med": -1.78,
+      "excess": 0.56,
+      "best": 768.2,
+      "worst": -92.1
+     },
+     "1": {
+      "n": 28881,
+      "win": 48.2,
+      "avg": -0.14,
+      "med": 0.0,
+      "excess": 0.03,
+      "best": 1054.6,
+      "worst": -90.5
+     }
+    }
+   },
+   "sector": "Process Industries",
+   "industry": "Agricultural Commodities/Milling",
+   "segment": "프라임",
+   "close": 2132.0,
+   "chg": 8.89,
+   "gap": 1.79,
+   "sma5": 2024.6,
+   "sma20": 1986.3,
+   "sma200": 1867.37,
+   "ext200": 14.17,
+   "rsi": 66.1,
+   "macd_h": 7.72,
+   "rvol": 1.9,
+   "pw": 3.95,
+   "p1": 7.84,
+   "p3": 9.56,
+   "ytd": 23.1,
+   "pos52": 97.0,
+   "hi52": 2152.0,
+   "lo52": 1579.0,
+   "val": 4.2,
+   "mcap": 588.0,
+   "per": 7.7,
+   "pbr": 0.82,
+   "eps": 277.06,
+   "roe": 11.2,
+   "eqr": 67.1,
+   "div": 3.71,
+   "rev_q": 7.7,
+   "rev_ttm": 2.8,
+   "cagr5": 3.2,
+   "eps_q": 248.2,
+   "opm": 3.1,
+   "roic": 10.4,
+   "psr": 0.29,
+   "peg": 0.06,
+   "de": 0.1,
+   "inflow": 1.47,
+   "biz": "【特色】飼料大手。畜産手がけるが直系農場ない。需要家直結の差別化品注力。畜水産物の企画・販売も 連結事業 【連結事業】飼料90(3)、他10(6)(2026.3)",
+   "atr": 51.32,
+   "sma50": 2007.66,
+   "bb_up": 2097.87,
+   "bb_lo": 1874.73,
+   "adx": 18.4,
+   "stk": 57.1,
+   "std": 60.9,
+   "ich_base": 2015.0,
+   "ich_conv": 2051.5,
+   "ich_a": 2030.0,
+   "ich_b": 1978.0,
+   "piv_s1": 1906.33,
+   "piv_r1": 2059.33,
+   "tv_rec": 0.6,
+   "mtf": [
+    4075.0,
+    4070.0,
+    4066.0,
+    4066.0,
+    4068.0
+   ],
+   "rs": 85.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [
+    {
+     "pub": "2026-10-30 14:00",
+     "title": "2027年３月期 第２四半期（中間期）決算短信〔日本基準〕（連結）",
+     "url": "https://www.release.tdnet.info/inbs/140120261029559617.pdf",
+     "bits": 64,
+     "strong": false
+    },
+    {
+     "pub": "2026-10-30 14:00",
+     "title": "2027年３月期上期 決算説明資料",
+     "url": "https://www.release.tdnet.info/inbs/140120261029559630.pdf",
+     "bits": 64,
+     "strong": false
+    },
+    {
+     "pub": "2026-10-30 14:00",
+     "title": "自己株式の取得及び自己株式立会外買付取引（ToSTNeT-3）による自己株式の買付けに関するお知らせ",
+     "url": "https://www.release.tdnet.info/inbs/140120261029559636.pdf",
+     "bits": 16,
+     "strong": true
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "4347",
+   "name": "ブロードメディア",
+   "ticker": "TSE:4347",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_high",
+    "sig_gap",
+    "sig_qual",
+    "sig_inflow"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 2730,
+      "win": 35.8,
+      "avg": -0.98,
+      "med": -1.56,
+      "excess": -0.17,
+      "best": 131.9,
+      "worst": -89.4
+     },
+     "20": {
+      "n": 1685,
+      "win": 32.7,
+      "avg": -2.7,
+      "med": -3.37,
+      "excess": 0.45,
+      "best": 768.2,
+      "worst": -91.7
+     },
+     "1": {
+      "n": 3692,
+      "win": 47.0,
+      "avg": 0.19,
+      "med": 0.0,
+      "excess": 0.42,
+      "best": 1054.6,
+      "worst": -75.4
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 3724,
+      "win": 38.3,
+      "avg": -1.44,
+      "med": -0.88,
+      "excess": -0.31,
+      "best": 99.2,
+      "worst": -90.1
+     },
+     "20": {
+      "n": 2520,
+      "win": 32.0,
+      "avg": -5.03,
+      "med": -2.64,
+      "excess": -1.84,
+      "best": 50.1,
+      "worst": -92.1
+     },
+     "1": {
+      "n": 3918,
+      "win": 40.8,
+      "avg": -0.41,
+      "med": -0.19,
+      "excess": -0.08,
+      "best": 33.1,
+      "worst": -90.5
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 1399,
+      "win": 38.0,
+      "avg": -1.07,
+      "med": -1.96,
+      "excess": -0.28,
+      "best": 131.9,
+      "worst": -65.0
+     },
+     "20": {
+      "n": 775,
+      "win": 31.6,
+      "avg": -6.19,
+      "med": -5.85,
+      "excess": -3.23,
+      "best": 108.3,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 1722,
+      "win": 44.8,
+      "avg": 0.05,
+      "med": -0.25,
+      "excess": 0.17,
+      "best": 45.6,
+      "worst": -52.4
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 10010,
+      "win": 46.8,
+      "avg": -0.39,
+      "med": -0.23,
+      "excess": 0.3,
+      "best": 131.9,
+      "worst": -89.9
+     },
+     "20": {
+      "n": 6138,
+      "win": 49.7,
+      "avg": -0.52,
+      "med": 0.0,
+      "excess": 2.23,
+      "best": 136.2,
+      "worst": -92.1
+     },
+     "1": {
+      "n": 11095,
+      "win": 48.1,
+      "avg": -0.06,
+      "med": 0.0,
+      "excess": 0.03,
+      "best": 26.3,
+      "worst": -90.2
+     }
+    },
+    "sig_inflow": {
+     "5": {
+      "n": 3608,
+      "win": 40.4,
+      "avg": -1.1,
+      "med": -0.96,
+      "excess": -0.44,
+      "best": 240.8,
+      "worst": -44.6
+     },
+     "20": {
+      "n": 663,
+      "win": 37.4,
+      "avg": -3.81,
+      "med": -2.74,
+      "excess": -0.53,
+      "best": 30.5,
+      "worst": -66.2
+     },
+     "1": {
+      "n": 4226,
+      "win": 43.7,
+      "avg": -0.25,
+      "med": -0.18,
+      "excess": -0.16,
+      "best": 49.5,
+      "worst": -29.4
+     }
+    }
+   },
+   "sector": "Consumer Services",
+   "industry": "Movies/Entertainment",
+   "segment": "스탠다드",
+   "close": 2489.0,
+   "chg": 23.4,
+   "gap": 23.45,
+   "sma5": 2085.2,
+   "sma20": 1931.6,
+   "sma200": 1939.73,
+   "ext200": 28.32,
+   "rsi": 80.5,
+   "macd_h": 38.37,
+   "rvol": 117.89,
+   "pw": 27.31,
+   "p1": 31.0,
+   "p3": 46.33,
+   "ytd": 19.0,
+   "pos52": 99.0,
+   "hi52": 2494.0,
+   "lo52": 1550.0,
+   "val": 43.8,
+   "mcap": 145.0,
+   "per": 20.6,
+   "pbr": 3.66,
+   "eps": 120.84,
+   "roe": 18.6,
+   "eqr": 54.0,
+   "div": 3.04,
+   "rev_q": -10.8,
+   "rev_ttm": 0.7,
+   "cagr5": 7.5,
+   "eps_q": 59.3,
+   "opm": 7.0,
+   "roic": 17.4,
+   "psr": 1.12,
+   "peg": 0.13,
+   "de": 0.16,
+   "inflow": 1.69,
+   "biz": "Broadmedia Corporation engages in information technology and content distribution business in Japan. It operates through Media Content, Studio Production, Broadcasting, Technology, Education, and Others segments. The Med",
+   "atr": 93.98,
+   "sma50": 1820.06,
+   "bb_up": 2210.94,
+   "bb_lo": 1652.26,
+   "adx": 35.6,
+   "stk": 91.4,
+   "std": 85.5,
+   "ich_base": 2135.0,
+   "ich_conv": 2175.5,
+   "ich_a": 1775.25,
+   "ich_b": 1769.5,
+   "piv_s1": 1711.33,
+   "piv_r1": 2005.33,
+   "tv_rec": 0.69,
+   "mtf": [
+    4090.0,
+    4082.0,
+    4081.0,
+    4074.0,
+    4066.0
+   ],
+   "rs": 95.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [
+    {
+     "pub": "2026-10-29 15:30",
+     "title": "株式会社NSSK-EPSILON1による当社株券に対する公開買付けに関する意見表明（賛同）及び応募推奨のお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120261015551857.pdf",
+     "bits": 1024,
+     "strong": true
+    },
+    {
+     "pub": "2026-10-29 15:30",
+     "title": "株式会社NSSK-EPSILON1によるブロードメディア株式会社（証券コード：4347）の株券に対する公開買付けの開始に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120261015551858.pdf",
+     "bits": 1024,
+     "strong": true
+    },
+    {
+     "pub": "2026-10-29 15:30",
+     "title": "2027年3月期の期末配当予想の修正（無配）に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120261027557148.pdf",
+     "bits": 264,
+     "strong": false
+    },
+    {
+     "pub": "2026-10-29 15:30",
+     "title": "2027年3月期 第2四半期（中間期）決算短信〔日本基準〕（連結）",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120261015551854.pdf",
+     "bits": 64,
+     "strong": false
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "6574",
+   "name": "コンヴァノ",
+   "ticker": "TSE:6574",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_x20",
+    "sig_gap",
+    "sig_growth",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 2730,
+      "win": 35.8,
+      "avg": -0.98,
+      "med": -1.56,
+      "excess": -0.17,
+      "best": 131.9,
+      "worst": -89.4
+     },
+     "20": {
+      "n": 1685,
+      "win": 32.7,
+      "avg": -2.7,
+      "med": -3.37,
+      "excess": 0.45,
+      "best": 768.2,
+      "worst": -91.7
+     },
+     "1": {
+      "n": 3692,
+      "win": 47.0,
+      "avg": 0.19,
+      "med": 0.0,
+      "excess": 0.42,
+      "best": 1054.6,
+      "worst": -75.4
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 5023,
+      "win": 42.5,
+      "avg": -0.83,
+      "med": -0.68,
+      "excess": 0.01,
+      "best": 146.2,
+      "worst": -89.4
+     },
+     "20": {
+      "n": 3397,
+      "win": 33.8,
+      "avg": -3.29,
+      "med": -2.73,
+      "excess": -0.33,
+      "best": 211.1,
+      "worst": -93.0
+     },
+     "1": {
+      "n": 5473,
+      "win": 43.9,
+      "avg": -0.14,
+      "med": -0.18,
+      "excess": -0.04,
+      "best": 129.6,
+      "worst": -26.5
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 1399,
+      "win": 38.0,
+      "avg": -1.07,
+      "med": -1.96,
+      "excess": -0.28,
+      "best": 131.9,
+      "worst": -65.0
+     },
+     "20": {
+      "n": 775,
+      "win": 31.6,
+      "avg": -6.19,
+      "med": -5.85,
+      "excess": -3.23,
+      "best": 108.3,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 1722,
+      "win": 44.8,
+      "avg": 0.05,
+      "med": -0.25,
+      "excess": 0.17,
+      "best": 45.6,
+      "worst": -52.4
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 7949,
+      "win": 43.9,
+      "avg": -0.81,
+      "med": -0.65,
+      "excess": -0.04,
+      "best": 1220.6,
+      "worst": -80.3
+     },
+     "20": {
+      "n": 4707,
+      "win": 42.7,
+      "avg": -2.35,
+      "med": -1.85,
+      "excess": 0.66,
+      "best": 768.2,
+      "worst": -85.1
+     },
+     "1": {
+      "n": 8823,
+      "win": 46.7,
+      "avg": -0.1,
+      "med": -0.09,
+      "excess": 0.06,
+      "best": 1054.6,
+      "worst": -80.6
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 25951,
+      "win": 43.8,
+      "avg": -0.76,
+      "med": -0.53,
+      "excess": 0.02,
+      "best": 1220.6,
+      "worst": -90.1
+     },
+     "20": {
+      "n": 15440,
+      "win": 40.1,
+      "avg": -2.47,
+      "med": -1.78,
+      "excess": 0.56,
+      "best": 768.2,
+      "worst": -92.1
+     },
+     "1": {
+      "n": 28881,
+      "win": 48.2,
+      "avg": -0.14,
+      "med": 0.0,
+      "excess": 0.03,
+      "best": 1054.6,
+      "worst": -90.5
+     }
+    }
+   },
+   "sector": "Consumer Services",
+   "industry": "Other Consumer Services",
+   "segment": "그로스",
+   "close": 1281.0,
+   "chg": 14.37,
+   "gap": 11.61,
+   "sma5": 1046.2,
+   "sma20": 1161.55,
+   "sma200": 1099.1,
+   "ext200": 16.55,
+   "rsi": 60.8,
+   "macd_h": -1.44,
+   "rvol": 13.99,
+   "pw": 25.59,
+   "p1": 5.87,
+   "p3": 50.71,
+   "ytd": 8.6,
+   "pos52": 56.0,
+   "hi52": 1680.0,
+   "lo52": 780.0,
+   "val": 26.1,
+   "mcap": 570.0,
+   "per": 340.2,
+   "pbr": 5.26,
+   "eps": 3.91,
+   "roe": 0.3,
+   "eqr": 54.8,
+   "div": 1.03,
+   "rev_q": 554.5,
+   "rev_ttm": 494.2,
+   "cagr5": 57.2,
+   "eps_q": 8914.4,
+   "opm": 35.6,
+   "roic": 0.2,
+   "psr": 3.9,
+   "peg": 168.28,
+   "de": 0.2,
+   "inflow": 1.68,
+   "biz": "【特色】ネイルサロンを展開。投資・Ｍ＆Ａ仲介や美容クリニック向け製剤販売・集客コンサルも 連結事業 【連結事業】ネイル21(3)、コンサルティング54(34)、ヘルスケア15(66)、インベストメント＆アドバイザリー10(-87)(2026.3)",
+   "atr": 96.11,
+   "sma50": 1171.82,
+   "bb_up": 1447.03,
+   "bb_lo": 876.07,
+   "adx": 27.2,
+   "stk": 46.7,
+   "std": 25.3,
+   "ich_base": 1144.5,
+   "ich_conv": 1144.5,
+   "ich_a": 1180.0,
+   "ich_b": 1115.0,
+   "piv_s1": 1116.67,
+   "piv_r1": 1386.67,
+   "tv_rec": 0.51,
+   "mtf": [
+    4071.0,
+    4064.0,
+    4961.0,
+    3757.0,
+    4658.0
+   ],
+   "rs": 93.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "6419",
+   "name": "マースグループホールディングス",
+   "ticker": "TSE:6419",
+   "bucket": "short",
+   "score": 5.0,
+   "signals": [
+    "sig_spike",
+    "sig_high",
+    "sig_gap",
+    "sig_macd",
+    "sig_div"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 2730,
+      "win": 35.8,
+      "avg": -0.98,
+      "med": -1.56,
+      "excess": -0.17,
+      "best": 131.9,
+      "worst": -89.4
+     },
+     "20": {
+      "n": 1685,
+      "win": 32.7,
+      "avg": -2.7,
+      "med": -3.37,
+      "excess": 0.45,
+      "best": 768.2,
+      "worst": -91.7
+     },
+     "1": {
+      "n": 3692,
+      "win": 47.0,
+      "avg": 0.19,
+      "med": 0.0,
+      "excess": 0.42,
+      "best": 1054.6,
+      "worst": -75.4
+     }
+    },
+    "sig_high": {
+     "5": {
+      "n": 3724,
+      "win": 38.3,
+      "avg": -1.44,
+      "med": -0.88,
+      "excess": -0.31,
+      "best": 99.2,
+      "worst": -90.1
+     },
+     "20": {
+      "n": 2520,
+      "win": 32.0,
+      "avg": -5.03,
+      "med": -2.64,
+      "excess": -1.84,
+      "best": 50.1,
+      "worst": -92.1
+     },
+     "1": {
+      "n": 3918,
+      "win": 40.8,
+      "avg": -0.41,
+      "med": -0.19,
+      "excess": -0.08,
+      "best": 33.1,
+      "worst": -90.5
+     }
+    },
+    "sig_gap": {
+     "5": {
+      "n": 1399,
+      "win": 38.0,
+      "avg": -1.07,
+      "med": -1.96,
+      "excess": -0.28,
+      "best": 131.9,
+      "worst": -65.0
+     },
+     "20": {
+      "n": 775,
+      "win": 31.6,
+      "avg": -6.19,
+      "med": -5.85,
+      "excess": -3.23,
+      "best": 108.3,
+      "worst": -90.3
+     },
+     "1": {
+      "n": 1722,
+      "win": 44.8,
+      "avg": 0.05,
+      "med": -0.25,
+      "excess": 0.17,
+      "best": 45.6,
+      "worst": -52.4
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 16842,
+      "win": 39.8,
+      "avg": -1.03,
+      "med": -0.8,
+      "excess": -0.01,
+      "best": 183.1,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 10669,
+      "win": 32.7,
+      "avg": -3.57,
+      "med": -2.87,
+      "excess": -0.51,
+      "best": 768.2,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 18965,
+      "win": 47.0,
+      "avg": -0.18,
+      "med": -0.06,
+      "excess": -0.03,
+      "best": 57.8,
+      "worst": -93.5
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 10095,
+      "win": 39.2,
+      "avg": -0.6,
+      "med": -0.61,
+      "excess": 0.08,
+      "best": 43.9,
+      "worst": -69.5
+     },
+     "20": {
+      "n": 5553,
+      "win": 21.0,
+      "avg": -3.14,
+      "med": -3.75,
+      "excess": -0.38,
+      "best": 52.6,
+      "worst": -67.9
+     },
+     "1": {
+      "n": 11422,
+      "win": 45.2,
+      "avg": -0.09,
+      "med": -0.08,
+      "excess": -0.01,
+      "best": 37.2,
+      "worst": -18.5
+     }
+    }
+   },
+   "sector": "Consumer Services",
+   "industry": "Casinos/Gaming",
+   "segment": "프라임",
+   "close": 3285.0,
+   "chg": 10.05,
+   "gap": 7.87,
+   "sma5": 3073.2,
+   "sma20": 3075.8,
+   "sma200": 3089.53,
+   "ext200": 6.33,
+   "rsi": 65.8,
+   "macd_h": 8.64,
+   "rvol": 6.61,
+   "pw": 5.29,
+   "p1": 8.24,
+   "p3": 6.48,
+   "ytd": 2.7,
+   "pos52": 89.0,
+   "hi52": 3350.0,
+   "lo52": 2771.0,
+   "val": 15.1,
+   "mcap": 505.0,
+   "per": 10.2,
+   "pbr": 0.67,
+   "eps": 321.0,
+   "roe": 7.0,
+   "eqr": 90.9,
+   "div": 5.05,
+   "rev_q": -4.8,
+   "rev_ttm": -10.3,
+   "cagr5": 16.9,
+   "eps_q": -2.6,
+   "opm": 24.6,
+   "roic": 7.0,
+   "psr": 1.88,
+   "peg": null,
+   "de": 0.01,
+   "inflow": 1.5,
+   "biz": "【特色】パチンコ店向け機器大手。開発に強み。工場向け等の自動認識関連製品へ展開。宿泊・飲食育成 連結事業 【連結事業】アミューズメント関連73(35)、スマートソリューション関連19(12)、ホテル・レストラン関連9(3)(2026.3)",
+   "atr": 70.24,
+   "sma50": 3133.12,
+   "bb_up": 3218.81,
+   "bb_lo": 2932.79,
+   "adx": 22.8,
+   "stk": 34.7,
+   "std": 28.1,
+   "ich_base": 3151.5,
+   "ich_conv": 3151.5,
+   "ich_a": 3192.5,
+   "ich_b": 3140.0,
+   "piv_s1": 2951.67,
+   "piv_r1": 3201.67,
+   "tv_rec": 0.6,
+   "mtf": [
+    4074.0,
+    4071.0,
+    4066.0,
+    4061.0,
+    4656.0
+   ],
+   "rs": 74.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [
+    {
+     "pub": "2026-10-29 16:00",
+     "title": "2027年３月期 第２四半期（中間期）決算短信〔日本基準〕（連結）",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120261029559557.pdf",
+     "bits": 64,
+     "strong": false
+    },
+    {
+     "pub": "2026-10-29 16:00",
+     "title": "自己株式取得に係る事項の決定に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120261028558318.pdf",
+     "bits": 16,
+     "strong": true
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "2502",
+   "name": "アサヒグループホールディングス",
+   "ticker": "TSE:2502",
+   "bucket": "long",
+   "score": 8.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_trend",
+    "sig_macd",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 13102,
+      "win": 43.0,
+      "avg": -0.75,
+      "med": -0.57,
+      "excess": 0.03,
+      "best": 146.2,
+      "worst": -89.9
+     },
+     "20": {
+      "n": 8311,
+      "win": 34.7,
+      "avg": -3.43,
+      "med": -2.77,
+      "excess": -0.6,
+      "best": 768.2,
+      "worst": -93.2
+     },
+     "1": {
+      "n": 14374,
+      "win": 44.0,
+      "avg": -0.14,
+      "med": -0.17,
+      "excess": 0.01,
+      "best": 1054.6,
+      "worst": -68.3
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 5023,
+      "win": 42.5,
+      "avg": -0.83,
+      "med": -0.68,
+      "excess": 0.01,
+      "best": 146.2,
+      "worst": -89.4
+     },
+     "20": {
+      "n": 3397,
+      "win": 33.8,
+      "avg": -3.29,
+      "med": -2.73,
+      "excess": -0.33,
+      "best": 211.1,
+      "worst": -93.0
+     },
+     "1": {
+      "n": 5473,
+      "win": 43.9,
+      "avg": -0.14,
+      "med": -0.18,
+      "excess": -0.04,
+      "best": 129.6,
+      "worst": -26.5
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 4504,
+      "win": 45.0,
+      "avg": -0.44,
+      "med": -0.39,
+      "excess": 0.19,
+      "best": 88.9,
+      "worst": -75.7
+     },
+     "20": {
+      "n": 2883,
+      "win": 39.1,
+      "avg": -0.97,
+      "med": -1.66,
+      "excess": 1.59,
+      "best": 70.3,
+      "worst": -81.4
+     },
+     "1": {
+      "n": 4976,
+      "win": 47.1,
+      "avg": -0.13,
+      "med": -0.03,
+      "excess": 0.01,
+      "best": 24.5,
+      "worst": -75.6
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 6125,
+      "win": 46.2,
+      "avg": -0.35,
+      "med": -0.24,
+      "excess": 0.27,
+      "best": 131.9,
+      "worst": -79.5
+     },
+     "20": {
+      "n": 3928,
+      "win": 38.7,
+      "avg": -1.35,
+      "med": -1.79,
+      "excess": 1.29,
+      "best": 211.1,
+      "worst": -83.6
+     },
+     "1": {
+      "n": 6764,
+      "win": 47.5,
+      "avg": -0.16,
+      "med": 0.0,
+      "excess": -0.03,
+      "best": 49.5,
+      "worst": -80.6
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 6731,
+      "win": 41.5,
+      "avg": -0.55,
+      "med": -0.72,
+      "excess": 0.51,
+      "best": 97.4,
+      "worst": -93.4
+     },
+     "20": {
+      "n": 4153,
+      "win": 29.5,
+      "avg": -3.03,
+      "med": -3.01,
+      "excess": 0.05,
+      "best": 768.2,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 7233,
+      "win": 44.2,
+      "avg": -0.21,
+      "med": -0.18,
+      "excess": 0.07,
+      "best": 24.5,
+      "worst": -79.6
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 16842,
+      "win": 39.8,
+      "avg": -1.03,
+      "med": -0.8,
+      "excess": -0.01,
+      "best": 183.1,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 10669,
+      "win": 32.7,
+      "avg": -3.57,
+      "med": -2.87,
+      "excess": -0.51,
+      "best": 768.2,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 18965,
+      "win": 47.0,
+      "avg": -0.18,
+      "med": -0.06,
+      "excess": -0.03,
+      "best": 57.8,
+      "worst": -93.5
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 25951,
+      "win": 43.8,
+      "avg": -0.76,
+      "med": -0.53,
+      "excess": 0.02,
+      "best": 1220.6,
+      "worst": -90.1
+     },
+     "20": {
+      "n": 15440,
+      "win": 40.1,
+      "avg": -2.47,
+      "med": -1.78,
+      "excess": 0.56,
+      "best": 768.2,
+      "worst": -92.1
+     },
+     "1": {
+      "n": 28881,
+      "win": 48.2,
+      "avg": -0.14,
+      "med": 0.0,
+      "excess": 0.03,
+      "best": 1054.6,
+      "worst": -90.5
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 13352,
+      "win": 44.0,
+      "avg": -0.73,
+      "med": -0.49,
+      "excess": 0.04,
+      "best": 88.9,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 7882,
+      "win": 40.5,
+      "avg": -2.49,
+      "med": -1.66,
+      "excess": 0.51,
+      "best": 70.3,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 14933,
+      "win": 48.0,
+      "avg": -0.15,
+      "med": 0.0,
+      "excess": 0.01,
+      "best": 26.1,
+      "worst": -93.5
+     }
+    }
+   },
+   "sector": "Consumer Non-Durables",
+   "industry": "Beverages: Alcoholic",
+   "segment": "프라임",
+   "close": 1650.5,
+   "chg": 2.01,
+   "gap": -0.43,
+   "sma5": 1649.8,
+   "sma20": 1627.58,
+   "sma200": 1613.78,
+   "ext200": 2.28,
+   "rsi": 53.0,
+   "macd_h": 0.25,
+   "rvol": 1.07,
+   "pw": -2.94,
+   "p1": 4.33,
+   "p3": -1.11,
+   "ytd": -0.0,
+   "pos52": 52.0,
+   "hi52": 1835.5,
+   "lo52": 1452.5,
+   "val": 115.7,
+   "mcap": 24605.0,
+   "per": 15.0,
+   "pbr": 0.76,
+   "eps": 109.85,
+   "roe": 5.5,
+   "eqr": 51.9,
+   "div": 3.24,
+   "rev_q": 12.0,
+   "rev_ttm": 2.7,
+   "cagr5": 7.4,
+   "eps_q": 114.3,
+   "opm": 8.8,
+   "roic": 4.3,
+   "psr": 0.85,
+   "peg": null,
+   "de": 0.53,
+   "inflow": 1.22,
+   "biz": "【特色】ビール類で国内首位級の酒類・飲料メーカー。２５年９月、サイバー攻撃で国内事業が打撃被る 連結事業 【連結事業】日本46(10)、欧州27(8)、オセアニア24(11)、東南アジア2(3)、他1(15)",
+   "atr": 34.26,
+   "sma50": 1632.58,
+   "bb_up": 1712.57,
+   "bb_lo": 1542.58,
+   "adx": 18.6,
+   "stk": 39.4,
+   "std": 49.9,
+   "ich_base": 1634.5,
+   "ich_conv": 1661.5,
+   "ich_a": 1631.38,
+   "ich_b": 1688.25,
+   "piv_s1": 1544.33,
+   "piv_r1": 1668.33,
+   "tv_rec": 0.54,
+   "mtf": [
+    3759.0,
+    4652.0,
+    3753.0,
+    3753.0,
+    2048.0
+   ],
+   "rs": 53.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "2270",
+   "name": "雪印メグミルク",
+   "ticker": "TSE:2270",
+   "bucket": "long",
+   "score": 7.0,
+   "signals": [
+    "sig_x20",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_macd",
+    "sig_value",
+    "sig_qual",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x20": {
+     "5": {
+      "n": 5023,
+      "win": 42.5,
+      "avg": -0.83,
+      "med": -0.68,
+      "excess": 0.01,
+      "best": 146.2,
+      "worst": -89.4
+     },
+     "20": {
+      "n": 3397,
+      "win": 33.8,
+      "avg": -3.29,
+      "med": -2.73,
+      "excess": -0.33,
+      "best": 211.1,
+      "worst": -93.0
+     },
+     "1": {
+      "n": 5473,
+      "win": 43.9,
+      "avg": -0.14,
+      "med": -0.18,
+      "excess": -0.04,
+      "best": 129.6,
+      "worst": -26.5
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 4504,
+      "win": 45.0,
+      "avg": -0.44,
+      "med": -0.39,
+      "excess": 0.19,
+      "best": 88.9,
+      "worst": -75.7
+     },
+     "20": {
+      "n": 2883,
+      "win": 39.1,
+      "avg": -0.97,
+      "med": -1.66,
+      "excess": 1.59,
+      "best": 70.3,
+      "worst": -81.4
+     },
+     "1": {
+      "n": 4976,
+      "win": 47.1,
+      "avg": -0.13,
+      "med": -0.03,
+      "excess": 0.01,
+      "best": 24.5,
+      "worst": -75.6
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 6125,
+      "win": 46.2,
+      "avg": -0.35,
+      "med": -0.24,
+      "excess": 0.27,
+      "best": 131.9,
+      "worst": -79.5
+     },
+     "20": {
+      "n": 3928,
+      "win": 38.7,
+      "avg": -1.35,
+      "med": -1.79,
+      "excess": 1.29,
+      "best": 211.1,
+      "worst": -83.6
+     },
+     "1": {
+      "n": 6764,
+      "win": 47.5,
+      "avg": -0.16,
+      "med": 0.0,
+      "excess": -0.03,
+      "best": 49.5,
+      "worst": -80.6
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 16842,
+      "win": 39.8,
+      "avg": -1.03,
+      "med": -0.8,
+      "excess": -0.01,
+      "best": 183.1,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 10669,
+      "win": 32.7,
+      "avg": -3.57,
+      "med": -2.87,
+      "excess": -0.51,
+      "best": 768.2,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 18965,
+      "win": 47.0,
+      "avg": -0.18,
+      "med": -0.06,
+      "excess": -0.03,
+      "best": 57.8,
+      "worst": -93.5
+     }
+    },
+    "sig_value": {
+     "5": {
+      "n": 5011,
+      "win": 44.2,
+      "avg": -0.58,
+      "med": -0.42,
+      "excess": 0.04,
+      "best": 36.7,
+      "worst": -68.2
+     },
+     "20": {
+      "n": 2858,
+      "win": 28.0,
+      "avg": -3.86,
+      "med": -3.11,
+      "excess": -1.18,
+      "best": 38.1,
+      "worst": -68.7
+     },
+     "1": {
+      "n": 5674,
+      "win": 49.9,
+      "avg": -0.03,
+      "med": 0.0,
+      "excess": 0.02,
+      "best": 28.4,
+      "worst": -68.0
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 10010,
+      "win": 46.8,
+      "avg": -0.39,
+      "med": -0.23,
+      "excess": 0.3,
+      "best": 131.9,
+      "worst": -89.9
+     },
+     "20": {
+      "n": 6138,
+      "win": 49.7,
+      "avg": -0.52,
+      "med": 0.0,
+      "excess": 2.23,
+      "best": 136.2,
+      "worst": -92.1
+     },
+     "1": {
+      "n": 11095,
+      "win": 48.1,
+      "avg": -0.06,
+      "med": 0.0,
+      "excess": 0.03,
+      "best": 26.3,
+      "worst": -90.2
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 25951,
+      "win": 43.8,
+      "avg": -0.76,
+      "med": -0.53,
+      "excess": 0.02,
+      "best": 1220.6,
+      "worst": -90.1
+     },
+     "20": {
+      "n": 15440,
+      "win": 40.1,
+      "avg": -2.47,
+      "med": -1.78,
+      "excess": 0.56,
+      "best": 768.2,
+      "worst": -92.1
+     },
+     "1": {
+      "n": 28881,
+      "win": 48.2,
+      "avg": -0.14,
+      "med": 0.0,
+      "excess": 0.03,
+      "best": 1054.6,
+      "worst": -90.5
+     }
+    }
+   },
+   "sector": "Consumer Non-Durables",
+   "industry": "Food: Meat/Fish/Dairy",
+   "segment": "프라임",
+   "close": 3565.0,
+   "chg": 0.99,
+   "gap": -0.28,
+   "sma5": 3574.0,
+   "sma20": 3534.0,
+   "sma200": 3498.93,
+   "ext200": 1.89,
+   "rsi": 48.8,
+   "macd_h": 7.92,
+   "rvol": 1.1,
+   "pw": -2.06,
+   "p1": 1.71,
+   "p3": -7.4,
+   "ytd": 11.2,
+   "pos52": 62.0,
+   "hi52": 4040.0,
+   "lo52": 2790.0,
+   "val": 6.4,
+   "mcap": 2150.0,
+   "per": 5.6,
+   "pbr": 0.88,
+   "eps": 632.89,
+   "roe": 16.2,
+   "eqr": 55.9,
+   "div": 2.86,
+   "rev_q": 1.8,
+   "rev_ttm": 0.4,
+   "cagr5": 0.0,
+   "eps_q": 75.2,
+   "opm": 3.0,
+   "roic": 14.2,
+   "psr": 0.36,
+   "peg": 0.04,
+   "de": 0.17,
+   "inflow": 1.1,
+   "biz": "MEGMILK SNOW BRAND Co.,Ltd. engages in the manufacture and sale of milk, milk products, and other food products in Japan and internationally. It operates through Dairy Products, Beverages and Desserts, and Feed Seeds seg",
+   "atr": 65.16,
+   "sma50": 3634.8,
+   "bb_up": 3638.29,
+   "bb_lo": 3429.71,
+   "adx": 18.8,
+   "stk": 36.1,
+   "std": 50.3,
+   "ich_base": 3580.0,
+   "ich_conv": 3582.5,
+   "ich_a": 3732.5,
+   "ich_b": 3780.0,
+   "piv_s1": 3368.33,
+   "piv_r1": 3748.33,
+   "tv_rec": 0.02,
+   "mtf": [
+    3755.0,
+    1851.0,
+    1149.0,
+    1850.0,
+    4063.0
+   ],
+   "rs": 63.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "8877",
+   "name": "エスリード",
+   "ticker": "TSE:8877",
+   "bucket": "long",
+   "score": 7.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_macd",
+    "sig_value",
+    "sig_div",
+    "sig_growth",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 13102,
+      "win": 43.0,
+      "avg": -0.75,
+      "med": -0.57,
+      "excess": 0.03,
+      "best": 146.2,
+      "worst": -89.9
+     },
+     "20": {
+      "n": 8311,
+      "win": 34.7,
+      "avg": -3.43,
+      "med": -2.77,
+      "excess": -0.6,
+      "best": 768.2,
+      "worst": -93.2
+     },
+     "1": {
+      "n": 14374,
+      "win": 44.0,
+      "avg": -0.14,
+      "med": -0.17,
+      "excess": 0.01,
+      "best": 1054.6,
+      "worst": -68.3
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 5023,
+      "win": 42.5,
+      "avg": -0.83,
+      "med": -0.68,
+      "excess": 0.01,
+      "best": 146.2,
+      "worst": -89.4
+     },
+     "20": {
+      "n": 3397,
+      "win": 33.8,
+      "avg": -3.29,
+      "med": -2.73,
+      "excess": -0.33,
+      "best": 211.1,
+      "worst": -93.0
+     },
+     "1": {
+      "n": 5473,
+      "win": 43.9,
+      "avg": -0.14,
+      "med": -0.18,
+      "excess": -0.04,
+      "best": 129.6,
+      "worst": -26.5
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 16842,
+      "win": 39.8,
+      "avg": -1.03,
+      "med": -0.8,
+      "excess": -0.01,
+      "best": 183.1,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 10669,
+      "win": 32.7,
+      "avg": -3.57,
+      "med": -2.87,
+      "excess": -0.51,
+      "best": 768.2,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 18965,
+      "win": 47.0,
+      "avg": -0.18,
+      "med": -0.06,
+      "excess": -0.03,
+      "best": 57.8,
+      "worst": -93.5
+     }
+    },
+    "sig_value": {
+     "5": {
+      "n": 5011,
+      "win": 44.2,
+      "avg": -0.58,
+      "med": -0.42,
+      "excess": 0.04,
+      "best": 36.7,
+      "worst": -68.2
+     },
+     "20": {
+      "n": 2858,
+      "win": 28.0,
+      "avg": -3.86,
+      "med": -3.11,
+      "excess": -1.18,
+      "best": 38.1,
+      "worst": -68.7
+     },
+     "1": {
+      "n": 5674,
+      "win": 49.9,
+      "avg": -0.03,
+      "med": 0.0,
+      "excess": 0.02,
+      "best": 28.4,
+      "worst": -68.0
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 10095,
+      "win": 39.2,
+      "avg": -0.6,
+      "med": -0.61,
+      "excess": 0.08,
+      "best": 43.9,
+      "worst": -69.5
+     },
+     "20": {
+      "n": 5553,
+      "win": 21.0,
+      "avg": -3.14,
+      "med": -3.75,
+      "excess": -0.38,
+      "best": 52.6,
+      "worst": -67.9
+     },
+     "1": {
+      "n": 11422,
+      "win": 45.2,
+      "avg": -0.09,
+      "med": -0.08,
+      "excess": -0.01,
+      "best": 37.2,
+      "worst": -18.5
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 7949,
+      "win": 43.9,
+      "avg": -0.81,
+      "med": -0.65,
+      "excess": -0.04,
+      "best": 1220.6,
+      "worst": -80.3
+     },
+     "20": {
+      "n": 4707,
+      "win": 42.7,
+      "avg": -2.35,
+      "med": -1.85,
+      "excess": 0.66,
+      "best": 768.2,
+      "worst": -85.1
+     },
+     "1": {
+      "n": 8823,
+      "win": 46.7,
+      "avg": -0.1,
+      "med": -0.09,
+      "excess": 0.06,
+      "best": 1054.6,
+      "worst": -80.6
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 13352,
+      "win": 44.0,
+      "avg": -0.73,
+      "med": -0.49,
+      "excess": 0.04,
+      "best": 88.9,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 7882,
+      "win": 40.5,
+      "avg": -2.49,
+      "med": -1.66,
+      "excess": 0.51,
+      "best": 70.3,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 14933,
+      "win": 48.0,
+      "avg": -0.15,
+      "med": 0.0,
+      "excess": 0.01,
+      "best": 26.1,
+      "worst": -93.5
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Real Estate Development",
+   "segment": "프라임",
+   "close": 5080.0,
+   "chg": 4.31,
+   "gap": 0.82,
+   "sma5": 4971.0,
+   "sma20": 4992.0,
+   "sma200": 5727.65,
+   "ext200": -11.31,
+   "rsi": 52.3,
+   "macd_h": 2.3,
+   "rvol": 1.65,
+   "pw": 0.59,
+   "p1": -0.39,
+   "p3": -3.97,
+   "ytd": -24.3,
+   "pos52": 11.0,
+   "hi52": 7560.0,
+   "lo52": 4760.0,
+   "val": 3.4,
+   "mcap": 751.0,
+   "per": 6.8,
+   "pbr": 0.95,
+   "eps": 748.56,
+   "roe": 14.6,
+   "eqr": 33.5,
+   "div": 5.23,
+   "rev_q": 28.5,
+   "rev_ttm": 48.7,
+   "cagr5": 11.1,
+   "eps_q": 12.6,
+   "opm": 15.7,
+   "roic": 5.6,
+   "psr": 0.67,
+   "peg": 0.11,
+   "de": 2.26,
+   "inflow": 1.7,
+   "biz": "Eslead Corporation develops and sells family-type and urban condominiums in Japan. It also reconstructs and sells condominiums; develops and sells detached houses; and manages condominiums and buildings. In addition, the",
+   "atr": 94.93,
+   "sma50": 5147.2,
+   "bb_up": 5142.74,
+   "bb_lo": 4841.26,
+   "adx": 13.8,
+   "stk": 33.2,
+   "std": 34.8,
+   "ich_base": 5085.0,
+   "ich_conv": 4992.5,
+   "ich_a": 5220.0,
+   "ich_b": 5222.5,
+   "piv_s1": 5006.67,
+   "piv_r1": 5356.67,
+   "tv_rec": 0.16,
+   "mtf": [
+    4067.0,
+    4658.0,
+    3652.0,
+    6543.0,
+    1850.0
+   ],
+   "rs": 28.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [
+    {
+     "pub": "2026-10-30 13:00",
+     "title": "2027年3月期 第2四半期（中間期）決算短信〔日本基準〕（連結）",
+     "url": "https://www.release.tdnet.info/inbs/140120261029559633.pdf",
+     "bits": 64,
+     "strong": false
+    },
+    {
+     "pub": "2026-10-30 13:00",
+     "title": "2027年3月期 中間期決算説明資料",
+     "url": "https://www.release.tdnet.info/inbs/140120261030560633.pdf",
+     "bits": 64,
+     "strong": false
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "6465",
+   "name": "ホシザキ",
+   "ticker": "TSE:6465",
+   "bucket": "long",
+   "score": 7.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_trend",
+    "sig_macd",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 13102,
+      "win": 43.0,
+      "avg": -0.75,
+      "med": -0.57,
+      "excess": 0.03,
+      "best": 146.2,
+      "worst": -89.9
+     },
+     "20": {
+      "n": 8311,
+      "win": 34.7,
+      "avg": -3.43,
+      "med": -2.77,
+      "excess": -0.6,
+      "best": 768.2,
+      "worst": -93.2
+     },
+     "1": {
+      "n": 14374,
+      "win": 44.0,
+      "avg": -0.14,
+      "med": -0.17,
+      "excess": 0.01,
+      "best": 1054.6,
+      "worst": -68.3
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 5023,
+      "win": 42.5,
+      "avg": -0.83,
+      "med": -0.68,
+      "excess": 0.01,
+      "best": 146.2,
+      "worst": -89.4
+     },
+     "20": {
+      "n": 3397,
+      "win": 33.8,
+      "avg": -3.29,
+      "med": -2.73,
+      "excess": -0.33,
+      "best": 211.1,
+      "worst": -93.0
+     },
+     "1": {
+      "n": 5473,
+      "win": 43.9,
+      "avg": -0.14,
+      "med": -0.18,
+      "excess": -0.04,
+      "best": 129.6,
+      "worst": -26.5
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 4504,
+      "win": 45.0,
+      "avg": -0.44,
+      "med": -0.39,
+      "excess": 0.19,
+      "best": 88.9,
+      "worst": -75.7
+     },
+     "20": {
+      "n": 2883,
+      "win": 39.1,
+      "avg": -0.97,
+      "med": -1.66,
+      "excess": 1.59,
+      "best": 70.3,
+      "worst": -81.4
+     },
+     "1": {
+      "n": 4976,
+      "win": 47.1,
+      "avg": -0.13,
+      "med": -0.03,
+      "excess": 0.01,
+      "best": 24.5,
+      "worst": -75.6
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 6125,
+      "win": 46.2,
+      "avg": -0.35,
+      "med": -0.24,
+      "excess": 0.27,
+      "best": 131.9,
+      "worst": -79.5
+     },
+     "20": {
+      "n": 3928,
+      "win": 38.7,
+      "avg": -1.35,
+      "med": -1.79,
+      "excess": 1.29,
+      "best": 211.1,
+      "worst": -83.6
+     },
+     "1": {
+      "n": 6764,
+      "win": 47.5,
+      "avg": -0.16,
+      "med": 0.0,
+      "excess": -0.03,
+      "best": 49.5,
+      "worst": -80.6
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 6731,
+      "win": 41.5,
+      "avg": -0.55,
+      "med": -0.72,
+      "excess": 0.51,
+      "best": 97.4,
+      "worst": -93.4
+     },
+     "20": {
+      "n": 4153,
+      "win": 29.5,
+      "avg": -3.03,
+      "med": -3.01,
+      "excess": 0.05,
+      "best": 768.2,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 7233,
+      "win": 44.2,
+      "avg": -0.21,
+      "med": -0.18,
+      "excess": 0.07,
+      "best": 24.5,
+      "worst": -79.6
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 16842,
+      "win": 39.8,
+      "avg": -1.03,
+      "med": -0.8,
+      "excess": -0.01,
+      "best": 183.1,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 10669,
+      "win": 32.7,
+      "avg": -3.57,
+      "med": -2.87,
+      "excess": -0.51,
+      "best": 768.2,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 18965,
+      "win": 47.0,
+      "avg": -0.18,
+      "med": -0.06,
+      "excess": -0.03,
+      "best": 57.8,
+      "worst": -93.5
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 13352,
+      "win": 44.0,
+      "avg": -0.73,
+      "med": -0.49,
+      "excess": 0.04,
+      "best": 88.9,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 7882,
+      "win": 40.5,
+      "avg": -2.49,
+      "med": -1.66,
+      "excess": 0.51,
+      "best": 70.3,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 14933,
+      "win": 48.0,
+      "avg": -0.15,
+      "med": 0.0,
+      "excess": 0.01,
+      "best": 26.1,
+      "worst": -93.5
+     }
+    }
+   },
+   "sector": "Producer Manufacturing",
+   "industry": "Industrial Machinery",
+   "segment": "프라임",
+   "close": 5360.0,
+   "chg": 1.4,
+   "gap": 0.64,
+   "sma5": 5355.0,
+   "sma20": 5332.85,
+   "sma200": 5313.36,
+   "ext200": 0.88,
+   "rsi": 49.5,
+   "macd_h": 3.18,
+   "rvol": 0.98,
+   "pw": -2.3,
+   "p1": 2.1,
+   "p3": -6.73,
+   "ytd": 2.9,
+   "pos52": 52.0,
+   "hi52": 5904.0,
+   "lo52": 4768.0,
+   "val": 18.2,
+   "mcap": 7659.0,
+   "per": 19.6,
+   "pbr": 1.86,
+   "eps": 273.61,
+   "roe": 10.2,
+   "eqr": 72.8,
+   "div": 2.25,
+   "rev_q": 14.7,
+   "rev_ttm": 11.8,
+   "cagr5": 15.3,
+   "eps_q": 1.2,
+   "opm": 10.4,
+   "roic": 9.8,
+   "psr": 1.56,
+   "peg": null,
+   "de": 0.06,
+   "inflow": 1.09,
+   "biz": "Hoshizaki Corporation researches, develops, manufactures, and sells commercial kitchen appliances and equipment in Japan, the United States, Europe, the rest of Asia. It offers ice making, commercial refrigeration and fr",
+   "atr": 80.06,
+   "sma50": 5420.18,
+   "bb_up": 5502.47,
+   "bb_lo": 5163.23,
+   "adx": 18.3,
+   "stk": 35.8,
+   "std": 46.7,
+   "ich_base": 5337.5,
+   "ich_conv": 5382.0,
+   "ich_a": 5415.5,
+   "ich_b": 5557.5,
+   "piv_s1": 5067.33,
+   "piv_r1": 5576.33,
+   "tv_rec": -0.02,
+   "mtf": [
+    3754.0,
+    7450.0,
+    950.0,
+    7449.0,
+    1850.0
+   ],
+   "rs": 37.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "6412",
+   "name": "平和",
+   "ticker": "TSE:6412",
+   "bucket": "long",
+   "score": 7.0,
+   "signals": [
+    "sig_x5",
+    "sig_x20",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_macd",
+    "sig_div",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 13102,
+      "win": 43.0,
+      "avg": -0.75,
+      "med": -0.57,
+      "excess": 0.03,
+      "best": 146.2,
+      "worst": -89.9
+     },
+     "20": {
+      "n": 8311,
+      "win": 34.7,
+      "avg": -3.43,
+      "med": -2.77,
+      "excess": -0.6,
+      "best": 768.2,
+      "worst": -93.2
+     },
+     "1": {
+      "n": 14374,
+      "win": 44.0,
+      "avg": -0.14,
+      "med": -0.17,
+      "excess": 0.01,
+      "best": 1054.6,
+      "worst": -68.3
+     }
+    },
+    "sig_x20": {
+     "5": {
+      "n": 5023,
+      "win": 42.5,
+      "avg": -0.83,
+      "med": -0.68,
+      "excess": 0.01,
+      "best": 146.2,
+      "worst": -89.4
+     },
+     "20": {
+      "n": 3397,
+      "win": 33.8,
+      "avg": -3.29,
+      "med": -2.73,
+      "excess": -0.33,
+      "best": 211.1,
+      "worst": -93.0
+     },
+     "1": {
+      "n": 5473,
+      "win": 43.9,
+      "avg": -0.14,
+      "med": -0.18,
+      "excess": -0.04,
+      "best": 129.6,
+      "worst": -26.5
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 4504,
+      "win": 45.0,
+      "avg": -0.44,
+      "med": -0.39,
+      "excess": 0.19,
+      "best": 88.9,
+      "worst": -75.7
+     },
+     "20": {
+      "n": 2883,
+      "win": 39.1,
+      "avg": -0.97,
+      "med": -1.66,
+      "excess": 1.59,
+      "best": 70.3,
+      "worst": -81.4
+     },
+     "1": {
+      "n": 4976,
+      "win": 47.1,
+      "avg": -0.13,
+      "med": -0.03,
+      "excess": 0.01,
+      "best": 24.5,
+      "worst": -75.6
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 6125,
+      "win": 46.2,
+      "avg": -0.35,
+      "med": -0.24,
+      "excess": 0.27,
+      "best": 131.9,
+      "worst": -79.5
+     },
+     "20": {
+      "n": 3928,
+      "win": 38.7,
+      "avg": -1.35,
+      "med": -1.79,
+      "excess": 1.29,
+      "best": 211.1,
+      "worst": -83.6
+     },
+     "1": {
+      "n": 6764,
+      "win": 47.5,
+      "avg": -0.16,
+      "med": 0.0,
+      "excess": -0.03,
+      "best": 49.5,
+      "worst": -80.6
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 16842,
+      "win": 39.8,
+      "avg": -1.03,
+      "med": -0.8,
+      "excess": -0.01,
+      "best": 183.1,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 10669,
+      "win": 32.7,
+      "avg": -3.57,
+      "med": -2.87,
+      "excess": -0.51,
+      "best": 768.2,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 18965,
+      "win": 47.0,
+      "avg": -0.18,
+      "med": -0.06,
+      "excess": -0.03,
+      "best": 57.8,
+      "worst": -93.5
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 10095,
+      "win": 39.2,
+      "avg": -0.6,
+      "med": -0.61,
+      "excess": 0.08,
+      "best": 43.9,
+      "worst": -69.5
+     },
+     "20": {
+      "n": 5553,
+      "win": 21.0,
+      "avg": -3.14,
+      "med": -3.75,
+      "excess": -0.38,
+      "best": 52.6,
+      "worst": -67.9
+     },
+     "1": {
+      "n": 11422,
+      "win": 45.2,
+      "avg": -0.09,
+      "med": -0.08,
+      "excess": -0.01,
+      "best": 37.2,
+      "worst": -18.5
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 13352,
+      "win": 44.0,
+      "avg": -0.73,
+      "med": -0.49,
+      "excess": 0.04,
+      "best": 88.9,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 7882,
+      "win": 40.5,
+      "avg": -2.49,
+      "med": -1.66,
+      "excess": 0.51,
+      "best": 70.3,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 14933,
+      "win": 48.0,
+      "avg": -0.15,
+      "med": 0.0,
+      "excess": 0.01,
+      "best": 26.1,
+      "worst": -93.5
+     }
+    }
+   },
+   "sector": "Consumer Services",
+   "industry": "Movies/Entertainment",
+   "segment": "프라임",
+   "close": 2050.0,
+   "chg": 2.71,
+   "gap": 1.2,
+   "sma5": 2035.0,
+   "sma20": 2043.25,
+   "sma200": 2028.01,
+   "ext200": 1.08,
+   "rsi": 46.0,
+   "macd_h": 0.88,
+   "rvol": 1.16,
+   "pw": -1.49,
+   "p1": -3.3,
+   "p3": -5.44,
+   "ytd": 0.6,
+   "pos52": 59.0,
+   "hi52": 2257.0,
+   "lo52": 1750.0,
+   "val": 6.4,
+   "mcap": 1969.0,
+   "per": 17.7,
+   "pbr": 0.8,
+   "eps": 115.9,
+   "roe": 4.6,
+   "eqr": 23.7,
+   "div": 4.01,
+   "rev_q": 10.7,
+   "rev_ttm": 47.1,
+   "cagr5": 19.1,
+   "eps_q": -10.1,
+   "opm": 16.4,
+   "roic": 1.4,
+   "psr": 0.78,
+   "peg": null,
+   "de": 2.38,
+   "inflow": 1.05,
+   "biz": "Heiwa Corporation develops, manufactures, and sells pachinko and pachislot machines in Japan. It also involved in the golf course operation and management business. The company was formerly known as Heiwa Kogyo Co., Ltd.",
+   "atr": 38.31,
+   "sma50": 2134.56,
+   "bb_up": 2094.65,
+   "bb_lo": 1991.85,
+   "adx": 27.1,
+   "stk": 22.6,
+   "std": 29.7,
+   "ich_base": 2108.5,
+   "ich_conv": 2042.5,
+   "ich_a": 2179.5,
+   "ich_b": 2129.5,
+   "piv_s1": 2035.33,
+   "piv_r1": 2207.33,
+   "tv_rec": 0.02,
+   "mtf": [
+    4061.0,
+    7250.0,
+    1146.0,
+    7447.0,
+    6548.0
+   ],
+   "rs": 51.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "8630",
+   "name": "ＳＯＭＰＯホールディングス",
+   "ticker": "TSE:8630",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x5",
+    "sig_trend",
+    "sig_macd",
+    "sig_growth",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_x5": {
+     "5": {
+      "n": 13102,
+      "win": 43.0,
+      "avg": -0.75,
+      "med": -0.57,
+      "excess": 0.03,
+      "best": 146.2,
+      "worst": -89.9
+     },
+     "20": {
+      "n": 8311,
+      "win": 34.7,
+      "avg": -3.43,
+      "med": -2.77,
+      "excess": -0.6,
+      "best": 768.2,
+      "worst": -93.2
+     },
+     "1": {
+      "n": 14374,
+      "win": 44.0,
+      "avg": -0.14,
+      "med": -0.17,
+      "excess": 0.01,
+      "best": 1054.6,
+      "worst": -68.3
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 6731,
+      "win": 41.5,
+      "avg": -0.55,
+      "med": -0.72,
+      "excess": 0.51,
+      "best": 97.4,
+      "worst": -93.4
+     },
+     "20": {
+      "n": 4153,
+      "win": 29.5,
+      "avg": -3.03,
+      "med": -3.01,
+      "excess": 0.05,
+      "best": 768.2,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 7233,
+      "win": 44.2,
+      "avg": -0.21,
+      "med": -0.18,
+      "excess": 0.07,
+      "best": 24.5,
+      "worst": -79.6
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 16842,
+      "win": 39.8,
+      "avg": -1.03,
+      "med": -0.8,
+      "excess": -0.01,
+      "best": 183.1,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 10669,
+      "win": 32.7,
+      "avg": -3.57,
+      "med": -2.87,
+      "excess": -0.51,
+      "best": 768.2,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 18965,
+      "win": 47.0,
+      "avg": -0.18,
+      "med": -0.06,
+      "excess": -0.03,
+      "best": 57.8,
+      "worst": -93.5
+     }
+    },
+    "sig_growth": {
+     "5": {
+      "n": 7949,
+      "win": 43.9,
+      "avg": -0.81,
+      "med": -0.65,
+      "excess": -0.04,
+      "best": 1220.6,
+      "worst": -80.3
+     },
+     "20": {
+      "n": 4707,
+      "win": 42.7,
+      "avg": -2.35,
+      "med": -1.85,
+      "excess": 0.66,
+      "best": 768.2,
+      "worst": -85.1
+     },
+     "1": {
+      "n": 8823,
+      "win": 46.7,
+      "avg": -0.1,
+      "med": -0.09,
+      "excess": 0.06,
+      "best": 1054.6,
+      "worst": -80.6
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 25951,
+      "win": 43.8,
+      "avg": -0.76,
+      "med": -0.53,
+      "excess": 0.02,
+      "best": 1220.6,
+      "worst": -90.1
+     },
+     "20": {
+      "n": 15440,
+      "win": 40.1,
+      "avg": -2.47,
+      "med": -1.78,
+      "excess": 0.56,
+      "best": 768.2,
+      "worst": -92.1
+     },
+     "1": {
+      "n": 28881,
+      "win": 48.2,
+      "avg": -0.14,
+      "med": 0.0,
+      "excess": 0.03,
+      "best": 1054.6,
+      "worst": -90.5
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 13352,
+      "win": 44.0,
+      "avg": -0.73,
+      "med": -0.49,
+      "excess": 0.04,
+      "best": 88.9,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 7882,
+      "win": 40.5,
+      "avg": -2.49,
+      "med": -1.66,
+      "excess": 0.51,
+      "best": 70.3,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 14933,
+      "win": 48.0,
+      "avg": -0.15,
+      "med": 0.0,
+      "excess": 0.01,
+      "best": 26.1,
+      "worst": -93.5
+     }
+    }
+   },
+   "sector": "Finance",
+   "industry": "Multi-Line Insurance",
+   "segment": "프라임",
+   "close": 7096.0,
+   "chg": 1.28,
+   "gap": 0.98,
+   "sma5": 7068.0,
+   "sma20": 6830.9,
+   "sma200": 6275.06,
+   "ext200": 13.08,
+   "rsi": 58.7,
+   "macd_h": 27.99,
+   "rvol": 0.83,
+   "pw": 0.03,
+   "p1": 6.63,
+   "p3": -0.48,
+   "ytd": 31.5,
+   "pos52": 89.0,
+   "hi52": 7413.0,
+   "lo52": 4477.0,
+   "val": 172.5,
+   "mcap": 64606.0,
+   "per": 9.1,
+   "pbr": 1.19,
+   "eps": 776.58,
+   "roe": 14.6,
+   "eqr": 29.5,
+   "div": 2.53,
+   "rev_q": 28.8,
+   "rev_ttm": 41.4,
+   "cagr5": 11.0,
+   "eps_q": 59.4,
+   "opm": 17.1,
+   "roic": 12.4,
+   "psr": 1.05,
+   "peg": null,
+   "de": 0.18,
+   "inflow": 1.33,
+   "biz": "【特色】３メガ損保の一角。国内生保、海外損保の拡大推進。介護・ヘルスケアも収益の柱へと強化中 連結事業 【連結事業】国内損害保険48(10)、海外保険43(12)、国内生命保険5(27)、介護3(4)、他1(2)",
+   "atr": 158.83,
+   "sma50": 6805.4,
+   "bb_up": 7246.35,
+   "bb_lo": 6415.45,
+   "adx": 18.3,
+   "stk": 74.4,
+   "std": 79.8,
+   "ich_base": 6821.0,
+   "ich_conv": 6984.5,
+   "ich_a": 6778.0,
+   "ich_b": 6940.5,
+   "piv_s1": 6482.33,
+   "piv_r1": 6972.33,
+   "tv_rec": 0.47,
+   "mtf": [
+    4061.0,
+    4960.0,
+    3759.0,
+    4963.0,
+    4077.0
+   ],
+   "rs": 83.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "7606",
+   "name": "ユナイテッドアローズ",
+   "ticker": "TSE:7606",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_x20",
+    "sig_gc",
+    "sig_reclaim",
+    "sig_div",
+    "sig_qual",
+    "sig_accel"
+   ],
+   "baserate": {
+    "sig_x20": {
+     "5": {
+      "n": 5023,
+      "win": 42.5,
+      "avg": -0.83,
+      "med": -0.68,
+      "excess": 0.01,
+      "best": 146.2,
+      "worst": -89.4
+     },
+     "20": {
+      "n": 3397,
+      "win": 33.8,
+      "avg": -3.29,
+      "med": -2.73,
+      "excess": -0.33,
+      "best": 211.1,
+      "worst": -93.0
+     },
+     "1": {
+      "n": 5473,
+      "win": 43.9,
+      "avg": -0.14,
+      "med": -0.18,
+      "excess": -0.04,
+      "best": 129.6,
+      "worst": -26.5
+     }
+    },
+    "sig_gc": {
+     "5": {
+      "n": 4504,
+      "win": 45.0,
+      "avg": -0.44,
+      "med": -0.39,
+      "excess": 0.19,
+      "best": 88.9,
+      "worst": -75.7
+     },
+     "20": {
+      "n": 2883,
+      "win": 39.1,
+      "avg": -0.97,
+      "med": -1.66,
+      "excess": 1.59,
+      "best": 70.3,
+      "worst": -81.4
+     },
+     "1": {
+      "n": 4976,
+      "win": 47.1,
+      "avg": -0.13,
+      "med": -0.03,
+      "excess": 0.01,
+      "best": 24.5,
+      "worst": -75.6
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 6125,
+      "win": 46.2,
+      "avg": -0.35,
+      "med": -0.24,
+      "excess": 0.27,
+      "best": 131.9,
+      "worst": -79.5
+     },
+     "20": {
+      "n": 3928,
+      "win": 38.7,
+      "avg": -1.35,
+      "med": -1.79,
+      "excess": 1.29,
+      "best": 211.1,
+      "worst": -83.6
+     },
+     "1": {
+      "n": 6764,
+      "win": 47.5,
+      "avg": -0.16,
+      "med": 0.0,
+      "excess": -0.03,
+      "best": 49.5,
+      "worst": -80.6
+     }
+    },
+    "sig_div": {
+     "5": {
+      "n": 10095,
+      "win": 39.2,
+      "avg": -0.6,
+      "med": -0.61,
+      "excess": 0.08,
+      "best": 43.9,
+      "worst": -69.5
+     },
+     "20": {
+      "n": 5553,
+      "win": 21.0,
+      "avg": -3.14,
+      "med": -3.75,
+      "excess": -0.38,
+      "best": 52.6,
+      "worst": -67.9
+     },
+     "1": {
+      "n": 11422,
+      "win": 45.2,
+      "avg": -0.09,
+      "med": -0.08,
+      "excess": -0.01,
+      "best": 37.2,
+      "worst": -18.5
+     }
+    },
+    "sig_qual": {
+     "5": {
+      "n": 10010,
+      "win": 46.8,
+      "avg": -0.39,
+      "med": -0.23,
+      "excess": 0.3,
+      "best": 131.9,
+      "worst": -89.9
+     },
+     "20": {
+      "n": 6138,
+      "win": 49.7,
+      "avg": -0.52,
+      "med": 0.0,
+      "excess": 2.23,
+      "best": 136.2,
+      "worst": -92.1
+     },
+     "1": {
+      "n": 11095,
+      "win": 48.1,
+      "avg": -0.06,
+      "med": 0.0,
+      "excess": 0.03,
+      "best": 26.3,
+      "worst": -90.2
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 25951,
+      "win": 43.8,
+      "avg": -0.76,
+      "med": -0.53,
+      "excess": 0.02,
+      "best": 1220.6,
+      "worst": -90.1
+     },
+     "20": {
+      "n": 15440,
+      "win": 40.1,
+      "avg": -2.47,
+      "med": -1.78,
+      "excess": 0.56,
+      "best": 768.2,
+      "worst": -92.1
+     },
+     "1": {
+      "n": 28881,
+      "win": 48.2,
+      "avg": -0.14,
+      "med": 0.0,
+      "excess": 0.03,
+      "best": 1054.6,
+      "worst": -90.5
+     }
+    }
+   },
+   "sector": "Retail Trade",
+   "industry": "Apparel/Footwear Retail",
+   "segment": "프라임",
+   "close": 2509.0,
+   "chg": 1.54,
+   "gap": 1.09,
+   "sma5": 2531.8,
+   "sma20": 2493.5,
+   "sma200": 2472.36,
+   "ext200": 1.48,
+   "rsi": 52.1,
+   "macd_h": -4.19,
+   "rvol": 0.79,
+   "pw": -3.31,
+   "p1": 5.86,
+   "p3": 1.99,
+   "ytd": 2.2,
+   "pos52": 71.0,
+   "hi52": 2756.0,
+   "lo52": 1900.0,
+   "val": 4.1,
+   "mcap": 684.0,
+   "per": 10.2,
+   "pbr": 1.64,
+   "eps": 245.08,
+   "roe": 16.9,
+   "eqr": 57.6,
+   "div": 4.1,
+   "rev_q": 4.2,
+   "rev_ttm": 8.2,
+   "cagr5": 6.2,
+   "eps_q": 44.9,
+   "opm": 5.9,
+   "roic": 16.9,
+   "psr": 0.42,
+   "peg": 0.14,
+   "de": 0.12,
+   "inflow": 1.28,
+   "biz": "United Arrows Ltd. engages in the planning, buying, and sale of men's and women's apparel, accessories, and other products in Japan. The company operates under store brands, such as UNITED ARROWS, BEAUTY&YOUTH UNITED ARR",
+   "atr": 55.99,
+   "sma50": 2454.64,
+   "bb_up": 2653.2,
+   "bb_lo": 2333.8,
+   "adx": 24.5,
+   "stk": 29.8,
+   "std": 41.9,
+   "ich_base": 2518.5,
+   "ich_conv": 2565.0,
+   "ich_a": 2411.25,
+   "ich_b": 2472.5,
+   "piv_s1": 2289.0,
+   "piv_r1": 2507.0,
+   "tv_rec": 0.38,
+   "mtf": [
+    948.0,
+    1849.0,
+    4652.0,
+    3753.0,
+    3756.0
+   ],
+   "rs": 72.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "7942",
+   "name": "ＪＳＰ",
+   "ticker": "TSE:7942",
+   "bucket": "long",
+   "score": 6.0,
+   "signals": [
+    "sig_spike",
+    "sig_trend",
+    "sig_macd",
+    "sig_value",
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 2730,
+      "win": 35.8,
+      "avg": -0.98,
+      "med": -1.56,
+      "excess": -0.17,
+      "best": 131.9,
+      "worst": -89.4
+     },
+     "20": {
+      "n": 1685,
+      "win": 32.7,
+      "avg": -2.7,
+      "med": -3.37,
+      "excess": 0.45,
+      "best": 768.2,
+      "worst": -91.7
+     },
+     "1": {
+      "n": 3692,
+      "win": 47.0,
+      "avg": 0.19,
+      "med": 0.0,
+      "excess": 0.42,
+      "best": 1054.6,
+      "worst": -75.4
+     }
+    },
+    "sig_trend": {
+     "5": {
+      "n": 6731,
+      "win": 41.5,
+      "avg": -0.55,
+      "med": -0.72,
+      "excess": 0.51,
+      "best": 97.4,
+      "worst": -93.4
+     },
+     "20": {
+      "n": 4153,
+      "win": 29.5,
+      "avg": -3.03,
+      "med": -3.01,
+      "excess": 0.05,
+      "best": 768.2,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 7233,
+      "win": 44.2,
+      "avg": -0.21,
+      "med": -0.18,
+      "excess": 0.07,
+      "best": 24.5,
+      "worst": -79.6
+     }
+    },
+    "sig_macd": {
+     "5": {
+      "n": 16842,
+      "win": 39.8,
+      "avg": -1.03,
+      "med": -0.8,
+      "excess": -0.01,
+      "best": 183.1,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 10669,
+      "win": 32.7,
+      "avg": -3.57,
+      "med": -2.87,
+      "excess": -0.51,
+      "best": 768.2,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 18965,
+      "win": 47.0,
+      "avg": -0.18,
+      "med": -0.06,
+      "excess": -0.03,
+      "best": 57.8,
+      "worst": -93.5
+     }
+    },
+    "sig_value": {
+     "5": {
+      "n": 5011,
+      "win": 44.2,
+      "avg": -0.58,
+      "med": -0.42,
+      "excess": 0.04,
+      "best": 36.7,
+      "worst": -68.2
+     },
+     "20": {
+      "n": 2858,
+      "win": 28.0,
+      "avg": -3.86,
+      "med": -3.11,
+      "excess": -1.18,
+      "best": 38.1,
+      "worst": -68.7
+     },
+     "1": {
+      "n": 5674,
+      "win": 49.9,
+      "avg": -0.03,
+      "med": 0.0,
+      "excess": 0.02,
+      "best": 28.4,
+      "worst": -68.0
+     }
+    },
+    "sig_accel": {
+     "5": {
+      "n": 25951,
+      "win": 43.8,
+      "avg": -0.76,
+      "med": -0.53,
+      "excess": 0.02,
+      "best": 1220.6,
+      "worst": -90.1
+     },
+     "20": {
+      "n": 15440,
+      "win": 40.1,
+      "avg": -2.47,
+      "med": -1.78,
+      "excess": 0.56,
+      "best": 768.2,
+      "worst": -92.1
+     },
+     "1": {
+      "n": 28881,
+      "win": 48.2,
+      "avg": -0.14,
+      "med": 0.0,
+      "excess": 0.03,
+      "best": 1054.6,
+      "worst": -90.5
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 13352,
+      "win": 44.0,
+      "avg": -0.73,
+      "med": -0.49,
+      "excess": 0.04,
+      "best": 88.9,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 7882,
+      "win": 40.5,
+      "avg": -2.49,
+      "med": -1.66,
+      "excess": 0.51,
+      "best": 70.3,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 14933,
+      "win": 48.0,
+      "avg": -0.15,
+      "med": 0.0,
+      "excess": 0.01,
+      "best": 26.1,
+      "worst": -93.5
+     }
+    }
+   },
+   "sector": "Process Industries",
+   "industry": "Chemicals: Specialty",
+   "segment": "프라임",
+   "close": 3070.0,
+   "chg": 1.49,
+   "gap": 0.0,
+   "sma5": 3004.0,
+   "sma20": 2988.9,
+   "sma200": 2670.55,
+   "ext200": 14.96,
+   "rsi": 59.3,
+   "macd_h": 5.63,
+   "rvol": 2.67,
+   "pw": 3.02,
+   "p1": 2.16,
+   "p3": 21.83,
+   "ytd": 25.8,
+   "pos52": 88.0,
+   "hi52": 3240.0,
+   "lo52": 1852.0,
+   "val": 4.1,
+   "mcap": 744.0,
+   "per": 9.9,
+   "pbr": 0.72,
+   "eps": 309.15,
+   "roe": 7.7,
+   "eqr": 70.3,
+   "div": 3.32,
+   "rev_q": 19.1,
+   "rev_ttm": 6.9,
+   "cagr5": 7.2,
+   "eps_q": 116.0,
+   "opm": 6.6,
+   "roic": 7.2,
+   "psr": 0.55,
+   "peg": 0.17,
+   "de": 0.23,
+   "inflow": 1.13,
+   "biz": "JSP Corporation manufactures and sells expanded polymers worldwide. It operates through Extrusion Business, and Bead Business segments. The company offers materials products, such as ARPRO, an impact energy management ma",
+   "atr": 72.18,
+   "sma50": 3007.14,
+   "bb_up": 3061.51,
+   "bb_lo": 2916.29,
+   "adx": 11.1,
+   "stk": 76.5,
+   "std": 69.1,
+   "ich_base": 3001.5,
+   "ich_conv": 3001.5,
+   "ich_a": 2965.75,
+   "ich_b": 2820.5,
+   "piv_s1": 2797.67,
+   "piv_r1": 3203.67,
+   "tv_rec": 0.47,
+   "mtf": [
+    4658.0,
+    4061.0,
+    3759.0,
+    4062.0,
+    4066.0
+   ],
+   "rs": 93.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [],
+   "llm": null
+  },
+  {
+   "code": "1941",
+   "name": "中電工",
+   "ticker": "TSE:1941",
+   "bucket": "news",
+   "score": 3.0,
+   "signals": [
+    "sig_spike",
+    "sig_reclaim",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_spike": {
+     "5": {
+      "n": 2730,
+      "win": 35.8,
+      "avg": -0.98,
+      "med": -1.56,
+      "excess": -0.17,
+      "best": 131.9,
+      "worst": -89.4
+     },
+     "20": {
+      "n": 1685,
+      "win": 32.7,
+      "avg": -2.7,
+      "med": -3.37,
+      "excess": 0.45,
+      "best": 768.2,
+      "worst": -91.7
+     },
+     "1": {
+      "n": 3692,
+      "win": 47.0,
+      "avg": 0.19,
+      "med": 0.0,
+      "excess": 0.42,
+      "best": 1054.6,
+      "worst": -75.4
+     }
+    },
+    "sig_reclaim": {
+     "5": {
+      "n": 6125,
+      "win": 46.2,
+      "avg": -0.35,
+      "med": -0.24,
+      "excess": 0.27,
+      "best": 131.9,
+      "worst": -79.5
+     },
+     "20": {
+      "n": 3928,
+      "win": 38.7,
+      "avg": -1.35,
+      "med": -1.79,
+      "excess": 1.29,
+      "best": 211.1,
+      "worst": -83.6
+     },
+     "1": {
+      "n": 6764,
+      "win": 47.5,
+      "avg": -0.16,
+      "med": 0.0,
+      "excess": -0.03,
+      "best": 49.5,
+      "worst": -80.6
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 13352,
+      "win": 44.0,
+      "avg": -0.73,
+      "med": -0.49,
+      "excess": 0.04,
+      "best": 88.9,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 7882,
+      "win": 40.5,
+      "avg": -2.49,
+      "med": -1.66,
+      "excess": 0.51,
+      "best": 70.3,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 14933,
+      "win": 48.0,
+      "avg": -0.15,
+      "med": 0.0,
+      "excess": 0.01,
+      "best": 26.1,
+      "worst": -93.5
+     }
+    }
+   },
+   "sector": "Industrial Services",
+   "industry": "Engineering & Construction",
+   "segment": "프라임",
+   "close": 5060.0,
+   "chg": -3.25,
+   "gap": 0.19,
+   "sma5": 5214.0,
+   "sma20": 5151.75,
+   "sma200": 4947.18,
+   "ext200": 2.28,
+   "rsi": 42.8,
+   "macd_h": -0.53,
+   "rvol": 2.7,
+   "pw": -2.88,
+   "p1": -0.2,
+   "p3": -1.36,
+   "ytd": 12.4,
+   "pos52": 60.0,
+   "hi52": 5720.0,
+   "lo52": 4050.0,
+   "val": 18.0,
+   "mcap": 2876.0,
+   "per": 14.6,
+   "pbr": 1.06,
+   "eps": 345.99,
+   "roe": 7.8,
+   "eqr": 77.7,
+   "div": 2.67,
+   "rev_q": 13.3,
+   "rev_ttm": 5.9,
+   "cagr5": 4.3,
+   "eps_q": 6.1,
+   "opm": 11.6,
+   "roic": 7.5,
+   "psr": 1.2,
+   "peg": null,
+   "de": 0.04,
+   "inflow": 1.6,
+   "biz": "Chudenko Corporation operates as an equipment engineering company in Japan. The company undertakes light/outlet, image/sound/TV/broadcast, power receiving/transforming, and plant equipment works; wind/solar power generat",
+   "atr": 126.49,
+   "sma50": 5145.1,
+   "bb_up": 5303.32,
+   "bb_lo": 5000.18,
+   "adx": 11.9,
+   "stk": 61.9,
+   "std": 73.2,
+   "ich_base": 5115.0,
+   "ich_conv": 5115.0,
+   "ich_a": 5150.0,
+   "ich_b": 5142.5,
+   "piv_s1": 4993.33,
+   "piv_r1": 5253.33,
+   "tv_rec": -0.47,
+   "mtf": [
+    8032.0,
+    8038.0,
+    7443.0,
+    1851.0,
+    4065.0
+   ],
+   "rs": 66.0,
+   "who": [],
+   "s_pct": null,
+   "gy": 0.6,
+   "tdnet": [
+    {
+     "pub": "2026-10-30 15:00",
+     "title": "2027年3月期第2四半期決算短信[日本基準](連結)",
+     "url": "https://www.release.tdnet.info/inbs/140120261029559180.pdf",
+     "bits": 64,
+     "strong": false
+    },
+    {
+     "pub": "2026-10-30 15:00",
+     "title": "自己株式の取得及び自己株式の公開買付けに関するお知らせ",
+     "url": "https://www.release.tdnet.info/inbs/140120261029559577.pdf",
+     "bits": 1040,
+     "strong": true
+    },
+    {
+     "pub": "2026-10-30 15:00",
+     "title": "剰余金の配当（中間配当）の決定及び配当予想の修正に関するお知らせ",
+     "url": "https://www.release.tdnet.info/inbs/140120261030561013.pdf",
+     "bits": 256,
+     "strong": false
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "4689",
+   "name": "ＬＩＮＥヤフー",
+   "ticker": "TSE:4689",
+   "bucket": "news",
+   "score": 2.0,
+   "signals": [
+    "sig_accel",
+    "sig_garp"
+   ],
+   "baserate": {
+    "sig_accel": {
+     "5": {
+      "n": 25951,
+      "win": 43.8,
+      "avg": -0.76,
+      "med": -0.53,
+      "excess": 0.02,
+      "best": 1220.6,
+      "worst": -90.1
+     },
+     "20": {
+      "n": 15440,
+      "win": 40.1,
+      "avg": -2.47,
+      "med": -1.78,
+      "excess": 0.56,
+      "best": 768.2,
+      "worst": -92.1
+     },
+     "1": {
+      "n": 28881,
+      "win": 48.2,
+      "avg": -0.14,
+      "med": 0.0,
+      "excess": 0.03,
+      "best": 1054.6,
+      "worst": -90.5
+     }
+    },
+    "sig_garp": {
+     "5": {
+      "n": 13352,
+      "win": 44.0,
+      "avg": -0.73,
+      "med": -0.49,
+      "excess": 0.04,
+      "best": 88.9,
+      "worst": -93.7
+     },
+     "20": {
+      "n": 7882,
+      "win": 40.5,
+      "avg": -2.49,
+      "med": -1.66,
+      "excess": 0.51,
+      "best": 70.3,
+      "worst": -93.5
+     },
+     "1": {
+      "n": 14933,
+      "win": 48.0,
+      "avg": -0.15,
+      "med": 0.0,
+      "excess": 0.01,
+      "best": 26.1,
+      "worst": -93.5
+     }
+    }
+   },
+   "sector": "Technology Services",
+   "industry": "Internet Software/Services",
+   "segment": "프라임",
+   "close": 501.0,
+   "chg": 0.6,
+   "gap": 0.8,
+   "sma5": 504.74,
+   "sma20": 511.32,
+   "sma200": 443.17,
+   "ext200": 13.05,
+   "rsi": 42.2,
+   "macd_h": -2.34,
+   "rvol": 1.12,
+   "pw": -4.54,
+   "p1": -3.39,
+   "p3": 11.56,
+   "ytd": 19.1,
+   "pos52": 66.0,
+   "hi52": 570.9,
+   "lo52": 365.1,
+   "val": 93.4,
+   "mcap": 33629.0,
+   "per": 17.0,
+   "pbr": 1.14,
+   "eps": 29.62,
+   "roe": 6.9,
+   "eqr": 32.3,
+   "div": 1.45,
+   "rev_q": 13.1,
+   "rev_ttm": 8.1,
+   "cagr5": 11.0,
+   "eps_q": 24.5,
+   "opm": 14.7,
+   "roic": 4.0,
+   "psr": 1.71,
+   "peg": 0.41,
+   "de": 0.76,
+   "inflow": 0.95,
+   "biz": "【特色】ネットサービス国内先駆。広告やＥＣが柱。金融育成中。傘下にヤフー、ＬＩＮＥ、ＺＯＺＯなど 連結事業 【連結事業】メディア36(29)、コマース42(10)、戦略22(15)、他0(62)(2026.3)",
+   "atr": 12.75,
+   "sma50": 524.03,
+   "bb_up": 539.94,
+   "bb_lo": 482.7,
+   "adx": 14.3,
+   "stk": 14.7,
+   "std": 24.8,
+   "ich_base": 513.2,
+   "ich_conv": 515.7,
+   "ich_a": 534.92,
+   "ich_b": 500.4,
+   "piv_s1": 489.23,
+   "piv_r1": 553.73,
+   "tv_rec": -0.18,
+   "mtf": [
+    6544.0,
+    8039.0,
+    7442.0,
+    4654.0,
+    3757.0
+   ],
+   "rs": 81.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [
+    {
+     "pub": "2026-10-26 15:30",
+     "title": "（経過開示）BCPE Blitz Cayman, L.P.による株式会社カカクコム（証券コード：2371）に対する公開買付けの開始予定に係る一部変更に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120261023555576.pdf",
+     "bits": 1024,
+     "strong": true
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "2371",
+   "name": "カカクコム",
+   "ticker": "TSE:2371",
+   "bucket": "news",
+   "score": 1.0,
+   "signals": [
+    "sig_qual"
+   ],
+   "baserate": {
+    "sig_qual": {
+     "5": {
+      "n": 10010,
+      "win": 46.8,
+      "avg": -0.39,
+      "med": -0.23,
+      "excess": 0.3,
+      "best": 131.9,
+      "worst": -89.9
+     },
+     "20": {
+      "n": 6138,
+      "win": 49.7,
+      "avg": -0.52,
+      "med": 0.0,
+      "excess": 2.23,
+      "best": 136.2,
+      "worst": -92.1
+     },
+     "1": {
+      "n": 11095,
+      "win": 48.1,
+      "avg": -0.06,
+      "med": 0.0,
+      "excess": 0.03,
+      "best": 26.3,
+      "worst": -90.2
+     }
+    }
+   },
+   "sector": "Consumer Services",
+   "industry": "Other Consumer Services",
+   "segment": "프라임",
+   "close": 3726.0,
+   "chg": 0.22,
+   "gap": 0.24,
+   "sma5": 3742.2,
+   "sma20": 3779.65,
+   "sma200": 2978.47,
+   "ext200": 25.1,
+   "rsi": 41.1,
+   "macd_h": -10.02,
+   "rvol": 1.06,
+   "pw": -1.3,
+   "p1": -1.95,
+   "p3": 0.76,
+   "ytd": 62.8,
+   "pos52": 94.0,
+   "hi52": 3875.0,
+   "lo52": 1566.0,
+   "val": 18.6,
+   "mcap": 7303.0,
+   "per": 39.9,
+   "pbr": 11.38,
+   "eps": 93.35,
+   "roe": 30.6,
+   "eqr": 72.8,
+   "div": 1.33,
+   "rev_q": 17.0,
+   "rev_ttm": 18.4,
+   "cagr5": 13.0,
+   "eps_q": -6.4,
+   "opm": 27.3,
+   "roic": 29.4,
+   "psr": 7.83,
+   "peg": null,
+   "de": 0.13,
+   "inflow": 2.33,
+   "biz": "【特色】「食べログ」と「価格．ｃｏｍ」が柱。ＥＱＴがＴＯＢ開始も、ＬＩＮＥヤフーが買収案提示 連結事業 【連結事業】価格．ｃｏｍ25(53)、食べログ43(55)、求人ボックス22(-7)、インキュベーション11(27)(2026.3)",
+   "atr": 36.11,
+   "sma50": 3754.62,
+   "bb_up": 3847.36,
+   "bb_lo": 3711.94,
+   "adx": 21.4,
+   "stk": 4.6,
+   "std": 7.5,
+   "ich_base": 3796.5,
+   "ich_conv": 3758.5,
+   "ich_a": 3768.0,
+   "ich_b": 3729.5,
+   "piv_s1": 3691.0,
+   "piv_r1": 3894.0,
+   "tv_rec": -0.29,
+   "mtf": [
+    8037.0,
+    8035.0,
+    7441.0,
+    4965.0,
+    4067.0
+   ],
+   "rs": 85.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [
+    {
+     "pub": "2026-10-29 12:40",
+     "title": "（変更）「Kamgras １株式会社による当社株券等に対する公開買付けに関する賛同の意見表明及び応募推奨のお知らせ」の一部変更に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120261029558413.pdf",
+     "bits": 1024,
+     "strong": true
+    },
+    {
+     "pub": "2026-10-28 18:40",
+     "title": "Kamgras １株式会社による株式会社カカクコム（証券コード：2371）の株券等に対する公開買付けの買付条件等の変更に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120261028558577.pdf",
+     "bits": 1024,
+     "strong": true
+    },
+    {
+     "pub": "2026-10-27 12:30",
+     "title": "「BCPE Blitz Cayman, L.P.による当社株券等に対する公開買付けの開始予定に関するお知らせ」の一部変更に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120261027556744.pdf",
+     "bits": 1024,
+     "strong": true
+    }
+   ],
+   "llm": null
+  },
+  {
+   "code": "2612",
+   "name": "かどや製油",
+   "ticker": "TSE:2612",
+   "bucket": "news",
+   "score": 1.0,
+   "signals": [
+    "sig_high"
+   ],
+   "baserate": {
+    "sig_high": {
+     "5": {
+      "n": 3724,
+      "win": 38.3,
+      "avg": -1.44,
+      "med": -0.88,
+      "excess": -0.31,
+      "best": 99.2,
+      "worst": -90.1
+     },
+     "20": {
+      "n": 2520,
+      "win": 32.0,
+      "avg": -5.03,
+      "med": -2.64,
+      "excess": -1.84,
+      "best": 50.1,
+      "worst": -92.1
+     },
+     "1": {
+      "n": 3918,
+      "win": 40.8,
+      "avg": -0.41,
+      "med": -0.19,
+      "excess": -0.08,
+      "best": 33.1,
+      "worst": -90.5
+     }
+    }
+   },
+   "sector": "Process Industries",
+   "industry": "Agricultural Commodities/Milling",
+   "segment": "스탠다드",
+   "close": 3125.0,
+   "chg": 0.81,
+   "gap": -0.81,
+   "sma5": 3013.0,
+   "sma20": 2904.0,
+   "sma200": 1841.72,
+   "ext200": 69.68,
+   "rsi": 79.8,
+   "macd_h": -2.36,
+   "rvol": 0.4,
+   "pw": 6.62,
+   "p1": 10.78,
+   "p3": 77.05,
+   "ytd": 134.4,
+   "pos52": 99.0,
+   "hi52": 3135.0,
+   "lo52": 1261.67,
+   "val": 3.8,
+   "mcap": 868.0,
+   "per": 30.0,
+   "pbr": 2.33,
+   "eps": 104.05,
+   "roe": 8.0,
+   "eqr": 78.0,
+   "div": 1.54,
+   "rev_q": -3.4,
+   "rev_ttm": -1.9,
+   "cagr5": 5.0,
+   "eps_q": 17.8,
+   "opm": 10.0,
+   "roic": 7.9,
+   "psr": 2.16,
+   "peg": 1.31,
+   "de": 0.01,
+   "inflow": 1.13,
+   "biz": "Kadoya Sesame Mills Incorporated engages in the development, manufacture, and sale of sesame oil products in Japan. The company operates through the Sesame Oil and Food Sesame Business segments. The company offers cookin",
+   "atr": 63.54,
+   "sma50": 2545.22,
+   "bb_up": 3073.54,
+   "bb_lo": 2734.46,
+   "adx": 65.0,
+   "stk": 90.4,
+   "std": 82.7,
+   "ich_base": 2956.0,
+   "ich_conv": 2976.0,
+   "ich_a": 2439.25,
+   "ich_b": 2293.5,
+   "piv_s1": 2139.33,
+   "piv_r1": 3229.33,
+   "tv_rec": 0.51,
+   "mtf": [
+    4085.0,
+    4078.0,
+    4980.0,
+    4086.0,
+    4087.0
+   ],
+   "rs": 98.0,
+   "who": null,
+   "s_pct": null,
+   "gy": null,
+   "tdnet": [
+    {
+     "pub": "2026-10-29 19:30",
+     "title": "（変更）「株式会社ITG-Gホールディングスによる当社株式に対する公開買付けに関する賛同の意見表明及び応募推奨のお知らせ」の一部変更に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120261029560108.pdf",
+     "bits": 1024,
+     "strong": true
+    },
+    {
+     "pub": "2026-10-29 19:30",
+     "title": "（株）ITG-Gホールディングスによる公開買付届出書の訂正に伴う「かどや製油（株）の普通株式に対する公開買付けの開始に関するお知らせ」の変更について",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120261029559761.pdf",
+     "bits": 1024,
+     "strong": true
+    },
+    {
+     "pub": "2026-10-28 21:00",
+     "title": "（変更）「株式会社ITG-Gホールディングスによる当社株式に対する公開買付けに関する賛同の意見表明及び応募推奨のお知らせ」の一部変更に関するお知らせ",
+     "url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120261028558671.pdf",
+     "bits": 1024,
+     "strong": true
+    }
+   ],
+   "llm": null
+  }
+ ],
+ "config": {
+  "MIN_VAL": 3.0,
+  "MIN_MCAP": 100.0,
+  "MIN_PRICE": 0.0,
+  "N_SHORT": 8,
+  "N_LONG": 8,
+  "N_NEWS": 4,
+  "MAX_PER_INDUSTRY": 3,
+  "COOLDOWN_DAYS": 3
+ }
+}
