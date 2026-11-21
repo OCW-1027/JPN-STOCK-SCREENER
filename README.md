@@ -56,3 +56,9 @@ daily.yml은 그대로 두면 됩니다.
 ### v6 반영 파일 (7개)
 루트: `screener.py` `template.html` `i18n.py` `profiles.py`(신규) `backtest.py`(신규) `requirements.txt`
 워크플로: `.github/workflows/daily.yml` 교체 (프로필·백테스트 단계 추가)
+
+## 운영 수정 (2026-11-21) — daily.yml 배포 안정화
+- **Pages 배포 실패 시에도 계속 진행**: `deploy-pages`가 GitHub artifact API 일시 장애("No artifacts named github-pages")로
+  자주 실패해 Cloudflare(gh-pages) 푸시·history 커밋까지 건너뛰던 문제 수정. 30초 뒤 1회 재시도, 둘 다 실패하면 마지막 단계에서만 job 실패 표시.
+- **주말 tick 건너뛰기**: cron-job.org dispatch가 주말에도 15분마다 들어와 같은 화면을 재생성하던 것을 `gate` job으로 차단
+  (토 08:00 ~ 월 08:00 JST. 토요일 새벽 미국 장중·종가판은 유지, 수동 실행은 항상 동작).
